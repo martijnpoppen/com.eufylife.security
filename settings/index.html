@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+
+<head>
+    <!-- The '/homey.js' script must be included in your settings view to work -->
+    <script type="text/javascript" src="/homey.js" data-origin="settings"></script>
+</head>
+
+<body>
+
+    <h1 data-i18n="settings.title">
+        <!--
+        	This field will automatically be filled by a translated string with key 'settings.title'.
+        	Read more about translations at Internationalization.
+        	-->
+    </h1>
+    <p data-i18n="settings.subtitle">
+        <!--
+        	This field will also be translated
+			-->
+    </p>
+    <p id="error" style="color: red;"></p>
+    <p id="success" style="color: #5fd225;"></p>
+    <fieldset>
+        <legend>Eufy Account Settings</legend>
+
+        <div class="field row">
+            <label for="eufy_user">Username</label>
+            <input id="eufy_user" type="text" value="" />
+        </div>
+        <div class="field row">
+            <label for="eufy_pass">Password</label>
+            <input id="eufy_pass" type="password" value="" />
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Automatic Settings</legend>
+        <div class="field row">
+            <label for="eufy_DSK_KEY">DSK_KEY</label>
+            <input id="eufy_DSK_KEY" type="text" value="" disabled />
+        </div>
+        <div class="field row">
+            <label for="eufy_P2P_DID">P2P_DID</label>
+            <input id="eufy_P2P_DID" type="text" value="" disabled />
+        </div>
+        <div class="field row">
+            <label for="eufy_ACTOR_ID">ACTOR_ID</label>
+            <input id="eufy_ACTOR_ID" type="text" value="" disabled />
+        </div>
+        <div class="field row">
+            <label for="eufy_STATION_SN">STATION_SN</label>
+            <input id="eufy_STATION_SN" type="text" value="" disabled />
+        </div>
+        <div class="field row">
+            <label for="eufy_LOCAL_STATION_IP">LOCAL_STATION_IP</label>
+            <input id="eufy_LOCAL_STATION_IP" type="text" value="" disabled />
+        </div>
+
+    </fieldset>
+
+    <button id="save" class="right">Save changes</button>
+
+    <script type="text/javascript">
+
+        // a method named 'onHomeyReady' must be present in your code
+        function onHomeyReady(Homey) {
+            const _settingsKey = `com.eufylife.security.settings`;
+            var initializeSettings = function (err, data) {
+                if (err || !data) {
+                    document.getElementById('error').innerHTML = err;
+                    return;
+                }
+
+                document.getElementById('error').innerHTML = '';
+                document.getElementById('eufy_user').value = data['USERNAME'];
+                document.getElementById('eufy_pass').value = data['PASSWORD'];
+                document.getElementById('eufy_DSK_KEY').value = data['DSK_KEY'];
+                document.getElementById('eufy_P2P_DID').value = data['P2P_DID'];
+                document.getElementById('eufy_ACTOR_ID').value = data['ACTOR_ID'];
+                document.getElementById('eufy_STATION_SN').value = data['STATION_SN'];
+                document.getElementById('eufy_LOCAL_STATION_IP').value = data['LOCAL_STATION_IP'];
+            }
+
+            Homey.get(_settingsKey, initializeSettings);
+            Homey.on('settings.set', (key, data) => {
+                if (key == _settingsKey) {
+                    Homey.get(_settingsKey, initializeSettings);
+                }
+            });
+
+            // Tell Homey we're ready to be displayed
+            Homey.ready();
+
+
+            document.getElementById('save').addEventListener('click', function (e) {
+
+                var button = document.getElementById('save'),
+                    USERNAME = document.getElementById('eufy_user').value
+                PASSWORD = document.getElementById('eufy_pass').value
+                DSK_KEY = document.getElementById('eufy_DSK_KEY').value
+                P2P_DID = document.getElementById('eufy_P2P_DID').value
+                ACTOR_ID = document.getElementById('eufy_ACTOR_ID').value
+                STATION_SN = document.getElementById('eufy_STATION_SN').value
+                LOCAL_STATION_IP = document.getElementById('eufy_LOCAL_STATION_IP').value
+                error = document.getElementById('error'),
+                success = document.getElementById('success');
+
+                // Show message in the save button
+                // Set both disabled onSave
+                button.disabled = true;
+                success.innerHTML = "Saved. Logging in to EufyLife";
+                error.innerHTML = "";
+
+                var settings = {
+                    USERNAME,
+                    PASSWORD,
+                    DSK_KEY,
+                    P2P_DID,
+                    ACTOR_ID,
+                    STATION_SN,
+                    LOCAL_STATION_IP
+                }
+
+                Homey.api('PUT', '/settings', settings, function (err, result) {
+                    if (err) return Homey.alert(err);
+                });
+
+                // Return to edit mode after 3.5 seconds
+                setTimeout(function () {
+                    button.disabled = false;
+                    success.innerHTML = "";
+                }, 3500);
+            });
+        }
+    </script>
+
+</body>
+
+</html>

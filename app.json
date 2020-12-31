@@ -1,0 +1,107 @@
+{
+  "id": "com.eufylife.security",
+  "version": "0.0.12",
+  "compatibility": ">=1.5.0",
+  "sdk": 2,
+  "brandColor": "#2a6185",
+  "name": {
+    "en": "Eufy Security"
+  },
+  "description": {
+    "en": "Add support for Eufy Cam"
+  },
+  "category": ["security"],
+  "permissions": [],
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "author": {
+    "name": "Martijn Poppen",
+    "email": "iot@marpo.nl"
+  },
+  "flow": {
+    "actions": [
+      {
+        "id": "action_CMD_DEVS_SWITCH",
+        "title": {
+          "en": "On/Off",
+          "nl": "Aan/Uit"
+        },
+        "args": [
+          {
+            "name": "devicelist",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "Choose a device",
+              "nl": "Kies een apparaat"
+            }
+          },
+          {
+            "name": "CMD_DEVS_SWITCH",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "0",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              },
+              {
+                "id": "1",
+                "label": {
+                  "en": "On",
+                  "nl": "Aan"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "action_CMD_SET_ARMING",
+        "title": {
+          "en": "Set Arm Mode",
+          "nl": "Stel beveiligingsmodus in"
+        },
+        "args": [
+          {
+            "name": "CMD_SET_ARMING",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "Home",
+                  "nl": "Home"
+                }
+              },
+              {
+                "id": "0",
+                "label": {
+                  "en": "Away",
+                  "nl": "Away"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Schedule",
+                  "nl": "Schedule"
+                }
+              },
+              {
+                "id": "63",
+                "label": {
+                  "en": "Disarmed",
+                  "nl": "Disarmed"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
