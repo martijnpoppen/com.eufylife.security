@@ -1,6 +1,6 @@
 {
   "name": "nl.marpo.eufysecurity",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "main": "app.js",
   "dependencies": {
     "eufy-node-client": "^0.4.0",
