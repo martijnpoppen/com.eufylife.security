@@ -20,6 +20,18 @@
     "name": "Martijn Poppen",
     "email": "eufy@martijnpoppen.nl"
   },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "paypal@martijnpoppen.nl"
+      }
+    }
+  },
+  "bugs": {
+    "url": "https://github.com/martijnpoppen/com.eufylife.security/issues"
+  },
+  "source": "https://github.com/martijnpoppen/com.eufylife.security",
+  "homeyCommunityTopicId": 30479,
   "flow": {
     "actions": [
       {

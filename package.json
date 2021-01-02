@@ -2,6 +2,10 @@
   "name": "nl.marpo.eufysecurity",
   "version": "0.1.1",
   "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/martijnpoppen/com.eufylife.security"
+  },
   "dependencies": {
     "eufy-node-client": "^0.4.0",
     "homey": "^2.9.3"
