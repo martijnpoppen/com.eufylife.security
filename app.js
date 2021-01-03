@@ -22,7 +22,7 @@ class App extends Homey.App {
     this.log("- Loaded settings", this.appSettings);
 
     if(this.appSettings.LOCAL_STATION_IP) {
-        flowActions.init();
+        flowActions.init(this.appSettings);
     }
   }
 
@@ -60,10 +60,6 @@ class App extends Homey.App {
         this.appSettings = settings;
         this.saveSettings();
     }
-
-    if(this.appSettings.LOCAL_STATION_IP) {
-        flowActions.init();
-    }
   }
 
   saveSettings() {
@@ -96,6 +92,11 @@ class App extends Homey.App {
     this.appSettings = settings;
     this.saveSettings();
     this.log("- Loaded settings", this.appSettings);
+
+    if(settings.LOCAL_STATION_IP) {
+        flowActions.init(this.appSettings);
+    }
+
     return;
   }
 }
