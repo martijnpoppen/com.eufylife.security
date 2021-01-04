@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "compatibility": ">=1.5.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -33,6 +33,14 @@
   "source": "https://github.com/martijnpoppen/com.eufylife.security",
   "homeyCommunityTopicId": 30479,
   "flow": {
+    "triggers": [
+        { "id":"trigger_NTFY_MOTION_DETECTION",
+            "title":{
+              "en":"Motion Detected",
+              "nl":"Beweging Gedecteerd"
+            }
+        }
+    ],
     "actions": [
       {
         "id": "action_CMD_DEVS_SWITCH",

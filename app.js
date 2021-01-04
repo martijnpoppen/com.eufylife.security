@@ -2,6 +2,7 @@
 
 const Homey = require("homey");
 const { HttpService } = require("eufy-node-client");
+const flowTriggers = require('./lib/flow/triggers.js');
 const flowActions = require('./lib/flow/actions.js');
 
 const _settingsKey = `${Homey.manifest.id}.settings`;
@@ -23,6 +24,7 @@ class App extends Homey.App {
 
     if(this.appSettings.LOCAL_STATION_IP) {
         flowActions.init(this.appSettings);
+        flowTriggers.init(this.appSettings);
     }
   }
 
