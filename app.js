@@ -1,7 +1,7 @@
 "use strict";
 
 const Homey = require("homey");
-const { HttpService } = require("eufy-node-client");
+const { PushRegisterService, HttpService, sleep } = require('eufy-node-client');
 const flowTriggers = require('./lib/flow/triggers.js');
 const flowActions = require('./lib/flow/actions.js');
 
@@ -24,6 +24,9 @@ class App extends Homey.App {
 
     if(this.appSettings.LOCAL_STATION_IP) {
         flowActions.init(this.appSettings);
+    }
+
+    if(this.appSettings.CREDENTIALS) {
         flowTriggers.init(this.appSettings);
     }
   }
@@ -51,12 +54,14 @@ class App extends Homey.App {
       ACTOR_ID: "",
       STATION_SN: "",
       LOCAL_STATION_IP: "",
+      SET_CREDENTIALS: "0",
+      CREDENTIALS: ""
     });
   }
 
   async updateSettings(settings) {
     this.log("New settings:", settings);
-    if(!!settings.USERNAME && !!settings.PASSWORD && !settings.P2P_DID) {
+    if(!!settings.USERNAME && !!settings.PASSWORD) {
         this.eufyLogin(settings);
     } else {
         this.appSettings = settings;
@@ -91,12 +96,27 @@ class App extends Homey.App {
     const dsk = await httpService.stationDskKeys(settings.STATION_SN);
     settings.DSK_KEY = dsk.dsk_keys[0].dsk_key;      
 
+    if(!settings.CREDENTIALS && settings.SET_CREDENTIALS !== '0') {
+        this.log(`Found Credentials. Registering pushService`);
+        const pushService = new PushRegisterService();
+        settings.CREDENTIALS = await pushService.createPushCredentials();
+        await sleep(5 * 1000);
+
+        const fcmToken =  settings.CREDENTIALS.gcmResponse.token;
+        await httpService.registerPushToken(fcmToken);
+        this.log('Registered at pushService with:', fcmToken);
+    }
+
     this.appSettings = settings;
     this.saveSettings();
     this.log("- Loaded settings", this.appSettings);
 
     if(settings.LOCAL_STATION_IP) {
         flowActions.init(this.appSettings);
+    }
+
+    if(settings.CREDENTIALS) {
+        flowTriggers.init(this.appSettings);
     }
 
     return;

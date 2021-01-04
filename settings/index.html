@@ -19,11 +19,8 @@
         	This field will also be translated
 			-->
     </p>
-    <p id="error" style="color: red;"></p>
-    <p id="success" style="color: #5fd225;"></p>
     <fieldset>
         <legend>Eufy Account Settings</legend>
-
         <div class="field row">
             <label for="eufy_user">Username</label>
             <input id="eufy_user" type="text" value="" />
@@ -55,9 +52,18 @@
             <label for="eufy_LOCAL_STATION_IP">LOCAL_STATION_IP</label>
             <input id="eufy_LOCAL_STATION_IP" type="text" value="" disabled />
         </div>
-
     </fieldset>
-
+    <fieldset>
+        <legend>Eufy Settings</legend>
+        <p>(This will increase the performance of this app. Only select if needed)</p>
+        <div class="field row">
+            <label for="eufy_CREDENTIALS">Listen to Eufy Notifications?</label>
+            <input id="eufy_CREDENTIALS" type="checkbox" value="0" />
+        </div>
+    </fieldset>
+    <p id="error" style="color: red;"></p>
+    <p id="loading" style="color: #0000FF;"></p>
+    <p id="success" style="color: #5fd225;"></p>
     <button id="save" class="right">Save changes</button>
 
     <script type="text/javascript">
@@ -65,6 +71,8 @@
         // a method named 'onHomeyReady' must be present in your code
         function onHomeyReady(Homey) {
             const _settingsKey = `com.eufylife.security.settings`;
+            let _credentials = undefined;
+
             var initializeSettings = function (err, data) {
                 if (err || !data) {
                     document.getElementById('error').innerHTML = err;
@@ -79,6 +87,8 @@
                 document.getElementById('eufy_ACTOR_ID').value = data['ACTOR_ID'];
                 document.getElementById('eufy_STATION_SN').value = data['STATION_SN'];
                 document.getElementById('eufy_LOCAL_STATION_IP').value = data['LOCAL_STATION_IP'];
+                document.getElementById('eufy_CREDENTIALS)').value = data['SET_CREDENTIALS'];
+                _credentials = data['CREDENTIALS'];
             }
 
             Homey.get(_settingsKey, initializeSettings);
@@ -102,14 +112,18 @@
                 ACTOR_ID = document.getElementById('eufy_ACTOR_ID').value
                 STATION_SN = document.getElementById('eufy_STATION_SN').value
                 LOCAL_STATION_IP = document.getElementById('eufy_LOCAL_STATION_IP').value
+                SET_CREDENTIALS = document.getElementById('eufy_CREDENTIALS').value
+                CREDENTIALS = _credentials
+
                 error = document.getElementById('error'),
                 success = document.getElementById('success');
 
                 // Show message in the save button
                 // Set both disabled onSave
                 button.disabled = true;
-                success.innerHTML = "Saved. Logging in to EufyLife";
+                loading.innerHTML = '<i class="fa fa-spinner fa-spin fa-fw"></i>Logging in. Please wait until all fields are filled in.';
                 error.innerHTML = "";
+                success.innerHTML = "";
 
                 var settings = {
                     USERNAME,
@@ -118,18 +132,25 @@
                     P2P_DID,
                     ACTOR_ID,
                     STATION_SN,
-                    LOCAL_STATION_IP
+                    LOCAL_STATION_IP,
+                    SET_CREDENTIALS,
+                    CREDENTIALS
                 }
 
                 Homey.api('PUT', '/settings', settings, function (err, result) {
-                    if (err) return Homey.alert(err);
+                    if (err) {
+                        error.innerHTML = err;
+                        return Homey.alert(err);
+                    } 
                 });
 
-                // Return to edit mode after 3.5 seconds
+                const timer = SET_CREDENTIALS !== '0' ? 9000 : 3500;
+
                 setTimeout(function () {
                     button.disabled = false;
-                    success.innerHTML = "";
-                }, 3500);
+                    loading.innerHTML = "";
+                    success.innerHTML = "Saved. Logged in to EufyLife";
+                }, timer);
             });
         }
     </script>
