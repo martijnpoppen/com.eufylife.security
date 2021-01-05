@@ -66,8 +66,29 @@
       {
         "id": "trigger_NTFY_PRESS_DOORBELL",
         "title": {
-          "en": "Doorbeel Press Detected",
+          "en": "Doorbell Press Detected",
           "nl": "Deurbel Druk Gedecteerd"
+        }
+      },
+      {
+        "id": "trigger_NTFY_CRYING_DETECTED",
+        "title": {
+          "en": "Crying Detected",
+          "nl": "Huilen Gedecteerd"
+        }
+      },
+      {
+        "id": "trigger_NTFY_SOUND_DETECTED",
+        "title": {
+          "en": "Sound Detected",
+          "nl": "Geluid Gedecteerd"
+        }
+      },
+      {
+        "id": "trigger_NTFY_PET_DETECTED",
+        "title": {
+          "en": "Pet Detected",
+          "nl": "Huisdier Gedecteerd"
         }
       }
     ],
