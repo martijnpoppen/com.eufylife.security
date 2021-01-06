@@ -37,6 +37,14 @@
         </div>
     </fieldset>
     <fieldset>
+        <legend>Extra Settings</legend>
+        <p style="color: red;">(This will increase the performance of this app. Only select if needed)</p>
+        <div class="field row">
+            <label for="eufy_CREDENTIALS">Listen to Eufy Notifications?</label>
+            <input id="eufy_CREDENTIALS" type="checkbox" />
+        </div>
+    </fieldset>
+    <fieldset>
         <legend>Automatic Settings</legend>
         <div class="field row">
             <label for="eufy_DSK_KEY">DSK_KEY</label>
@@ -59,105 +67,13 @@
             <input id="eufy_LOCAL_STATION_IP" type="text" value="" disabled />
         </div>
     </fieldset>
-    <fieldset>
-        <legend>Eufy Settings</legend>
-        <p style="color: red;">(This will increase the performance of this app. Only select if needed)</p>
-        <div class="field row">
-            <label for="eufy_CREDENTIALS">Listen to Eufy Notifications?</label>
-            <input id="eufy_CREDENTIALS" type="checkbox" value="0" />
-        </div>
-    </fieldset>
     <p id="error" style="color: red;"></p>
     <p id="loading" style="color: #0000FF;"></p>
     <p id="success" style="color: #5fd225;"></p>
     <button id="save" class="right">Save changes</button>
+    <button id="clear" class="left">Clear all</button>
 
-    <script type="text/javascript">
-
-        // a method named 'onHomeyReady' must be present in your code
-        function onHomeyReady(Homey) {
-            const _settingsKey = `com.eufylife.security.settings`;
-            let _credentials = undefined;
-
-            var initializeSettings = function (err, data) {
-                if (err || !data) {
-                    document.getElementById('error').innerHTML = err;
-                    return;
-                }
-
-                document.getElementById('error').innerHTML = '';
-                document.getElementById('eufy_user').value = data['USERNAME'];
-                document.getElementById('eufy_pass').value = data['PASSWORD'];
-                document.getElementById('eufy_DSK_KEY').value = data['DSK_KEY'];
-                document.getElementById('eufy_P2P_DID').value = data['P2P_DID'];
-                document.getElementById('eufy_ACTOR_ID').value = data['ACTOR_ID'];
-                document.getElementById('eufy_STATION_SN').value = data['STATION_SN'];
-                document.getElementById('eufy_LOCAL_STATION_IP').value = data['LOCAL_STATION_IP'];
-                document.getElementById('eufy_CREDENTIALS)').checked = data['SET_CREDENTIALS'];
-                _credentials = data['CREDENTIALS'];
-            }
-
-            Homey.get(_settingsKey, initializeSettings);
-            Homey.on('settings.set', (key, data) => {
-                if (key == _settingsKey) {
-                    Homey.get(_settingsKey, initializeSettings);
-                }
-            });
-
-            // Tell Homey we're ready to be displayed
-            Homey.ready();
-
-
-            document.getElementById('save').addEventListener('click', function (e) {
-
-                var button = document.getElementById('save'),
-                    USERNAME = document.getElementById('eufy_user').value
-                PASSWORD = document.getElementById('eufy_pass').value
-                DSK_KEY = document.getElementById('eufy_DSK_KEY').value
-                P2P_DID = document.getElementById('eufy_P2P_DID').value
-                ACTOR_ID = document.getElementById('eufy_ACTOR_ID').value
-                STATION_SN = document.getElementById('eufy_STATION_SN').value
-                LOCAL_STATION_IP = document.getElementById('eufy_LOCAL_STATION_IP').value
-                SET_CREDENTIALS = document.getElementById('eufy_CREDENTIALS').checked
-                CREDENTIALS = _credentials
-
-                error = document.getElementById('error'),
-                success = document.getElementById('success');
-
-                // Show message in the save button
-                // Set both disabled onSave
-                button.disabled = true;
-                loading.innerHTML = '<i class="fa fa-spinner fa-spin fa-fw"></i>Logging in. Please wait until all fields are filled in.';
-                error.innerHTML = "";
-                success.innerHTML = "";
-
-                var settings = {
-                    USERNAME,
-                    PASSWORD,
-                    DSK_KEY,
-                    P2P_DID,
-                    ACTOR_ID,
-                    STATION_SN,
-                    LOCAL_STATION_IP,
-                    SET_CREDENTIALS,
-                    CREDENTIALS
-                }
-
-                Homey.api('PUT', '/settings', settings, function (err, result) {
-                    if (err) {
-                        error.innerHTML = err;
-                        return Homey.alert(err);
-                    } 
-                });
-
-                setTimeout(function () {
-                    button.disabled = false;
-                    loading.innerHTML = "";
-                    success.innerHTML = "Saved. Logged in to EufyLife";
-                }, 5000);
-            });
-        }
-    </script>
+    <script src="./settings.js"></script>
 
 </body>
 

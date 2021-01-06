@@ -100,7 +100,7 @@ class App extends Homey.App {
   async eufyLogin(data) {
     try {
       let settings = data;
-
+      this.log("New settings:", settings);
       this.log(`Found username and password. Logging in to Eufy`);
 
       if (!_httpService) {
@@ -139,6 +139,7 @@ class App extends Homey.App {
       return;
     } catch (err) {
       this.error(err);
+      return err;
     }
   }
 }
