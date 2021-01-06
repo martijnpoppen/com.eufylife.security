@@ -16,7 +16,7 @@ function onHomeyReady(Homey) {
         document.getElementById('eufy_ACTOR_ID').value = data['ACTOR_ID'];
         document.getElementById('eufy_STATION_SN').value = data['STATION_SN'];
         document.getElementById('eufy_LOCAL_STATION_IP').value = data['LOCAL_STATION_IP'];
-        document.getElementById('eufy_CREDENTIALS)').checked = data['SET_CREDENTIALS'];
+        document.getElementById('eufy_CREDENTIALS').checked = data['SET_CREDENTIALS'];
         _credentials = data['CREDENTIALS'];
     }
 
@@ -76,6 +76,7 @@ function onHomeyReady(Homey) {
                 } else {
                     button.disabled = false;
                     loading.innerHTML = "";
+                    error.innerHTML = "";
                     success.innerHTML = "Saved. Logged in to EufyLife";
                 }
             });
@@ -133,9 +134,11 @@ function onHomeyReady(Homey) {
             if (err) {
                 error.innerHTML = err;
                 loading.innerHTML = "";
+                success.innerHTML = "";
                 return Homey.alert(err);
             } else {
                 loading.innerHTML = "";
+                error.innerHTML = "";
                 success.innerHTML = "Cleared & Saved.";
             }
         });
