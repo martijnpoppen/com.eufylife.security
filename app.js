@@ -74,6 +74,7 @@ class App extends Homey.App {
     if (!!settings.USERNAME && !!settings.PASSWORD) {
       this.eufyLogin(settings);
     } else {
+      _httpService = undefined;
       this.appSettings = settings;
       this.saveSettings();
     }
@@ -103,9 +104,7 @@ class App extends Homey.App {
       this.log("New settings:", settings);
       this.log(`Found username and password. Logging in to Eufy`);
 
-      if (!_httpService) {
-        await this.initHttpService(data);
-      }
+      await this.initHttpService(data);
 
       const hubs = await _httpService.listHubs();
       this.log(`Logged in. Found station`, hubs[0].station_sn);
