@@ -30,7 +30,16 @@ module.exports = class driver_EUFY_CAM extends Homey.Driver {
 async function onDeviceListRequest() {
     try {
         const devices = await _httpService.listDevices();
-        const results = devices.map((r, i) => ({ name: r.device_name, data: {name: r.device_name, index: i, id: r.device_id, station_sn: r.station_sn }  }));
+        const results = devices.map((r, i) => ({ 
+                name: r.device_name, 
+                data: {
+                    name: r.device_name, 
+                    index: i, 
+                    id: r.device_id, 
+                    station_sn: r.station_sn, 
+                    device_sn: r.device_sn 
+                }  
+            }));
       
         Homey.app.log('Found devices - ', results);
       
