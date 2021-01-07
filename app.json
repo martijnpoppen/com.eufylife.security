@@ -53,11 +53,14 @@
         },
         "args": [
             {
-              "name": "device_EUFY_CAM",
-              "type": "device",
-              "filter": "driver_id=driver_EUFY_CAM"
+              "name": "devicelist",
+              "type": "autocomplete",
+              "placeholder": {
+                "en": "Choose a device",
+                "nl": "Kies een apparaat"
+              }
             }
-          ]
+        ]
       },
       {
         "id": "trigger_NTFY_MOTION_DETECTION",
@@ -67,11 +70,14 @@
         },
         "args": [
             {
-              "name": "device_EUFY_CAM",
-              "type": "device",
-              "filter": "driver_id=driver_EUFY_CAM"
+              "name": "devicelist",
+              "type": "autocomplete",
+              "placeholder": {
+                "en": "Choose a device",
+                "nl": "Kies een apparaat"
+              }
             }
-          ]
+        ]
       },
       {
         "id": "trigger_NTFY_FACE_DETECTION",
@@ -81,11 +87,14 @@
         },
         "args": [
             {
-              "name": "device_EUFY_CAM",
-              "type": "device",
-              "filter": "driver_id=driver_EUFY_CAM"
+              "name": "devicelist",
+              "type": "autocomplete",
+              "placeholder": {
+                "en": "Choose a device",
+                "nl": "Kies een apparaat"
+              }
             }
-          ]
+        ]
       },
       {
         "id": "trigger_NTFY_PRESS_DOORBELL",
@@ -95,11 +104,14 @@
         },
         "args": [
             {
-              "name": "device_EUFY_CAM",
-              "type": "device",
-              "filter": "driver_id=driver_EUFY_CAM"
+              "name": "devicelist",
+              "type": "autocomplete",
+              "placeholder": {
+                "en": "Choose a device",
+                "nl": "Kies een apparaat"
+              }
             }
-          ]
+        ]
       },
       {
         "id": "trigger_NTFY_CRYING_DETECTED",
@@ -109,11 +121,14 @@
         },
         "args": [
             {
-              "name": "device_EUFY_CAM",
-              "type": "device",
-              "filter": "driver_id=driver_EUFY_CAM"
+              "name": "devicelist",
+              "type": "autocomplete",
+              "placeholder": {
+                "en": "Choose a device",
+                "nl": "Kies een apparaat"
+              }
             }
-          ]
+        ]
       },
       {
         "id": "trigger_NTFY_SOUND_DETECTED",
@@ -123,11 +138,14 @@
         },
         "args": [
             {
-              "name": "device_EUFY_CAM",
-              "type": "device",
-              "filter": "driver_id=driver_EUFY_CAM"
+              "name": "devicelist",
+              "type": "autocomplete",
+              "placeholder": {
+                "en": "Choose a device",
+                "nl": "Kies een apparaat"
+              }
             }
-          ]
+        ]
       },
       {
         "id": "trigger_NTFY_PET_DETECTED",
@@ -137,11 +155,14 @@
         },
         "args": [
             {
-              "name": "device_EUFY_CAM",
-              "type": "device",
-              "filter": "driver_id=driver_EUFY_CAM"
+              "name": "devicelist",
+              "type": "autocomplete",
+              "placeholder": {
+                "en": "Choose a device",
+                "nl": "Kies een apparaat"
+              }
             }
-          ]
+        ]
       }
     ],
     "actions": [

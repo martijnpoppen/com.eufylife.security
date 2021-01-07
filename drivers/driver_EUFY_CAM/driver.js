@@ -2,16 +2,21 @@ const Homey = require('homey');
 
 let devices = [];
 let _httpService = undefined;
+let _settings = undefined;
 
 module.exports = class driver_EUFY_CAM extends Homey.Driver {
 
+    onInit() {        
+        Homey.app.log('[Device] - init driver_EUFY_CAM');
+    }
+
     onPair( socket ) {
         socket.on('list_devices', async function( data, callback ) {
-
             socket.emit('list_devices', [] );
             
             _httpService = Homey.app.getHttpService();
-            devices = await onDeviceListVariableAutocomplete()
+            
+            devices = await onDeviceListRequest()
             if(devices.length) {
                 callback( null, devices );
             } else {
@@ -22,10 +27,10 @@ module.exports = class driver_EUFY_CAM extends Homey.Driver {
 }
 
 // ---------------------------------------AUTO COMPLETE HELPERS----------------------------------------------------------
-async function onDeviceListVariableAutocomplete() {
+async function onDeviceListRequest() {
     try {
         const devices = await _httpService.listDevices();
-        const results = devices.map((r, i) => ({ name: r.device_name, data: {id: r.device_id, station_sn: r.station_sn }  }));
+        const results = devices.map((r, i) => ({ name: r.device_name, data: {name: r.device_name, index: i, id: r.device_id, station_sn: r.station_sn }  }));
       
         Homey.app.log('Found devices - ', results);
       

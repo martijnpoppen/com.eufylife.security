@@ -116,7 +116,7 @@ function onHomeyReady(Homey) {
         var STATION_SN = "";
         var LOCAL_STATION_IP = "";
         var SET_CREDENTIALS = false;
-        var CREDENTIALS = _credentials;
+        var CREDENTIALS = undefined;
 
         var settings = {
             USERNAME,

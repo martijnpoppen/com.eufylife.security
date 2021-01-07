@@ -8,6 +8,7 @@ const flowActions = require("./lib/flow/actions.js");
 const _settingsKey = `${Homey.manifest.id}.settings`;
 const _settings = Homey.ManagerSettings;
 let _httpService = undefined;
+let _devices = [];
 
 class App extends Homey.App {
   log() {
@@ -18,19 +19,23 @@ class App extends Homey.App {
     console.error.bind(this, "[error]").apply(this, arguments);
   }
 
+  // -------------------- INIT ----------------------
+
   async onInit() {
     this.log(`${Homey.manifest.id} started...`);
     await this.initSettings();
     this.log("- Loaded settings", this.appSettings);
 
     if (this.appSettings.LOCAL_STATION_IP) {
-      flowActions.init(this.appSettings, _httpService);
+      flowActions.init(this.appSettings);
     }
 
     if (this.appSettings.CREDENTIALS) {
-      flowTriggers.init(this.appSettings, _httpService);
+      flowTriggers.init(this.appSettings);
     }
   }
+
+  // -------------------- SETTINGS ----------------------
 
   async initSettings() {
     try {
@@ -46,7 +51,7 @@ class App extends Homey.App {
         this.appSettings = _settings.get(_settingsKey);
 
         if (!_httpService) {
-          await this.initHttpService(this.appSettings);
+            _httpService = await this.setHttpService(this.appSettings);
         }
 
         return;
@@ -90,17 +95,7 @@ class App extends Homey.App {
     _settings.set(_settingsKey, this.appSettings);
   }
 
-  getHttpService() {
-      return _httpService;
-  }
-
-  async initHttpService(settings) {
-    try {
-      _httpService = new HttpService(settings.USERNAME, settings.PASSWORD);
-    } catch (err) {
-      this.error(err);
-    }
-  }
+  // -------------------- EUFY LOGIN ----------------------
 
   async eufyLogin(data) {
     try {
@@ -108,7 +103,7 @@ class App extends Homey.App {
       this.log("New settings:", settings);
       this.log(`Found username and password. Logging in to Eufy`);
 
-      await this.initHttpService(data);
+      _httpService = await this.setHttpService(data);
 
       const hubs = await _httpService.listHubs();
       this.log(`Logged in. Found station`, hubs[0].station_sn);
@@ -132,11 +127,11 @@ class App extends Homey.App {
       this.log("- Loaded settings", this.appSettings);
 
       if (settings.LOCAL_STATION_IP) {
-        flowActions.init(this.appSettings, _httpService);
+        flowActions.init(this.appSettings);
       }
 
       if (settings.CREDENTIALS) {
-        flowTriggers.init(this.appSettings, _httpService);
+        flowTriggers.init(this.appSettings);
       }
 
       return;
@@ -144,6 +139,32 @@ class App extends Homey.App {
       this.error(err);
       return err;
     }
+  }
+
+  // ---------------------------- GETTERS/SETTERS ----------------------------------
+
+  getSettings() {
+    return this.appSettings;
+  }
+
+  async setHttpService(settings) {
+    try {
+      return new HttpService(settings.USERNAME, settings.PASSWORD);
+    } catch (err) {
+      this.error(err);
+    }
+  }
+
+  getHttpService() {
+      return _httpService;
+  }
+
+  setDevices(device) {
+    _devices.push(device);
+  }
+
+  getDevices() {
+      return _devices;
   }
 }
 
