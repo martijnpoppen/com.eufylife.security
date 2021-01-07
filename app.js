@@ -90,6 +90,10 @@ class App extends Homey.App {
     _settings.set(_settingsKey, this.appSettings);
   }
 
+  getHttpService() {
+      return _httpService;
+  }
+
   async initHttpService(settings) {
     try {
       _httpService = new HttpService(settings.USERNAME, settings.PASSWORD);
