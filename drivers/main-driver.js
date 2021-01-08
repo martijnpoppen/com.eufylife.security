@@ -3,7 +3,7 @@ const Homey = require('homey');
 let devices = [];
 let _httpService = undefined;
 
-module.exports = class main_driver extends Homey.Driver {
+module.exports = class mainDriver extends Homey.Driver {
     onPair( socket ) {
         socket.on('list_devices', async function( data, callback ) {
             socket.emit('list_devices', [] );
