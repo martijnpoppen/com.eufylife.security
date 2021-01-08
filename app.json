@@ -538,8 +538,8 @@
         "onoff"
       ],
       "name": {
-        "en": "Video Doorbell 2K (Wired)",
-        "nl": "Video Doorbell 2K (Wired)"
+        "en": "Video Doorbell 1080p (Wired)",
+        "nl": "Video Doorbell 1080p (Wired)"
       },
       "images": {
         "large": "drivers/driver_VIDEO_DOORBELL_1080P_POWERED/assets/images/large.jpg",
@@ -566,8 +566,8 @@
         "onoff"
       ],
       "name": {
-        "en": "Video Doorbell 2K (Wired)",
-        "nl": "Video Doorbell 2K (Wired)"
+        "en": "Video Doorbell 1080p (Wired)",
+        "nl": "Video Doorbell 1080p (Wired)"
       },
       "images": {
         "large": "drivers/driver_VIDEO_DOORBELL_1080P_BATTERY/assets/images/large.jpg",
