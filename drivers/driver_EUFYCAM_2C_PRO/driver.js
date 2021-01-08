@@ -4,10 +4,10 @@ let devices = [];
 let _httpService = undefined;
 let _settings = undefined;
 
-module.exports = class driver_EUFY_CAM extends Homey.Driver {
+module.exports = class driver_EUFYCAM_2C_PRO extends Homey.Driver {
 
     onInit() {        
-        Homey.app.log('[Device] - init driver_EUFY_CAM');
+        Homey.app.log('[Device] - init driver_EUFYCAM_2C_PRO');
     }
 
     onPair( socket ) {
