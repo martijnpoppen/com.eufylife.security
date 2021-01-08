@@ -1,12 +1,13 @@
 "use strict";
 
 const Homey = require("homey");
-const { PushRegisterService, HttpService, sleep } = require("eufy-node-client");
+const { PushRegisterService, HttpService } = require("eufy-node-client");
 const flowTriggers = require("./lib/flow/triggers.js");
 const flowActions = require("./lib/flow/actions.js");
+const eufyCommandSendHelper = require("./lib/helpers/eufy-command-send.helper");
 
+const ManagerSettings = Homey.ManagerSettings;
 const _settingsKey = `${Homey.manifest.id}.settings`;
-const _settings = Homey.ManagerSettings;
 let _httpService = undefined;
 let _devices = [];
 
@@ -27,7 +28,8 @@ class App extends Homey.App {
     this.log("- Loaded settings", this.appSettings);
 
     if (this.appSettings.LOCAL_STATION_IP) {
-      flowActions.init(this.appSettings);
+        eufyCommandSendHelper.init(this.appSettings);
+        flowActions.init();
     }
 
     if (this.appSettings.CREDENTIALS) {
@@ -40,7 +42,7 @@ class App extends Homey.App {
   async initSettings() {
     try {
       let settingsInitialized = false;
-      _settings.getKeys().forEach((key) => {
+      ManagerSettings.getKeys().forEach((key) => {
         if (key == _settingsKey) {
           settingsInitialized = true;
         }
@@ -48,7 +50,7 @@ class App extends Homey.App {
 
       if (settingsInitialized) {
         this.log("Found settings key", _settingsKey);
-        this.appSettings = _settings.get(_settingsKey);
+        this.appSettings = ManagerSettings.get(_settingsKey);
 
         if (!_httpService) {
             _httpService = await this.setHttpService(this.appSettings);
@@ -92,7 +94,7 @@ class App extends Homey.App {
     }
 
     this.log("Saved settings.");
-    _settings.set(_settingsKey, this.appSettings);
+    ManagerSettings.set(_settingsKey, this.appSettings);
   }
 
   // -------------------- EUFY LOGIN ----------------------
@@ -127,7 +129,7 @@ class App extends Homey.App {
       this.log("- Loaded settings", this.appSettings);
 
       if (settings.LOCAL_STATION_IP) {
-        flowActions.init(this.appSettings);
+        eufyCommandSendHelper.init(this.appSettings);
       }
 
       if (settings.CREDENTIALS) {
