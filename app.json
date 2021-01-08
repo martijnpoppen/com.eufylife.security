@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "compatibility": ">=1.5.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -13,8 +13,26 @@
     "nl": "Eufy - Smart Home Simplified"
   },
   "tags": {
-    "en": [ "Video doorbell", "eufy", "security", "camera", "p2p", "eufyCam", "Baby camera", "Motion dectection" ],
-    "nl": [ "Video doorbell", "eufy", "security", "camera", "p2p", "eufyCam", "Baby camera", "Motion dectection" ]
+    "en": [
+      "Video doorbell",
+      "eufy",
+      "security",
+      "camera",
+      "p2p",
+      "eufyCam",
+      "Baby camera",
+      "Motion dectection"
+    ],
+    "nl": [
+      "Video doorbell",
+      "eufy",
+      "security",
+      "camera",
+      "p2p",
+      "eufyCam",
+      "Baby camera",
+      "Motion dectection"
+    ]
   },
   "category": [
     "security"
@@ -36,10 +54,10 @@
       }
     ],
     "translators": [
-        {
-            "name": "Martijn Poppen",
-            "email": "eufy@martijnpoppen.nl"
-        }
+      {
+        "name": "Martijn Poppen",
+        "email": "eufy@martijnpoppen.nl"
+      }
     ]
   },
   "contributing": {
@@ -64,14 +82,14 @@
           "nl": "Achtergrond Beweging Gedecteerd"
         },
         "args": [
-            {
-              "name": "devicelist",
-              "type": "autocomplete",
-              "placeholder": {
-                "en": "Choose a device",
-                "nl": "Kies een apparaat"
-              }
+          {
+            "name": "devicelist",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "Choose a device",
+              "nl": "Kies een apparaat"
             }
+          }
         ]
       },
       {
@@ -81,14 +99,14 @@
           "nl": "Beweging Gedecteerd"
         },
         "args": [
-            {
-              "name": "devicelist",
-              "type": "autocomplete",
-              "placeholder": {
-                "en": "Choose a device",
-                "nl": "Kies een apparaat"
-              }
+          {
+            "name": "devicelist",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "Choose a device",
+              "nl": "Kies een apparaat"
             }
+          }
         ]
       },
       {
@@ -98,14 +116,14 @@
           "nl": "Gezicht Gedecteerd"
         },
         "args": [
-            {
-              "name": "devicelist",
-              "type": "autocomplete",
-              "placeholder": {
-                "en": "Choose a device",
-                "nl": "Kies een apparaat"
-              }
+          {
+            "name": "devicelist",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "Choose a device",
+              "nl": "Kies een apparaat"
             }
+          }
         ]
       },
       {
@@ -115,14 +133,14 @@
           "nl": "Deurbel Druk Gedecteerd"
         },
         "args": [
-            {
-              "name": "devicelist",
-              "type": "autocomplete",
-              "placeholder": {
-                "en": "Choose a device",
-                "nl": "Kies een apparaat"
-              }
+          {
+            "name": "devicelist",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "Choose a device",
+              "nl": "Kies een apparaat"
             }
+          }
         ]
       },
       {
@@ -132,14 +150,14 @@
           "nl": "Huilen Gedecteerd"
         },
         "args": [
-            {
-              "name": "devicelist",
-              "type": "autocomplete",
-              "placeholder": {
-                "en": "Choose a device",
-                "nl": "Kies een apparaat"
-              }
+          {
+            "name": "devicelist",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "Choose a device",
+              "nl": "Kies een apparaat"
             }
+          }
         ]
       },
       {
@@ -149,14 +167,14 @@
           "nl": "Geluid Gedecteerd"
         },
         "args": [
-            {
-              "name": "devicelist",
-              "type": "autocomplete",
-              "placeholder": {
-                "en": "Choose a device",
-                "nl": "Kies een apparaat"
-              }
+          {
+            "name": "devicelist",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "Choose a device",
+              "nl": "Kies een apparaat"
             }
+          }
         ]
       },
       {
@@ -166,14 +184,14 @@
           "nl": "Huisdier Gedecteerd"
         },
         "args": [
-            {
-              "name": "devicelist",
-              "type": "autocomplete",
-              "placeholder": {
-                "en": "Choose a device",
-                "nl": "Kies een apparaat"
-              }
+          {
+            "name": "devicelist",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "Choose a device",
+              "nl": "Kies een apparaat"
             }
+          }
         ]
       }
     ],
@@ -262,30 +280,32 @@
   },
   "drivers": [
     {
-        "id": "driver_EUFY_CAM",
-        "class": "camera",
-        "capabilities": ["onoff"],
-        "name": {
-          "en": "Eufy Security Cam/Doorbell",
-          "nl": "Eufy Security Cam/Doorbell"
-        },
-        "images": {
-          "large": "drivers/driver_EUFY_CAM/assets/images/large.png",
-          "small": "drivers/driver_EUFY_CAM/assets/images/small.png"
-        },
-        "pair": [
-          {
-            "id": "list_devices",
-            "template": "list_devices",
-            "navigation": {
-              "next": "add_devices"
-            }
-          },
-          {
-            "id": "add_devices",
-            "template": "add_devices"
+      "id": "driver_EUFY_CAM",
+      "class": "camera",
+      "capabilities": [
+        "onoff"
+      ],
+      "name": {
+        "en": "Eufy Security Cam/Doorbell",
+        "nl": "Eufy Security Cam/Doorbell"
+      },
+      "images": {
+        "large": "drivers/driver_EUFY_CAM/assets/images/large.png",
+        "small": "drivers/driver_EUFY_CAM/assets/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
           }
-        ]
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
     }
   ]
 }

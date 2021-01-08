@@ -1,0 +1,8 @@
+{
+  "1.1.4": {
+    "en": "- turn on/off camera (EufyCam pan&tilt will turn its lens)"
+  },
+  "1.1.5": {
+    "en": "turn on/off camera (EufyCam pan&tilt will turn its lens) | Set guard mode (Home, Away, Disarmed, Schedule) |Add devices and use them in flows. (on/off) |Get notifications based on detection modes for specific devices. (Motion, Face, Sound and Doorbell Press) "
+  }
+}
