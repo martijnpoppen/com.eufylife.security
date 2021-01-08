@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "compatibility": ">=1.5.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -21,8 +21,8 @@
   ],
   "permissions": [],
   "images": {
-    "large": "/assets/images/large.png",
-    "small": "/assets/images/small.png"
+    "large": "/assets/images/large.jpg",
+    "small": "/assets/images/small.jpg"
   },
   "author": {
     "name": "Martijn Poppen",
@@ -270,8 +270,8 @@
           "nl": "Eufy Security Cam/Doorbell"
         },
         "images": {
-          "large": "divers/driver_EUFY_CAM/assets/images/large.png",
-          "small": "divers/driver_EUFY_CAM/assets/images/small.png"
+          "large": "drivers/driver_EUFY_CAM/assets/images/large.png",
+          "small": "drivers/driver_EUFY_CAM/assets/images/small.png"
         },
         "pair": [
           {
