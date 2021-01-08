@@ -106,7 +106,7 @@ function onHomeyReady(Homey) {
         document.getElementById('eufy_ACTOR_ID').value = "";
         document.getElementById('eufy_STATION_SN').value = "";
         document.getElementById('eufy_LOCAL_STATION_IP').value = "";
-        document.getElementById('eufy_CREDENTIALS').checked = false;
+        document.getElementById('eufy_CREDENTIALS').checked = true;
 
         var USERNAME = "";
         var PASSWORD = "";
@@ -115,7 +115,7 @@ function onHomeyReady(Homey) {
         var ACTOR_ID = "";
         var STATION_SN = "";
         var LOCAL_STATION_IP = "";
-        var SET_CREDENTIALS = false;
+        var SET_CREDENTIALS = true;
         var CREDENTIALS = undefined;
 
         var settings = {

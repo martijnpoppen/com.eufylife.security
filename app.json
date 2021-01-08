@@ -1,14 +1,20 @@
 {
   "id": "com.eufylife.security",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "compatibility": ">=1.5.0",
   "sdk": 2,
   "brandColor": "#2a6185",
   "name": {
-    "en": "Eufy Security"
+    "en": "Eufy Security",
+    "enln": "Eufy Security"
   },
   "description": {
-    "en": "Add support for Eufy Cam"
+    "en": "Eufy - Smart Home Simplified",
+    "nl": "Eufy - Smart Home Simplified"
+  },
+  "tags": {
+    "en": [ "Video doorbell", "eufy", "security", "camera", "p2p", "eufyCam", "Baby camera", "Motion dectection" ],
+    "nl": [ "Video doorbell", "eufy", "security", "camera", "p2p", "eufyCam", "Baby camera", "Motion dectection" ]
   },
   "category": [
     "security"
@@ -28,6 +34,12 @@
         "name": "Martijn Poppen",
         "email": "eufy@martijnpoppen.nl"
       }
+    ],
+    "translators": [
+        {
+            "name": "Martijn Poppen",
+            "email": "eufy@martijnpoppen.nl"
+        }
     ]
   },
   "contributing": {
@@ -254,12 +266,12 @@
         "class": "camera",
         "capabilities": ["onoff"],
         "name": {
-          "en": "Eufy Cam",
-          "nl": "Eufy Cam"
+          "en": "Eufy Security Cam/Doorbell",
+          "nl": "Eufy Security Cam/Doorbell"
         },
         "images": {
-          "large": "assets/images/large.png",
-          "small": "assets/images/small.png"
+          "large": "divers/driver_EUFY_CAM/assets/images/large.png",
+          "small": "divers/driver_EUFY_CAM/assets/images/small.png"
         },
         "pair": [
           {

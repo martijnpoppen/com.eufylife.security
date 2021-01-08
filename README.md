@@ -21,7 +21,7 @@ and use it with this library.
 ## Current features:
 - turn on/off camera (EufyCam pan&tilt will turn its lens)
 - Set guard mode (Home, Away, Disarmed, Schedule)
-- Add devices (on/off)
+- Add devices and use them in flows. (on/off)
 - Get notifications based on detection modes for specific devices. (Motion, Face, Sound and Doorbell Press) 
 
 ## To do:

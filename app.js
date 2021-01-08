@@ -66,7 +66,7 @@ class App extends Homey.App {
         ACTOR_ID: "",
         STATION_SN: "",
         LOCAL_STATION_IP: "",
-        SET_CREDENTIALS: false,
+        SET_CREDENTIALS: true,
         CREDENTIALS: "",
       });
     } catch (err) {

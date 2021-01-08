@@ -1,7 +1,6 @@
 # Eufy Security
 
-Add support for Eufy Cam in Homey.
-Based on: https://github.com/JanLoebel/eufy-node-client
+Add support for Eufy Cam/Doorbell in Homey.
 
 # Account Information
 
@@ -11,20 +10,14 @@ use the mobile app to create a secondary "guest" account with a separate email a
 and use it with this library.
 
 # Usage
-- Install this app on your homey. See https://community.athom.com/t/how-to-cli-install-method/198
+- Install this app on your Homey.
 - Go to the app settings and provide your Username and Password. Click Save Changes
 - Other keys will be fetched and filled in to the settings page.
-- Create a virtual device (Homey experiment)
-- Create a flow when virtual device is on/off
-- In the then part of the flow you can select the guard mode. (see image below)
+- Connect a device to Eufy Security
+- Create a flow wit Euufy Security devices
 
 ## Current features:
 - turn on/off camera (EufyCam pan&tilt will turn its lens)
 - Set guard mode (Home, Away, Disarmed, Schedule)
-
-&nbsp;
-
----
-&nbsp;
-
-![image info](./assets/images/eufy1.jpeg)
+- Add devices and use them in flows. (on/off)
+- Get notifications based on detection modes for specific devices. (Motion, Face, Sound and Doorbell Press) 
