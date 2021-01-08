@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "0.7.2",
+  "version": "1.1.2",
   "compatibility": ">=1.5.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -10,7 +10,9 @@
   "description": {
     "en": "Add support for Eufy Cam"
   },
-  "category": ["security"],
+  "category": [
+    "security"
+  ],
   "permissions": [],
   "images": {
     "large": "/assets/images/large.png",
@@ -40,6 +42,7 @@
   },
   "source": "https://github.com/martijnpoppen/com.eufylife.security",
   "homeyCommunityTopicId": 30479,
+  "support": "mailto:eufy@martijnpoppen.nl",
   "flow": {
     "triggers": [
       {
@@ -47,49 +50,119 @@
         "title": {
           "en": "Background movement Detected",
           "nl": "Achtergrond Beweging Gedecteerd"
-        }
+        },
+        "args": [
+            {
+              "name": "devicelist",
+              "type": "autocomplete",
+              "placeholder": {
+                "en": "Choose a device",
+                "nl": "Kies een apparaat"
+              }
+            }
+        ]
       },
       {
         "id": "trigger_NTFY_MOTION_DETECTION",
         "title": {
           "en": "Motion Detected",
           "nl": "Beweging Gedecteerd"
-        }
+        },
+        "args": [
+            {
+              "name": "devicelist",
+              "type": "autocomplete",
+              "placeholder": {
+                "en": "Choose a device",
+                "nl": "Kies een apparaat"
+              }
+            }
+        ]
       },
       {
         "id": "trigger_NTFY_FACE_DETECTION",
         "title": {
           "en": "Face Detected",
           "nl": "Gezicht Gedecteerd"
-        }
+        },
+        "args": [
+            {
+              "name": "devicelist",
+              "type": "autocomplete",
+              "placeholder": {
+                "en": "Choose a device",
+                "nl": "Kies een apparaat"
+              }
+            }
+        ]
       },
       {
         "id": "trigger_NTFY_PRESS_DOORBELL",
         "title": {
           "en": "Doorbell Press Detected",
           "nl": "Deurbel Druk Gedecteerd"
-        }
+        },
+        "args": [
+            {
+              "name": "devicelist",
+              "type": "autocomplete",
+              "placeholder": {
+                "en": "Choose a device",
+                "nl": "Kies een apparaat"
+              }
+            }
+        ]
       },
       {
         "id": "trigger_NTFY_CRYING_DETECTED",
         "title": {
           "en": "Crying Detected",
           "nl": "Huilen Gedecteerd"
-        }
+        },
+        "args": [
+            {
+              "name": "devicelist",
+              "type": "autocomplete",
+              "placeholder": {
+                "en": "Choose a device",
+                "nl": "Kies een apparaat"
+              }
+            }
+        ]
       },
       {
         "id": "trigger_NTFY_SOUND_DETECTED",
         "title": {
           "en": "Sound Detected",
           "nl": "Geluid Gedecteerd"
-        }
+        },
+        "args": [
+            {
+              "name": "devicelist",
+              "type": "autocomplete",
+              "placeholder": {
+                "en": "Choose a device",
+                "nl": "Kies een apparaat"
+              }
+            }
+        ]
       },
       {
         "id": "trigger_NTFY_PET_DETECTED",
         "title": {
           "en": "Pet Detected",
           "nl": "Huisdier Gedecteerd"
-        }
+        },
+        "args": [
+            {
+              "name": "devicelist",
+              "type": "autocomplete",
+              "placeholder": {
+                "en": "Choose a device",
+                "nl": "Kies een apparaat"
+              }
+            }
+        ]
       }
     ],
     "actions": [
@@ -174,5 +247,33 @@
         ]
       }
     ]
-  }
+  },
+  "drivers": [
+    {
+        "id": "driver_EUFY_CAM",
+        "class": "camera",
+        "capabilities": ["onoff"],
+        "name": {
+          "en": "Eufy Cam",
+          "nl": "Eufy Cam"
+        },
+        "images": {
+          "large": "assets/images/large.png",
+          "small": "assets/images/small.png"
+        },
+        "pair": [
+          {
+            "id": "list_devices",
+            "template": "list_devices",
+            "navigation": {
+              "next": "add_devices"
+            }
+          },
+          {
+            "id": "add_devices",
+            "template": "add_devices"
+          }
+        ]
+    }
+  ]
 }
