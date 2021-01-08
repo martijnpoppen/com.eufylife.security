@@ -6,11 +6,11 @@
   "brandColor": "#2a6185",
   "name": {
     "en": "Eufy Security",
-    "enln": "Eufy Security"
+    "nl": "Eufy Security"
   },
   "description": {
-    "en": "Eufy - Smart Home Simplified",
-    "nl": "Eufy - Smart Home Simplified"
+    "en": "Smart Home Simplified",
+    "nl": "Smart Home Simplified"
   },
   "tags": {
     "en": [
@@ -79,7 +79,7 @@
         "id": "trigger_NTFY_BACKGROUND_ACTIVE",
         "title": {
           "en": "Background movement Detected",
-          "nl": "Achtergrond Beweging Gedecteerd"
+          "nl": "Achtergrond Beweging Gedetecteerd"
         },
         "args": [
           {
@@ -96,7 +96,7 @@
         "id": "trigger_NTFY_MOTION_DETECTION",
         "title": {
           "en": "Motion Detected",
-          "nl": "Beweging Gedecteerd"
+          "nl": "Beweging Gedetecteerd"
         },
         "args": [
           {
@@ -113,7 +113,7 @@
         "id": "trigger_NTFY_FACE_DETECTION",
         "title": {
           "en": "Face Detected",
-          "nl": "Gezicht Gedecteerd"
+          "nl": "Gezicht Gedetecteerd"
         },
         "args": [
           {
@@ -130,7 +130,7 @@
         "id": "trigger_NTFY_PRESS_DOORBELL",
         "title": {
           "en": "Doorbell Press Detected",
-          "nl": "Deurbel Druk Gedecteerd"
+          "nl": "Deurbel Druk Gedetecteerd"
         },
         "args": [
           {
@@ -147,7 +147,7 @@
         "id": "trigger_NTFY_CRYING_DETECTED",
         "title": {
           "en": "Crying Detected",
-          "nl": "Huilen Gedecteerd"
+          "nl": "Huilen Gedetecteerd"
         },
         "args": [
           {
@@ -164,7 +164,7 @@
         "id": "trigger_NTFY_SOUND_DETECTED",
         "title": {
           "en": "Sound Detected",
-          "nl": "Geluid Gedecteerd"
+          "nl": "Geluid Gedetecteerd"
         },
         "args": [
           {
@@ -181,7 +181,7 @@
         "id": "trigger_NTFY_PET_DETECTED",
         "title": {
           "en": "Pet Detected",
-          "nl": "Huisdier Gedecteerd"
+          "nl": "Huisdier Gedetecteerd"
         },
         "args": [
           {

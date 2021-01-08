@@ -1,22 +1,20 @@
-# Eufy Security
-
 Add support for Eufy Cam/Doorbell in Homey.
 
-# Account Information
+Account Information
 
 Because of the way the Eufy Security private API works, an email/password combo cannot
 work with _both_ the Eufy Security mobile app _and_ this library. It is recommended to
 use the mobile app to create a secondary "guest" account with a separate email address
 and use it with this library.
 
-# Usage
+Usage
 - Install this app on your Homey.
 - Go to the app settings and provide your Username and Password. Click Save Changes
 - Other keys will be fetched and filled in to the settings page.
 - Connect a device to Eufy Security
 - Create a flow wit Euufy Security devices
 
-## Current features:
+Current features:
 - turn on/off camera (EufyCam pan&tilt will turn its lens)
 - Set guard mode (Home, Away, Disarmed, Schedule)
 - Add devices and use them in flows. (on/off)
