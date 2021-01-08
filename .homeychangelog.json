@@ -7,5 +7,8 @@
   },
   "1.2.1": {
     "en": "Added all compatible  devices"
+  },
+  "1.2.2": {
+    "en": "turn on/off camera (EufyCam pan&tilt will turn its lens) | Set guard mode (Home, Away, Disarmed, Schedule) |Add devices and use them in flows. (on/off) |Get notifications based on detection modes for specific devices. (Motion, Face, Sound and Doorbell Press) "
   }
 }

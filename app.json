@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "compatibility": ">=1.5.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -308,284 +308,284 @@
       ]
     },
     {
-        "id": "driver_EUFYCAM_2_PRO",
-        "class": "camera",
-        "capabilities": [
-          "onoff"
-        ],
-        "name": {
-          "en": "eufyCam 2 Pro",
-          "nl": "eufyCam 2 Pro"
-        },
-        "images": {
-          "large": "drivers/driver_EUFYCAM_2_PRO/assets/images/large.jpg",
-          "small": "drivers/driver_EUFYCAM_2_PRO/assets/images/small.jpg"
-        },
-        "pair": [
-          {
-            "id": "list_devices",
-            "template": "list_devices",
-            "navigation": {
-              "next": "add_devices"
-            }
-          },
-          {
-            "id": "add_devices",
-            "template": "add_devices"
-          }
-        ]
+      "id": "driver_EUFYCAM_2_PRO",
+      "class": "camera",
+      "capabilities": [
+        "onoff"
+      ],
+      "name": {
+        "en": "eufyCam 2 Pro",
+        "nl": "eufyCam 2 Pro"
       },
-      {
-        "id": "driver_EUFYCAM_2C",
-        "class": "camera",
-        "capabilities": [
-          "onoff"
-        ],
-        "name": {
-          "en": "eufyCam 2C",
-          "nl": "eufyCam 2C"
-        },
-        "images": {
-          "large": "drivers/driver_EUFYCAM_2C/assets/images/large.jpg",
-          "small": "drivers/driver_EUFYCAM_2C/assets/images/small.jpg"
-        },
-        "pair": [
-          {
-            "id": "list_devices",
-            "template": "list_devices",
-            "navigation": {
-              "next": "add_devices"
-            }
-          },
-          {
-            "id": "add_devices",
-            "template": "add_devices"
-          }
-        ]
+      "images": {
+        "large": "drivers/driver_EUFYCAM_2_PRO/assets/images/large.jpg",
+        "small": "drivers/driver_EUFYCAM_2_PRO/assets/images/small.jpg"
       },
-      {
-        "id": "driver_EUFYCAM_2C_PRO",
-        "class": "camera",
-        "capabilities": [
-          "onoff"
-        ],
-        "name": {
-          "en": "eufyCam 2C Pro",
-          "nl": "eufyCam 2C Pro"
-        },
-        "images": {
-          "large": "drivers/driver_EUFYCAM_2C_PRO/assets/images/large.jpg",
-          "small": "drivers/driver_EUFYCAM_2C_PRO/assets/images/small.jpg"
-        },
-        "pair": [
-          {
-            "id": "list_devices",
-            "template": "list_devices",
-            "navigation": {
-              "next": "add_devices"
-            }
-          },
-          {
-            "id": "add_devices",
-            "template": "add_devices"
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
           }
-        ]
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    },
+    {
+      "id": "driver_EUFYCAM_2C",
+      "class": "camera",
+      "capabilities": [
+        "onoff"
+      ],
+      "name": {
+        "en": "eufyCam 2C",
+        "nl": "eufyCam 2C"
       },
-      {
-        "id": "driver_FLOODLIGHT_CAMERA",
-        "class": "camera",
-        "capabilities": [
-          "onoff"
-        ],
-        "name": {
-          "en": "Smart Floodlight with Camera",
-          "nl": "Smart Floodlight with Camera"
-        },
-        "images": {
-          "large": "drivers/driver_FLOODLIGHT_CAMERA/assets/images/large.jpg",
-          "small": "drivers/driver_FLOODLIGHT_CAMERA/assets/images/small.jpg"
-        },
-        "pair": [
-          {
-            "id": "list_devices",
-            "template": "list_devices",
-            "navigation": {
-              "next": "add_devices"
-            }
-          },
-          {
-            "id": "add_devices",
-            "template": "add_devices"
-          }
-        ]
+      "images": {
+        "large": "drivers/driver_EUFYCAM_2C/assets/images/large.jpg",
+        "small": "drivers/driver_EUFYCAM_2C/assets/images/small.jpg"
       },
-      {
-        "id": "driver_INDOOR_CAM",
-        "class": "camera",
-        "capabilities": [
-          "onoff"
-        ],
-        "name": {
-          "en": "Indoor Cam 1080P",
-          "nl": "Indoor Cam 1080P"
-        },
-        "images": {
-          "large": "drivers/driver_INDOOR_CAM/assets/images/large.jpg",
-          "small": "drivers/driver_INDOOR_CAM/assets/images/small.jpg"
-        },
-        "pair": [
-          {
-            "id": "list_devices",
-            "template": "list_devices",
-            "navigation": {
-              "next": "add_devices"
-            }
-          },
-          {
-            "id": "add_devices",
-            "template": "add_devices"
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
           }
-        ]
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    },
+    {
+      "id": "driver_EUFYCAM_2C_PRO",
+      "class": "camera",
+      "capabilities": [
+        "onoff"
+      ],
+      "name": {
+        "en": "eufyCam 2C Pro",
+        "nl": "eufyCam 2C Pro"
       },
-      {
-        "id": "driver_INDOOR_CAM_PAN_TILT",
-        "class": "camera",
-        "capabilities": [
-          "onoff"
-        ],
-        "name": {
-          "en": "Indoor Cam 1080P Pan & Tilt",
-          "nl": "Indoor Cam 1080P Pan & Tilt"
-        },
-        "images": {
-          "large": "drivers/driver_INDOOR_CAM_PAN_TILT/assets/images/large.jpg",
-          "small": "drivers/driver_INDOOR_CAM_PAN_TILT/assets/images/small.jpg"
-        },
-        "pair": [
-          {
-            "id": "list_devices",
-            "template": "list_devices",
-            "navigation": {
-              "next": "add_devices"
-            }
-          },
-          {
-            "id": "add_devices",
-            "template": "add_devices"
-          }
-        ]
+      "images": {
+        "large": "drivers/driver_EUFYCAM_2C_PRO/assets/images/large.jpg",
+        "small": "drivers/driver_EUFYCAM_2C_PRO/assets/images/small.jpg"
       },
-      {
-        "id": "driver_VIDEO_DOORBELL_2K_POWERED",
-        "class": "camera",
-        "capabilities": [
-          "onoff"
-        ],
-        "name": {
-          "en": "Video Doorbell 2K (Wired)",
-          "nl": "Video Doorbell 2K (Wired)"
-        },
-        "images": {
-          "large": "drivers/driver_VIDEO_DOORBELL_2K_POWERED/assets/images/large.jpg",
-          "small": "drivers/driver_VIDEO_DOORBELL_2K_POWERED/assets/images/small.jpg"
-        },
-        "pair": [
-          {
-            "id": "list_devices",
-            "template": "list_devices",
-            "navigation": {
-              "next": "add_devices"
-            }
-          },
-          {
-            "id": "add_devices",
-            "template": "add_devices"
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
           }
-        ]
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    },
+    {
+      "id": "driver_FLOODLIGHT_CAMERA",
+      "class": "camera",
+      "capabilities": [
+        "onoff"
+      ],
+      "name": {
+        "en": "Smart Floodlight with Camera",
+        "nl": "Smart Floodlight with Camera"
       },
-      {
-        "id": "driver_VIDEO_DOORBELL_2K_BATTERY",
-        "class": "camera",
-        "capabilities": [
-          "onoff"
-        ],
-        "name": {
-          "en": "Video Doorbell 2K (Battery-Powered)",
-          "nl": "Video Doorbell 2K (Battery-Powered)"
-        },
-        "images": {
-          "large": "drivers/driver_VIDEO_DOORBELL_2K_BATTERY/assets/images/large.jpg",
-          "small": "drivers/driver_VIDEO_DOORBELL_2K_BATTERY/assets/images/small.jpg"
-        },
-        "pair": [
-          {
-            "id": "list_devices",
-            "template": "list_devices",
-            "navigation": {
-              "next": "add_devices"
-            }
-          },
-          {
-            "id": "add_devices",
-            "template": "add_devices"
-          }
-        ]
+      "images": {
+        "large": "drivers/driver_FLOODLIGHT_CAMERA/assets/images/large.jpg",
+        "small": "drivers/driver_FLOODLIGHT_CAMERA/assets/images/small.jpg"
       },
-      {
-        "id": "driver_VIDEO_DOORBELL_1080P_POWERED",
-        "class": "camera",
-        "capabilities": [
-          "onoff"
-        ],
-        "name": {
-          "en": "Video Doorbell 2K (Wired)",
-          "nl": "Video Doorbell 2K (Wired)"
-        },
-        "images": {
-          "large": "drivers/driver_VIDEO_DOORBELL_1080P_POWERED/assets/images/large.jpg",
-          "small": "drivers/driver_VIDEO_DOORBELL_1080P_POWERED/assets/images/small.jpg"
-        },
-        "pair": [
-          {
-            "id": "list_devices",
-            "template": "list_devices",
-            "navigation": {
-              "next": "add_devices"
-            }
-          },
-          {
-            "id": "add_devices",
-            "template": "add_devices"
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
           }
-        ]
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    },
+    {
+      "id": "driver_INDOOR_CAM",
+      "class": "camera",
+      "capabilities": [
+        "onoff"
+      ],
+      "name": {
+        "en": "Indoor Cam 1080P",
+        "nl": "Indoor Cam 1080P"
       },
-      {
-        "id": "driver_VIDEO_DOORBELL_1080P_BATTERY",
-        "class": "camera",
-        "capabilities": [
-          "onoff"
-        ],
-        "name": {
-          "en": "Video Doorbell 2K (Wired)",
-          "nl": "Video Doorbell 2K (Wired)"
-        },
-        "images": {
-          "large": "drivers/driver_VIDEO_DOORBELL_1080P_BATTERY/assets/images/large.jpg",
-          "small": "drivers/driver_VIDEO_DOORBELL_1080P_BATTERY/assets/images/small.jpg"
-        },
-        "pair": [
-          {
-            "id": "list_devices",
-            "template": "list_devices",
-            "navigation": {
-              "next": "add_devices"
-            }
-          },
-          {
-            "id": "add_devices",
-            "template": "add_devices"
+      "images": {
+        "large": "drivers/driver_INDOOR_CAM/assets/images/large.jpg",
+        "small": "drivers/driver_INDOOR_CAM/assets/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
           }
-        ]
-      }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    },
+    {
+      "id": "driver_INDOOR_CAM_PAN_TILT",
+      "class": "camera",
+      "capabilities": [
+        "onoff"
+      ],
+      "name": {
+        "en": "Indoor Cam 1080P Pan & Tilt",
+        "nl": "Indoor Cam 1080P Pan & Tilt"
+      },
+      "images": {
+        "large": "drivers/driver_INDOOR_CAM_PAN_TILT/assets/images/large.jpg",
+        "small": "drivers/driver_INDOOR_CAM_PAN_TILT/assets/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    },
+    {
+      "id": "driver_VIDEO_DOORBELL_2K_POWERED",
+      "class": "camera",
+      "capabilities": [
+        "onoff"
+      ],
+      "name": {
+        "en": "Video Doorbell 2K (Wired)",
+        "nl": "Video Doorbell 2K (Wired)"
+      },
+      "images": {
+        "large": "drivers/driver_VIDEO_DOORBELL_2K_POWERED/assets/images/large.jpg",
+        "small": "drivers/driver_VIDEO_DOORBELL_2K_POWERED/assets/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    },
+    {
+      "id": "driver_VIDEO_DOORBELL_2K_BATTERY",
+      "class": "camera",
+      "capabilities": [
+        "onoff"
+      ],
+      "name": {
+        "en": "Video Doorbell 2K (Battery-Powered)",
+        "nl": "Video Doorbell 2K (Battery-Powered)"
+      },
+      "images": {
+        "large": "drivers/driver_VIDEO_DOORBELL_2K_BATTERY/assets/images/large.jpg",
+        "small": "drivers/driver_VIDEO_DOORBELL_2K_BATTERY/assets/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    },
+    {
+      "id": "driver_VIDEO_DOORBELL_1080P_POWERED",
+      "class": "camera",
+      "capabilities": [
+        "onoff"
+      ],
+      "name": {
+        "en": "Video Doorbell 2K (Wired)",
+        "nl": "Video Doorbell 2K (Wired)"
+      },
+      "images": {
+        "large": "drivers/driver_VIDEO_DOORBELL_1080P_POWERED/assets/images/large.jpg",
+        "small": "drivers/driver_VIDEO_DOORBELL_1080P_POWERED/assets/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    },
+    {
+      "id": "driver_VIDEO_DOORBELL_1080P_BATTERY",
+      "class": "camera",
+      "capabilities": [
+        "onoff"
+      ],
+      "name": {
+        "en": "Video Doorbell 2K (Wired)",
+        "nl": "Video Doorbell 2K (Wired)"
+      },
+      "images": {
+        "large": "drivers/driver_VIDEO_DOORBELL_1080P_BATTERY/assets/images/large.jpg",
+        "small": "drivers/driver_VIDEO_DOORBELL_1080P_BATTERY/assets/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    }
   ]
 }
