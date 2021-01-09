@@ -122,6 +122,8 @@ class App extends Homey.App {
       const dsk = await _httpService.stationDskKeys(settings.STATION_SN);
       settings.DSK_KEY = dsk.dsk_keys[0].dsk_key;
 
+      const initNotificationCheckHelper = !settings.CREDENTIALS;
+
       if (!settings.CREDENTIALS && settings.SET_CREDENTIALS) {
         this.log(`Found SET_CREDENTIALS. Registering pushService`);
         const pushService = new PushRegisterService();
@@ -138,7 +140,9 @@ class App extends Homey.App {
       } 
 
       if (settings.CREDENTIALS) {
-        eufyNotificationCheckHelper.init(this.appSettings);
+        if(initNotificationCheckHelper) {
+            eufyNotificationCheckHelper.init(this.appSettings);
+        } 
         flowTriggers.init();
       }
 
