@@ -13,5 +13,8 @@
   },
   "1.3.2": {
     "en": "Moved all flow logic to the devices. Added EufyCam_E, fixed problem with LOCAL_STATION_IP"
+  },
+  "1.3.3": {
+    "en": "Fixed bug with ECONNRESET and isConnected error"
   }
 }
