@@ -10,5 +10,8 @@
   },
   "1.2.2": {
     "en": "turn on/off camera (EufyCam pan&tilt will turn its lens) | Set guard mode (Home, Away, Disarmed, Schedule) |Add devices and use them in flows. (on/off) |Get notifications based on detection modes for specific devices. (Motion, Face, Sound and Doorbell Press) "
+  },
+  "1.3.2": {
+    "en": "Moved all flow logic to the devices. Added EufyCam_E, fixed problem with LOCAL_STATION_IP"
   }
 }
