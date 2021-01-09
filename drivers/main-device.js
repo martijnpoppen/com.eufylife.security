@@ -1,9 +1,10 @@
 const Homey = require('homey');
-const { CommandType } = require('eufy-node-client');
+const { CommandType, sleep } = require('eufy-node-client');
 const eufyCommandSendHelper = require("../../lib/helpers/eufy-command-send.helper");
 
 module.exports = class mainDevice extends Homey.Device {
-    onInit() {
+    async onInit() {
+        await sleep(2000);
 		Homey.app.log('[Device] - init =>', this.getName());
         Homey.app.setDevices(this);
 
@@ -34,5 +35,5 @@ module.exports = class mainDevice extends Homey.Device {
             Homey.app.error(e);
             return Promise.reject(e);
         }
-	}
+    }
 }
