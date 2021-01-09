@@ -1,7 +1,6 @@
 const Homey = require('homey');
-const { MESSAGE_TYPES } = require('../../constants/message_types');
 
-let devices = [];
+let _devices = [];
 let _httpService = undefined;
 
 module.exports = class mainDriver extends Homey.Driver {
@@ -9,21 +8,16 @@ module.exports = class mainDriver extends Homey.Driver {
         Homey.app.log('[Driver] - init', this.id);
     }
 
-    onPair( socket ) {
-        socket.on('list_devices', async function( data, callback ) {
-            socket.emit('list_devices', [] );
+    async onPairListDevices( data, callback ) {
+        _httpService = Homey.app.getHttpService();
             
-            _httpService = Homey.app.getHttpService();
-            
-            devices = await onDeviceListRequest();
-            if(devices && devices.length) {
-                callback( null, devices );
-            } else {
-                callback( new Error('Something went wrong!') );
-            }
-        });
+        _devices = await onDeviceListRequest();
+        if(_devices && _devices.length) {
+            callback( null, _devices );
+        } else {
+            callback( new Error('Something went wrong!') );
+        }
     }
-
 }
 
 // ---------------------------------------AUTO COMPLETE HELPERS----------------------------------------------------------
