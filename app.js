@@ -117,7 +117,7 @@ class App extends Homey.App {
       settings.P2P_DID = hubs[0].p2p_did;
       settings.ACTOR_ID = hubs[0].member.action_user_id;
       settings.STATION_SN = hubs[0].station_sn;
-      settings.LOCAL_STATION_IP = hubs[0].ip_addr;
+      settings.LOCAL_STATION_IP = settings.LOCAL_STATION_IP ? settings.LOCAL_STATION_IP : hubs[0].ip_addr;
 
       const dsk = await _httpService.stationDskKeys(settings.STATION_SN);
       settings.DSK_KEY = dsk.dsk_keys[0].dsk_key;
