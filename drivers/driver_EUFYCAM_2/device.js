@@ -1,10 +1,6 @@
-const Homey = require('homey');
+const mainDevice = require('../main-device');
 
-module.exports = class device_EUFYCAM_2 extends Homey.Device {
+module.exports = class device_EUFYCAM_2 extends mainDevice {
 
-	onInit() {
-		Homey.app.log('[Device] - init =>', this.getName());
-        const deviceObject = this.getData();
-        Homey.app.setDevices(deviceObject);
-	}
+	
 }

@@ -1,10 +1,6 @@
-const Homey = require('homey');
+const mainDevice = require('../main-device');
 
-module.exports = class device_VIDEO_DOORBELL_1080P_POWERED extends Homey.Device {
+module.exports = class device_VIDEO_DOORBELL_1080P_POWERED extends mainDevice {
 
-	onInit() {
-		Homey.app.log('[Device] - init =>', this.getName());
-        const deviceObject = this.getData();
-        Homey.app.setDevices(deviceObject);
-	}
+	
 }
