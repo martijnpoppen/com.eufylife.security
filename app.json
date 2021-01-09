@@ -227,7 +227,7 @@
     {
       "id": "driver_EUFYCAM_2",
       "class": "camera",
-      "capabilities": ["onoff"],
+      "capabilities": ["onoff", "CMD_SET_ARMING"],
       "name": {
         "en": "eufyCam 2",
         "nl": "eufyCam 2"
@@ -253,7 +253,7 @@
     {
       "id": "driver_EUFYCAM_2_PRO",
       "class": "camera",
-      "capabilities": ["onoff"],
+      "capabilities": ["onoff", "CMD_SET_ARMING"],
       "name": {
         "en": "eufyCam 2 Pro",
         "nl": "eufyCam 2 Pro"
@@ -279,7 +279,7 @@
     {
       "id": "driver_EUFYCAM_2C",
       "class": "camera",
-      "capabilities": ["onoff"],
+      "capabilities": ["onoff", "CMD_SET_ARMING"],
       "name": {
         "en": "eufyCam 2C",
         "nl": "eufyCam 2C"
@@ -305,7 +305,7 @@
     {
       "id": "driver_EUFYCAM_2C_PRO",
       "class": "camera",
-      "capabilities": ["onoff"],
+      "capabilities": ["onoff", "CMD_SET_ARMING"],
       "name": {
         "en": "eufyCam 2C Pro",
         "nl": "eufyCam 2C Pro"
@@ -329,9 +329,35 @@
       ]
     },
     {
+        "id": "driver_EUFYCAM_E",
+        "class": "camera",
+        "capabilities": ["onoff", "CMD_SET_ARMING"],
+        "name": {
+          "en": "eufyCam E",
+          "nl": "eufyCam E"
+        },
+        "images": {
+          "large": "drivers/driver_EUFYCAM_E/assets/images/large.png",
+          "small": "drivers/driver_EUFYCAM_E/assets/images/small.png"
+        },
+        "pair": [
+          {
+            "id": "list_devices",
+            "template": "list_devices",
+            "navigation": {
+              "next": "add_devices"
+            }
+          },
+          {
+            "id": "add_devices",
+            "template": "add_devices"
+          }
+        ]
+      },
+    {
       "id": "driver_FLOODLIGHT_CAMERA",
       "class": "camera",
-      "capabilities": ["onoff"],
+      "capabilities": ["onoff", "CMD_SET_ARMING"],
       "name": {
         "en": "Smart Floodlight with Camera",
         "nl": "Smart Floodlight with Camera"
@@ -357,7 +383,7 @@
     {
       "id": "driver_INDOOR_CAM",
       "class": "camera",
-      "capabilities": ["onoff"],
+      "capabilities": ["onoff", "CMD_SET_ARMING"],
       "name": {
         "en": "Indoor Cam 1080P",
         "nl": "Indoor Cam 1080P"
@@ -409,7 +435,7 @@
     {
       "id": "driver_VIDEO_DOORBELL_2K_POWERED",
       "class": "camera",
-      "capabilities": ["onoff"],
+      "capabilities": ["onoff", "CMD_SET_ARMING"],
       "name": {
         "en": "Video Doorbell 2K (Wired)",
         "nl": "Video Doorbell 2K (Wired)"
@@ -435,7 +461,7 @@
     {
       "id": "driver_VIDEO_DOORBELL_2K_BATTERY",
       "class": "camera",
-      "capabilities": ["onoff"],
+      "capabilities": ["onoff", "CMD_SET_ARMING"],
       "name": {
         "en": "Video Doorbell 2K (Battery-Powered)",
         "nl": "Video Doorbell 2K (Battery-Powered)"
@@ -461,7 +487,7 @@
     {
       "id": "driver_VIDEO_DOORBELL_1080P_POWERED",
       "class": "camera",
-      "capabilities": ["onoff"],
+      "capabilities": ["onoff", "CMD_SET_ARMING"],
       "name": {
         "en": "Video Doorbell 1080p (Wired)",
         "nl": "Video Doorbell 1080p (Wired)"
@@ -487,7 +513,7 @@
     {
       "id": "driver_VIDEO_DOORBELL_1080P_BATTERY",
       "class": "camera",
-      "capabilities": ["onoff"],
+      "capabilities": ["onoff", "CMD_SET_ARMING"],
       "name": {
         "en": "Video Doorbell 1080p (Battery-Powered)",
         "nl": "Video Doorbell 1080p (Battery-Powered)"
