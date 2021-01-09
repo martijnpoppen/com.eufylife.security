@@ -1,10 +1,11 @@
 "use strict";
 
 const Homey = require("homey");
-const { PushRegisterService, HttpService } = require("eufy-node-client");
-const flowTriggers = require("./lib/flow/triggers.js");
+const { PushRegisterService, HttpService, sleep } = require("eufy-node-client");
 const flowActions = require("./lib/flow/actions.js");
+const flowTriggers = require("./lib/flow/triggers.js");
 const eufyCommandSendHelper = require("./lib/helpers/eufy-command-send.helper");
+const eufyNotificationCheckHelper = require("./lib/helpers/eufy-notification-check.helper");
 
 const ManagerSettings = Homey.ManagerSettings;
 const _settingsKey = `${Homey.manifest.id}.settings`;
@@ -33,8 +34,11 @@ class App extends Homey.App {
     }
 
     if (this.appSettings.CREDENTIALS) {
-      flowTriggers.init(this.appSettings);
+        eufyNotificationCheckHelper.init(this.appSettings);
+        flowTriggers.init();
     }
+
+    await sleep(5000);
   }
 
   // -------------------- SETTINGS ----------------------
@@ -130,10 +134,12 @@ class App extends Homey.App {
 
       if (settings.LOCAL_STATION_IP) {
         eufyCommandSendHelper.init(this.appSettings);
-      }
+        flowActions.init();
+      } 
 
       if (settings.CREDENTIALS) {
-        flowTriggers.init(this.appSettings);
+        eufyNotificationCheckHelper.init(this.appSettings);
+        flowTriggers.init();
       }
 
       return;

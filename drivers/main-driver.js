@@ -1,9 +1,14 @@
 const Homey = require('homey');
+const { MESSAGE_TYPES } = require('../../constants/message_types');
 
 let devices = [];
 let _httpService = undefined;
 
 module.exports = class mainDriver extends Homey.Driver {
+    onInit() {
+        Homey.app.log('[Driver] - init', this.id);
+    }
+
     onPair( socket ) {
         socket.on('list_devices', async function( data, callback ) {
             socket.emit('list_devices', [] );
@@ -18,6 +23,7 @@ module.exports = class mainDriver extends Homey.Driver {
             }
         });
     }
+
 }
 
 // ---------------------------------------AUTO COMPLETE HELPERS----------------------------------------------------------
@@ -34,9 +40,9 @@ async function onDeviceListRequest() {
                     device_sn: r.device_sn 
                 }  
             }));
-      
+    
         Homey.app.log('Found devices - ', results);
-      
+    
         return Promise.resolve( results );
     } catch(e) {
         Homey.app.log(e);

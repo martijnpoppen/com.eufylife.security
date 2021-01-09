@@ -3,6 +3,14 @@ const { CommandType } = require('eufy-node-client');
 const eufyCommandSendHelper = require("../../lib/helpers/eufy-command-send.helper");
 
 module.exports = class mainDevice extends Homey.Device {
+    onInit() {
+		Homey.app.log('[Device] - init =>', this.getName());
+        Homey.app.setDevices(this);
+
+        this.registerCapabilityListener('onoff', this.onCapability_CMD_DEVS_SWITCH.bind(this));
+        this.registerCapabilityListener('CMD_SET_ARMING', this.onCapability_CMD_SET_ARMING.bind(this));
+    }
+    
     async onCapability_CMD_DEVS_SWITCH( value, opts ) {
         const deviceObject = this.getData();
         try {
