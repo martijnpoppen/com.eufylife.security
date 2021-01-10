@@ -29,13 +29,13 @@ class App extends Homey.App {
     this.log("- Loaded settings", this.appSettings);
 
     if (this.appSettings.LOCAL_STATION_IP) {
-        eufyCommandSendHelper.init(this.appSettings);
-        flowActions.init();
+        await eufyCommandSendHelper.init(this.appSettings);
+        await flowActions.init();
     }
 
     if (this.appSettings.CREDENTIALS) {
-        eufyNotificationCheckHelper.init(this.appSettings);
-        flowTriggers.init();
+        await eufyNotificationCheckHelper.init(this.appSettings);
+        await flowTriggers.init();
     }
 
     await sleep(5000);
@@ -135,15 +135,15 @@ class App extends Homey.App {
       this.log("- Loaded settings", this.appSettings);
 
       if (settings.LOCAL_STATION_IP) {
-        eufyCommandSendHelper.init(this.appSettings);
-        flowActions.init();
+        await eufyCommandSendHelper.init(this.appSettings);
+        await flowActions.init();
       } 
 
       if (settings.CREDENTIALS) {
         if(initNotificationCheckHelper) {
-            eufyNotificationCheckHelper.init(this.appSettings);
+            await eufyNotificationCheckHelper.init(this.appSettings);
         } 
-        flowTriggers.init();
+        await flowTriggers.init();
       }
 
       return;
