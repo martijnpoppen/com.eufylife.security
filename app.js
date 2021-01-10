@@ -6,6 +6,7 @@ const flowActions = require("./lib/flow/actions.js");
 const flowTriggers = require("./lib/flow/triggers.js");
 const eufyCommandSendHelper = require("./lib/helpers/eufy-command-send.helper");
 const eufyNotificationCheckHelper = require("./lib/helpers/eufy-notification-check.helper");
+const { log } = require("./logger.js");
 
 const ManagerSettings = Homey.ManagerSettings;
 const _settingsKey = `${Homey.manifest.id}.settings`;
@@ -15,10 +16,17 @@ let _devices = [];
 class App extends Homey.App {
   log() {
     console.log.bind(this, "[log]").apply(this, arguments);
+
+    if(this.appSettings && this.appSettings.SET_DEBUG) {
+        return log.info.apply(log, arguments)
+    }
   }
 
   error() {
-    console.error.bind(this, "[error]").apply(this, arguments);
+    console.error.bind(this, "[log]").apply(this, arguments);
+    if(this.appSettings && this.appSettings.SET_DEBUG) {
+        return log.error.apply(log, arguments)
+    }
   }
 
   // -------------------- INIT ----------------------
@@ -37,8 +45,6 @@ class App extends Homey.App {
         await eufyNotificationCheckHelper.init(this.appSettings);
         await flowTriggers.init();
     }
-
-    await sleep(5000);
   }
 
   // -------------------- SETTINGS ----------------------
@@ -73,6 +79,7 @@ class App extends Homey.App {
         STATION_SN: "",
         LOCAL_STATION_IP: "",
         SET_CREDENTIALS: true,
+        SET_DEBUG: false,
         CREDENTIALS: "",
       });
     } catch (err) {

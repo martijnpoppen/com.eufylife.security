@@ -17,6 +17,7 @@ function onHomeyReady(Homey) {
         document.getElementById('eufy_STATION_SN').value = data['STATION_SN'];
         document.getElementById('eufy_LOCAL_STATION_IP').value = data['LOCAL_STATION_IP'];
         document.getElementById('eufy_CREDENTIALS').checked = data['SET_CREDENTIALS'];
+        document.getElementById('eufy_DEBUG').checked = data['SET_DEBUG'];
         _credentials = data['CREDENTIALS'];
     }
 
@@ -45,6 +46,7 @@ function onHomeyReady(Homey) {
         var STATION_SN = document.getElementById('eufy_STATION_SN').value;
         var LOCAL_STATION_IP = document.getElementById('eufy_LOCAL_STATION_IP').value;
         var SET_CREDENTIALS = document.getElementById('eufy_CREDENTIALS').checked;
+        var SET_DEBUG = document.getElementById('eufy_DEBUG').checked;
         var CREDENTIALS = _credentials;
 
         var settings = {
@@ -56,6 +58,7 @@ function onHomeyReady(Homey) {
             STATION_SN,
             LOCAL_STATION_IP,
             SET_CREDENTIALS,
+            SET_DEBUG,
             CREDENTIALS
         }
 
@@ -107,6 +110,7 @@ function onHomeyReady(Homey) {
         document.getElementById('eufy_STATION_SN').value = "";
         document.getElementById('eufy_LOCAL_STATION_IP').value = "";
         document.getElementById('eufy_CREDENTIALS').checked = true;
+        document.getElementById('eufy_DEBUG').checked = false;
 
         var USERNAME = "";
         var PASSWORD = "";
@@ -116,6 +120,7 @@ function onHomeyReady(Homey) {
         var STATION_SN = "";
         var LOCAL_STATION_IP = "";
         var SET_CREDENTIALS = true;
+        var SET_DEBUG = false;
         var CREDENTIALS = undefined;
 
         var settings = {
@@ -127,6 +132,7 @@ function onHomeyReady(Homey) {
             STATION_SN,
             LOCAL_STATION_IP,
             SET_CREDENTIALS,
+            SET_DEBUG,
             CREDENTIALS
         }
 

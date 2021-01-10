@@ -10,6 +10,7 @@
     "homey": "^2.9.3"
   },
   "dependencies": {
-    "eufy-node-client": "^0.4.0"
+    "eufy-node-client": "^0.4.0",
+    "winston": "^3.3.3"
   }
 }
