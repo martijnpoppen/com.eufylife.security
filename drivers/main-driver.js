@@ -31,7 +31,11 @@ async function onDeviceListRequest() {
                     index: i, 
                     id: r.device_id, 
                     station_sn: r.station_sn, 
-                    device_sn: r.device_sn 
+                    device_sn: r.device_sn,
+                    cover_path: r.cover_path,
+                    wifi_mac: r.wifi_mac,
+                    device_channel: r.device_channel,
+                    device_type: r.device_type
                 }  
             }));
     
