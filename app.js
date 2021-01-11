@@ -34,7 +34,7 @@ class App extends Homey.App {
   async onInit() {
     this.log(`${Homey.manifest.id} started...`);
     await this.initSettings();
-    this.log("- Loaded settings", this.appSettings);
+    this.log("- Loaded settings", {...this.appSettings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
 
     if (this.appSettings.LOCAL_STATION_IP) {
         await eufyCommandSendHelper.init(this.appSettings);
@@ -88,7 +88,7 @@ class App extends Homey.App {
   }
 
   updateSettings(settings) {
-    this.log("New settings:", settings);
+    this.log("New settings:",  {...settings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
     if (!!settings.USERNAME && !!settings.PASSWORD) {
       this.eufyLogin(settings);
     } else {
@@ -113,7 +113,7 @@ class App extends Homey.App {
   async eufyLogin(data) {
     try {
       let settings = data;
-      this.log("New settings:", settings);
+      this.log("New settings:",  {...settings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
       this.log(`Found username and password. Logging in to Eufy`);
 
       _httpService = await this.setHttpService(data);
@@ -139,7 +139,7 @@ class App extends Homey.App {
 
       this.appSettings = settings;
       this.saveSettings();
-      this.log("- Loaded settings", this.appSettings);
+      this.log("- Loaded settings", {...this.appSettings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
 
       if (settings.LOCAL_STATION_IP) {
         await eufyCommandSendHelper.init(this.appSettings);
