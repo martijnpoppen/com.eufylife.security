@@ -34,5 +34,8 @@
   },
   "1.3.10": {
     "en": "Updated logger"
+  },
+  "1.3.11": {
+    "en": "Debug for doorbell"
   }
 }
