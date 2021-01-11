@@ -40,5 +40,8 @@
   },
   "1.3.12": {
     "en": "Debug Doorbell not responding on notifications"
+  },
+  "1.3.13": {
+    "en": "Fix doorbell response (T8200)"
   }
 }
