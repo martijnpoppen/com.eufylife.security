@@ -31,5 +31,8 @@
   },
   "1.3.9": {
     "en": "change Face detection to Person"
+  },
+  "1.3.10": {
+    "en": "Updated logger"
   }
 }
