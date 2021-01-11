@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "1.3.5",
+  "version": "1.3.6",
   "compatibility": ">=1.5.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -34,7 +34,9 @@
       "Motion dectection"
     ]
   },
-  "category": ["security"],
+  "category": [
+    "security"
+  ],
   "permissions": [],
   "images": {
     "large": "/assets/images/large.jpg",
@@ -80,11 +82,11 @@
           "nl": "Achtergrond Beweging Gedetecteerd"
         },
         "args": [
-           {
-                "name": "device",
-                "type": "device",
-                "filter": "driver_uri=homey:app:com.eufylife.security"
-            }
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_uri=homey:app:com.eufylife.security"
+          }
         ]
       },
       {
@@ -94,11 +96,11 @@
           "nl": "Beweging Gedetecteerd"
         },
         "args": [
-           {
-                "name": "device",
-                "type": "device",
-                "filter": "driver_uri=homey:app:com.eufylife.security"
-            }
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_uri=homey:app:com.eufylife.security"
+          }
         ]
       },
       {
@@ -108,11 +110,11 @@
           "nl": "Gezicht Gedetecteerd"
         },
         "args": [
-           {
-                "name": "device",
-                "type": "device",
-                "filter": "driver_uri=homey:app:com.eufylife.security"
-            }
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_uri=homey:app:com.eufylife.security"
+          }
         ]
       },
       {
@@ -122,11 +124,11 @@
           "nl": "Deurbel Druk Gedetecteerd"
         },
         "args": [
-           {
-                "name": "device",
-                "type": "device",
-                "filter": "driver_uri=homey:app:com.eufylife.security"
-            }
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_uri=homey:app:com.eufylife.security"
+          }
         ]
       },
       {
@@ -136,11 +138,11 @@
           "nl": "Huilen Gedetecteerd"
         },
         "args": [
-           {
-                "name": "device",
-                "type": "device",
-                "filter": "driver_uri=homey:app:com.eufylife.security"
-            }
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_uri=homey:app:com.eufylife.security"
+          }
         ]
       },
       {
@@ -150,11 +152,11 @@
           "nl": "Geluid Gedetecteerd"
         },
         "args": [
-           {
-                "name": "device",
-                "type": "device",
-                "filter": "driver_uri=homey:app:com.eufylife.security"
-            }
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_uri=homey:app:com.eufylife.security"
+          }
         ]
       },
       {
@@ -164,11 +166,11 @@
           "nl": "Huisdier Gedetecteerd"
         },
         "args": [
-            {
-                "name": "device",
-                "type": "device",
-                "filter": "driver_uri=homey:app:com.eufylife.security"
-            }
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_uri=homey:app:com.eufylife.security"
+          }
         ]
       }
     ],
@@ -227,7 +229,10 @@
     {
       "id": "driver_EUFYCAM_2",
       "class": "camera",
-      "capabilities": ["onoff", "CMD_SET_ARMING"],
+      "capabilities": [
+        "onoff",
+        "CMD_SET_ARMING"
+      ],
       "name": {
         "en": "eufyCam 2",
         "nl": "eufyCam 2"
@@ -253,7 +258,10 @@
     {
       "id": "driver_EUFYCAM_2_PRO",
       "class": "camera",
-      "capabilities": ["onoff", "CMD_SET_ARMING"],
+      "capabilities": [
+        "onoff",
+        "CMD_SET_ARMING"
+      ],
       "name": {
         "en": "eufyCam 2 Pro",
         "nl": "eufyCam 2 Pro"
@@ -279,7 +287,10 @@
     {
       "id": "driver_EUFYCAM_2C",
       "class": "camera",
-      "capabilities": ["onoff", "CMD_SET_ARMING"],
+      "capabilities": [
+        "onoff",
+        "CMD_SET_ARMING"
+      ],
       "name": {
         "en": "eufyCam 2C",
         "nl": "eufyCam 2C"
@@ -305,7 +316,10 @@
     {
       "id": "driver_EUFYCAM_2C_PRO",
       "class": "camera",
-      "capabilities": ["onoff", "CMD_SET_ARMING"],
+      "capabilities": [
+        "onoff",
+        "CMD_SET_ARMING"
+      ],
       "name": {
         "en": "eufyCam 2C Pro",
         "nl": "eufyCam 2C Pro"
@@ -329,35 +343,41 @@
       ]
     },
     {
-        "id": "driver_EUFYCAM_E",
-        "class": "camera",
-        "capabilities": ["onoff", "CMD_SET_ARMING"],
-        "name": {
-          "en": "eufyCam E",
-          "nl": "eufyCam E"
-        },
-        "images": {
-          "large": "drivers/driver_EUFYCAM_E/assets/images/large.png",
-          "small": "drivers/driver_EUFYCAM_E/assets/images/small.png"
-        },
-        "pair": [
-          {
-            "id": "list_devices",
-            "template": "list_devices",
-            "navigation": {
-              "next": "add_devices"
-            }
-          },
-          {
-            "id": "add_devices",
-            "template": "add_devices"
-          }
-        ]
+      "id": "driver_EUFYCAM_E",
+      "class": "camera",
+      "capabilities": [
+        "onoff",
+        "CMD_SET_ARMING"
+      ],
+      "name": {
+        "en": "eufyCam E",
+        "nl": "eufyCam E"
       },
+      "images": {
+        "large": "drivers/driver_EUFYCAM_E/assets/images/large.png",
+        "small": "drivers/driver_EUFYCAM_E/assets/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    },
     {
       "id": "driver_FLOODLIGHT_CAMERA",
       "class": "camera",
-      "capabilities": ["onoff", "CMD_SET_ARMING"],
+      "capabilities": [
+        "onoff",
+        "CMD_SET_ARMING"
+      ],
       "name": {
         "en": "Smart Floodlight with Camera",
         "nl": "Smart Floodlight with Camera"
@@ -383,7 +403,10 @@
     {
       "id": "driver_INDOOR_CAM",
       "class": "camera",
-      "capabilities": ["onoff", "CMD_SET_ARMING"],
+      "capabilities": [
+        "onoff",
+        "CMD_SET_ARMING"
+      ],
       "name": {
         "en": "Indoor Cam 1080P",
         "nl": "Indoor Cam 1080P"
@@ -409,7 +432,10 @@
     {
       "id": "driver_INDOOR_CAM_PAN_TILT",
       "class": "camera",
-      "capabilities": ["onoff", "CMD_SET_ARMING"],
+      "capabilities": [
+        "onoff",
+        "CMD_SET_ARMING"
+      ],
       "name": {
         "en": "Indoor Cam 1080P Pan & Tilt",
         "nl": "Indoor Cam 1080P Pan & Tilt"
@@ -435,7 +461,10 @@
     {
       "id": "driver_VIDEO_DOORBELL_2K_POWERED",
       "class": "camera",
-      "capabilities": ["onoff", "CMD_SET_ARMING"],
+      "capabilities": [
+        "onoff",
+        "CMD_SET_ARMING"
+      ],
       "name": {
         "en": "Video Doorbell 2K (Wired)",
         "nl": "Video Doorbell 2K (Wired)"
@@ -461,7 +490,10 @@
     {
       "id": "driver_VIDEO_DOORBELL_2K_BATTERY",
       "class": "camera",
-      "capabilities": ["onoff", "CMD_SET_ARMING"],
+      "capabilities": [
+        "onoff",
+        "CMD_SET_ARMING"
+      ],
       "name": {
         "en": "Video Doorbell 2K (Battery-Powered)",
         "nl": "Video Doorbell 2K (Battery-Powered)"
@@ -487,7 +519,10 @@
     {
       "id": "driver_VIDEO_DOORBELL_1080P_POWERED",
       "class": "camera",
-      "capabilities": ["onoff", "CMD_SET_ARMING"],
+      "capabilities": [
+        "onoff",
+        "CMD_SET_ARMING"
+      ],
       "name": {
         "en": "Video Doorbell 1080p (Wired)",
         "nl": "Video Doorbell 1080p (Wired)"
@@ -513,7 +548,10 @@
     {
       "id": "driver_VIDEO_DOORBELL_1080P_BATTERY",
       "class": "camera",
-      "capabilities": ["onoff", "CMD_SET_ARMING"],
+      "capabilities": [
+        "onoff",
+        "CMD_SET_ARMING"
+      ],
       "name": {
         "en": "Video Doorbell 1080p (Battery-Powered)",
         "nl": "Video Doorbell 1080p (Battery-Powered)"
@@ -579,44 +617,44 @@
       ]
     },
     "CMD_GET_NOTIFICATIONS": {
-        "type": "enum",
-        "title": {
-          "en": "Set Arm Mode",
-          "nl": "Stel beveiligingsmodus in"
-        },
-        "uiComponent": "picker",
-        "getable": true,
-        "setable": true,
-        "values": [
-          {
-            "id": "1",
-            "title": {
-              "en": "Home",
-              "nl": "Home"
-            }
-          },
-          {
-            "id": "0",
-            "title": {
-              "en": "Away",
-              "nl": "Away"
-            }
-          },
-          {
-            "id": "2",
-            "title": {
-              "en": "Schedule",
-              "nl": "Schedule"
-            }
-          },
-          {
-            "id": "63",
-            "title": {
-              "en": "Disarmed",
-              "nl": "Disarmed"
-            }
+      "type": "enum",
+      "title": {
+        "en": "Set Arm Mode",
+        "nl": "Stel beveiligingsmodus in"
+      },
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "values": [
+        {
+          "id": "1",
+          "title": {
+            "en": "Home",
+            "nl": "Home"
           }
-        ]
-      }
+        },
+        {
+          "id": "0",
+          "title": {
+            "en": "Away",
+            "nl": "Away"
+          }
+        },
+        {
+          "id": "2",
+          "title": {
+            "en": "Schedule",
+            "nl": "Schedule"
+          }
+        },
+        {
+          "id": "63",
+          "title": {
+            "en": "Disarmed",
+            "nl": "Disarmed"
+          }
+        }
+      ]
+    }
   }
 }
