@@ -25,5 +25,8 @@
   },
   "1.3.7": {
     "en": "Fix for motion detection with doorbell. Fixed Doorbell 2k (wired) notifications"
+  },
+  "1.3.8": {
+    "en": "Fix for motion detection with doorbell. Fixed Doorbell 2k (wired) notifications. Add message to LOCAL_STATION_IP"
   }
 }

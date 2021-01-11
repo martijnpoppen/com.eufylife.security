@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "1.3.7",
+  "version": "1.3.8",
   "compatibility": ">=1.5.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -408,8 +408,8 @@
         "CMD_SET_ARMING"
       ],
       "name": {
-        "en": "Indoor Cam 1080P",
-        "nl": "Indoor Cam 1080P"
+        "en": "Indoor Cam",
+        "nl": "Indoor Cam"
       },
       "images": {
         "large": "drivers/driver_INDOOR_CAM/assets/images/large.jpg",
@@ -437,8 +437,8 @@
         "CMD_SET_ARMING"
       ],
       "name": {
-        "en": "Indoor Cam 1080P Pan & Tilt",
-        "nl": "Indoor Cam 1080P Pan & Tilt"
+        "en": "Indoor Cam Pan & Tilt",
+        "nl": "Indoor Cam Pan & Tilt"
       },
       "images": {
         "large": "drivers/driver_INDOOR_CAM_PAN_TILT/assets/images/large.jpg",
