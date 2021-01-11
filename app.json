@@ -106,8 +106,8 @@
       {
         "id": "trigger_NTFY_FACE_DETECTION",
         "title": {
-          "en": "Face Detected",
-          "nl": "Gezicht Gedetecteerd"
+          "en": "Person Detected",
+          "nl": "Persoon Gedetecteerd"
         },
         "args": [
           {
