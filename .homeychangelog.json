@@ -61,5 +61,8 @@
   },
   "1.4.2": {
     "en": "Add available capabilities to device instead of all. FIX: revert to FACE_DETECTION"
+  },
+  "1.4.3": {
+    "en": "FIX: EufyCam2 crash"
   }
 }
