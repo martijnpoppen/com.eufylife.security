@@ -491,7 +491,8 @@
         "CMD_SET_ARMING",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
-        "NTFY_PRESS_DOORBELL"
+        "NTFY_PRESS_DOORBELL",
+        "NTFY_BACKGROUND_ACTIVE"
       ],
       "name": {
         "en": "Video Doorbell 2K (Wired)",
@@ -523,7 +524,8 @@
         "CMD_SET_ARMING",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
-        "NTFY_PRESS_DOORBELL"
+        "NTFY_PRESS_DOORBELL",
+        "NTFY_BACKGROUND_ACTIVE"
       ],
       "name": {
         "en": "Video Doorbell 2K (Battery-Powered)",
@@ -555,7 +557,8 @@
         "CMD_SET_ARMING",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
-        "NTFY_PRESS_DOORBELL"
+        "NTFY_PRESS_DOORBELL",
+        "NTFY_BACKGROUND_ACTIVE"
       ],
       "name": {
         "en": "Video Doorbell 1080p (Wired)",
@@ -587,7 +590,8 @@
         "CMD_SET_ARMING",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
-        "NTFY_PRESS_DOORBELL"
+        "NTFY_PRESS_DOORBELL",
+        "NTFY_BACKGROUND_ACTIVE"
       ],
       "name": {
         "en": "Video Doorbell 1080p (Battery-Powered)",
