@@ -1,5 +1,5 @@
 const Homey = require('homey');
-const { CommandType } = require('eufy-node-client');
+const { CommandType, sleep } = require('eufy-node-client');
 const eufyCommandSendHelper = require("../../lib/helpers/eufy-command-send.helper");
 
 module.exports = class mainDevice extends Homey.Device {
@@ -7,10 +7,39 @@ module.exports = class mainDevice extends Homey.Device {
 		Homey.app.log('[Device] - init =>', this.getName());
         Homey.app.setDevices(this);
 
+        await this.checkCapabilities();
+
         this.registerCapabilityListener('onoff', this.onCapability_CMD_DEVS_SWITCH.bind(this));
         this.registerCapabilityListener('CMD_SET_ARMING', this.onCapability_CMD_SET_ARMING.bind(this));
 
         this.setAvailable();
+    }
+
+    async checkCapabilities() {
+        const driver = this.getDriver();
+        const driverManifest = driver.getManifest();
+        const driverCapabilities = driverManifest.capabilities;
+        const deviceCapabilities = this.getCapabilities();
+
+        if(driverCapabilities.length > deviceCapabilities.length) {      
+            Homey.app.log('[Device] - Found capabilities =>', deviceCapabilities);
+            await this.setCapabilities(driverCapabilities);
+            return;
+        }
+
+        return;
+    }
+
+    async setCapabilities(driverCapabilities) {
+        Homey.app.log('[Device] - Add new capabilities =>', driverCapabilities);
+        try {
+            driverCapabilities.forEach(c => {
+                this.addCapability(c);
+            });
+            await sleep(2000);
+        } catch (error) {
+            Homey.app.log(error)
+        }
     }
     
     async onCapability_CMD_DEVS_SWITCH( value, opts ) {
