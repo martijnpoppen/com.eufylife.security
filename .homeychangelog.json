@@ -55,5 +55,8 @@
   },
   "1.4.0": {
     "en": "Add available capabilities to device instead of all."
+  },
+  "1.4.1": {
+    "en": "Add available capabilities to device instead of all."
   }
 }
