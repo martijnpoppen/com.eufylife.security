@@ -70,5 +70,8 @@
   },
   "1.4.5": {
     "en": "add background active to Doorbell"
+  },
+  "1.4.6": {
+    "en": "FIX: error with parsing Notifications"
   }
 }
