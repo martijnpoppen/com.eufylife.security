@@ -64,5 +64,8 @@
   },
   "1.4.3": {
     "en": "FIX: EufyCam2 crash"
+  },
+  "1.4.4": {
+    "en": "FIX: T8200 set motion detection"
   }
 }
