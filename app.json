@@ -104,7 +104,7 @@
         ]
       },
       {
-        "id": "trigger_NTFY_PERSON_DETECTION",
+        "id": "trigger_NTFY_FACE_DETECTION",
         "title": {
           "en": "Person Detected",
           "nl": "Persoon Gedetecteerd"
@@ -113,7 +113,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "capabilities=NTFY_PERSON_DETECTION"
+            "filter": "capabilities=NTFY_FACE_DETECTION"
           }
         ]
       },
@@ -233,7 +233,7 @@
         "onoff",
         "CMD_SET_ARMING",
         "NTFY_MOTION_DETECTION",
-        "NTFY_PERSON_DETECTION"
+        "NTFY_FACE_DETECTION"
       ],
       "name": {
         "en": "eufyCam 2",
@@ -264,7 +264,7 @@
         "onoff",
         "CMD_SET_ARMING",
         "NTFY_MOTION_DETECTION",
-        "NTFY_PERSON_DETECTION"
+        "NTFY_FACE_DETECTION"
       ],
       "name": {
         "en": "eufyCam 2 Pro",
@@ -295,7 +295,7 @@
         "onoff",
         "CMD_SET_ARMING",
         "NTFY_MOTION_DETECTION",
-        "NTFY_PERSON_DETECTION"
+        "NTFY_FACE_DETECTION"
       ],
       "name": {
         "en": "eufyCam 2C",
@@ -326,7 +326,7 @@
         "onoff",
         "CMD_SET_ARMING",
         "NTFY_MOTION_DETECTION",
-        "NTFY_PERSON_DETECTION"
+        "NTFY_FACE_DETECTION"
       ],
       "name": {
         "en": "eufyCam 2C Pro",
@@ -417,7 +417,7 @@
         "onoff",
         "CMD_SET_ARMING",
         "NTFY_MOTION_DETECTION",
-        "NTFY_PERSON_DETECTION",
+        "NTFY_FACE_DETECTION",
         "NTFY_CRYING_DETECTED",
         "NTFY_SOUND_DETECTED",
         "NTFY_PET_DETECTED"
@@ -451,7 +451,7 @@
         "onoff",
         "CMD_SET_ARMING",
         "NTFY_MOTION_DETECTION",
-        "NTFY_PERSON_DETECTION",
+        "NTFY_FACE_DETECTION",
         "NTFY_CRYING_DETECTED",
         "NTFY_SOUND_DETECTED",
         "NTFY_PET_DETECTED"
@@ -490,7 +490,7 @@
         "onoff",
         "CMD_SET_ARMING",
         "NTFY_MOTION_DETECTION",
-        "NTFY_PERSON_DETECTION",
+        "NTFY_FACE_DETECTION",
         "NTFY_PRESS_DOORBELL"
       ],
       "name": {
@@ -522,7 +522,7 @@
         "onoff",
         "CMD_SET_ARMING",
         "NTFY_MOTION_DETECTION",
-        "NTFY_PERSON_DETECTION",
+        "NTFY_FACE_DETECTION",
         "NTFY_PRESS_DOORBELL"
       ],
       "name": {
@@ -554,7 +554,7 @@
         "onoff",
         "CMD_SET_ARMING",
         "NTFY_MOTION_DETECTION",
-        "NTFY_PERSON_DETECTION",
+        "NTFY_FACE_DETECTION",
         "NTFY_PRESS_DOORBELL"
       ],
       "name": {
@@ -586,7 +586,7 @@
         "onoff",
         "CMD_SET_ARMING",
         "NTFY_MOTION_DETECTION",
-        "NTFY_PERSON_DETECTION",
+        "NTFY_FACE_DETECTION",
         "NTFY_PRESS_DOORBELL"
       ],
       "name": {
@@ -709,12 +709,12 @@
         "nl": "NTFY_MOTION_DETECTION"
       }
     },
-    "NTFY_PERSON_DETECTION": {
+    "NTFY_FACE_DETECTION": {
       "type": "boolean",
       "uiComponent": null,
       "title": {
-        "en": "NTFY_PERSON_DETECTION",
-        "nl": "NTFY_PERSON_DETECTION"
+        "en": "NTFY_FACE_DETECTION",
+        "nl": "NTFY_FACE_DETECTION"
       }
     },
     "NTFY_PRESS_DOORBELL": {
