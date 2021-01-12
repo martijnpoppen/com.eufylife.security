@@ -24,8 +24,9 @@ class App extends Homey.App {
 
   error() {
     console.error.bind(this, "[log]").apply(this, arguments);
+
     if(this.appSettings && this.appSettings.SET_DEBUG) {
-        return log.error.apply(log, arguments)
+        return log.info.apply(log, arguments)
     }
   }
 

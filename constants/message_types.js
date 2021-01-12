@@ -7,3 +7,9 @@ exports.MESSAGE_TYPES = {
     NTFY_SOUND_DETECTED: 3105,
     NTFY_PET_DETECTED: 3106 
 }
+
+// https://github.com/matijse/eufy-ha-mqtt-bridge/issues/27#issue-778345221
+exports.SPECIFIC_MESSAGE_TYPES = {
+    NTFY_FACE_DETECTION: "Someone",
+    NTFY_MOTION_DETECTION: "Motion",
+}
