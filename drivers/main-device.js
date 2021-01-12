@@ -21,8 +21,9 @@ module.exports = class mainDevice extends Homey.Device {
         const driverCapabilities = driverManifest.capabilities;
         const deviceCapabilities = this.getCapabilities();
 
+        Homey.app.log('[Device] - Found capabilities =>', deviceCapabilities);
+
         if(driverCapabilities.length > deviceCapabilities.length) {      
-            Homey.app.log('[Device] - Found capabilities =>', deviceCapabilities);
             await this.setCapabilities(driverCapabilities);
             return;
         }
