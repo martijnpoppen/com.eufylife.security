@@ -58,5 +58,8 @@
   },
   "1.4.1": {
     "en": "Add available capabilities to device instead of all."
+  },
+  "1.4.2": {
+    "en": "Add available capabilities to device instead of all. FIX: revert to FACE_DETECTION"
   }
 }
