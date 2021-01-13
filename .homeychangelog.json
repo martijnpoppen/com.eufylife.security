@@ -76,5 +76,8 @@
   },
   "1.4.7": {
     "en": "Fix app crash for some cameras"
+  },
+  "1.4.8": {
+    "en": "Check for Hubs to support multiple devices - Homebase and stand-alone"
   }
 }
