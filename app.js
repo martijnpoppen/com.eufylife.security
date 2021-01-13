@@ -65,6 +65,11 @@ class App extends Homey.App {
 
         if (!_httpService) {
             _httpService = await this.setHttpService(this.appSettings);
+            
+            if(this.appSettings && this.appSettings.SET_DEBUG) {
+                const hubs = await _httpService.listHubs();
+                this.log(`Logged in. Found hubs`, hubs);
+            }
         }
 
         return;
@@ -120,7 +125,8 @@ class App extends Homey.App {
       _httpService = await this.setHttpService(data);
 
       const hubs = await _httpService.listHubs();
-      this.log(`Logged in. Found station`, hubs[0].station_sn);
+      this.log(`Logged in. Found hubs`, hubs);
+      this.log(`Get first station`, hubs[0].station_sn);
 
       settings.P2P_DID = hubs[0].p2p_did;
       settings.ACTOR_ID = hubs[0].member.action_user_id;
