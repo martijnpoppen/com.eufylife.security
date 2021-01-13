@@ -82,5 +82,8 @@
   },
   "1.4.9": {
     "en": "Add homebase to devicetypes"
+  },
+  "1.4.10": {
+    "en": "FIX: error with parsing Notifications"
   }
 }
