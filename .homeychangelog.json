@@ -79,5 +79,8 @@
   },
   "1.4.8": {
     "en": "Check for Hubs to support multiple devices - Homebase and stand-alone"
+  },
+  "1.4.9": {
+    "en": "Add homebase to devicetypes"
   }
 }
