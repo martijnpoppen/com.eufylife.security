@@ -85,5 +85,8 @@
   },
   "1.4.10": {
     "en": "FIX: error with parsing Notifications"
+  },
+  "1.5.1": {
+    "en": "NEW: support multiple hubs"
   }
 }
