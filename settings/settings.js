@@ -14,8 +14,8 @@ function onHomeyReady(Homey) {
         const hubs = data['HUBS'];
         if(data['HUBS_AMOUNT'] > 0) {
             emptyFieldSet()
-            Object.keys(hubs).forEach(function(key) {
-                createFieldSet(hubs[key]);
+            Object.keys(hubs).forEach(function(key, index) {
+                createFieldSet(hubs[key], index);
             });
         }
 
@@ -35,11 +35,15 @@ function onHomeyReady(Homey) {
     Homey.ready();
 }
 
-function createFieldSet(hub) {
+function createFieldSet(hub, index) {
+    let ACTOR_ID = "";
+    if(index === 0) {
+        ACTOR_ID = '<div class="field row"><label for="eufy_ACTOR_ID">ACTOR_ID</label><input type="text" name="eufy_ACTOR_ID" value="'+hub['ACTOR_ID']+'" disabled /></div>';
+    }
     var fieldSetWrapper = document.getElementById('eufy_HUB_SETTINGS');
     let fieldset = document.createElement('fieldset');
     fieldset.id = hub.STATION_SN;
-    fieldset.innerHTML = '<legend>Hub Settings - '+ hub['HUB_NAME'] +'</legend><div class="field row"><label style="color: red;">Make sure this is an local ip addres like 192.168.x.x.</label><br><label for="eufy_LOCAL_STATION_IP">LOCAL_STATION_IP</label><input type="text" name="eufy_LOCAL_STATION_IP" value="'+hub['LOCAL_STATION_IP']+'" /></div><div class="field row"><label for="eufy_STATION_SN">STATION_SN</label><input type="text" name="eufy_STATION_SN" value="'+hub['STATION_SN']+'" disabled /><label for="eufy_STATION_SN">STATION_SN</label><input type="text" name="eufy_ACTOR_ID" value="'+hub['ACTOR_ID']+'" disabled /></div>';
+    fieldset.innerHTML = '<legend>Hub Settings - '+ hub['HUB_NAME'] +'</legend><div class="field row"><label style="color: red;">Make sure this is an local ip addres like 192.168.x.x.</label><br><label for="eufy_LOCAL_STATION_IP">LOCAL_STATION_IP</label><input type="text" name="eufy_LOCAL_STATION_IP" value="'+hub['LOCAL_STATION_IP']+'" /></div><div class="field row"><label for="eufy_STATION_SN">STATION_SN</label><input type="text" name="eufy_STATION_SN" value="'+hub['STATION_SN']+'" disabled /></div>'+ACTOR_ID;
     fieldSetWrapper.appendChild(fieldset);
 }
 
