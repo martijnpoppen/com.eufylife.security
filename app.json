@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "1.3.16",
+  "version": "1.5.1",
   "compatibility": ">=1.5.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -85,7 +85,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_uri=homey:app:com.eufylife.security"
+            "filter": "capabilities=NTFY_BACKGROUND_ACTIVE"
           }
         ]
       },
@@ -99,7 +99,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_uri=homey:app:com.eufylife.security"
+            "filter": "capabilities=NTFY_MOTION_DETECTION"
           }
         ]
       },
@@ -113,7 +113,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_uri=homey:app:com.eufylife.security"
+            "filter": "capabilities=NTFY_FACE_DETECTION"
           }
         ]
       },
@@ -127,7 +127,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_uri=homey:app:com.eufylife.security"
+            "filter": "capabilities=NTFY_PRESS_DOORBELL"
           }
         ]
       },
@@ -141,7 +141,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_uri=homey:app:com.eufylife.security"
+            "filter": "capabilities=NTFY_CRYING_DETECTED"
           }
         ]
       },
@@ -155,7 +155,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_uri=homey:app:com.eufylife.security"
+            "filter": "capabilities=NTFY_SOUND_DETECTED"
           }
         ]
       },
@@ -169,7 +169,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_uri=homey:app:com.eufylife.security"
+            "filter": "capabilities=NTFY_PET_DETECTED"
           }
         ]
       }
@@ -231,7 +231,9 @@
       "class": "camera",
       "capabilities": [
         "onoff",
-        "CMD_SET_ARMING"
+        "CMD_SET_ARMING",
+        "NTFY_MOTION_DETECTION",
+        "NTFY_FACE_DETECTION"
       ],
       "name": {
         "en": "eufyCam 2",
@@ -260,7 +262,9 @@
       "class": "camera",
       "capabilities": [
         "onoff",
-        "CMD_SET_ARMING"
+        "CMD_SET_ARMING",
+        "NTFY_MOTION_DETECTION",
+        "NTFY_FACE_DETECTION"
       ],
       "name": {
         "en": "eufyCam 2 Pro",
@@ -289,7 +293,9 @@
       "class": "camera",
       "capabilities": [
         "onoff",
-        "CMD_SET_ARMING"
+        "CMD_SET_ARMING",
+        "NTFY_MOTION_DETECTION",
+        "NTFY_FACE_DETECTION"
       ],
       "name": {
         "en": "eufyCam 2C",
@@ -318,7 +324,9 @@
       "class": "camera",
       "capabilities": [
         "onoff",
-        "CMD_SET_ARMING"
+        "CMD_SET_ARMING",
+        "NTFY_MOTION_DETECTION",
+        "NTFY_FACE_DETECTION"
       ],
       "name": {
         "en": "eufyCam 2C Pro",
@@ -347,7 +355,8 @@
       "class": "camera",
       "capabilities": [
         "onoff",
-        "CMD_SET_ARMING"
+        "CMD_SET_ARMING",
+        "NTFY_MOTION_DETECTION"
       ],
       "name": {
         "en": "eufyCam E",
@@ -376,7 +385,8 @@
       "class": "camera",
       "capabilities": [
         "onoff",
-        "CMD_SET_ARMING"
+        "CMD_SET_ARMING",
+        "NTFY_MOTION_DETECTION"
       ],
       "name": {
         "en": "Smart Floodlight with Camera",
@@ -405,7 +415,12 @@
       "class": "camera",
       "capabilities": [
         "onoff",
-        "CMD_SET_ARMING"
+        "CMD_SET_ARMING",
+        "NTFY_MOTION_DETECTION",
+        "NTFY_FACE_DETECTION",
+        "NTFY_CRYING_DETECTED",
+        "NTFY_SOUND_DETECTED",
+        "NTFY_PET_DETECTED"
       ],
       "name": {
         "en": "Indoor Cam",
@@ -434,7 +449,12 @@
       "class": "camera",
       "capabilities": [
         "onoff",
-        "CMD_SET_ARMING"
+        "CMD_SET_ARMING",
+        "NTFY_MOTION_DETECTION",
+        "NTFY_FACE_DETECTION",
+        "NTFY_CRYING_DETECTED",
+        "NTFY_SOUND_DETECTED",
+        "NTFY_PET_DETECTED"
       ],
       "name": {
         "en": "Indoor Cam Pan & Tilt",
@@ -456,6 +476,11 @@
           "id": "add_devices",
           "template": "add_devices"
         }
+      ],
+      "repair": [
+        {
+          "id": "fix_my_device"
+        }
       ]
     },
     {
@@ -463,7 +488,11 @@
       "class": "camera",
       "capabilities": [
         "onoff",
-        "CMD_SET_ARMING"
+        "CMD_SET_ARMING",
+        "NTFY_MOTION_DETECTION",
+        "NTFY_FACE_DETECTION",
+        "NTFY_PRESS_DOORBELL",
+        "NTFY_BACKGROUND_ACTIVE"
       ],
       "name": {
         "en": "Video Doorbell 2K (Wired)",
@@ -492,7 +521,11 @@
       "class": "camera",
       "capabilities": [
         "onoff",
-        "CMD_SET_ARMING"
+        "CMD_SET_ARMING",
+        "NTFY_MOTION_DETECTION",
+        "NTFY_FACE_DETECTION",
+        "NTFY_PRESS_DOORBELL",
+        "NTFY_BACKGROUND_ACTIVE"
       ],
       "name": {
         "en": "Video Doorbell 2K (Battery-Powered)",
@@ -521,7 +554,11 @@
       "class": "camera",
       "capabilities": [
         "onoff",
-        "CMD_SET_ARMING"
+        "CMD_SET_ARMING",
+        "NTFY_MOTION_DETECTION",
+        "NTFY_FACE_DETECTION",
+        "NTFY_PRESS_DOORBELL",
+        "NTFY_BACKGROUND_ACTIVE"
       ],
       "name": {
         "en": "Video Doorbell 1080p (Wired)",
@@ -550,7 +587,11 @@
       "class": "camera",
       "capabilities": [
         "onoff",
-        "CMD_SET_ARMING"
+        "CMD_SET_ARMING",
+        "NTFY_MOTION_DETECTION",
+        "NTFY_FACE_DETECTION",
+        "NTFY_PRESS_DOORBELL",
+        "NTFY_BACKGROUND_ACTIVE"
       ],
       "name": {
         "en": "Video Doorbell 1080p (Battery-Powered)",
@@ -655,6 +696,62 @@
           }
         }
       ]
+    },
+    "NTFY_BACKGROUND_ACTIVE": {
+      "type": "boolean",
+      "uiComponent": null,
+      "title": {
+        "en": "NTFY_BACKGROUND_ACTIVE",
+        "nl": "NTFY_BACKGROUND_ACTIVE"
+      }
+    },
+    "NTFY_MOTION_DETECTION": {
+      "type": "boolean",
+      "uiComponent": null,
+      "title": {
+        "en": "NTFY_MOTION_DETECTION",
+        "nl": "NTFY_MOTION_DETECTION"
+      }
+    },
+    "NTFY_FACE_DETECTION": {
+      "type": "boolean",
+      "uiComponent": null,
+      "title": {
+        "en": "NTFY_FACE_DETECTION",
+        "nl": "NTFY_FACE_DETECTION"
+      }
+    },
+    "NTFY_PRESS_DOORBELL": {
+      "type": "boolean",
+      "uiComponent": null,
+      "title": {
+        "en": "NTFY_PRESS_DOORBELL",
+        "nl": "NTFY_PRESS_DOORBELL"
+      }
+    },
+    "NTFY_CRYING_DETECTED": {
+      "type": "boolean",
+      "uiComponent": null,
+      "title": {
+        "en": "NTFY_CRYING_DETECTED",
+        "nl": "NTFY_CRYING_DETECTED"
+      }
+    },
+    "NTFY_SOUND_DETECTED": {
+      "type": "boolean",
+      "uiComponent": null,
+      "title": {
+        "en": "NTFY_SOUND_DETECTED",
+        "nl": "NTFY_SOUND_DETECTED"
+      }
+    },
+    "NTFY_PET_DETECTED": {
+      "type": "boolean",
+      "uiComponent": null,
+      "title": {
+        "en": "NTFY_PET_DETECTED",
+        "nl": "NTFY_PET_DETECTED"
+      }
     }
   }
 }
