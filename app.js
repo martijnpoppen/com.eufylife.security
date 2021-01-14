@@ -23,7 +23,7 @@ class App extends Homey.App {
   }
 
   error() {
-    console.error.bind(this, "[log]").apply(this, arguments);
+    console.error.bind(this, "[error]").apply(this, arguments);
 
     if(this.appSettings && this.appSettings.SET_DEBUG) {
         return log.info.apply(log, arguments)
@@ -35,9 +35,11 @@ class App extends Homey.App {
   async onInit() {
     this.log(`${Homey.manifest.id} started...`);
     await this.initSettings();
-    this.log("- Loaded settings", {...this.appSettings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
+    await this.checkForIncompatibleSettings();
 
-    if (this.appSettings.LOCAL_STATION_IP) {
+    this.log("onInit - Loaded settings", {...this.appSettings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
+
+    if (this.appSettings.HUBS_AMOUNT > 0) {
         await eufyCommandSendHelper.init(this.appSettings);
         await flowActions.init();
     }
@@ -60,16 +62,11 @@ class App extends Homey.App {
       });
 
       if (settingsInitialized) {
-        this.log("Found settings key", _settingsKey);
+        this.log("initSettings - Found settings key", _settingsKey);
         this.appSettings = ManagerSettings.get(_settingsKey);
 
         if (!_httpService) {
             _httpService = await this.setHttpService(this.appSettings);
-            
-            if(this.appSettings && this.appSettings.SET_DEBUG) {
-                const hubs = await _httpService.listHubs();
-                this.log(`Logged in. Found hubs`, hubs);
-            }
         }
 
         return;
@@ -79,11 +76,8 @@ class App extends Homey.App {
       this.updateSettings({
         USERNAME: "",
         PASSWORD: "",
-        DSK_KEY: "",
-        P2P_DID: "",
-        ACTOR_ID: "",
-        STATION_SN: "",
-        LOCAL_STATION_IP: "",
+        HUBS: {},
+        HUBS_AMOUNT: 0,
         SET_CREDENTIALS: true,
         SET_DEBUG: false,
         CREDENTIALS: "",
@@ -93,15 +87,11 @@ class App extends Homey.App {
     }
   }
 
-  updateSettings(settings) {
-    this.log("New settings:",  {...settings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
-    if (!!settings.USERNAME && !!settings.PASSWORD) {
-      this.eufyLogin(settings);
-    } else {
-      _httpService = undefined;
-      this.appSettings = settings;
-      this.saveSettings();
-    }
+updateSettings(settings) {
+    this.log("updateSettings - New settings:",  {...settings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
+    _httpService = undefined;
+    this.appSettings = settings;
+    this.saveSettings();
   }
 
   saveSettings() {
@@ -114,41 +104,80 @@ class App extends Homey.App {
     ManagerSettings.set(_settingsKey, this.appSettings);
   }
 
+  async checkForIncompatibleSettings() {
+    const settings = this.appSettings;
+    if(("STATION_SN" in settings)) {
+        this.log(`checkForIncompatibleSettings - Updating settings for v.1.5.0`);
+
+        let hubs = {};
+
+        hubs[settings.STATION_SN] = {
+            LOCAL_STATION_IP: settings.LOCAL_STATION_IP
+        }
+
+        if (!!settings.USERNAME && !!settings.PASSWORD) {
+            await this.eufyLogin({
+                USERNAME: settings.USERNAME,
+                PASSWORD: settings.PASSWORD,
+                HUBS: hubs,
+                HUBS_AMOUNT: 1,
+                SET_CREDENTIALS: settings.SET_CREDENTIALS,
+                SET_DEBUG: settings.SET_DEBUG,
+                CREDENTIALS: settings.CREDENTIALS
+            });
+        }
+
+        return;
+    }
+  }
+
   // -------------------- EUFY LOGIN ----------------------
 
   async eufyLogin(data) {
     try {
       let settings = data;
-      this.log("New settings:",  {...settings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
-      this.log(`Found username and password. Logging in to Eufy`);
+      this.log("eufyLogin - New settings:",  {...settings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
+      this.log(`eufyLogin - Found username and password. Logging in to Eufy`);
 
       _httpService = await this.setHttpService(data);
 
       const hubs = await _httpService.listHubs();
-      this.log(`Logged in. Found hubs`, hubs);
-      this.log(`Get first station`, hubs[0].station_sn);
+      
+      if(!hubs.length) {
+        return new Error('No hubs found');
+      } else {
+        this.log(`eufyLogin - Logged in. Found hubs - ${hubs.length}`);
+      }
 
-      settings.P2P_DID = hubs[0].p2p_did;
-      settings.ACTOR_ID = hubs[0].member.action_user_id;
-      settings.STATION_SN = hubs[0].station_sn;
-      settings.LOCAL_STATION_IP = settings.LOCAL_STATION_IP ? settings.LOCAL_STATION_IP : hubs[0].ip_addr;
+      hubs.forEach(hub => {
+        const stationSN = hub.station_sn;
+        const localStationIp = settings.HUBS[stationSN] && settings.HUBS[stationSN].LOCAL_STATION_IP
+        this.log(`eufyLogin -Get station`, stationSN);
 
-      const dsk = await _httpService.stationDskKeys(settings.STATION_SN);
-      settings.DSK_KEY = dsk.dsk_keys[0].dsk_key;
+        settings.HUBS[stationSN] = {
+            HUB_NAME: hub.station_name,
+            P2P_DID: hub.p2p_did,
+            ACTOR_ID: hub.member.action_user_id,
+            STATION_SN: stationSN,
+            LOCAL_STATION_IP: localStationIp ? localStationIp : hub.ip_addr
+        }
+      });
+
+      settings.HUBS_AMOUNT = Object.keys(settings.HUBS).length;
 
       const initNotificationCheckHelper = !settings.CREDENTIALS;
 
       if (!settings.CREDENTIALS && settings.SET_CREDENTIALS) {
-        this.log(`Found SET_CREDENTIALS. Registering pushService`);
+        this.log(`eufyLogin - Found SET_CREDENTIALS. Registering pushService`);
         const pushService = new PushRegisterService();
         settings.CREDENTIALS = await pushService.createPushCredentials();
       }
 
       this.appSettings = settings;
       this.saveSettings();
-      this.log("- Loaded settings", {...this.appSettings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
+      this.log("eufyLogin - Loaded settings", {...this.appSettings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
 
-      if (settings.LOCAL_STATION_IP) {
+      if (settings.HUBS_AMOUNT  > 0) {
         await eufyCommandSendHelper.init(this.appSettings);
         await flowActions.init();
       } 

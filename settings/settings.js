@@ -1,25 +1,29 @@
 function onHomeyReady(Homey) {
     const _settingsKey = `com.eufylife.security.settings`;
-    let _credentials = undefined;
 
-    var initializeSettings = function (err, data) {
+    const initializeSettings = function (err, data) {
         if (err || !data) {
             document.getElementById('error').innerHTML = err;
             return;
         }
 
-        document.getElementById('error').innerHTML = '';
         document.getElementById('eufy_user').value = data['USERNAME'];
         document.getElementById('eufy_pass').value = data['PASSWORD'];
-        document.getElementById('eufy_DSK_KEY').value = data['DSK_KEY'];
-        document.getElementById('eufy_P2P_DID').value = data['P2P_DID'];
-        document.getElementById('eufy_ACTOR_ID').value = data['ACTOR_ID'];
-        document.getElementById('eufy_STATION_SN').value = data['STATION_SN'];
-        document.getElementById('eufy_LOCAL_STATION_IP').value = data['LOCAL_STATION_IP'];
-        document.getElementById('eufy_CREDENTIALS').checked = data['SET_CREDENTIALS'];
         document.getElementById('eufy_DEBUG').checked = data['SET_DEBUG'];
-        _credentials = data['CREDENTIALS'];
+
+        const hubs = data['HUBS'];
+        if(data['HUBS_AMOUNT'] > 0) {
+            emptyFieldSet()
+            Object.keys(hubs).forEach(function(key) {
+                createFieldSet(hubs[key]);
+            });
+        }
+
+        initSave(data);
+        initClear(data);
     }
+
+    // --------------------------------------------------------------
 
     Homey.get(_settingsKey, initializeSettings);
     Homey.on('settings.set', (key, data) => {
@@ -28,38 +32,55 @@ function onHomeyReady(Homey) {
         }
     });
 
-    // Tell Homey we're ready to be displayed
     Homey.ready();
+}
 
+function createFieldSet(hub) {
+    var fieldSetWrapper = document.getElementById('eufy_HUB_SETTINGS');
+    let fieldset = document.createElement('fieldset');
+    fieldset.id = hub.STATION_SN;
+    fieldset.innerHTML = '<legend>Hub Settings - '+ hub['HUB_NAME'] +'</legend><div class="field row"><label style="color: red;">Make sure this is an local ip addres like 192.168.x.x.</label><br><label for="eufy_LOCAL_STATION_IP">LOCAL_STATION_IP</label><input type="text" name="eufy_LOCAL_STATION_IP" value="'+hub['LOCAL_STATION_IP']+'" /></div><div class="field row"><label for="eufy_STATION_SN">STATION_SN</label><input type="text" name="eufy_STATION_SN" value="'+hub['STATION_SN']+'" disabled /><label for="eufy_STATION_SN">STATION_SN</label><input type="text" name="eufy_ACTOR_ID" value="'+hub['ACTOR_ID']+'" disabled /></div>';
+    fieldSetWrapper.appendChild(fieldset);
+}
 
+function emptyFieldSet() {
+    var fieldSetWrapper = document.getElementById('eufy_HUB_SETTINGS');
+    fieldSetWrapper.innerHTML = "";
+}
+
+function initSave(_settings) {
+    console.log(_settings);
     document.getElementById('save').addEventListener('click', function (e) {
-        var error = document.getElementById('error');
-        var loading = document.getElementById('loading');
-        var success = document.getElementById('success');
+        const error = document.getElementById('error');
+        const loading = document.getElementById('loading');
+        const success = document.getElementById('success');
+        const button = document.getElementById('save');
 
-        var button = document.getElementById('save');
-        var USERNAME = document.getElementById('eufy_user').value;
-        var PASSWORD = document.getElementById('eufy_pass').value;
-        var DSK_KEY = document.getElementById('eufy_DSK_KEY').value;
-        var P2P_DID = document.getElementById('eufy_P2P_DID').value;
-        var ACTOR_ID = document.getElementById('eufy_ACTOR_ID').value;
-        var STATION_SN = document.getElementById('eufy_STATION_SN').value;
-        var LOCAL_STATION_IP = document.getElementById('eufy_LOCAL_STATION_IP').value;
-        var SET_CREDENTIALS = document.getElementById('eufy_CREDENTIALS').checked;
-        var SET_DEBUG = document.getElementById('eufy_DEBUG').checked;
-        var CREDENTIALS = _credentials;
+        const USERNAME = document.getElementById('eufy_user').value;
+        const PASSWORD = document.getElementById('eufy_pass').value;
+        const SET_DEBUG = document.getElementById('eufy_DEBUG').checked
 
-        var settings = {
+        let HUBS_OBJECT = _settings.HUBS;
+        const HUB_SETTINGS = document.getElementById('eufy_HUB_SETTINGS');
+        const hubs = HUB_SETTINGS.getElementsByTagName('fieldset');
+
+        for (let hub of hubs) {
+            const inputs = hub.getElementsByTagName("input")
+            for (input of inputs) {
+                if(input.name === 'eufy_LOCAL_STATION_IP') {
+                    HUBS_OBJECT[hub.id].LOCAL_STATION_IP = input.value;
+                }
+            }
+        }
+
+        const settings = {
             USERNAME,
             PASSWORD,
-            DSK_KEY,
-            P2P_DID,
-            ACTOR_ID,
-            STATION_SN,
-            LOCAL_STATION_IP,
-            SET_CREDENTIALS,
             SET_DEBUG,
-            CREDENTIALS
+            HUBS: HUBS_OBJECT,
+            HUBS_AMOUNT: _settings.HUBS_AMOUNT,
+            CREDENTIALS: _settings.CREDENTIALS,
+            SET_CREDENTIALS: true
         }
 
         // ----------------------------------------------
@@ -84,7 +105,7 @@ function onHomeyReady(Homey) {
                 }
             });
         } else {
-            var error = 'Fill in USERNAME and PASSWORD.';
+            const error = 'Fill in USERNAME and PASSWORD.';
             Homey.alert(error);
 
             error.innerHTML = error;
@@ -94,46 +115,28 @@ function onHomeyReady(Homey) {
         }
         
     });
+}
 
 
+function initClear(_settings) {
     document.getElementById('clear').addEventListener('click', function (e) {
         error = document.getElementById('error');
         loading = document.getElementById('loading');
         success = document.getElementById('success');
 
-
+        emptyFieldSet();
         document.getElementById('eufy_user').value = "";
         document.getElementById('eufy_pass').value = "";
-        document.getElementById('eufy_DSK_KEY').value = "";
-        document.getElementById('eufy_P2P_DID').value = "";
-        document.getElementById('eufy_ACTOR_ID').value = "";
-        document.getElementById('eufy_STATION_SN').value = "";
-        document.getElementById('eufy_LOCAL_STATION_IP').value = "";
-        document.getElementById('eufy_CREDENTIALS').checked = true;
         document.getElementById('eufy_DEBUG').checked = false;
 
-        var USERNAME = "";
-        var PASSWORD = "";
-        var DSK_KEY = "";
-        var P2P_DID = "";
-        var ACTOR_ID = "";
-        var STATION_SN = "";
-        var LOCAL_STATION_IP = "";
-        var SET_CREDENTIALS = true;
-        var SET_DEBUG = false;
-        var CREDENTIALS = undefined;
-
-        var settings = {
-            USERNAME,
-            PASSWORD,
-            DSK_KEY,
-            P2P_DID,
-            ACTOR_ID,
-            STATION_SN,
-            LOCAL_STATION_IP,
-            SET_CREDENTIALS,
-            SET_DEBUG,
-            CREDENTIALS
+        const settings = {
+            USERNAME: "",
+            PASSWORD: "",
+            HUBS: {},
+            HUBS_AMOUNT: 0,
+            SET_DEBUG: false,
+            CREDENTIALS: undefined,
+            SET_CREDENTIALS: true,
         }
 
         Homey.api('PUT', '/settings', settings, function (err, result) {
