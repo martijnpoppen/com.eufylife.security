@@ -88,5 +88,8 @@
   },
   "1.5.1": {
     "en": "NEW: support multiple hubs"
+  },
+  "1.6.0": {
+    "en": "Add images to alerts"
   }
 }
