@@ -91,5 +91,8 @@
   },
   "1.6.0": {
     "en": "Add images to alerts"
+  },
+  "1.6.1": {
+    "en": "Add motion images to notifications and devices"
   }
 }
