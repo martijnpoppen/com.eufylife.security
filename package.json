@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "eufy-node-client": "^0.4.0",
+    "node-fetch": "^2.6.1",
     "winston": "^3.3.3"
   }
 }

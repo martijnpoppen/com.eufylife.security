@@ -31,7 +31,7 @@ async function onDeviceListRequest() {
                     index: i, 
                     id: r.device_id, 
                     station_sn: r.station_sn, 
-                    device_sn: r.device_sn 
+                    device_sn: r.device_sn
                 }  
             }));
     
