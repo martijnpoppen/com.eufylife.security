@@ -12,8 +12,9 @@ module.exports = class mainDevice extends Homey.Device {
         this.registerCapabilityListener('onoff', this.onCapability_CMD_DEVS_SWITCH.bind(this));
         this.registerCapabilityListener('CMD_SET_ARMING', this.onCapability_CMD_SET_ARMING.bind(this));
 
+        await this.initCameraImage();
+
         this.setAvailable();
-        this.setCameraImage();
     }
 
     async checkCapabilities() {
@@ -70,16 +71,13 @@ module.exports = class mainDevice extends Homey.Device {
         }
     }
 
-    setCameraImage() {
+    initCameraImage() {
+        Homey.app.log('[Device] - Set initial image');
         const deviceObject = this.getData();
-        const _image = new Homey.Image();
-        _image.setStream(async (stream) => {
-            const res = await fetch(deviceObject.cover_path);
-            if(!res.ok) throw new Error(res.statusText);
-            res.body.pipe(stream);
-        });
-        _image.register()
-            .then(() => image =>this.setCameraImage('camera', 'Last Event', image))
+        this._image = new Homey.Image();
+        this._image.setPath('assets/images/large.jpg');
+        this._image.register()
+            .then(() => this.setCameraImage(deviceObject.station_sn, this.getName(), this._image))
             .catch(this.error);
     }
 }
