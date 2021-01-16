@@ -94,5 +94,8 @@
   },
   "1.6.1": {
     "en": "Add motion images to notifications and devices"
+  },
+  "1.6.2": {
+    "en": "Fix images not sending to different channels"
   }
 }
