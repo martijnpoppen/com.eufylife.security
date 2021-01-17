@@ -97,5 +97,8 @@
   },
   "1.6.2": {
     "en": "Fix images not sending to different channels"
+  },
+  "1.6.3": {
+    "en": "Added images and multi hub support"
   }
 }
