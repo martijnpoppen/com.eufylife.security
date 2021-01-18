@@ -476,11 +476,6 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "repair": [
-        {
-          "id": "fix_my_device"
-        }
       ]
     },
     {
