@@ -12,10 +12,11 @@ Usage
 - Go to the app settings and provide your Username and Password. Click Save Changes
 - Other keys will be fetched and filled in to the settings page.
 - Connect a device to Eufy Security
-- Create a flow wit Euufy Security devices
+- Create a flow wit Eufy Security devices
 
 Current features:
 - turn on/off camera (EufyCam pan&tilt will turn its lens)
 - Set guard mode (Home, Away, Disarmed, Schedule)
 - Add devices and use them in flows. (on/off)
 - Get notifications based on detection modes for specific devices. (Motion, Face, Sound and Doorbell Press) 
+- Get images when motion is detected

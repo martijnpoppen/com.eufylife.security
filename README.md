@@ -22,9 +22,18 @@ and use it with this library.
 - Set guard mode (Home, Away, Disarmed, Schedule)
 - Add devices and use them in flows. (on/off)
 - Get notifications based on detection modes for specific devices. (Motion, Face, Sound and Doorbell Press) 
+- Get images when motion is detected
 
 ## To do:
-- Add devices with capabillites
+
+-fixing on/off for different devices sometimes they are swapped around. [BUG] On/Off switched for some cameras · Issue #10 · martijnpoppen/com.eufylife.security · GitHub 2
+-fixing that devices are turning off each other: [BUG] - multiple devices are turning of wrong device - check index · Issue #18 · martijnpoppen/com.eufylife.security · GitHub
+- check 2FA
+- check if the keypad is going to work
+- [Feature Request] Preset response · Issue #2 · martijnpoppen/com.eufylife.security · GitHub
+- Turn the eufy pan&tilt via Homey (e.g.: when you’re home turn 180 degrees to the wall)
+- try to include ffmpeg
+
 ---
 &nbsp;
 ## Donation
