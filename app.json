@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "1.6.3",
+  "version": "1.7.1",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -655,12 +655,12 @@
       ]
     },
     "CMD_REVERSE_DEVS_SWITCH": {
-        "type": "boolean",
-        "uiComponent": null,
-        "title": {
-          "en": "CMD_REVERSE_DEVS_SWITCH",
-          "nl": "CMD_REVERSE_DEVS_SWITCH"
-        }
+      "type": "boolean",
+      "uiComponent": null,
+      "title": {
+        "en": "CMD_REVERSE_DEVS_SWITCH",
+        "nl": "CMD_REVERSE_DEVS_SWITCH"
+      }
     },
     "CMD_GET_NOTIFICATIONS": {
       "type": "enum",

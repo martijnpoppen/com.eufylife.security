@@ -3,9 +3,9 @@ Add support for Eufy Cam/Doorbell in Homey.
 Account Information
 
 Because of the way the Eufy Security private API works, an email/password combo cannot
-work with both the Eufy Security mobile app and this library. It is recommended to
-use the mobile app to create a secondary "guest" account with a separate email address
-and use it with this library.
+work with both the Eufy Security mobile app and this app. It is recommended to
+use the mobile app to create a secondary "admin" account with a separate email address
+and use it with this app. (Make sure 2FA is disabled for this account)
 
 Usage
 - Install this app on your Homey.
@@ -20,3 +20,4 @@ Current features:
 - Add devices and use them in flows. (on/off)
 - Get notifications based on detection modes for specific devices. (Motion, Face, Sound and Doorbell Press) 
 - Get images when motion is detected
+

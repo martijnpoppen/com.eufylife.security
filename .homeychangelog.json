@@ -100,5 +100,11 @@
   },
   "1.6.3": {
     "en": "Added images and multi hub support"
+  },
+  "1.7.0": {
+    "en": "Fixed device on/off not working correctly - inverted and turning off wrong devices"
+  },
+  "1.7.1": {
+    "en": "Fixed device on/off not working correctly - inverted and turning off wrong devices"
   }
 }
