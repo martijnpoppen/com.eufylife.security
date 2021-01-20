@@ -6,7 +6,7 @@ module.exports = class mainDevice extends Homey.Device {
     async onInit() {
 		Homey.app.log('[Device] - init =>', this.getName());
         Homey.app.setDevices(this);
-
+    
         await this.checkCapabilities();
 
         this.registerCapabilityListener('onoff', this.onCapability_CMD_DEVS_SWITCH.bind(this));
@@ -15,6 +15,9 @@ module.exports = class mainDevice extends Homey.Device {
         await this.initCameraImage();
 
         this.setAvailable();
+
+        await sleep(3000);
+        await this.findDeviceIndexInStore();
     }
 
     async checkCapabilities() {
@@ -48,8 +51,11 @@ module.exports = class mainDevice extends Homey.Device {
     async onCapability_CMD_DEVS_SWITCH( value, opts ) {
         const deviceObject = this.getData();
         try {
-            const deviceId = deviceObject.index || 0;
-            const CMD_DEVS_SWITCH = value ? 1 : 0;
+            const deviceId = this.getStoreValue('device_index');
+            let CMD_DEVS_SWITCH = value ? 0 : 1;
+            if(this.hasCapability('CMD_REVERSE_DEVS_SWITCH')) {
+                CMD_DEVS_SWITCH = value ? 1 : 0;
+            }
 
             await eufyCommandSendHelper.sendCommand(CommandType.CMD_DEVS_SWITCH, CMD_DEVS_SWITCH, deviceId, 'CMD_DEVS_SWITCH', deviceObject.station_sn);
             return Promise.resolve(true);
@@ -79,5 +85,18 @@ module.exports = class mainDevice extends Homey.Device {
         this._image.register()
             .then(() => this.setCameraImage(deviceObject.station_sn, this.getName(), this._image))
             .catch(this.error);
+    }
+
+    findDeviceIndexInStore() {
+        try {
+            const deviceObject = this.getData();
+            const deviceStore = Homey.app.getDeviceStore();
+            const deviceMatch = deviceStore.find(d => d.device_sn === deviceObject.device_sn);
+            this.setStoreValue('device_index', deviceMatch.index);
+            return Promise.resolve(true);
+        } catch (e) {
+            Homey.app.error(e);
+            return Promise.reject(e);
+        }
     }
 }
