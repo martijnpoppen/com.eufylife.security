@@ -16,7 +16,6 @@ module.exports = class mainDevice extends Homey.Device {
 
         this.setAvailable();
 
-        await sleep(3000);
         await this.findDeviceIndexInStore();
     }
 
@@ -87,8 +86,9 @@ module.exports = class mainDevice extends Homey.Device {
             .catch(this.error);
     }
 
-    findDeviceIndexInStore() {
+    async findDeviceIndexInStore() {
         try {
+            await sleep(5000);
             const deviceObject = this.getData();
             const deviceStore = Homey.app.getDeviceStore();
             const deviceMatch = deviceStore.find(d => d.device_sn === deviceObject.device_sn);

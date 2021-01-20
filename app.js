@@ -70,13 +70,7 @@ class App extends Homey.App {
             _httpService = await this.setHttpService(this.appSettings);
 
             if (!_deviceStore) {
-                _deviceStore = await _httpService.listDevices();
-                _deviceStore = _deviceStore.map((r, i) => ({ 
-                    name: r.device_name, 
-                    index: i, 
-                    device_sn: r.device_sn  
-                }));
-                this.log("initSettings - Setting up DeviceStore", _deviceStore);
+                _deviceStore = await this.setDeviceStore();
             }
         }
 
@@ -189,6 +183,7 @@ updateSettings(settings) {
       this.log("eufyLogin - Loaded settings", {...this.appSettings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
 
       if (settings.HUBS_AMOUNT  > 0) {
+        _deviceStore = await this.setDeviceStore();
         await eufyCommandSendHelper.init(this.appSettings);
         await flowActions.init();
       } 
@@ -231,6 +226,18 @@ updateSettings(settings) {
 
   getDevices() {
       return _devices;
+  }
+
+  async setDeviceStore() {
+    let deviceStore = await _httpService.listDevices();
+    deviceStore = deviceStore.map((r, i) => ({ 
+        name: r.device_name, 
+        index: i, 
+        device_sn: r.device_sn  
+    }));
+    this.log("initSettings - Setting up DeviceStore", deviceStore);
+
+    return deviceStore;
   }
 
   getDeviceStore() {
