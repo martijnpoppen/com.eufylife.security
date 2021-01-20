@@ -11,6 +11,7 @@ const { log } = require("./logger.js");
 const ManagerSettings = Homey.ManagerSettings;
 const _settingsKey = `${Homey.manifest.id}.settings`;
 let _httpService = undefined;
+let _deviceStore = undefined;
 let _devices = [];
 
 class App extends Homey.App {
@@ -67,6 +68,16 @@ class App extends Homey.App {
 
         if (!_httpService) {
             _httpService = await this.setHttpService(this.appSettings);
+
+            if (!_deviceStore) {
+                _deviceStore = await _httpService.listDevices();
+                _deviceStore = _deviceStore.map((r, i) => ({ 
+                    name: r.device_name, 
+                    index: i, 
+                    device_sn: r.device_sn  
+                }));
+                this.log("initSettings - Setting up DeviceStore", _deviceStore);
+            }
         }
 
         return;
@@ -220,6 +231,11 @@ updateSettings(settings) {
 
   getDevices() {
       return _devices;
+  }
+
+  getDeviceStore() {
+    this.log("getDeviceStore - retrieving DeviceStore", _deviceStore);
+    return _deviceStore;
   }
 }
 
