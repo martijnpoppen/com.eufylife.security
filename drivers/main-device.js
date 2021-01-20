@@ -20,6 +20,9 @@ module.exports = class mainDevice extends Homey.Device {
     }
 
     async checkCapabilities() {
+        // FIX 1.7.2 - capability
+        this.removeCapability('CMD_TRIGGER_MOTION');
+
         const driver = this.getDriver();
         const driverManifest = driver.getManifest();
         const driverCapabilities = driverManifest.capabilities;
@@ -47,7 +50,7 @@ module.exports = class mainDevice extends Homey.Device {
         }
     }
     
-    async onCapability_CMD_DEVS_SWITCH( value, opts ) {
+    async onCapability_CMD_DEVS_SWITCH( value ) {
         const deviceObject = this.getData();
         try {
             const deviceId = this.getStoreValue('device_index');
@@ -64,7 +67,7 @@ module.exports = class mainDevice extends Homey.Device {
         }
     }
     
-    async onCapability_CMD_SET_ARMING( value, opts ) {
+    async onCapability_CMD_SET_ARMING( value ) {
         const deviceObject = this.getData();
         try {
             const CMD_SET_ARMING = value;
@@ -91,8 +94,11 @@ module.exports = class mainDevice extends Homey.Device {
             await sleep(5000);
             const deviceObject = this.getData();
             const deviceStore = Homey.app.getDeviceStore();
-            const deviceMatch = deviceStore.find(d => d.device_sn === deviceObject.device_sn);
-            this.setStoreValue('device_index', deviceMatch.index);
+            if(deviceStore) {
+                const deviceMatch = deviceStore && deviceStore.find(d => d.device_sn === deviceObject.device_sn);
+                this.setStoreValue('device_index', deviceMatch.index);
+            }
+            
             return Promise.resolve(true);
         } catch (e) {
             Homey.app.error(e);

@@ -109,5 +109,8 @@
   },
   "1.7.2": {
     "en": "Fixed device on/off not working correctly - inverted and turning off wrong devices"
+  },
+  "1.7.3": {
+    "en": "Fixed device on/off not working correctly - inverted and turning off wrong devices + fix deviceStore"
   }
 }
