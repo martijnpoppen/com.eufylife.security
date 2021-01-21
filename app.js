@@ -147,6 +147,7 @@ updateSettings(settings) {
       _httpService = await this.setHttpService(data);
 
       const hubs = await _httpService.listHubs();
+      _deviceStore = await this.setDeviceStore(hubs);
       
       if(!hubs.length) {
         return new Error('No hubs found');
@@ -183,7 +184,6 @@ updateSettings(settings) {
       this.log("eufyLogin - Loaded settings", {...this.appSettings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
 
       if (settings.HUBS_AMOUNT  > 0) {
-        _deviceStore = await this.setDeviceStore();
         await eufyCommandSendHelper.init(this.appSettings);
         await flowActions.init();
       } 
@@ -228,14 +228,27 @@ updateSettings(settings) {
       return _devices;
   }
 
-  async setDeviceStore() {
-    let deviceStore = await _httpService.listDevices();
-    deviceStore = deviceStore.map((r, i) => ({ 
-        name: r.device_name, 
-        index: i, 
-        device_sn: r.device_sn  
-    }));
-    this.log("initSettings - Setting up DeviceStore", deviceStore);
+  async setDeviceStore(hubs = null) {
+    let hubStore = hubs;
+    let deviceStore = [];
+
+    if(!hubStore) {
+        hubStore = await _httpService.listHubs();
+    }
+
+    hubStore.forEach(hub => {
+        this.log("setDeviceStore - Setting up HubStore", hub.devices);
+        let devices = hub.devices.reverse();
+        devices = devices.map((r, i) => ({ 
+            name: r.device_name, 
+            index: i, 
+            device_sn: r.device_sn  
+        }));
+
+        deviceStore.push(...devices);
+    });
+
+    this.log("setDeviceStore - Setting up DeviceStore", deviceStore);
 
     return deviceStore;
   }

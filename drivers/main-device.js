@@ -104,7 +104,7 @@ module.exports = class mainDevice extends Homey.Device {
 
     async findDeviceIndexInStore() {
         try {
-            await sleep(5000);
+            await sleep(9000);
             const deviceObject = this.getData();
             const deviceStore = Homey.app.getDeviceStore();
             if(deviceStore) {
