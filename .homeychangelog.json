@@ -115,5 +115,8 @@
   },
   "1.7.4": {
     "en": "Fix issues with deviceStore"
+  },
+  "1.8.1": {
+    "en": "NEW: add sensor screen to app"
   }
 }

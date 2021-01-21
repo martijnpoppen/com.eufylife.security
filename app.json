@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -34,7 +34,9 @@
       "Motion dectection"
     ]
   },
-  "category": ["security"],
+  "category": [
+    "security"
+  ],
   "permissions": [],
   "images": {
     "large": "/assets/images/large.jpg",
@@ -351,7 +353,11 @@
     {
       "id": "driver_EUFYCAM_E",
       "class": "camera",
-      "capabilities": ["onoff", "CMD_SET_ARMING", "NTFY_MOTION_DETECTION"],
+      "capabilities": [
+        "onoff",
+        "CMD_SET_ARMING",
+        "NTFY_MOTION_DETECTION"
+      ],
       "name": {
         "en": "eufyCam E",
         "nl": "eufyCam E"
@@ -377,7 +383,11 @@
     {
       "id": "driver_FLOODLIGHT_CAMERA",
       "class": "camera",
-      "capabilities": ["onoff", "CMD_SET_ARMING", "NTFY_MOTION_DETECTION"],
+      "capabilities": [
+        "onoff",
+        "CMD_SET_ARMING",
+        "NTFY_MOTION_DETECTION"
+      ],
       "name": {
         "en": "Smart Floodlight with Camera",
         "nl": "Smart Floodlight with Camera"
@@ -687,11 +697,11 @@
       "insights": true,
       "insightsTitleTrue": {
         "en": "Motion Detected - on",
-        "nl": "Bewegings Gedetecteerd - aan"
+        "nl": "Beweging Gedetecteerd - aan"
       },
       "insightsTitleFalse": {
         "en": "Motion Detected - off",
-        "nl": "Bewegings Gedetecteerd - uit"
+        "nl": "Beweging Gedetecteerd - uit"
       },
       "title": {
         "en": "Motion Detected",
