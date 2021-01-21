@@ -118,5 +118,8 @@
   },
   "1.8.1": {
     "en": "NEW: add sensor screen to app"
+  },
+  "1.8.2": {
+    "en": "OPT: set devicestore per hub"
   }
 }
