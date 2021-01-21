@@ -11,6 +11,7 @@ module.exports = class mainDevice extends Homey.Device {
 
         this.registerCapabilityListener('onoff', this.onCapability_CMD_DEVS_SWITCH.bind(this));
         this.registerCapabilityListener('CMD_SET_ARMING', this.onCapability_CMD_SET_ARMING.bind(this));
+        this.registerCapabilityListener('NTFY_MOTION_DETECTION', this.onCapability_CMD_TRIGGER_MOTION.bind(this));
 
         await this.initCameraImage();
 
@@ -72,6 +73,18 @@ module.exports = class mainDevice extends Homey.Device {
         try {
             const CMD_SET_ARMING = value;
             await eufyCommandSendHelper.sendCommand(CommandType.CMD_SET_ARMING, CMD_SET_ARMING, null, 'CMD_SET_ARMING', deviceObject.station_sn);
+            return Promise.resolve(true);
+        } catch (e) {
+            Homey.app.error(e);
+            return Promise.reject(e);
+        }
+    }
+
+    async onCapability_CMD_TRIGGER_MOTION( value ) {
+        try {
+            this.setCapabilityValue(value, true)
+            await sleep(5000);
+            this.setCapabilityValue(value, false)
             return Promise.resolve(true);
         } catch (e) {
             Homey.app.error(e);

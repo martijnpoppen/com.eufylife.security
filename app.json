@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "1.7.4",
+  "version": "1.8.0",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -34,9 +34,7 @@
       "Motion dectection"
     ]
   },
-  "category": [
-    "security"
-  ],
+  "category": ["security"],
   "permissions": [],
   "images": {
     "large": "/assets/images/large.jpg",
@@ -353,11 +351,7 @@
     {
       "id": "driver_EUFYCAM_E",
       "class": "camera",
-      "capabilities": [
-        "onoff",
-        "CMD_SET_ARMING",
-        "NTFY_MOTION_DETECTION"
-      ],
+      "capabilities": ["onoff", "CMD_SET_ARMING", "NTFY_MOTION_DETECTION"],
       "name": {
         "en": "eufyCam E",
         "nl": "eufyCam E"
@@ -383,11 +377,7 @@
     {
       "id": "driver_FLOODLIGHT_CAMERA",
       "class": "camera",
-      "capabilities": [
-        "onoff",
-        "CMD_SET_ARMING",
-        "NTFY_MOTION_DETECTION"
-      ],
+      "capabilities": ["onoff", "CMD_SET_ARMING", "NTFY_MOTION_DETECTION"],
       "name": {
         "en": "Smart Floodlight with Camera",
         "nl": "Smart Floodlight with Camera"
@@ -664,58 +654,163 @@
     },
     "NTFY_BACKGROUND_ACTIVE": {
       "type": "boolean",
-      "uiComponent": null,
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": true,
+      "icon": "assets/icons/motion.svg",
+      "options": {
+        "zoneActivity": true
+      },
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Background movement Detected - on",
+        "nl": "Achtergrond Bewegings Gedetecteerd - aan"
+      },
+      "insightsTitleFalse": {
+        "en": "Background movement Detected - off",
+        "nl": "Achtergrond Bewegings Gedetecteerd - uit"
+      },
       "title": {
-        "en": "NTFY_BACKGROUND_ACTIVE",
-        "nl": "NTFY_BACKGROUND_ACTIVE"
+        "en": "Background movement Detected",
+        "nl": "Achtergrond Beweging Gedetecteerd"
       }
     },
     "NTFY_MOTION_DETECTION": {
       "type": "boolean",
-      "uiComponent": null,
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": true,
+      "icon": "assets/icons/motion.svg",
+      "options": {
+        "zoneActivity": true
+      },
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Motion Detected - on",
+        "nl": "Bewegings Gedetecteerd - aan"
+      },
+      "insightsTitleFalse": {
+        "en": "Motion Detected - off",
+        "nl": "Bewegings Gedetecteerd - uit"
+      },
       "title": {
-        "en": "NTFY_MOTION_DETECTION",
-        "nl": "NTFY_MOTION_DETECTION"
+        "en": "Motion Detected",
+        "nl": "Beweging Gedetecteerd"
       }
     },
     "NTFY_FACE_DETECTION": {
       "type": "boolean",
-      "uiComponent": null,
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": true,
+      "icon": "assets/icons/motion.svg",
+      "options": {
+        "zoneActivity": true
+      },
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Person Detected - on",
+        "nl": "Persoon Gedetecteerd - aan"
+      },
+      "insightsTitleFalse": {
+        "en": "Person Detected - off",
+        "nl": "Persoon Gedetecteerd - uit"
+      },
       "title": {
-        "en": "NTFY_FACE_DETECTION",
-        "nl": "NTFY_FACE_DETECTION"
+        "en": "Person Detected",
+        "nl": "Persoon Gedetecteerd"
       }
     },
     "NTFY_PRESS_DOORBELL": {
       "type": "boolean",
-      "uiComponent": null,
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": true,
+      "icon": "assets/icons/doorbell.svg",
+      "options": {
+        "zoneActivity": true
+      },
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Doorbell Press - on",
+        "nl": "Deurbel Druk Gedetecteerd - aan"
+      },
+      "insightsTitleFalse": {
+        "en": "Doorbell Press - off",
+        "nl": "Deurbel Druk Gedetecteerd - uit"
+      },
       "title": {
-        "en": "NTFY_PRESS_DOORBELL",
-        "nl": "NTFY_PRESS_DOORBELL"
+        "en": "Doorbell Press Detected",
+        "nl": "Deurbel Druk Gedetecteerd"
       }
     },
     "NTFY_CRYING_DETECTED": {
       "type": "boolean",
-      "uiComponent": null,
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": true,
+      "icon": "assets/icons/sound.svg",
+      "options": {
+        "zoneActivity": true
+      },
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Crying Detected - on",
+        "nl": "Huilen Gedetecteerd - aan"
+      },
+      "insightsTitleFalse": {
+        "en": "Crying Detected - off",
+        "nl": "Huilen Gedetecteerd - uit"
+      },
       "title": {
-        "en": "NTFY_CRYING_DETECTED",
-        "nl": "NTFY_CRYING_DETECTED"
+        "en": "Crying Detected",
+        "nl": "Huilen Gedetecteerd"
       }
     },
     "NTFY_SOUND_DETECTED": {
       "type": "boolean",
-      "uiComponent": null,
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": true,
+      "icon": "assets/icons/sound.svg",
+      "options": {
+        "zoneActivity": true
+      },
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Sound Detected - on",
+        "nl": "Geluid Gedetecteerd - aan"
+      },
+      "insightsTitleFalse": {
+        "en": "Sound Detected - off",
+        "nl": "Geluid Gedetecteerd - uit"
+      },
       "title": {
-        "en": "NTFY_SOUND_DETECTED",
-        "nl": "NTFY_SOUND_DETECTED"
+        "en": "Sound Detected",
+        "nl": "Geluid Gedetecteerd"
       }
     },
     "NTFY_PET_DETECTED": {
       "type": "boolean",
-      "uiComponent": null,
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": true,
+      "icon": "assets/icons/motion.svg",
+      "options": {
+        "zoneActivity": true
+      },
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Pet Detected - on",
+        "nl": "Huisdier Gedetecteerd - aan"
+      },
+      "insightsTitleFalse": {
+        "en": "Pet Detected - off",
+        "nl": "Huisdier Gedetecteerd - uit"
+      },
       "title": {
-        "en": "NTFY_PET_DETECTED",
-        "nl": "NTFY_PET_DETECTED"
+        "en": "Pet Detected",
+        "nl": "Huisdier Gedetecteerd"
       }
     }
   }
