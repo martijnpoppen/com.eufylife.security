@@ -121,5 +121,8 @@
   },
   "1.8.2": {
     "en": "OPT: set devicestore per hub"
+  },
+  "1.8.3": {
+    "en": "Fixed device on/off not working correctly - inverted and turning off wrong devices + fix deviceStore"
   }
 }
