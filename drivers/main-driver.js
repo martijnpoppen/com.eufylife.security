@@ -29,7 +29,7 @@ async function onDeviceListRequest() {
                 data: {
                     name: r.device_name, 
                     index: i, 
-                    id: r.device_id, 
+                    id: `${r.device_sn}-${r.device_id}`, 
                     station_sn: r.station_sn, 
                     device_sn: r.device_sn
                 }  
