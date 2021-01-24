@@ -11,7 +11,7 @@ module.exports = class mainDriver extends Homey.Driver {
     async onPairListDevices( data, callback ) {
         _httpService = Homey.app.getHttpService();
 
-        _devices = await onDeviceListRequest();
+        _devices = await onDeviceListRequest(this.id);
 
         Homey.app.log(`[Driver] ${this.id} - Found new devices:`, _devices);
         if(_devices && _devices.length) {
@@ -23,7 +23,7 @@ module.exports = class mainDriver extends Homey.Driver {
 }
 
 // ---------------------------------------AUTO COMPLETE HELPERS----------------------------------------------------------
-async function onDeviceListRequest() {
+async function onDeviceListRequest(driverId) {
     try {
         const devices = await _httpService.listDevices();
 
@@ -35,7 +35,7 @@ async function onDeviceListRequest() {
             pairedDriverDevices.push(data.device_sn);
         })
 
-        Homey.app.log(`[Driver] ${this.id} - pairedDriverDevices`, pairedDriverDevices);
+        Homey.app.log(`[Driver] ${driverId} - pairedDriverDevices`, pairedDriverDevices);
 
         const results = devices.filter(device => !pairedDriverDevices.includes(device.device_sn))
             .map((r, i) => ({ 
