@@ -130,5 +130,8 @@
   },
   "1.8.5": {
     "en": "FIX: duplicate devices are showing up during pairing"
+  },
+  "1.8.6": {
+    "en": "FIX: duplicate devices are showing up during pairing"
   }
 }
