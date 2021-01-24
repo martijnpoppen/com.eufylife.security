@@ -127,5 +127,8 @@
   },
   "1.8.4": {
     "en": "FIX: unable to add multiple device with same id"
+  },
+  "1.8.5": {
+    "en": "FIX: duplicate devices are showing up during pairing"
   }
 }
