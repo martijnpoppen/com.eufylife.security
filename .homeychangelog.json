@@ -124,5 +124,8 @@
   },
   "1.8.3": {
     "en": "Fixed device on/off not working correctly - inverted and turning off wrong devices + fix deviceStore"
+  },
+  "1.8.4": {
+    "en": "FIX: unable to add multiple device with same id"
   }
 }
