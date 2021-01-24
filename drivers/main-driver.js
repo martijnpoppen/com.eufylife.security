@@ -10,12 +10,14 @@ module.exports = class mainDriver extends Homey.Driver {
 
     async onPairListDevices( data, callback ) {
         _httpService = Homey.app.getHttpService();
-            
+
         _devices = await onDeviceListRequest();
+
+        Homey.app.log(`[Driver] ${this.id} - Found new devices:`, _devices);
         if(_devices && _devices.length) {
             callback( null, _devices );
         } else {
-            callback( new Error('Something went wrong!') );
+            callback( new Error('No devices found. Check the login status of this app inside app-settings') );
         }
     }
 }
@@ -24,7 +26,19 @@ module.exports = class mainDriver extends Homey.Driver {
 async function onDeviceListRequest() {
     try {
         const devices = await _httpService.listDevices();
-        const results = devices.map((r, i) => ({ 
+
+        // FIX 1.8.4 check for device id, to prevent duplicates.
+        let pairedDriverDevices = [];
+
+        Homey.app.getDevices().forEach(device => {
+            const data = device.getData();
+            pairedDriverDevices.push(data.device_sn);
+        })
+
+        Homey.app.log(`[Driver] ${this.id} - pairedDriverDevices`, pairedDriverDevices);
+
+        const results = devices.filter(device => !pairedDriverDevices.includes(device.device_sn))
+            .map((r, i) => ({ 
                 name: r.device_name, 
                 data: {
                     name: r.device_name, 

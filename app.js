@@ -234,7 +234,8 @@ updateSettings(settings) {
     deviceStore = deviceStore.map(r => ({ 
         name: r.device_name, 
         index: r.device_channel, 
-        device_sn: r.device_sn  
+        device_sn: r.device_sn,
+        deviceId: `${r.device_sn}-${r.device_id}`  
     }));
 
     this.log("setDeviceStore - Setting up DeviceStore", deviceStore);
