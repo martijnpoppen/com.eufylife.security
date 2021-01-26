@@ -34,9 +34,7 @@
       "Motion dectection"
     ]
   },
-  "category": [
-    "security"
-  ],
+  "category": ["security"],
   "permissions": [],
   "images": {
     "large": "/assets/images/large.jpg",
@@ -222,6 +220,68 @@
             ]
           }
         ]
+      },
+      {
+        "id": "action_CMD_DOORBELL_QUICK_RESPONSE",
+        "title": {
+          "en": "Send Quick Response",
+          "nl": "Stuur Spraakbericht"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "capabilities=CMD_DOORBELL_QUICK_RESPONSE"
+          },
+          {
+            "name": "action_CMD_SET_QUICK_RESPONSE_TYPE",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "0",
+                "label": {
+                  "en": "Default response 1",
+                  "nl": "Standaard bericht 1"
+                }
+              },
+              {
+                "id": "1",
+                "label": {
+                  "en": "Default response 2",
+                  "nl": "Standaard bericht 2"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Default response 3",
+                  "nl": "Standaard bericht 3"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Custom response 1",
+                  "nl": "Eigen bericht 1"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Custom response 2",
+                  "nl": "Eigen bericht 2"
+                }
+              },
+              {
+                "id": "5",
+                "label": {
+                  "en": "Custom response 3",
+                  "nl": "Eigen bericht 3"
+                }
+              }
+            ]
+          }
+        ]
       }
     ]
   },
@@ -353,11 +413,7 @@
     {
       "id": "driver_EUFYCAM_E",
       "class": "camera",
-      "capabilities": [
-        "onoff",
-        "CMD_SET_ARMING",
-        "NTFY_MOTION_DETECTION"
-      ],
+      "capabilities": ["onoff", "CMD_SET_ARMING", "NTFY_MOTION_DETECTION"],
       "name": {
         "en": "eufyCam E",
         "nl": "eufyCam E"
@@ -383,11 +439,7 @@
     {
       "id": "driver_FLOODLIGHT_CAMERA",
       "class": "camera",
-      "capabilities": [
-        "onoff",
-        "CMD_SET_ARMING",
-        "NTFY_MOTION_DETECTION"
-      ],
+      "capabilities": ["onoff", "CMD_SET_ARMING", "NTFY_MOTION_DETECTION"],
       "name": {
         "en": "Smart Floodlight with Camera",
         "nl": "Smart Floodlight with Camera"
@@ -519,6 +571,7 @@
       "capabilities": [
         "onoff",
         "CMD_SET_ARMING",
+        "CMD_DOORBELL_QUICK_RESPONSE",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
         "NTFY_PRESS_DOORBELL",
@@ -650,6 +703,60 @@
           "title": {
             "en": "Disarmed",
             "nl": "Disarmed"
+          }
+        }
+      ]
+    },
+    "CMD_DOORBELL_QUICK_RESPONSE": {
+      "type": "enum",
+      "title": {
+        "en": "Send Quick Response",
+        "nl": "Stuur Spraakbericht"
+      },
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "values": [
+        {
+          "id": "0",
+          "title": {
+            "en": "Default response 1",
+            "nl": "Standaard bericht 1"
+          }
+        },
+        {
+          "id": "1",
+          "title": {
+            "en": "Default response 2",
+            "nl": "Standaard bericht 2"
+          }
+        },
+        {
+          "id": "2",
+          "title": {
+            "en": "Default response 3",
+            "nl": "Standaard bericht 3"
+          }
+        },
+        {
+          "id": "3",
+          "title": {
+            "en": "Custom response 1",
+            "nl": "Eigen bericht 1"
+          }
+        },
+        {
+          "id": "4",
+          "title": {
+            "en": "Custom response 2",
+            "nl": "Eigen bericht 2"
+          }
+        },
+        {
+          "id": "5",
+          "title": {
+            "en": "Custom response 3",
+            "nl": "Eigen bericht 3"
           }
         }
       ]

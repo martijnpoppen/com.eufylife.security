@@ -34,7 +34,7 @@ class App extends Homey.App {
   // -------------------- INIT ----------------------
 
   async onInit() {
-    this.log(`${Homey.manifest.id} started...`);
+    this.log(`${Homey.manifest.id} - ${Homey.manifest.version} started...`);
     await this.initSettings();
     await this.checkForIncompatibleSettings();
 
