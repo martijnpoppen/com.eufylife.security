@@ -133,5 +133,8 @@
   },
   "1.8.6": {
     "en": "FIX: duplicate devices are showing up during pairing"
+  },
+  "1.8.7": {
+    "en": "Send quick response for battery doorbell"
   }
 }
