@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "1.8.8",
+  "version": "1.8.9",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -548,6 +548,7 @@
       "capabilities": [
         "onoff",
         "CMD_SET_ARMING",
+        "CMD_DOORBELL_QUICK_RESPONSE",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
         "NTFY_PRESS_DOORBELL",
@@ -615,6 +616,7 @@
       "capabilities": [
         "onoff",
         "CMD_SET_ARMING",
+        "CMD_DOORBELL_QUICK_RESPONSE",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
         "NTFY_PRESS_DOORBELL",
@@ -648,6 +650,7 @@
       "capabilities": [
         "onoff",
         "CMD_SET_ARMING",
+        "CMD_DOORBELL_QUICK_RESPONSE",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
         "NTFY_PRESS_DOORBELL",
