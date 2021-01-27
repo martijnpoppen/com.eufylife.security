@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "1.8.9",
+  "version": "1.8.10",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -240,42 +240,42 @@
             "type": "dropdown",
             "values": [
               {
-                "id": "0",
+                "id": "1",
                 "label": {
                   "en": "Default response 1",
                   "nl": "Standaard bericht 1"
                 }
               },
               {
-                "id": "1",
+                "id": "2",
                 "label": {
                   "en": "Default response 2",
                   "nl": "Standaard bericht 2"
                 }
               },
               {
-                "id": "2",
+                "id": "3",
                 "label": {
                   "en": "Default response 3",
                   "nl": "Standaard bericht 3"
                 }
               },
               {
-                "id": "3",
+                "id": "4",
                 "label": {
                   "en": "Custom response 1",
                   "nl": "Eigen bericht 1"
                 }
               },
               {
-                "id": "4",
+                "id": "5",
                 "label": {
                   "en": "Custom response 2",
                   "nl": "Eigen bericht 2"
                 }
               },
               {
-                "id": "5",
+                "id": "6",
                 "label": {
                   "en": "Custom response 3",
                   "nl": "Eigen bericht 3"
@@ -731,42 +731,42 @@
       "setable": true,
       "values": [
         {
-          "id": "0",
+          "id": "1",
           "title": {
             "en": "Default response 1",
             "nl": "Standaard bericht 1"
           }
         },
         {
-          "id": "1",
+          "id": "2",
           "title": {
             "en": "Default response 2",
             "nl": "Standaard bericht 2"
           }
         },
         {
-          "id": "2",
+          "id": "3",
           "title": {
             "en": "Default response 3",
             "nl": "Standaard bericht 3"
           }
         },
         {
-          "id": "3",
+          "id": "4",
           "title": {
             "en": "Custom response 1",
             "nl": "Eigen bericht 1"
           }
         },
         {
-          "id": "4",
+          "id": "5",
           "title": {
             "en": "Custom response 2",
             "nl": "Eigen bericht 2"
           }
         },
         {
-          "id": "5",
+          "id": "6",
           "title": {
             "en": "Custom response 3",
             "nl": "Eigen bericht 3"

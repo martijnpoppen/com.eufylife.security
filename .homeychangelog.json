@@ -142,5 +142,8 @@
   },
   "1.8.9": {
     "en": "Added quick response for all doorbells"
+  },
+  "1.8.10": {
+    "en": "Updated index of quick response to trigger correct response"
   }
 }
