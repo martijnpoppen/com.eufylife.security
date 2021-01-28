@@ -145,5 +145,8 @@
   },
   "1.8.10": {
     "en": "Updated index of quick response to trigger correct response"
+  },
+  "1.8.11": {
+    "en": "FIX: wired rdoorbell notifications"
   }
 }
