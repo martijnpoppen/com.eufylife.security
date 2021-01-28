@@ -151,7 +151,7 @@ updateSettings(settings) {
       if(!hubs.length) {
         return new Error('No hubs found');
       } else {
-        this.log(`eufyLogin - Logged in. Found hubs - ${hubs.length}`);
+        this.log(`eufyLogin - Logged in. Found hubs - ${hubs}`);
       }
 
       hubs.forEach(hub => {

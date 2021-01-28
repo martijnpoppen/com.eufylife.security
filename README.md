@@ -27,7 +27,9 @@ and use it with this library.
 ## To do:
 - check 2FA
 - check if the keypad is going to work
-- [Feature Request] Preset response · Issue #2 · martijnpoppen/com.eufylife.security · GitHub
+- check if the motion sensor is going to work
+- check RTSP for doorbell
+- [Feature Request] Preset response - In progress
 - Turn the eufy pan&tilt via Homey (e.g.: when you’re home turn 180 degrees to the wall)
 
 ---
