@@ -88,7 +88,7 @@ module.exports = class mainDevice extends Homey.Device {
         const deviceObject = this.getData();
         try {
             const deviceId = this.getStoreValue('device_index');
-
+            await eufyCommandSendHelper.sendCommand(CommandType.CMD_BAT_DOORBELL_SET_LED_ENABLE, value, deviceId, 'CMD_BAT_DOORBELL_SET_LED_ENABLE', deviceObject.station_sn);
             await eufyCommandSendHelper.sendCommand(CommandType.CMD_BAT_DOORBELL_QUICK_RESPONSE, value, deviceId, 'CMD_DOORBELL_QUICK_RESPONSE', deviceObject.station_sn);
             return Promise.resolve(true);
         } catch (e) {
