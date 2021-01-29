@@ -154,5 +154,8 @@
   },
   "1.8.13": {
     "en": "Activate doorbell for quick response"
+  },
+  "1.8.14": {
+    "en": "Fix devistore, use index instead of channel"
   }
 }
