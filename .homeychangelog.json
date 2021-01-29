@@ -151,5 +151,8 @@
   },
   "1.8.12": {
     "en": "ERnabel doorbell when sending quick response"
+  },
+  "1.8.13": {
+    "en": "Activate doorbell for quick response"
   }
 }
