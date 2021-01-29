@@ -183,7 +183,7 @@ updateSettings(settings) {
       this.log("eufyLogin - Loaded settings", {...this.appSettings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
 
       if (settings.HUBS_AMOUNT  > 0) {
-        _deviceStore = await this.setDeviceStore();
+        _deviceStore = await this.setDeviceStore(hubs);
         await eufyCommandSendHelper.init(this.appSettings);
         await flowActions.init();
       } 
@@ -228,15 +228,26 @@ updateSettings(settings) {
       return _devices;
   }
 
-  async setDeviceStore() {
-    let deviceStore = await _httpService.listDevices();
-    this.log("setDeviceStore - Setting up devices", deviceStore);
-    deviceStore = deviceStore.map(r => ({ 
-        name: r.device_name, 
-        index: r.device_channel, 
-        device_sn: r.device_sn,
-        deviceId: `${r.device_sn}-${r.device_id}`  
-    }));
+  async setDeviceStore(hubs) {
+    let hubStore = hubs;
+    let deviceStore = [];
+
+    if(!hubStore) {
+        hubStore = await _httpService.listHubs();
+    }
+
+    hubStore.forEach(hub => {
+        this.log("setDeviceStore - Setting up HubStore", hub.devices);
+        let devices = hub.devices.reverse();
+        devices = devices.map((r, i) => ({ 
+            name: r.device_name, 
+            index: i, 
+            device_sn: r.device_sn,
+            deviceId: `${r.device_sn}-${r.device_id}`  
+        }));
+
+        deviceStore.push(...devices);
+    });
 
     this.log("setDeviceStore - Setting up DeviceStore", deviceStore);
 
