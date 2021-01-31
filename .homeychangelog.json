@@ -166,5 +166,8 @@
   },
   "1.8.17": {
     "en": "Fix Doorbell fixes, quick responses, hubstore fix, Eufy cam 2c image fix"
+  },
+  "1.8.18": {
+    "en": "FIX: notfication images after pairing new device. FIX: commandSend service disconnected after x hours"
   }
 }
