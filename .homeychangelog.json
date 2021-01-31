@@ -157,5 +157,8 @@
   },
   "1.8.14": {
     "en": "Fix devistore, use index instead of channel"
+  },
+  "1.8.15": {
+    "en": "FIX: wired doorbell notifications"
   }
 }
