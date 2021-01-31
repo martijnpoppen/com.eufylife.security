@@ -1,6 +1,7 @@
 const Homey = require('homey');
 const { CommandType, sleep } = require('eufy-node-client');
 const eufyCommandSendHelper = require("../../lib/helpers/eufy-command-send.helper");
+const eufyNotificationCheckHelper = require("../../lib/helpers/eufy-notification-check.helper");
 
 module.exports = class mainDevice extends Homey.Device {
     async onInit() {
@@ -22,6 +23,11 @@ module.exports = class mainDevice extends Homey.Device {
         this.setAvailable();
 
         await this.findDeviceIndexInStore();
+    }
+
+    async onAdded() {
+        const settings = await Homey.app.getSettings();
+        await eufyNotificationCheckHelper.init(settings);
     }
 
     async checkCapabilities() {
