@@ -6,6 +6,7 @@ let _httpService = undefined;
 module.exports = class mainDriver extends Homey.Driver {
     onInit() {
         Homey.app.log('[Driver] - init', this.id);
+        Homey.app.log(`[Driver] - version`, Homey.manifest.id);
     }
 
     async onPairListDevices( data, callback ) {

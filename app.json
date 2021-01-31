@@ -721,58 +721,12 @@
       ]
     },
     "CMD_DOORBELL_QUICK_RESPONSE": {
-      "type": "enum",
+      "type": "boolean",
+      "uiComponent": null,
       "title": {
-        "en": "Send Quick Response",
-        "nl": "Stuur Spraakbericht"
-      },
-      "uiComponent": "picker",
-      "getable": true,
-      "setable": true,
-      "values": [
-        {
-          "id": "1",
-          "title": {
-            "en": "Default response 1",
-            "nl": "Standaard bericht 1"
-          }
-        },
-        {
-          "id": "2",
-          "title": {
-            "en": "Default response 2",
-            "nl": "Standaard bericht 2"
-          }
-        },
-        {
-          "id": "3",
-          "title": {
-            "en": "Default response 3",
-            "nl": "Standaard bericht 3"
-          }
-        },
-        {
-          "id": "4",
-          "title": {
-            "en": "Custom response 1",
-            "nl": "Eigen bericht 1"
-          }
-        },
-        {
-          "id": "5",
-          "title": {
-            "en": "Custom response 2",
-            "nl": "Eigen bericht 2"
-          }
-        },
-        {
-          "id": "6",
-          "title": {
-            "en": "Custom response 3",
-            "nl": "Eigen bericht 3"
-          }
-        }
-      ]
+        "en": "CMD_DOORBELL_QUICK_RESPONSE",
+        "nl": "CMD_DOORBELL_QUICK_RESPONSE"
+      }
     },
     "CMD_REVERSE_DEVS_SWITCH": {
       "type": "boolean",
