@@ -31,6 +31,7 @@ and use it with this library.
 - check RTSP for doorbell
 - [Feature Request] Preset response - In progress
 - Turn the eufy pan&tilt via Homey (e.g.: when you’re home turn 180 degrees to the wall)
+- Yhere's an issue with images not updating when devices are paired
 
 ---
 &nbsp;
