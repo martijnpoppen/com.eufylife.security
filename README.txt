@@ -20,4 +20,5 @@ Current features:
 - Add devices and use them in flows. (on/off)
 - Get notifications based on detection modes for specific devices. (Motion, Face, Sound and Doorbell Press) 
 - Get images when motion is detected
+- See last motion events
 

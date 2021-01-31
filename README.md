@@ -30,8 +30,9 @@ and use it with this library.
 - check if the motion sensor is going to work
 - check RTSP for doorbell
 - [Feature Request] Preset response - In progress
-- Turn the eufy pan&tilt via Homey (e.g.: when you’re home turn 180 degrees to the wall)
-- Yhere's an issue with images not updating when devices are paired
+- [Feature Request] Turn the eufy pan&tilt via Homey (e.g.: when you’re home turn 180 degrees to the wall)
+- [BUG] there's an issue with images not updating when devices are paired
+- [BUG] commandSend service expired token after x hours.
 
 ---
 &nbsp;
