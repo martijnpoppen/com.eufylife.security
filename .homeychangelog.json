@@ -160,5 +160,8 @@
   },
   "1.8.15": {
     "en": "FIX: wired doorbell notifications"
+  },
+  "1.8.16": {
+    "en": "Doorbell fixes, quick responses, hubstore fix"
   }
 }
