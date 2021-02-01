@@ -172,5 +172,8 @@
   },
   "1.8.19": {
     "en": "OPT: put back quick response quickMenu with list of values"
+  },
+  "1.8.20": {
+    "en": "FIX: commandSendHelper loop when timeout"
   }
 }
