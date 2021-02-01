@@ -25,10 +25,10 @@ and use it with this library.
 - Get images when motion is detected
 
 ## To do:
-- check 2FA
-- check if the keypad is going to work
-- check if the motion sensor is going to work
-- check RTSP for doorbell
+- [Feature Request] check 2FA
+- [Feature Request] check if the keypad is going to work
+- [Feature Request] check if the motion sensor is going to work
+- [Feature Request] check RTSP for doorbell
 - [Feature Request] Preset response - In progress
 - [Feature Request] Turn the eufy pan&tilt via Homey (e.g.: when you’re home turn 180 degrees to the wall)
 - [BUG] there's an issue with images not updating when devices are paired

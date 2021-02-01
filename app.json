@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "1.8.18",
+  "version": "1.8.19",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -721,12 +721,716 @@
       ]
     },
     "CMD_DOORBELL_QUICK_RESPONSE": {
-      "type": "boolean",
-      "uiComponent": null,
+      "type": "enum",
       "title": {
-        "en": "CMD_DOORBELL_QUICK_RESPONSE",
-        "nl": "CMD_DOORBELL_QUICK_RESPONSE"
-      }
+        "en": "Send Quick Response",
+        "nl": "Stuur Spraakbericht"
+      },
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "values": [
+        {
+          "id": "1",
+          "title": {
+            "en": "Custom response id: 1",
+            "nl": "Eigen bericht id: 1"
+          }
+        },
+        {
+          "id": "2",
+          "title": {
+            "en": "Custom response id: 2",
+            "nl": "Eigen bericht id: 2"
+          }
+        },
+        {
+          "id": "3",
+          "title": {
+            "en": "Custom response id: 3",
+            "nl": "Eigen bericht id: 3"
+          }
+        },
+        {
+          "id": "4",
+          "title": {
+            "en": "Custom response id: 4",
+            "nl": "Eigen bericht id: 4"
+          }
+        },
+        {
+          "id": "5",
+          "title": {
+            "en": "Custom response id: 5",
+            "nl": "Eigen bericht id: 5"
+          }
+        },
+        {
+          "id": "6",
+          "title": {
+            "en": "Custom response id: 6",
+            "nl": "Eigen bericht id: 6"
+          }
+        },
+        {
+          "id": "7",
+          "title": {
+            "en": "Custom response id: 7",
+            "nl": "Eigen bericht id: 7"
+          }
+        },
+        {
+          "id": "8",
+          "title": {
+            "en": "Custom response id: 8",
+            "nl": "Eigen bericht id: 8"
+          }
+        },
+        {
+          "id": "9",
+          "title": {
+            "en": "Custom response id: 9",
+            "nl": "Eigen bericht id: 9"
+          }
+        },
+        {
+          "id": "10",
+          "title": {
+            "en": "Custom response id: 10",
+            "nl": "Eigen bericht id: 10"
+          }
+        },
+        {
+          "id": "11",
+          "title": {
+            "en": "Custom response id: 11",
+            "nl": "Eigen bericht id: 11"
+          }
+        },
+        {
+          "id": "12",
+          "title": {
+            "en": "Custom response id: 12",
+            "nl": "Eigen bericht id: 12"
+          }
+        },
+        {
+          "id": "13",
+          "title": {
+            "en": "Custom response id: 13",
+            "nl": "Eigen bericht id: 13"
+          }
+        },
+        {
+          "id": "14",
+          "title": {
+            "en": "Custom response id: 14",
+            "nl": "Eigen bericht id: 14"
+          }
+        },
+        {
+          "id": "15",
+          "title": {
+            "en": "Custom response id: 15",
+            "nl": "Eigen bericht id: 15"
+          }
+        },
+        {
+          "id": "16",
+          "title": {
+            "en": "Custom response id: 16",
+            "nl": "Eigen bericht id: 16"
+          }
+        },
+        {
+          "id": "17",
+          "title": {
+            "en": "Custom response id: 17",
+            "nl": "Eigen bericht id: 17"
+          }
+        },
+        {
+          "id": "18",
+          "title": {
+            "en": "Custom response id: 18",
+            "nl": "Eigen bericht id: 18"
+          }
+        },
+        {
+          "id": "19",
+          "title": {
+            "en": "Custom response id: 19",
+            "nl": "Eigen bericht id: 19"
+          }
+        },
+        {
+          "id": "20",
+          "title": {
+            "en": "Custom response id: 20",
+            "nl": "Eigen bericht id: 20"
+          }
+        },
+        {
+          "id": "21",
+          "title": {
+            "en": "Custom response id: 21",
+            "nl": "Eigen bericht id: 21"
+          }
+        },
+        {
+          "id": "22",
+          "title": {
+            "en": "Custom response id: 22",
+            "nl": "Eigen bericht id: 22"
+          }
+        },
+        {
+          "id": "23",
+          "title": {
+            "en": "Custom response id: 23",
+            "nl": "Eigen bericht id: 23"
+          }
+        },
+        {
+          "id": "24",
+          "title": {
+            "en": "Custom response id: 24",
+            "nl": "Eigen bericht id: 24"
+          }
+        },
+        {
+          "id": "25",
+          "title": {
+            "en": "Custom response id: 25",
+            "nl": "Eigen bericht id: 25"
+          }
+        },
+        {
+          "id": "26",
+          "title": {
+            "en": "Custom response id: 26",
+            "nl": "Eigen bericht id: 26"
+          }
+        },
+        {
+          "id": "27",
+          "title": {
+            "en": "Custom response id: 27",
+            "nl": "Eigen bericht id: 27"
+          }
+        },
+        {
+          "id": "28",
+          "title": {
+            "en": "Custom response id: 28",
+            "nl": "Eigen bericht id: 28"
+          }
+        },
+        {
+          "id": "29",
+          "title": {
+            "en": "Custom response id: 29",
+            "nl": "Eigen bericht id: 29"
+          }
+        },
+        {
+          "id": "30",
+          "title": {
+            "en": "Custom response id: 30",
+            "nl": "Eigen bericht id: 30"
+          }
+        },
+        {
+          "id": "31",
+          "title": {
+            "en": "Custom response id: 31",
+            "nl": "Eigen bericht id: 31"
+          }
+        },
+        {
+          "id": "32",
+          "title": {
+            "en": "Custom response id: 32",
+            "nl": "Eigen bericht id: 32"
+          }
+        },
+        {
+          "id": "33",
+          "title": {
+            "en": "Custom response id: 33",
+            "nl": "Eigen bericht id: 33"
+          }
+        },
+        {
+          "id": "34",
+          "title": {
+            "en": "Custom response id: 34",
+            "nl": "Eigen bericht id: 34"
+          }
+        },
+        {
+          "id": "35",
+          "title": {
+            "en": "Custom response id: 35",
+            "nl": "Eigen bericht id: 35"
+          }
+        },
+        {
+          "id": "36",
+          "title": {
+            "en": "Custom response id: 36",
+            "nl": "Eigen bericht id: 36"
+          }
+        },
+        {
+          "id": "37",
+          "title": {
+            "en": "Custom response id: 37",
+            "nl": "Eigen bericht id: 37"
+          }
+        },
+        {
+          "id": "38",
+          "title": {
+            "en": "Custom response id: 38",
+            "nl": "Eigen bericht id: 38"
+          }
+        },
+        {
+          "id": "39",
+          "title": {
+            "en": "Custom response id: 39",
+            "nl": "Eigen bericht id: 39"
+          }
+        },
+        {
+          "id": "40",
+          "title": {
+            "en": "Custom response id: 40",
+            "nl": "Eigen bericht id: 40"
+          }
+        },
+        {
+          "id": "41",
+          "title": {
+            "en": "Custom response id: 41",
+            "nl": "Eigen bericht id: 41"
+          }
+        },
+        {
+          "id": "42",
+          "title": {
+            "en": "Custom response id: 42",
+            "nl": "Eigen bericht id: 42"
+          }
+        },
+        {
+          "id": "43",
+          "title": {
+            "en": "Custom response id: 43",
+            "nl": "Eigen bericht id: 43"
+          }
+        },
+        {
+          "id": "44",
+          "title": {
+            "en": "Custom response id: 44",
+            "nl": "Eigen bericht id: 44"
+          }
+        },
+        {
+          "id": "45",
+          "title": {
+            "en": "Custom response id: 45",
+            "nl": "Eigen bericht id: 45"
+          }
+        },
+        {
+          "id": "46",
+          "title": {
+            "en": "Custom response id: 46",
+            "nl": "Eigen bericht id: 46"
+          }
+        },
+        {
+          "id": "47",
+          "title": {
+            "en": "Custom response id: 47",
+            "nl": "Eigen bericht id: 47"
+          }
+        },
+        {
+          "id": "48",
+          "title": {
+            "en": "Custom response id: 48",
+            "nl": "Eigen bericht id: 48"
+          }
+        },
+        {
+          "id": "49",
+          "title": {
+            "en": "Custom response id: 49",
+            "nl": "Eigen bericht id: 49"
+          }
+        },
+        {
+          "id": "50",
+          "title": {
+            "en": "Custom response id: 50",
+            "nl": "Eigen bericht id: 50"
+          }
+        },
+        {
+          "id": "51",
+          "title": {
+            "en": "Custom response id: 51",
+            "nl": "Eigen bericht id: 51"
+          }
+        },
+        {
+          "id": "52",
+          "title": {
+            "en": "Custom response id: 52",
+            "nl": "Eigen bericht id: 52"
+          }
+        },
+        {
+          "id": "53",
+          "title": {
+            "en": "Custom response id: 53",
+            "nl": "Eigen bericht id: 53"
+          }
+        },
+        {
+          "id": "54",
+          "title": {
+            "en": "Custom response id: 54",
+            "nl": "Eigen bericht id: 54"
+          }
+        },
+        {
+          "id": "55",
+          "title": {
+            "en": "Custom response id: 55",
+            "nl": "Eigen bericht id: 55"
+          }
+        },
+        {
+          "id": "56",
+          "title": {
+            "en": "Custom response id: 56",
+            "nl": "Eigen bericht id: 56"
+          }
+        },
+        {
+          "id": "57",
+          "title": {
+            "en": "Custom response id: 57",
+            "nl": "Eigen bericht id: 57"
+          }
+        },
+        {
+          "id": "58",
+          "title": {
+            "en": "Custom response id: 58",
+            "nl": "Eigen bericht id: 58"
+          }
+        },
+        {
+          "id": "59",
+          "title": {
+            "en": "Custom response id: 59",
+            "nl": "Eigen bericht id: 59"
+          }
+        },
+        {
+          "id": "60",
+          "title": {
+            "en": "Custom response id: 60",
+            "nl": "Eigen bericht id: 60"
+          }
+        },
+        {
+          "id": "61",
+          "title": {
+            "en": "Custom response id: 61",
+            "nl": "Eigen bericht id: 61"
+          }
+        },
+        {
+          "id": "62",
+          "title": {
+            "en": "Custom response id: 62",
+            "nl": "Eigen bericht id: 62"
+          }
+        },
+        {
+          "id": "63",
+          "title": {
+            "en": "Custom response id: 63",
+            "nl": "Eigen bericht id: 63"
+          }
+        },
+        {
+          "id": "64",
+          "title": {
+            "en": "Custom response id: 64",
+            "nl": "Eigen bericht id: 64"
+          }
+        },
+        {
+          "id": "65",
+          "title": {
+            "en": "Custom response id: 65",
+            "nl": "Eigen bericht id: 65"
+          }
+        },
+        {
+          "id": "66",
+          "title": {
+            "en": "Custom response id: 66",
+            "nl": "Eigen bericht id: 66"
+          }
+        },
+        {
+          "id": "67",
+          "title": {
+            "en": "Custom response id: 67",
+            "nl": "Eigen bericht id: 67"
+          }
+        },
+        {
+          "id": "68",
+          "title": {
+            "en": "Custom response id: 68",
+            "nl": "Eigen bericht id: 68"
+          }
+        },
+        {
+          "id": "69",
+          "title": {
+            "en": "Custom response id: 69",
+            "nl": "Eigen bericht id: 69"
+          }
+        },
+        {
+          "id": "70",
+          "title": {
+            "en": "Custom response id: 70",
+            "nl": "Eigen bericht id: 70"
+          }
+        },
+        {
+          "id": "71",
+          "title": {
+            "en": "Custom response id: 71",
+            "nl": "Eigen bericht id: 71"
+          }
+        },
+        {
+          "id": "72",
+          "title": {
+            "en": "Custom response id: 72",
+            "nl": "Eigen bericht id: 72"
+          }
+        },
+        {
+          "id": "73",
+          "title": {
+            "en": "Custom response id: 73",
+            "nl": "Eigen bericht id: 73"
+          }
+        },
+        {
+          "id": "74",
+          "title": {
+            "en": "Custom response id: 74",
+            "nl": "Eigen bericht id: 74"
+          }
+        },
+        {
+          "id": "75",
+          "title": {
+            "en": "Custom response id: 75",
+            "nl": "Eigen bericht id: 75"
+          }
+        },
+        {
+          "id": "76",
+          "title": {
+            "en": "Custom response id: 76",
+            "nl": "Eigen bericht id: 76"
+          }
+        },
+        {
+          "id": "77",
+          "title": {
+            "en": "Custom response id: 77",
+            "nl": "Eigen bericht id: 77"
+          }
+        },
+        {
+          "id": "78",
+          "title": {
+            "en": "Custom response id: 78",
+            "nl": "Eigen bericht id: 78"
+          }
+        },
+        {
+          "id": "79",
+          "title": {
+            "en": "Custom response id: 79",
+            "nl": "Eigen bericht id: 79"
+          }
+        },
+        {
+          "id": "80",
+          "title": {
+            "en": "Custom response id: 80",
+            "nl": "Eigen bericht id: 80"
+          }
+        },
+        {
+          "id": "81",
+          "title": {
+            "en": "Custom response id: 81",
+            "nl": "Eigen bericht id: 81"
+          }
+        },
+        {
+          "id": "82",
+          "title": {
+            "en": "Custom response id: 82",
+            "nl": "Eigen bericht id: 82"
+          }
+        },
+        {
+          "id": "83",
+          "title": {
+            "en": "Custom response id: 83",
+            "nl": "Eigen bericht id: 83"
+          }
+        },
+        {
+          "id": "84",
+          "title": {
+            "en": "Custom response id: 84",
+            "nl": "Eigen bericht id: 84"
+          }
+        },
+        {
+          "id": "85",
+          "title": {
+            "en": "Custom response id: 85",
+            "nl": "Eigen bericht id: 85"
+          }
+        },
+        {
+          "id": "86",
+          "title": {
+            "en": "Custom response id: 86",
+            "nl": "Eigen bericht id: 86"
+          }
+        },
+        {
+          "id": "87",
+          "title": {
+            "en": "Custom response id: 87",
+            "nl": "Eigen bericht id: 87"
+          }
+        },
+        {
+          "id": "88",
+          "title": {
+            "en": "Custom response id: 88",
+            "nl": "Eigen bericht id: 88"
+          }
+        },
+        {
+          "id": "89",
+          "title": {
+            "en": "Custom response id: 89",
+            "nl": "Eigen bericht id: 89"
+          }
+        },
+        {
+          "id": "90",
+          "title": {
+            "en": "Custom response id: 90",
+            "nl": "Eigen bericht id: 90"
+          }
+        },
+        {
+          "id": "91",
+          "title": {
+            "en": "Custom response id: 91",
+            "nl": "Eigen bericht id: 91"
+          }
+        },
+        {
+          "id": "92",
+          "title": {
+            "en": "Custom response id: 92",
+            "nl": "Eigen bericht id: 92"
+          }
+        },
+        {
+          "id": "93",
+          "title": {
+            "en": "Custom response id: 93",
+            "nl": "Eigen bericht id: 93"
+          }
+        },
+        {
+          "id": "94",
+          "title": {
+            "en": "Custom response id: 94",
+            "nl": "Eigen bericht id: 94"
+          }
+        },
+        {
+          "id": "95",
+          "title": {
+            "en": "Custom response id: 95",
+            "nl": "Eigen bericht id: 95"
+          }
+        },
+        {
+          "id": "96",
+          "title": {
+            "en": "Custom response id: 96",
+            "nl": "Eigen bericht id: 96"
+          }
+        },
+        {
+          "id": "97",
+          "title": {
+            "en": "Custom response id: 97",
+            "nl": "Eigen bericht id: 97"
+          }
+        },
+        {
+          "id": "98",
+          "title": {
+            "en": "Custom response id: 98",
+            "nl": "Eigen bericht id: 98"
+          }
+        },
+        {
+          "id": "99",
+          "title": {
+            "en": "Custom response id: 99",
+            "nl": "Eigen bericht id: 99"
+          }
+        },
+        {
+          "id": "100",
+          "title": {
+            "en": "Custom response id: 100",
+            "nl": "Eigen bericht id: 100"
+          }
+        }
+      ]
     },
     "CMD_REVERSE_DEVS_SWITCH": {
       "type": "boolean",

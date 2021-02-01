@@ -169,5 +169,8 @@
   },
   "1.8.18": {
     "en": "FIX: notfication images after pairing new device. FIX: commandSend service disconnected after x hours"
+  },
+  "1.8.19": {
+    "en": "OPT: put back quick response quickMenu with list of vlaues"
   }
 }
