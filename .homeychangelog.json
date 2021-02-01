@@ -175,5 +175,8 @@
   },
   "1.8.20": {
     "en": "FIX: commandSendHelper loop when timeout"
+  },
+  "1.8.21": {
+    "en": "OPT: remove quick response and FIX: crash when ip address times out"
   }
 }
