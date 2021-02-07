@@ -149,7 +149,7 @@ updateSettings(settings) {
       const hubs = await _httpService.listHubs();
       
       if(!hubs.length) {
-        return new Error('No hubs found');
+        return new Error('No hubs found. Did you share the devices to your Eufy Account?');
       } else {
         this.log(`eufyLogin - Logged in. Found hubs - ${hubs}`);
       }
@@ -237,16 +237,18 @@ updateSettings(settings) {
     }
 
     hubStore.forEach(hub => {
-        this.log("setDeviceStore - Setting up HubStore", hub.devices);
-        let devices = hub.devices.reverse();
-        devices = devices.map((r, i) => ({ 
-            name: r.device_name, 
-            index: i, 
-            device_sn: r.device_sn,
-            deviceId: `${r.device_sn}-${r.device_id}`  
-        }));
+        if(hub.devices && hub.devices.length) {
+            this.log("setDeviceStore - Setting up HubStore", hub.devices);
+            let devices = hub.devices.reverse();
+            devices = devices.map((r, i) => ({ 
+                name: r.device_name, 
+                index: i, 
+                device_sn: r.device_sn,
+                deviceId: `${r.device_sn}-${r.device_id}`  
+            }));
 
-        deviceStore.push(...devices);
+            deviceStore.push(...devices);
+        }
     });
 
     this.log("setDeviceStore - Setting up DeviceStore", deviceStore);
