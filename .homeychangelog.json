@@ -178,5 +178,8 @@
   },
   "1.8.21": {
     "en": "OPT: remove quick response and FIX: crash when ip address times out"
+  },
+  "1.8.22": {
+    "en": "FIX: error when no paired devices."
   }
 }
