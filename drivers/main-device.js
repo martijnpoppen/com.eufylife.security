@@ -2,6 +2,7 @@ const Homey = require('homey');
 const { CommandType, sleep } = require('eufy-node-client');
 const eufyCommandSendHelper = require("../../lib/helpers/eufy-command-send.helper");
 const eufyNotificationCheckHelper = require("../../lib/helpers/eufy-notification-check.helper");
+let _httpService = undefined;
 
 module.exports = class mainDevice extends Homey.Device {
     async onInit() {
@@ -14,6 +15,12 @@ module.exports = class mainDevice extends Homey.Device {
         this.registerCapabilityListener('CMD_SET_ARMING', this.onCapability_CMD_SET_ARMING.bind(this));
         this.registerCapabilityListener('NTFY_MOTION_DETECTION', this.onCapability_CMD_TRIGGER_MOTION.bind(this));
 
+        if(this.hasCapability('CMD_DOORBELL_QUICK_RESPONSE')) {
+            await this.setQuickResponseStore();
+            this.registerCapabilityListener('CMD_DOORBELL_QUICK_RESPONSE', this.onCapability_CMD_DOORBELL_QUICK_RESPONSE.bind(this));
+
+        }
+
         await this.initCameraImage();
 
         this.setAvailable();
@@ -23,6 +30,7 @@ module.exports = class mainDevice extends Homey.Device {
 
     async onAdded() {
         const settings = await Homey.app.getSettings();
+        await this.initCameraImage();
         await eufyNotificationCheckHelper.init(settings);
     }
 
@@ -86,6 +94,25 @@ module.exports = class mainDevice extends Homey.Device {
         }
     }
 
+    async onCapability_CMD_DOORBELL_QUICK_RESPONSE( value ) {
+        const deviceObject = this.getData();
+        try {
+            const quickResponse = this.getStoreValue('quick_response');
+            const deviceId = this.getStoreValue('device_index');
+            if(quickResponse.length >= value) {
+                await eufyCommandSendHelper.sendCommand(CommandType.CMD_START_REALTIME_MEDIA, 1, deviceId, 'CMD_START_REALTIME_MEDIA', deviceObject.station_sn);
+                await sleep(1000);
+                await eufyCommandSendHelper.sendCommand(CommandType.CMD_BAT_DOORBELL_QUICK_RESPONSE, quickResponse[value-1], deviceId, 'CMD_DOORBELL_QUICK_RESPONSE', deviceObject.station_sn);
+                await sleep(3000);
+                await eufyCommandSendHelper.sendCommand(CommandType.CMD_STOP_REALTIME_MEDIA, 1, deviceId, 'CMD_STOP_REALTIME_MEDIA', deviceObject.station_sn);
+            }
+            return Promise.resolve(true);
+        } catch (e) {
+            Homey.app.error(e);
+            return Promise.reject(e);
+        }
+    }
+
     async onCapability_CMD_TRIGGER_MOTION( value ) {
         try {
             this.setCapabilityValue(value, true)
@@ -116,6 +143,28 @@ module.exports = class mainDevice extends Homey.Device {
             if(deviceStore) {
                 const deviceMatch = deviceStore && deviceStore.find(d => d.device_sn === deviceObject.device_sn);
                 this.setStoreValue('device_index', deviceMatch.index);
+            }
+            
+            return Promise.resolve(true);
+        } catch (e) {
+            Homey.app.error(e);
+            return Promise.reject(e);
+        }
+    }
+
+    async setQuickResponseStore() {
+        try {
+            _httpService = Homey.app.getHttpService();
+            const deviceObject = this.getData();
+
+            let quickResponse = await _httpService.voiceList(deviceObject.device_sn);
+            Homey.app.log('[Device] - Set quickResponse', quickResponse);
+
+            quickResponse = quickResponse.map(v => v.voice_id);
+            Homey.app.log('[Device] - Mapped quickResponse', quickResponse);
+
+            if(quickResponse) {
+                this.setStoreValue('quick_response', quickResponse);
             }
             
             return Promise.resolve(true);
