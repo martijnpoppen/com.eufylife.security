@@ -184,5 +184,8 @@
   },
   "1.9.0": {
     "en": "Added quickResponses - Updated p2p library"
+  },
+  "1.9.1": {
+    "en": "Add special functionality for Powered doorbell"
   }
 }
