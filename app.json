@@ -549,6 +549,7 @@
         "onoff",
         "CMD_SET_ARMING",
         "CMD_DOORBELL_QUICK_RESPONSE",
+        "CMD_DOORBELL_QUICK_RESPONSE_POWERED",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
         "NTFY_PRESS_DOORBELL",
@@ -617,6 +618,7 @@
         "onoff",
         "CMD_SET_ARMING",
         "CMD_DOORBELL_QUICK_RESPONSE",
+        "CMD_DOORBELL_QUICK_RESPONSE_POWERED",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
         "NTFY_PRESS_DOORBELL",
@@ -782,6 +784,14 @@
         }
       ]
     },
+    "CMD_DOORBELL_QUICK_RESPONSE_POWERED": {
+        "type": "boolean",
+        "uiComponent": null,
+        "title": {
+          "en": "CMD_DOORBELL_QUICK_RESPONSE_POWERED",
+          "nl": "CMD_DOORBELL_QUICK_RESPONSE_POWERED"
+        }
+      },
     "NTFY_BACKGROUND_ACTIVE": {
       "type": "boolean",
       "uiComponent": "sensor",
