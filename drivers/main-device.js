@@ -29,7 +29,6 @@ module.exports = class mainDevice extends Homey.Device {
 
     async onAdded() {
         const settings = await Homey.app.getSettings();
-        await this.initCameraImage();
         await eufyNotificationCheckHelper.init(settings);
     }
 
@@ -102,8 +101,11 @@ module.exports = class mainDevice extends Homey.Device {
             if(quickResponse.length >= value) {
                 await eufyCommandSendHelper.sendCommand(CommandType.CMD_START_REALTIME_MEDIA, 1, deviceId, 'CMD_START_REALTIME_MEDIA', deviceObject.station_sn);
                 await sleep(500);
+
                 if(specificDeviceType) {
-                    await eufyCommandSendHelper.sendCommand(CommandType.CMD_DOORBELL_SET_PAYLOAD, {"commandType": CommandType.CMD_STOP_REALTIME_MEDIA, "data":{"voiceID":quickResponse[value-1]}}, deviceId, 'CMD_DOORBELL_SET_PAYLOAD', deviceObject.station_sn);
+                    await eufyCommandSendHelper.sendCommand(CommandType.CMD_DOORBELL_SET_PAYLOAD, {
+                        "commandType": CommandType.CMD_STOP_REALTIME_MEDIA, "data":{"voiceID": quickResponse[value-1]}
+                    }, deviceId, 'CMD_DOORBELL_SET_PAYLOAD', deviceObject.station_sn);
                 } else {
                     await eufyCommandSendHelper.sendCommand(CommandType.CMD_BAT_DOORBELL_QUICK_RESPONSE, quickResponse[value-1], deviceId, 'CMD_DOORBELL_QUICK_RESPONSE', deviceObject.station_sn);
                     await sleep(3000);
