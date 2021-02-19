@@ -41,7 +41,7 @@ module.exports = class mainDevice extends Homey.Device {
         const driverCapabilities = driverManifest.capabilities;
         const deviceCapabilities = this.getCapabilities();
 
-        Homey.app.log('[Device] - Found capabilities =>', deviceCapabilities);
+        Homey.app.log(`[Device] ${this.getName()} - Found capabilities =>`, deviceCapabilities);
 
         if(driverCapabilities.length > deviceCapabilities.length) {      
             await this.setCapabilities(driverCapabilities);
@@ -132,7 +132,7 @@ module.exports = class mainDevice extends Homey.Device {
     }
 
     initCameraImage() {
-        Homey.app.log('[Device] - Set initial image');
+        Homey.app.log(`[Device] ${this.getName()} - Set initial image`);
         const deviceObject = this.getData();
         this._image = new Homey.Image();
         this._image.setPath('assets/images/large.jpg');
@@ -164,10 +164,10 @@ module.exports = class mainDevice extends Homey.Device {
             const deviceObject = this.getData();
 
             let quickResponse = await _httpService.voiceList(deviceObject.device_sn);
-            Homey.app.log('[Device] - Set quickResponse', quickResponse);
+            Homey.app.log(`[Device] ${this.getName()} - Set quickResponse`, quickResponse);
 
             quickResponse = quickResponse.map(v => v.voice_id);
-            Homey.app.log('[Device] - Mapped quickResponse', quickResponse);
+            Homey.app.log(`[Device] ${this.getName()} - Mapped quickResponse`, quickResponse);
 
             if(quickResponse) {
                 this.setStoreValue('quick_response', quickResponse);
