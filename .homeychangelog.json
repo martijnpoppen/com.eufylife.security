@@ -196,5 +196,8 @@
   },
   "1.9.4": {
     "en": "OPT: Chained commands for Powered doorbell"
+  },
+  "1.9.5": {
+    "en": "FIX doorbell images"
   }
 }
