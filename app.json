@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "1.9.5",
+  "version": "1.9.6",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -34,9 +34,7 @@
       "Motion dectection"
     ]
   },
-  "category": [
-    "security"
-  ],
+  "category": ["security"],
   "permissions": [],
   "images": {
     "large": "/assets/images/large.jpg",
@@ -290,7 +288,7 @@
   "drivers": [
     {
       "id": "driver_EUFYCAM_2",
-      "class": "socket",
+      "class": "camera",
       "capabilities": [
         "onoff",
         "CMD_SET_ARMING",
@@ -317,11 +315,31 @@
           "id": "add_devices",
           "template": "add_devices"
         }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General settings",
+            "nl": "Algemene instellingen"
+          },
+          "children": [
+            {
+              "id": "override_onoff",
+              "type": "checkbox",
+              "label": {
+                "en": "Always on?",
+                "nl": "Altijd aan?"
+              },
+              "value": false
+            }
+          ]
+        }
       ]
     },
     {
       "id": "driver_EUFYCAM_2_PRO",
-      "class": "socket",
+      "class": "camera",
       "capabilities": [
         "onoff",
         "CMD_SET_ARMING",
@@ -348,11 +366,31 @@
           "id": "add_devices",
           "template": "add_devices"
         }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General settings",
+            "nl": "Algemene instellingen"
+          },
+          "children": [
+            {
+              "id": "override_onoff",
+              "type": "checkbox",
+              "label": {
+                "en": "Always on?",
+                "nl": "Altijd aan?"
+              },
+              "value": false
+            }
+          ]
+        }
       ]
     },
     {
       "id": "driver_EUFYCAM_2C",
-      "class": "socket",
+      "class": "camera",
       "capabilities": [
         "onoff",
         "CMD_SET_ARMING",
@@ -379,11 +417,31 @@
           "id": "add_devices",
           "template": "add_devices"
         }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General settings",
+            "nl": "Algemene instellingen"
+          },
+          "children": [
+            {
+              "id": "override_onoff",
+              "type": "checkbox",
+              "label": {
+                "en": "Always on?",
+                "nl": "Altijd aan?"
+              },
+              "value": false
+            }
+          ]
+        }
       ]
     },
     {
       "id": "driver_EUFYCAM_2C_PRO",
-      "class": "socket",
+      "class": "camera",
       "capabilities": [
         "onoff",
         "CMD_SET_ARMING",
@@ -410,16 +468,32 @@
           "id": "add_devices",
           "template": "add_devices"
         }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General settings",
+            "nl": "Algemene instellingen"
+          },
+          "children": [
+            {
+              "id": "override_onoff",
+              "type": "checkbox",
+              "label": {
+                "en": "Always on?",
+                "nl": "Altijd aan?"
+              },
+              "value": false
+            }
+          ]
+        }
       ]
     },
     {
       "id": "driver_EUFYCAM_E",
-      "class": "socket",
-      "capabilities": [
-        "onoff",
-        "CMD_SET_ARMING",
-        "NTFY_MOTION_DETECTION"
-      ],
+      "class": "camera",
+      "capabilities": ["onoff", "CMD_SET_ARMING", "NTFY_MOTION_DETECTION"],
       "name": {
         "en": "eufyCam E",
         "nl": "eufyCam E"
@@ -440,16 +514,32 @@
           "id": "add_devices",
           "template": "add_devices"
         }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General settings",
+            "nl": "Algemene instellingen"
+          },
+          "children": [
+            {
+              "id": "override_onoff",
+              "type": "checkbox",
+              "label": {
+                "en": "Always on?",
+                "nl": "Altijd aan?"
+              },
+              "value": false
+            }
+          ]
+        }
       ]
     },
     {
       "id": "driver_FLOODLIGHT_CAMERA",
-      "class": "socket",
-      "capabilities": [
-        "onoff",
-        "CMD_SET_ARMING",
-        "NTFY_MOTION_DETECTION"
-      ],
+      "class": "camera",
+      "capabilities": ["onoff", "CMD_SET_ARMING", "NTFY_MOTION_DETECTION"],
       "name": {
         "en": "Smart Floodlight with Camera",
         "nl": "Smart Floodlight with Camera"
@@ -470,11 +560,31 @@
           "id": "add_devices",
           "template": "add_devices"
         }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General settings",
+            "nl": "Algemene instellingen"
+          },
+          "children": [
+            {
+              "id": "override_onoff",
+              "type": "checkbox",
+              "label": {
+                "en": "Always on?",
+                "nl": "Altijd aan?"
+              },
+              "value": false
+            }
+          ]
+        }
       ]
     },
     {
       "id": "driver_INDOOR_CAM",
-      "class": "socket",
+      "class": "camera",
       "capabilities": [
         "onoff",
         "CMD_SET_ARMING",
@@ -505,11 +615,31 @@
           "id": "add_devices",
           "template": "add_devices"
         }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General settings",
+            "nl": "Algemene instellingen"
+          },
+          "children": [
+            {
+              "id": "override_onoff",
+              "type": "checkbox",
+              "label": {
+                "en": "Always on?",
+                "nl": "Altijd aan?"
+              },
+              "value": false
+            }
+          ]
+        }
       ]
     },
     {
       "id": "driver_INDOOR_CAM_PAN_TILT",
-      "class": "socket",
+      "class": "camera",
       "capabilities": [
         "onoff",
         "CMD_SET_ARMING",
@@ -540,11 +670,31 @@
           "id": "add_devices",
           "template": "add_devices"
         }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General settings",
+            "nl": "Algemene instellingen"
+          },
+          "children": [
+            {
+              "id": "override_onoff",
+              "type": "checkbox",
+              "label": {
+                "en": "Always on?",
+                "nl": "Altijd aan?"
+              },
+              "value": false
+            }
+          ]
+        }
       ]
     },
     {
       "id": "driver_VIDEO_DOORBELL_2K_POWERED",
-      "class": "socket",
+      "class": "camera",
       "capabilities": [
         "onoff",
         "CMD_SET_ARMING",
@@ -575,11 +725,31 @@
           "id": "add_devices",
           "template": "add_devices"
         }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General settings",
+            "nl": "Algemene instellingen"
+          },
+          "children": [
+            {
+              "id": "override_onoff",
+              "type": "checkbox",
+              "label": {
+                "en": "Always on?",
+                "nl": "Altijd aan?"
+              },
+              "value": false
+            }
+          ]
+        }
       ]
     },
     {
       "id": "driver_VIDEO_DOORBELL_2K_BATTERY",
-      "class": "socket",
+      "class": "camera",
       "capabilities": [
         "onoff",
         "CMD_SET_ARMING",
@@ -609,11 +779,31 @@
           "id": "add_devices",
           "template": "add_devices"
         }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General settings",
+            "nl": "Algemene instellingen"
+          },
+          "children": [
+            {
+              "id": "override_onoff",
+              "type": "checkbox",
+              "label": {
+                "en": "Always on?",
+                "nl": "Altijd aan?"
+              },
+              "value": false
+            }
+          ]
+        }
       ]
     },
     {
       "id": "driver_VIDEO_DOORBELL_1080P_POWERED",
-      "class": "socket",
+      "class": "camera",
       "capabilities": [
         "onoff",
         "CMD_SET_ARMING",
@@ -644,11 +834,31 @@
           "id": "add_devices",
           "template": "add_devices"
         }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General settings",
+            "nl": "Algemene instellingen"
+          },
+          "children": [
+            {
+              "id": "override_onoff",
+              "type": "checkbox",
+              "label": {
+                "en": "Always on?",
+                "nl": "Altijd aan?"
+              },
+              "value": false
+            }
+          ]
+        }
       ]
     },
     {
       "id": "driver_VIDEO_DOORBELL_1080P_BATTERY",
-      "class": "socket",
+      "class": "camera",
       "capabilities": [
         "onoff",
         "CMD_SET_ARMING",
@@ -677,6 +887,26 @@
         {
           "id": "add_devices",
           "template": "add_devices"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General settings",
+            "nl": "Algemene instellingen"
+          },
+          "children": [
+            {
+              "id": "override_onoff",
+              "type": "checkbox",
+              "label": {
+                "en": "Always on?",
+                "nl": "Altijd aan?"
+              },
+              "value": false
+            }
+          ]
         }
       ]
     }

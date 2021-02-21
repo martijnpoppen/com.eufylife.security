@@ -199,5 +199,8 @@
   },
   "1.9.5": {
     "en": "FIX doorbell images"
+  },
+  "1.9.6": {
+    "en": "OPT: change device class - prevent turning off per device"
   }
 }

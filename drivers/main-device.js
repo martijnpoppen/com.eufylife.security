@@ -33,11 +33,8 @@ module.exports = class mainDevice extends Homey.Device {
     }
 
     async checkCapabilities() {
-        // FIX 1.7.2 - capability
-        this.removeCapability('CMD_TRIGGER_MOTION');
-
-        // FEATURE 1.9.6 - Socket class
-        this.setClass('socket');
+        // FEATURE 1.9.6 - Revert Socket class
+        this.setClass('camera');
 
         const driver = this.getDriver();
         const driverManifest = driver.getManifest();
@@ -47,14 +44,14 @@ module.exports = class mainDevice extends Homey.Device {
         Homey.app.log(`[Device] ${this.getName()} - Found capabilities =>`, deviceCapabilities);
 
         if(driverCapabilities.length > deviceCapabilities.length) {      
-            await this.setCapabilities(driverCapabilities);
+            await this.updateCapabilities(driverCapabilities);
             return;
         }
 
         return;
     }
 
-    async setCapabilities(driverCapabilities) {
+    async updateCapabilities(driverCapabilities) {
         Homey.app.log('[Device] - Add new capabilities =>', driverCapabilities);
         try {
             driverCapabilities.forEach(c => {
@@ -68,7 +65,13 @@ module.exports = class mainDevice extends Homey.Device {
     
     async onCapability_CMD_DEVS_SWITCH( value ) {
         const deviceObject = this.getData();
+        const settings = this.getSettings();
+
         try {
+            if(!value && settings && settings.override_onoff) {
+                throw new Error('Device always-on enabled in settings');
+            }
+
             const deviceId = this.getStoreValue('device_index');
             let CMD_DEVS_SWITCH = value ? 0 : 1;
             if(this.hasCapability('CMD_REVERSE_DEVS_SWITCH')) {
