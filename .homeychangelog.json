@@ -202,5 +202,8 @@
   },
   "1.9.6": {
     "en": "OPT: change device class - prevent turning off per device"
+  },
+  "1.9.7": {
+    "en": "OPT: always on setting"
   }
 }
