@@ -290,7 +290,7 @@
   "drivers": [
     {
       "id": "driver_EUFYCAM_2",
-      "class": "camera",
+      "class": "socket",
       "capabilities": [
         "onoff",
         "CMD_SET_ARMING",
@@ -321,7 +321,7 @@
     },
     {
       "id": "driver_EUFYCAM_2_PRO",
-      "class": "camera",
+      "class": "socket",
       "capabilities": [
         "onoff",
         "CMD_SET_ARMING",
@@ -352,7 +352,7 @@
     },
     {
       "id": "driver_EUFYCAM_2C",
-      "class": "camera",
+      "class": "socket",
       "capabilities": [
         "onoff",
         "CMD_SET_ARMING",
@@ -383,7 +383,7 @@
     },
     {
       "id": "driver_EUFYCAM_2C_PRO",
-      "class": "camera",
+      "class": "socket",
       "capabilities": [
         "onoff",
         "CMD_SET_ARMING",
@@ -414,7 +414,7 @@
     },
     {
       "id": "driver_EUFYCAM_E",
-      "class": "camera",
+      "class": "socket",
       "capabilities": [
         "onoff",
         "CMD_SET_ARMING",
@@ -444,7 +444,7 @@
     },
     {
       "id": "driver_FLOODLIGHT_CAMERA",
-      "class": "camera",
+      "class": "socket",
       "capabilities": [
         "onoff",
         "CMD_SET_ARMING",
@@ -474,7 +474,7 @@
     },
     {
       "id": "driver_INDOOR_CAM",
-      "class": "camera",
+      "class": "socket",
       "capabilities": [
         "onoff",
         "CMD_SET_ARMING",
@@ -509,7 +509,7 @@
     },
     {
       "id": "driver_INDOOR_CAM_PAN_TILT",
-      "class": "camera",
+      "class": "socket",
       "capabilities": [
         "onoff",
         "CMD_SET_ARMING",
@@ -544,7 +544,7 @@
     },
     {
       "id": "driver_VIDEO_DOORBELL_2K_POWERED",
-      "class": "camera",
+      "class": "socket",
       "capabilities": [
         "onoff",
         "CMD_SET_ARMING",
@@ -579,7 +579,7 @@
     },
     {
       "id": "driver_VIDEO_DOORBELL_2K_BATTERY",
-      "class": "camera",
+      "class": "socket",
       "capabilities": [
         "onoff",
         "CMD_SET_ARMING",
@@ -613,7 +613,7 @@
     },
     {
       "id": "driver_VIDEO_DOORBELL_1080P_POWERED",
-      "class": "camera",
+      "class": "socket",
       "capabilities": [
         "onoff",
         "CMD_SET_ARMING",
@@ -648,7 +648,7 @@
     },
     {
       "id": "driver_VIDEO_DOORBELL_1080P_BATTERY",
-      "class": "camera",
+      "class": "socket",
       "capabilities": [
         "onoff",
         "CMD_SET_ARMING",

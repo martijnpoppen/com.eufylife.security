@@ -36,6 +36,9 @@ module.exports = class mainDevice extends Homey.Device {
         // FIX 1.7.2 - capability
         this.removeCapability('CMD_TRIGGER_MOTION');
 
+        // FEATURE 1.9.6 - Socket class
+        this.setClass('socket');
+
         const driver = this.getDriver();
         const driverManifest = driver.getManifest();
         const driverCapabilities = driverManifest.capabilities;
