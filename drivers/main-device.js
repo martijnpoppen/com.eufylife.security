@@ -9,6 +9,8 @@ module.exports = class mainDevice extends Homey.Device {
 		Homey.app.log('[Device] - init =>', this.getName());
         Homey.app.setDevices(this);
     
+        await this.initCameraImage();
+
         await this.checkCapabilities();
 
         this.registerCapabilityListener('onoff', this.onCapability_CMD_DEVS_SWITCH.bind(this));
@@ -20,8 +22,6 @@ module.exports = class mainDevice extends Homey.Device {
             this.registerCapabilityListener('CMD_DOORBELL_QUICK_RESPONSE', this.onCapability_CMD_DOORBELL_QUICK_RESPONSE.bind(this));
         }
 
-        await this.initCameraImage();
-
         this.setAvailable();
 
         await this.findDeviceIndexInStore();
@@ -29,6 +29,7 @@ module.exports = class mainDevice extends Homey.Device {
 
     async onAdded() {
         const settings = await Homey.app.getSettings();
+        await this.initCameraImage();
         await eufyNotificationCheckHelper.init(settings);
     }
 
@@ -138,13 +139,20 @@ module.exports = class mainDevice extends Homey.Device {
     }
 
     initCameraImage() {
-        Homey.app.log(`[Device] ${this.getName()} - Set initial image`);
-        const deviceObject = this.getData();
-        this._image = new Homey.Image();
-        this._image.setPath('assets/images/large.jpg');
-        this._image.register()
-            .then(() => this.setCameraImage(deviceObject.station_sn, this.getName(), this._image))
-            .catch(this.error);
+        try {
+            Homey.app.log(`[Device] ${this.getName()} - Set initial image`);
+            const deviceObject = this.getData();
+            this._image = new Homey.Image();
+            this._image.setPath('assets/images/large.jpg');
+            this._image.register()
+                .then(() => this.setCameraImage(deviceObject.station_sn, this.getName(), this._image))
+                .catch(this.error);
+                
+            return Promise.resolve(true);
+        } catch (e) {
+            Homey.app.error(e);
+            return Promise.reject(e);
+        }
     }
 
     async findDeviceIndexInStore() {

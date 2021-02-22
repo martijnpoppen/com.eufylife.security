@@ -205,5 +205,11 @@
   },
   "1.9.7": {
     "en": "OPT: always on setting"
+  },
+  "1.9.8": {
+    "en": "Update Image init"
+  },
+  "1.9.9": {
+    "en": "OPT: image tab fixes"
   }
 }
