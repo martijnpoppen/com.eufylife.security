@@ -211,5 +211,8 @@
   },
   "1.9.9": {
     "en": "OPT: image tab fixes"
+  },
+  "1.10.0": {
+    "en": "NEW: add rewrite for quickResponse for Wired Doorbell"
   }
 }
