@@ -151,13 +151,13 @@ updateSettings(settings) {
       if(!hubs.length) {
         return new Error('No hubs found. Did you share the devices to your Eufy Account?');
       } else {
-        this.log(`eufyLogin - Logged in. Found hubs - ${hubs}`);
+        this.log(`eufyLogin - Logged in. Found hubs -`, hubs);
       }
 
       hubs.forEach(hub => {
         const stationSN = hub.station_sn;
         const localStationIp = settings.HUBS[stationSN] && settings.HUBS[stationSN].LOCAL_STATION_IP
-        this.log(`eufyLogin -Get station`, stationSN);
+        this.log(`eufyLogin - Get station`, stationSN);
 
         settings.HUBS[stationSN] = {
             HUB_NAME: hub.station_name,
