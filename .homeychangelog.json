@@ -214,5 +214,8 @@
   },
   "1.10.0": {
     "en": "NEW: add rewrite for quickResponse for Wired Doorbell"
+  },
+  "1.10.1": {
+    "en": "Change quickresponse for wired doorbell"
   }
 }
