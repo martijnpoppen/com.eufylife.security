@@ -220,5 +220,8 @@
   },
   "1.10.2": {
     "en": "Change quick response for wired "
+  },
+  "1.10.3": {
+    "en": "OPT: update wired quick response"
   }
 }
