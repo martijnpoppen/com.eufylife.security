@@ -115,7 +115,7 @@ module.exports = class mainDevice extends Homey.Device {
                 await sleep(500);
 
                 if(specificDeviceType) {
-                    await eufyCommandSendHelper.sendCommand('CMD_DOORBELL_SET_PAYLOAD', deviceObject.station_sn, CommandType.CMD_DOORBELL_SET_PAYLOAD, -1, deviceId, JSON.stringify({"commandType": CommandType.CMD_STOP_REALTIME_MEDIA,"data": {"voiceID": quickResponse[value-1]}}));
+                    await eufyCommandSendHelper.sendCommand('CMD_DOORBELL_SET_PAYLOAD', deviceObject.station_sn, CommandType.CMD_DOORBELL_SET_PAYLOAD, 0, deviceId, JSON.stringify({"commandType": CommandType.CMD_STOP_REALTIME_MEDIA,"data": {"voiceID": quickResponse[value-1]}}));
                 } else {
                     await eufyCommandSendHelper.sendCommand('CMD_DOORBELL_QUICK_RESPONSE', deviceObject.station_sn, CommandType.CMD_BAT_DOORBELL_QUICK_RESPONSE, quickResponse[value-1], deviceId);
                     await sleep(3000);
