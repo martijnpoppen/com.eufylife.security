@@ -18,7 +18,12 @@ module.exports = class mainDevice extends Homey.Device {
         this.registerCapabilityListener('NTFY_MOTION_DETECTION', this.onCapability_CMD_TRIGGER_MOTION.bind(this));
 
         if(this.hasCapability('CMD_DOORBELL_QUICK_RESPONSE')) {
-            await this.setQuickResponseStore();
+            if(this.hasCapability('CMD_DOORBELL_QUICK_RESPONSE_POWERED')) {
+                this.setStoreValue('quick_response', [1,2,3]);
+            } else {
+                await this.setQuickResponseStore();
+            }
+
             this.registerCapabilityListener('CMD_DOORBELL_QUICK_RESPONSE', this.onCapability_CMD_DOORBELL_QUICK_RESPONSE.bind(this));
         }
 
