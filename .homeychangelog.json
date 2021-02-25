@@ -226,5 +226,8 @@
   },
   "1.10.4": {
     "en": "OPT: update wired quick response"
+  },
+  "1.10.5": {
+    "en": "NEW: add: quickResponse for Wireless Doorbell | add: prevent device turn off | fixes for cameraImages | rewrite of p2p lib."
   }
 }
