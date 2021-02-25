@@ -39,6 +39,12 @@ module.exports = class mainDevice extends Homey.Device {
         const driverCapabilities = driverManifest.capabilities;
         const deviceCapabilities = this.getCapabilities();
 
+        // FEATURE 1.10.5 - Revert quickResponse for wired doorbell
+        if(this.hasCapability('CMD_DOORBELL_QUICK_RESPONSE_POWERED')) {
+            this.removeCapability('CMD_DOORBELL_QUICK_RESPONSE');
+            await sleep(2000);
+        }
+
         Homey.app.log(`[Device] ${this.getName()} - Found capabilities =>`, deviceCapabilities);
 
         if(driverCapabilities.length > deviceCapabilities.length) {      
@@ -52,11 +58,6 @@ module.exports = class mainDevice extends Homey.Device {
     async updateCapabilities(driverCapabilities) {
         Homey.app.log('[Device] - Add new capabilities =>', driverCapabilities);
         try {
-            // FEATURE 1.10.5 - Revert quickResponse for wired doorbell
-            if(this.hasCapability('CMD_DOORBELL_QUICK_RESPONSE_POWERED')) {
-                this.removeCapability('CMD_DOORBELL_QUICK_RESPONSE');
-            }
-
             driverCapabilities.forEach(c => {
                 this.addCapability(c);
             });
