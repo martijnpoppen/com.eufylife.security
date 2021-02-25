@@ -17,13 +17,8 @@ module.exports = class mainDevice extends Homey.Device {
         this.registerCapabilityListener('CMD_SET_ARMING', this.onCapability_CMD_SET_ARMING.bind(this));
         this.registerCapabilityListener('NTFY_MOTION_DETECTION', this.onCapability_CMD_TRIGGER_MOTION.bind(this));
 
-        if(this.hasCapability('CMD_DOORBELL_QUICK_RESPONSE')) {
-            if(this.hasCapability('CMD_DOORBELL_QUICK_RESPONSE_POWERED')) {
-                this.setStoreValue('quick_response', [1,2,3]);
-            } else {
-                await this.setQuickResponseStore();
-            }
-
+        if(this.hasCapability('CMD_DOORBELL_QUICK_RESPONSE') && !this.hasCapability('CMD_DOORBELL_QUICK_RESPONSE_POWERED')) {
+            await this.setQuickResponseStore();
             this.registerCapabilityListener('CMD_DOORBELL_QUICK_RESPONSE', this.onCapability_CMD_DOORBELL_QUICK_RESPONSE.bind(this));
         }
 
@@ -39,9 +34,6 @@ module.exports = class mainDevice extends Homey.Device {
     }
 
     async checkCapabilities() {
-        // FEATURE 1.9.6 - Revert Socket class
-        this.setClass('camera');
-
         const driver = this.getDriver();
         const driverManifest = driver.getManifest();
         const driverCapabilities = driverManifest.capabilities;
@@ -60,6 +52,11 @@ module.exports = class mainDevice extends Homey.Device {
     async updateCapabilities(driverCapabilities) {
         Homey.app.log('[Device] - Add new capabilities =>', driverCapabilities);
         try {
+            // FEATURE 1.10.5 - Revert quickResponse for wired doorbell
+            if(this.hasCapability('CMD_DOORBELL_QUICK_RESPONSE_POWERED')) {
+                this.removeCapability('CMD_DOORBELL_QUICK_RESPONSE');
+            }
+
             driverCapabilities.forEach(c => {
                 this.addCapability(c);
             });

@@ -708,7 +708,6 @@
       "capabilities": [
         "onoff",
         "CMD_SET_ARMING",
-        "CMD_DOORBELL_QUICK_RESPONSE",
         "CMD_DOORBELL_QUICK_RESPONSE_POWERED",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
@@ -817,7 +816,6 @@
       "capabilities": [
         "onoff",
         "CMD_SET_ARMING",
-        "CMD_DOORBELL_QUICK_RESPONSE",
         "CMD_DOORBELL_QUICK_RESPONSE_POWERED",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
