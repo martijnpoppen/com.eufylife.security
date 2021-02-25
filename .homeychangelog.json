@@ -232,5 +232,8 @@
   },
   "1.10.6": {
     "en": "NEW: add: quickResponse for Wireless Doorbell | add: prevent device turn off | fixes for cameraImages | rewrite of p2p lib."
+  },
+  "1.10.7": {
+    "en": "ADD: EufyCam 1"
   }
 }

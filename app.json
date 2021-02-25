@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "1.10.6",
+  "version": "1.10.7",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -288,6 +288,57 @@
     ]
   },
   "drivers": [
+    {
+      "id": "driver_EUFYCAM",
+      "class": "camera",
+      "capabilities": [
+        "onoff",
+        "CMD_SET_ARMING",
+        "NTFY_MOTION_DETECTION",
+        "NTFY_FACE_DETECTION"
+      ],
+      "name": {
+        "en": "eufyCam 1",
+        "nl": "eufyCam 1"
+      },
+      "images": {
+        "large": "drivers/driver_EUFYCAM/assets/images/large.jpg",
+        "small": "drivers/driver_EUFYCAM/assets/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General settings",
+            "nl": "Algemene instellingen"
+          },
+          "children": [
+            {
+              "id": "override_onoff",
+              "type": "checkbox",
+              "label": {
+                "en": "Always on?",
+                "nl": "Altijd aan?"
+              },
+              "value": false
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "driver_EUFYCAM_2",
       "class": "camera",
@@ -658,7 +709,9 @@
         "NTFY_FACE_DETECTION",
         "NTFY_CRYING_DETECTED",
         "NTFY_SOUND_DETECTED",
-        "NTFY_PET_DETECTED"
+        "NTFY_PET_DETECTED",
+        "CMD_DOORBELL_QUICK_RESPONSE",
+        "CMD_DOORBELL_QUICK_RESPONSE_POWERED"
       ],
       "name": {
         "en": "Indoor Cam Pan & Tilt",
