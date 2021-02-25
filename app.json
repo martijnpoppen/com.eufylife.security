@@ -174,7 +174,7 @@
         ]
       },
       {
-        "id": "alarm_MOTION_DETECTED_true",
+        "id": "alarm_SENSOR_CHANGED_true",
         "title": {
           "en": "Motion Detected",
           "nl": "Beweging Gedetecteerd"
@@ -183,7 +183,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "capabilities=alarm_MOTION_DETECTED"
+            "filter": "capabilities=alarm_SENSOR_CHANGED"
           }
         ]
       }
@@ -989,7 +989,7 @@
       "id": "driver_DOORSENSOR",
       "class": "camera",
       "capabilities": [
-        "alarm_MOTION_DETECTED"
+        "alarm_SENSOR_CHANGED"
       ],
       "name": {
         "en": "Doorsensor",
@@ -1306,7 +1306,7 @@
         "nl": "Huisdier Gedetecteerd"
       }
     },
-    "alarm_MOTION_DETECTED": {
+    "alarm_SENSOR_CHANGED": {
       "type": "boolean",
       "uiComponent": "sensor",
       "getable": true,
