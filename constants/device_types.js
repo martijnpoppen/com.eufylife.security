@@ -1,5 +1,6 @@
 exports.DeviceType = {
     DOOR_SENSOR: 'T8900',
+    EUFYCAM_1: 'T8111',
     EUFYCAM_2: 'T8114',
     EUFYCAM_2C: 'T8113',
     EUFYCAM_2C_PRO: 'T8142',
