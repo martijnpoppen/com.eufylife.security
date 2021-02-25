@@ -11,7 +11,7 @@ module.exports = class mainSensor extends mainDevice {
 
         await this.checkCapabilities();
 
-        this.registerCapabilityListener('alarm_SENSOR_CHANGED', this.onCapability_alarm_SENSOR_CHANGED.bind(this));
+        // this.registerCapabilityListener('alarm_contact', this.onCapability_alarm_contact.bind(this));
 
         this.setAvailable();
 
@@ -23,13 +23,13 @@ module.exports = class mainSensor extends mainDevice {
         await eufyNotificationCheckHelper.init(settings);
     }
 
-    async onCapability_alarm_SENSOR_CHANGED( value ) {
-        try {
-            this.setCapabilityValue('alarm_SENSOR_CHANGED', value)
-            return Promise.resolve(true);
-        } catch (e) {
-            Homey.app.error(e);
-            return Promise.reject(e);
-        }
-    }
+    // async onCapability_alarm_contact( value ) {
+    //     try {
+    //         this.setCapabilityValue('alarm_contact', value)
+    //         return Promise.resolve(true);
+    //     } catch (e) {
+    //         Homey.app.error(e);
+    //         return Promise.reject(e);
+    //     }
+    // }
 }

@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "1.10.8",
+  "version": "1.11.0",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -170,20 +170,6 @@
             "name": "device",
             "type": "device",
             "filter": "capabilities=NTFY_PET_DETECTED"
-          }
-        ]
-      },
-      {
-        "id": "alarm_SENSOR_CHANGED_true",
-        "title": {
-          "en": "Motion Detected",
-          "nl": "Beweging Gedetecteerd"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "capabilities=alarm_SENSOR_CHANGED"
           }
         ]
       }
@@ -987,9 +973,9 @@
     },
     {
       "id": "driver_DOORSENSOR",
-      "class": "camera",
+      "class": "sensor",
       "capabilities": [
-        "alarm_SENSOR_CHANGED"
+        "alarm_contact"
       ],
       "name": {
         "en": "Doorsensor",
@@ -1304,29 +1290,6 @@
       "title": {
         "en": "Pet Detected",
         "nl": "Huisdier Gedetecteerd"
-      }
-    },
-    "alarm_SENSOR_CHANGED": {
-      "type": "boolean",
-      "uiComponent": "sensor",
-      "getable": true,
-      "setable": true,
-      "icon": "assets/icons/motion.svg",
-      "options": {
-        "zoneActivity": true
-      },
-      "insights": true,
-      "insightsTitleTrue": {
-        "en": "Motion Detected - on",
-        "nl": "Beweging Gedetecteerd - aan"
-      },
-      "insightsTitleFalse": {
-        "en": "Motion Detected - off",
-        "nl": "Beweging Gedetecteerd - uit"
-      },
-      "title": {
-        "en": "Motion Detected",
-        "nl": "Beweging Gedetecteerd"
       }
     }
   }
