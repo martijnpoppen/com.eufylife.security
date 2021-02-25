@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "1.10.7",
+  "version": "1.10.8",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -170,6 +170,20 @@
             "name": "device",
             "type": "device",
             "filter": "capabilities=NTFY_PET_DETECTED"
+          }
+        ]
+      },
+      {
+        "id": "alarm_MOTION_DETECTED_true",
+        "title": {
+          "en": "Motion Detected",
+          "nl": "Beweging Gedetecteerd"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "capabilities=alarm_MOTION_DETECTED"
           }
         ]
       }
@@ -970,6 +984,54 @@
           ]
         }
       ]
+    },
+    {
+      "id": "driver_DOORSENSOR",
+      "class": "camera",
+      "capabilities": [
+        "alarm_MOTION_DETECTED"
+      ],
+      "name": {
+        "en": "Doorsensor",
+        "nl": "Deursensor"
+      },
+      "images": {
+        "large": "drivers/driver_DOORSENSOR/assets/images/large.jpg",
+        "small": "drivers/driver_DOORSENSOR/assets/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General settings",
+            "nl": "Algemene instellingen"
+          },
+          "children": [
+            {
+              "id": "override_onoff",
+              "type": "checkbox",
+              "label": {
+                "en": "Always on?",
+                "nl": "Altijd aan?"
+              },
+              "value": false
+            }
+          ]
+        }
+      ]
     }
   ],
   "capabilities": {
@@ -1242,6 +1304,29 @@
       "title": {
         "en": "Pet Detected",
         "nl": "Huisdier Gedetecteerd"
+      }
+    },
+    "alarm_MOTION_DETECTED": {
+      "type": "boolean",
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": true,
+      "icon": "assets/icons/motion.svg",
+      "options": {
+        "zoneActivity": true
+      },
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Motion Detected - on",
+        "nl": "Beweging Gedetecteerd - aan"
+      },
+      "insightsTitleFalse": {
+        "en": "Motion Detected - off",
+        "nl": "Beweging Gedetecteerd - uit"
+      },
+      "title": {
+        "en": "Motion Detected",
+        "nl": "Beweging Gedetecteerd"
       }
     }
   }

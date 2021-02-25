@@ -5,11 +5,17 @@ exports.MESSAGE_TYPES = {
     NTFY_PRESS_DOORBELL: 3103,
     NTFY_CRYING_DETECTED: 3104,
     NTFY_SOUND_DETECTED: 3105,
-    NTFY_PET_DETECTED: 3106 
+    NTFY_PET_DETECTED: 3106 ,
+    DOOR_SENSOR_CHANGED: 100001
 }
 
 // https://github.com/matijse/eufy-ha-mqtt-bridge/issues/27#issue-778345221
 exports.SPECIFIC_MESSAGE_TYPES = {
     NTFY_FACE_DETECTION: "Someone",
-    NTFY_MOTION_DETECTION: "Motion",
+    NTFY_MOTION_DETECTION: "Motion"
+}
+
+exports.PUSH_MESSAGE_TYPES = {
+    DOOR_SENSOR_OPEN: '2-1',
+    DOOR_SENSOR_CLOSED: '2-0' 
 }
