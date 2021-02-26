@@ -250,5 +250,8 @@
   },
   "1.11.2": {
     "en": "NEW: add doorsensor"
+  },
+  "1.11.3": {
+    "en": "OPT: fix issue with main sensor"
   }
 }
