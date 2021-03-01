@@ -1,4 +1,4 @@
-exports.DeviceType = {
+exports.DEVICE_TYPES = {
     DOOR_SENSOR: 'T8900',
     EUFYCAM_1: 'T8111',
     EUFYCAM_2: 'T8114',
