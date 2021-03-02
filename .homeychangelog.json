@@ -259,5 +259,8 @@
   },
   "1.11.5": {
     "en": "Fix doorsensor issue in notification service"
+  },
+  "1.11.6": {
+    "en": "FIX: doorsensor events"
   }
 }
