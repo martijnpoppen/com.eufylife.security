@@ -262,5 +262,8 @@
   },
   "1.11.6": {
     "en": "FIX: doorsensor events"
+  },
+  "1.11.7": {
+    "en": "FIX: doorsensor events"
   }
 }
