@@ -268,5 +268,8 @@
   },
   "1.11.8": {
     "en": "NEW: add doorsensor"
+  },
+  "1.11.9": {
+    "en": "FIX: duplicate notifications"
   }
 }
