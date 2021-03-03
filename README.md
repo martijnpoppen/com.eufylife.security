@@ -37,7 +37,7 @@ and use it with this library.
 - [Feature Request] Custom guard modes - TO-DO
 - ~~[BUG] There's an issue with images not updating when devices are paired - DONE~~
 - ~~[BUG] commandSend service expired token after x hours. - DONE~~
-- [BUG] multiple notifications with Full effect mode - IN PROGRESS
+- ~~[BUG] multiple notifications with Full effect mode - DONE~~
 
 ---
 &nbsp;
