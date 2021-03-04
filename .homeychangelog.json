@@ -271,5 +271,8 @@
   },
   "1.11.9": {
     "en": "FIX: duplicate notifications"
+  },
+  "1.11.11": {
+    "en": "NEW: condition flow card for guard mode"
   }
 }

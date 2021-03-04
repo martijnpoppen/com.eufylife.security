@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "1.11.9",
+  "version": "1.11.11",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -170,6 +170,56 @@
             "name": "device",
             "type": "device",
             "filter": "capabilities=NTFY_PET_DETECTED"
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "condition_CHECK_ARMING",
+        "title": {
+          "en": "Arm Mode !{{is|isn't}} ",
+          "nl": "Beveiligingsmodus !{{is|is niet}} "
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "capabilities=CMD_SET_ARMING"
+          },
+          {
+            "name": "condition_CHECK_ARM_TYPE",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "Home",
+                  "nl": "Home"
+                }
+              },
+              {
+                "id": "0",
+                "label": {
+                  "en": "Away",
+                  "nl": "Away"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Schedule",
+                  "nl": "Schedule"
+                }
+              },
+              {
+                "id": "63",
+                "label": {
+                  "en": "Disarmed",
+                  "nl": "Disarmed"
+                }
+              }
+            ]
           }
         ]
       }
