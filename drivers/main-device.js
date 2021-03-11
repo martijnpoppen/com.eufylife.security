@@ -39,14 +39,13 @@ module.exports = class mainDevice extends Homey.Device {
         const driverCapabilities = driverManifest.capabilities;
         const deviceCapabilities = this.getCapabilities();
 
-        // FEATURE 1.10.5 - Revert quickResponse for wired doorbell
-        if(this.hasCapability('CMD_DOORBELL_QUICK_RESPONSE_POWERED')) {
-            this.removeCapability('CMD_DOORBELL_QUICK_RESPONSE');
-            await sleep(2000);
-        }
-
         Homey.app.log(`[Device] ${this.getName()} - Found capabilities =>`, deviceCapabilities);
 
+        if(this.hasCapability('alarm_generic')) {
+            // FEATURE 1.11.12 - Revert alarm_generic to alarm_motion
+            this.removeCapability('alarm_generic');
+            await sleep(1000);
+        }
         if(driverCapabilities.length > deviceCapabilities.length) {      
             await this.updateCapabilities(driverCapabilities);
         }
@@ -57,7 +56,6 @@ module.exports = class mainDevice extends Homey.Device {
     async updateCapabilities(driverCapabilities) {
         Homey.app.log('[Device] - Add new capabilities =>', driverCapabilities);
         try {
-            this.removeCapability('alarm_motion');
             driverCapabilities.forEach(c => {
                 this.addCapability(c);
             });
@@ -130,12 +128,12 @@ module.exports = class mainDevice extends Homey.Device {
     async onCapability_CMD_TRIGGER_MOTION( value ) {
         try {
             this.setCapabilityValue(value, true);
-            if(value !== 'NTFY_PRESS_DOORBELL') this.setCapabilityValue('alarm_generic', true);
+            if(value !== 'NTFY_PRESS_DOORBELL') this.setCapabilityValue('alarm_motion', true);
 
             await sleep(5000);
 
             this.setCapabilityValue(value, false);
-            if(value !== 'NTFY_PRESS_DOORBELL')  this.setCapabilityValue('alarm_generic', false);
+            if(value !== 'NTFY_PRESS_DOORBELL')  this.setCapabilityValue('alarm_motion', false);
 
             return Promise.resolve(true);
         } catch (e) {

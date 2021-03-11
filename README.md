@@ -27,14 +27,14 @@ and use it with this library.
 ## To do:
 - [Feature Request] check if the keypad is going to work
 - [Feature Request] Turn the eufy pan&tilt via Homey (e.g.: when you’re home turn 180 degrees to the wall)
-- [Feature Request] check if the motion sensor is going to work - IN PROGRESS
+- [Feature Request] check if the motion sensor is going to work - IN TEST
 - [Feature Request] filter devices when pairing - IN PROGRESS
 - [Feature Request] Custom settings for security/guard mode - TO DO
 - [Feature Request] Generic alarm for all cameras - IN TEST
 - [Feature Request] NIGHT VISION SWITCH - INVESIGATE
 - [Feature Request] Add battery status - INVESIGATE
-- ~~[Feature Request] Add AND flow card - TO-DO~~
 - [BUG] There's an issue with images not updating when devices are paired - TO-DO
+- [BUG] There's an issue with multiple flow cards at the same time while httpservice is expired - TO-DO
 
 ---
 &nbsp;
