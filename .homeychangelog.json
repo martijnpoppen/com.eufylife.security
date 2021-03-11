@@ -283,5 +283,8 @@
   },
   "1.12.1": {
     "en": "Revert alarm_generic to alarm_motion"
+  },
+  "1.12.2": {
+    "en": "OPT: capability fixes"
   }
 }
