@@ -21,4 +21,5 @@ Current features:
 - Get notifications based on detection modes for specific devices. (Motion, Face, Sound and Doorbell Press) 
 - Get images when motion is detected
 - See last motion events
+- Generic alarm for each camera -> Heimdall (goes off for all events except doorbell press)
 

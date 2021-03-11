@@ -25,20 +25,16 @@ and use it with this library.
 - Get images when motion is detected
 
 ## To do:
-- ~~[Feature Request] check 2FA~~
 - [Feature Request] check if the keypad is going to work
-- ~~[Feature Request] check RTSP for doorbell~~
-- ~~[Feature Request] Preset response - DONE~~
 - [Feature Request] Turn the eufy pan&tilt via Homey (e.g.: when you’re home turn 180 degrees to the wall)
-- ~~[Feature Request] check if the door sensor is going to work -  - DONE~~
 - [Feature Request] check if the motion sensor is going to work - IN PROGRESS
-- [Feature Request] Reset debug logs on startup - IN PROGRESS
 - [Feature Request] filter devices when pairing - IN PROGRESS
-- [Feature Request] Custom settings for security/guard mode - INVESTIGATE
+- [Feature Request] Custom settings for security/guard mode - TO DO
+- [Feature Request] Generic alarm for all cameras - IN TEST
+- [Feature Request] NIGHT VISION SWITCH - INVESIGATE
+- [Feature Request] Add battery status - INVESIGATE
 - ~~[Feature Request] Add AND flow card - TO-DO~~
-- ~~[BUG] There's an issue with images not updating when devices are paired - DONE~~
-- ~~[BUG] commandSend service expired token after x hours. - DONE~~
-- ~~[BUG] multiple notifications with Full effect mode - DONE~~
+- [BUG] There's an issue with images not updating when devices are paired - TO-DO
 
 ---
 &nbsp;

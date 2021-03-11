@@ -49,7 +49,6 @@ module.exports = class mainDevice extends Homey.Device {
 
         if(driverCapabilities.length > deviceCapabilities.length) {      
             await this.updateCapabilities(driverCapabilities);
-            return;
         }
 
         return;
@@ -58,6 +57,7 @@ module.exports = class mainDevice extends Homey.Device {
     async updateCapabilities(driverCapabilities) {
         Homey.app.log('[Device] - Add new capabilities =>', driverCapabilities);
         try {
+            this.removeCapability('alarm_motion');
             driverCapabilities.forEach(c => {
                 this.addCapability(c);
             });
@@ -129,9 +129,14 @@ module.exports = class mainDevice extends Homey.Device {
 
     async onCapability_CMD_TRIGGER_MOTION( value ) {
         try {
-            this.setCapabilityValue(value, true)
+            this.setCapabilityValue(value, true);
+            if(value !== 'NTFY_PRESS_DOORBELL') this.setCapabilityValue('alarm_generic', true);
+
             await sleep(5000);
-            this.setCapabilityValue(value, false)
+
+            this.setCapabilityValue(value, false);
+            if(value !== 'NTFY_PRESS_DOORBELL')  this.setCapabilityValue('alarm_generic', false);
+
             return Promise.resolve(true);
         } catch (e) {
             Homey.app.error(e);
