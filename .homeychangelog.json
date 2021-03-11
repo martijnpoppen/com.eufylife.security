@@ -280,5 +280,8 @@
   },
   "1.12.0": {
     "en": "NEW: add motion sensor T8910"
+  },
+  "1.12.1": {
+    "en": "Revert alarm_generic to alarm_motion"
   }
 }
