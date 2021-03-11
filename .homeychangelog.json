@@ -274,5 +274,8 @@
   },
   "1.11.11": {
     "en": "NEW: condition flow card for guard mode"
+  },
+  "1.11.12": {
+    "en": "NEW: Generic alarm for all cameras - triggered on every event (except doorbell_press). Usefull for heimdall or zoneactivity"
   }
 }
