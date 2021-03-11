@@ -11,7 +11,8 @@ exports.MESSAGE_TYPES = {
 // https://github.com/matijse/eufy-ha-mqtt-bridge/issues/27#issue-778345221
 exports.SPECIFIC_MESSAGE_TYPES = {
     NTFY_FACE_DETECTION: "Someone",
-    NTFY_MOTION_DETECTION: "Motion"
+    NTFY_MOTION_DETECTION: "Motion",
+    alarm_motion: "is triggered"
 }
 
 // DOOR_SENSOR_CHANGED: 100001
