@@ -3,6 +3,7 @@
 const Homey = require("homey");
 const { PushRegisterService, HttpService, sleep } = require("eufy-node-client");
 const flowActions = require("./lib/flow/actions.js");
+const flowConditions = require("./lib/flow/conditions.js");
 const flowTriggers = require("./lib/flow/triggers.js");
 const eufyCommandSendHelper = require("./lib/helpers/eufy-command-send.helper");
 const eufyNotificationCheckHelper = require("./lib/helpers/eufy-notification-check.helper");
@@ -36,13 +37,13 @@ class App extends Homey.App {
   async onInit() {
     this.log(`${Homey.manifest.id} - ${Homey.manifest.version} started...`);
     await this.initSettings();
-    await this.checkForIncompatibleSettings();
 
     this.log("onInit - Loaded settings", {...this.appSettings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
 
     if (this.appSettings.HUBS_AMOUNT > 0) {
         await eufyCommandSendHelper.init(this.appSettings);
         await flowActions.init();
+        await flowConditions.init();
     }
 
     if (this.appSettings.CREDENTIALS) {
@@ -65,6 +66,11 @@ class App extends Homey.App {
       if (settingsInitialized) {
         this.log("initSettings - Found settings key", _settingsKey);
         this.appSettings = ManagerSettings.get(_settingsKey);
+        
+        if(this.appSettings && this.appSettings.SET_DEBUG) {
+            this.appSettings = {...this.appSettings, SET_DEBUG: false};
+            this.saveSettings();
+        }
 
         if (!_httpService) {
             _httpService = await this.setHttpService(this.appSettings);
@@ -107,33 +113,6 @@ updateSettings(settings) {
 
     this.log("Saved settings.");
     ManagerSettings.set(_settingsKey, this.appSettings);
-  }
-
-  async checkForIncompatibleSettings() {
-    const settings = this.appSettings;
-    if(("STATION_SN" in settings)) {
-        this.log(`checkForIncompatibleSettings - Updating settings for v.1.5.0`);
-
-        let hubs = {};
-
-        hubs[settings.STATION_SN] = {
-            LOCAL_STATION_IP: settings.LOCAL_STATION_IP
-        }
-
-        if (!!settings.USERNAME && !!settings.PASSWORD) {
-            await this.eufyLogin({
-                USERNAME: settings.USERNAME,
-                PASSWORD: settings.PASSWORD,
-                HUBS: hubs,
-                HUBS_AMOUNT: 1,
-                SET_CREDENTIALS: settings.SET_CREDENTIALS,
-                SET_DEBUG: settings.SET_DEBUG,
-                CREDENTIALS: settings.CREDENTIALS
-            });
-        }
-
-        return;
-    }
   }
 
   // -------------------- EUFY LOGIN ----------------------
@@ -186,6 +165,7 @@ updateSettings(settings) {
         _deviceStore = await this.setDeviceStore(hubs);
         await eufyCommandSendHelper.init(this.appSettings);
         await flowActions.init();
+        await flowConditions.init();
       } 
 
       if (settings.CREDENTIALS) {

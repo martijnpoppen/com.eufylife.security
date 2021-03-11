@@ -31,10 +31,11 @@ and use it with this library.
 - ~~[Feature Request] Preset response - DONE~~
 - [Feature Request] Turn the eufy pan&tilt via Homey (e.g.: when you’re home turn 180 degrees to the wall)
 - ~~[Feature Request] check if the door sensor is going to work -  - DONE~~
-- [Feature Request] check if the motion sensor is going to work - INVESTIGATE
-- [Feature Request] Custom settings for security mode - INVESTIGATE
-- [Feature Request] Add AND flow card - TO-DO
-- [Feature Request] Custom guard modes - TO-DO
+- [Feature Request] check if the motion sensor is going to work - IN PROGRESS
+- [Feature Request] Reset debug logs on startup - IN PROGRESS
+- [Feature Request] filter devices when pairing - IN PROGRESS
+- [Feature Request] Custom settings for security/guard mode - INVESTIGATE
+- ~~[Feature Request] Add AND flow card - TO-DO~~
 - ~~[BUG] There's an issue with images not updating when devices are paired - DONE~~
 - ~~[BUG] commandSend service expired token after x hours. - DONE~~
 - ~~[BUG] multiple notifications with Full effect mode - DONE~~
