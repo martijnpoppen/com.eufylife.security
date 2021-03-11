@@ -277,5 +277,8 @@
   },
   "1.11.12": {
     "en": "NEW: Generic alarm for all cameras - triggered on every event (except doorbell_press). Usefull for heimdall or zoneactivity"
+  },
+  "1.12.0": {
+    "en": "NEW: add motion sensor T8910"
   }
 }

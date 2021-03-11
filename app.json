@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "1.11.12",
+  "version": "1.12.0",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -1012,26 +1012,6 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "settings": [
-        {
-          "type": "group",
-          "label": {
-            "en": "General settings",
-            "nl": "Algemene instellingen"
-          },
-          "children": [
-            {
-              "id": "override_onoff",
-              "type": "checkbox",
-              "label": {
-                "en": "Always on?",
-                "nl": "Altijd aan?"
-              },
-              "value": false
-            }
-          ]
-        }
       ]
     },
     {
@@ -1079,6 +1059,34 @@
               "value": false
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "driver_MOTIONSENSOR",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion"
+      ],
+      "name": {
+        "en": "Motionsensor",
+        "nl": "Bewegingssensor"
+      },
+      "images": {
+        "large": "drivers/driver_MOTIONSENSOR/assets/images/large.jpg",
+        "small": "drivers/driver_MOTIONSENSOR/assets/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
         }
       ]
     }
