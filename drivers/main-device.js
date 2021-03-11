@@ -40,12 +40,20 @@ module.exports = class mainDevice extends Homey.Device {
         const deviceCapabilities = this.getCapabilities();
 
         Homey.app.log(`[Device] ${this.getName()} - Found capabilities =>`, deviceCapabilities);
-
+        
+        if(driverManifest.name === 'driver_INDOOR_CAM_PAN_TILT') {
+            Homey.app.log(`[Device] ${this.getName()} - FIX - Remove quick response from indoor cam`);
+            this.removeCapability('CMD_DOORBELL_QUICK_RESPONSE');
+            this.removeCapability('CMD_DOORBELL_QUICK_RESPONSE_POWERED');
+            await sleep(1000);
+        }
+        
         if(this.hasCapability('alarm_generic')) {
-            // FEATURE 1.11.12 - Revert alarm_generic to alarm_motion
+            Homey.app.log(`[Device] ${this.getName()} - FEATURE 1.11.12 - Revert alarm_generic to alarm_motion`);
             this.removeCapability('alarm_generic');
             await sleep(1000);
         }
+
         if(driverCapabilities.length > deviceCapabilities.length) {      
             await this.updateCapabilities(driverCapabilities);
         }

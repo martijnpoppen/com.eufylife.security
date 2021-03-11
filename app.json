@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "1.12.1",
+  "version": "1.12.2",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -768,9 +768,7 @@
         "NTFY_FACE_DETECTION",
         "NTFY_CRYING_DETECTED",
         "NTFY_SOUND_DETECTED",
-        "NTFY_PET_DETECTED",
-        "CMD_DOORBELL_QUICK_RESPONSE",
-        "CMD_DOORBELL_QUICK_RESPONSE_POWERED"
+        "NTFY_PET_DETECTED"
       ],
       "name": {
         "en": "Indoor Cam Pan & Tilt",
