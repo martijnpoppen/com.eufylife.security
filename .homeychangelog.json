@@ -286,5 +286,8 @@
   },
   "1.12.2": {
     "en": "OPT: capability fixes"
+  },
+  "1.12.3": {
+    "en": "FIX - Remove quick response from indoor cam"
   }
 }
