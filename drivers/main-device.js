@@ -41,7 +41,7 @@ module.exports = class mainDevice extends Homey.Device {
 
         Homey.app.log(`[Device] ${this.getName()} - Found capabilities =>`, deviceCapabilities);
         
-        if(driverManifest.name === 'driver_INDOOR_CAM_PAN_TILT') {
+        if(this.hasCapability('NTFY_PET_DETECTED')) {
             Homey.app.log(`[Device] ${this.getName()} - FIX - Remove quick response from indoor cam`);
             this.removeCapability('CMD_DOORBELL_QUICK_RESPONSE');
             this.removeCapability('CMD_DOORBELL_QUICK_RESPONSE_POWERED');
