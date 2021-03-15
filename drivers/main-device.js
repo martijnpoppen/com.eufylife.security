@@ -88,7 +88,7 @@ module.exports = class mainDevice extends Homey.Device {
                 CMD_DEVS_SWITCH = value ? 1 : 0;
             }
 
-            await eufyCommandSendHelper.sendCommand('CMD_DEVS_SWITCH', deviceObject.station_sn, CommandType.CMD_DEVS_SWITCH, CMD_DEVS_SWITCH, deviceId);
+            await eufyCommandSendHelper.sendCommand('CMD_DEVS_SWITCH', deviceObject.station_sn, CommandType.CMD_DEVS_SWITCH, CMD_DEVS_SWITCH, deviceId, deviceId);
             return Promise.resolve(true);
         } catch (e) {
             Homey.app.error(e);
@@ -115,15 +115,15 @@ module.exports = class mainDevice extends Homey.Device {
             const quickResponse = this.getStoreValue('quick_response');
             const deviceId = this.getStoreValue('device_index');
             if(quickResponse.length >= value) {
-                await eufyCommandSendHelper.sendCommand('CMD_START_REALTIME_MEDIA', deviceObject.station_sn, CommandType.CMD_START_REALTIME_MEDIA, 1, deviceId);
+                await eufyCommandSendHelper.sendCommand('CMD_START_REALTIME_MEDIA', deviceObject.station_sn, CommandType.CMD_START_REALTIME_MEDIA, 1, deviceId, deviceId);
                 await sleep(500);
 
                 if(specificDeviceType) {
-                    await eufyCommandSendHelper.sendCommand('CMD_DOORBELL_SET_PAYLOAD', deviceObject.station_sn, CommandType.CMD_DOORBELL_SET_PAYLOAD, 1, deviceId, '{"commandType":1004,"data":{"voiceID":1}}');
+                    await eufyCommandSendHelper.sendCommand('CMD_DOORBELL_SET_PAYLOAD', deviceObject.station_sn, CommandType.CMD_DOORBELL_SET_PAYLOAD, 1, deviceId, deviceId, '{"commandType":1004,"data":{"voiceID":1}}');
                 } else {
-                    await eufyCommandSendHelper.sendCommand('CMD_DOORBELL_QUICK_RESPONSE', deviceObject.station_sn, CommandType.CMD_BAT_DOORBELL_QUICK_RESPONSE, quickResponse[value-1], deviceId);
+                    await eufyCommandSendHelper.sendCommand('CMD_DOORBELL_QUICK_RESPONSE', deviceObject.station_sn, CommandType.CMD_BAT_DOORBELL_QUICK_RESPONSE, quickResponse[value-1], deviceId, deviceId);
                     await sleep(3000);
-                    await eufyCommandSendHelper.sendCommand('CMD_STOP_REALTIME_MEDIA', deviceObject.station_sn, CommandType.CMD_STOP_REALTIME_MEDIA, 1, deviceId);
+                    await eufyCommandSendHelper.sendCommand('CMD_STOP_REALTIME_MEDIA', deviceObject.station_sn, CommandType.CMD_STOP_REALTIME_MEDIA, 1, deviceId, deviceId);
                 }
             }
             return Promise.resolve(true);
