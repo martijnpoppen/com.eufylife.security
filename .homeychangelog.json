@@ -301,5 +301,8 @@
   },
   "1.12.8": {
     "en": "FIX: multiple on/off - regression from lib update"
+  },
+  "1.12.9": {
+    "en": "FIX: on/off for homebase devices with rewritten p2p library."
   }
 }
