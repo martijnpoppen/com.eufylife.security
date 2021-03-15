@@ -292,5 +292,11 @@
   },
   "1.12.4": {
     "en": "FIX: issue with Homebase setting devices  on/off "
+  },
+  "1.12.5": {
+    "en": "FIX: on/off homebase devices"
+  },
+  "1.12.7": {
+    "en": "FIX: on/off homebase devices"
   }
 }
