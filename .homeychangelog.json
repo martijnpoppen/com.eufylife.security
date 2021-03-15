@@ -289,5 +289,8 @@
   },
   "1.12.3": {
     "en": "FIX - Remove quick response from indoor cam"
+  },
+  "1.12.4": {
+    "en": "FIX: issue with Homebase setting devices  on/off "
   }
 }
