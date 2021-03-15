@@ -298,5 +298,8 @@
   },
   "1.12.7": {
     "en": "FIX: on/off homebase devices"
+  },
+  "1.12.8": {
+    "en": "FIX: multiple on/off - regression from lib update"
   }
 }
