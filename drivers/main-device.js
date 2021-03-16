@@ -186,6 +186,7 @@ module.exports = class mainDevice extends Homey.Device {
 
     async setQuickResponseStore() {
         try {
+            await sleep(7000);
             _httpService = Homey.app.getHttpService();
             const deviceObject = this.getData();
 
