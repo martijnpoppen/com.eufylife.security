@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "1.12.12",
+  "version": "1.12.13",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -381,10 +381,19 @@
               "id": "override_onoff",
               "type": "checkbox",
               "label": {
-                "en": "Always on?",
-                "nl": "Altijd aan?"
+                "en": "Always on",
+                "nl": "Altijd aan"
               },
               "value": false
+            },
+            {
+              "id": "alarm_motion_enabled",
+              "type": "checkbox",
+              "label": {
+                "en": "Use generic motion alarm?",
+                "nl": "Gebruik generiek bewegings alarm"
+              },
+              "value": true
             }
           ]
         }
@@ -433,10 +442,19 @@
               "id": "override_onoff",
               "type": "checkbox",
               "label": {
-                "en": "Always on?",
-                "nl": "Altijd aan?"
+                "en": "Always on",
+                "nl": "Altijd aan"
               },
               "value": false
+            },
+            {
+              "id": "alarm_motion_enabled",
+              "type": "checkbox",
+              "label": {
+                "en": "Use generic motion alarm?",
+                "nl": "Gebruik generiek bewegings alarm"
+              },
+              "value": true
             }
           ]
         }
@@ -485,10 +503,19 @@
               "id": "override_onoff",
               "type": "checkbox",
               "label": {
-                "en": "Always on?",
-                "nl": "Altijd aan?"
+                "en": "Always on",
+                "nl": "Altijd aan"
               },
               "value": false
+            },
+            {
+              "id": "alarm_motion_enabled",
+              "type": "checkbox",
+              "label": {
+                "en": "Use generic motion alarm?",
+                "nl": "Gebruik generiek bewegings alarm"
+              },
+              "value": true
             }
           ]
         }
@@ -537,10 +564,19 @@
               "id": "override_onoff",
               "type": "checkbox",
               "label": {
-                "en": "Always on?",
-                "nl": "Altijd aan?"
+                "en": "Always on",
+                "nl": "Altijd aan"
               },
               "value": false
+            },
+            {
+              "id": "alarm_motion_enabled",
+              "type": "checkbox",
+              "label": {
+                "en": "Use generic motion alarm?",
+                "nl": "Gebruik generiek bewegings alarm"
+              },
+              "value": true
             }
           ]
         }
@@ -589,10 +625,19 @@
               "id": "override_onoff",
               "type": "checkbox",
               "label": {
-                "en": "Always on?",
-                "nl": "Altijd aan?"
+                "en": "Always on",
+                "nl": "Altijd aan"
               },
               "value": false
+            },
+            {
+              "id": "alarm_motion_enabled",
+              "type": "checkbox",
+              "label": {
+                "en": "Use generic motion alarm?",
+                "nl": "Gebruik generiek bewegings alarm"
+              },
+              "value": true
             }
           ]
         }
@@ -640,10 +685,19 @@
               "id": "override_onoff",
               "type": "checkbox",
               "label": {
-                "en": "Always on?",
-                "nl": "Altijd aan?"
+                "en": "Always on",
+                "nl": "Altijd aan"
               },
               "value": false
+            },
+            {
+              "id": "alarm_motion_enabled",
+              "type": "checkbox",
+              "label": {
+                "en": "Use generic motion alarm?",
+                "nl": "Gebruik generiek bewegings alarm"
+              },
+              "value": true
             }
           ]
         }
@@ -691,10 +745,19 @@
               "id": "override_onoff",
               "type": "checkbox",
               "label": {
-                "en": "Always on?",
-                "nl": "Altijd aan?"
+                "en": "Always on",
+                "nl": "Altijd aan"
               },
               "value": false
+            },
+            {
+              "id": "alarm_motion_enabled",
+              "type": "checkbox",
+              "label": {
+                "en": "Use generic motion alarm?",
+                "nl": "Gebruik generiek bewegings alarm"
+              },
+              "value": true
             }
           ]
         }
@@ -747,10 +810,19 @@
               "id": "override_onoff",
               "type": "checkbox",
               "label": {
-                "en": "Always on?",
-                "nl": "Altijd aan?"
+                "en": "Always on",
+                "nl": "Altijd aan"
               },
               "value": false
+            },
+            {
+              "id": "alarm_motion_enabled",
+              "type": "checkbox",
+              "label": {
+                "en": "Use generic motion alarm?",
+                "nl": "Gebruik generiek bewegings alarm"
+              },
+              "value": true
             }
           ]
         }
@@ -803,10 +875,19 @@
               "id": "override_onoff",
               "type": "checkbox",
               "label": {
-                "en": "Always on?",
-                "nl": "Altijd aan?"
+                "en": "Always on",
+                "nl": "Altijd aan"
               },
               "value": false
+            },
+            {
+              "id": "alarm_motion_enabled",
+              "type": "checkbox",
+              "label": {
+                "en": "Use generic motion alarm?",
+                "nl": "Gebruik generiek bewegings alarm"
+              },
+              "value": true
             }
           ]
         }
@@ -858,10 +939,19 @@
               "id": "override_onoff",
               "type": "checkbox",
               "label": {
-                "en": "Always on?",
-                "nl": "Altijd aan?"
+                "en": "Always on",
+                "nl": "Altijd aan"
               },
               "value": false
+            },
+            {
+              "id": "alarm_motion_enabled",
+              "type": "checkbox",
+              "label": {
+                "en": "Use generic motion alarm?",
+                "nl": "Gebruik generiek bewegings alarm"
+              },
+              "value": true
             }
           ]
         }
@@ -913,10 +1003,19 @@
               "id": "override_onoff",
               "type": "checkbox",
               "label": {
-                "en": "Always on?",
-                "nl": "Altijd aan?"
+                "en": "Always on",
+                "nl": "Altijd aan"
               },
               "value": false
+            },
+            {
+              "id": "alarm_motion_enabled",
+              "type": "checkbox",
+              "label": {
+                "en": "Use generic motion alarm?",
+                "nl": "Gebruik generiek bewegings alarm"
+              },
+              "value": true
             }
           ]
         }
@@ -968,10 +1067,19 @@
               "id": "override_onoff",
               "type": "checkbox",
               "label": {
-                "en": "Always on?",
-                "nl": "Altijd aan?"
+                "en": "Always on",
+                "nl": "Altijd aan"
               },
               "value": false
+            },
+            {
+              "id": "alarm_motion_enabled",
+              "type": "checkbox",
+              "label": {
+                "en": "Use generic motion alarm?",
+                "nl": "Gebruik generiek bewegings alarm"
+              },
+              "value": true
             }
           ]
         }
@@ -1051,10 +1159,19 @@
               "id": "override_onoff",
               "type": "checkbox",
               "label": {
-                "en": "Always on?",
-                "nl": "Altijd aan?"
+                "en": "Always on",
+                "nl": "Altijd aan"
               },
               "value": false
+            },
+            {
+              "id": "alarm_motion_enabled",
+              "type": "checkbox",
+              "label": {
+                "en": "Use generic motion alarm?",
+                "nl": "Gebruik generiek bewegings alarm"
+              },
+              "value": true
             }
           ]
         }
