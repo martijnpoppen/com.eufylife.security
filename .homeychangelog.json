@@ -304,5 +304,8 @@
   },
   "1.12.9": {
     "en": "FIX: on/off for homebase devices with rewritten p2p library."
+  },
+  "1.12.10": {
+    "en": "FIX: on/off for homebase devices with rewritten p2p library."
   }
 }
