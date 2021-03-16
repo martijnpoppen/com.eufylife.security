@@ -222,7 +222,7 @@ updateSettings(settings) {
             let devices = hub.devices.reverse();
             devices = devices.map((r, i) => ({ 
                 name: r.device_name, 
-                index: i, 
+                index: r.device_channel, 
                 device_sn: r.device_sn,
                 deviceId: `${r.device_sn}-${r.device_id}`  
             }));
