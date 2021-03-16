@@ -47,12 +47,6 @@ module.exports = class mainDevice extends Homey.Device {
             this.removeCapability('CMD_DOORBELL_QUICK_RESPONSE_POWERED');
             await sleep(1000);
         }
-        
-        if(this.hasCapability('alarm_generic')) {
-            Homey.app.log(`[Device] ${this.getName()} - FEATURE 1.11.12 - Revert alarm_generic to alarm_motion`);
-            this.removeCapability('alarm_generic');
-            await sleep(1000);
-        }
 
         if(driverCapabilities.length > deviceCapabilities.length) {      
             await this.updateCapabilities(driverCapabilities);
@@ -135,13 +129,20 @@ module.exports = class mainDevice extends Homey.Device {
 
     async onCapability_CMD_TRIGGER_MOTION( value ) {
         try {
+            const settings = this.getSettings();
+            const setMotionAlarm = value !== 'NTFY_PRESS_DOORBELL' && !!settings.alarm_motion_enabled;
+            
             this.setCapabilityValue(value, true);
-            if(value !== 'NTFY_PRESS_DOORBELL') this.setCapabilityValue('alarm_motion', true);
+            if(setMotionAlarm) this.setCapabilityValue('alarm_motion', true);
 
             await sleep(5000);
 
             this.setCapabilityValue(value, false);
-            if(value !== 'NTFY_PRESS_DOORBELL')  this.setCapabilityValue('alarm_motion', false);
+            
+            if(setMotionAlarm) {
+                await sleep(5000);
+                this.setCapabilityValue('alarm_motion', false);
+            }
 
             return Promise.resolve(true);
         } catch (e) {
