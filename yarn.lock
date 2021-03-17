@@ -790,10 +790,9 @@ etag@~1.8.1:
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
   integrity sha1-Qa4u62XvpiJorr/qg6x9eSmbCIc=
 
-eufy-node-client@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/eufy-node-client/-/eufy-node-client-0.5.0.tgz#4575c3c40db702d8523863910319a042e44679b0"
-  integrity sha512-u8itDp2Y7SQvmdkQLds+WMmSnDkSoURjD3goy76Ge5ZTW/Ampysw5h+oF1XJKmhGTADxQsUTFWJF5/yDVUFoCw==
+"eufy-node-client@https://github.com/martijnpoppen/eufy-node-client":
+  version "0.9.1"
+  resolved "https://github.com/martijnpoppen/eufy-node-client#595aec7e8779e3b47fa41af206f11feb7a27cae7"
   dependencies:
     dgram "^1.0.1"
     dotenv "^8.2.0"
