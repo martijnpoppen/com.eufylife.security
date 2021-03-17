@@ -316,5 +316,8 @@
   },
   "1.12.13": {
     "en": "NEW: add motion sensor T8910 | NEW: Generic alarm for all cameras - triggered on every event (except doorbell_press). Usefull for heimdall or zoneactivity | NEW: Setting to disable generic alarm  | FIX: on/off for homebase devices with rewritten p2p library."
+  },
+  "1.12.14": {
+    "en": "OPT: add real device icons (Thx Robbert Vis!)"
   }
 }
