@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "1.12.15",
+  "version": "1.12.16",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -271,6 +271,27 @@
                 "label": {
                   "en": "Disarmed",
                   "nl": "Disarmed"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Custom 1",
+                  "nl": "Custom 1"
+                }
+              },
+              {
+                "id": "5",
+                "label": {
+                  "en": "Custom 2",
+                  "nl": "Custom 2"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Custom 3",
+                  "nl": "Custom 3"
                 }
               }
             ]
@@ -1247,6 +1268,27 @@
           "title": {
             "en": "Disarmed",
             "nl": "Disarmed"
+          }
+        },
+        {
+          "id": "4",
+          "title": {
+            "en": "Custom 1",
+            "nl": "Custom 1"
+          }
+        },
+        {
+          "id": "5",
+          "title": {
+            "en": "Custom 2",
+            "nl": "Custom 2"
+          }
+        },
+        {
+          "id": "3",
+          "title": {
+            "en": "Custom 3",
+            "nl": "Custom 3"
           }
         }
       ]

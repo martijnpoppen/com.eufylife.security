@@ -322,5 +322,8 @@
   },
   "1.12.15": {
     "en": "OPT: add real device icons (Thx Robbert Vis!)"
+  },
+  "1.12.16": {
+    "en": "OPT: add custom guard modes"
   }
 }
