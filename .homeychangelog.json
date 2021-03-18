@@ -325,5 +325,8 @@
   },
   "1.12.16": {
     "en": "OPT: add custom guard modes"
+  },
+  "1.12.17": {
+    "en": "OPT: update icons"
   }
 }
