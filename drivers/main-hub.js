@@ -4,16 +4,16 @@ const mainDevice = require('./main-device');
 const { sleep } = require('eufy-node-client');
 const eufyNotificationCheckHelper = require("../../lib/helpers/eufy-notification-check.helper");
 
-module.exports = class mainSensor extends mainDevice {
+module.exports = class mainHub extends mainDevice {
     async onInit() {
-		Homey.app.log('[Device] - init =>', this.getName());
+		Homey.app.log('[HUB] - init =>', this.getName());
         Homey.app.setDevices(this);
 
         await this.checkCapabilities();
 
-        this.setAvailable();
+        this.registerCapabilityListener('CMD_SET_ARMING', this.onCapability_CMD_SET_ARMING.bind(this));
 
-        await this.findDeviceIndexInStore();
+        this.setAvailable();
     }
 
     async onAdded() {
@@ -24,9 +24,7 @@ module.exports = class mainSensor extends mainDevice {
     async onCapability_NTFY_TRIGGER( message, value ) {
         try {
             if(this.hasCapability(message)) {
-                this.setCapabilityValue(message, true);
-                await sleep(10000);
-                this.setCapabilityValue(message, false);
+                this.setCapabilityValue(message, value);
             }
             return Promise.resolve(true);
         } catch (e) {

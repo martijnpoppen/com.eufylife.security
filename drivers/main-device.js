@@ -15,7 +15,7 @@ module.exports = class mainDevice extends Homey.Device {
 
         this.registerCapabilityListener('onoff', this.onCapability_CMD_DEVS_SWITCH.bind(this));
         this.registerCapabilityListener('CMD_SET_ARMING', this.onCapability_CMD_SET_ARMING.bind(this));
-        this.registerCapabilityListener('NTFY_MOTION_DETECTION', this.onCapability_CMD_TRIGGER_MOTION.bind(this));
+        this.registerCapabilityListener('NTFY_MOTION_DETECTION', this.onCapability_NTFY_TRIGGER.bind(this));
 
         if(this.hasCapability('CMD_DOORBELL_QUICK_RESPONSE') && !this.hasCapability('CMD_DOORBELL_QUICK_RESPONSE_POWERED')) {
             await this.setQuickResponseStore();
@@ -47,6 +47,10 @@ module.exports = class mainDevice extends Homey.Device {
             this.removeCapability('CMD_DOORBELL_QUICK_RESPONSE_POWERED');
             await sleep(1000);
         }
+
+        Homey.app.log(`[Device] ${this.getName()} - FIX - Remove CMD_SET_ARMING - Homebase integration`);
+        this.removeCapability('CMD_SET_ARMING');
+        await sleep(2500);
 
         if(driverCapabilities.length > deviceCapabilities.length) {      
             await this.updateCapabilities(driverCapabilities);
@@ -127,21 +131,23 @@ module.exports = class mainDevice extends Homey.Device {
         }
     }
 
-    async onCapability_CMD_TRIGGER_MOTION( value ) {
+    async onCapability_NTFY_TRIGGER( message, value ) {
         try {
             const settings = this.getSettings();
-            const setMotionAlarm = value !== 'NTFY_PRESS_DOORBELL' && !!settings.alarm_motion_enabled;
+            const setMotionAlarm = message !== 'NTFY_PRESS_DOORBELL' && !!settings.alarm_motion_enabled;
             
-            this.setCapabilityValue(value, true);
-            if(setMotionAlarm) this.setCapabilityValue('alarm_motion', true);
+            if(this.hasCapability(message)) {
+                this.setCapabilityValue(message, true);
+                if(setMotionAlarm) this.setCapabilityValue('alarm_motion', true);
 
-            await sleep(5000);
-
-            this.setCapabilityValue(value, false);
-            
-            if(setMotionAlarm) {
                 await sleep(5000);
-                this.setCapabilityValue('alarm_motion', false);
+
+                this.setCapabilityValue(message, false);
+                
+                if(setMotionAlarm) {
+                    await sleep(5000);
+                    this.setCapabilityValue('alarm_motion', false);
+                }
             }
 
             return Promise.resolve(true);

@@ -176,6 +176,20 @@
             "filter": "capabilities=NTFY_PET_DETECTED"
           }
         ]
+      },
+      {
+        "id": "trigger_NTFY_SET_ARMING",
+        "title": {
+          "en": "Arm Mode changed",
+          "nl": "Beveiligingsmodus gewijzigd"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "capabilities=CMD_SET_ARMING"
+          }
+        ]
       }
     ],
     "conditions": [
@@ -369,7 +383,6 @@
       "capabilities": [
         "onoff",
         "alarm_motion",
-        "CMD_SET_ARMING",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION"
       ],
@@ -430,7 +443,6 @@
       "capabilities": [
         "onoff",
         "alarm_motion",
-        "CMD_SET_ARMING",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION"
       ],
@@ -491,7 +503,6 @@
       "capabilities": [
         "onoff",
         "alarm_motion",
-        "CMD_SET_ARMING",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION"
       ],
@@ -552,7 +563,6 @@
       "capabilities": [
         "onoff",
         "alarm_motion",
-        "CMD_SET_ARMING",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION"
       ],
@@ -613,7 +623,6 @@
       "capabilities": [
         "onoff",
         "alarm_motion",
-        "CMD_SET_ARMING",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION"
       ],
@@ -674,7 +683,6 @@
       "capabilities": [
         "onoff",
         "alarm_motion",
-        "CMD_SET_ARMING",
         "NTFY_MOTION_DETECTION"
       ],
       "name": {
@@ -734,7 +742,6 @@
       "capabilities": [
         "onoff",
         "alarm_motion",
-        "CMD_SET_ARMING",
         "NTFY_MOTION_DETECTION"
       ],
       "name": {
@@ -988,7 +995,6 @@
       "capabilities": [
         "onoff",
         "alarm_motion",
-        "CMD_SET_ARMING",
         "CMD_DOORBELL_QUICK_RESPONSE",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
@@ -1116,7 +1122,6 @@
       "capabilities": [
         "onoff",
         "alarm_motion",
-        "CMD_SET_ARMING",
         "CMD_DOORBELL_QUICK_RESPONSE",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
@@ -1229,7 +1234,63 @@
           "template": "add_devices"
         }
       ]
-    }
+    },
+    {
+        "id": "driver_HOMEBASE",
+        "class": "homealarm",
+        "capabilities": [
+          "CMD_SET_ARMING"
+        ],
+        "name": {
+          "en": "Homebase",
+          "nl": "Homebase"
+        },
+        "images": {
+          "large": "drivers/driver_HOMEBASE/assets/images/large.jpg",
+          "small": "drivers/driver_HOMEBASE/assets/images/small.jpg"
+        },
+        "pair": [
+          {
+            "id": "list_devices",
+            "template": "list_devices",
+            "navigation": {
+              "next": "add_devices"
+            }
+          },
+          {
+            "id": "add_devices",
+            "template": "add_devices"
+          }
+        ]
+      },
+      {
+        "id": "driver_KEYPAD",
+        "class": "homealarm",
+        "capabilities": [
+          "CMD_SET_ARMING"
+        ],
+        "name": {
+          "en": "Keypad",
+          "nl": "Keypad"
+        },
+        "images": {
+          "large": "drivers/driver_KEYPAD/assets/images/large.jpg",
+          "small": "drivers/driver_KEYPAD/assets/images/small.jpg"
+        },
+        "pair": [
+          {
+            "id": "list_devices",
+            "template": "list_devices",
+            "navigation": {
+              "next": "add_devices"
+            }
+          },
+          {
+            "id": "add_devices",
+            "template": "add_devices"
+          }
+        ]
+      }
   ],
   "capabilities": {
     "CMD_SET_ARMING": {

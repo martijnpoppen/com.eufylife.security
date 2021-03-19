@@ -7,6 +7,7 @@ const flowConditions = require("./lib/flow/conditions.js");
 const flowTriggers = require("./lib/flow/triggers.js");
 const eufyCommandSendHelper = require("./lib/helpers/eufy-command-send.helper");
 const eufyNotificationCheckHelper = require("./lib/helpers/eufy-notification-check.helper");
+const { DEVICE_TYPES } = require('../../constants/device_types');
 const { log } = require("./logger.js");
 
 const ManagerSettings = Homey.ManagerSettings;
@@ -217,6 +218,15 @@ updateSettings(settings) {
     }
 
     hubStore.forEach(hub => {
+        if(hub.station_sn.includes(DEVICE_TYPES.HOMEBASE)) {
+            deviceStore.push({ 
+                name: hub.station_name, 
+                index: 0, 
+                device_sn: hub.station_sn,
+                deviceId: `${hub.station_sn}-${hub.station_id}`  
+            });
+        }
+
         if(hub.devices && hub.devices.length) {
             this.log("setDeviceStore - Setting up HubStore", hub.devices);
             let devices = hub.devices.reverse();
