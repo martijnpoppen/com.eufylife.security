@@ -263,28 +263,35 @@
                 "id": "1",
                 "label": {
                   "en": "Home",
-                  "nl": "Home"
+                  "nl": "Thuis"
                 }
               },
               {
                 "id": "0",
                 "label": {
                   "en": "Away",
-                  "nl": "Away"
+                  "nl": "Afwezig"
                 }
               },
               {
                 "id": "2",
                 "label": {
                   "en": "Schedule",
-                  "nl": "Schedule"
+                  "nl": "Schema"
                 }
               },
               {
                 "id": "63",
                 "label": {
                   "en": "Disarmed",
-                  "nl": "Disarmed"
+                  "nl": "Uitgeschakeld"
+                }
+              },
+              {
+                "id": "6",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
                 }
               },
               {
@@ -1305,28 +1312,35 @@
           "id": "1",
           "title": {
             "en": "Home",
-            "nl": "Home"
+            "nl": "Thuis"
           }
         },
         {
           "id": "0",
           "title": {
             "en": "Away",
-            "nl": "Away"
+            "nl": "Afwezig"
           }
         },
         {
           "id": "2",
           "title": {
             "en": "Schedule",
-            "nl": "Schedule"
+            "nl": "Schema"
           }
         },
         {
           "id": "63",
           "title": {
             "en": "Disarmed",
-            "nl": "Disarmed"
+            "nl": "Uitgeschakeld"
+          }
+        },
+        {
+          "id": "6",
+          "title": {
+            "en": "Off",
+            "nl": "Uit"
           }
         },
         {
