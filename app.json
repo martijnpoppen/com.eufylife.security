@@ -1313,8 +1313,8 @@
     "CMD_SET_ARMING": {
       "type": "enum",
       "title": {
-        "en": "Set Arm Mode",
-        "nl": "Stel beveiligingsmodus in"
+        "en": "Arm Mode",
+        "nl": "Beveiligingsmodus"
       },
       "uiComponent": "picker",
       "getable": true,
@@ -1322,56 +1322,56 @@
       "values": [
         {
           "id": "1",
-          "label": {
+          "title": {
             "en": "Home",
             "nl": "Thuis"
           }
         },
         {
           "id": "0",
-          "label": {
+          "title": {
             "en": "Away",
             "nl": "Afwezig"
           }
         },
         {
           "id": "2",
-          "label": {
+          "title": {
             "en": "Schedule",
             "nl": "Schema"
           }
         },
         {
           "id": "63",
-          "label": {
+          "title": {
             "en": "Disarmed",
             "nl": "Uitgeschakeld"
           }
         },
         {
           "id": "6",
-          "label": {
+          "title": {
             "en": "Off",
             "nl": "Uit"
           }
         },
         {
           "id": "4",
-          "label": {
+          "title": {
             "en": "Custom 1",
             "nl": "Custom 1"
           }
         },
         {
           "id": "5",
-          "label": {
+          "title": {
             "en": "Custom 2",
             "nl": "Custom 2"
           }
         },
         {
           "id": "3",
-          "label": {
+          "title": {
             "en": "Custom 3",
             "nl": "Custom 3"
           }
