@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "1.12.18",
+  "version": "1.12.19",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -72,11 +72,11 @@
     }
   },
   "bugs": {
-    "url": "https://github.com/martijnpoppen/com.eufylife.security/issues"
+    "url": "https://community.athom.com/t/app-eufy-security/44921"
   },
   "source": "https://github.com/martijnpoppen/com.eufylife.security",
-  "homeyCommunityTopicId": 30479,
-  "support": "mailto:eufy@martijnpoppen.nl",
+  "homeyCommunityTopicId": 44921,
+  "support": "https://community.athom.com/t/app-eufy-security/44921",
   "flow": {
     "triggers": [
       {
