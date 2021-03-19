@@ -178,7 +178,7 @@
         ]
       },
       {
-        "id": "trigger_NTFY_SET_ARMING",
+        "id": "trigger_CMD_SET_ARMING",
         "title": {
           "en": "Arm Mode changed",
           "nl": "Beveiligingsmodus gewijzigd"
@@ -246,8 +246,8 @@
       {
         "id": "action_CMD_SET_ARMING",
         "title": {
-          "en": "Set Arm Mode",
-          "nl": "Stel beveiligingsmodus in"
+          "en": "Arm Mode",
+          "nl": "Beveiligingsmodus"
         },
         "args": [
           {
