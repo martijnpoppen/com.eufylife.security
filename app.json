@@ -209,35 +209,63 @@
             "name": "condition_CHECK_ARM_TYPE",
             "type": "dropdown",
             "values": [
-              {
-                "id": "1",
-                "label": {
-                  "en": "Home",
-                  "nl": "Home"
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Home",
+                    "nl": "Thuis"
+                  }
+                },
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Away",
+                    "nl": "Afwezig"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Schedule",
+                    "nl": "Schema"
+                  }
+                },
+                {
+                  "id": "63",
+                  "label": {
+                    "en": "Disarmed",
+                    "nl": "Uitgeschakeld"
+                  }
+                },
+                {
+                  "id": "6",
+                  "label": {
+                    "en": "Off",
+                    "nl": "Uit"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Custom 1",
+                    "nl": "Custom 1"
+                  }
+                },
+                {
+                  "id": "5",
+                  "label": {
+                    "en": "Custom 2",
+                    "nl": "Custom 2"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "Custom 3",
+                    "nl": "Custom 3"
+                  }
                 }
-              },
-              {
-                "id": "0",
-                "label": {
-                  "en": "Away",
-                  "nl": "Away"
-                }
-              },
-              {
-                "id": "2",
-                "label": {
-                  "en": "Schedule",
-                  "nl": "Schedule"
-                }
-              },
-              {
-                "id": "63",
-                "label": {
-                  "en": "Disarmed",
-                  "nl": "Disarmed"
-                }
-              }
-            ]
+              ]
           }
         ]
       }
@@ -1310,56 +1338,56 @@
       "values": [
         {
           "id": "1",
-          "title": {
+          "label": {
             "en": "Home",
             "nl": "Thuis"
           }
         },
         {
           "id": "0",
-          "title": {
+          "label": {
             "en": "Away",
             "nl": "Afwezig"
           }
         },
         {
           "id": "2",
-          "title": {
+          "label": {
             "en": "Schedule",
             "nl": "Schema"
           }
         },
         {
           "id": "63",
-          "title": {
+          "label": {
             "en": "Disarmed",
             "nl": "Uitgeschakeld"
           }
         },
         {
           "id": "6",
-          "title": {
+          "label": {
             "en": "Off",
             "nl": "Uit"
           }
         },
         {
           "id": "4",
-          "title": {
+          "label": {
             "en": "Custom 1",
             "nl": "Custom 1"
           }
         },
         {
           "id": "5",
-          "title": {
+          "label": {
             "en": "Custom 2",
             "nl": "Custom 2"
           }
         },
         {
           "id": "3",
-          "title": {
+          "label": {
             "en": "Custom 3",
             "nl": "Custom 3"
           }

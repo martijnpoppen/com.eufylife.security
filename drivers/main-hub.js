@@ -23,8 +23,9 @@ module.exports = class mainHub extends mainDevice {
 
     async onCapability_NTFY_TRIGGER( message, value ) {
         try {
-            if(this.hasCapability(message)) {
-                this.setCapabilityValue(message, value.toString());
+            const valueString = value.toString();
+            if(this.hasCapability(message) && this.getCapabilityValue(message) !== valueString) {
+                this.setCapabilityValue(message, valueString);
             }
             return Promise.resolve(true);
         } catch (e) {
