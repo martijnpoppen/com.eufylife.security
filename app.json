@@ -34,9 +34,7 @@
       "Motion dectection"
     ]
   },
-  "category": [
-    "security"
-  ],
+  "category": ["security"],
   "permissions": [],
   "images": {
     "large": "/assets/images/large.jpg",
@@ -209,63 +207,63 @@
             "name": "condition_CHECK_ARM_TYPE",
             "type": "dropdown",
             "values": [
-                {
-                  "id": "1",
-                  "label": {
-                    "en": "Home",
-                    "nl": "Thuis"
-                  }
-                },
-                {
-                  "id": "0",
-                  "label": {
-                    "en": "Away",
-                    "nl": "Afwezig"
-                  }
-                },
-                {
-                  "id": "2",
-                  "label": {
-                    "en": "Schedule",
-                    "nl": "Schema"
-                  }
-                },
-                {
-                  "id": "63",
-                  "label": {
-                    "en": "Disarmed",
-                    "nl": "Uitgeschakeld"
-                  }
-                },
-                {
-                  "id": "6",
-                  "label": {
-                    "en": "Off",
-                    "nl": "Uit"
-                  }
-                },
-                {
-                  "id": "4",
-                  "label": {
-                    "en": "Custom 1",
-                    "nl": "Custom 1"
-                  }
-                },
-                {
-                  "id": "5",
-                  "label": {
-                    "en": "Custom 2",
-                    "nl": "Custom 2"
-                  }
-                },
-                {
-                  "id": "3",
-                  "label": {
-                    "en": "Custom 3",
-                    "nl": "Custom 3"
-                  }
+              {
+                "id": "1",
+                "label": {
+                  "en": "Home",
+                  "nl": "Thuis"
                 }
-              ]
+              },
+              {
+                "id": "0",
+                "label": {
+                  "en": "Away",
+                  "nl": "Afwezig"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Schedule",
+                  "nl": "Schema"
+                }
+              },
+              {
+                "id": "63",
+                "label": {
+                  "en": "Disarmed",
+                  "nl": "Uitgeschakeld"
+                }
+              },
+              {
+                "id": "6",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Custom 1",
+                  "nl": "Custom 1"
+                }
+              },
+              {
+                "id": "5",
+                "label": {
+                  "en": "Custom 2",
+                  "nl": "Custom 2"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Custom 3",
+                  "nl": "Custom 3"
+                }
+              }
+            ]
           }
         ]
       }
@@ -715,11 +713,7 @@
     {
       "id": "driver_EUFYCAM_E",
       "class": "camera",
-      "capabilities": [
-        "onoff",
-        "alarm_motion",
-        "NTFY_MOTION_DETECTION"
-      ],
+      "capabilities": ["onoff", "alarm_motion", "NTFY_MOTION_DETECTION"],
       "name": {
         "en": "eufyCam E",
         "nl": "eufyCam E"
@@ -774,11 +768,7 @@
     {
       "id": "driver_FLOODLIGHT_CAMERA",
       "class": "camera",
-      "capabilities": [
-        "onoff",
-        "alarm_motion",
-        "NTFY_MOTION_DETECTION"
-      ],
+      "capabilities": ["onoff", "alarm_motion", "NTFY_MOTION_DETECTION"],
       "name": {
         "en": "Smart Floodlight with Camera",
         "nl": "Smart Floodlight with Camera"
@@ -1188,9 +1178,7 @@
     {
       "id": "driver_DOORSENSOR",
       "class": "sensor",
-      "capabilities": [
-        "alarm_contact"
-      ],
+      "capabilities": ["alarm_contact"],
       "name": {
         "en": "Doorsensor",
         "nl": "Deursensor"
@@ -1245,9 +1233,7 @@
     {
       "id": "driver_MOTIONSENSOR",
       "class": "sensor",
-      "capabilities": [
-        "alarm_motion"
-      ],
+      "capabilities": ["alarm_motion"],
       "name": {
         "en": "Motionsensor",
         "nl": "Bewegingssensor"
@@ -1271,59 +1257,57 @@
       ]
     },
     {
-        "id": "driver_HOMEBASE",
-        "class": "homealarm",
-        "capabilities": [
-          "CMD_SET_ARMING"
-        ],
-        "name": {
-          "en": "Homebase",
-          "nl": "Homebase"
-        },
-        "images": {
-          "large": "drivers/driver_HOMEBASE/assets/images/large.jpg",
-          "small": "drivers/driver_HOMEBASE/assets/images/small.jpg"
-        },
-        "pair": [
-          {
-            "id": "list_devices",
-            "template": "list_devices",
-            "navigation": {
-              "next": "add_devices"
-            }
-          },
-          {
-            "id": "add_devices",
-            "template": "add_devices"
-          }
-        ]
+      "id": "driver_HOMEBASE",
+      "class": "homealarm",
+      "capabilities": ["CMD_SET_ARMING"],
+      "name": {
+        "en": "Homebase",
+        "nl": "Homebase"
       },
-      {
-        "id": "driver_KEYPAD",
-        "class": "homealarm",
-        "capabilities": [],
-        "name": {
-          "en": "Keypad",
-          "nl": "Keypad"
-        },
-        "images": {
-          "large": "drivers/driver_KEYPAD/assets/images/large.jpg",
-          "small": "drivers/driver_KEYPAD/assets/images/small.jpg"
-        },
-        "pair": [
-          {
-            "id": "list_devices",
-            "template": "list_devices",
-            "navigation": {
-              "next": "add_devices"
-            }
-          },
-          {
-            "id": "add_devices",
-            "template": "add_devices"
+      "images": {
+        "large": "drivers/driver_HOMEBASE/assets/images/large.jpg",
+        "small": "drivers/driver_HOMEBASE/assets/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
           }
-        ]
-      }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    },
+    {
+      "id": "driver_KEYPAD",
+      "class": "homealarm",
+      "capabilities": [],
+      "name": {
+        "en": "Keypad",
+        "nl": "Keypad"
+      },
+      "images": {
+        "large": "drivers/driver_KEYPAD/assets/images/large.jpg",
+        "small": "drivers/driver_KEYPAD/assets/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    }
   ],
   "capabilities": {
     "CMD_SET_ARMING": {
