@@ -3,6 +3,8 @@
 Add support for Eufy Cam in Homey.
 Based on: https://github.com/JanLoebel/eufy-node-client
 
+Link: https://homey.app/nl-nl/app/com.eufylife.security/Eufy-Security/
+
 # Account Information
 
 Because of the way the Eufy Security private API works, an email/password combo cannot
