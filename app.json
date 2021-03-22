@@ -70,11 +70,11 @@
     }
   },
   "bugs": {
-    "url": "https://github.com/martijnpoppen/com.eufylife.security/issues"
+    "url": "https://community.athom.com/t/app-eufy-security/44921"
   },
   "source": "https://github.com/martijnpoppen/com.eufylife.security",
-  "homeyCommunityTopicId": 30479,
-  "support": "mailto:eufy@martijnpoppen.nl",
+  "homeyCommunityTopicId": 44921,
+  "support": "https://community.athom.com/t/app-eufy-security/44921",
   "flow": {
     "triggers": [
       {
