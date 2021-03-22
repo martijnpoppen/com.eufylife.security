@@ -334,5 +334,8 @@
   },
   "1.12.19": {
     "en": "Update community link"
+  },
+  "1.12.20": {
+    "en": "FIX: add reverse guard_modes for indoor cam - add retry when sending command fails"
   }
 }

@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "1.12.19",
+  "version": "1.12.20",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -34,7 +34,9 @@
       "Motion dectection"
     ]
   },
-  "category": ["security"],
+  "category": [
+    "security"
+  ],
   "permissions": [],
   "images": {
     "large": "/assets/images/large.jpg",
@@ -1181,7 +1183,9 @@
     {
       "id": "driver_DOORSENSOR",
       "class": "sensor",
-      "capabilities": ["alarm_contact"],
+      "capabilities": [
+        "alarm_contact"
+      ],
       "name": {
         "en": "Doorsensor",
         "nl": "Deursensor"
@@ -1236,7 +1240,9 @@
     {
       "id": "driver_MOTIONSENSOR",
       "class": "sensor",
-      "capabilities": ["alarm_motion"],
+      "capabilities": [
+        "alarm_motion"
+      ],
       "name": {
         "en": "Motionsensor",
         "nl": "Bewegingssensor"
