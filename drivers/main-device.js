@@ -95,9 +95,11 @@ module.exports = class mainDevice extends Homey.Device {
         const deviceObject = this.getData();
         try {
             let CMD_SET_ARMING = ARM_TYPES[value];
+            
             if(this.hasCapability('CMD_REVERSE_DEVS_SWITCH')) {
                 CMD_SET_ARMING = ARM_TYPES_REVERSED[value];
             }
+
             await eufyCommandSendHelper.sendCommand('CMD_SET_ARMING', deviceObject.station_sn, CommandType.CMD_SET_ARMING, CMD_SET_ARMING);
             return Promise.resolve(true);
         } catch (e) {
