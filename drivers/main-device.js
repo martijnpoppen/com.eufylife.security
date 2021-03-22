@@ -98,6 +98,10 @@ module.exports = class mainDevice extends Homey.Device {
             
             if(this.hasCapability('CMD_REVERSE_DEVS_SWITCH')) {
                 CMD_SET_ARMING = ARM_TYPES_REVERSED[value];
+
+                if(CMD_SET_ARMING == '6') {
+                    throw new Error('Not available for this device');
+                }
             }
 
             await eufyCommandSendHelper.sendCommand('CMD_SET_ARMING', deviceObject.station_sn, CommandType.CMD_SET_ARMING, CMD_SET_ARMING);
