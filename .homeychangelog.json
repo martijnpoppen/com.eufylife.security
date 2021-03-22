@@ -337,5 +337,8 @@
   },
   "1.12.20": {
     "en": "FIX: add reverse guard_modes for indoor cam - add retry when sending command fails"
+  },
+  "1.12.21": {
+    "en": "FIX: disable off for indoor cameras"
   }
 }
