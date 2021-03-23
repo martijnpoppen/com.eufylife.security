@@ -340,5 +340,8 @@
   },
   "1.12.21": {
     "en": "FIX: disable off for indoor cameras"
+  },
+  "2.0.1": {
+    "en": "Breaking change! - Security modes are moved to Homebase. (Only for homebase camera's) Added: Homebase and Keypad devices"
   }
 }
