@@ -38,7 +38,7 @@ class App extends Homey.App {
   async onInit() {
     this.log(`${Homey.manifest.id} - ${Homey.manifest.version} started...`);
     
-    const notify = new Homey.Notification({"excerpt": `Eufy v${Homey.manifest.version} - Breaking change! - Guard modes are moved to Homebase 2. Added: Homebase and Keypad devices`})
+    const notify = new Homey.Notification({"excerpt": `Eufy v${Homey.manifest.version} - Breaking change! - Security modes are moved to Homebase. (Only for homebase camera's) Added: Homebase and Keypad devices`})
     Homey.ManagerNotifications.registerNotification(notify)
 
     await this.initSettings();
