@@ -2,7 +2,6 @@ const Homey = require('homey');
 const { CommandType, sleep } = require('eufy-node-client');
 const eufyCommandSendHelper = require("../../lib/helpers/eufy-command-send.helper");
 const eufyNotificationCheckHelper = require("../../lib/helpers/eufy-notification-check.helper");
-const { ARM_TYPES, ARM_TYPES_REVERSED } = require('../../constants/arm_types');
 let _httpService = undefined;
 
 module.exports = class mainDevice extends Homey.Device {
@@ -99,11 +98,9 @@ module.exports = class mainDevice extends Homey.Device {
     async onCapability_CMD_SET_ARMING( value ) {
         const deviceObject = this.getData();
         try {
-            let CMD_SET_ARMING = ARM_TYPES[value];
+            let CMD_SET_ARMING = value;
             
             if(!this.hasCapability('CMD_SET_ARMING_HUB')) {
-                CMD_SET_ARMING = ARM_TYPES_REVERSED[value];
-
                 if(CMD_SET_ARMING == '6') {
                     throw new Error('Not available for this device');
                 }
