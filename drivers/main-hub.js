@@ -1,7 +1,5 @@
 const Homey = require('homey');
 const mainDevice = require('./main-device');
-
-const { sleep } = require('eufy-node-client');
 const eufyNotificationCheckHelper = require("../../lib/helpers/eufy-notification-check.helper");
 
 module.exports = class mainHub extends mainDevice {
@@ -27,6 +25,7 @@ module.exports = class mainHub extends mainDevice {
             if(this.hasCapability(message) && this.getCapabilityValue(message) !== valueString) {
                 this.setCapabilityValue(message, valueString);
             }
+         
             return Promise.resolve(true);
         } catch (e) {
             Homey.app.error(e);
