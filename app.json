@@ -243,21 +243,21 @@
                 }
               },
               {
-                "id": "4",
+                "id": "3",
                 "label": {
                   "en": "Custom 1",
                   "nl": "Custom 1"
                 }
               },
               {
-                "id": "5",
+                "id": "4",
                 "label": {
                   "en": "Custom 2",
                   "nl": "Custom 2"
                 }
               },
               {
-                "id": "3",
+                "id": "5",
                 "label": {
                   "en": "Custom 3",
                   "nl": "Custom 3"
@@ -321,21 +321,21 @@
                 }
               },
               {
-                "id": "4",
+                "id": "3",
                 "label": {
                   "en": "Custom 1",
                   "nl": "Custom 1"
                 }
               },
               {
-                "id": "5",
+                "id": "4",
                 "label": {
                   "en": "Custom 2",
                   "nl": "Custom 2"
                 }
               },
               {
-                "id": "3",
+                "id": "5",
                 "label": {
                   "en": "Custom 3",
                   "nl": "Custom 3"
@@ -1356,21 +1356,21 @@
           }
         },
         {
-          "id": "4",
+          "id": "3",
           "title": {
             "en": "Custom 1",
             "nl": "Custom 1"
           }
         },
         {
-          "id": "5",
+          "id": "4",
           "title": {
             "en": "Custom 2",
             "nl": "Custom 2"
           }
         },
         {
-          "id": "3",
+          "id": "5",
           "title": {
             "en": "Custom 3",
             "nl": "Custom 3"
