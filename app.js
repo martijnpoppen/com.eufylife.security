@@ -1,7 +1,7 @@
 "use strict";
 
 const Homey = require("homey");
-const { PushRegisterService, HttpService, sleep } = require("eufy-node-client");
+const { PushRegisterService, HttpService, PushClient, sleep } = require("eufy-node-client");
 const flowActions = require("./lib/flow/actions.js");
 const flowConditions = require("./lib/flow/conditions.js");
 const flowTriggers = require("./lib/flow/triggers.js");
@@ -52,6 +52,7 @@ class App extends Homey.App {
     }
 
     if (this.appSettings.CREDENTIALS) {
+        await PushClient.init();
         await eufyNotificationCheckHelper.init(this.appSettings);
         await flowTriggers.init();
     }
@@ -175,6 +176,7 @@ updateSettings(settings) {
 
       if (settings.CREDENTIALS) {
         if(initNotificationCheckHelper) {
+            await PushClient.init();
             await eufyNotificationCheckHelper.init(this.appSettings);
         } 
         await flowTriggers.init();
