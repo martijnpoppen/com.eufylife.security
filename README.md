@@ -48,6 +48,4 @@ If this project help you reduce time to develop, you can give me a cup of coffee
 &nbsp;
 
 ---
-&nbsp;
 
-![image info](./assets/images/eufy1.jpeg)
