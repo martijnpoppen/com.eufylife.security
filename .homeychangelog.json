@@ -346,5 +346,8 @@
   },
   "2.0.2": {
     "en": "FIX: security modes for non-Homebase devices"
+  },
+  "2.0.3": {
+    "en": "FIX: wrong condition cards for homebase"
   }
 }
