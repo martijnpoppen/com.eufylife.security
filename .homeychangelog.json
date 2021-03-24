@@ -349,5 +349,8 @@
   },
   "2.0.3": {
     "en": "FIX: wrong condition cards for homebase"
+  },
+  "2.0.4": {
+    "en": "FIX: double pushclientservice"
   }
 }
