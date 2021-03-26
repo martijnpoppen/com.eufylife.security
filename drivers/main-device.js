@@ -38,7 +38,7 @@ module.exports = class mainDevice extends Homey.Device {
         const driverManifest = driver.getManifest();
         const driverCapabilities = driverManifest.capabilities;
         
-        if(this.hasCapability('NTFY_PET_DETECTED') || this.hasCapability('CMD_DOORBELL_QUICK_RESPONSE_POWERED')) {
+        if(this.hasCapability('NTFY_PET_DETECTED') || this.hasCapability('CMD_DOORBELL_QUICK_RESPONSE_POWERED') || this.hasCapability('CMD_SET_ARMING_HUB')) {
             Homey.app.log(`[Device] ${this.getName()} - FIX - Remove quick response from indoor cam`);
             this.removeCapability('CMD_DOORBELL_QUICK_RESPONSE');
             this.removeCapability('CMD_DOORBELL_QUICK_RESPONSE_POWERED');
