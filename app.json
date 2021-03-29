@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -881,8 +881,8 @@
         "NTFY_PET_DETECTED"
       ],
       "name": {
-        "en": "Indoor Cam",
-        "nl": "Indoor Cam"
+        "en": "Indoor Cam (1080p/2K)",
+        "nl": "Indoor Cam (1080p/2K)"
       },
       "images": {
         "large": "drivers/driver_INDOOR_CAM/assets/images/large.jpg",
@@ -947,8 +947,8 @@
         "NTFY_PET_DETECTED"
       ],
       "name": {
-        "en": "Indoor Cam Pan & Tilt",
-        "nl": "Indoor Cam Pan & Tilt"
+        "en": "Indoor Cam Pan & Tilt (1080p/2K)",
+        "nl": "Indoor Cam Pan & Tilt (1080p/2K)"
       },
       "images": {
         "large": "drivers/driver_INDOOR_CAM_PAN_TILT/assets/images/large.jpg",
