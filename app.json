@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.0.5",
+  "version": "2.1.0",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -1515,14 +1515,14 @@
       }
     },
     "CMD_START_STREAM": {
-        "type": "string",
-        "uiComponent": null,
-        "getable": true,
-        "setable": false,
-        "title": {
-          "en": "Stream url",
-          "nl": "Stream url"
-        }
+      "type": "string",
+      "uiComponent": null,
+      "getable": true,
+      "setable": false,
+      "title": {
+        "en": "Stream url",
+        "nl": "Stream url"
+      }
     },
     "NTFY_BACKGROUND_ACTIVE": {
       "type": "boolean",

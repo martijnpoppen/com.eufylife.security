@@ -355,5 +355,8 @@
   },
   "2.0.5": {
     "en": "FIX: Homebase flows not working after restart"
+  },
+  "2.1.0": {
+    "en": "NEW: add stream action card to start the stream and retrieve rmtp url"
   }
 }
