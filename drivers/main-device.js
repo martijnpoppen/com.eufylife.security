@@ -114,6 +114,35 @@ module.exports = class mainDevice extends Homey.Device {
         }
     }
 
+    async onCapability_CMD_START_STOP_STREAM( startStream ) {
+        try {
+            _httpService = Homey.app.getHttpService();
+            const deviceObject = this.getData();
+
+            const requestObject = {
+                "device_sn": deviceObject.device_sn, 
+                "station_sn": deviceObject.station_sn,
+                'proto': 2
+            }
+
+            if(startStream) {
+                const response = await _httpService.startStream(requestObject);
+                const streamStart = response.url ? response.url : null;
+                await this.setCapabilityValue( 'CMD_START_STREAM', streamStart);
+            } else {
+                await _httpService.stopStream(requestObject);
+                await this.setCapabilityValue( 'CMD_START_STREAM', 'No stream found');
+            }
+
+            return Promise.resolve(true);
+        } catch (e) {
+            Homey.app.error(e);
+            return Promise.reject(e);
+        }
+    }
+
+    
+
     async onCapability_CMD_DOORBELL_QUICK_RESPONSE( value ) {
         const deviceObject = this.getData();
         const specificDeviceType = this.hasCapability('CMD_DOORBELL_QUICK_RESPONSE_POWERED');
