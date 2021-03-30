@@ -361,5 +361,8 @@
   },
   "2.1.1": {
     "en": "update indoor cam names"
+  },
+  "2.2.0": {
+    "en": "NEW: add Homebase_1 hub"
   }
 }
