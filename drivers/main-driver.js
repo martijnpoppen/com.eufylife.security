@@ -10,6 +10,10 @@ module.exports = class mainDriver extends Homey.Driver {
         Homey.app.log(`[Driver] - version`, Homey.manifest.version);
     }
 
+    deviceType() {
+        return DEVICE_TYPES.UNKOWN
+    }
+
     async onPairListDevices( data, callback ) {
         if(this.id.includes('KEYPAD')) {
             callback( new Error('Keypad has no functionality right now. Use the Homebase 2 to change security modes') );
@@ -17,7 +21,7 @@ module.exports = class mainDriver extends Homey.Driver {
 
         _httpService = Homey.app.getHttpService();
 
-        _devices = await onDeviceListRequest(this.id);
+        _devices = await this.onDeviceListRequest(this.id, _httpService);
 
         Homey.app.log(`[Driver] ${this.id} - Found new devices:`, _devices);
         if(_devices && _devices.length) {
@@ -26,54 +30,41 @@ module.exports = class mainDriver extends Homey.Driver {
             callback( new Error('No devices found. Check the login status of this app inside app-settings') );
         }
     }
-}
 
-// ---------------------------------------AUTO COMPLETE HELPERS----------------------------------------------------------
-async function onDeviceListRequest(driverId) {
-    try {
-        const deviceList = await _httpService.listDevices();
-        const hubsList = await _httpService.listHubs();
 
-        // FIX 1.8.4 check for device id, to prevent duplicates.
-        let pairedDriverDevices = [];
+    // ---------------------------------------AUTO COMPLETE HELPERS----------------------------------------------------------
+    async onDeviceListRequest(driverId, httpService) {
+        try {
+            const deviceList = await httpService.listDevices();
+            const deviceType = this.deviceType();
 
-        Homey.app.getDevices().forEach(device => {
-            const data = device.getData();
-            pairedDriverDevices.push(data.device_sn);
-        })
+            // FIX 1.8.4 check for device id, to prevent duplicates.
+            let pairedDriverDevices = [];
 
-        Homey.app.log(`[Driver] ${driverId} - pairedDriverDevices`, pairedDriverDevices);
+            Homey.app.getDevices().forEach(device => {
+                const data = device.getData();
+                pairedDriverDevices.push(data.device_sn);
+            })
 
-        const hubs = hubsList.filter(hub => !pairedDriverDevices.includes(hub.station_sn) && hub.station_sn.includes(DEVICE_TYPES.HOMEBASE))
-        .map((h, i) => ({ 
-            name: h.station_name,
-            data: {
-                name: h.station_name,
-                index: i, 
-                id: `${h.station_sn}-${h.station_id}`, 
-                station_sn: h.station_sn, 
-                device_sn: h.station_sn
-            }  
-        }));
+            Homey.app.log(`[Driver] ${driverId} - pairedDriverDevices`, pairedDriverDevices);
 
-        const devices = deviceList.filter(device => !pairedDriverDevices.includes(device.device_sn))
-            .map((d, i) => ({ 
-                name: d.device_name, 
-                data: {
+            const results = deviceList.filter(device => !pairedDriverDevices.includes(device.device_sn))
+                .map((d, i) => ({ 
                     name: d.device_name, 
-                    index: i, 
-                    id: `${d.device_sn}-${d.device_id}`, 
-                    station_sn: d.station_sn, 
-                    device_sn: d.device_sn
-            }  
-        }));
-    
-        results = [...devices, ...hubs];
+                    data: {
+                        name: d.device_name, 
+                        index: i, 
+                        id: `${d.device_sn}-${d.device_id}`, 
+                        station_sn: d.station_sn, 
+                        device_sn: d.device_sn
+                }  
+            }));
 
-        Homey.app.log('Found devices - ', results);
-    
-        return Promise.resolve( results );
-    } catch(e) {
-        Homey.app.log(e);
+            Homey.app.log('Found devices - ', results);
+        
+            return Promise.resolve( results );
+        } catch(e) {
+            Homey.app.log(e);
+        }
     }
 }

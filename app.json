@@ -1312,6 +1312,35 @@
       ]
     },
     {
+        "id": "driver_HOMEBASE_1",
+        "class": "homealarm",
+        "capabilities": [
+          "CMD_SET_ARMING",
+          "CMD_SET_ARMING_HUB"
+        ],
+        "name": {
+          "en": "Homebase 1",
+          "nl": "Homebase 1"
+        },
+        "images": {
+          "large": "drivers/driver_HOMEBASE_1/assets/images/large.jpg",
+          "small": "drivers/driver_HOMEBASE_1/assets/images/small.jpg"
+        },
+        "pair": [
+          {
+            "id": "list_devices",
+            "template": "list_devices",
+            "navigation": {
+              "next": "add_devices"
+            }
+          },
+          {
+            "id": "add_devices",
+            "template": "add_devices"
+          }
+        ]
+      },
+    {
       "id": "driver_HOMEBASE",
       "class": "homealarm",
       "capabilities": [
@@ -1319,8 +1348,8 @@
         "CMD_SET_ARMING_HUB"
       ],
       "name": {
-        "en": "Homebase",
-        "nl": "Homebase"
+        "en": "Homebase 2",
+        "nl": "Homebase 2"
       },
       "images": {
         "large": "drivers/driver_HOMEBASE/assets/images/large.jpg",
