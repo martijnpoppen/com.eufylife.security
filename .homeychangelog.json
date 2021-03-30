@@ -364,5 +364,8 @@
   },
   "2.2.0": {
     "en": "NEW: add Homebase_1 hub"
+  },
+  "2.2.1": {
+    "en": "FIX: homebase 1 pairing issue"
   }
 }
