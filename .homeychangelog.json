@@ -340,5 +340,41 @@
   },
   "1.12.21": {
     "en": "FIX: disable off for indoor cameras"
+  },
+  "2.0.1": {
+    "en": "Breaking change! - Security modes are moved to Homebase. (Only for homebase camera's) Added: Homebase and Keypad devices"
+  },
+  "2.0.2": {
+    "en": "FIX: security modes for non-Homebase devices"
+  },
+  "2.0.3": {
+    "en": "FIX: wrong condition cards for homebase"
+  },
+  "2.0.4": {
+    "en": "FIX: double pushclientservice"
+  },
+  "2.0.5": {
+    "en": "FIX: Homebase flows not working after restart"
+  },
+  "2.1.0": {
+    "en": "NEW: add stream action card to start the stream and retrieve rmtp url"
+  },
+  "2.1.1": {
+    "en": "update indoor cam names"
+  },
+  "2.2.0": {
+    "en": "NEW: add Homebase_1 hub"
+  },
+  "2.2.1": {
+    "en": "FIX: homebase 1 pairing issue"
+  },
+  "2.2.2": {
+    "en": "FIX: homebase 1 pairing issue"
+  },
+  "2.2.3": {
+    "en": "FIX: keypad driver + Homebase 1 icon"
+  },
+  "2.2.4": {
+    "en": "Breaking change! - Security modes are moved to Homebase. (Only for homebase camera's) Added: Homebase and Keypad devices / Stream flowcards / Multiple Fixes"
   }
 }

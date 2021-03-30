@@ -2,7 +2,6 @@ const Homey = require('homey');
 const { CommandType, sleep } = require('eufy-node-client');
 const eufyCommandSendHelper = require("../../lib/helpers/eufy-command-send.helper");
 const eufyNotificationCheckHelper = require("../../lib/helpers/eufy-notification-check.helper");
-const { ARM_TYPES, ARM_TYPES_REVERSED } = require('../../constants/arm_types');
 let _httpService = undefined;
 
 module.exports = class mainDevice extends Homey.Device {
@@ -16,7 +15,7 @@ module.exports = class mainDevice extends Homey.Device {
 
         this.registerCapabilityListener('onoff', this.onCapability_CMD_DEVS_SWITCH.bind(this));
         this.registerCapabilityListener('CMD_SET_ARMING', this.onCapability_CMD_SET_ARMING.bind(this));
-        this.registerCapabilityListener('NTFY_MOTION_DETECTION', this.onCapability_CMD_TRIGGER_MOTION.bind(this));
+        this.registerCapabilityListener('NTFY_MOTION_DETECTION', this.onCapability_NTFY_TRIGGER.bind(this));
 
         if(this.hasCapability('CMD_DOORBELL_QUICK_RESPONSE') && !this.hasCapability('CMD_DOORBELL_QUICK_RESPONSE_POWERED')) {
             await this.setQuickResponseStore();
@@ -38,17 +37,22 @@ module.exports = class mainDevice extends Homey.Device {
         const driver = this.getDriver();
         const driverManifest = driver.getManifest();
         const driverCapabilities = driverManifest.capabilities;
-        const deviceCapabilities = this.getCapabilities();
-
-        Homey.app.log(`[Device] ${this.getName()} - Found capabilities =>`, deviceCapabilities);
         
-        if(this.hasCapability('NTFY_PET_DETECTED')) {
+        if(this.hasCapability('NTFY_PET_DETECTED') || this.hasCapability('CMD_DOORBELL_QUICK_RESPONSE_POWERED') || this.hasCapability('CMD_SET_ARMING_HUB')) {
             Homey.app.log(`[Device] ${this.getName()} - FIX - Remove quick response from indoor cam`);
             this.removeCapability('CMD_DOORBELL_QUICK_RESPONSE');
             this.removeCapability('CMD_DOORBELL_QUICK_RESPONSE_POWERED');
             await sleep(1000);
+        } else {
+            Homey.app.log(`[Device] ${this.getName()} - FIX - Remove CMD_SET_ARMING - Homebase integration`);
+            this.removeCapability('CMD_SET_ARMING');
+            await sleep(2500);
         }
+        
+        const deviceCapabilities = this.getCapabilities();
 
+        Homey.app.log(`[Device] ${this.getName()} - Found capabilities =>`, deviceCapabilities);
+        
         if(driverCapabilities.length > deviceCapabilities.length) {      
             await this.updateCapabilities(driverCapabilities);
         }
@@ -94,11 +98,9 @@ module.exports = class mainDevice extends Homey.Device {
     async onCapability_CMD_SET_ARMING( value ) {
         const deviceObject = this.getData();
         try {
-            let CMD_SET_ARMING = ARM_TYPES[value];
+            let CMD_SET_ARMING = value;
             
-            if(this.hasCapability('CMD_REVERSE_DEVS_SWITCH')) {
-                CMD_SET_ARMING = ARM_TYPES_REVERSED[value];
-
+            if(!this.hasCapability('CMD_SET_ARMING_HUB')) {
                 if(CMD_SET_ARMING == '6') {
                     throw new Error('Not available for this device');
                 }
@@ -111,6 +113,35 @@ module.exports = class mainDevice extends Homey.Device {
             return Promise.reject(e);
         }
     }
+
+    async onCapability_CMD_START_STOP_STREAM( startStream ) {
+        try {
+            _httpService = Homey.app.getHttpService();
+            const deviceObject = this.getData();
+
+            const requestObject = {
+                "device_sn": deviceObject.device_sn, 
+                "station_sn": deviceObject.station_sn,
+                'proto': 2
+            }
+
+            if(startStream) {
+                const response = await _httpService.startStream(requestObject);
+                const streamStart = response.url ? response.url : null;
+                await this.setCapabilityValue( 'CMD_START_STREAM', streamStart);
+            } else {
+                await _httpService.stopStream(requestObject);
+                await this.setCapabilityValue( 'CMD_START_STREAM', 'No stream found');
+            }
+
+            return Promise.resolve(true);
+        } catch (e) {
+            Homey.app.error(e);
+            return Promise.reject(e);
+        }
+    }
+
+    
 
     async onCapability_CMD_DOORBELL_QUICK_RESPONSE( value ) {
         const deviceObject = this.getData();
@@ -137,21 +168,23 @@ module.exports = class mainDevice extends Homey.Device {
         }
     }
 
-    async onCapability_CMD_TRIGGER_MOTION( value ) {
+    async onCapability_NTFY_TRIGGER( message, value ) {
         try {
             const settings = this.getSettings();
-            const setMotionAlarm = value !== 'NTFY_PRESS_DOORBELL' && !!settings.alarm_motion_enabled;
+            const setMotionAlarm = message !== 'NTFY_PRESS_DOORBELL' && !!settings.alarm_motion_enabled;
             
-            this.setCapabilityValue(value, true);
-            if(setMotionAlarm) this.setCapabilityValue('alarm_motion', true);
+            if(this.hasCapability(message)) {
+                this.setCapabilityValue(message, true);
+                if(setMotionAlarm) this.setCapabilityValue('alarm_motion', true);
 
-            await sleep(5000);
-
-            this.setCapabilityValue(value, false);
-            
-            if(setMotionAlarm) {
                 await sleep(5000);
-                this.setCapabilityValue('alarm_motion', false);
+
+                this.setCapabilityValue(message, false);
+                
+                if(setMotionAlarm) {
+                    await sleep(5000);
+                    this.setCapabilityValue('alarm_motion', false);
+                }
             }
 
             return Promise.resolve(true);
