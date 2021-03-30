@@ -816,7 +816,7 @@
       ],
       "name": {
         "en": "Smart Floodlight with Camera",
-        "nl": "Smart Floodlight with Camera"
+        "nl": "Smart Floodlight met Camera"
       },
       "images": {
         "large": "drivers/driver_FLOODLIGHT_CAMERA/assets/images/large.jpg",
@@ -1013,7 +1013,7 @@
       ],
       "name": {
         "en": "Video Doorbell 2K (Wired)",
-        "nl": "Video Doorbell 2K (Wired)"
+        "nl": "Video Deurbel 2K (Bedraad)"
       },
       "images": {
         "large": "drivers/driver_VIDEO_DOORBELL_2K_POWERED/assets/images/large.jpg",
@@ -1077,7 +1077,7 @@
       ],
       "name": {
         "en": "Video Doorbell 2K (Battery-Powered)",
-        "nl": "Video Doorbell 2K (Battery-Powered)"
+        "nl": "Video Deurbel 2K (Batterij-gevoed)"
       },
       "images": {
         "large": "drivers/driver_VIDEO_DOORBELL_2K_BATTERY/assets/images/large.jpg",
@@ -1142,7 +1142,7 @@
       ],
       "name": {
         "en": "Video Doorbell 1080p (Wired)",
-        "nl": "Video Doorbell 1080p (Wired)"
+        "nl": "Video Deurbel 1080p (Bedraad)"
       },
       "images": {
         "large": "drivers/driver_VIDEO_DOORBELL_1080P_POWERED/assets/images/large.jpg",
@@ -1206,7 +1206,7 @@
       ],
       "name": {
         "en": "Video Doorbell 1080p (Battery-Powered)",
-        "nl": "Video Doorbell 1080p (Battery-Powered)"
+        "nl": "Video Deurbel 1080p (Batterij-gevoed)"
       },
       "images": {
         "large": "drivers/driver_VIDEO_DOORBELL_1080P_BATTERY/assets/images/large.jpg",
