@@ -370,5 +370,8 @@
   },
   "2.2.2": {
     "en": "FIX: homebase 1 pairing issue"
+  },
+  "2.2.3": {
+    "en": "FIX: keypad driver + Homebase 1 icon"
   }
 }
