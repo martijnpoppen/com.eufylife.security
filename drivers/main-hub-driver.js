@@ -22,7 +22,7 @@ module.exports = class mainHubDriver extends mainDriver {
 
             Homey.app.log(`[Driver] ${driverId} - pairedDriverDevices`, pairedDriverDevices);
 
-            const results = hubsList.filter(hub => !pairedDriverDevices.includes(device.station_sn) && deviceType.some(v => hub.station_sn.includes(v)))
+            const results = hubsList.filter(hub => !pairedDriverDevices.includes(hub.station_sn) && deviceType.some(v => hub.station_sn.includes(v)))
             .map((h, i) => ({ 
                 name: h.station_name,
                 data: {
