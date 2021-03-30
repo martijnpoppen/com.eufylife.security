@@ -15,11 +15,11 @@ Usage
 - Create a flow wit Eufy Security devices
 
 Current features:
-- turn on/off camera (EufyCam pan&tilt will turn its lens)
-- Set guard mode (Home, Away, Disarmed, Schedule)
-- Add devices and use them in flows. (on/off)
+- Turn on/off camera (EufyCam pan&tilt will turn its lens)
+- Set Security mode (Home, Away, Disarmed, Schedule)
+- Trigger events based on changed Security modes. Possible combination with keypad.
 - Get notifications based on detection modes for specific devices. (Motion, Face, Sound and Doorbell Press) 
 - Get images when motion is detected
 - See last motion events
 - Generic alarm for each camera -> Heimdall (goes off for all events except doorbell press)
-
+- Start Stream and retrieve RTSP url
