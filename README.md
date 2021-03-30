@@ -30,7 +30,8 @@ and use it with this library.
 - ~~[Feature Request] Turn the eufy pan&tilt via Homey (e.g.: when you’re home turn 180 degrees to the wall)~~
 - [Feature Request] filter devices when pairing - IN PROGRESS
 - [Feature Request] NIGHT VISION SWITCH - INVESIGATE
-- [Feature Request] Add battery status - INVESIGATE
+- [Feature Request] Homebase trigger sounds - INVESIGATE
+- [Feature Request] Add battery status - IN PROGRESS
 - [BUG] There's an issue with images not updating when devices are paired - TO-DO`
 - ~~[BUG] There's an issue with multiple flow cards at the same time while httpservice is expired - TO-DO~~
 
