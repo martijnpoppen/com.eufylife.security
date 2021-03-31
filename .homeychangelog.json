@@ -376,5 +376,8 @@
   },
   "2.2.4": {
     "en": "Breaking change! - Security modes are moved to Homebase. (Only for homebase camera's) Added: Homebase and Keypad devices / Stream flowcards / Multiple Fixes"
+  },
+  "2.2.5": {
+    "en": "Breaking change! - Security modes are moved to Homebase. (Only for homebase camera's) Added: Homebase and Keypad devices / Stream flowcards / Multiple Fixes"
   }
 }
