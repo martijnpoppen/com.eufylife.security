@@ -34,9 +34,7 @@
       "Motion dectection"
     ]
   },
-  "category": [
-    "security"
-  ],
+  "category": ["security"],
   "permissions": [],
   "images": {
     "large": "/assets/images/large.jpg",
@@ -1068,6 +1066,7 @@
       "capabilities": [
         "onoff",
         "alarm_motion",
+        "measure_battery",
         "CMD_DOORBELL_QUICK_RESPONSE",
         "CMD_START_STREAM",
         "NTFY_MOTION_DETECTION",
@@ -1229,9 +1228,7 @@
     {
       "id": "driver_DOORSENSOR",
       "class": "sensor",
-      "capabilities": [
-        "alarm_contact"
-      ],
+      "capabilities": ["alarm_contact"],
       "name": {
         "en": "Doorsensor",
         "nl": "Deursensor"
@@ -1286,9 +1283,7 @@
     {
       "id": "driver_MOTIONSENSOR",
       "class": "sensor",
-      "capabilities": [
-        "alarm_motion"
-      ],
+      "capabilities": ["alarm_motion"],
       "name": {
         "en": "Motionsensor",
         "nl": "Bewegingssensor"
@@ -1314,10 +1309,7 @@
     {
       "id": "driver_HOMEBASE_1",
       "class": "homealarm",
-      "capabilities": [
-        "CMD_SET_ARMING",
-        "CMD_SET_ARMING_HUB"
-      ],
+      "capabilities": ["CMD_SET_ARMING", "CMD_SET_ARMING_HUB"],
       "name": {
         "en": "Homebase 1",
         "nl": "Homebase 1"
@@ -1343,10 +1335,7 @@
     {
       "id": "driver_HOMEBASE",
       "class": "homealarm",
-      "capabilities": [
-        "CMD_SET_ARMING",
-        "CMD_SET_ARMING_HUB"
-      ],
+      "capabilities": ["CMD_SET_ARMING", "CMD_SET_ARMING_HUB"],
       "name": {
         "en": "Homebase 2",
         "nl": "Homebase 2"

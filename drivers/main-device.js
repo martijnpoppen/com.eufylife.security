@@ -15,9 +15,8 @@ module.exports = class mainDevice extends Homey.Device {
 
         this.registerCapabilityListener('onoff', this.onCapability_CMD_DEVS_SWITCH.bind(this));
         this.registerCapabilityListener('CMD_SET_ARMING', this.onCapability_CMD_SET_ARMING.bind(this));
-        this.registerCapabilityListener('NTFY_MOTION_DETECTION', this.onCapability_NTFY_TRIGGER.bind(this));
 
-        if(this.hasCapability('CMD_DOORBELL_QUICK_RESPONSE') && !this.hasCapability('CMD_DOORBELL_QUICK_RESPONSE_POWERED')) {
+        if(this.hasCapability('CMD_DOORBELL_QUICK_RESPONSE')) {
             await this.setQuickResponseStore();
             this.registerCapabilityListener('CMD_DOORBELL_QUICK_RESPONSE', this.onCapability_CMD_DOORBELL_QUICK_RESPONSE.bind(this));
         }
@@ -30,6 +29,7 @@ module.exports = class mainDevice extends Homey.Device {
     async onAdded() {
         const settings = await Homey.app.getSettings();
         await this.initCameraImage();
+        await sleep(4500);
         await eufyNotificationCheckHelper.init(settings);
     }
 
@@ -38,12 +38,7 @@ module.exports = class mainDevice extends Homey.Device {
         const driverManifest = driver.getManifest();
         const driverCapabilities = driverManifest.capabilities;
         
-        if(this.hasCapability('NTFY_PET_DETECTED') || this.hasCapability('CMD_DOORBELL_QUICK_RESPONSE_POWERED') || this.hasCapability('CMD_SET_ARMING_HUB')) {
-            Homey.app.log(`[Device] ${this.getName()} - FIX - Remove quick response from indoor cam`);
-            this.removeCapability('CMD_DOORBELL_QUICK_RESPONSE');
-            this.removeCapability('CMD_DOORBELL_QUICK_RESPONSE_POWERED');
-            await sleep(1000);
-        } else {
+        if(!this.hasCapability('NTFY_PET_DETECTED') || !this.hasCapability('CMD_DOORBELL_QUICK_RESPONSE_POWERED') || !this.hasCapability('CMD_SET_ARMING_HUB')) {
             Homey.app.log(`[Device] ${this.getName()} - FIX - Remove CMD_SET_ARMING - Homebase integration`);
             this.removeCapability('CMD_SET_ARMING');
             await sleep(2500);
@@ -61,7 +56,7 @@ module.exports = class mainDevice extends Homey.Device {
     }
 
     async updateCapabilities(driverCapabilities) {
-        Homey.app.log('[Device] - Add new capabilities =>', driverCapabilities);
+        Homey.app.log('[Device] ${this.getName()} - Add new capabilities =>', driverCapabilities);
         try {
             driverCapabilities.forEach(c => {
                 this.addCapability(c);
@@ -145,21 +140,16 @@ module.exports = class mainDevice extends Homey.Device {
 
     async onCapability_CMD_DOORBELL_QUICK_RESPONSE( value ) {
         const deviceObject = this.getData();
-        const specificDeviceType = this.hasCapability('CMD_DOORBELL_QUICK_RESPONSE_POWERED');
+
         try {
             const quickResponse = this.getStoreValue('quick_response');
             const deviceId = this.getStoreValue('device_index');
             if(quickResponse.length >= value) {
                 await eufyCommandSendHelper.sendCommand('CMD_START_REALTIME_MEDIA', deviceObject.station_sn, CommandType.CMD_START_REALTIME_MEDIA, 1, deviceId, deviceId);
                 await sleep(500);
-
-                if(specificDeviceType) {
-                    await eufyCommandSendHelper.sendCommand('CMD_DOORBELL_SET_PAYLOAD', deviceObject.station_sn, CommandType.CMD_DOORBELL_SET_PAYLOAD, 1, deviceId, deviceId, '{"commandType":1004,"data":{"voiceID":1}}');
-                } else {
-                    await eufyCommandSendHelper.sendCommand('CMD_DOORBELL_QUICK_RESPONSE', deviceObject.station_sn, CommandType.CMD_BAT_DOORBELL_QUICK_RESPONSE, quickResponse[value-1], deviceId, deviceId);
-                    await sleep(3000);
-                    await eufyCommandSendHelper.sendCommand('CMD_STOP_REALTIME_MEDIA', deviceObject.station_sn, CommandType.CMD_STOP_REALTIME_MEDIA, 1, deviceId, deviceId);
-                }
+                await eufyCommandSendHelper.sendCommand('CMD_DOORBELL_QUICK_RESPONSE', deviceObject.station_sn, CommandType.CMD_BAT_DOORBELL_QUICK_RESPONSE, quickResponse[value-1], deviceId, deviceId);
+                await sleep(3000);
+                await eufyCommandSendHelper.sendCommand('CMD_STOP_REALTIME_MEDIA', deviceObject.station_sn, CommandType.CMD_STOP_REALTIME_MEDIA, 1, deviceId, deviceId);
             }
             return Promise.resolve(true);
         } catch (e) {
