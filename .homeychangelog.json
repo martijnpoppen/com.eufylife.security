@@ -379,5 +379,8 @@
   },
   "2.2.5": {
     "en": "Breaking change! - Security modes are moved to Homebase. (Only for homebase camera's) Added: Homebase and Keypad devices / Stream flowcards / Multiple Fixes"
+  },
+  "2.3.0": {
+    "en": "NEW: add battery status and battery temperature"
   }
 }

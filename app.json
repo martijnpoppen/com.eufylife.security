@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.2.5",
+  "version": "2.3.0",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -34,7 +34,9 @@
       "Motion dectection"
     ]
   },
-  "category": ["security"],
+  "category": [
+    "security"
+  ],
   "permissions": [],
   "images": {
     "large": "/assets/images/large.jpg",
@@ -451,7 +453,9 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "eufyCam 1",
@@ -517,7 +521,9 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "eufyCam 2",
@@ -583,7 +589,9 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "eufyCam 2 Pro",
@@ -649,7 +657,9 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "eufyCam 2C",
@@ -715,7 +725,9 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "eufyCam 2C Pro",
@@ -780,7 +792,9 @@
         "NTFY_MOTION_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "eufyCam E",
@@ -845,7 +859,9 @@
         "NTFY_MOTION_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "Smart Floodlight with Camera",
@@ -1111,7 +1127,9 @@
         "NTFY_BACKGROUND_ACTIVE"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "Video Doorbell 2K (Battery-Powered)",
@@ -1245,7 +1263,9 @@
         "NTFY_BACKGROUND_ACTIVE"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "Video Doorbell 1080p (Battery-Powered)",
@@ -1282,7 +1302,9 @@
         "nl": "Deursensor"
       },
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "images": {
         "large": "drivers/driver_DOORSENSOR/assets/images/large.jpg",
@@ -1344,7 +1366,9 @@
         "nl": "Bewegingssensor"
       },
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "images": {
         "large": "drivers/driver_MOTIONSENSOR/assets/images/large.jpg",
@@ -1367,7 +1391,10 @@
     {
       "id": "driver_HOMEBASE_1",
       "class": "homealarm",
-      "capabilities": ["CMD_SET_ARMING", "CMD_SET_ARMING_HUB"],
+      "capabilities": [
+        "CMD_SET_ARMING",
+        "CMD_SET_ARMING_HUB"
+      ],
       "name": {
         "en": "Homebase 1",
         "nl": "Homebase 1"
@@ -1393,7 +1420,10 @@
     {
       "id": "driver_HOMEBASE",
       "class": "homealarm",
-      "capabilities": ["CMD_SET_ARMING", "CMD_SET_ARMING_HUB"],
+      "capabilities": [
+        "CMD_SET_ARMING",
+        "CMD_SET_ARMING_HUB"
+      ],
       "name": {
         "en": "Homebase 2",
         "nl": "Homebase 2"
