@@ -203,7 +203,7 @@ module.exports = class mainDevice extends Homey.Device {
     async matchDeviceWithDeviceStore(initCron = false) {
         // Also set param specific capabilities. Cron this function
         try {
-            await sleep(9000);
+            await sleep(9500);
             const deviceObject = this.getData();
             const deviceStore = Homey.app.getDeviceStore();
             if(deviceStore) {
@@ -221,7 +221,7 @@ module.exports = class mainDevice extends Homey.Device {
             }
 
             if(initCron) {
-                await eufyParameterHelper.registerCronTask(deviceObject.device_sn, "EVERY_TWO_HOURS", this.matchDeviceWithDeviceStore)
+                await eufyParameterHelper.registerCronTask(deviceObject.device_sn, "EVERY_HALF_HOURS", this.matchDeviceWithDeviceStore)
             }
             
             return Promise.resolve(true);

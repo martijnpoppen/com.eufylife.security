@@ -388,5 +388,8 @@
   },
   "2.3.2": {
     "en": "NEW: add battery status and battery temperature"
+  },
+  "2.3.3": {
+    "en": "NEW: add battery status and battery temperature"
   }
 }
