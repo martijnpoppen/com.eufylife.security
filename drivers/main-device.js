@@ -24,7 +24,7 @@ module.exports = class mainDevice extends Homey.Device {
 
         this.setAvailable();
 
-        await this.matchDeviceWithDeviceStore();
+        await this.matchDeviceWithDeviceStore(true);
     }
 
     async onAdded() {
@@ -211,6 +211,7 @@ module.exports = class mainDevice extends Homey.Device {
                 this.setStoreValue('device_index', deviceMatch.index);
 
                 if(this.hasCapability('measure_battery')) {
+                    Homey.app.log('Set measure_battery to: ', )
                     this.setParamStatus(deviceMatch, 'measure_battery');
                 }
 
