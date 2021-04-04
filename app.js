@@ -2,11 +2,15 @@
 
 const Homey = require("homey");
 const { PushRegisterService, HttpService, PushClient, sleep } = require("eufy-node-client");
+
 const flowActions = require("./lib/flow/actions.js");
 const flowConditions = require("./lib/flow/conditions.js");
 const flowTriggers = require("./lib/flow/triggers.js");
+
 const eufyCommandSendHelper = require("./lib/helpers/eufy-command-send.helper");
 const eufyNotificationCheckHelper = require("./lib/helpers/eufy-notification-check.helper");
+const eufyParameterHelper = require("./lib/helpers/eufy-parameter.helper");
+
 const { log } = require("./logger.js");
 
 const ManagerSettings = Homey.ManagerSettings;
@@ -36,9 +40,6 @@ class App extends Homey.App {
 
   async onInit() {
     this.log(`${Homey.manifest.id} - ${Homey.manifest.version} started...`);
-    
-    const notify = new Homey.Notification({"excerpt": `Eufy v${Homey.manifest.version} - Breaking change! - Security modes are moved to Homebase. (Only for homebase camera's) Added: Homebase and Keypad devices / Stream flowcards / Multiple Fixes`})
-    Homey.ManagerNotifications.registerNotification(notify)
 
     await this.initSettings();
 
@@ -79,11 +80,11 @@ class App extends Homey.App {
 
         if (!_httpService) {
             _httpService = await this.setHttpService(this.appSettings);
-
-            if (!_deviceStore) {
-                _deviceStore = await this.setDeviceStore();
-            }
         }
+
+        await this.setDeviceStore();
+
+        await eufyParameterHelper.registerCronTask("setDeviceStore", "EVERY_FIVE_MINUTES", this.setDeviceStore)
 
         return;
       }
@@ -103,7 +104,7 @@ class App extends Homey.App {
     }
   }
 
-updateSettings(settings) {
+ updateSettings(settings) {
     this.log("updateSettings - New settings:",  {...settings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
     _httpService = undefined;
     this.appSettings = settings;
@@ -167,7 +168,7 @@ updateSettings(settings) {
       this.log("eufyLogin - Loaded settings", {...this.appSettings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
 
       if (settings.HUBS_AMOUNT  > 0) {
-        _deviceStore = await this.setDeviceStore(hubs);
+        await this.setDeviceStore();
         await eufyCommandSendHelper.init(this.appSettings);
         await flowActions.init();
         await flowConditions.init();
@@ -214,30 +215,32 @@ updateSettings(settings) {
       return _devices;
   }
 
-  async setDeviceStore(hubs) {
-    let hubStore = hubs;
+  async setDeviceStore() {
     let deviceStore = [];
+    let devices = await _httpService.listDevices();
 
-    if(!hubStore) {
-        hubStore = await _httpService.listHubs();
-    }
+    if(devices.length) {
+        Homey.app.log("setDeviceStore - Mapping deviceList", devices);
+        devices = devices.map((r, i) => {
+            const measure_battery = eufyParameterHelper.getParamData(r.params, "CMD_GET_BATTERY");
+            const measure_temperature = eufyParameterHelper.getParamData(r.params, "CMD_GET_BATTERY_TEMP");
 
-    hubStore.forEach(hub => {
-        if(hub.devices && hub.devices.length) {
-            this.log("setDeviceStore - Setting up HubStore", hub.devices);
-            let devices = hub.devices;
-            devices = devices.map((r, i) => ({ 
+            return {
                 name: r.device_name, 
                 index: r.device_channel, 
                 device_sn: r.device_sn,
-                deviceId: `${r.device_sn}-${r.device_id}`  
-            }));
+                deviceId: `${r.device_sn}-${r.device_id}`,  
+                measure_battery,
+                measure_temperature
+            }
+        });
 
-            deviceStore.push(...devices);
-        }
-    });
+        deviceStore.push(...devices);
+    }
 
-    this.log("setDeviceStore - Setting up DeviceStore", deviceStore);
+    Homey.app.log("setDeviceStore - Setting up DeviceStore", deviceStore);
+    
+    _deviceStore = deviceStore;
 
     return deviceStore;
   }

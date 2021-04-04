@@ -2,6 +2,7 @@ const Homey = require('homey');
 const { CommandType, sleep } = require('eufy-node-client');
 const eufyCommandSendHelper = require("../../lib/helpers/eufy-command-send.helper");
 const eufyNotificationCheckHelper = require("../../lib/helpers/eufy-notification-check.helper");
+const eufyParameterHelper = require("../../lib/helpers/eufy-parameter.helper");
 let _httpService = undefined;
 
 module.exports = class mainDevice extends Homey.Device {
@@ -23,7 +24,7 @@ module.exports = class mainDevice extends Homey.Device {
 
         this.setAvailable();
 
-        await this.findDeviceIndexInStore();
+        await this.matchDeviceWithDeviceStore();
     }
 
     async onAdded() {
@@ -56,7 +57,7 @@ module.exports = class mainDevice extends Homey.Device {
     }
 
     async updateCapabilities(driverCapabilities) {
-        Homey.app.log('[Device] ${this.getName()} - Add new capabilities =>', driverCapabilities);
+        Homey.app.log(`[Device] ${this.getName()} - Add new capabilities =>`, driverCapabilities);
         try {
             driverCapabilities.forEach(c => {
                 this.addCapability(c);
@@ -136,8 +137,6 @@ module.exports = class mainDevice extends Homey.Device {
         }
     }
 
-    
-
     async onCapability_CMD_DOORBELL_QUICK_RESPONSE( value ) {
         const deviceObject = this.getData();
 
@@ -201,7 +200,8 @@ module.exports = class mainDevice extends Homey.Device {
         }
     }
 
-    async findDeviceIndexInStore() {
+    async matchDeviceWithDeviceStore(initCron = false) {
+        // Also set param specific capabilities. Cron this function
         try {
             await sleep(9000);
             const deviceObject = this.getData();
@@ -209,6 +209,18 @@ module.exports = class mainDevice extends Homey.Device {
             if(deviceStore) {
                 const deviceMatch = deviceStore && deviceStore.find(d => d.device_sn === deviceObject.device_sn);
                 this.setStoreValue('device_index', deviceMatch.index);
+
+                if(this.hasCapability('measure_battery')) {
+                    this.setParamStatus(deviceMatch, 'measure_battery');
+                }
+
+                if(this.hasCapability('measure_temperature')) {
+                    this.setParamStatus(deviceMatch, 'measure_temperature');
+                }
+            }
+
+            if(initCron) {
+                await eufyParameterHelper.registerCronTask(deviceObject.device_sn, "EVERY_TWO_HOURS", this.matchDeviceWithDeviceStore)
             }
             
             return Promise.resolve(true);
@@ -233,6 +245,18 @@ module.exports = class mainDevice extends Homey.Device {
             if(quickResponse) {
                 this.setStoreValue('quick_response', quickResponse);
             }
+            
+            return Promise.resolve(true);
+        } catch (e) {
+            Homey.app.error(e);
+            return Promise.reject(e);
+        }
+    }
+
+    async setParamStatus(deviceObject, param) {
+        try {
+            await this.setCapabilityValue(param, deviceObject[param]);
+            Homey.app.log(`[Device] ${this.getName()} - setParamStatus ${param} - to: `, deviceObject[param]);
             
             return Promise.resolve(true);
         } catch (e) {

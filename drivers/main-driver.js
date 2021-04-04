@@ -11,7 +11,7 @@ module.exports = class mainDriver extends Homey.Driver {
     }
 
     deviceType() {
-        return DEVICE_TYPES.UNKOWN
+        return DEVICE_TYPES.OTHER
     }
 
     async onPairListDevices( data, callback ) {

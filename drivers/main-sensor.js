@@ -13,7 +13,7 @@ module.exports = class mainSensor extends mainDevice {
 
         this.setAvailable();
 
-        await this.findDeviceIndexInStore();
+        await this.matchDeviceWithDeviceStore();
     }
 
     async onAdded() {
