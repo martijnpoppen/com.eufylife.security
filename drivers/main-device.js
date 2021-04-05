@@ -24,7 +24,7 @@ module.exports = class mainDevice extends Homey.Device {
 
         this.setAvailable();
 
-        await this.matchDeviceWithDeviceStore(true);
+        await this.matchDeviceWithDeviceStore(this, true);
     }
 
     async onAdded() {
@@ -200,29 +200,29 @@ module.exports = class mainDevice extends Homey.Device {
         }
     }
 
-    async matchDeviceWithDeviceStore(initCron = false) {
+    async matchDeviceWithDeviceStore(ctx, initCron = false) {
         // Also set param specific capabilities. Cron this function
         try {
             await sleep(9500);
-            const deviceObject = this.getData();
+            const deviceObject = ctx.getData();
             const deviceStore = Homey.app.getDeviceStore();
             if(deviceStore) {
                 const deviceMatch = deviceStore && deviceStore.find(d => d.device_sn === deviceObject.device_sn);
-                this.setStoreValue('device_index', deviceMatch.index);
+                ctx.setStoreValue('device_index', deviceMatch.index);
 
-                if(this.hasCapability('measure_battery')) {
+                if(ctx.hasCapability('measure_battery')) {
                     Homey.app.log('Set measure_battery to: ', deviceMatch);
-                    this.setParamStatus(deviceMatch, 'measure_battery');
+                    ctx.setParamStatus(deviceMatch, 'measure_battery');
                 }
 
-                if(this.hasCapability('measure_temperature')) {
+                if(ctx.hasCapability('measure_temperature')) {
                     Homey.app.log('Set measure_temperature to: ', deviceMatch);
-                    this.setParamStatus(deviceMatch, 'measure_temperature');
+                    ctx.setParamStatus(deviceMatch, 'measure_temperature');
                 }
             }
 
             if(initCron) {
-                await eufyParameterHelper.registerCronTask(deviceObject.device_sn, "EVERY_HALF_HOURS", this.matchDeviceWithDeviceStore)
+                await eufyParameterHelper.registerCronTask(deviceObject.device_sn, "EVERY_HALVE_HOURS", this.matchDeviceWithDeviceStore, ctx)
             }
             
             return Promise.resolve(true);

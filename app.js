@@ -84,6 +84,8 @@ class App extends Homey.App {
 
         await this.setDeviceStore();
 
+        await eufyParameterHelper.unregisterAllTasks();
+
         await eufyParameterHelper.registerCronTask("setDeviceStore", "EVERY_FOUR_HOURS", this.setDeviceStore)
 
         return;
