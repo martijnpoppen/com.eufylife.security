@@ -211,11 +211,12 @@ module.exports = class mainDevice extends Homey.Device {
                 this.setStoreValue('device_index', deviceMatch.index);
 
                 if(this.hasCapability('measure_battery')) {
-                    Homey.app.log('Set measure_battery to: ', )
+                    Homey.app.log('Set measure_battery to: ', deviceMatch);
                     this.setParamStatus(deviceMatch, 'measure_battery');
                 }
 
                 if(this.hasCapability('measure_temperature')) {
+                    Homey.app.log('Set measure_temperature to: ', deviceMatch);
                     this.setParamStatus(deviceMatch, 'measure_temperature');
                 }
             }
