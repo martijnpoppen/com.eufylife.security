@@ -391,5 +391,8 @@
   },
   "2.3.3": {
     "en": "NEW: add battery status and battery temperature"
+  },
+  "2.3.4": {
+    "en": "NEW: add battery status and battery temperature + cronjob fix"
   }
 }
