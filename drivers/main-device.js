@@ -211,18 +211,16 @@ module.exports = class mainDevice extends Homey.Device {
                 ctx.setStoreValue('device_index', deviceMatch.index);
 
                 if(ctx.hasCapability('measure_battery')) {
-                    Homey.app.log('Set measure_battery to: ', deviceMatch);
                     ctx.setParamStatus(deviceMatch, 'measure_battery');
                 }
 
                 if(ctx.hasCapability('measure_temperature')) {
-                    Homey.app.log('Set measure_temperature to: ', deviceMatch);
                     ctx.setParamStatus(deviceMatch, 'measure_temperature');
                 }
             }
 
             if(initCron) {
-                await eufyParameterHelper.registerCronTask(deviceObject.device_sn, "EVERY_HALVE_HOURS", this.matchDeviceWithDeviceStore, ctx)
+                await eufyParameterHelper.registerCronTask(deviceObject.device_sn, "EVERY_HOUR", this.matchDeviceWithDeviceStore, ctx)
             }
             
             return Promise.resolve(true);

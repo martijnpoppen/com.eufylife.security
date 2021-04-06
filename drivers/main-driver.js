@@ -16,7 +16,7 @@ module.exports = class mainDriver extends Homey.Driver {
 
     async onPairListDevices( data, callback ) {
         if(this.id.includes('KEYPAD')) {
-            callback( new Error('Keypad has no functionality right now. Use the Homebase 2 to change security modes') );
+            callback( new Error('The keypad is a physical device to set the security mode for the Homebase. Therefore this has no own functionality in the Homey app. To make flows based on or change security modes please add the homebase instead (if not already done so). There you can find the security modes and flow cards for security modes.'));
         }
 
         _httpService = Homey.app.getHttpService();
