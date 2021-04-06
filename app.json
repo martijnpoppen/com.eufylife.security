@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.3.6",
+  "version": "2.3.7",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -1293,9 +1293,7 @@
       "id": "driver_DOORSENSOR",
       "class": "sensor",
       "capabilities": [
-        "alarm_contact",
-        "measure_battery",
-        "measure_temperature"
+        "alarm_contact"
       ],
       "name": {
         "en": "Doorsensor",
@@ -1357,9 +1355,7 @@
       "id": "driver_MOTIONSENSOR",
       "class": "sensor",
       "capabilities": [
-        "alarm_motion",
-        "measure_battery",
-        "measure_temperature"
+        "alarm_motion"
       ],
       "name": {
         "en": "Motionsensor",
