@@ -403,5 +403,8 @@
   },
   "2.3.7": {
     "en": "NEW: add battery status and battery temperature + cronjob fix + remove battery for sensors"
+  },
+  "2.3.8": {
+    "en": "NEW: add battery status and battery temperature + cronjob fix + remove battery for sensors + improve keypad info message"
   }
 }
