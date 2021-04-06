@@ -394,5 +394,11 @@
   },
   "2.3.4": {
     "en": "NEW: add battery status and battery temperature + cronjob fix"
+  },
+  "2.3.5": {
+    "en": "NEW: add battery status and battery temperature + cronjob fix"
+  },
+  "2.3.6": {
+    "en": "NEW: add battery status and battery temperature + cronjob fix + remove battery for sensors"
   }
 }
