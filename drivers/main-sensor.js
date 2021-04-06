@@ -9,6 +9,10 @@ module.exports = class mainSensor extends mainDevice {
 		Homey.app.log('[Device] - init =>', this.getName());
         Homey.app.setDevices(this);
 
+        this.removeCapability('measure_battery');
+        this.removeCapability('measure_temperature');
+        await sleep(4000)
+
         await this.checkCapabilities();
 
         this.setAvailable();
