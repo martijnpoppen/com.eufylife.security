@@ -406,5 +406,8 @@
   },
   "2.3.8": {
     "en": "NEW: add battery status and battery temperature + cronjob fix + remove battery for sensors + improve keypad info message"
+  },
+  "2.3.9": {
+    "en": "Add logs for measure_battery"
   }
 }
