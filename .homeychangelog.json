@@ -409,5 +409,11 @@
   },
   "2.3.9": {
     "en": "Add logs for measure_battery"
+  },
+  "2.3.10": {
+    "en": "Add GEO to security modes"
+  },
+  "2.3.11": {
+    "en": "Add GEO to security modes"
   }
 }
