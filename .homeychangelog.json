@@ -415,5 +415,8 @@
   },
   "2.3.11": {
     "en": "Add GEO to security modes"
+  },
+  "2.3.12": {
+    "en": "FIX: fix Homebase securitymode not changing after firmware (2.1.6.9h) update."
   }
 }
