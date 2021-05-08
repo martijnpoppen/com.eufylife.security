@@ -94,15 +94,18 @@ module.exports = class mainDevice extends Homey.Device {
     async onCapability_CMD_SET_ARMING( value ) {
         const deviceObject = this.getData();
         try {
-            let CMD_SET_ARMING = value;
+            let CMD_SET_ARMING = parseInt(value);
             
             if(!this.hasCapability('CMD_SET_ARMING_HUB')) {
                 if(CMD_SET_ARMING == '6') {
                     throw new Error('Not available for this device');
                 }
+
+                await eufyCommandSendHelper.sendCommand('CMD_SET_ARMING', deviceObject.station_sn, CommandType.CMD_SET_ARMING, CMD_SET_ARMING);
+            } else {
+                await eufyCommandSendHelper.sendCommand('CMD_SET_ARMING', deviceObject.station_sn, CommandType.CMD_SET_ARMING, CMD_SET_ARMING, 0, 0, '', true);
             }
 
-            await eufyCommandSendHelper.sendCommand('CMD_SET_ARMING', deviceObject.station_sn, CommandType.CMD_SET_ARMING, CMD_SET_ARMING);
             return Promise.resolve(true);
         } catch (e) {
             Homey.app.error(e);
