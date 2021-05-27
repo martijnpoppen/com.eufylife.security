@@ -6,12 +6,11 @@
     "type": "git",
     "url": "https://github.com/martijnpoppen/com.eufylife.security"
   },
-  "devDependencies": {
-    "homey": "^2.9.3"
-  },
   "dependencies": {
-    "eufy-node-client": "^0.5.0",
     "node-fetch": "^2.6.1",
     "winston": "^3.3.3"
+  },
+  "scripts": {
+    "prepare": "if [ ! -d \"./lib/eufy-node-client\" ]; then git clone https://github.com/martijnpoppen/eufy-node-client.git ./lib/eufy-node-client && cd ./lib/eufy-node-client && yarn --production=true && rm -rf ./src ./wireshark ./frida ./.vscode && cd ..; fi;"
   }
 }
