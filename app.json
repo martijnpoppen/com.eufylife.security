@@ -34,9 +34,7 @@
       "Motion dectection"
     ]
   },
-  "category": [
-    "security"
-  ],
+  "category": ["security"],
   "permissions": [],
   "images": {
     "large": "/assets/images/large.jpg",
@@ -468,9 +466,9 @@
       {
         "id": "action_CMD_TRIGGER_ALARM",
         "title": {
-            "en": "Trigger Alarm",
-            "nl": "Start Alarm"
-          },
+          "en": "Trigger generic alarm",
+          "nl": "Zet algemeen alarm aan"
+        },
         "args": [
           {
             "name": "device",
@@ -495,9 +493,7 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "name": {
         "en": "eufyCam 1",
@@ -563,9 +559,7 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "name": {
         "en": "eufyCam 2",
@@ -631,9 +625,7 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "name": {
         "en": "eufyCam 2 Pro",
@@ -699,9 +691,7 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "name": {
         "en": "eufyCam 2C",
@@ -767,9 +757,7 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "name": {
         "en": "eufyCam 2C Pro",
@@ -834,9 +822,7 @@
         "NTFY_MOTION_DETECTION"
       ],
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "name": {
         "en": "eufyCam E",
@@ -901,9 +887,7 @@
         "NTFY_MOTION_DETECTION"
       ],
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "name": {
         "en": "Smart Floodlight with Camera",
@@ -1173,9 +1157,7 @@
         "NTFY_BACKGROUND_ACTIVE"
       ],
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "name": {
         "en": "Video Doorbell 2K (Battery-Powered)",
@@ -1311,9 +1293,7 @@
         "NTFY_BACKGROUND_ACTIVE"
       ],
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "name": {
         "en": "Video Doorbell 1080p (Battery-Powered)",
@@ -1340,17 +1320,13 @@
     {
       "id": "driver_DOORSENSOR",
       "class": "sensor",
-      "capabilities": [
-        "alarm_contact"
-      ],
+      "capabilities": ["alarm_contact"],
       "name": {
         "en": "Doorsensor",
         "nl": "Deursensor"
       },
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "images": {
         "large": "drivers/driver_DOORSENSOR/assets/images/large.jpg",
@@ -1402,17 +1378,13 @@
     {
       "id": "driver_MOTIONSENSOR",
       "class": "sensor",
-      "capabilities": [
-        "alarm_motion"
-      ],
+      "capabilities": ["alarm_motion"],
       "name": {
         "en": "Motionsensor",
         "nl": "Bewegingssensor"
       },
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "images": {
         "large": "drivers/driver_MOTIONSENSOR/assets/images/large.jpg",
@@ -1440,7 +1412,7 @@
         "CMD_SET_ARMING_HUB",
         "CMD_REBOOT_HUB",
         "CMD_TRIGGER_ALARM",
-        "alarm_motion"
+        "alarm_generic"
       ],
       "name": {
         "en": "Homebase 1",
@@ -1472,11 +1444,11 @@
           },
           "children": [
             {
-              "id": "alarm_motion_enabled",
+              "id": "alarm_generic_enabled",
               "type": "checkbox",
               "label": {
-                "en": "Use generic motion alarm?",
-                "nl": "Gebruik generiek bewegings alarm"
+                "en": "Use generic alarm?",
+                "nl": "Gebruik algemeen alarm?"
               },
               "value": true
             }
@@ -1492,7 +1464,7 @@
         "CMD_SET_ARMING_HUB",
         "CMD_REBOOT_HUB",
         "CMD_TRIGGER_ALARM",
-        "alarm_motion"
+        "alarm_generic"
       ],
       "name": {
         "en": "Homebase 2",
@@ -1524,11 +1496,11 @@
           },
           "children": [
             {
-              "id": "alarm_motion_enabled",
+              "id": "alarm_generic_enabled",
               "type": "checkbox",
               "label": {
-                "en": "Use generic motion alarm?",
-                "nl": "Gebruik generiek bewegings alarm"
+                "en": "Use generic alarm?",
+                "nl": "Gebruik algemeen alarm?"
               },
               "value": true
             }
@@ -1728,25 +1700,25 @@
       }
     },
     "CMD_REBOOT_HUB": {
-        "type": "string",
-        "uiComponent": null,
-        "getable": true,
-        "setable": false,
-        "title": {
-          "en": "Reboot",
-          "nl": "Opnieuw opstarten"
-        }
-      },
-      "CMD_TRIGGER_ALARM": {
-        "type": "string",
-        "uiComponent": null,
-        "getable": true,
-        "setable": false,
-        "title": {
-          "en": "Trigger Alarm",
-          "nl": "Start Alarm"
-        }
-      },
+      "type": "string",
+      "uiComponent": null,
+      "getable": true,
+      "setable": false,
+      "title": {
+        "en": "Reboot",
+        "nl": "Opnieuw opstarten"
+      }
+    },
+    "CMD_TRIGGER_ALARM": {
+      "type": "string",
+      "uiComponent": null,
+      "getable": true,
+      "setable": false,
+      "title": {
+        "en": "Trigger generic alarm",
+        "nl": "Zet algemeen alarm aan"
+      }
+    },
     "NTFY_BACKGROUND_ACTIVE": {
       "type": "boolean",
       "uiComponent": "sensor",

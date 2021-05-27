@@ -26,14 +26,14 @@ module.exports = class mainHub extends mainDevice {
         try {
             const valueString = value ? value.toString() : null;
             const settings = this.getSettings();
-            const setMotionAlarm = message === 'alarm_motion' && !!settings.alarm_motion_enabled;
+            const setMotionAlarm = message === 'alarm_generic' && !!settings.alarm_generic_enabled;
 
             if(this.hasCapability(message)) {
                 if(valueString) this.setCapabilityValue(message, valueString);
                 if(setMotionAlarm) {
-                    this.setCapabilityValue('alarm_motion', true);
+                    this.setCapabilityValue(message, true);
                     await sleep(30000);
-                    this.setCapabilityValue('alarm_motion', false);
+                    this.setCapabilityValue(message, false);
                 }
             }
          

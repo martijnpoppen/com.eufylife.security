@@ -15,7 +15,7 @@ exports.SPECIFIC_MESSAGE_TYPES = {
     NTFY_MOTION_DETECTION: "Motion",
     CMD_SET_ARMING: "Arming change",
     alarm_motion: "is triggered",
-    alarm_motion: "HomeBase is alarming"
+    alarm_generic: "HomeBase is alarming"
 }
 
 // DOOR_SENSOR_CHANGED: 100001
