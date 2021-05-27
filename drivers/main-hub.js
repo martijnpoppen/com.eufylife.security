@@ -1,12 +1,14 @@
 const Homey = require('homey');
 const { CommandType, sleep } = require('../lib/eufy-node-client');
 const mainDevice = require('./main-device');
+const eufyCommandSendHelper = require("../../lib/helpers/eufy-command-send.helper");
 const eufyNotificationCheckHelper = require("../../lib/helpers/eufy-notification-check.helper");
 
 module.exports = class mainHub extends mainDevice {
     async onInit() {
 		Homey.app.log('[HUB] - init =>', this.getName());
         Homey.app.setDevices(this);
+        this.setUnavailable(`Initializing ${this.getName()}`);
 
         await this.checkCapabilities();
 
@@ -22,11 +24,67 @@ module.exports = class mainHub extends mainDevice {
 
     async onCapability_NTFY_TRIGGER( message, value ) {
         try {
-            const valueString = value.toString();
+            const valueString = value ? value.toString() : null;
+            const settings = this.getSettings();
+            const setMotionAlarm = message === 'alarm_motion' && !!settings.alarm_motion_enabled;
+
             if(this.hasCapability(message)) {
-                this.setCapabilityValue(message, valueString);
+                if(valueString) this.setCapabilityValue(message, valueString);
+                if(setMotionAlarm) {
+                    this.setCapabilityValue('alarm_motion', true);
+                    await sleep(30000);
+                    this.setCapabilityValue('alarm_motion', false);
+                }
             }
          
+            return Promise.resolve(true);
+        } catch (e) {
+            Homey.app.error(e);
+            return Promise.reject(e);
+        }
+    }
+
+    async onCapability_CMD_SET_ARMING( value ) {
+        try {
+            let CMD_SET_ARMING = parseInt(value);
+            
+            const deviceObject = this.getData();
+            const settings = await Homey.app.getSettings();
+            const nested_payload = {
+                "account_id": settings.HUBS[deviceObject.station_sn].ACTOR_ID,
+                "cmd": CommandType.CMD_SET_ARMING,
+                "mValue3": 0,
+                "payload": {
+                    "mode_type": CMD_SET_ARMING,
+                    "user_name": "Homey"
+                }
+            }
+
+            await eufyCommandSendHelper.sendCommand('CMD_SET_ARMING', deviceObject.station_sn, CommandType.CMD_SET_ARMING, nested_payload, 0, 0, '', true);
+
+            return Promise.resolve(true);
+        } catch (e) {
+            Homey.app.error(e);
+            return Promise.reject(e);
+        }
+    }
+
+    async onCapability_CMD_TRIGGER_ALARM() {
+        try {
+            const deviceObject = this.getData();
+            const settings = await Homey.app.getSettings();
+            const nested_payload = {
+                "account_id": settings.HUBS[deviceObject.station_sn].ACTOR_ID,
+                "cmd": CommandType.CMD_SET_TONE_FILE,
+                "mValue3": 0,
+                "payload": {
+                    "time_out": 30,
+                    "user_name": "Homey"
+                }
+            }
+
+            await eufyCommandSendHelper.sendCommand('CMD_SET_TONE_FILE', deviceObject.station_sn, CommandType.CMD_SET_TONE_FILE, nested_payload, 0, 0, '', true);
+
             return Promise.resolve(true);
         } catch (e) {
             Homey.app.error(e);

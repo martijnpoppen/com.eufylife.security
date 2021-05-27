@@ -9,13 +9,17 @@ module.exports = class mainDevice extends Homey.Device {
     async onInit() {
 		Homey.app.log('[Device] - init =>', this.getName());
         Homey.app.setDevices(this);
+        this.setUnavailable(`Initializing ${this.getName()}`);
     
         await this.initCameraImage();
 
         await this.checkCapabilities();
 
         this.registerCapabilityListener('onoff', this.onCapability_CMD_DEVS_SWITCH.bind(this));
-        this.registerCapabilityListener('CMD_SET_ARMING', this.onCapability_CMD_SET_ARMING.bind(this));
+        
+        if(this.hasCapability('CMD_SET_ARMING')) {
+            this.registerCapabilityListener('CMD_SET_ARMING', this.onCapability_CMD_SET_ARMING.bind(this));
+        }
 
         if(this.hasCapability('CMD_DOORBELL_QUICK_RESPONSE')) {
             await this.setQuickResponseStore();
@@ -93,18 +97,15 @@ module.exports = class mainDevice extends Homey.Device {
     
     async onCapability_CMD_SET_ARMING( value ) {
         const deviceObject = this.getData();
+
         try {
             let CMD_SET_ARMING = parseInt(value);
             
-            if(!this.hasCapability('CMD_SET_ARMING_HUB')) {
-                if(CMD_SET_ARMING == '6') {
-                    throw new Error('Not available for this device');
-                }
-
-                await eufyCommandSendHelper.sendCommand('CMD_SET_ARMING', deviceObject.station_sn, CommandType.CMD_SET_ARMING, CMD_SET_ARMING);
-            } else {
-                await eufyCommandSendHelper.sendCommand('CMD_SET_ARMING', deviceObject.station_sn, CommandType.CMD_SET_ARMING, CMD_SET_ARMING, 0, 0, '', true);
+            if(CMD_SET_ARMING == '6') {
+                throw new Error('Not available for this device');
             }
+
+            await eufyCommandSendHelper.sendCommand('CMD_SET_ARMING', deviceObject.station_sn, CommandType.CMD_SET_ARMING, CMD_SET_ARMING);
 
             return Promise.resolve(true);
         } catch (e) {
@@ -146,13 +147,52 @@ module.exports = class mainDevice extends Homey.Device {
         try {
             const quickResponse = this.getStoreValue('quick_response');
             const deviceId = this.getStoreValue('device_index');
-            if(quickResponse.length >= value) {
+            const poweredDoorbell = this.hasCapability("CMD_DOORBELL_QUICK_RESPONSE")
+            if(!poweredDoorbell && quickResponse.length >= value) {
+
                 await eufyCommandSendHelper.sendCommand('CMD_START_REALTIME_MEDIA', deviceObject.station_sn, CommandType.CMD_START_REALTIME_MEDIA, 1, deviceId, deviceId);
                 await sleep(500);
                 await eufyCommandSendHelper.sendCommand('CMD_DOORBELL_QUICK_RESPONSE', deviceObject.station_sn, CommandType.CMD_BAT_DOORBELL_QUICK_RESPONSE, quickResponse[value-1], deviceId, deviceId);
                 await sleep(3000);
                 await eufyCommandSendHelper.sendCommand('CMD_STOP_REALTIME_MEDIA', deviceObject.station_sn, CommandType.CMD_STOP_REALTIME_MEDIA, 1, deviceId, deviceId);
+
+            } else if(poweredDoorbell && quickResponse.length >= value) {
+               
+                const nested_payload = {
+                    "commandType": 1004,
+                    "data": {
+                        "voiceID": quickResponse[value-1]
+                    }
+                };
+
+                await eufyCommandSendHelper.sendCommand('CMD_STOP_REALTIME_MEDIA', deviceObject.station_sn, CommandType.CMD_STOP_REALTIME_MEDIA, nested_payload, deviceId, deviceId, '', true);
             }
+            return Promise.resolve(true);
+        } catch (e) {
+            Homey.app.error(e);
+            return Promise.reject(e);
+        }
+    }
+
+    async onCapability_CMD_REBOOT_HUB() {
+        try {
+            const deviceObject = this.getData();
+
+            await eufyCommandSendHelper.sendCommand('CMD_HUB_REBOOT', deviceObject.station_sn, CommandType.CMD_HUB_REBOOT, 0);
+
+            return Promise.resolve(true);
+        } catch (e) {
+            Homey.app.error(e);
+            return Promise.reject(e);
+        }
+    }
+
+    async onCapability_CMD_TRIGGER_ALARM() {
+        try {
+            const deviceObject = this.getData();
+
+            await eufyCommandSendHelper.sendCommand('CMD_SET_TONE_FILE', deviceObject.station_sn, CommandType.CMD_SET_TONE_FILE, 0, 30);
+
             return Promise.resolve(true);
         } catch (e) {
             Homey.app.error(e);
