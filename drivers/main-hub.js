@@ -1,5 +1,5 @@
 const Homey = require('homey');
-const { CommandType, sleep } = require('../lib/eufy-node-client');
+const { CommandType, sleep } = require('../lib/eufy-homey-client');
 const mainDevice = require('./main-device');
 const eufyCommandSendHelper = require("../../lib/helpers/eufy-command-send.helper");
 const eufyNotificationCheckHelper = require("../../lib/helpers/eufy-notification-check.helper");

@@ -1,7 +1,7 @@
 # Eufy Security
 
 Add support for Eufy Cam in Homey.
-Based on: https://github.com/JanLoebel/eufy-node-client
+Based on: https://github.com/martijnpoppen/eufy-node-client
 
 Link: https://homey.app/nl-nl/app/com.eufylife.security/Eufy-Security/
 

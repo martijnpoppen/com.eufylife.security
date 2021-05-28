@@ -1,7 +1,7 @@
 const Homey = require('homey');
 const mainDevice = require('./main-device');
 
-const { sleep } = require('../lib/eufy-node-client');
+const { sleep } = require('../lib/eufy-homey-client');
 const eufyNotificationCheckHelper = require("../../lib/helpers/eufy-notification-check.helper");
 
 module.exports = class mainSensor extends mainDevice {

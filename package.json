@@ -11,6 +11,6 @@
     "winston": "^3.3.3"
   },
   "scripts": {
-    "prepare": "if [ ! -d \"./lib/eufy-node-client\" ]; then git clone https://github.com/martijnpoppen/eufy-node-client.git ./lib/eufy-node-client && cd ./lib/eufy-node-client && yarn --production=true && rm -rf ./src ./wireshark ./frida ./.vscode && cd ..; fi;"
+    "prepare": "if [ ! -d \"./lib/eufy-homey-client\" ]; then git clone https://github.com/martijnpoppen/eufy-node-client.git ./lib/eufy-homey-client && cd ./lib/eufy-homey-client && yarn --production=true && rm -rf ./src ./wireshark ./frida ./.vscode && cd ..; fi;"
   }
 }

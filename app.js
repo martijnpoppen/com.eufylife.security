@@ -1,7 +1,7 @@
 "use strict";
 
 const Homey = require("homey");
-const { PushRegisterService, HttpService, PushClient, sleep } = require("./lib/eufy-node-client");
+const { PushRegisterService, HttpService, PushClient, sleep } = require("./lib/eufy-homey-client");
 
 const flowActions = require("./lib/flow/actions.js");
 const flowConditions = require("./lib/flow/conditions.js");
