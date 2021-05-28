@@ -418,5 +418,8 @@
   },
   "2.3.12": {
     "en": "FIX: fix Homebase securitymode not changing after firmware (2.1.6.9h) update."
+  },
+  "2.4.0": {
+    "en": "Update to improved Library - Homebase Alarm triggers/actions - Quickresponses Wired doorbell - Reboot Hub FlowCard - improvements - Interval for battery improved"
   }
 }

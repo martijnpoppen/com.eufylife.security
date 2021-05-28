@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.3.12",
+  "version": "2.4.0",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -34,7 +34,9 @@
       "Motion dectection"
     ]
   },
-  "category": ["security"],
+  "category": [
+    "security"
+  ],
   "permissions": [],
   "images": {
     "large": "/assets/images/large.jpg",
@@ -466,72 +468,71 @@
       {
         "id": "action_CMD_TRIGGER_ALARM",
         "title": {
-            "en": "Turn generic alarm on",
-            "nl": "Zet algemeen alarm aan"
+          "en": "Turn generic alarm on",
+          "nl": "Zet algemeen alarm aan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "capabilities=CMD_TRIGGER_ALARM"
           },
-          "args": [
-            {
-                "name": "device",
-                "type": "device",
-                "filter": "capabilities=CMD_TRIGGER_ALARM"
+          {
+            "name": "action_CMD_TRIGGER_ALARM_TIME",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "10",
+                "label": {
+                  "en": "10 seconds",
+                  "nl": "10 seconden"
+                }
               },
-            {
-              "name": "action_CMD_TRIGGER_ALARM_TIME",
-              "type": "dropdown",
-              "values": [
-                {
-                  "id": "10",
-                  "label": {
-                    "en": "10 seconds",
-                    "nl": "10 seconden"
-                  }
-                },
-                {
-                    "id": "30",
-                    "label": {
-                      "en": "30 seconds",
-                      "nl": "30 seconden"
-                    }
-                  },
-                  {
-                    "id": "60",
-                    "label": {
-                      "en": "60 seconds",
-                      "nl": "60 seconden"
-                    }
-                  },
-                  {
-                    "id": "80",
-                    "label": {
-                      "en": "80 seconds",
-                      "nl": "80 seconden"
-                    }
-                  },
-                  {
-                    "id": "100",
-                    "label": {
-                      "en": "100 seconds",
-                      "nl": "100 seconden"
-                    }
-                  },
-                  {
-                    "id": "120",
-                    "label": {
-                      "en": "120 seconds",
-                      "nl": "120 seconden"
-                    }
-                  },
-                  {
-                    "id": "240",
-                    "label": {
-                      "en": "240 seconds",
-                      "nl": "240 seconden"
-                    }
-                  }
-              ]
-            }
-          ]
-        
+              {
+                "id": "30",
+                "label": {
+                  "en": "30 seconds",
+                  "nl": "30 seconden"
+                }
+              },
+              {
+                "id": "60",
+                "label": {
+                  "en": "60 seconds",
+                  "nl": "60 seconden"
+                }
+              },
+              {
+                "id": "80",
+                "label": {
+                  "en": "80 seconds",
+                  "nl": "80 seconden"
+                }
+              },
+              {
+                "id": "100",
+                "label": {
+                  "en": "100 seconds",
+                  "nl": "100 seconden"
+                }
+              },
+              {
+                "id": "120",
+                "label": {
+                  "en": "120 seconds",
+                  "nl": "120 seconden"
+                }
+              },
+              {
+                "id": "240",
+                "label": {
+                  "en": "240 seconds",
+                  "nl": "240 seconden"
+                }
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "action_CMD_SET_HUB_ALARM_CLOSE",
@@ -563,7 +564,9 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "eufyCam 1",
@@ -629,7 +632,9 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "eufyCam 2",
@@ -695,7 +700,9 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "eufyCam 2 Pro",
@@ -761,7 +768,9 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "eufyCam 2C",
@@ -827,7 +836,9 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "eufyCam 2C Pro",
@@ -892,7 +903,9 @@
         "NTFY_MOTION_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "eufyCam E",
@@ -957,7 +970,9 @@
         "NTFY_MOTION_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "Smart Floodlight with Camera",
@@ -1227,7 +1242,9 @@
         "NTFY_BACKGROUND_ACTIVE"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "Video Doorbell 2K (Battery-Powered)",
@@ -1363,7 +1380,9 @@
         "NTFY_BACKGROUND_ACTIVE"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "Video Doorbell 1080p (Battery-Powered)",
@@ -1390,13 +1409,17 @@
     {
       "id": "driver_DOORSENSOR",
       "class": "sensor",
-      "capabilities": ["alarm_contact"],
+      "capabilities": [
+        "alarm_contact"
+      ],
       "name": {
         "en": "Doorsensor",
         "nl": "Deursensor"
       },
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "images": {
         "large": "drivers/driver_DOORSENSOR/assets/images/large.jpg",
@@ -1448,13 +1471,17 @@
     {
       "id": "driver_MOTIONSENSOR",
       "class": "sensor",
-      "capabilities": ["alarm_motion"],
+      "capabilities": [
+        "alarm_motion"
+      ],
       "name": {
         "en": "Motionsensor",
         "nl": "Bewegingssensor"
       },
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "images": {
         "large": "drivers/driver_MOTIONSENSOR/assets/images/large.jpg",
@@ -1792,15 +1819,15 @@
       }
     },
     "CMD_SET_HUB_ALARM_CLOSE": {
-        "type": "string",
-        "uiComponent": null,
-        "getable": true,
-        "setable": false,
-        "title": {
-          "en": "Turn generic alarm off",
-          "nl": "Zet algemeen alarm uit"
-        }
-      },
+      "type": "string",
+      "uiComponent": null,
+      "getable": true,
+      "setable": false,
+      "title": {
+        "en": "Turn generic alarm off",
+        "nl": "Zet algemeen alarm uit"
+      }
+    },
     "NTFY_BACKGROUND_ACTIVE": {
       "type": "boolean",
       "uiComponent": "sensor",
