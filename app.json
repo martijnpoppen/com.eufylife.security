@@ -466,14 +466,84 @@
       {
         "id": "action_CMD_TRIGGER_ALARM",
         "title": {
-          "en": "Trigger generic alarm",
-          "nl": "Zet algemeen alarm aan"
+            "en": "Turn generic alarm on",
+            "nl": "Zet algemeen alarm aan"
+          },
+          "args": [
+            {
+                "name": "device",
+                "type": "device",
+                "filter": "capabilities=CMD_TRIGGER_ALARM"
+              },
+            {
+              "name": "action_CMD_TRIGGER_ALARM_TIME",
+              "type": "dropdown",
+              "values": [
+                {
+                  "id": "10",
+                  "label": {
+                    "en": "10 seconds",
+                    "nl": "10 seconden"
+                  }
+                },
+                {
+                    "id": "30",
+                    "label": {
+                      "en": "30 seconds",
+                      "nl": "30 seconden"
+                    }
+                  },
+                  {
+                    "id": "60",
+                    "label": {
+                      "en": "60 seconds",
+                      "nl": "60 seconden"
+                    }
+                  },
+                  {
+                    "id": "80",
+                    "label": {
+                      "en": "80 seconds",
+                      "nl": "80 seconden"
+                    }
+                  },
+                  {
+                    "id": "100",
+                    "label": {
+                      "en": "100 seconds",
+                      "nl": "100 seconden"
+                    }
+                  },
+                  {
+                    "id": "120",
+                    "label": {
+                      "en": "120 seconds",
+                      "nl": "120 seconden"
+                    }
+                  },
+                  {
+                    "id": "240",
+                    "label": {
+                      "en": "240 seconds",
+                      "nl": "240 seconden"
+                    }
+                  }
+              ]
+            }
+          ]
+        
+      },
+      {
+        "id": "action_CMD_SET_HUB_ALARM_CLOSE",
+        "title": {
+          "en": "Turn generic alarm off",
+          "nl": "Zet algemeen alarm uit"
         },
         "args": [
           {
             "name": "device",
             "type": "device",
-            "filter": "capabilities=CMD_TRIGGER_ALARM"
+            "filter": "capabilities=CMD_SET_HUB_ALARM_CLOSE"
           }
         ]
       }
@@ -1412,6 +1482,7 @@
         "CMD_SET_ARMING_HUB",
         "CMD_REBOOT_HUB",
         "CMD_TRIGGER_ALARM",
+        "CMD_SET_HUB_ALARM_CLOSE",
         "alarm_generic"
       ],
       "name": {
@@ -1464,6 +1535,7 @@
         "CMD_SET_ARMING_HUB",
         "CMD_REBOOT_HUB",
         "CMD_TRIGGER_ALARM",
+        "CMD_SET_HUB_ALARM_CLOSE",
         "alarm_generic"
       ],
       "name": {
@@ -1715,10 +1787,20 @@
       "getable": true,
       "setable": false,
       "title": {
-        "en": "Trigger generic alarm",
+        "en": "Turn generic alarm on",
         "nl": "Zet algemeen alarm aan"
       }
     },
+    "CMD_SET_HUB_ALARM_CLOSE": {
+        "type": "string",
+        "uiComponent": null,
+        "getable": true,
+        "setable": false,
+        "title": {
+          "en": "Turn generic alarm off",
+          "nl": "Zet algemeen alarm uit"
+        }
+      },
     "NTFY_BACKGROUND_ACTIVE": {
       "type": "boolean",
       "uiComponent": "sensor",
