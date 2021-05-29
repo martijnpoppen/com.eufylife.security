@@ -157,15 +157,18 @@ module.exports = class mainDevice extends Homey.Device {
                 await eufyCommandSendHelper.sendCommand('CMD_STOP_REALTIME_MEDIA', deviceObject.station_sn, CommandType.CMD_STOP_REALTIME_MEDIA, 1, deviceId, deviceId);
 
             } else if(poweredDoorbell && quickResponse.length >= value) {
-               
+                await eufyCommandSendHelper.sendCommand('CMD_START_REALTIME_MEDIA', deviceObject.station_sn, CommandType.CMD_START_REALTIME_MEDIA, 1, deviceId, deviceId);
+                await sleep(500);
                 const nested_payload = {
                     "commandType": 1004,
                     "data": {
                         "voiceID": quickResponse[value-1]
                     }
                 };
-
                 await eufyCommandSendHelper.sendCommand('CMD_STOP_REALTIME_MEDIA', deviceObject.station_sn, CommandType.CMD_STOP_REALTIME_MEDIA, nested_payload, deviceId, deviceId, '', true);
+                await sleep(3000);
+                await eufyCommandSendHelper.sendCommand('CMD_STOP_REALTIME_MEDIA', deviceObject.station_sn, CommandType.CMD_STOP_REALTIME_MEDIA, 1, deviceId, deviceId);
+
             }
             return Promise.resolve(true);
         } catch (e) {
