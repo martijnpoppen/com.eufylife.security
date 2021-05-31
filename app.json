@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.4.1",
+  "version": "2.4.2",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -479,58 +479,18 @@
           },
           {
             "name": "action_CMD_TRIGGER_ALARM_TIME",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "10",
-                "label": {
-                  "en": "10 seconds",
-                  "nl": "10 seconden"
-                }
-              },
-              {
-                "id": "30",
-                "label": {
-                  "en": "30 seconds",
-                  "nl": "30 seconden"
-                }
-              },
-              {
-                "id": "60",
-                "label": {
-                  "en": "60 seconds",
-                  "nl": "60 seconden"
-                }
-              },
-              {
-                "id": "80",
-                "label": {
-                  "en": "80 seconds",
-                  "nl": "80 seconden"
-                }
-              },
-              {
-                "id": "100",
-                "label": {
-                  "en": "100 seconds",
-                  "nl": "100 seconden"
-                }
-              },
-              {
-                "id": "120",
-                "label": {
-                  "en": "120 seconds",
-                  "nl": "120 seconden"
-                }
-              },
-              {
-                "id": "240",
-                "label": {
-                  "en": "240 seconds",
-                  "nl": "240 seconden"
-                }
-              }
-            ]
+            "type": "number",
+            "title": {
+              "en": "Duration",
+              "nl": "Duur"
+            },
+            "placeholder": {
+              "en": "In seconds",
+              "nl": "In seconden"
+            },
+            "min": 30,
+            "max": 999999,
+            "step": 1
           }
         ]
       },
