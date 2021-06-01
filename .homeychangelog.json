@@ -427,5 +427,8 @@
   },
   "2.4.2": {
     "en": "Change alarm flowcard to input  seconds. Fix quick response wired doorbell"
+  },
+  "2.4.3": {
+    "en": "FIX: quickresponse wired doorbell"
   }
 }
