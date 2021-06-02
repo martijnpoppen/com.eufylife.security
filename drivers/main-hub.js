@@ -3,6 +3,7 @@ const { CommandType, sleep } = require('../lib/eufy-homey-client');
 const mainDevice = require('./main-device');
 const eufyCommandSendHelper = require("../../lib/helpers/eufy-command-send.helper");
 const eufyNotificationCheckHelper = require("../../lib/helpers/eufy-notification-check.helper");
+const eufyParameterHelper = require("../../lib/helpers/eufy-parameter.helper");
 
 module.exports = class mainHub extends mainDevice {
     async onInit() {
@@ -15,11 +16,66 @@ module.exports = class mainHub extends mainDevice {
         this.registerCapabilityListener('CMD_SET_ARMING', this.onCapability_CMD_SET_ARMING.bind(this));
 
         this.setAvailable();
+
+        await sleep(9000);
+        this.checkSettings(this, true);
     }
 
     async onAdded() {
         const settings = await Homey.app.getSettings();
         await eufyNotificationCheckHelper.init(settings);
+    }
+
+    async onSettings(oldSettings, newSettings) {
+        Homey.app.log(`[Device] ${this.getName()} - onSettings - Old/New`, oldSettings, newSettings);
+        this.checkSettings(this, false, newSettings);
+    }
+
+    async checkSettings( ctx, initCron = false, overrideSettings = {} ) {
+        try {
+            const settings = overrideSettings ? overrideSettings : ctx.getSettings();
+            const deviceObject = ctx.getData();
+
+            Homey.app.log(`[Device] ${ctx.getName()} - checking settings`, settings);
+            if(settings.force_switch_mode_notifications) {
+                
+                Homey.app.log(`[Device] ${ctx.getName()} - checking settings, found force_switch_mode_notifications`);
+                
+                const settings = await Homey.app.getSettings();
+                const nested_payload = {
+                    "account_id": settings.HUBS[deviceObject.station_sn].ACTOR_ID,
+                    "cmd": CommandType.CMD_HUB_NOTIFY_MODE,
+                    "mValue3": 0,
+                    "payload":{
+                        "arm_push_mode": 128,
+                        "notify_alarm_delay": 1,
+                        "notify_mode": 0
+                    }
+                }
+
+                await eufyCommandSendHelper.sendCommand('CMD_HUB_NOTIFY_MODE', deviceObject.station_sn, CommandType.CMD_HUB_NOTIFY_MODE, nested_payload, 0, 0, '', true);
+
+
+                const payload_edit = {
+                    "payload":{
+                        "arm_push_mode": 144,
+                        "notify_alarm_delay": 1,
+                        "notify_mode": 0
+                    }
+                }
+
+                await eufyCommandSendHelper.sendCommand('CMD_HUB_NOTIFY_MODE', deviceObject.station_sn, CommandType.CMD_HUB_NOTIFY_MODE, {...nested_payload, ...payload_edit}, 0, 0, '', true);
+            }
+
+            if(initCron) {
+                await eufyParameterHelper.registerCronTask(deviceObject.device_sn, "EVERY_HALVE_HOURS", this.checkSettings, ctx)
+            }
+            
+            return Promise.resolve(true);
+        } catch (e) {
+            Homey.app.error(e);
+            return Promise.reject(e);
+        }
     }
 
     async onCapability_NTFY_TRIGGER( message, value ) {
@@ -96,21 +152,6 @@ module.exports = class mainHub extends mainDevice {
         try {
             const deviceObject = this.getData();
             await eufyCommandSendHelper.sendCommand('CMD_SET_TONE_FILE', deviceObject.station_sn, CommandType.CMD_SET_TONE_FILE, 0, 0);
-            return Promise.resolve(true);
-        } catch (e) {
-            Homey.app.error(e);
-            return Promise.reject(e);
-        }
-    }
-
-    async onCapability_CMD_SET_HUB_ALARM_COUNTDOWN( value ) {
-        const deviceObject = this.getData();
-
-        try {
-            const deviceId = 0;
-            const CMD_DOOR_SENSOR_ALARM_ENABLE = value;
-
-            await eufyCommandSendHelper.sendCommand('CMD_DOOR_SENSOR_ALARM_ENABLE', deviceObject.station_sn, CommandType.CMD_DOOR_SENSOR_ALARM_ENABLE, CMD_DOOR_SENSOR_ALARM_ENABLE, deviceId, deviceId);
             return Promise.resolve(true);
         } catch (e) {
             Homey.app.error(e);

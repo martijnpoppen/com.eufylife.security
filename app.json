@@ -507,20 +507,6 @@
             "filter": "capabilities=CMD_SET_HUB_ALARM_CLOSE"
           }
         ]
-      },
-      {
-        "id": "action_CMD_SET_HUB_ALARM_COUNTDOWN",
-        "title": {
-          "en": "Set alarm countdown",
-          "nl": "Zet alarm afteller aan"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "capabilities=CMD_TRIGGER_ALARM"
-          }
-        ]
       }
     ]
   },
@@ -1523,6 +1509,15 @@
                 "nl": "Gebruik algemeen alarm?"
               },
               "value": true
+            },
+            {
+              "id": "force_switch_mode_notifications",
+              "type": "checkbox",
+              "label": {
+                "en": "Force switch mode notifications (prevent turning off by Eufy)",
+                "nl": "Forceer Homebase notification (voorkom uitschakelen door Eufy)"
+              },
+              "value": true
             }
           ]
         }
@@ -1574,6 +1569,15 @@
               "label": {
                 "en": "Use generic alarm?",
                 "nl": "Gebruik algemeen alarm?"
+              },
+              "value": true
+            },
+            {
+              "id": "force_switch_mode_notifications",
+              "type": "checkbox",
+              "label": {
+                "en": "Force switch mode notifications (prevent turning off by Eufy)",
+                "nl": "Forceer Homebase notification (voorkom uitschakelen door Eufy)"
               },
               "value": true
             }
