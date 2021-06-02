@@ -1515,7 +1515,7 @@
               "type": "checkbox",
               "label": {
                 "en": "Force switch mode notifications (prevent turning off by Eufy)",
-                "nl": "Forceer Homebase notification (voorkom uitschakelen door Eufy)"
+                "nl": "Forceer Homebase notificatie (voorkom uitschakelen door Eufy)"
               },
               "value": true
             }
@@ -1577,7 +1577,7 @@
               "type": "checkbox",
               "label": {
                 "en": "Force switch mode notifications (prevent turning off by Eufy)",
-                "nl": "Forceer Homebase notification (voorkom uitschakelen door Eufy)"
+                "nl": "Forceer Homebase notificatie (voorkom uitschakelen door Eufy)"
               },
               "value": true
             }
