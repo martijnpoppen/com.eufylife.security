@@ -433,5 +433,8 @@
   },
   "2.4.4": {
     "en": "NEW: add alarm countdown sound for keypad - Homebase flowcard"
+  },
+  "2.4.5": {
+    "en": "NEW: add alarm countdown sound for keypad - Homebase flowcard"
   }
 }
