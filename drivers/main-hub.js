@@ -102,4 +102,19 @@ module.exports = class mainHub extends mainDevice {
             return Promise.reject(e);
         }
     }
+
+    async onCapability_CMD_SET_HUB_ALARM_COUNTDOWN( value ) {
+        const deviceObject = this.getData();
+
+        try {
+            const deviceId = 0;
+            const CMD_DOOR_SENSOR_ALARM_ENABLE = value;
+
+            await eufyCommandSendHelper.sendCommand('CMD_DOOR_SENSOR_ALARM_ENABLE', deviceObject.station_sn, CommandType.CMD_DOOR_SENSOR_ALARM_ENABLE, CMD_DOOR_SENSOR_ALARM_ENABLE, deviceId, deviceId);
+            return Promise.resolve(true);
+        } catch (e) {
+            Homey.app.error(e);
+            return Promise.reject(e);
+        }
+    }
 }

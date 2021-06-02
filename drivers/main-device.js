@@ -142,11 +142,10 @@ module.exports = class mainDevice extends Homey.Device {
     }
 
     async onCapability_CMD_DOORBELL_QUICK_RESPONSE( value ) {
-        const deviceObject = this.getData();
-
         try {
+            const deviceObject = this.getData();
+            const settings = await Homey.app.getSettings();
             const quickResponse = this.getStoreValue('quick_response');
-            const settings = this.getSettings();
             const deviceId = this.getStoreValue('device_index');
             const poweredDoorbell = this.hasCapability("CMD_DOORBELL_QUICK_RESPONSE")
             if(!poweredDoorbell && quickResponse.length >= value) {
