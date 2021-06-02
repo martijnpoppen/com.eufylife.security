@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.4.3",
+  "version": "2.4.4",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -505,6 +505,20 @@
             "name": "device",
             "type": "device",
             "filter": "capabilities=CMD_SET_HUB_ALARM_CLOSE"
+          }
+        ]
+      },
+      {
+        "id": "action_CMD_SET_HUB_ALARM_COUNTDOWN",
+        "title": {
+          "en": "Set alarm countdown",
+          "nl": "Zet alarm afteller aan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "capabilities=CMD_TRIGGER_ALARM"
           }
         ]
       }

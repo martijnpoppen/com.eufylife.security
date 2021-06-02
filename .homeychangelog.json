@@ -430,5 +430,8 @@
   },
   "2.4.3": {
     "en": "FIX: quickresponse wired doorbell"
+  },
+  "2.4.4": {
+    "en": "NEW: add alarm countdown sound for keypad - Homebase flowcard"
   }
 }
