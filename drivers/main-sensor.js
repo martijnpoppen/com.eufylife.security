@@ -17,7 +17,7 @@ module.exports = class mainSensor extends mainDevice {
 
         this.setAvailable();
 
-        await this.matchDeviceWithDeviceStore();
+        await this.matchDeviceWithDeviceStore(this);
     }
 
     async onAdded() {

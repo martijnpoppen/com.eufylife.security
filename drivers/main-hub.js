@@ -33,7 +33,7 @@ module.exports = class mainHub extends mainDevice {
 
     async checkSettings( ctx, initCron = false, overrideSettings = {} ) {
         try {
-            const settings = overrideSettings ? overrideSettings : ctx.getSettings();
+            const settings = Object.keys(overrideSettings).length ? overrideSettings : ctx.getSettings();
             const deviceObject = ctx.getData();
 
             Homey.app.log(`[Device] ${ctx.getName()} - checking settings`, settings);
