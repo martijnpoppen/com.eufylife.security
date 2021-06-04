@@ -442,5 +442,8 @@
   },
   "2.4.7": {
     "en": "NEW: add setting to Homebase devices to prevent Eufy from turning of Homebase notifications. "
+  },
+  "2.4.8": {
+    "en": "FIX: issue with motions sensor. With devicestore"
   }
 }
