@@ -445,5 +445,8 @@
   },
   "2.4.8": {
     "en": "FIX: issue with motions sensor. With devicestore"
+  },
+  "2.4.9": {
+    "en": "FIX: motion sensor device store"
   }
 }
