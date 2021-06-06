@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.4.9",
+  "version": "2.4.10",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -1129,6 +1129,7 @@
         "CMD_REBOOT_HUB",
         "CMD_DOORBELL_QUICK_RESPONSE",
         "CMD_DOORBELL_QUICK_RESPONSE_POWERED",
+        "CMD_REVERSE_DEVS_SWITCH",
         "CMD_START_STREAM",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
@@ -1267,6 +1268,7 @@
         "CMD_REBOOT_HUB",
         "CMD_DOORBELL_QUICK_RESPONSE",
         "CMD_DOORBELL_QUICK_RESPONSE_POWERED",
+        "CMD_REVERSE_DEVS_SWITCH",
         "CMD_START_STREAM",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",

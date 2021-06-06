@@ -448,5 +448,8 @@
   },
   "2.4.9": {
     "en": "FIX: motion sensor device store"
+  },
+  "2.4.10": {
+    "en": "FIX: wired doorbell on/off + quickResponses"
   }
 }
