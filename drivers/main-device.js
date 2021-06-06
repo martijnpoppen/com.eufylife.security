@@ -159,11 +159,13 @@ module.exports = class mainDevice extends Homey.Device {
 
             } else if(poweredDoorbell && quickResponse.length >= value) {
                 const rsa_key = utils.getNewRSAPrivateKey();
+                const encryptkey = rsa_key.exportKey("components-public").n.slice(1).toString("hex")
+
                 let nested_payload = {
                     "commandType": CommandType.CMD_BIND_BROADCAST,
                     "data": {
                         "account_id": settings.HUBS[deviceObject.station_sn].ACTOR_ID,
-                        "encryptkey": rsa_key?.exportKey("components-public").n.slice(1).toString("hex"),
+                        "encryptkey": encryptkey,
                         "streamtype": 0
                     }
                 };
