@@ -3,6 +3,7 @@ const { CommandType, sleep } = require('../lib/eufy-homey-client');
 const eufyCommandSendHelper = require("../../lib/helpers/eufy-command-send.helper");
 const eufyNotificationCheckHelper = require("../../lib/helpers/eufy-notification-check.helper");
 const eufyParameterHelper = require("../../lib/helpers/eufy-parameter.helper");
+const utils = require('../utils.js')
 let _httpService = undefined;
 
 module.exports = class mainDevice extends Homey.Device {
@@ -157,16 +158,19 @@ module.exports = class mainDevice extends Homey.Device {
                 await eufyCommandSendHelper.sendCommand('CMD_STOP_REALTIME_MEDIA', deviceObject.station_sn, CommandType.CMD_STOP_REALTIME_MEDIA, 1, deviceId, deviceId);
 
             } else if(poweredDoorbell && quickResponse.length >= value) {
+                const rsa_key = utils.getNewRSAPrivateKey();
                 let nested_payload = {
                     "commandType": CommandType.CMD_BIND_BROADCAST,
                     "data": {
                         "account_id": settings.HUBS[deviceObject.station_sn].ACTOR_ID,
+                        "encryptkey": rsa_key?.exportKey("components-public").n.slice(1).toString("hex"),
                         "streamtype": 0
                     }
                 };
-                await eufyCommandSendHelper.sendCommand('CMD_BIND_BROADCAST', deviceObject.station_sn, CommandType.CMD_BIND_BROADCAST, nested_payload, deviceId, deviceId, '', true);
 
-                await sleep(1000);
+                await eufyCommandSendHelper.sendCommand('CMD_BIND_BROADCAST', deviceObject.station_sn, CommandType.CMD_BIND_BROADCAST, nested_payload, deviceId, deviceId, '', CommandType.CMD_DOORBELL_SET_PAYLOAD);
+
+                await sleep(500);
 
                 nested_payload = {
                     "commandType": CommandType.CMD_STOP_REALTIME_MEDIA,
@@ -174,7 +178,10 @@ module.exports = class mainDevice extends Homey.Device {
                         "voiceID": quickResponse[value-1]
                     }
                 };
-                await eufyCommandSendHelper.sendCommand('CMD_STOP_REALTIME_MEDIA', deviceObject.station_sn, CommandType.CMD_STOP_REALTIME_MEDIA, nested_payload, deviceId, deviceId, '', true);
+                await eufyCommandSendHelper.sendCommand('CMD_STOP_REALTIME_MEDIA', deviceObject.station_sn, CommandType.CMD_STOP_REALTIME_MEDIA, nested_payload, deviceId, deviceId, '', CommandType.CMD_DOORBELL_SET_PAYLOAD);
+                
+                await sleep(3000);
+                await eufyCommandSendHelper.sendCommand('CMD_STOP_REALTIME_MEDIA', deviceObject.station_sn, CommandType.CMD_STOP_REALTIME_MEDIA, 1, deviceId, deviceId);
 
             }
             return Promise.resolve(true);
@@ -259,7 +266,7 @@ module.exports = class mainDevice extends Homey.Device {
             await sleep(9500);
             const deviceObject = ctx.getData();
             const deviceStore = Homey.app.getDeviceStore();
-            if(deviceStore) {
+            if(deviceStore && deviceStore.length) {
                 const deviceMatch = deviceStore && deviceStore.find(d => d.device_sn === deviceObject.device_sn);
                 ctx.setStoreValue('device_index', deviceMatch.index);
 

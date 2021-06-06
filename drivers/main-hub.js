@@ -53,7 +53,7 @@ module.exports = class mainHub extends mainDevice {
                     }
                 }
 
-                await eufyCommandSendHelper.sendCommand('CMD_HUB_NOTIFY_MODE', deviceObject.station_sn, CommandType.CMD_HUB_NOTIFY_MODE, nested_payload, 0, 0, '', true);
+                await eufyCommandSendHelper.sendCommand('CMD_HUB_NOTIFY_MODE', deviceObject.station_sn, CommandType.CMD_HUB_NOTIFY_MODE, nested_payload, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
 
 
                 const payload_edit = {
@@ -64,7 +64,7 @@ module.exports = class mainHub extends mainDevice {
                     }
                 }
 
-                await eufyCommandSendHelper.sendCommand('CMD_HUB_NOTIFY_MODE', deviceObject.station_sn, CommandType.CMD_HUB_NOTIFY_MODE, {...nested_payload, ...payload_edit}, 0, 0, '', true);
+                await eufyCommandSendHelper.sendCommand('CMD_HUB_NOTIFY_MODE', deviceObject.station_sn, CommandType.CMD_HUB_NOTIFY_MODE, {...nested_payload, ...payload_edit}, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
             }
 
             if(initCron) {
@@ -116,7 +116,7 @@ module.exports = class mainHub extends mainDevice {
                 }
             }
 
-            await eufyCommandSendHelper.sendCommand('CMD_SET_ARMING', deviceObject.station_sn, CommandType.CMD_SET_ARMING, nested_payload, 0, 0, '', true);
+            await eufyCommandSendHelper.sendCommand('CMD_SET_ARMING', deviceObject.station_sn, CommandType.CMD_SET_ARMING, nested_payload, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
 
             return Promise.resolve(true);
         } catch (e) {
@@ -139,7 +139,7 @@ module.exports = class mainHub extends mainDevice {
                 }
             }
 
-            await eufyCommandSendHelper.sendCommand('CMD_SET_TONE_FILE', deviceObject.station_sn, CommandType.CMD_SET_TONE_FILE, nested_payload, 0, 0, '', true);
+            await eufyCommandSendHelper.sendCommand('CMD_SET_TONE_FILE', deviceObject.station_sn, CommandType.CMD_SET_TONE_FILE, nested_payload, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
 
             return Promise.resolve(true);
         } catch (e) {
