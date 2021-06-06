@@ -454,5 +454,8 @@
   },
   "2.4.11": {
     "en": "FIX: error in app"
+  },
+  "2.4.12": {
+    "en": "Fix error"
   }
 }
