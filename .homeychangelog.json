@@ -451,5 +451,8 @@
   },
   "2.4.10": {
     "en": "FIX: wired doorbell on/off + quickResponses"
+  },
+  "2.4.11": {
+    "en": "FIX: error in app"
   }
 }
