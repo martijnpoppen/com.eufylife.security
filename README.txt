@@ -23,3 +23,12 @@ Current features:
 - See last motion events
 - Generic alarm for each camera -> Heimdall (goes off for all events except doorbell press)
 - Start Stream and retrieve RTSP url
+- Toggle ALARM for Homebase - This also enables the generic alarm for the Homebase (Heimdall)
+- Trigger flows when alarms turns on
+- Trigger quickResponses for doorbells
+- Trigger HDR
+- Trigger WDR
+- Trigger night vision
+- Reboot Hub or stand-alone cameras
+- Force Eufy Homebase notifications to prevent wrong data
+- Battery status for Battery devices
