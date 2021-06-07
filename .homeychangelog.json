@@ -457,5 +457,11 @@
   },
   "2.4.12": {
     "en": "Fix error"
+  },
+  "2.5.1": {
+    "en": "Update to improved Library - Homebase Alarm triggers/actions - Quickresponses Wired doorbell - Reboot Hub FlowCard - improvements - Interval for battery improved - HDR/IR/WDR switch - multiple fixes"
+  },
+  "2.6.0": {
+    "en": "NEW: add Outdoor Cam + Outdoor Cam Pro"
   }
 }
