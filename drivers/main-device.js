@@ -3,7 +3,7 @@ const { CommandType, sleep } = require('../lib/eufy-homey-client');
 const eufyCommandSendHelper = require("../../lib/helpers/eufy-command-send.helper");
 const eufyNotificationCheckHelper = require("../../lib/helpers/eufy-notification-check.helper");
 const eufyParameterHelper = require("../../lib/helpers/eufy-parameter.helper");
-const utils = require('../utils.js')
+const utils = require('../../lib/utils.js')
 let _httpService = undefined;
 
 module.exports = class mainDevice extends Homey.Device {
@@ -44,7 +44,9 @@ module.exports = class mainDevice extends Homey.Device {
         const driverManifest = driver.getManifest();
         const driverCapabilities = driverManifest.capabilities;
         
-        if(!this.hasCapability('NTFY_PET_DETECTED') || !this.hasCapability('CMD_DOORBELL_QUICK_RESPONSE_POWERED') || !this.hasCapability('CMD_SET_ARMING_HUB')) {
+        await sleep(2500);
+        
+        if(!driverCapabilities.includes('CMD_SET_ARMING') && this.hasCapability('CMD_SET_ARMING')) {
             Homey.app.log(`[Device] ${this.getName()} - FIX - Remove CMD_SET_ARMING - Homebase integration`);
             this.removeCapability('CMD_SET_ARMING');
             await sleep(2500);
@@ -206,11 +208,12 @@ module.exports = class mainDevice extends Homey.Device {
         }
     }
 
-    async onCapability_CMD_TRIGGER_ALARM() {
+    async onCapability_CMD_BAT_DOORBELL_WDR_SWITCH(value) {
         try {
             const deviceObject = this.getData();
-
-            await eufyCommandSendHelper.sendCommand('CMD_SET_TONE_FILE', deviceObject.station_sn, CommandType.CMD_SET_TONE_FILE, 0, 30);
+            const deviceId = this.getStoreValue('device_index');
+            const CMD_BAT_DOORBELL_WDR_SWITCH = parseInt(value);
+            await eufyCommandSendHelper.sendCommand('CMD_BAT_DOORBELL_WDR_SWITCH', deviceObject.station_sn, CommandType.CMD_BAT_DOORBELL_WDR_SWITCH, CMD_BAT_DOORBELL_WDR_SWITCH, deviceId, deviceId);
 
             return Promise.resolve(true);
         } catch (e) {
@@ -218,6 +221,35 @@ module.exports = class mainDevice extends Homey.Device {
             return Promise.reject(e);
         }
     }
+
+    async onCapability_CMD_BAT_DOORBELL_VIDEO_QUALITY(value) {
+        try {
+            const deviceObject = this.getData();
+            const deviceId = this.getStoreValue('device_index');
+            const CMD_BAT_DOORBELL_VIDEO_QUALITY = parseInt(value);
+            await eufyCommandSendHelper.sendCommand('CMD_BAT_DOORBELL_VIDEO_QUALITY', deviceObject.station_sn, CommandType.CMD_BAT_DOORBELL_VIDEO_QUALITY, CMD_BAT_DOORBELL_VIDEO_QUALITY, deviceId, deviceId);
+
+            return Promise.resolve(true);
+        } catch (e) {
+            Homey.app.error(e);
+            return Promise.reject(e);
+        }
+    }
+
+    async onCapability_CMD_IRCUT_SWITCH(value) {
+        try {
+            const deviceObject = this.getData();
+            const deviceId = this.getStoreValue('device_index');
+            const CMD_IRCUT_SWITCH = parseInt(value);
+            await eufyCommandSendHelper.sendCommand('CMD_IRCUT_SWITCH', deviceObject.station_sn, CommandType.CMD_IRCUT_SWITCH, CMD_IRCUT_SWITCH, deviceId, deviceId);
+
+            return Promise.resolve(true);
+        } catch (e) {
+            Homey.app.error(e);
+            return Promise.reject(e);
+        }
+    }
+
 
     async onCapability_NTFY_TRIGGER( message, value ) {
         try {
