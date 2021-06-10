@@ -85,7 +85,7 @@ function initSave(_settings) {
             HUBS_AMOUNT: _settings.HUBS_AMOUNT,
             CREDENTIALS: _settings.CREDENTIALS,
             SET_CREDENTIALS: true,
-            ADMIN: true
+            ADMIN: false
         }
 
         // ----------------------------------------------

@@ -472,11 +472,5 @@
   },
   "2.6.3": {
     "en": "FIX: images not working on eufycam 2c"
-  },
-  "2.6.4": {
-    "en": "FIX: images for 2C"
-  },
-  "2.6.5": {
-    "en": "NEW: add Outdoor Cam + Outdoor Cam Pro | FIX: images not updating on EufyCam 2C | FIX: decrease timeout quickresponse"
   }
 }
