@@ -73,7 +73,7 @@ class App extends Homey.App {
         this.log("initSettings - Found settings key", _settingsKey);
         this.appSettings = ManagerSettings.get(_settingsKey);
         
-        if(this.appSettings && this.appSettings.SET_DEBUG) {
+        if(this.appSettings && this.appSettings.SET_DEBUG && !this.appSettings.ADMIN) {
             this.appSettings = {...this.appSettings, SET_DEBUG: false};
             this.saveSettings();
         }
@@ -100,6 +100,7 @@ class App extends Homey.App {
         SET_CREDENTIALS: true,
         SET_DEBUG: false,
         CREDENTIALS: "",
+        ADMIN: false
       });
     } catch (err) {
       this.error(err);
