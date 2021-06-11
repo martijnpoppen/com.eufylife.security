@@ -174,7 +174,7 @@ module.exports = class mainDevice extends Homey.Device {
 
                 await eufyCommandSendHelper.sendCommand('CMD_BIND_BROADCAST', deviceObject.station_sn, CommandType.CMD_BIND_BROADCAST, nested_payload, deviceId, deviceId, '', CommandType.CMD_DOORBELL_SET_PAYLOAD);
 
-                await sleep(100);
+                await sleep(300);
 
                 nested_payload = {
                     "commandType": CommandType.CMD_STOP_REALTIME_MEDIA,
