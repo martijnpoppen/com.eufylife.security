@@ -80,7 +80,7 @@ module.exports = class mainHub extends mainDevice {
 
     async onCapability_NTFY_TRIGGER( message, value ) {
         try {
-            const valueString = value ? value.toString() : null;
+            const valueString = value.toString();
             const settings = this.getSettings();
             const setMotionAlarm = message === 'alarm_generic' && !!settings.alarm_generic_enabled;
 
