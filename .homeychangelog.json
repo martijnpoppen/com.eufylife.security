@@ -481,5 +481,8 @@
   },
   "2.6.6": {
     "en": "FIX: increase timeout quickresponse - wired doorbell"
+  },
+  "2.6.7": {
+    "en": "FIX: issue where Homebase - Away mode was not updated"
   }
 }
