@@ -484,5 +484,8 @@
   },
   "2.6.7": {
     "en": "FIX: issue where Homebase - Away mode was not updated"
+  },
+  "2.6.8": {
+    "en": "FIX: notifcations sent twice. - disable restart homebase"
   }
 }

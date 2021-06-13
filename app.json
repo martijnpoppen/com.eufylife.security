@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.6.7",
+  "version": "2.6.8",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -1787,7 +1787,6 @@
       "capabilities": [
         "CMD_SET_ARMING",
         "CMD_SET_ARMING_HUB",
-        "CMD_REBOOT_HUB",
         "CMD_TRIGGER_ALARM",
         "CMD_SET_HUB_ALARM_CLOSE",
         "alarm_generic"
@@ -1849,7 +1848,6 @@
       "capabilities": [
         "CMD_SET_ARMING",
         "CMD_SET_ARMING_HUB",
-        "CMD_REBOOT_HUB",
         "CMD_TRIGGER_ALARM",
         "CMD_SET_HUB_ALARM_CLOSE",
         "alarm_generic"
