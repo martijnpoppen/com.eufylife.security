@@ -11,6 +11,9 @@ module.exports = class mainHub extends mainDevice {
         Homey.app.setDevices(this);
         this.setUnavailable(`Initializing ${this.getName()}`);
 
+        this.removeCapability('CMD_REBOOT_HUB');
+        await sleep(2000);
+
         await this.checkCapabilities();
 
         this.registerCapabilityListener('CMD_SET_ARMING', this.onCapability_CMD_SET_ARMING.bind(this));
