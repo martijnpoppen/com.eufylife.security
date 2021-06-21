@@ -487,5 +487,14 @@
   },
   "2.6.8": {
     "en": "FIX: notifcations sent twice. - disable restart homebase"
+  },
+  "2.6.9": {
+    "en": "FIX wired doorbell quickresponse"
+  },
+  "2.6.10": {
+    "en": "FIX: quick response for battery doorbell"
+  },
+  "2.6.11": {
+    "en": "FIX: issue with parsing data on NTFY"
   }
 }
