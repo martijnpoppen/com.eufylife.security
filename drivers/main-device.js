@@ -150,7 +150,7 @@ module.exports = class mainDevice extends Homey.Device {
             const settings = await Homey.app.getSettings();
             const quickResponse = this.getStoreValue('quick_response');
             const deviceId = this.getStoreValue('device_index');
-            const poweredDoorbell = this.hasCapability("CMD_DOORBELL_QUICK_RESPONSE")
+            const poweredDoorbell = this.hasCapability("CMD_DOORBELL_QUICK_RESPONSE_POWERED")
             if(!poweredDoorbell && quickResponse.length >= value) {
 
                 await eufyCommandSendHelper.sendCommand('CMD_START_REALTIME_MEDIA', deviceObject.station_sn, CommandType.CMD_START_REALTIME_MEDIA, 1, deviceId, deviceId);
@@ -174,7 +174,7 @@ module.exports = class mainDevice extends Homey.Device {
 
                 await eufyCommandSendHelper.sendCommand('CMD_BIND_BROADCAST', deviceObject.station_sn, CommandType.CMD_BIND_BROADCAST, nested_payload, deviceId, deviceId, '', CommandType.CMD_DOORBELL_SET_PAYLOAD);
 
-                await sleep(300);
+                await sleep(500);
 
                 nested_payload = {
                     "commandType": CommandType.CMD_STOP_REALTIME_MEDIA,
