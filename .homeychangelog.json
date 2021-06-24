@@ -496,5 +496,8 @@
   },
   "2.6.11": {
     "en": "FIX: issue with parsing data on NTFY"
+  },
+  "2.6.12": {
+    "en": "OPT: add logging to find issue with hub data"
   }
 }

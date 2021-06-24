@@ -8,6 +8,7 @@ const eufyParameterHelper = require("../../lib/helpers/eufy-parameter.helper");
 module.exports = class mainHub extends mainDevice {
     async onInit() {
 		Homey.app.log('[HUB] - init =>', this.getName());
+        Homey.app.log('[HUB] - init =>', this.getData());
         Homey.app.setDevices(this);
         this.setUnavailable(`Initializing ${this.getName()}`);
 
@@ -36,11 +37,11 @@ module.exports = class mainHub extends mainDevice {
 
     async checkSettings( ctx, initCron = false, overrideSettings = {} ) {
         try {
-            const settings = Object.keys(overrideSettings).length ? overrideSettings : ctx.getSettings();
+            const deviceSettings = Object.keys(overrideSettings).length ? overrideSettings : ctx.getSettings();
             const deviceObject = ctx.getData();
 
-            Homey.app.log(`[Device] ${ctx.getName()} - checking settings`, settings);
-            if(settings.force_switch_mode_notifications) {
+            Homey.app.log(`[Device] ${ctx.getName()} - checking deviceSettings`, deviceSettings);
+            if(deviceSettings.force_switch_mode_notifications) {
                 
                 Homey.app.log(`[Device] ${ctx.getName()} - checking settings, found force_switch_mode_notifications`);
                 
