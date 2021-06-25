@@ -67,10 +67,14 @@
       }
     ],
     "translators": [
-      {
-        "name": "Martijn Poppen",
-        "email": "eufy@martijnpoppen.nl"
-      }
+        
+            {
+              "name": "🇬🇧 Martijn P."
+            },
+            {
+              "name": "🇳🇱 Martijn P."
+            }
+          
     ]
   },
   "contributing": {

@@ -91,9 +91,7 @@ module.exports = class mainHub extends mainDevice {
             if(this.hasCapability(message)) {
                 if(valueString) this.setCapabilityValue(message, valueString);
                 if(setMotionAlarm) {
-                    this.setCapabilityValue(message, true);
-                    await sleep(30000);
-                    this.setCapabilityValue(message, false);
+                    this.setCapabilityValue(message, value);
                 }
             }
          
@@ -138,13 +136,28 @@ module.exports = class mainHub extends mainDevice {
                 "cmd": CommandType.CMD_SET_TONE_FILE,
                 "mValue3": 0,
                 "payload": {
-                    "time_out": time,
+                    "time_out": (time + 2),
                     "user_name": "Homey"
                 }
             }
+            // time + 2 so we can disable alarm manually.
 
             await eufyCommandSendHelper.sendCommand('CMD_SET_TONE_FILE', deviceObject.station_sn, CommandType.CMD_SET_TONE_FILE, nested_payload, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
-
+            
+            // wait for alarm to be finished. turn off to have a off notification. So the alarm_generic will notify
+            await sleep(time * 1000);
+            
+            const nested_payload_off = {
+                "account_id": settings.HUBS[deviceObject.station_sn].ACTOR_ID,
+                "cmd": CommandType.CMD_SET_TONE_FILE,
+                "mValue3": 0,
+                "payload": {
+                    "time_out": 0,
+                    "user_name": "Homey"
+                }
+            }
+            await eufyCommandSendHelper.sendCommand('CMD_SET_TONE_FILE', deviceObject.station_sn, CommandType.CMD_SET_TONE_FILE, nested_payload_off, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
+            
             return Promise.resolve(true);
         } catch (e) {
             Homey.app.error(e);
@@ -155,7 +168,17 @@ module.exports = class mainHub extends mainDevice {
     async onCapability_CMD_SET_HUB_ALARM_CLOSE() {
         try {
             const deviceObject = this.getData();
-            await eufyCommandSendHelper.sendCommand('CMD_SET_TONE_FILE', deviceObject.station_sn, CommandType.CMD_SET_TONE_FILE, 0, 0);
+            const settings = await Homey.app.getSettings();
+            const nested_payload = {
+                "account_id": settings.HUBS[deviceObject.station_sn].ACTOR_ID,
+                "cmd": CommandType.CMD_SET_TONE_FILE,
+                "mValue3": 0,
+                "payload": {
+                    "time_out": 0,
+                    "user_name": "Homey"
+                }
+            }
+            await eufyCommandSendHelper.sendCommand('CMD_SET_TONE_FILE', deviceObject.station_sn, CommandType.CMD_SET_TONE_FILE, nested_payload, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
             return Promise.resolve(true);
         } catch (e) {
             Homey.app.error(e);
