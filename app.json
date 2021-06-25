@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.6.12",
+  "version": "2.6.13",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -67,14 +67,12 @@
       }
     ],
     "translators": [
-        
-            {
-              "name": "🇬🇧 Martijn P."
-            },
-            {
-              "name": "🇳🇱 Martijn P."
-            }
-          
+      {
+        "name": "🇬🇧 Martijn P."
+      },
+      {
+        "name": "🇳🇱 Martijn P."
+      }
     ]
   },
   "contributing": {

@@ -499,5 +499,8 @@
   },
   "2.6.12": {
     "en": "OPT: add logging to find issue with hub data"
+  },
+  "2.6.13": {
+    "en": "FIX: alarm not turning off the alarm generic or when started with timer"
   }
 }
