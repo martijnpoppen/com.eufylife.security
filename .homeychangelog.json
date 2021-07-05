@@ -502,5 +502,8 @@
   },
   "2.6.13": {
     "en": "FIX: alarm not turning off the alarm generic or when started with timer"
+  },
+  "2.6.14": {
+    "en": "FIX: decrease homebase cronjob. Causing standalone cameras to no respond"
   }
 }
