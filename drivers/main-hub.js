@@ -72,7 +72,7 @@ module.exports = class mainHub extends mainDevice {
             }
 
             if(initCron) {
-                await eufyParameterHelper.registerCronTask(deviceObject.device_sn, "EVERY_HALVE_HOURS", this.checkSettings, ctx)
+                await eufyParameterHelper.registerCronTask(deviceObject.device_sn, "EVERY_THREE_HOURS", this.checkSettings, ctx)
             }
             
             return Promise.resolve(true);

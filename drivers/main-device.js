@@ -43,6 +43,9 @@ module.exports = class mainDevice extends Homey.Device {
         const driver = this.getDriver();
         const driverManifest = driver.getManifest();
         const driverCapabilities = driverManifest.capabilities;
+        const deviceCapabilities = this.getCapabilities();
+
+        Homey.app.log(`[Device] ${this.getName()} - checkCapabilities for`, driverManifest.id);
         
         await sleep(2500);
         
@@ -51,8 +54,15 @@ module.exports = class mainDevice extends Homey.Device {
             this.removeCapability('CMD_SET_ARMING');
             await sleep(2500);
         }
+
+        if(driverManifest.id === 'driver_FLOODLIGHT_CAMERA') {
+            Homey.app.log(`[Device] ${this.getName()} - FIX - Remove all deviceCapabilities - Floodlight integration`);
+            deviceCapabilities.forEach(c => {
+                this.removeCapability(c);
+            });
+            await sleep(2000);
+        }
         
-        const deviceCapabilities = this.getCapabilities();
 
         Homey.app.log(`[Device] ${this.getName()} - Found capabilities =>`, deviceCapabilities);
         
