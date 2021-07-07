@@ -218,6 +218,21 @@ module.exports = class mainDevice extends Homey.Device {
         }
     }
 
+    async onCapability_CMD_INDOOR_PAN_TURN() {
+        const deviceObject = this.getData();
+        const deviceId = this.getStoreValue('device_index');
+        const nested_payload = {
+            "commandType": CommandType.CMD_INDOOR_PAN_TURN,
+            "data": {
+                "cmd_type": -1,
+                "rotate_type": 0
+            }
+        };
+
+        await eufyCommandSendHelper.sendCommand('CMD_INDOOR_PAN_TURN', deviceObject.station_sn, CommandType.CMD_INDOOR_PAN_TURN, nested_payload, deviceId, deviceId, '', CommandType.CMD_DOORBELL_SET_PAYLOAD);
+
+    }
+
     async onCapability_CMD_BAT_DOORBELL_WDR_SWITCH(value) {
         try {
             const deviceObject = this.getData();
