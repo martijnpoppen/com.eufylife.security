@@ -508,5 +508,8 @@
   },
   "2.6.15": {
     "en": "FIX: deviceCapabilities for Floodlight camera"
+  },
+  "2.7.0": {
+    "en": "NEW: add 360 turn flowcard for indoor Cam Pan&Tilt"
   }
 }
