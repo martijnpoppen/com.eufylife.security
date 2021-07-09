@@ -511,5 +511,8 @@
   },
   "2.7.0": {
     "en": "NEW: add 360 turn flowcard for indoor Cam Pan&Tilt"
+  },
+  "2.7.1": {
+    "en": "FIX: floodlight on/off + reset homebase alarm on start of app"
   }
 }

@@ -15,6 +15,10 @@ module.exports = class mainHub extends mainDevice {
         this.removeCapability('CMD_REBOOT_HUB');
         await sleep(2000);
 
+        if(this.hasCapability('alarm_generic')) {
+          this.resetCapability('alarm_generic');
+        }
+
         await this.checkCapabilities();
 
         this.registerCapabilityListener('CMD_SET_ARMING', this.onCapability_CMD_SET_ARMING.bind(this));
@@ -30,9 +34,18 @@ module.exports = class mainHub extends mainDevice {
         await eufyNotificationCheckHelper.init(settings);
     }
 
-    async onSettings(oldSettings, newSettings) {
+    async onSettings(oldSettings, newSettings, changedKeys) {
         Homey.app.log(`[Device] ${this.getName()} - onSettings - Old/New`, oldSettings, newSettings);
+
+        if(this.hasCapability('alarm_generic') && changedKeys.includes('alarm_generic_enabled')) {
+          this.resetCapability('alarm_generic');
+        }
+
         this.checkSettings(this, false, newSettings);
+    }
+
+    async resetCapability(name, value = false) {
+      this.setCapabilityValue(name, value);
     }
 
     async checkSettings( ctx, initCron = false, overrideSettings = {} ) {
