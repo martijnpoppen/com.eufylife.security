@@ -514,5 +514,8 @@
   },
   "2.7.1": {
     "en": "FIX: floodlight on/off + reset homebase alarm on start of app"
+  },
+  "2.7.2": {
+    "en": "FIX: remove duplicate driver"
   }
 }
