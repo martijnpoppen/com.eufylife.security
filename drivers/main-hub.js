@@ -29,11 +29,6 @@ module.exports = class mainHub extends mainDevice {
         this.checkSettings(this, true);
     }
 
-    async onAdded() {
-        const settings = await Homey.app.getSettings();
-        await eufyNotificationCheckHelper.init(settings);
-    }
-
     async onSettings(oldSettings, newSettings, changedKeys) {
         Homey.app.log(`[Device] ${this.getName()} - onSettings - Old/New`, oldSettings, newSettings);
 

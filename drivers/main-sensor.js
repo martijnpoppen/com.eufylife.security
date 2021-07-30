@@ -20,11 +20,6 @@ module.exports = class mainSensor extends mainDevice {
         await this.matchDeviceWithDeviceStore(this);
     }
 
-    async onAdded() {
-        const settings = await Homey.app.getSettings();
-        await eufyNotificationCheckHelper.init(settings);
-    }
-
     async onCapability_NTFY_TRIGGER( message, value ) {
         try {
             if(this.hasCapability(message)) {

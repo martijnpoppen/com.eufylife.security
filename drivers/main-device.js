@@ -1,9 +1,11 @@
 const Homey = require('homey');
+const fetch = require('node-fetch');
+
 const { CommandType, sleep } = require('../lib/eufy-homey-client');
 const eufyCommandSendHelper = require("../../lib/helpers/eufy-command-send.helper");
-const eufyNotificationCheckHelper = require("../../lib/helpers/eufy-notification-check.helper");
 const eufyParameterHelper = require("../../lib/helpers/eufy-parameter.helper");
 const utils = require('../../lib/utils.js')
+
 let _httpService = undefined;
 
 module.exports = class mainDevice extends Homey.Device {
@@ -12,7 +14,7 @@ module.exports = class mainDevice extends Homey.Device {
         Homey.app.setDevices(this);
         this.setUnavailable(`Initializing ${this.getName()}`);
     
-        await this.initCameraImage();
+        await this.deviceImage();
 
         await this.checkCapabilities();
 
@@ -33,10 +35,8 @@ module.exports = class mainDevice extends Homey.Device {
     }
 
     async onAdded() {
-        const settings = await Homey.app.getSettings();
-        await this.initCameraImage();
+        await this.deviceImage();
         await sleep(4500);
-        await eufyNotificationCheckHelper.init(settings);
     }
 
     async checkCapabilities() {
@@ -302,16 +302,34 @@ module.exports = class mainDevice extends Homey.Device {
         }
     }
 
-    initCameraImage() {
+    async deviceImage(imagePath = "assets/images/large.jpg") {
         try {
-            Homey.app.log(`[Device] ${this.getName()} - Set initial image`);
             const deviceObject = this.getData();
-            this._image = new Homey.Image();
-            this._image.setPath('assets/images/large.jpg');
-            this._image.register()
-                .then(() => this.setCameraImage(deviceObject.station_sn, this.getName(), this._image))
-                .catch(this.error);
-                
+            Homey.app.log(`[Device] ${this.getName()} - Set image - `, imagePath, this._image);
+
+
+            if(imagePath !== "assets/images/large.jpg") {
+                await this._image.setStream(async (stream) => {
+                    const res = await fetch(imagePath);
+                    if(!res.ok)
+                      throw new Error('Invalid Response');
+                  
+                    return res.body.pipe(stream);
+                });
+
+                Homey.app.log(`[Device] ${this.getName()} - Update image`);
+
+                await this._image.update();
+            } else {
+                Homey.app.log(`[Device] ${this.getName()} - Set initial image`);
+
+                this._image = new Homey.Image();
+                this._image.setPath(imagePath);
+                this._image.register()
+                    .then(() => this.setCameraImage(deviceObject.station_sn, this.getName(), this._image))
+                    .catch(this.error);
+            }
+
             return Promise.resolve(true);
         } catch (e) {
             Homey.app.error(e);
