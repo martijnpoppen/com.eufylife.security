@@ -34,11 +34,6 @@ module.exports = class mainDevice extends Homey.Device {
         await this.matchDeviceWithDeviceStore(this, true);
     }
 
-    async onAdded() {
-        await this.deviceImage();
-        await sleep(4500);
-    }
-
     async checkCapabilities() {
         const driver = this.getDriver();
         const driverManifest = driver.getManifest();
@@ -328,6 +323,8 @@ module.exports = class mainDevice extends Homey.Device {
                 this._image.register()
                     .then(() => this.setCameraImage(deviceObject.station_sn, this.getName(), this._image))
                     .catch(this.error);
+
+                await sleep(4500);
             }
 
             return Promise.resolve(true);
