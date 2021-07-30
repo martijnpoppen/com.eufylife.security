@@ -34,6 +34,11 @@ module.exports = class mainDevice extends Homey.Device {
         await this.matchDeviceWithDeviceStore(this, true);
     }
 
+    async onAdded() {
+        const settings = await Homey.app.getSettings();
+        await Homey.app.eufyLogin(settings);
+    }
+
     async checkCapabilities() {
         const driver = this.getDriver();
         const driverManifest = driver.getManifest();
