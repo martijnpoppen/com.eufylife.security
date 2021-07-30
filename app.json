@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.7.2",
+  "version": "2.7.3",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -640,6 +640,10 @@
   "drivers": [
     {
       "id": "driver_EUFYCAM",
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -708,6 +712,10 @@
     },
     {
       "id": "driver_EUFYCAM_2",
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -776,6 +784,10 @@
     },
     {
       "id": "driver_EUFYCAM_2_PRO",
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -844,6 +856,10 @@
     },
     {
       "id": "driver_EUFYCAM_2C",
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -912,6 +928,10 @@
     },
     {
       "id": "driver_EUFYCAM_2C_PRO",
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -980,6 +1000,10 @@
     },
     {
       "id": "driver_EUFYCAM_E",
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1047,6 +1071,10 @@
     },
     {
       "id": "driver_FLOODLIGHT_CAMERA",
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1110,6 +1138,10 @@
     },
     {
       "id": "driver_INDOOR_CAM",
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1177,6 +1209,10 @@
     },
     {
       "id": "driver_INDOOR_CAM_PAN_TILT",
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1245,6 +1281,10 @@
     },
     {
       "id": "driver_OUTDOOR_CAM",
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1312,6 +1352,10 @@
     },
     {
       "id": "driver_OUTDOOR_CAM_PRO",
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1379,6 +1423,10 @@
     },
     {
       "id": "driver_VIDEO_DOORBELL_2K_POWERED",
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1447,6 +1495,10 @@
     },
     {
       "id": "driver_VIDEO_DOORBELL_2K_BATTERY",
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1521,6 +1573,10 @@
     },
     {
       "id": "driver_VIDEO_DOORBELL_1080P_POWERED",
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1589,6 +1645,10 @@
     },
     {
       "id": "driver_VIDEO_DOORBELL_1080P_BATTERY",
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1634,6 +1694,10 @@
     },
     {
       "id": "driver_DOORSENSOR",
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "sensor",
       "capabilities": [
         "alarm_contact"
@@ -1696,6 +1760,10 @@
     },
     {
       "id": "driver_MOTIONSENSOR",
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "sensor",
       "capabilities": [
         "alarm_motion"
@@ -1729,6 +1797,10 @@
     },
     {
       "id": "driver_HOMEBASE_1",
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "homealarm",
       "capabilities": [
         "CMD_SET_ARMING",
@@ -1790,6 +1862,10 @@
     },
     {
       "id": "driver_HOMEBASE",
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "homealarm",
       "capabilities": [
         "CMD_SET_ARMING",
@@ -1851,6 +1927,10 @@
     },
     {
       "id": "driver_KEYPAD",
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "homealarm",
       "capabilities": [],
       "name": {
