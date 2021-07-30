@@ -520,5 +520,8 @@
   },
   "2.7.3": {
     "en": "FIX: images not updating after adding a devce"
+  },
+  "2.7.4": {
+    "en": "FIX: double image on added"
   }
 }
