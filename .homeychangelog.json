@@ -523,5 +523,8 @@
   },
   "2.7.4": {
     "en": "FIX: double image on added"
+  },
+  "2.7.5": {
+    "en": "FIX: update Hubs after adding a device. (for stand-alone devices)"
   }
 }
