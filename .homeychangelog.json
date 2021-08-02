@@ -526,5 +526,8 @@
   },
   "2.7.5": {
     "en": "FIX: update Hubs after adding a device. (for stand-alone devices)"
+  },
+  "2.8.0": {
+    "en": "NEW: add device filter for pairing new devices - prevent wrong driver match"
   }
 }
