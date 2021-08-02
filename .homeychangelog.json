@@ -529,5 +529,8 @@
   },
   "2.8.0": {
     "en": "NEW: add device filter for pairing new devices - prevent wrong driver match"
+  },
+  "2.8.1": {
+    "en": "FIX: device filter for Homebase"
   }
 }
