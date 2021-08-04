@@ -138,9 +138,22 @@ module.exports = class mainDevice extends Homey.Device {
                 'proto': 2
             }
 
-            if(startStream) {
+            Homey.app.log(`[Device] ${this.getName()} - startStream - `, startStream);
+
+            if(startStream || startStream === '') {
                 const response = await _httpService.startStream(requestObject);
-                const streamStart = response.url ? response.url : null;
+                let streamStart = response.url ? response.url : null;
+
+                if(streamStart && startStream == 'hls') {
+                    Homey.app.log(`[Device] ${this.getName()} - startStream - hls`, streamStart);
+
+                    streamStart = streamStart.replace('rtmp', 'http');
+                    streamStart = streamStart.split('?');
+                    streamStart = `${streamStart[0]}.m3u8?${streamStart[1]}`;
+                }
+
+                Homey.app.log(`[Device] ${this.getName()} - startStream - hls/rtmp`, streamStart);
+                
                 await this.setCapabilityValue( 'CMD_START_STREAM', streamStart);
             } else {
                 await _httpService.stopStream(requestObject);

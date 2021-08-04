@@ -41,6 +41,9 @@ class App extends Homey.App {
   async onInit() {
     this.log(`${Homey.manifest.id} - ${Homey.manifest.version} started...`);
 
+    const notify = new Homey.Notification({"excerpt": `Eufy v${Homey.manifest.version} - New! - Added HLS start_stream card. HLS can be used to stream to Chromecast. !!Warning: too many attempts can lock you out.`})
+    Homey.ManagerNotifications.registerNotification(notify)
+
     await this.initSettings();
 
     this.log("onInit - Loaded settings", {...this.appSettings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
