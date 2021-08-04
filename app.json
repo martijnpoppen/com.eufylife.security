@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.8.1",
+  "version": "2.9.1",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -436,11 +436,53 @@
       },
       {
         "id": "action_CMD_START_STREAM",
+        "deprecated": true,
+        "title": {
+          "en": "Start stream (Deprecated)",
+          "nl": "Start Stream (Verouderd)"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "capabilities=CMD_START_STREAM"
+          }
+        ]
+      },
+      {
+        "id": "action_CMD_START_STREAM_HLS_RTMP",
         "title": {
           "en": "Start stream",
           "nl": "Start Stream"
         },
         "args": [
+          {
+            "name": "action_CMD_START_STREAM_TYPE",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "hls",
+                "label": {
+                  "en": "HLS (Chromecast compatible)",
+                  "nl": "HLS (Chromecast compatible)"
+                }
+              },
+              {
+                "id": "hls_only",
+                "label": {
+                  "en": "HLS",
+                  "nl": "HLS"
+                }
+              },
+              {
+                "id": "rtmp",
+                "label": {
+                  "en": "RTMP",
+                  "nl": "RTMP"
+                }
+              }
+            ]
+          },
           {
             "name": "device",
             "type": "device",

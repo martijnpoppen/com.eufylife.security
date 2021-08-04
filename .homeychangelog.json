@@ -532,5 +532,11 @@
   },
   "2.8.1": {
     "en": "FIX: device filter for Homebase"
+  },
+  "2.9.0": {
+    "en": "NEW: add HLS stream card. Compatible with chromecast"
+  },
+  "2.9.1": {
+    "en": "FIX: HLS stream card. (Compatible with Chromecast)"
   }
 }
