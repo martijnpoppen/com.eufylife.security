@@ -6,6 +6,7 @@ const { PushRegisterService, HttpService, PushClient, sleep } = require("./lib/e
 const flowActions = require("./lib/flow/actions.js");
 const flowConditions = require("./lib/flow/conditions.js");
 const flowTriggers = require("./lib/flow/triggers.js");
+const server = require("./server/index.js");
 
 const eufyCommandSendHelper = require("./lib/helpers/eufy-command-send.helper");
 const eufyNotificationCheckHelper = require("./lib/helpers/eufy-notification-check.helper");
@@ -14,6 +15,7 @@ const eufyParameterHelper = require("./lib/helpers/eufy-parameter.helper");
 const { log } = require("./logger.js");
 
 const ManagerSettings = Homey.ManagerSettings;
+const ManagerCloud = Homey.ManagerCloud;
 const _settingsKey = `${Homey.manifest.id}.settings`;
 let _httpService = undefined;
 let _deviceStore = undefined;
@@ -59,6 +61,8 @@ class App extends Homey.App {
         await eufyNotificationCheckHelper.init(this.appSettings);
         await flowTriggers.init();
     }
+
+    await server.init()
   }
 
   // -------------------- SETTINGS ----------------------
@@ -254,6 +258,13 @@ class App extends Homey.App {
   getDeviceStore() {
     this.log("getDeviceStore - retrieving DeviceStore", _deviceStore);
     return _deviceStore;
+  }
+
+  async getLocalAddress() {
+    const internalIp = (await Homey.ManagerCloud.getLocalAddress()).replace(/:.*/, '');
+    this.log(`getLocalAddress - Set internalIp`, internalIp);
+    
+    return internalIp;
   }
 }
 

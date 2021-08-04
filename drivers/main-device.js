@@ -141,15 +141,16 @@ module.exports = class mainDevice extends Homey.Device {
             Homey.app.log(`[Device] ${this.getName()} - startStream - `, startStream);
 
             if(startStream || startStream === '') {
+                const localAddress = await Homey.app.getLocalAddress()
                 const response = await _httpService.startStream(requestObject);
                 let streamStart = response.url ? response.url : null;
 
-                if(streamStart && startStream == 'hls') {
+                if(streamStart && startStream.includes('hls')) {
                     Homey.app.log(`[Device] ${this.getName()} - startStream - hls`, streamStart);
 
                     streamStart = streamStart.replace('rtmp', 'http');
                     streamStart = streamStart.split('?');
-                    streamStart = `${streamStart[0]}.m3u8?${streamStart[1]}`;
+                    streamStart = `http://${localAddress}:8889/stream/?hls=${streamStart[0]}.m3u8?${streamStart[1]}`;
                 }
 
                 Homey.app.log(`[Device] ${this.getName()} - startStream - hls/rtmp`, streamStart);
