@@ -538,5 +538,8 @@
   },
   "2.9.1": {
     "en": "FIX: HLS stream card. (Compatible with Chromecast)"
+  },
+  "2.9.2": {
+    "en": "FIX: remove app notification"
   }
 }
