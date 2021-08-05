@@ -547,5 +547,8 @@
   },
   "2.9.5": {
     "en": "FIX port binding for internal stream server"
+  },
+  "2.9.6": {
+    "en": "FIX: streamserver port in use issue - Try to close stream when finished playing"
   }
 }

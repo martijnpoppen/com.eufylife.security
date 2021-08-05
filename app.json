@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.9.5",
+  "version": "2.9.6",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -465,6 +465,13 @@
                 "label": {
                   "en": "HLS (Chromecast compatible)",
                   "nl": "HLS (Chromecast compatible)"
+                }
+              },
+              {
+                "id": "hls_muted",
+                "label": {
+                  "en": "HLS (Chromecast compatible (autoplay/muted))",
+                  "nl": "HLS (Chromecast compatible (autoplay/muted))"
                 }
               },
               {
