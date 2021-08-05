@@ -538,5 +538,11 @@
   },
   "2.9.1": {
     "en": "FIX: HLS stream card. (Compatible with Chromecast)"
+  },
+  "2.9.2": {
+    "en": "FIX: remove app notification"
+  },
+  "2.9.4": {
+    "en": "FIX: error on server port + 5 minute timeout on stream card"
   }
 }
