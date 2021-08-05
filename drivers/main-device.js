@@ -138,6 +138,11 @@ module.exports = class mainDevice extends Homey.Device {
                 'proto': 2
             }
 
+            if(this.streamTimeOut) {
+                Homey.app.log(`[Device] ${this.getName()} - startStream - clearTimeout`);
+                clearTimeout(this.streamTimeOut);
+            }
+
             Homey.app.log(`[Device] ${this.getName()} - startStream - `, startStream);
 
             if(startStream || startStream === '') {
@@ -156,6 +161,8 @@ module.exports = class mainDevice extends Homey.Device {
                 Homey.app.log(`[Device] ${this.getName()} - startStream - hls/rtmp`, streamStart);
                 
                 await this.setCapabilityValue( 'CMD_START_STREAM', streamStart);
+
+                this.streamTimeOut = setTimeout(() => {this.onCapability_CMD_START_STOP_STREAM(false)}, 300000);
             } else {
                 await _httpService.stopStream(requestObject);
                 await this.setCapabilityValue( 'CMD_START_STREAM', 'No stream found');

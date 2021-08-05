@@ -59,7 +59,7 @@ class App extends Homey.App {
         await flowTriggers.init();
     }
 
-    await server.init()
+    await server.init();
   }
 
   // -------------------- SETTINGS ----------------------

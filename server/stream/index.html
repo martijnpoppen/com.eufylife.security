@@ -137,23 +137,12 @@ function createVideoElem(srcUrl, autostart, fullscreen) {
         srcAltElem.type = 'application/x-mpegURL';
     }
 
-    if (!!fullscreen) {
-        setFullscreenStyles();
-        vidElem.width = '100%';
-        vidElem.height = '100%';
-    }
-    else {
-        vidElem.width = '640';
-        vidElem.height = '480';
-    }
-
-    if (!!autostart) {
-        vidElem.autoplay = 1;
-        vidElem.autostart = 1; // Note: Some version of Chrome only acknowledge autostart, rather than autoplay
-    }
-    else {
-        vidElem.preload = ''; // set preload to 'auto' if autoplay is not set.
-    }
+    
+    setFullscreenStyles();
+    vidElem.width = '100%';
+    vidElem.height = '100%';
+    vidElem.autoplay = 1;
+    vidElem.autostart = 1; // Note: Some version of Chrome only acknowledge autostart, rather than autoplay
 
     srcElem.src = srcUrl;
     srcElem.type = mimeType;
