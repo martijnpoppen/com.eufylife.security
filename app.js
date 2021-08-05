@@ -17,6 +17,7 @@ const { log } = require("./logger.js");
 const ManagerSettings = Homey.ManagerSettings;
 const ManagerCloud = Homey.ManagerCloud;
 const _settingsKey = `${Homey.manifest.id}.settings`;
+let _serverPort = undefined;
 let _httpService = undefined;
 let _deviceStore = undefined;
 let _devices = [];
@@ -41,25 +42,29 @@ class App extends Homey.App {
   // -------------------- INIT ----------------------
 
   async onInit() {
-    this.log(`${Homey.manifest.id} - ${Homey.manifest.version} started...`);
+      try {
+        this.log(`${Homey.manifest.id} - ${Homey.manifest.version} started...`);
 
-    await this.initSettings();
+        await this.initSettings();
 
-    this.log("onInit - Loaded settings", {...this.appSettings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
+        this.log("onInit - Loaded settings", {...this.appSettings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
 
-    if (this.appSettings.HUBS_AMOUNT > 0) {
-        await eufyCommandSendHelper.init(this.appSettings);
-        await flowActions.init();
-        await flowConditions.init();
+        if (this.appSettings.HUBS_AMOUNT > 0) {
+            await eufyCommandSendHelper.init(this.appSettings);
+            await flowActions.init();
+            await flowConditions.init();
+        }
+
+        if (this.appSettings.CREDENTIALS) {
+            await PushClient.init();
+            await eufyNotificationCheckHelper.init(this.appSettings);
+            await flowTriggers.init();
+        }
+
+        _serverPort = await server.init();
+    } catch (error) {
+        Homey.app.log(error);      
     }
-
-    if (this.appSettings.CREDENTIALS) {
-        await PushClient.init();
-        await eufyNotificationCheckHelper.init(this.appSettings);
-        await flowTriggers.init();
-    }
-
-    await server.init();
   }
 
   // -------------------- SETTINGS ----------------------
@@ -257,11 +262,11 @@ class App extends Homey.App {
     return _deviceStore;
   }
 
-  async getLocalAddress() {
-    const internalIp = (await Homey.ManagerCloud.getLocalAddress()).replace(/:.*/, '');
-    this.log(`getLocalAddress - Set internalIp`, internalIp);
+  async getStreamAddress() {
+    const internalIp = (await ManagerCloud.getLocalAddress()).replace(/:.*/, '');
+    this.log(`getStreamAddress - Set internalIp`, internalIp);
     
-    return internalIp;
+    return `${internalIp}:${_serverPort}`;
   }
 }
 

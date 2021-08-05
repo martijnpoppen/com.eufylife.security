@@ -4,7 +4,7 @@
     <meta charset='utf-8'>
     <title>HLS/M3U8 HTML5-Player</title>
     <style id='baseCss'>
-        html,body{height:100%;}body{background:url(./static/img/euro2016bg.jpg) no-repeat center center fixed;background-size:cover;background-color:#000;text-align:center;line-height:2.2em;padding-top:1%;font-family:Arial;overflow:hidden;}
+        html,body{height:100%;}body{background-color:#000;text-align:center;line-height:2.2em;padding-top:1%;font-family:Arial;overflow:hidden;}
         h1,h2,h3,#info span,#info a,.link-extern,.link-extern a{color:#fff;text-shadow:3px 3px 2px #000;}h1{font-size:1.6em;}h2{font-size:1.175em;font-weight:400;line-height:1.2em;}h3{font-size:.85em;font-weight:300;line-height:1.3em;}#info{font-size:80%;}.video-js{margin:0 auto;}
     </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/5.10.2/alt/video-js-cdn.css" rel="stylesheet">
@@ -112,7 +112,7 @@ function setFullscreenStyles() {
         '#header{display:none;}';
 }
 
-function createVideoElem(srcUrl, autostart, fullscreen) {
+function createVideoElem(srcUrl, autostart, fullscreen, muted) {
     var vidElem = document.createElement('video')
       , srcElem = document.createElement('source')
       , mimeType = getMimeType(srcUrl);
@@ -141,8 +141,13 @@ function createVideoElem(srcUrl, autostart, fullscreen) {
     setFullscreenStyles();
     vidElem.width = '100%';
     vidElem.height = '100%';
-    vidElem.autoplay = 1;
-    vidElem.autostart = 1; // Note: Some version of Chrome only acknowledge autostart, rather than autoplay
+    
+    if(muted) {
+        vidElem.muted = 1;
+    }
+
+    vidElem.autoplay = "autoplay";
+    vidElem.autostart = "autostart"; // Note: Some version of Chrome only acknowledge autostart, rather than autoplay
 
     srcElem.src = srcUrl;
     srcElem.type = mimeType;
@@ -154,18 +159,35 @@ function createVideoElem(srcUrl, autostart, fullscreen) {
 
     !!srcAltElem && vidElem.appendChild(srcAltElem);
     document.getElementById('player').appendChild(vidElem);
+    
+    vidElem.addEventListener('error',errHandler,false);
+    vidElem.addEventListener('ended',endedHandler,false);
+    
+    function errHandler(e) {
+        console.log('error', e);
+        document.getElementsByTagName('html')[0].remove();
+        window.open('','_self').close();
+    }
+
+    function endedHandler(e) {
+        console.log('ended');
+        document.getElementsByTagName('html')[0].remove();
+        window.open('','_self').close();
+    }
 };
+
 
 window.onload = function () {
     var queryParams = getQueryParams()
       , videoSource = ('undefined' !== typeof queryParams.hls) ? encodeURI(queryParams.hls) : false
       , autostart = 1
       , fullscreen = 1
+      , muted = ('undefined' !== typeof queryParams.muted) ? true : false
 
     console.log('Request params:');
     console.dir(queryParams);
     if (!!videoSource && '' !== videoSource) {
-        createVideoElem(videoSource, autostart, fullscreen);
+        createVideoElem(videoSource, autostart, fullscreen, muted);
     }
 };
 

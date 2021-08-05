@@ -138,16 +138,13 @@ module.exports = class mainDevice extends Homey.Device {
                 'proto': 2
             }
 
-            if(this.streamTimeOut) {
-                Homey.app.log(`[Device] ${this.getName()} - startStream - clearTimeout`);
-                clearTimeout(this.streamTimeOut);
-            }
-
             Homey.app.log(`[Device] ${this.getName()} - startStream - `, startStream);
 
             if(startStream || startStream === '') {
-                const localAddress = await Homey.app.getLocalAddress()
+                const localAddress = await Homey.app.getStreamAddress();
+
                 const response = await _httpService.startStream(requestObject);
+                
                 let streamStart = response.url ? response.url : null;
 
                 if(streamStart && startStream.includes('hls')) {
@@ -155,17 +152,15 @@ module.exports = class mainDevice extends Homey.Device {
 
                     streamStart = streamStart.replace('rtmp', 'http');
                     streamStart = streamStart.split('?');
-                    streamStart = `http://${localAddress}:8889/stream/?hls=${streamStart[0]}.m3u8?${streamStart[1]}`;
+                    streamStart = `http://${localAddress}/stream/?hls=${streamStart[0]}.m3u8?${streamStart[1]}`;
                 }
 
                 Homey.app.log(`[Device] ${this.getName()} - startStream - hls/rtmp`, streamStart);
                 
                 await this.setCapabilityValue( 'CMD_START_STREAM', streamStart);
-
-                this.streamTimeOut = setTimeout(() => {this.onCapability_CMD_START_STOP_STREAM(false)}, 300000);
             } else {
-                await _httpService.stopStream(requestObject);
                 await this.setCapabilityValue( 'CMD_START_STREAM', 'No stream found');
+                await _httpService.stopStream(requestObject);
             }
 
             return Promise.resolve(true);

@@ -1,13 +1,21 @@
+const Homey = require('homey');
 const static = require('node-static');
 const http = require('http');
 
 exports.init = async function () {
     try {
+        const port = 39827;
         const file = new(static.Server)(__dirname);
 
-        http.createServer(function (req, res) {
+        const server = await http.createServer(function (req, res) {
           file.serve(req, res);
-        }).listen(8889);
+        });
+
+        await server.listen(port);
+
+        server.on('error', console.log)
+
+        return port;
     } catch (error) {
         Homey.app.log(error);
     }
