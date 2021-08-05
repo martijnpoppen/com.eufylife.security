@@ -544,5 +544,8 @@
   },
   "2.9.4": {
     "en": "FIX: error on server port + 5 minute timeout on stream card"
+  },
+  "2.9.5": {
+    "en": "FIX port binding for internal stream server"
   }
 }
