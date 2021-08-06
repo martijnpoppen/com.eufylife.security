@@ -550,5 +550,8 @@
   },
   "2.9.6": {
     "en": "FIX: streamserver port in use issue - Try to close stream when finished playing"
+  },
+  "2.9.7": {
+    "en": "FIX: start stream as muted when autoplay is not supported"
   }
 }
