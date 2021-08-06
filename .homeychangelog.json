@@ -553,5 +553,8 @@
   },
   "2.9.7": {
     "en": "FIX: start stream as muted when autoplay is not supported"
+  },
+  "2.9.8": {
+    "en": "FIX: start stream as muted when autoplay is not supported"
   }
 }
