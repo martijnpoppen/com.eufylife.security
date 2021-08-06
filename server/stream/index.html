@@ -159,9 +159,12 @@ function createVideoElem(srcUrl, autostart, fullscreen, muted) {
 
     !!srcAltElem && vidElem.appendChild(srcAltElem);
     document.getElementById('player').appendChild(vidElem);
+
+    var playing = false;
     
-    vidElem.addEventListener('error',errHandler,false);
-    vidElem.addEventListener('ended',endedHandler,false);
+    vidElem.addEventListener('error', errHandler,false);
+    vidElem.addEventListener('ended', endedHandler,false);
+    vidElem.addEventListener('playing', playingHandler,false);
     
     function errHandler(e) {
         console.log('error', e);
@@ -174,6 +177,19 @@ function createVideoElem(srcUrl, autostart, fullscreen, muted) {
         document.getElementsByTagName('html')[0].remove();
         window.open('','_self').close();
     }
+
+    function playingHandler(e) {
+        console.log('playing');
+        playing = true
+    }
+
+    setTimeout(() => {
+        if(!playing) {
+            console.log('playing failed - starting');
+            vidElem.muted = true;
+            vidElem.play();
+        }
+    }, 4000);
 };
 
 
