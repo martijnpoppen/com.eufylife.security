@@ -32,7 +32,7 @@ module.exports = class mainHub extends mainDevice {
         await this.findHubIp();
 
         this.EufyP2P = new EufyP2P(hub);
-        await this.EufyP2P.initDevClientService();
+        await this.EufyP2P.initP2P();
     }
     
 

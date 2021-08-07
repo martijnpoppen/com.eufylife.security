@@ -36,7 +36,7 @@ module.exports = class mainDevice extends Homey.Device {
         this.setUnavailable(`Initializing ${this.getName()}`);
 
         this.EufyP2P = new EufyP2P(hub);
-        await this.EufyP2P.initDevClientService();
+        await this.EufyP2P.initP2P();
     }
 
     async checkCapabilities() {
