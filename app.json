@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.9.8",
+  "version": "2.10.0",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -88,6 +88,16 @@
   "source": "https://github.com/martijnpoppen/com.eufylife.security",
   "homeyCommunityTopicId": 44921,
   "support": "https://community.athom.com/t/app-eufy-security/44921",
+  "discovery": {
+    "homebase_discovery": {
+      "type": "mdns-sd",
+      "mdns-sd": {
+        "protocol": "tcp",
+        "name": "_hap"
+      },
+      "id": "{{txt.id}}"
+    }
+  },
   "flow": {
     "triggers": [
       {

@@ -556,5 +556,8 @@
   },
   "2.9.8": {
     "en": "FIX: start stream as muted when autoplay is not supported"
+  },
+  "2.10.0": {
+    "en": "NEW: use Homey Discovery to find local Homebase IP on app start"
   }
 }

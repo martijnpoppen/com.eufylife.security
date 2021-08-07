@@ -1,33 +1,40 @@
 const Homey = require('homey');
 const { CommandType, sleep } = require('../lib/eufy-homey-client');
 const mainDevice = require('./main-device');
-const eufyCommandSendHelper = require("../../lib/helpers/eufy-command-send.helper");
-const eufyNotificationCheckHelper = require("../../lib/helpers/eufy-notification-check.helper");
+const EufyP2P = require("../../lib/helpers/eufy-p2p.helper");
 const eufyParameterHelper = require("../../lib/helpers/eufy-parameter.helper");
 
 module.exports = class mainHub extends mainDevice {
     async onInit() {
-		Homey.app.log('[HUB] - init =>', this.getName());
-        Homey.app.log('[HUB] - init =>', this.getData());
-        Homey.app.setDevices(this);
-        this.setUnavailable(`Initializing ${this.getName()}`);
-
-        this.removeCapability('CMD_REBOOT_HUB');
-        await sleep(2000);
-
-        if(this.hasCapability('alarm_generic')) {
-          this.resetCapability('alarm_generic');
-        }
-
+        await this.setupEufyP2P();
+        await this.resetCapabilities();
         await this.checkCapabilities();
-
-        this.registerCapabilityListener('CMD_SET_ARMING', this.onCapability_CMD_SET_ARMING.bind(this));
+        await this.setCapabilitiesListeners();
 
         this.setAvailable();
 
         await sleep(9000);
         this.checkSettings(this, true);
     }
+
+    async setupEufyP2P() {
+        const deviceObject = this.getData();
+        const settings = await Homey.app.getSettings();
+        const hub = settings.HUBS[deviceObject.station_sn];
+
+		Homey.app.log('[HUB] - init =>', this.getName());
+        Homey.app.log('[HUB] - init =>', this.getData());
+        
+        Homey.app.setDevices(this);
+
+        this.setUnavailable(`Initializing ${this.getName()}`);
+
+        await this.findHubIp();
+
+        this.EufyP2P = new EufyP2P(hub);
+        await this.EufyP2P.initDevClientService();
+    }
+    
 
     async onSettings(oldSettings, newSettings, changedKeys) {
         Homey.app.log(`[Device] ${this.getName()} - onSettings - Old/New`, oldSettings, newSettings);
@@ -39,8 +46,26 @@ module.exports = class mainHub extends mainDevice {
         this.checkSettings(this, false, newSettings);
     }
 
+    async resetCapabilities() {
+        try {
+            if(this.hasCapability('alarm_generic')) {
+                this.resetCapability('alarm_generic');
+            }
+        } catch (error) {
+            Homey.app.log(error)
+        }
+    }
+
     async resetCapability(name, value = false) {
       this.setCapabilityValue(name, value);
+    }
+
+    async setCapabilitiesListeners() {
+        try {
+            this.registerCapabilityListener('CMD_SET_ARMING', this.onCapability_CMD_SET_ARMING.bind(this));
+        } catch (error) {
+            Homey.app.log(error)
+        }
     }
 
     async checkSettings( ctx, initCron = false, overrideSettings = {} ) {
@@ -65,7 +90,7 @@ module.exports = class mainHub extends mainDevice {
                     }
                 }
 
-                await eufyCommandSendHelper.sendCommand('CMD_HUB_NOTIFY_MODE', deviceObject.station_sn, CommandType.CMD_HUB_NOTIFY_MODE, nested_payload, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
+                await this.EufyP2P.sendCommand('CMD_HUB_NOTIFY_MODE', deviceObject.station_sn, CommandType.CMD_HUB_NOTIFY_MODE, nested_payload, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
 
 
                 const payload_edit = {
@@ -76,7 +101,7 @@ module.exports = class mainHub extends mainDevice {
                     }
                 }
 
-                await eufyCommandSendHelper.sendCommand('CMD_HUB_NOTIFY_MODE', deviceObject.station_sn, CommandType.CMD_HUB_NOTIFY_MODE, {...nested_payload, ...payload_edit}, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
+                await this.EufyP2P.sendCommand('CMD_HUB_NOTIFY_MODE', deviceObject.station_sn, CommandType.CMD_HUB_NOTIFY_MODE, {...nested_payload, ...payload_edit}, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
             }
 
             if(initCron) {
@@ -126,7 +151,7 @@ module.exports = class mainHub extends mainDevice {
                 }
             }
 
-            await eufyCommandSendHelper.sendCommand('CMD_SET_ARMING', deviceObject.station_sn, CommandType.CMD_SET_ARMING, nested_payload, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
+            await this.EufyP2P.sendCommand('CMD_SET_ARMING', deviceObject.station_sn, CommandType.CMD_SET_ARMING, nested_payload, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
 
             return Promise.resolve(true);
         } catch (e) {
@@ -150,7 +175,7 @@ module.exports = class mainHub extends mainDevice {
             }
             // time + 2 so we can disable alarm manually.
 
-            await eufyCommandSendHelper.sendCommand('CMD_SET_TONE_FILE', deviceObject.station_sn, CommandType.CMD_SET_TONE_FILE, nested_payload, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
+            await this.EufyP2P.sendCommand('CMD_SET_TONE_FILE', deviceObject.station_sn, CommandType.CMD_SET_TONE_FILE, nested_payload, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
             
             // wait for alarm to be finished. turn off to have a off notification. So the alarm_generic will notify
             await sleep(time * 1000);
@@ -164,7 +189,7 @@ module.exports = class mainHub extends mainDevice {
                     "user_name": "Homey"
                 }
             }
-            await eufyCommandSendHelper.sendCommand('CMD_SET_TONE_FILE', deviceObject.station_sn, CommandType.CMD_SET_TONE_FILE, nested_payload_off, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
+            await this.EufyP2P.sendCommand('CMD_SET_TONE_FILE', deviceObject.station_sn, CommandType.CMD_SET_TONE_FILE, nested_payload_off, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
             
             return Promise.resolve(true);
         } catch (e) {
@@ -186,11 +211,45 @@ module.exports = class mainHub extends mainDevice {
                     "user_name": "Homey"
                 }
             }
-            await eufyCommandSendHelper.sendCommand('CMD_SET_TONE_FILE', deviceObject.station_sn, CommandType.CMD_SET_TONE_FILE, nested_payload, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
+            await this.EufyP2P.sendCommand('CMD_SET_TONE_FILE', deviceObject.station_sn, CommandType.CMD_SET_TONE_FILE, nested_payload, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
             return Promise.resolve(true);
         } catch (e) {
             Homey.app.error(e);
             return Promise.reject(e);
+        }
+    }
+
+
+    async findHubIp() {
+        try {
+            let settings = await Homey.app.getSettings();
+            const deviceObject = this.getData();
+            const stationSN = deviceObject.station_sn.slice(deviceObject.station_sn.length - 4)
+            const stationIP = settings.HUBS[deviceObject.station_sn].LOCAL_STATION_IP;
+          
+            const discoveryStrategy = Homey.ManagerDiscovery.getDiscoveryStrategy("homebase_discovery");
+    
+            // Use the discovery results that were already found
+            const initialDiscoveryResults = discoveryStrategy.getDiscoveryResults();
+            for (const discoveryResult of Object.values(initialDiscoveryResults)) {
+                Homey.app.log(`[Device] ${this.getName()} - findHomebaseIp =>`, discoveryResult);
+
+                const name = discoveryResult.name.slice(discoveryResult.name.length - 4) || null ;
+                const address = discoveryResult.address || null;
+
+                Homey.app.log(`[Device] ${this.getName()} - findHomebaseIp => name match with station SN =>`, name, stationSN);
+                Homey.app.log(`[Device] ${this.getName()} - findHomebaseIp => Ip match with settings =>`, stationIP, address); 
+              
+                if(stationSN === name && stationIP !== address) {
+                    Homey.app.log(`[Device] ${this.getName()} - findHomebaseIp => name matches - different IP`);               
+
+                    settings.HUBS[deviceObject.station_sn].LOCAL_STATION_IP = address;
+
+                    await Homey.app.updateSettings(settings, false);
+                }
+            }
+        } catch (error) {
+            Homey.app.log(error)
         }
     }
 }

@@ -8,7 +8,6 @@ const flowConditions = require("./lib/flow/conditions.js");
 const flowTriggers = require("./lib/flow/triggers.js");
 const server = require("./server/index.js");
 
-const eufyCommandSendHelper = require("./lib/helpers/eufy-command-send.helper");
 const eufyNotificationCheckHelper = require("./lib/helpers/eufy-notification-check.helper");
 const eufyParameterHelper = require("./lib/helpers/eufy-parameter.helper");
 
@@ -50,7 +49,6 @@ class App extends Homey.App {
         this.log("onInit - Loaded settings", {...this.appSettings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
 
         if (this.appSettings.HUBS_AMOUNT > 0) {
-            await eufyCommandSendHelper.init(this.appSettings);
             await flowActions.init();
             await flowConditions.init();
         }
@@ -116,9 +114,13 @@ class App extends Homey.App {
     }
   }
 
- updateSettings(settings) {
+ updateSettings(settings, resetHttpService = true) {
     this.log("updateSettings - New settings:",  {...settings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
-    _httpService = undefined;
+
+    if(resetHttpService) {
+        _httpService = undefined;
+    }
+
     this.appSettings = settings;
     this.saveSettings();
   }
@@ -180,8 +182,7 @@ class App extends Homey.App {
       this.log("eufyLogin - Loaded settings", {...this.appSettings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
 
       if (settings.HUBS_AMOUNT  > 0) {
-        await this.setDeviceStore();
-        await eufyCommandSendHelper.init(this.appSettings);
+        await this.setDeviceStore()
         await flowActions.init();
         await flowConditions.init();
       } 
