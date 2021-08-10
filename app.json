@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.11.0",
+  "version": "2.11.2",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -231,63 +231,63 @@
             "type": "dropdown",
             "values": [
               {
-                "id": "1",
+                "id": "home",
                 "label": {
                   "en": "Home",
                   "nl": "Thuis"
                 }
               },
               {
-                "id": "0",
+                "id": "away",
                 "label": {
                   "en": "Away",
                   "nl": "Afwezig"
                 }
               },
               {
-                "id": "2",
+                "id": "schedule",
                 "label": {
                   "en": "Schedule",
                   "nl": "Schema"
                 }
               },
               {
-                "id": "47",
+                "id": "geo",
                 "label": {
                   "en": "Geo",
                   "nl": "Geo"
                 }
               },
               {
-                "id": "63",
+                "id": "disarmed",
                 "label": {
                   "en": "Disarmed",
                   "nl": "Uitgeschakeld"
                 }
               },
               {
-                "id": "6",
+                "id": "off",
                 "label": {
                   "en": "Off",
                   "nl": "Uit"
                 }
               },
               {
-                "id": "3",
+                "id": "custom_1",
                 "label": {
                   "en": "Custom 1",
                   "nl": "Custom 1"
                 }
               },
               {
-                "id": "4",
+                "id": "custom_2",
                 "label": {
                   "en": "Custom 2",
                   "nl": "Custom 2"
                 }
               },
               {
-                "id": "5",
+                "id": "custom_3",
                 "label": {
                   "en": "Custom 3",
                   "nl": "Custom 3"
@@ -316,63 +316,63 @@
             "type": "dropdown",
             "values": [
               {
-                "id": "1",
+                "id": "home",
                 "label": {
                   "en": "Home",
                   "nl": "Thuis"
                 }
               },
               {
-                "id": "0",
+                "id": "away",
                 "label": {
                   "en": "Away",
                   "nl": "Afwezig"
                 }
               },
               {
-                "id": "2",
+                "id": "schedule",
                 "label": {
                   "en": "Schedule",
                   "nl": "Schema"
                 }
               },
               {
-                "id": "47",
+                "id": "geo",
                 "label": {
                   "en": "Geo",
                   "nl": "Geo"
                 }
               },
               {
-                "id": "63",
+                "id": "disarmed",
                 "label": {
                   "en": "Disarmed",
                   "nl": "Uitgeschakeld"
                 }
               },
               {
-                "id": "6",
+                "id": "off",
                 "label": {
                   "en": "Off",
                   "nl": "Uit"
                 }
               },
               {
-                "id": "3",
+                "id": "custom_1",
                 "label": {
                   "en": "Custom 1",
                   "nl": "Custom 1"
                 }
               },
               {
-                "id": "4",
+                "id": "custom_2",
                 "label": {
                   "en": "Custom 2",
                   "nl": "Custom 2"
                 }
               },
               {
-                "id": "5",
+                "id": "custom_3",
                 "label": {
                   "en": "Custom 3",
                   "nl": "Custom 3"
@@ -2020,63 +2020,63 @@
       "setable": true,
       "values": [
         {
-          "id": "1",
+          "id": "home",
           "title": {
             "en": "Home",
             "nl": "Thuis"
           }
         },
         {
-          "id": "0",
+          "id": "away",
           "title": {
             "en": "Away",
             "nl": "Afwezig"
           }
         },
         {
-          "id": "2",
+          "id": "schedule",
           "title": {
             "en": "Schedule",
             "nl": "Schema"
           }
         },
         {
-          "id": "47",
+          "id": "geo",
           "title": {
             "en": "Geo",
             "nl": "Geo"
           }
         },
         {
-          "id": "63",
+          "id": "disarmed",
           "title": {
             "en": "Disarmed",
             "nl": "Uitgeschakeld"
           }
         },
         {
-          "id": "6",
+          "id": "off",
           "title": {
             "en": "Off",
             "nl": "Uit"
           }
         },
         {
-          "id": "3",
+          "id": "custom_1",
           "title": {
             "en": "Custom 1",
             "nl": "Custom 1"
           }
         },
         {
-          "id": "4",
+          "id": "custom_2",
           "title": {
             "en": "Custom 2",
             "nl": "Custom 2"
           }
         },
         {
-          "id": "5",
+          "id": "custom_3",
           "title": {
             "en": "Custom 3",
             "nl": "Custom 3"
@@ -2087,7 +2087,7 @@
     "CMD_SET_ARMING_HUB": {
       "type": "boolean",
       "uiComponent": null,
-      "getable": true,
+      "getable": false,
       "setable": false,
       "title": {
         "en": "CMD_SET_ARMING_HUB",
@@ -2097,7 +2097,7 @@
     "CMD_REVERSE_DEVS_SWITCH": {
       "type": "boolean",
       "uiComponent": null,
-      "getable": true,
+      "getable": false,
       "setable": false,
       "title": {
         "en": "CMD_REVERSE_DEVS_SWITCH",
@@ -2107,7 +2107,7 @@
     "CMD_INDOOR_PAN_TURN": {
       "type": "boolean",
       "uiComponent": null,
-      "getable": true,
+      "getable": false,
       "setable": false,
       "title": {
         "en": "CMD_INDOOR_PAN_TURN",
@@ -2171,7 +2171,7 @@
     "CMD_DOORBELL_QUICK_RESPONSE_POWERED": {
       "type": "boolean",
       "uiComponent": null,
-      "getable": true,
+      "getable": false,
       "setable": false,
       "title": {
         "en": "CMD_DOORBELL_QUICK_RESPONSE_POWERED",
@@ -2191,7 +2191,7 @@
     "CMD_REBOOT_HUB": {
       "type": "string",
       "uiComponent": null,
-      "getable": true,
+      "getable": false,
       "setable": false,
       "title": {
         "en": "Reboot",
@@ -2201,7 +2201,7 @@
     "CMD_TRIGGER_ALARM": {
       "type": "string",
       "uiComponent": null,
-      "getable": true,
+      "getable": false,
       "setable": false,
       "title": {
         "en": "Turn generic alarm on",
@@ -2211,7 +2211,7 @@
     "CMD_SET_HUB_ALARM_CLOSE": {
       "type": "string",
       "uiComponent": null,
-      "getable": true,
+      "getable": false,
       "setable": false,
       "title": {
         "en": "Turn generic alarm off",
@@ -2221,7 +2221,7 @@
     "CMD_IRCUT_SWITCH": {
       "type": "string",
       "uiComponent": null,
-      "getable": true,
+      "getable": false,
       "setable": false,
       "title": {
         "en": "Toggle IR",
@@ -2231,7 +2231,7 @@
     "CMD_BAT_DOORBELL_VIDEO_QUALITY": {
       "type": "string",
       "uiComponent": null,
-      "getable": true,
+      "getable": false,
       "setable": false,
       "title": {
         "en": "Toggle HDR",
@@ -2241,7 +2241,7 @@
     "CMD_BAT_DOORBELL_WDR_SWITCH": {
       "type": "string",
       "uiComponent": null,
-      "getable": true,
+      "getable": false,
       "setable": false,
       "title": {
         "en": "Toggle WDR switch",
