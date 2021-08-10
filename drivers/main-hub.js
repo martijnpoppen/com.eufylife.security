@@ -1,8 +1,11 @@
 const Homey = require('homey');
 const { CommandType, sleep } = require('../lib/eufy-homey-client');
+
 const mainDevice = require('./main-device');
 const EufyP2P = require("../../lib/helpers/eufy-p2p.helper");
 const eufyParameterHelper = require("../../lib/helpers/eufy-parameter.helper");
+
+const { ARM_TYPES } = require('../constants/capability_types');
 
 module.exports = class mainHub extends mainDevice {
     async onInit() {
@@ -105,7 +108,7 @@ module.exports = class mainHub extends mainDevice {
             }
 
             if(initCron) {
-                await eufyParameterHelper.registerCronTask(deviceObject.device_sn, "EVERY_THREE_HOURS", this.checkSettings, ctx)
+                await eufyParameterHelper.registerCronTask(deviceObject.device_sn, "EVERY_HALVE_HOURS", this.checkSettings, ctx)
             }
             
             return Promise.resolve(true);
@@ -117,12 +120,11 @@ module.exports = class mainHub extends mainDevice {
 
     async onCapability_NTFY_TRIGGER( message, value ) {
         try {
-            const valueString = Number.isInteger(value) ? value.toString() : null;
             const settings = this.getSettings();
             const setMotionAlarm = message === 'alarm_generic' && !!settings.alarm_generic_enabled;
 
             if(this.hasCapability(message)) {
-                if(valueString) this.setCapabilityValue(message, valueString);
+                if(message !== 'alarm_generic') this.setCapabilityValue(message, value);
                 if(setMotionAlarm) {
                     this.setCapabilityValue(message, value);
                 }
@@ -137,7 +139,7 @@ module.exports = class mainHub extends mainDevice {
 
     async onCapability_CMD_SET_ARMING( value ) {
         try {
-            let CMD_SET_ARMING = parseInt(value);
+            let CMD_SET_ARMING = ARM_TYPES[value];
             
             const deviceObject = this.getData();
             const settings = await Homey.app.getSettings();

@@ -5,6 +5,7 @@ const { CommandType, sleep } = require('../lib/eufy-homey-client');
 const eufyParameterHelper = require("../../lib/helpers/eufy-parameter.helper");
 const utils = require('../../lib/utils.js');
 const EufyP2P = require('../lib/helpers/eufy-p2p.helper');
+const { ARM_TYPES } = require('../constants/capability_types');
 
 let _httpService = undefined;
 
@@ -129,7 +130,7 @@ module.exports = class mainDevice extends Homey.Device {
         const deviceObject = this.getData();
 
         try {
-            let CMD_SET_ARMING = parseInt(value);
+            let CMD_SET_ARMING = ARM_TYPES[value];
             
             if(CMD_SET_ARMING == '6') {
                 throw new Error('Not available for this device');

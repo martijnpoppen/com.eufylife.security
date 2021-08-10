@@ -562,8 +562,5 @@
   },
   "2.11.0": {
     "en": "NEW: rewrite P2P service - (Allows synchronous commands for multiple devices)"
-  },
-  "2.11.1": {
-    "en": "FIX: arm mode values - (number to text) - Increase interval for Homebase force_notifications"
   }
 }
