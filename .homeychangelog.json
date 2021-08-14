@@ -568,5 +568,8 @@
   },
   "2.11.2": {
     "en": "FIX: stream url not showing up in flows"
+  },
+  "2.11.3": {
+    "en": "FIX: Homebase couldnt find EufyP2P service."
   }
 }
