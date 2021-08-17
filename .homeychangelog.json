@@ -577,8 +577,5 @@
   },
   "2.11.5": {
     "en": "FIX: homebase not setting away mode"
-  },
-  "2.11.6": {
-    "en": "ADD: outdoor cam s/n"
   }
 }
