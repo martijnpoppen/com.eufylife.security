@@ -571,5 +571,11 @@
   },
   "2.11.3": {
     "en": "FIX: Homebase couldnt find EufyP2P service."
+  },
+  "2.11.4": {
+    "en": "FIX: prevent invalid arm mode for Homebase"
+  },
+  "2.11.5": {
+    "en": "FIX: homebase not setting away mode"
   }
 }
