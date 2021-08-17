@@ -80,7 +80,7 @@ class App extends Homey.App {
         this.log("initSettings - Found settings key", _settingsKey);
         this.appSettings = ManagerSettings.get(_settingsKey);
         
-        if(this.appSettings && this.appSettings.SET_DEBUG && !this.appSettings.ADMIN) {
+        if(this.appSettings && !this.appSettings.ADMIN) {
             this.appSettings = {...this.appSettings, SET_DEBUG: false};
             this.saveSettings();
         }

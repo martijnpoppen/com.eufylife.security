@@ -141,6 +141,11 @@ module.exports = class mainHub extends mainDevice {
         try {
             let CMD_SET_ARMING = ARM_TYPES[value];
             
+            if(typeof CMD_SET_ARMING === 'undefined' || CMD_SET_ARMING === null) {
+                Homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_SET_ARMING => wrong arm type`, CMD_SET_ARMING, value);
+                return Promise.resolve(true);
+            }
+
             const deviceObject = this.getData();
             const settings = await Homey.app.getSettings();
             const nested_payload = {
