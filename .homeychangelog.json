@@ -580,5 +580,8 @@
   },
   "2.11.6": {
     "en": "ADD: outdoor cam s/n"
+  },
+  "2.11.7": {
+    "en": "FIX: support multiple device for 1 Hub / FIX: support multiple standalone devices"
   }
 }
