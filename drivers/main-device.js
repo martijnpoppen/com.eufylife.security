@@ -27,17 +27,12 @@ module.exports = class mainDevice extends Homey.Device {
     }
 
     async setupEufyP2P() {
-        const deviceObject = this.getData();
-        const settings = await Homey.app.getSettings();
-        const hub = settings.HUBS[deviceObject.station_sn];
-
 		Homey.app.log('[Device] - init =>', this.getName());
-        Homey.app.setDevices(this);
+        Homey.app._devices.push(this);
 
         this.setUnavailable(`Initializing ${this.getName()}`);
 
-        this.EufyP2P = new EufyP2P(hub);
-        await this.EufyP2P.initP2P();
+        this.EufyP2P = EufyP2P;
     }
 
     async checkCapabilities() {
@@ -378,7 +373,10 @@ module.exports = class mainDevice extends Homey.Device {
         try {
             await sleep(9500);
             const deviceObject = ctx.getData();
-            const deviceStore = Homey.app.getDeviceStore();
+            const deviceStore = Homey.app._deviceStore;
+
+            Homey.app.log(`[Device] ${ctx.getName()} - getDeviceStore - retrieving DeviceStore`, deviceStore);
+
             if(deviceStore && deviceStore.length) {
                 const deviceMatch = deviceStore && deviceStore.find(d => d.device_sn === deviceObject.device_sn);
                 ctx.setStoreValue('device_index', deviceMatch.index);

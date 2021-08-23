@@ -21,21 +21,16 @@ module.exports = class mainHub extends mainDevice {
     }
 
     async setupEufyP2P() {
-        const deviceObject = this.getData();
-        const settings = await Homey.app.getSettings();
-        const hub = settings.HUBS[deviceObject.station_sn];
-
 		Homey.app.log('[HUB] - init =>', this.getName());
         Homey.app.log('[HUB] - init =>', this.getData());
         
-        Homey.app.setDevices(this);
+        Homey.app._devices.push(this);
 
         this.setUnavailable(`Initializing ${this.getName()}`);
 
         await this.findHubIp();
 
-        this.EufyP2P = new EufyP2P(hub);
-        await this.EufyP2P.initP2P();
+        this.EufyP2P = EufyP2P;
     }
     
 

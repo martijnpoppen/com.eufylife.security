@@ -8,6 +8,7 @@ const flowConditions = require("./lib/flow/conditions.js");
 const flowTriggers = require("./lib/flow/triggers.js");
 const server = require("./server/index.js");
 
+const EufyP2P = require("./lib/helpers/eufy-p2p.helper");
 const eufyNotificationCheckHelper = require("./lib/helpers/eufy-notification-check.helper");
 const eufyParameterHelper = require("./lib/helpers/eufy-parameter.helper");
 
@@ -18,8 +19,6 @@ const ManagerCloud = Homey.ManagerCloud;
 const _settingsKey = `${Homey.manifest.id}.settings`;
 let _serverPort = undefined;
 let _httpService = undefined;
-let _deviceStore = undefined;
-let _devices = [];
 
 class App extends Homey.App {
   log() {
@@ -49,6 +48,8 @@ class App extends Homey.App {
         this.log("onInit - Loaded settings", {...this.appSettings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
 
         if (this.appSettings.HUBS_AMOUNT > 0) {
+            this.P2P = {};
+            await EufyP2P.init(this.appSettings);
             await flowActions.init();
             await flowConditions.init();
         }
@@ -85,15 +86,17 @@ class App extends Homey.App {
             this.saveSettings();
         }
 
+        this.P2P = {};
+        this._devices = [];
+        this._deviceStore = [];
+
         if (!_httpService) {
             _httpService = await this.setHttpService(this.appSettings);
         }
 
-        await this.setDeviceStore();
+        await this.setDeviceStore(this, true);
 
         await eufyParameterHelper.unregisterAllTasks();
-
-        await eufyParameterHelper.registerCronTask("setDeviceStore", "EVERY_HALVE_HOURS", this.setDeviceStore)
 
         return;
       }
@@ -182,7 +185,9 @@ class App extends Homey.App {
       this.log("eufyLogin - Loaded settings", {...this.appSettings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
 
       if (settings.HUBS_AMOUNT  > 0) {
-        await this.setDeviceStore()
+        this.P2P = {};
+        await EufyP2P.init(this.appSettings);
+        await this.setDeviceStore(this);
         await flowActions.init();
         await flowConditions.init();
       } 
@@ -220,17 +225,10 @@ class App extends Homey.App {
       return _httpService;
   }
 
-  setDevices(device) {
-    _devices.push(device);
-  }
-
-  getDevices() {
-      return _devices;
-  }
-
-  async setDeviceStore() {
-    let deviceStore = [];
+  async setDeviceStore(ctx, initCron = false) {
     let devices = await _httpService.listDevices();
+
+    this._deviceStore = [];
 
     if(devices.length) {
         Homey.app.log("setDeviceStore - Mapping deviceList", devices);
@@ -248,19 +246,17 @@ class App extends Homey.App {
             }
         });
 
-        deviceStore.push(...devices);
+        this._deviceStore.push(...devices);
     }
 
-    Homey.app.log("setDeviceStore - Setting up DeviceStore", deviceStore);
+    Homey.app.log("setDeviceStore - Setting up DeviceStore", this._deviceStore);
+
+    if(initCron) {
+        await eufyParameterHelper.registerCronTask("setDeviceStore", "EVERY_HALVE_HOURS", this.setDeviceStore, ctx)
+    }
     
-    _deviceStore = deviceStore;
 
-    return deviceStore;
-  }
-
-  getDeviceStore() {
-    this.log("getDeviceStore - retrieving DeviceStore", _deviceStore);
-    return _deviceStore;
+    return this._deviceStore;
   }
 
   async getStreamAddress() {

@@ -7,7 +7,7 @@ const eufyNotificationCheckHelper = require("../../lib/helpers/eufy-notification
 module.exports = class mainSensor extends mainDevice {
     async onInit() {
 		Homey.app.log('[Device] - init =>', this.getName());
-        Homey.app.setDevices(this);
+        Homey.app._devices.push(this);
 
         this.removeCapability('measure_battery');
         this.removeCapability('measure_temperature');

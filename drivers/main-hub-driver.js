@@ -15,7 +15,7 @@ module.exports = class mainHubDriver extends mainDriver {
             // FIX 1.8.4 check for device id, to prevent duplicates.
             let pairedDriverDevices = [];
 
-            Homey.app.getDevices().forEach(device => {
+            Homey.app._devices.forEach(device => {
                 const data = device.getData();
                 pairedDriverDevices.push(data.device_sn);
             })
