@@ -583,5 +583,8 @@
   },
   "2.11.7": {
     "en": "FIX: support multiple device for 1 Hub / FIX: support multiple standalone devices"
+  },
+  "2.11.8": {
+    "en": "Refresh P2P service when expired"
   }
 }
