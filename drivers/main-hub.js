@@ -29,8 +29,6 @@ module.exports = class mainHub extends mainDevice {
         this.setUnavailable(`Initializing ${this.getName()}`);
 
         await this.findHubIp();
-
-        this.EufyP2P = EufyP2P;
     }
     
 
@@ -88,7 +86,7 @@ module.exports = class mainHub extends mainDevice {
                     }
                 }
 
-                await ctx.EufyP2P.sendCommand('CMD_HUB_NOTIFY_MODE', deviceObject.station_sn, CommandType.CMD_HUB_NOTIFY_MODE, nested_payload, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
+                await Homey.app.EufyP2P.sendCommand('CMD_HUB_NOTIFY_MODE', deviceObject.station_sn, CommandType.CMD_HUB_NOTIFY_MODE, nested_payload, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
 
 
                 const payload_edit = {
@@ -99,7 +97,7 @@ module.exports = class mainHub extends mainDevice {
                     }
                 }
 
-                await ctx.EufyP2P.sendCommand('CMD_HUB_NOTIFY_MODE', deviceObject.station_sn, CommandType.CMD_HUB_NOTIFY_MODE, {...nested_payload, ...payload_edit}, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
+                await Homey.app.EufyP2P.sendCommand('CMD_HUB_NOTIFY_MODE', deviceObject.station_sn, CommandType.CMD_HUB_NOTIFY_MODE, {...nested_payload, ...payload_edit}, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
             }
 
             if(initCron) {
@@ -153,7 +151,7 @@ module.exports = class mainHub extends mainDevice {
                 }
             }
 
-            await this.EufyP2P.sendCommand('CMD_SET_ARMING', deviceObject.station_sn, CommandType.CMD_SET_ARMING, nested_payload, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
+            await Homey.app.EufyP2P.sendCommand('CMD_SET_ARMING', deviceObject.station_sn, CommandType.CMD_SET_ARMING, nested_payload, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
 
             return Promise.resolve(true);
         } catch (e) {
@@ -177,7 +175,7 @@ module.exports = class mainHub extends mainDevice {
             }
             // time + 2 so we can disable alarm manually.
 
-            await this.EufyP2P.sendCommand('CMD_SET_TONE_FILE', deviceObject.station_sn, CommandType.CMD_SET_TONE_FILE, nested_payload, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
+            await Homey.app.EufyP2P.sendCommand('CMD_SET_TONE_FILE', deviceObject.station_sn, CommandType.CMD_SET_TONE_FILE, nested_payload, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
             
             // wait for alarm to be finished. turn off to have a off notification. So the alarm_generic will notify
             await sleep(time * 1000);
@@ -191,7 +189,7 @@ module.exports = class mainHub extends mainDevice {
                     "user_name": "Homey"
                 }
             }
-            await this.EufyP2P.sendCommand('CMD_SET_TONE_FILE', deviceObject.station_sn, CommandType.CMD_SET_TONE_FILE, nested_payload_off, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
+            await Homey.app.EufyP2P.sendCommand('CMD_SET_TONE_FILE', deviceObject.station_sn, CommandType.CMD_SET_TONE_FILE, nested_payload_off, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
             
             return Promise.resolve(true);
         } catch (e) {
@@ -213,7 +211,7 @@ module.exports = class mainHub extends mainDevice {
                     "user_name": "Homey"
                 }
             }
-            await this.EufyP2P.sendCommand('CMD_SET_TONE_FILE', deviceObject.station_sn, CommandType.CMD_SET_TONE_FILE, nested_payload, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
+            await Homey.app.EufyP2P.sendCommand('CMD_SET_TONE_FILE', deviceObject.station_sn, CommandType.CMD_SET_TONE_FILE, nested_payload, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
             return Promise.resolve(true);
         } catch (e) {
             Homey.app.error(e);

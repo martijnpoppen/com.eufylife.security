@@ -48,8 +48,7 @@ class App extends Homey.App {
         this.log("onInit - Loaded settings", {...this.appSettings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
 
         if (this.appSettings.HUBS_AMOUNT > 0) {
-            this.P2P = {};
-            await EufyP2P.init(this.appSettings);
+            await this.EufyP2P.init(this.appSettings);
             await flowActions.init();
             await flowConditions.init();
         }
@@ -89,6 +88,7 @@ class App extends Homey.App {
         this.P2P = {};
         this._devices = [];
         this._deviceStore = [];
+        this.EufyP2P = new EufyP2P;
 
         if (!_httpService) {
             _httpService = await this.setHttpService(this.appSettings);

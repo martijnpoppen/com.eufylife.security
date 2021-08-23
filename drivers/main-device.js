@@ -31,8 +31,6 @@ module.exports = class mainDevice extends Homey.Device {
         Homey.app._devices.push(this);
 
         this.setUnavailable(`Initializing ${this.getName()}`);
-
-        this.EufyP2P = EufyP2P;
     }
 
     async checkCapabilities() {
@@ -113,7 +111,7 @@ module.exports = class mainDevice extends Homey.Device {
                 CMD_DEVS_SWITCH = value ? 1 : 0;
             }
 
-            await this.EufyP2P.sendCommand('CMD_DEVS_SWITCH', deviceObject.station_sn, CommandType.CMD_DEVS_SWITCH, CMD_DEVS_SWITCH, deviceId, deviceId);
+            await Homey.app.EufyP2P.sendCommand('CMD_DEVS_SWITCH', deviceObject.station_sn, CommandType.CMD_DEVS_SWITCH, CMD_DEVS_SWITCH, deviceId, deviceId);
             return Promise.resolve(true);
         } catch (e) {
             Homey.app.error(e);
@@ -131,7 +129,7 @@ module.exports = class mainDevice extends Homey.Device {
                 throw new Error('Not available for this device');
             }
 
-            await this.EufyP2P.sendCommand('CMD_SET_ARMING', deviceObject.station_sn, CommandType.CMD_SET_ARMING, CMD_SET_ARMING);
+            await Homey.app.EufyP2P.sendCommand('CMD_SET_ARMING', deviceObject.station_sn, CommandType.CMD_SET_ARMING, CMD_SET_ARMING);
 
             return Promise.resolve(true);
         } catch (e) {
@@ -192,11 +190,11 @@ module.exports = class mainDevice extends Homey.Device {
             const poweredDoorbell = this.hasCapability("CMD_DOORBELL_QUICK_RESPONSE_POWERED")
             if(!poweredDoorbell && quickResponse.length >= value) {
 
-                await this.EufyP2P.sendCommand('CMD_START_REALTIME_MEDIA', deviceObject.station_sn, CommandType.CMD_START_REALTIME_MEDIA, 1, deviceId, deviceId);
+                await Homey.app.EufyP2P.sendCommand('CMD_START_REALTIME_MEDIA', deviceObject.station_sn, CommandType.CMD_START_REALTIME_MEDIA, 1, deviceId, deviceId);
                 await sleep(500);
-                await this.EufyP2P.sendCommand('CMD_DOORBELL_QUICK_RESPONSE', deviceObject.station_sn, CommandType.CMD_BAT_DOORBELL_QUICK_RESPONSE, quickResponse[value-1], deviceId, deviceId);
+                await Homey.app.EufyP2P.sendCommand('CMD_DOORBELL_QUICK_RESPONSE', deviceObject.station_sn, CommandType.CMD_BAT_DOORBELL_QUICK_RESPONSE, quickResponse[value-1], deviceId, deviceId);
                 await sleep(3000);
-                await this.EufyP2P.sendCommand('CMD_STOP_REALTIME_MEDIA', deviceObject.station_sn, CommandType.CMD_STOP_REALTIME_MEDIA, 1, deviceId, deviceId);
+                await Homey.app.EufyP2P.sendCommand('CMD_STOP_REALTIME_MEDIA', deviceObject.station_sn, CommandType.CMD_STOP_REALTIME_MEDIA, 1, deviceId, deviceId);
 
             } else if(poweredDoorbell && quickResponse.length >= value) {
                 const rsa_key = utils.getNewRSAPrivateKey();
@@ -211,7 +209,7 @@ module.exports = class mainDevice extends Homey.Device {
                     }
                 };
 
-                await this.EufyP2P.sendCommand('CMD_BIND_BROADCAST', deviceObject.station_sn, CommandType.CMD_BIND_BROADCAST, nested_payload, deviceId, deviceId, '', CommandType.CMD_DOORBELL_SET_PAYLOAD);
+                await Homey.app.EufyP2P.sendCommand('CMD_BIND_BROADCAST', deviceObject.station_sn, CommandType.CMD_BIND_BROADCAST, nested_payload, deviceId, deviceId, '', CommandType.CMD_DOORBELL_SET_PAYLOAD);
 
                 await sleep(500);
 
@@ -221,10 +219,10 @@ module.exports = class mainDevice extends Homey.Device {
                         "voiceID": quickResponse[value-1]
                     }
                 };
-                await this.EufyP2P.sendCommand('CMD_STOP_REALTIME_MEDIA', deviceObject.station_sn, CommandType.CMD_STOP_REALTIME_MEDIA, nested_payload, deviceId, deviceId, '', CommandType.CMD_DOORBELL_SET_PAYLOAD);
+                await Homey.app.EufyP2P.sendCommand('CMD_STOP_REALTIME_MEDIA', deviceObject.station_sn, CommandType.CMD_STOP_REALTIME_MEDIA, nested_payload, deviceId, deviceId, '', CommandType.CMD_DOORBELL_SET_PAYLOAD);
                 
                 await sleep(3000);
-                await this.EufyP2P.sendCommand('CMD_STOP_REALTIME_MEDIA', deviceObject.station_sn, CommandType.CMD_STOP_REALTIME_MEDIA, 1, deviceId, deviceId);
+                await Homey.app.EufyP2P.sendCommand('CMD_STOP_REALTIME_MEDIA', deviceObject.station_sn, CommandType.CMD_STOP_REALTIME_MEDIA, 1, deviceId, deviceId);
 
             }
             return Promise.resolve(true);
@@ -238,7 +236,7 @@ module.exports = class mainDevice extends Homey.Device {
         try {
             const deviceObject = this.getData();
 
-            await this.EufyP2P.sendCommand('CMD_HUB_REBOOT', deviceObject.station_sn, CommandType.CMD_HUB_REBOOT, 0);
+            await Homey.app.EufyP2P.sendCommand('CMD_HUB_REBOOT', deviceObject.station_sn, CommandType.CMD_HUB_REBOOT, 0);
 
             return Promise.resolve(true);
         } catch (e) {
@@ -258,7 +256,7 @@ module.exports = class mainDevice extends Homey.Device {
             }
         };
 
-        await this.EufyP2P.sendCommand('CMD_INDOOR_PAN_TURN', deviceObject.station_sn, CommandType.CMD_INDOOR_PAN_TURN, nested_payload, deviceId, deviceId, '', CommandType.CMD_DOORBELL_SET_PAYLOAD);
+        await Homey.app.EufyP2P.sendCommand('CMD_INDOOR_PAN_TURN', deviceObject.station_sn, CommandType.CMD_INDOOR_PAN_TURN, nested_payload, deviceId, deviceId, '', CommandType.CMD_DOORBELL_SET_PAYLOAD);
 
     }
 
@@ -267,7 +265,7 @@ module.exports = class mainDevice extends Homey.Device {
             const deviceObject = this.getData();
             const deviceId = this.getStoreValue('device_index');
             const CMD_BAT_DOORBELL_WDR_SWITCH = parseInt(value);
-            await this.EufyP2P.sendCommand('CMD_BAT_DOORBELL_WDR_SWITCH', deviceObject.station_sn, CommandType.CMD_BAT_DOORBELL_WDR_SWITCH, CMD_BAT_DOORBELL_WDR_SWITCH, deviceId, deviceId);
+            await Homey.app.EufyP2P.sendCommand('CMD_BAT_DOORBELL_WDR_SWITCH', deviceObject.station_sn, CommandType.CMD_BAT_DOORBELL_WDR_SWITCH, CMD_BAT_DOORBELL_WDR_SWITCH, deviceId, deviceId);
 
             return Promise.resolve(true);
         } catch (e) {
@@ -281,7 +279,7 @@ module.exports = class mainDevice extends Homey.Device {
             const deviceObject = this.getData();
             const deviceId = this.getStoreValue('device_index');
             const CMD_BAT_DOORBELL_VIDEO_QUALITY = parseInt(value);
-            await this.EufyP2P.sendCommand('CMD_BAT_DOORBELL_VIDEO_QUALITY', deviceObject.station_sn, CommandType.CMD_BAT_DOORBELL_VIDEO_QUALITY, CMD_BAT_DOORBELL_VIDEO_QUALITY, deviceId, deviceId);
+            await Homey.app.EufyP2P.sendCommand('CMD_BAT_DOORBELL_VIDEO_QUALITY', deviceObject.station_sn, CommandType.CMD_BAT_DOORBELL_VIDEO_QUALITY, CMD_BAT_DOORBELL_VIDEO_QUALITY, deviceId, deviceId);
 
             return Promise.resolve(true);
         } catch (e) {
@@ -295,7 +293,7 @@ module.exports = class mainDevice extends Homey.Device {
             const deviceObject = this.getData();
             const deviceId = this.getStoreValue('device_index');
             const CMD_IRCUT_SWITCH = parseInt(value);
-            await this.EufyP2P.sendCommand('CMD_IRCUT_SWITCH', deviceObject.station_sn, CommandType.CMD_IRCUT_SWITCH, CMD_IRCUT_SWITCH, deviceId, deviceId);
+            await Homey.app.EufyP2P.sendCommand('CMD_IRCUT_SWITCH', deviceObject.station_sn, CommandType.CMD_IRCUT_SWITCH, CMD_IRCUT_SWITCH, deviceId, deviceId);
 
             return Promise.resolve(true);
         } catch (e) {
