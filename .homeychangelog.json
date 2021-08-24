@@ -586,5 +586,8 @@
   },
   "2.11.8": {
     "en": "Refresh P2P service when expired"
+  },
+  "2.11.9": {
+    "en": "FIX: retry when timeout"
   }
 }
