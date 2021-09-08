@@ -589,5 +589,17 @@
   },
   "2.11.9": {
     "en": "FIX: retry when timeout"
+  },
+  "2.11.10": {
+    "en": "FIX: Eufy login doesn't see P2P service"
+  },
+  "2.11.11": {
+    "en": "IX: Eufy login doesn't see P2P service"
+  },
+  "2.11.12": {
+    "en": "FIX: reset motion alarm on startup"
+  },
+  "2.11.13": {
+    "en": "FIX: command retry mechanischm for indoor cams"
   }
 }
