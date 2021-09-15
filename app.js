@@ -76,6 +76,11 @@ class App extends Homey.App {
         }
       });
 
+      this.P2P = {};
+      this._devices = [];
+      this._deviceStore = [];
+      this.EufyP2P = new EufyP2P;
+
       if (settingsInitialized) {
         this.log("initSettings - Found settings key", _settingsKey);
         this.appSettings = ManagerSettings.get(_settingsKey);
@@ -84,11 +89,6 @@ class App extends Homey.App {
             this.appSettings = {...this.appSettings, SET_DEBUG: false};
             this.saveSettings();
         }
-
-        this.P2P = {};
-        this._devices = [];
-        this._deviceStore = [];
-        this.EufyP2P = new EufyP2P;
 
         if (!_httpService) {
             _httpService = await this.setHttpService(this.appSettings);
@@ -186,7 +186,7 @@ class App extends Homey.App {
 
       if (settings.HUBS_AMOUNT  > 0) {
         this.P2P = {};
-        await EufyP2P.init(this.appSettings);
+        await this.EufyP2P.init(this.appSettings);
         await this.setDeviceStore(this);
         await flowActions.init();
         await flowConditions.init();

@@ -42,20 +42,6 @@ module.exports = class mainHub extends mainDevice {
         this.checkSettings(this, false, newSettings);
     }
 
-    async resetCapabilities() {
-        try {
-            if(this.hasCapability('alarm_generic')) {
-                this.resetCapability('alarm_generic');
-            }
-        } catch (error) {
-            Homey.app.log(error)
-        }
-    }
-
-    async resetCapability(name, value = false) {
-      this.setCapabilityValue(name, value);
-    }
-
     async setCapabilitiesListeners() {
         try {
             this.registerCapabilityListener('CMD_SET_ARMING', this.onCapability_CMD_SET_ARMING.bind(this));

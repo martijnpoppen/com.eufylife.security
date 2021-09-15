@@ -4,7 +4,6 @@ const fetch = require('node-fetch');
 const { CommandType, sleep } = require('../lib/eufy-homey-client');
 const eufyParameterHelper = require("../../lib/helpers/eufy-parameter.helper");
 const utils = require('../../lib/utils.js');
-const EufyP2P = require('../lib/helpers/eufy-p2p.helper');
 const { ARM_TYPES } = require('../constants/capability_types');
 
 let _httpService = undefined;
@@ -13,6 +12,7 @@ module.exports = class mainDevice extends Homey.Device {
     async onInit() {
         await this.setupEufyP2P();
         await this.deviceImage();
+        await this.resetCapabilities();
         await this.checkCapabilities();
         await this.setCapabilitiesListeners();
 
@@ -31,6 +31,24 @@ module.exports = class mainDevice extends Homey.Device {
         Homey.app._devices.push(this);
 
         this.setUnavailable(`Initializing ${this.getName()}`);
+    }
+
+    async resetCapabilities() {
+        try {
+            if(this.hasCapability('alarm_motion')) {
+                this.resetCapability('alarm_motion');
+            }
+
+            if(this.hasCapability('alarm_generic')) {
+                this.resetCapability('alarm_generic');
+            }
+        } catch (error) {
+            Homey.app.log(error)
+        }
+    }
+
+    async resetCapability(name, value = false) {
+        this.setCapabilityValue(name, value);
     }
 
     async checkCapabilities() {
