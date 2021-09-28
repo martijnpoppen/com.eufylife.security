@@ -601,5 +601,8 @@
   },
   "2.11.13": {
     "en": "FIX: command retry mechanischm for indoor cams"
+  },
+  "2.11.14": {
+    "en": "FIX: Floodcam pairing"
   }
 }
