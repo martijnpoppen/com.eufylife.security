@@ -253,8 +253,11 @@ module.exports = class mainDevice extends Homey.Device {
     async onCapability_CMD_REBOOT_HUB() {
         try {
             const deviceObject = this.getData();
+            const deviceId = 0;
+            const CMD_HUB_REBOOT = 0;
 
-            await Homey.app.EufyP2P.sendCommand('CMD_HUB_REBOOT', deviceObject.station_sn, CommandType.CMD_HUB_REBOOT, 0);
+            await Homey.app.EufyP2P.sendCommand('CMD_HUB_REBOOT', deviceObject.station_sn, CommandType.CMD_HUB_REBOOT, CMD_HUB_REBOOT, deviceId, deviceId);
+            // await Homey.app.EufyP2P.sendCommand('CMD_HUB_REBOOT', deviceObject.station_sn, CommandType.CMD_HUB_REBOOT, CMD_HUB_REBOOT);
 
             return Promise.resolve(true);
         } catch (e) {
