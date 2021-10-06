@@ -65,20 +65,11 @@ module.exports = class mainDevice extends Homey.Device {
             Homey.app.log(`[Device] ${this.getName()} - FIX - Remove CMD_SET_ARMING - Homebase integration`);
             this.removeCapability('CMD_SET_ARMING');
             await sleep(2500);
-        }
-
-        if(driverManifest.id === 'driver_FLOODLIGHT_CAMERA') {
-            Homey.app.log(`[Device] ${this.getName()} - FIX - Remove all deviceCapabilities - Floodlight integration`);
-            deviceCapabilities.forEach(c => {
-                this.removeCapability(c);
-            });
-            await sleep(2000);
-        }
-        
+        }        
 
         Homey.app.log(`[Device] ${this.getName()} - Found capabilities =>`, deviceCapabilities);
         
-        if(driverCapabilities.length > deviceCapabilities.length) {      
+        if(driverCapabilities.length !== deviceCapabilities.length) {      
             await this.updateCapabilities(driverCapabilities);
         }
 
