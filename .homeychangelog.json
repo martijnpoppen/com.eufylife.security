@@ -610,5 +610,8 @@
   },
   "2.11.16": {
     "en": "FIX: floodlight 2K pairing - add T8424"
+  },
+  "2.11.17": {
+    "en": "FIX: capability checker for Floodlight - remove old checks"
   }
 }
