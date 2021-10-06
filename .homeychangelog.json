@@ -613,5 +613,8 @@
   },
   "2.11.17": {
     "en": "FIX: capability checker for Floodlight - remove old checks"
+  },
+  "2.12.0": {
+    "en": "NEW: add IP checker/changer for stand-alone cameras"
   }
 }
