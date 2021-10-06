@@ -218,16 +218,16 @@ module.exports = class mainHub extends mainDevice {
             // Use the discovery results that were already found
             const initialDiscoveryResults = discoveryStrategy.getDiscoveryResults();
             for (const discoveryResult of Object.values(initialDiscoveryResults)) {
-                Homey.app.log(`[Device] ${this.getName()} - findHomebaseIp =>`, discoveryResult);
+                Homey.app.log(`[Device] ${this.getName()} - findHubIp =>`, discoveryResult);
 
                 const name = discoveryResult.name.slice(discoveryResult.name.length - 4) || null ;
                 const address = discoveryResult.address || null;
 
-                Homey.app.log(`[Device] ${this.getName()} - findHomebaseIp => name match with station SN =>`, name, stationSN);
-                Homey.app.log(`[Device] ${this.getName()} - findHomebaseIp => Ip match with settings =>`, stationIP, address); 
+                Homey.app.log(`[Device] ${this.getName()} - findHubIp => name match with station SN =>`, name, stationSN);
+                Homey.app.log(`[Device] ${this.getName()} - findHubIp => Ip match with settings =>`, stationIP, address); 
               
                 if(stationSN === name && stationIP !== address) {
-                    Homey.app.log(`[Device] ${this.getName()} - findHomebaseIp => name matches - different IP`);               
+                    Homey.app.log(`[Device] ${this.getName()} - findHubIp => name matches - different IP`);               
 
                     settings.HUBS[deviceObject.station_sn].LOCAL_STATION_IP = address;
 

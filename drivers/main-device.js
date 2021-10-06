@@ -15,6 +15,7 @@ module.exports = class mainDevice extends Homey.Device {
         await this.resetCapabilities();
         await this.checkCapabilities();
         await this.setCapabilitiesListeners();
+        await this.findHubIp();
 
         this.setAvailable();
 
@@ -440,6 +441,42 @@ module.exports = class mainDevice extends Homey.Device {
         } catch (e) {
             Homey.app.error(e);
             return Promise.reject(e);
+        }
+    }
+
+
+    async findHubIp() {
+        try {
+            let settings = await Homey.app.getSettings();
+            const deviceObject = this.getData();
+            if(deviceObject.station_sn === deviceObject.device_sn) {
+                const stationSN = deviceObject.station_sn.slice(deviceObject.station_sn.length - 4)
+                const stationIP = settings.HUBS[deviceObject.station_sn].LOCAL_STATION_IP;
+            
+                const discoveryStrategy = Homey.ManagerDiscovery.getDiscoveryStrategy("homebase_discovery");
+        
+                // Use the discovery results that were already found
+                const initialDiscoveryResults = discoveryStrategy.getDiscoveryResults();
+                for (const discoveryResult of Object.values(initialDiscoveryResults)) {
+                    Homey.app.log(`[Device] ${this.getName()} - findHubIp =>`, discoveryResult);
+
+                    const name = discoveryResult.name.slice(discoveryResult.name.length - 4) || null ;
+                    const address = discoveryResult.address || null;
+
+                    Homey.app.log(`[Device] ${this.getName()} - findHubIp => name match with station SN =>`, name, stationSN);
+                    Homey.app.log(`[Device] ${this.getName()} - findHubIp => Ip match with settings =>`, stationIP, address); 
+                
+                    if(stationSN === name && stationIP !== address) {
+                        Homey.app.log(`[Device] ${this.getName()} - findHubIp => name matches - different IP`);               
+
+                        settings.HUBS[deviceObject.station_sn].LOCAL_STATION_IP = address;
+
+                        await Homey.app.updateSettings(settings, false);
+                    }
+                }
+            }
+        } catch (error) {
+            Homey.app.log(error)
         }
     }
 }
