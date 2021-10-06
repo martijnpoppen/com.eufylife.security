@@ -604,5 +604,11 @@
   },
   "2.11.14": {
     "en": "FIX: Floodcam pairing"
+  },
+  "2.11.15": {
+    "en": "FIX: floodlight 2K pairing - add T8424"
+  },
+  "2.11.16": {
+    "en": "FIX: floodlight 2K pairing - add T8424"
   }
 }
