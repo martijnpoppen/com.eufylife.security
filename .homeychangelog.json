@@ -616,5 +616,8 @@
   },
   "2.12.0": {
     "en": "NEW: add IP checker/changer for stand-alone cameras"
+  },
+  "2.13.0": {
+    "en": "Add Snooze mode Flowcard for all cameras  | FIX: Floodlight not working when notification type is `full effect` "
   }
 }

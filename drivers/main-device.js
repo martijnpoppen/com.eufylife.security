@@ -64,7 +64,7 @@ module.exports = class mainDevice extends Homey.Device {
         
         if(!driverCapabilities.includes('CMD_SET_ARMING') && this.hasCapability('CMD_SET_ARMING')) {
             Homey.app.log(`[Device] ${this.getName()} - FIX - Remove CMD_SET_ARMING - Homebase integration`);
-            this.removeCapability('CMD_SET_ARMING');
+            this.removeCapability('CMD_SET_SNOOZE_MODE');
             await sleep(2500);
         }        
 
@@ -312,6 +312,24 @@ module.exports = class mainDevice extends Homey.Device {
         }
     }
 
+    async onCapability_CMD_SET_SNOOZE_MODE(homebase = 0, motion = 0, snooze = 0) {
+        const deviceObject = this.getData();
+        const deviceId = this.getStoreValue('device_index');
+        const settings = await Homey.app.getSettings(); 
+        
+        const nested_payload = {
+            "account_id": settings.HUBS[deviceObject.station_sn].ACTOR_ID,
+            "chime_onoff":0,
+            "homebase_onoff": parseInt(homebase),
+            "motion_notify_onoff": parseInt(motion),
+            "snooze_time": parseInt(snooze),
+            "startTime": Math.floor(new Date().getTime() / 1000)
+
+        };
+
+        await Homey.app.EufyP2P.sendCommand('CMD_SET_SNOOZE_MODE', deviceObject.station_sn, CommandType.CMD_SET_SNOOZE_MODE, nested_payload, deviceId, deviceId, '', CommandType.CMD_SET_SNOOZE_MODE);
+
+    }
 
     async onCapability_NTFY_TRIGGER( message, value ) {
         try {
@@ -443,7 +461,6 @@ module.exports = class mainDevice extends Homey.Device {
             return Promise.reject(e);
         }
     }
-
 
     async findHubIp() {
         try {
