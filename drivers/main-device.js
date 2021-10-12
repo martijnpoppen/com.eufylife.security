@@ -64,7 +64,7 @@ module.exports = class mainDevice extends Homey.Device {
         
         if(!driverCapabilities.includes('CMD_SET_ARMING') && this.hasCapability('CMD_SET_ARMING')) {
             Homey.app.log(`[Device] ${this.getName()} - FIX - Remove CMD_SET_ARMING - Homebase integration`);
-            this.removeCapability('CMD_SET_SNOOZE_MODE');
+            this.removeCapability('CMD_SET_ARMING');
             await sleep(2500);
         }        
 
