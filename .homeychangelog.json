@@ -619,5 +619,8 @@
   },
   "2.13.0": {
     "en": "Add Snooze mode Flowcard for all cameras  | FIX: Floodlight not working when notification type is `full effect` "
+  },
+  "2.13.1": {
+    "en": "FIX: full effect mode for Floodlight cam"
   }
 }
