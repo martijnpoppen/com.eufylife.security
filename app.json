@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.13.1",
+  "version": "2.13.2",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -690,8 +690,8 @@
       {
         "id": "action_CMD_SET_SNOOZE_MODE",
         "title": {
-          "en": "Toggle WDR switch",
-          "nl": "Zet WDR aan/uit"
+          "en": "Set snooze mode",
+          "nl": "Zet snooze modus"
         },
         "titleFormatted": {
           "en": "Set snooze mode for [[snooze]] [[device]]",
@@ -760,8 +760,8 @@
       {
         "id": "action_CMD_SET_SNOOZE_MODE_HOMEBASE",
         "title": {
-          "en": "Toggle WDR switch",
-          "nl": "Zet WDR aan/uit"
+          "en": "Set snooze mode",
+          "nl": "Zet snooze modus"
         },
         "titleFormatted": {
           "en": "Set snooze mode [[homebase]] [[motion]] for [[snooze]] [[device]]",

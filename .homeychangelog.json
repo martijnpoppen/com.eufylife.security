@@ -622,5 +622,8 @@
   },
   "2.13.1": {
     "en": "FIX: full effect mode for Floodlight cam"
+  },
+  "2.13.2": {
+    "en": "FIX: snooze card title for Homey app was not properly set"
   }
 }
