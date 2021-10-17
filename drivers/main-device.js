@@ -331,6 +331,34 @@ module.exports = class mainDevice extends Homey.Device {
 
     }
 
+
+    async onCapability_CMD_TRIGGER_ALARM(time) {
+        try {
+            const deviceObject = this.getData();
+            const deviceId = this.getStoreValue('device_index');
+            await Homey.app.EufyP2P.sendCommand('CMD_SET_TONE_FILE', deviceObject.station_sn, CommandType.CMD_SET_TONE_FILE, time, deviceId, deviceId);
+            
+            return Promise.resolve(true);
+        } catch (e) {
+            Homey.app.error(e);
+            return Promise.reject(e);
+        }
+    }
+
+    async onCapability_CMD_SET_HUB_ALARM_CLOSE() {
+        try {
+            const deviceObject = this.getData();
+            const deviceId = this.getStoreValue('device_index');
+
+            await Homey.app.EufyP2P.sendCommand('CMD_SET_TONE_FILE', deviceObject.station_sn, CommandType.CMD_SET_TONE_FILE, 0, deviceId, deviceId);
+            
+            return Promise.resolve(true);
+        } catch (e) {
+            Homey.app.error(e);
+            return Promise.reject(e);
+        }
+    }
+
     async onCapability_NTFY_TRIGGER( message, value ) {
         try {
             const settings = this.getSettings();
