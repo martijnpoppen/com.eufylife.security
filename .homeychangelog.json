@@ -625,5 +625,8 @@
   },
   "2.13.2": {
     "en": "FIX: snooze card title for Homey app was not properly set"
+  },
+  "2.13.3": {
+    "en": "ADD: sound alarm option to stand alone cameras"
   }
 }
