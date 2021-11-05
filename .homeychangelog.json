@@ -628,5 +628,8 @@
   },
   "2.13.3": {
     "en": "ADD: sound alarm option to stand alone cameras"
+  },
+  "2.13.4": {
+    "en": "FIX: Floodlight camera add T8422 to pairing"
   }
 }
