@@ -631,5 +631,8 @@
   },
   "2.13.4": {
     "en": "FIX: Floodlight camera add T8422 to pairing"
+  },
+  "2.13.5": {
+    "en": "FIX: pairing - add T8020 to 1080P powered doorbell. "
   }
 }
