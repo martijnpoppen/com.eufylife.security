@@ -2195,6 +2195,71 @@
       ]
     },
     {
+      "id": "driver_HOMEBASE_CHIME",
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
+      "class": "homealarm",
+      "capabilities": [
+        "CMD_SET_ARMING",
+        "CMD_SET_ARMING_HUB",
+        "CMD_TRIGGER_ALARM",
+        "CMD_SET_HUB_ALARM_CLOSE",
+        "alarm_generic"
+      ],
+      "name": {
+        "en": "Homebase Chime",
+        "nl": "Homebase Chime"
+      },
+      "images": {
+        "large": "drivers/driver_HOMEBASE_CHIME/assets/images/large.png",
+        "small": "drivers/driver_HOMEBASE_CHIME/assets/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General settings",
+            "nl": "Algemene instellingen"
+          },
+          "children": [
+            {
+              "id": "alarm_generic_enabled",
+              "type": "checkbox",
+              "label": {
+                "en": "Use generic alarm?",
+                "nl": "Gebruik algemeen alarm?"
+              },
+              "value": true
+            },
+            {
+              "id": "force_switch_mode_notifications",
+              "type": "checkbox",
+              "label": {
+                "en": "Force switch mode notifications (prevent turning off by Eufy)",
+                "nl": "Forceer Homebase notificatie (voorkom uitschakelen door Eufy)"
+              },
+              "value": true
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "driver_KEYPAD",
       "connectivity": [
         "cloud",
