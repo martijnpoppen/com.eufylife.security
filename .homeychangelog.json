@@ -637,5 +637,11 @@
   },
   "2.14.0": {
     "en": "NEW: add Homebase-Chime for Battery Doorbell Slim"
+  },
+  "2.15.0": {
+    "en": "NEW: add Solocam Series E20/E40 - NEW: add Solocam Series L20/L40 - NEW: add Solocam Series S40"
+  },
+  "2.16.0": {
+    "en": "NEW: Merge doorbells to - Add doorbell device type - Webapp changes"
   }
 }
