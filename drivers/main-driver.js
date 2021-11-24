@@ -1,6 +1,6 @@
 const Homey = require('homey');
 const { DEVICE_TYPES } = require('../../constants/device_types');
-const ManagerDrivers = Homey.ManagerDrivers;
+
 let _devices = [];
 let username = '';
 let password = '';
@@ -53,7 +53,14 @@ module.exports = class mainDriver extends Homey.Driver {
 
             const settings = await Homey.app.getSettings();
             const result = await Homey.app.eufyLogin({ ...settings, USERNAME: username, PASSWORD: password });
-            if (result instanceof Error) return callback(result);
+            if (result instanceof Error) {
+                if(result.message.includes('->')) {
+                    const err = new Error(result.message.split('->')[1]);
+                    return callback(err); 
+                }
+            
+                return callback(result);
+            }
             return socket.showView('list_devices');
         };
 
@@ -67,24 +74,29 @@ module.exports = class mainDriver extends Homey.Driver {
             const deviceType = this.deviceType();
             const driverManifest = this.getManifest();
             const driverCapabilities = driverManifest.capabilities;
-            const pairedDriverDevices = [];
 
-            const pairedDevices = await Homey.app.getDevices();
+            const pairedAppDevices = await Homey.app.getDevices();
+            const pairedDevicesArray = [];
 
-            pairedDevices.forEach((device) => {
+            pairedAppDevices.forEach((device) => {
                 const data = device.getData();
-                const driver = device.getDriver();
-                pairedDriverDevices.push({ id: data.id, device_sn: data.device_sn, driver_id: driver.id });
+                pairedDevicesArray.push(data.device_sn);
             });
 
-            Homey.app.log(`[Driver] ${driverId} - pairedDriverDevices`, pairedDriverDevices);
+            const homebasePaired = pairedAppDevices.some((device) => {
+                const driver = device.getDriver();
+                return driver.id.includes('HOMEBASE');
+            });
 
-            if (!driverCapabilities.includes('CMD_SET_ARMING') && !this.id.includes('HOMEBASE') && !pairedDriverDevices.some((p) => p.driver_id.includes('HOMEBASE'))) {
+            Homey.app.log(`[Driver] ${driverId} - pairedDevicesArray`, pairedDevicesArray);
+            Homey.app.log(`[Driver] ${driverId} - homebasePaired`, homebasePaired);
+
+            if (!driverCapabilities.includes('CMD_SET_ARMING') && !this.id.includes('HOMEBASE') && !homebasePaired) {
                 return {error: 'Please add a Homebase before adding this device'};
             }
 
             const results = deviceList
-                .filter((device) => pairedDriverDevices.some((p) => p.device_sn !== device.device_sn) && deviceType.some((v) => device.device_sn.includes(v)))
+                .filter((device) => !pairedDevicesArray.includes(device.device_sn) && deviceType.some((v) => device.device_sn.includes(v)))
                 .map((d, i) => ({
                     name: d.device_name,
                     data: {

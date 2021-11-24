@@ -58,16 +58,15 @@ module.exports = class mainHubDriver extends mainDriver {
     async onDeviceListRequest(driverId, hubsList) {
         try {
             const deviceType = this.deviceType();
-            const pairedDevices = await Homey.app.getDevices();
-            let pairedDriverDevices = [];
+            const deviceList = await Homey.app.getDevices();
+            const pairedDevicesArray = [];
 
-            pairedDevices.forEach((device) => {
+            deviceList.forEach((device) => {
                 const data = device.getData();
-                const driver = device.getDriver();
-                pairedDriverDevices.push({ device_sn: data.device_sn, driver_id: driver.id });
+                pairedDevicesArray.push(data.device_sn);
             });
 
-            Homey.app.log(`[Driver] ${driverId} - pairedDriverDevices`, pairedDriverDevices);
+            Homey.app.log(`[Driver] ${driverId} - pairedDevicesArray`, pairedDevicesArray);
 
             const results = hubsList
                 .filter((hub) => deviceType.some((v) => hub.station_sn.includes(v)))

@@ -78,6 +78,7 @@ class App extends Homey.App {
       });
 
       this.P2P = {};
+      this._deviceList = [];
       this._deviceStore = [];
       this.EufyP2P = new EufyP2P;
 
@@ -85,6 +86,14 @@ class App extends Homey.App {
         this.log("initSettings - Found settings key", _settingsKey);
         this.appSettings = ManagerSettings.get(_settingsKey);
         
+        if(this.appSettings && !this.appSettings.ADMIN) {
+
+            await this.updateSettings({
+                ...this.appSettings,
+                SET_DEBUG: false
+            });
+        }
+
         if(this.appSettings && !this.appSettings.ADMIN) {
             this.appSettings = {...this.appSettings, SET_DEBUG: false};
             this.saveSettings();
@@ -227,17 +236,24 @@ class App extends Homey.App {
   }
 
   async getDevices() {
-    let devices = [];
-    const drivers = ManagerDrivers.getDrivers();
+    return this._deviceList;
+  }
 
-    Homey.app.log("getDevices - Mapping driverDevices");
+  async setDevice(device) {
+    Homey.app.log("setDevice", device.id);
 
-    Object.values(drivers).forEach((driver) => {
-        const driverDevices = driver.getDevices();
-        devices.push(...driverDevices);
+    this._deviceList = [...this._deviceList, device];
+  }
+
+  async removeDevice(device_sn) {
+    Homey.app.log("removeDevice", device_sn);
+
+    const filteredList = this._deviceList.filter(dl => {
+        const data = dl.getData()
+        return data.device_sn !== device_sn
     });
 
-    return devices;
+    this._deviceList = filteredList;
   }
 
   async setDeviceStore(ctx, initCron = false) {

@@ -25,6 +25,9 @@ module.exports = class mainHub extends mainDevice {
         Homey.app.log('[HUB] - init =>', this.getData());
 
         this.setUnavailable(`Initializing ${this.getName()}`);
+
+        await sleep(2000);
+        await Homey.app.setDevice(this);
     }
 
     async onSettings(oldSettings, newSettings, changedKeys) {

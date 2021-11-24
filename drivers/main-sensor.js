@@ -8,6 +8,8 @@ module.exports = class mainSensor extends mainDevice {
     async onInit() {
 		Homey.app.log('[Device] - init =>', this.getName());
 
+        await Homey.app.setDevice(this);
+
         this.removeCapability('measure_battery');
         this.removeCapability('measure_temperature');
         await sleep(4000)
@@ -20,7 +22,7 @@ module.exports = class mainSensor extends mainDevice {
     }
 
     onDeleted() {
-
+        Homey.app.removeDevice(this);
     }
 
     async onCapability_NTFY_TRIGGER( message, value ) {
