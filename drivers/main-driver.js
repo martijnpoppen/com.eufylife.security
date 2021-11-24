@@ -84,7 +84,7 @@ module.exports = class mainDriver extends Homey.Driver {
             }
 
             const results = deviceList
-                .filter((device) => !pairedDriverDevices.includes(device.device_sn) && deviceType.some((v) => device.device_sn.includes(v)))
+                .filter((device) => pairedDriverDevices.some((p) => p.device_sn !== device.device_sn) && deviceType.some((v) => device.device_sn.includes(v)))
                 .map((d, i) => ({
                     name: d.device_name,
                     data: {
