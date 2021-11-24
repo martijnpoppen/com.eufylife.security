@@ -16,6 +16,7 @@ const { log } = require("./logger.js");
 
 const ManagerSettings = Homey.ManagerSettings;
 const ManagerCloud = Homey.ManagerCloud;
+const ManagerDrivers = Homey.ManagerDrivers;
 const _settingsKey = `${Homey.manifest.id}.settings`;
 let _serverPort = undefined;
 let _httpService = undefined;
@@ -90,10 +91,11 @@ class App extends Homey.App {
             this.saveSettings();
         }
 
-        if (!_httpService) {
+        if (this.appSettings.HUBS_AMOUNT > 0 && !_httpService) {
             _httpService = await this.setHttpService(this.appSettings);
         }
 
+        await this.setDevices();
         await this.setDeviceStore(this, true);
 
         await eufyParameterHelper.unregisterAllTasks();
@@ -186,18 +188,19 @@ class App extends Homey.App {
 
       if (settings.HUBS_AMOUNT  > 0) {
         this.P2P = {};
-        await this.EufyP2P.init(this.appSettings);
+        this.EufyP2P.init(this.appSettings);
         await this.setDeviceStore(this);
-        await flowActions.init();
-        await flowConditions.init();
+        flowActions.init();
+        flowConditions.init();
       } 
 
       if (settings.CREDENTIALS) {
         if(initNotificationCheckHelper) {
-            await PushClient.init();
-            await eufyNotificationCheckHelper.init(this.appSettings);
+            PushClient.init();
+            eufyNotificationCheckHelper.init(this.appSettings);
         } 
-        await flowTriggers.init();
+        
+        flowTriggers.init();
       }
 
       return;
@@ -223,6 +226,22 @@ class App extends Homey.App {
 
   getHttpService() {
       return _httpService;
+  }
+
+  async setDevices() {
+    let devices = [];
+    const drivers = ManagerDrivers.getDrivers();
+
+    Homey.app.log("setDevices - Mapping driverDevices");
+
+    Object.values(drivers).forEach((driver) => {
+        const driverDevices = driver.getDevices();
+        devices.push(...driverDevices);
+    });
+
+    this._devices = devices;
+
+    return devices;
   }
 
   async setDeviceStore(ctx, initCron = false) {

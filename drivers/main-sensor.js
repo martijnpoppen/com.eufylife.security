@@ -20,6 +20,10 @@ module.exports = class mainSensor extends mainDevice {
         await this.matchDeviceWithDeviceStore(this);
     }
 
+    onDeleted() {
+
+    }
+
     async onCapability_NTFY_TRIGGER( message, value ) {
         try {
             if(this.hasCapability(message)) {

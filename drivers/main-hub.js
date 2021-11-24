@@ -2,7 +2,6 @@ const Homey = require('homey');
 const { CommandType, sleep } = require('../lib/eufy-homey-client');
 
 const mainDevice = require('./main-device');
-const EufyP2P = require("../../lib/helpers/eufy-p2p.helper");
 const eufyParameterHelper = require("../../lib/helpers/eufy-parameter.helper");
 
 const { ARM_TYPES } = require('../constants/capability_types');
@@ -10,6 +9,7 @@ const { ARM_TYPES } = require('../constants/capability_types');
 module.exports = class mainHub extends mainDevice {
     async onInit() {
         await this.setupEufyP2P();
+        await this.findHubIp();
         await this.resetCapabilities();
         await this.checkCapabilities();
         await this.setCapabilitiesListeners();
@@ -23,14 +23,9 @@ module.exports = class mainHub extends mainDevice {
     async setupEufyP2P() {
 		Homey.app.log('[HUB] - init =>', this.getName());
         Homey.app.log('[HUB] - init =>', this.getData());
-        
-        Homey.app._devices.push(this);
 
         this.setUnavailable(`Initializing ${this.getName()}`);
-
-        await this.findHubIp();
     }
-    
 
     async onSettings(oldSettings, newSettings, changedKeys) {
         Homey.app.log(`[Device] ${this.getName()} - onSettings - Old/New`, oldSettings, newSettings);
@@ -202,40 +197,6 @@ module.exports = class mainHub extends mainDevice {
         } catch (e) {
             Homey.app.error(e);
             return Promise.reject(e);
-        }
-    }
-
-
-    async findHubIp() {
-        try {
-            let settings = await Homey.app.getSettings();
-            const deviceObject = this.getData();
-            const stationSN = deviceObject.station_sn.slice(deviceObject.station_sn.length - 4)
-            const stationIP = settings.HUBS[deviceObject.station_sn].LOCAL_STATION_IP;
-          
-            const discoveryStrategy = Homey.ManagerDiscovery.getDiscoveryStrategy("homebase_discovery");
-    
-            // Use the discovery results that were already found
-            const initialDiscoveryResults = discoveryStrategy.getDiscoveryResults();
-            for (const discoveryResult of Object.values(initialDiscoveryResults)) {
-                Homey.app.log(`[Device] ${this.getName()} - findHubIp =>`, discoveryResult);
-
-                const name = discoveryResult.name.slice(discoveryResult.name.length - 4) || null ;
-                const address = discoveryResult.address || null;
-
-                Homey.app.log(`[Device] ${this.getName()} - findHubIp => name match with station SN =>`, name, stationSN);
-                Homey.app.log(`[Device] ${this.getName()} - findHubIp => Ip match with settings =>`, stationIP, address); 
-              
-                if(stationSN === name && stationIP !== address) {
-                    Homey.app.log(`[Device] ${this.getName()} - findHubIp => name matches - different IP`);               
-
-                    settings.HUBS[deviceObject.station_sn].LOCAL_STATION_IP = address;
-
-                    await Homey.app.updateSettings(settings, false);
-                }
-            }
-        } catch (error) {
-            Homey.app.log(error)
         }
     }
 }

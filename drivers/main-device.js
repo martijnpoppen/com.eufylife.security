@@ -27,10 +27,14 @@ module.exports = class mainDevice extends Homey.Device {
         await Homey.app.eufyLogin(settings);
     }
 
+    onDeleted() {
+        const deviceObject = this.getData();
+        eufyParameterHelper.unregisterTask(deviceObject.device_sn);
+        Homey.app.setDevices(this);
+    }
+
     async setupEufyP2P() {
 		Homey.app.log('[Device] - init =>', this.getName());
-        Homey.app._devices.push(this);
-
         this.setUnavailable(`Initializing ${this.getName()}`);
     }
 
@@ -503,8 +507,6 @@ module.exports = class mainDevice extends Homey.Device {
                 // Use the discovery results that were already found
                 const initialDiscoveryResults = discoveryStrategy.getDiscoveryResults();
                 for (const discoveryResult of Object.values(initialDiscoveryResults)) {
-                    Homey.app.log(`[Device] ${this.getName()} - findHubIp =>`, discoveryResult);
-
                     const name = discoveryResult.name.slice(discoveryResult.name.length - 4) || null ;
                     const address = discoveryResult.address || null;
 
