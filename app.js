@@ -78,7 +78,6 @@ class App extends Homey.App {
       });
 
       this.P2P = {};
-      this._devices = [];
       this._deviceStore = [];
       this.EufyP2P = new EufyP2P;
 
@@ -95,7 +94,6 @@ class App extends Homey.App {
             _httpService = await this.setHttpService(this.appSettings);
         }
 
-        await this.setDevices();
         await this.setDeviceStore(this, true);
 
         await eufyParameterHelper.unregisterAllTasks();
@@ -228,18 +226,16 @@ class App extends Homey.App {
       return _httpService;
   }
 
-  async setDevices() {
+  async getDevices() {
     let devices = [];
     const drivers = ManagerDrivers.getDrivers();
 
-    Homey.app.log("setDevices - Mapping driverDevices");
+    Homey.app.log("getDevices - Mapping driverDevices");
 
     Object.values(drivers).forEach((driver) => {
         const driverDevices = driver.getDevices();
         devices.push(...driverDevices);
     });
-
-    this._devices = devices;
 
     return devices;
   }

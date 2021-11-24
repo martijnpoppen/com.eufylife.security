@@ -30,7 +30,7 @@ module.exports = class mainDevice extends Homey.Device {
     onDeleted() {
         const deviceObject = this.getData();
         eufyParameterHelper.unregisterTask(deviceObject.device_sn);
-        Homey.app.setDevices(this);
+        Homey.app.getDevices();
     }
 
     async setupEufyP2P() {
