@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.16.0",
+  "version": "2.17.0",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -964,7 +964,10 @@
   "drivers": [
     {
       "id": "driver_EUFYCAM",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -977,7 +980,9 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "eufyCam 1",
@@ -987,7 +992,7 @@
         "large": "drivers/driver_EUFYCAM/assets/images/large.jpg",
         "small": "drivers/driver_EUFYCAM/assets/images/small.jpg"
       },
-      "pair": [  
+      "pair": [
         {
           "id": "list_devices",
           "template": "list_devices",
@@ -1000,16 +1005,26 @@
           "template": "add_devices"
         },
         {
-            "id": "login_credentials",
-            "template": "login_credentials",
-            "options": {
-              "logo": "/assets/eufy.svg",
-              "usernameLabel": { "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)", "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)" },
-              "usernamePlaceholder": { "en": "john@doe.com" },
-              "passwordLabel": { "en": "Password", "nl": "Wachtwoord" },
-              "passwordPlaceholder": { "en": "Password" }
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "/assets/eufy.svg",
+            "usernameLabel": {
+              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
+              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            },
+            "passwordPlaceholder": {
+              "en": "Password"
             }
           }
+        }
       ],
       "settings": [
         {
@@ -1043,7 +1058,10 @@
     },
     {
       "id": "driver_EUFYCAM_2",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1056,7 +1074,9 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "eufyCam 2",
@@ -1066,7 +1086,7 @@
         "large": "drivers/driver_EUFYCAM_2/assets/images/large.jpg",
         "small": "drivers/driver_EUFYCAM_2/assets/images/small.jpg"
       },
-      "pair": [  
+      "pair": [
         {
           "id": "list_devices",
           "template": "list_devices",
@@ -1075,16 +1095,26 @@
           }
         },
         {
-            "id": "login_credentials",
-            "template": "login_credentials",
-            "options": {
-              "logo": "eufy.svg",
-              "usernameLabel": { "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)", "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)" },
-              "usernamePlaceholder": { "en": "john@doe.com" },
-              "passwordLabel": { "en": "Password", "nl": "Wachtwoord" },
-              "passwordPlaceholder": { "en": "Password" }
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "eufy.svg",
+            "usernameLabel": {
+              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
+              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            },
+            "passwordPlaceholder": {
+              "en": "Password"
             }
-          },
+          }
+        },
         {
           "id": "add_devices",
           "template": "add_devices"
@@ -1122,7 +1152,10 @@
     },
     {
       "id": "driver_EUFYCAM_2_PRO",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1135,7 +1168,9 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "eufyCam 2 Pro",
@@ -1145,7 +1180,7 @@
         "large": "drivers/driver_EUFYCAM_2_PRO/assets/images/large.jpg",
         "small": "drivers/driver_EUFYCAM_2_PRO/assets/images/small.jpg"
       },
-      "pair": [  
+      "pair": [
         {
           "id": "list_devices",
           "template": "list_devices",
@@ -1154,16 +1189,26 @@
           }
         },
         {
-            "id": "login_credentials",
-            "template": "login_credentials",
-            "options": {
-              "logo": "eufy.svg",
-              "usernameLabel": { "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)", "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)" },
-              "usernamePlaceholder": { "en": "john@doe.com" },
-              "passwordLabel": { "en": "Password", "nl": "Wachtwoord" },
-              "passwordPlaceholder": { "en": "Password" }
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "eufy.svg",
+            "usernameLabel": {
+              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
+              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            },
+            "passwordPlaceholder": {
+              "en": "Password"
             }
-          },
+          }
+        },
         {
           "id": "add_devices",
           "template": "add_devices"
@@ -1201,7 +1246,10 @@
     },
     {
       "id": "driver_EUFYCAM_2C",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1214,7 +1262,9 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "eufyCam 2C",
@@ -1224,7 +1274,7 @@
         "large": "drivers/driver_EUFYCAM_2C/assets/images/large.jpg",
         "small": "drivers/driver_EUFYCAM_2C/assets/images/small.jpg"
       },
-      "pair": [  
+      "pair": [
         {
           "id": "list_devices",
           "template": "list_devices",
@@ -1233,16 +1283,26 @@
           }
         },
         {
-            "id": "login_credentials",
-            "template": "login_credentials",
-            "options": {
-              "logo": "eufy.svg",
-              "usernameLabel": { "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)", "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)" },
-              "usernamePlaceholder": { "en": "john@doe.com" },
-              "passwordLabel": { "en": "Password", "nl": "Wachtwoord" },
-              "passwordPlaceholder": { "en": "Password" }
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "eufy.svg",
+            "usernameLabel": {
+              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
+              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            },
+            "passwordPlaceholder": {
+              "en": "Password"
             }
-          },
+          }
+        },
         {
           "id": "add_devices",
           "template": "add_devices"
@@ -1280,7 +1340,10 @@
     },
     {
       "id": "driver_EUFYCAM_2C_PRO",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1293,7 +1356,9 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "eufyCam 2C Pro",
@@ -1303,7 +1368,7 @@
         "large": "drivers/driver_EUFYCAM_2C_PRO/assets/images/large.jpg",
         "small": "drivers/driver_EUFYCAM_2C_PRO/assets/images/small.jpg"
       },
-      "pair": [  
+      "pair": [
         {
           "id": "list_devices",
           "template": "list_devices",
@@ -1312,16 +1377,26 @@
           }
         },
         {
-            "id": "login_credentials",
-            "template": "login_credentials",
-            "options": {
-              "logo": "eufy.svg",
-              "usernameLabel": { "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)", "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)" },
-              "usernamePlaceholder": { "en": "john@doe.com" },
-              "passwordLabel": { "en": "Password", "nl": "Wachtwoord" },
-              "passwordPlaceholder": { "en": "Password" }
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "eufy.svg",
+            "usernameLabel": {
+              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
+              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            },
+            "passwordPlaceholder": {
+              "en": "Password"
             }
-          },
+          }
+        },
         {
           "id": "add_devices",
           "template": "add_devices"
@@ -1359,7 +1434,10 @@
     },
     {
       "id": "driver_EUFYCAM_E",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1371,7 +1449,9 @@
         "NTFY_MOTION_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "eufyCam E",
@@ -1381,7 +1461,7 @@
         "large": "drivers/driver_EUFYCAM_E/assets/images/large.png",
         "small": "drivers/driver_EUFYCAM_E/assets/images/small.png"
       },
-      "pair": [  
+      "pair": [
         {
           "id": "list_devices",
           "template": "list_devices",
@@ -1390,16 +1470,26 @@
           }
         },
         {
-            "id": "login_credentials",
-            "template": "login_credentials",
-            "options": {
-              "logo": "eufy.svg",
-              "usernameLabel": { "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)", "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)" },
-              "usernamePlaceholder": { "en": "john@doe.com" },
-              "passwordLabel": { "en": "Password", "nl": "Wachtwoord" },
-              "passwordPlaceholder": { "en": "Password" }
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "eufy.svg",
+            "usernameLabel": {
+              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
+              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            },
+            "passwordPlaceholder": {
+              "en": "Password"
             }
-          },
+          }
+        },
         {
           "id": "add_devices",
           "template": "add_devices"
@@ -1437,7 +1527,10 @@
     },
     {
       "id": "driver_FLOODLIGHT_CAMERA",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1459,7 +1552,7 @@
         "large": "drivers/driver_FLOODLIGHT_CAMERA/assets/images/large.jpg",
         "small": "drivers/driver_FLOODLIGHT_CAMERA/assets/images/small.jpg"
       },
-      "pair": [  
+      "pair": [
         {
           "id": "list_devices",
           "template": "list_devices",
@@ -1468,16 +1561,26 @@
           }
         },
         {
-            "id": "login_credentials",
-            "template": "login_credentials",
-            "options": {
-              "logo": "eufy.svg",
-              "usernameLabel": { "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)", "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)" },
-              "usernamePlaceholder": { "en": "john@doe.com" },
-              "passwordLabel": { "en": "Password", "nl": "Wachtwoord" },
-              "passwordPlaceholder": { "en": "Password" }
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "eufy.svg",
+            "usernameLabel": {
+              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
+              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            },
+            "passwordPlaceholder": {
+              "en": "Password"
             }
-          },
+          }
+        },
         {
           "id": "add_devices",
           "template": "add_devices"
@@ -1515,7 +1618,10 @@
     },
     {
       "id": "driver_INDOOR_CAM",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1541,7 +1647,7 @@
         "large": "drivers/driver_INDOOR_CAM/assets/images/large.jpg",
         "small": "drivers/driver_INDOOR_CAM/assets/images/small.jpg"
       },
-      "pair": [  
+      "pair": [
         {
           "id": "list_devices",
           "template": "list_devices",
@@ -1550,16 +1656,26 @@
           }
         },
         {
-            "id": "login_credentials",
-            "template": "login_credentials",
-            "options": {
-              "logo": "eufy.svg",
-              "usernameLabel": { "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)", "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)" },
-              "usernamePlaceholder": { "en": "john@doe.com" },
-              "passwordLabel": { "en": "Password", "nl": "Wachtwoord" },
-              "passwordPlaceholder": { "en": "Password" }
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "eufy.svg",
+            "usernameLabel": {
+              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
+              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            },
+            "passwordPlaceholder": {
+              "en": "Password"
             }
-          },
+          }
+        },
         {
           "id": "add_devices",
           "template": "add_devices"
@@ -1597,7 +1713,10 @@
     },
     {
       "id": "driver_INDOOR_CAM_PAN_TILT",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1624,7 +1743,7 @@
         "large": "drivers/driver_INDOOR_CAM_PAN_TILT/assets/images/large.jpg",
         "small": "drivers/driver_INDOOR_CAM_PAN_TILT/assets/images/small.jpg"
       },
-      "pair": [  
+      "pair": [
         {
           "id": "list_devices",
           "template": "list_devices",
@@ -1633,16 +1752,26 @@
           }
         },
         {
-            "id": "login_credentials",
-            "template": "login_credentials",
-            "options": {
-              "logo": "eufy.svg",
-              "usernameLabel": { "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)", "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)" },
-              "usernamePlaceholder": { "en": "john@doe.com" },
-              "passwordLabel": { "en": "Password", "nl": "Wachtwoord" },
-              "passwordPlaceholder": { "en": "Password" }
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "eufy.svg",
+            "usernameLabel": {
+              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
+              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            },
+            "passwordPlaceholder": {
+              "en": "Password"
             }
-          },
+          }
+        },
         {
           "id": "add_devices",
           "template": "add_devices"
@@ -1680,7 +1809,10 @@
     },
     {
       "id": "driver_OUTDOOR_CAM",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1706,7 +1838,7 @@
         "large": "drivers/driver_OUTDOOR_CAM/assets/images/large.jpg",
         "small": "drivers/driver_OUTDOOR_CAM/assets/images/small.jpg"
       },
-      "pair": [  
+      "pair": [
         {
           "id": "list_devices",
           "template": "list_devices",
@@ -1715,16 +1847,26 @@
           }
         },
         {
-            "id": "login_credentials",
-            "template": "login_credentials",
-            "options": {
-              "logo": "eufy.svg",
-              "usernameLabel": { "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)", "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)" },
-              "usernamePlaceholder": { "en": "john@doe.com" },
-              "passwordLabel": { "en": "Password", "nl": "Wachtwoord" },
-              "passwordPlaceholder": { "en": "Password" }
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "eufy.svg",
+            "usernameLabel": {
+              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
+              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            },
+            "passwordPlaceholder": {
+              "en": "Password"
             }
-          },
+          }
+        },
         {
           "id": "add_devices",
           "template": "add_devices"
@@ -1762,7 +1904,10 @@
     },
     {
       "id": "driver_OUTDOOR_CAM_PRO",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1788,7 +1933,7 @@
         "large": "drivers/driver_OUTDOOR_CAM_PRO/assets/images/large.jpg",
         "small": "drivers/driver_OUTDOOR_CAM_PRO/assets/images/small.jpg"
       },
-      "pair": [  
+      "pair": [
         {
           "id": "list_devices",
           "template": "list_devices",
@@ -1797,16 +1942,26 @@
           }
         },
         {
-            "id": "login_credentials",
-            "template": "login_credentials",
-            "options": {
-              "logo": "eufy.svg",
-              "usernameLabel": { "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)", "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)" },
-              "usernamePlaceholder": { "en": "john@doe.com" },
-              "passwordLabel": { "en": "Password", "nl": "Wachtwoord" },
-              "passwordPlaceholder": { "en": "Password" }
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "eufy.svg",
+            "usernameLabel": {
+              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
+              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            },
+            "passwordPlaceholder": {
+              "en": "Password"
             }
-          },
+          }
+        },
         {
           "id": "add_devices",
           "template": "add_devices"
@@ -1844,7 +1999,10 @@
     },
     {
       "id": "driver_SOLOCAM_E2040",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1862,7 +2020,9 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "SoloCam E20 / E40",
@@ -1872,7 +2032,7 @@
         "large": "drivers/driver_SOLOCAM_E2040/assets/images/large.png",
         "small": "drivers/driver_SOLOCAM_E2040/assets/images/small.png"
       },
-      "pair": [  
+      "pair": [
         {
           "id": "list_devices",
           "template": "list_devices",
@@ -1881,16 +2041,26 @@
           }
         },
         {
-            "id": "login_credentials",
-            "template": "login_credentials",
-            "options": {
-              "logo": "eufy.svg",
-              "usernameLabel": { "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)", "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)" },
-              "usernamePlaceholder": { "en": "john@doe.com" },
-              "passwordLabel": { "en": "Password", "nl": "Wachtwoord" },
-              "passwordPlaceholder": { "en": "Password" }
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "eufy.svg",
+            "usernameLabel": {
+              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
+              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            },
+            "passwordPlaceholder": {
+              "en": "Password"
             }
-          },
+          }
+        },
         {
           "id": "add_devices",
           "template": "add_devices"
@@ -1928,7 +2098,10 @@
     },
     {
       "id": "driver_SOLOCAM_L2040",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1946,7 +2119,9 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "SoloCam L20 / L40",
@@ -1956,7 +2131,7 @@
         "large": "drivers/driver_SOLOCAM_L2040/assets/images/large.jpg",
         "small": "drivers/driver_SOLOCAM_L2040/assets/images/small.jpg"
       },
-      "pair": [  
+      "pair": [
         {
           "id": "list_devices",
           "template": "list_devices",
@@ -1965,16 +2140,26 @@
           }
         },
         {
-            "id": "login_credentials",
-            "template": "login_credentials",
-            "options": {
-              "logo": "eufy.svg",
-              "usernameLabel": { "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)", "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)" },
-              "usernamePlaceholder": { "en": "john@doe.com" },
-              "passwordLabel": { "en": "Password", "nl": "Wachtwoord" },
-              "passwordPlaceholder": { "en": "Password" }
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "eufy.svg",
+            "usernameLabel": {
+              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
+              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            },
+            "passwordPlaceholder": {
+              "en": "Password"
             }
-          },
+          }
+        },
         {
           "id": "add_devices",
           "template": "add_devices"
@@ -2012,7 +2197,10 @@
     },
     {
       "id": "driver_SOLOCAM_S2040",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -2030,7 +2218,9 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "SoloCam (Solar) S40",
@@ -2040,7 +2230,7 @@
         "large": "drivers/driver_SOLOCAM_S2040/assets/images/large.jpg",
         "small": "drivers/driver_SOLOCAM_S2040/assets/images/small.jpg"
       },
-      "pair": [  
+      "pair": [
         {
           "id": "list_devices",
           "template": "list_devices",
@@ -2049,16 +2239,26 @@
           }
         },
         {
-            "id": "login_credentials",
-            "template": "login_credentials",
-            "options": {
-              "logo": "eufy.svg",
-              "usernameLabel": { "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)", "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)" },
-              "usernamePlaceholder": { "en": "john@doe.com" },
-              "passwordLabel": { "en": "Password", "nl": "Wachtwoord" },
-              "passwordPlaceholder": { "en": "Password" }
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "eufy.svg",
+            "usernameLabel": {
+              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
+              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            },
+            "passwordPlaceholder": {
+              "en": "Password"
             }
-          },
+          }
+        },
         {
           "id": "add_devices",
           "template": "add_devices"
@@ -2096,7 +2296,10 @@
     },
     {
       "id": "driver_VIDEO_DOORBELL_2K_POWERED",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "doorbell",
       "capabilities": [
         "onoff",
@@ -2123,7 +2326,7 @@
         "large": "drivers/driver_VIDEO_DOORBELL_2K_POWERED/assets/images/large.jpg",
         "small": "drivers/driver_VIDEO_DOORBELL_2K_POWERED/assets/images/small.jpg"
       },
-      "pair": [  
+      "pair": [
         {
           "id": "list_devices",
           "template": "list_devices",
@@ -2132,16 +2335,26 @@
           }
         },
         {
-            "id": "login_credentials",
-            "template": "login_credentials",
-            "options": {
-              "logo": "eufy.svg",
-              "usernameLabel": { "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)", "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)" },
-              "usernamePlaceholder": { "en": "john@doe.com" },
-              "passwordLabel": { "en": "Password", "nl": "Wachtwoord" },
-              "passwordPlaceholder": { "en": "Password" }
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "eufy.svg",
+            "usernameLabel": {
+              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
+              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            },
+            "passwordPlaceholder": {
+              "en": "Password"
             }
-          },
+          }
+        },
         {
           "id": "add_devices",
           "template": "add_devices"
@@ -2179,7 +2392,10 @@
     },
     {
       "id": "driver_VIDEO_DOORBELL_2K_BATTERY",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "doorbell",
       "capabilities": [
         "onoff",
@@ -2198,7 +2414,9 @@
         "NTFY_BACKGROUND_ACTIVE"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "Battery Doorbell (1080P/2K)",
@@ -2208,7 +2426,7 @@
         "large": "drivers/driver_VIDEO_DOORBELL_2K_BATTERY/assets/images/large.jpg",
         "small": "drivers/driver_VIDEO_DOORBELL_2K_BATTERY/assets/images/small.jpg"
       },
-      "pair": [  
+      "pair": [
         {
           "id": "list_devices",
           "template": "list_devices",
@@ -2217,16 +2435,26 @@
           }
         },
         {
-            "id": "login_credentials",
-            "template": "login_credentials",
-            "options": {
-              "logo": "eufy.svg",
-              "usernameLabel": { "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)", "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)" },
-              "usernamePlaceholder": { "en": "john@doe.com" },
-              "passwordLabel": { "en": "Password", "nl": "Wachtwoord" },
-              "passwordPlaceholder": { "en": "Password" }
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "eufy.svg",
+            "usernameLabel": {
+              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
+              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            },
+            "passwordPlaceholder": {
+              "en": "Password"
             }
-          },
+          }
+        },
         {
           "id": "add_devices",
           "template": "add_devices"
@@ -2265,7 +2493,10 @@
     {
       "id": "driver_VIDEO_DOORBELL_1080P_POWERED",
       "deprecated": true,
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "doorbell",
       "capabilities": [
         "onoff",
@@ -2292,7 +2523,7 @@
         "large": "drivers/driver_VIDEO_DOORBELL_1080P_POWERED/assets/images/large.jpg",
         "small": "drivers/driver_VIDEO_DOORBELL_1080P_POWERED/assets/images/small.jpg"
       },
-      "pair": [  
+      "pair": [
         {
           "id": "list_devices",
           "template": "list_devices",
@@ -2301,16 +2532,26 @@
           }
         },
         {
-            "id": "login_credentials",
-            "template": "login_credentials",
-            "options": {
-              "logo": "eufy.svg",
-              "usernameLabel": { "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)", "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)" },
-              "usernamePlaceholder": { "en": "john@doe.com" },
-              "passwordLabel": { "en": "Password", "nl": "Wachtwoord" },
-              "passwordPlaceholder": { "en": "Password" }
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "eufy.svg",
+            "usernameLabel": {
+              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
+              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            },
+            "passwordPlaceholder": {
+              "en": "Password"
             }
-          },
+          }
+        },
         {
           "id": "add_devices",
           "template": "add_devices"
@@ -2349,7 +2590,10 @@
     {
       "id": "driver_VIDEO_DOORBELL_1080P_BATTERY",
       "deprecated": true,
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "doorbell",
       "capabilities": [
         "onoff",
@@ -2368,7 +2612,9 @@
         "NTFY_BACKGROUND_ACTIVE"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "Video Doorbell 1080p (Battery-Powered)",
@@ -2378,7 +2624,7 @@
         "large": "drivers/driver_VIDEO_DOORBELL_1080P_BATTERY/assets/images/large.jpg",
         "small": "drivers/driver_VIDEO_DOORBELL_1080P_BATTERY/assets/images/small.jpg"
       },
-      "pair": [  
+      "pair": [
         {
           "id": "list_devices",
           "template": "list_devices",
@@ -2387,16 +2633,26 @@
           }
         },
         {
-            "id": "login_credentials",
-            "template": "login_credentials",
-            "options": {
-              "logo": "eufy.svg",
-              "usernameLabel": { "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)", "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)" },
-              "usernamePlaceholder": { "en": "john@doe.com" },
-              "passwordLabel": { "en": "Password", "nl": "Wachtwoord" },
-              "passwordPlaceholder": { "en": "Password" }
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "eufy.svg",
+            "usernameLabel": {
+              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
+              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            },
+            "passwordPlaceholder": {
+              "en": "Password"
             }
-          },
+          }
+        },
         {
           "id": "add_devices",
           "template": "add_devices"
@@ -2434,21 +2690,28 @@
     },
     {
       "id": "driver_DOORSENSOR",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "sensor",
-      "capabilities": ["alarm_contact"],
+      "capabilities": [
+        "alarm_contact"
+      ],
       "name": {
         "en": "Doorsensor",
         "nl": "Deursensor"
       },
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "images": {
         "large": "drivers/driver_DOORSENSOR/assets/images/large.jpg",
         "small": "drivers/driver_DOORSENSOR/assets/images/small.jpg"
       },
-      "pair": [  
+      "pair": [
         {
           "id": "list_devices",
           "template": "list_devices",
@@ -2457,16 +2720,26 @@
           }
         },
         {
-            "id": "login_credentials",
-            "template": "login_credentials",
-            "options": {
-              "logo": "eufy.svg",
-              "usernameLabel": { "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)", "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)" },
-              "usernamePlaceholder": { "en": "john@doe.com" },
-              "passwordLabel": { "en": "Password", "nl": "Wachtwoord" },
-              "passwordPlaceholder": { "en": "Password" }
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "eufy.svg",
+            "usernameLabel": {
+              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
+              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            },
+            "passwordPlaceholder": {
+              "en": "Password"
             }
-          },
+          }
+        },
         {
           "id": "add_devices",
           "template": "add_devices"
@@ -2504,21 +2777,28 @@
     },
     {
       "id": "driver_MOTIONSENSOR",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "sensor",
-      "capabilities": ["alarm_motion"],
+      "capabilities": [
+        "alarm_motion"
+      ],
       "name": {
         "en": "Motionsensor",
         "nl": "Bewegingssensor"
       },
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "images": {
         "large": "drivers/driver_MOTIONSENSOR/assets/images/large.jpg",
         "small": "drivers/driver_MOTIONSENSOR/assets/images/small.jpg"
       },
-      "pair": [  
+      "pair": [
         {
           "id": "list_devices",
           "template": "list_devices",
@@ -2527,16 +2807,26 @@
           }
         },
         {
-            "id": "login_credentials",
-            "template": "login_credentials",
-            "options": {
-              "logo": "eufy.svg",
-              "usernameLabel": { "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)", "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)" },
-              "usernamePlaceholder": { "en": "john@doe.com" },
-              "passwordLabel": { "en": "Password", "nl": "Wachtwoord" },
-              "passwordPlaceholder": { "en": "Password" }
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "eufy.svg",
+            "usernameLabel": {
+              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
+              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            },
+            "passwordPlaceholder": {
+              "en": "Password"
             }
-          },
+          }
+        },
         {
           "id": "add_devices",
           "template": "add_devices"
@@ -2545,7 +2835,10 @@
     },
     {
       "id": "driver_HOMEBASE_1",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "homealarm",
       "capabilities": [
         "CMD_SET_ARMING",
@@ -2562,7 +2855,7 @@
         "large": "drivers/driver_HOMEBASE_1/assets/images/large.jpg",
         "small": "drivers/driver_HOMEBASE_1/assets/images/small.jpg"
       },
-      "pair": [  
+      "pair": [
         {
           "id": "list_devices",
           "template": "list_devices",
@@ -2571,16 +2864,26 @@
           }
         },
         {
-            "id": "login_credentials",
-            "template": "login_credentials",
-            "options": {
-              "logo": "eufy.svg",
-              "usernameLabel": { "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)", "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)" },
-              "usernamePlaceholder": { "en": "john@doe.com" },
-              "passwordLabel": { "en": "Password", "nl": "Wachtwoord" },
-              "passwordPlaceholder": { "en": "Password" }
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "eufy.svg",
+            "usernameLabel": {
+              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
+              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            },
+            "passwordPlaceholder": {
+              "en": "Password"
             }
-          },
+          }
+        },
         {
           "id": "add_devices",
           "template": "add_devices"
@@ -2618,7 +2921,10 @@
     },
     {
       "id": "driver_HOMEBASE",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "homealarm",
       "capabilities": [
         "CMD_SET_ARMING",
@@ -2635,7 +2941,7 @@
         "large": "drivers/driver_HOMEBASE/assets/images/large.jpg",
         "small": "drivers/driver_HOMEBASE/assets/images/small.jpg"
       },
-      "pair": [  
+      "pair": [
         {
           "id": "list_devices",
           "template": "list_devices",
@@ -2644,16 +2950,26 @@
           }
         },
         {
-            "id": "login_credentials",
-            "template": "login_credentials",
-            "options": {
-              "logo": "eufy.svg",
-              "usernameLabel": { "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)", "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)" },
-              "usernamePlaceholder": { "en": "john@doe.com" },
-              "passwordLabel": { "en": "Password", "nl": "Wachtwoord" },
-              "passwordPlaceholder": { "en": "Password" }
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "eufy.svg",
+            "usernameLabel": {
+              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
+              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            },
+            "passwordPlaceholder": {
+              "en": "Password"
             }
-          },
+          }
+        },
         {
           "id": "add_devices",
           "template": "add_devices"
@@ -2691,7 +3007,10 @@
     },
     {
       "id": "driver_HOMEBASE_CHIME",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "homealarm",
       "capabilities": [
         "CMD_SET_ARMING",
@@ -2708,7 +3027,7 @@
         "large": "drivers/driver_HOMEBASE_CHIME/assets/images/large.png",
         "small": "drivers/driver_HOMEBASE_CHIME/assets/images/small.png"
       },
-      "pair": [  
+      "pair": [
         {
           "id": "list_devices",
           "template": "list_devices",
@@ -2717,16 +3036,26 @@
           }
         },
         {
-            "id": "login_credentials",
-            "template": "login_credentials",
-            "options": {
-              "logo": "eufy.svg",
-              "usernameLabel": { "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)", "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)" },
-              "usernamePlaceholder": { "en": "john@doe.com" },
-              "passwordLabel": { "en": "Password", "nl": "Wachtwoord" },
-              "passwordPlaceholder": { "en": "Password" }
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "eufy.svg",
+            "usernameLabel": {
+              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
+              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            },
+            "passwordPlaceholder": {
+              "en": "Password"
             }
-          },
+          }
+        },
         {
           "id": "add_devices",
           "template": "add_devices"
@@ -2764,7 +3093,10 @@
     },
     {
       "id": "driver_KEYPAD",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "homealarm",
       "capabilities": [],
       "name": {
@@ -2775,7 +3107,7 @@
         "large": "drivers/driver_KEYPAD/assets/images/large.jpg",
         "small": "drivers/driver_KEYPAD/assets/images/small.jpg"
       },
-      "pair": [  
+      "pair": [
         {
           "id": "list_devices",
           "template": "list_devices",
@@ -2784,16 +3116,26 @@
           }
         },
         {
-            "id": "login_credentials",
-            "template": "login_credentials",
-            "options": {
-              "logo": "eufy.svg",
-              "usernameLabel": { "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)", "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)" },
-              "usernamePlaceholder": { "en": "john@doe.com" },
-              "passwordLabel": { "en": "Password", "nl": "Wachtwoord" },
-              "passwordPlaceholder": { "en": "Password" }
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "eufy.svg",
+            "usernameLabel": {
+              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
+              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            },
+            "passwordPlaceholder": {
+              "en": "Password"
             }
-          },
+          }
+        },
         {
           "id": "add_devices",
           "template": "add_devices"

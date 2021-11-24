@@ -643,5 +643,8 @@
   },
   "2.16.0": {
     "en": "NEW: Merge doorbells to - Add doorbell device type - Webapp changes"
+  },
+  "2.17.0": {
+    "en": "NEW: Add login when adding a new device for first time users"
   }
 }
