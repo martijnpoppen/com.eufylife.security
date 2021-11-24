@@ -646,5 +646,8 @@
   },
   "2.17.0": {
     "en": "NEW: Add login when adding a new device for first time users"
+  },
+  "2.17.1": {
+    "en": "FIX: doorbell press was not working after last release"
   }
 }
