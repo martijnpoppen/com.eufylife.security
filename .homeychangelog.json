@@ -652,5 +652,8 @@
   },
   "2.17.2": {
     "en": "FIX: issue with device notifications after last update"
+  },
+  "2.17.3": {
+    "en": "FIX: issue with device notifications and pairing after last update"
   }
 }
