@@ -658,5 +658,8 @@
   },
   "2.17.4": {
     "en": "NEW: improve device pairing + add error messages on pair"
+  },
+  "2.17.6": {
+    "en": "OPT: add extra logs for floodcam T8420"
   }
 }
