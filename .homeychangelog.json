@@ -661,5 +661,14 @@
   },
   "2.17.6": {
     "en": "OPT: add extra logs for floodcam T8420"
+  },
+  "2.17.7": {
+    "en": "FIX: T8420 not reporting notifications."
+  },
+  "2.17.8": {
+    "en": "FIX: cronjobs excluding each other"
+  },
+  "2.17.9": {
+    "en": "FIX: T8420 not reporting notifications."
   }
 }
