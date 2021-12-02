@@ -453,6 +453,8 @@ module.exports = class mainDevice extends Homey.Device {
             }
 
             if(initCron) {
+                await eufyParameterHelper.unregisterTask(deviceObject.device_sn);
+                await sleep(1500);
                 await eufyParameterHelper.registerCronTask(deviceObject.device_sn, "EVERY_HALVE_HOURS", this.matchDeviceWithDeviceStore, ctx)
             }
             

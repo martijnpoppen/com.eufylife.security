@@ -16,10 +16,8 @@ const { log } = require("./logger.js");
 
 const ManagerSettings = Homey.ManagerSettings;
 const ManagerCloud = Homey.ManagerCloud;
-const ManagerDrivers = Homey.ManagerDrivers;
 const _settingsKey = `${Homey.manifest.id}.settings`;
 let _serverPort = undefined;
-let _httpService = undefined;
 
 class App extends Homey.App {
   log() {
@@ -99,13 +97,13 @@ class App extends Homey.App {
             this.saveSettings();
         }
 
-        if (this.appSettings.HUBS_AMOUNT > 0 && !_httpService) {
-            _httpService = await this.setHttpService(this.appSettings);
+        if (this.appSettings.HUBS_AMOUNT > 0 && !this._httpService) {
+            this._httpService = await this.setHttpService(this.appSettings);
         }
 
-        await this.setDeviceStore(this, true);
-
         await eufyParameterHelper.unregisterAllTasks();
+        await sleep(3000);
+        await this.setDeviceStore(this, true);
 
         return;
       }
@@ -130,7 +128,7 @@ class App extends Homey.App {
     this.log("updateSettings - New settings:",  {...settings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
 
     if(resetHttpService) {
-        _httpService = undefined;
+        this._httpService = undefined;
     }
 
     this.appSettings = settings;
@@ -155,9 +153,9 @@ class App extends Homey.App {
       this.log("eufyLogin - New settings:",  {...settings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
       this.log(`eufyLogin - Found username and password. Logging in to Eufy`);
 
-      _httpService = await this.setHttpService(data);
+      this._httpService = await this.setHttpService(data);
 
-      const hubs = await _httpService.listHubs();
+      const hubs = await this._httpService.listHubs();
       
       if(!hubs.length) {
         return new Error('No hubs found. Did you share the devices to your Eufy Account?');
@@ -232,7 +230,7 @@ class App extends Homey.App {
   }
 
   getHttpService() {
-      return _httpService;
+      return this._httpService;
   }
 
   async getDevices() {
@@ -240,7 +238,7 @@ class App extends Homey.App {
   }
 
   async setDevice(device) {
-    Homey.app.log("setDevice", device.id);
+    Homey.app.log("setDevice", device);
 
     this._deviceList = [...this._deviceList, device];
   }
@@ -257,7 +255,7 @@ class App extends Homey.App {
   }
 
   async setDeviceStore(ctx, initCron = false) {
-    let devices = await _httpService.listDevices();
+    let devices = await this._httpService.listDevices();
 
     this._deviceStore = [];
 

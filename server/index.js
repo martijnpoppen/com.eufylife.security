@@ -4,7 +4,7 @@ const http = require('http');
 
 exports.init = async function () {
     try {
-        const port = 39827;
+        const port = 39828;
         const file = new(static.Server)(__dirname);
 
         const server = await http.createServer(function (req, res) {
