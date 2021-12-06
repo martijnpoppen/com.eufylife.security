@@ -109,6 +109,10 @@ module.exports = class mainDevice extends Homey.Device {
                 await this.setQuickResponseStore();
                 this.registerCapabilityListener('CMD_DOORBELL_QUICK_RESPONSE', this.onCapability_CMD_DOORBELL_QUICK_RESPONSE.bind(this));
             }
+
+            if(this.hasCapability('CMD_SET_FLOODLIGHT_MANUAL_SWITCH')) {
+                this.registerCapabilityListener('CMD_SET_FLOODLIGHT_MANUAL_SWITCH', this.onCapability_CMD_SET_FLOODLIGHT_MANUAL_SWITCH.bind(this));
+            }
         } catch (error) {
             Homey.app.log(error)
         }
@@ -367,6 +371,19 @@ module.exports = class mainDevice extends Homey.Device {
         }
     }
 
+    async onCapability_CMD_SET_FLOODLIGHT_MANUAL_SWITCH(value) {    
+        try {
+            const deviceObject = this.getData();
+            const deviceId = this.getStoreValue('device_index');
+            await Homey.app.EufyP2P.sendCommand('CMD_SET_FLOODLIGHT_MANUAL_SWITCH', deviceObject.station_sn, CommandType.CMD_SET_FLOODLIGHT_MANUAL_SWITCH, value, deviceId, deviceId);
+
+            return Promise.resolve(true);
+        } catch (e) {
+            Homey.app.error(e);
+            return Promise.reject(e);
+        }
+    }
+    
     async onCapability_NTFY_TRIGGER( message, value ) {
         try {
             const settings = this.getSettings();
@@ -453,15 +470,12 @@ module.exports = class mainDevice extends Homey.Device {
             }
 
             if(initCron) {
-                await eufyParameterHelper.unregisterTask(deviceObject.device_sn);
-                await sleep(1500);
                 await eufyParameterHelper.registerCronTask(deviceObject.device_sn, "EVERY_HALVE_HOURS", this.matchDeviceWithDeviceStore, ctx)
             }
             
             return Promise.resolve(true);
         } catch (e) {
             Homey.app.error(e);
-            return Promise.reject(e);
         }
     }
 

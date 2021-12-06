@@ -102,7 +102,7 @@ class App extends Homey.App {
         }
 
         await eufyParameterHelper.unregisterAllTasks();
-        await sleep(3000);
+        await sleep(2000);
         await this.setDeviceStore(this, true);
 
         return;

@@ -754,6 +754,44 @@
         ]
       },
       {
+        "id": "action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH",
+        "title": {
+            "en": "Toggle Light",
+            "nl": "Zet lamp aan/uit"
+          },
+          "titleFormatted": {
+            "en": "[[device]] Toggle Light [[action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE]]",
+            "nl": "[[device]] Zet lamp [[action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE]]"
+          },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "capabilities=CMD_SET_FLOODLIGHT_MANUAL_SWITCH"
+          },
+          {
+            "name": "action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "On",
+                  "nl": "Aan"
+                }
+              },
+              {
+                "id": "0",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
         "id": "action_CMD_INDOOR_PAN_TURN",
         "title": {
           "en": "Turn 360 (Room scan)",
@@ -1535,6 +1573,7 @@
       "capabilities": [
         "onoff",
         "alarm_motion",
+        "CMD_SET_FLOODLIGHT_MANUAL_SWITCH",
         "CMD_SET_ARMING",
         "CMD_REBOOT_HUB",
         "CMD_START_STREAM",
@@ -3402,6 +3441,16 @@
         "en": "Set Homebase snooze mode",
         "nl": "Zet Homebase snooze modus"
       }
+    },
+    "CMD_SET_FLOODLIGHT_MANUAL_SWITCH": {
+        "type": "boolean",
+        "uiComponent": "button",
+        "getable": true,
+        "setable": true,
+        "title": {
+          "en": "Light",
+          "nl": "Lamp"
+        }
     },
     "NTFY_BACKGROUND_ACTIVE": {
       "type": "boolean",
