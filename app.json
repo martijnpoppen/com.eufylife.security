@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.17.9",
+  "version": "2.18.0",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -756,13 +756,13 @@
       {
         "id": "action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH",
         "title": {
-            "en": "Toggle Light",
-            "nl": "Zet lamp aan/uit"
-          },
-          "titleFormatted": {
-            "en": "[[device]] Toggle Light [[action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE]]",
-            "nl": "[[device]] Zet lamp [[action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE]]"
-          },
+          "en": "Toggle Light",
+          "nl": "Zet lamp aan/uit"
+        },
+        "titleFormatted": {
+          "en": "[[device]] Toggle Light [[action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE]]",
+          "nl": "[[device]] Zet lamp [[action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE]]"
+        },
         "args": [
           {
             "name": "device",
@@ -3443,14 +3443,14 @@
       }
     },
     "CMD_SET_FLOODLIGHT_MANUAL_SWITCH": {
-        "type": "boolean",
-        "uiComponent": "button",
-        "getable": true,
-        "setable": true,
-        "title": {
-          "en": "Light",
-          "nl": "Lamp"
-        }
+      "type": "boolean",
+      "uiComponent": "button",
+      "getable": true,
+      "setable": true,
+      "title": {
+        "en": "Light",
+        "nl": "Lamp"
+      }
     },
     "NTFY_BACKGROUND_ACTIVE": {
       "type": "boolean",
