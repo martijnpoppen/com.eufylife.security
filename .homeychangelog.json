@@ -673,5 +673,8 @@
   },
   "2.18.0": {
     "en": "NEW: add floodlight - light control"
+  },
+  "2.18.1": {
+    "en": "FIX: small fix for httpService"
   }
 }
