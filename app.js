@@ -18,6 +18,7 @@ const ManagerSettings = Homey.ManagerSettings;
 const ManagerCloud = Homey.ManagerCloud;
 const _settingsKey = `${Homey.manifest.id}.settings`;
 let _serverPort = undefined;
+let _httpService = undefined;
 
 class App extends Homey.App {
   log() {
@@ -97,8 +98,8 @@ class App extends Homey.App {
             this.saveSettings();
         }
 
-        if (this.appSettings.HUBS_AMOUNT > 0 && !this._httpService) {
-            this._httpService = await this.setHttpService(this.appSettings);
+        if (this.appSettings.HUBS_AMOUNT > 0 && !_httpService) {
+            _httpService = await this.setHttpService(this.appSettings);
         }
 
         await eufyParameterHelper.unregisterAllTasks();
@@ -128,7 +129,7 @@ class App extends Homey.App {
     this.log("updateSettings - New settings:",  {...settings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
 
     if(resetHttpService) {
-        this._httpService = undefined;
+        _httpService = undefined;
     }
 
     this.appSettings = settings;
@@ -153,9 +154,9 @@ class App extends Homey.App {
       this.log("eufyLogin - New settings:",  {...settings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
       this.log(`eufyLogin - Found username and password. Logging in to Eufy`);
 
-      this._httpService = await this.setHttpService(data);
+      _httpService = await this.setHttpService(data);
 
-      const hubs = await this._httpService.listHubs();
+      const hubs = await _httpService.listHubs();
       
       if(!hubs.length) {
         return new Error('No hubs found. Did you share the devices to your Eufy Account?');
@@ -230,7 +231,7 @@ class App extends Homey.App {
   }
 
   getHttpService() {
-      return this._httpService;
+      return _httpService;
   }
 
   async getDevices() {
@@ -255,7 +256,7 @@ class App extends Homey.App {
   }
 
   async setDeviceStore(ctx, initCron = false) {
-    let devices = await this._httpService.listDevices();
+    let devices = await _httpService.listDevices();
 
     this._deviceStore = [];
 
