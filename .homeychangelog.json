@@ -676,5 +676,8 @@
   },
   "2.18.1": {
     "en": "FIX: small fix for httpService"
+  },
+  "2.18.2": {
+    "en": "FIX: small fix for httpService"
   }
 }
