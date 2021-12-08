@@ -18,7 +18,6 @@ const ManagerSettings = Homey.ManagerSettings;
 const ManagerCloud = Homey.ManagerCloud;
 const _settingsKey = `${Homey.manifest.id}.settings`;
 let _serverPort = undefined;
-let _httpService = undefined;
 
 class App extends Homey.App {
   log() {
@@ -98,8 +97,8 @@ class App extends Homey.App {
             this.saveSettings();
         }
 
-        if (this.appSettings.HUBS_AMOUNT > 0 && !_httpService) {
-            _httpService = await this.setHttpService(this.appSettings);
+        if (this.appSettings.HUBS_AMOUNT > 0 && !this._httpService) {
+            this._httpService = await this.setHttpService(this.appSettings);
         }
 
         await eufyParameterHelper.unregisterAllTasks();
@@ -129,7 +128,7 @@ class App extends Homey.App {
     this.log("updateSettings - New settings:",  {...settings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
 
     if(resetHttpService) {
-        _httpService = undefined;
+        this._httpService = undefined;
     }
 
     this.appSettings = settings;
@@ -154,9 +153,9 @@ class App extends Homey.App {
       this.log("eufyLogin - New settings:",  {...settings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
       this.log(`eufyLogin - Found username and password. Logging in to Eufy`);
 
-      _httpService = await this.setHttpService(data);
+      this._httpService = await this.setHttpService(data);
 
-      const hubs = await _httpService.listHubs();
+      const hubs = await this._httpService.listHubs();
       
       if(!hubs.length) {
         return new Error('No hubs found. Did you share the devices to your Eufy Account?');
@@ -231,7 +230,7 @@ class App extends Homey.App {
   }
 
   getHttpService() {
-      return _httpService;
+      return this._httpService;
   }
 
   async getDevices() {
@@ -256,9 +255,9 @@ class App extends Homey.App {
   }
 
   async setDeviceStore(ctx, initCron = false) {
-    let devices = await _httpService.listDevices();
+    let devices = await ctx._httpService.listDevices();
 
-    this._deviceStore = [];
+    ctx._deviceStore = [];
 
     if(devices.length) {
         Homey.app.log("setDeviceStore - Mapping deviceList", devices);
@@ -276,17 +275,17 @@ class App extends Homey.App {
             }
         });
 
-        this._deviceStore.push(...devices);
+        ctx._deviceStore.push(...devices);
     }
 
-    Homey.app.log("setDeviceStore - Setting up DeviceStore", this._deviceStore);
+    Homey.app.log("setDeviceStore - Setting up DeviceStore", ctx._deviceStore);
 
     if(initCron) {
-        await eufyParameterHelper.registerCronTask("setDeviceStore", "EVERY_HALVE_HOURS", this.setDeviceStore, ctx)
+        await eufyParameterHelper.registerCronTask("setDeviceStore", "EVERY_HALVE_HOURS", ctx.setDeviceStore, ctx)
     }
     
 
-    return this._deviceStore;
+    return ctx._deviceStore;
   }
 
   async getStreamAddress() {
