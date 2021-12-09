@@ -679,5 +679,11 @@
   },
   "2.18.2": {
     "en": "FIX: small fix for httpService"
+  },
+  "2.18.3": {
+    "en": "FIX: app DeviceStore CronJobs"
+  },
+  "2.19.0": {
+    "en": "NEW: ADD - Floodlight Cam 2 Pro"
   }
 }
