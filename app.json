@@ -68,10 +68,10 @@
     ],
     "translators": [
       {
-        "name": "🇬🇧 Martijn P."
+        "name": "🇬🇧 Martijn Poppen"
       },
       {
-        "name": "🇳🇱 Martijn P."
+        "name": "🇳🇱 Martijn Poppen"
       }
     ]
   },
@@ -1655,6 +1655,99 @@
         }
       ]
     },
+    {
+        "id": "driver_FLOODLIGHT_CAM_PAN_TILT",
+        "connectivity": [
+          "cloud",
+          "lan"
+        ],
+        "class": "camera",
+        "capabilities": [
+          "onoff",
+          "alarm_motion",
+          "CMD_SET_FLOODLIGHT_MANUAL_SWITCH",
+          "CMD_SET_ARMING",
+          "CMD_REBOOT_HUB",
+          "CMD_INDOOR_PAN_TURN",
+          "CMD_START_STREAM",
+          "CMD_SET_SNOOZE_MODE",
+          "CMD_TRIGGER_ALARM",
+          "CMD_SET_HUB_ALARM_CLOSE",
+          "NTFY_MOTION_DETECTION",
+          "NTFY_FACE_DETECTION"
+        ],
+        "name": {
+          "en": "Floodlight Cam 2 Pro",
+          "nl": "Floodlight Cam 2 Pro"
+        },
+        "images": {
+          "large": "drivers/driver_FLOODLIGHT_CAM_PAN_TILT/assets/images/large.jpg",
+          "small": "drivers/driver_FLOODLIGHT_CAM_PAN_TILT/assets/images/small.jpg"
+        },
+        "pair": [
+          {
+            "id": "list_devices",
+            "template": "list_devices",
+            "navigation": {
+              "next": "add_devices"
+            }
+          },
+          {
+            "id": "login_credentials",
+            "template": "login_credentials",
+            "options": {
+              "logo": "eufy.svg",
+              "usernameLabel": {
+                "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
+                "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
+              },
+              "usernamePlaceholder": {
+                "en": "john@doe.com"
+              },
+              "passwordLabel": {
+                "en": "Password",
+                "nl": "Wachtwoord"
+              },
+              "passwordPlaceholder": {
+                "en": "Password"
+              }
+            }
+          },
+          {
+            "id": "add_devices",
+            "template": "add_devices"
+          }
+        ],
+        "settings": [
+          {
+            "type": "group",
+            "label": {
+              "en": "General settings",
+              "nl": "Algemene instellingen"
+            },
+            "children": [
+              {
+                "id": "override_onoff",
+                "type": "checkbox",
+                "label": {
+                  "en": "Always on",
+                  "nl": "Altijd aan"
+                },
+                "value": false
+              },
+              {
+                "id": "alarm_motion_enabled",
+                "type": "checkbox",
+                "label": {
+                  "en": "Use generic motion alarm?",
+                  "nl": "Gebruik generiek bewegings alarm"
+                },
+                "value": true
+              }
+            ]
+          }
+        ]
+      },
     {
       "id": "driver_INDOOR_CAM",
       "connectivity": [
