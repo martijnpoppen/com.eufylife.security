@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.19.1",
+  "version": "2.19.2",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -1668,7 +1668,6 @@
         "CMD_SET_FLOODLIGHT_MANUAL_SWITCH",
         "CMD_SET_ARMING",
         "CMD_REBOOT_HUB",
-        "CMD_INDOOR_PAN_TURN",
         "CMD_START_STREAM",
         "CMD_SET_SNOOZE_MODE",
         "CMD_TRIGGER_ALARM",

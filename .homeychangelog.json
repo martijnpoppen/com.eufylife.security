@@ -688,5 +688,8 @@
   },
   "2.19.1": {
     "en": "NEW: ADD - Floodlight Cam 2 Pro"
+  },
+  "2.19.2": {
+    "en": "REMOVE: 360 roundlook for Floodlight Cam 2 Pro"
   }
 }
