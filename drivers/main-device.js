@@ -48,6 +48,10 @@ module.exports = class mainDevice extends Homey.Device {
                 this.resetCapability('alarm_motion');
             }
 
+            if(this.hasCapability('alarm_contact')) {
+                this.resetCapability('alarm_contact');
+            }
+
             if(this.hasCapability('alarm_generic')) {
                 this.resetCapability('alarm_generic');
             }

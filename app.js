@@ -12,8 +12,6 @@ const EufyP2P = require("./lib/helpers/eufy-p2p.helper");
 const eufyNotificationCheckHelper = require("./lib/helpers/eufy-notification-check.helper");
 const eufyParameterHelper = require("./lib/helpers/eufy-parameter.helper");
 
-const { log } = require("./logger.js");
-
 const ManagerSettings = Homey.ManagerSettings;
 const ManagerCloud = Homey.ManagerCloud;
 const _settingsKey = `${Homey.manifest.id}.settings`;
@@ -22,18 +20,10 @@ let _serverPort = undefined;
 class App extends Homey.App {
   log() {
     console.log.bind(this, "[log]").apply(this, arguments);
-
-    if(this.appSettings && this.appSettings.SET_DEBUG) {
-        return log.info.apply(log, arguments)
-    }
   }
 
   error() {
     console.error.bind(this, "[error]").apply(this, arguments);
-
-    if(this.appSettings && this.appSettings.SET_DEBUG) {
-        return log.info.apply(log, arguments)
-    }
   }
 
   // -------------------- INIT ----------------------

@@ -14,6 +14,7 @@ module.exports = class mainSensor extends mainDevice {
         this.removeCapability('measure_temperature');
         await sleep(4000)
 
+        await this.resetCapabilities();
         await this.checkCapabilities();
 
         this.setAvailable();
