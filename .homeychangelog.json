@@ -694,5 +694,8 @@
   },
   "2.19.3": {
     "en": "FIX: motion sensor not triggering flowcard. "
+  },
+  "2.19.4": {
+    "en": "FIX: reset DoorSensor and MotionSensor on app startup"
   }
 }
