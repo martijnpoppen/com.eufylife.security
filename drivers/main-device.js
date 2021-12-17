@@ -73,7 +73,7 @@ module.exports = class mainDevice extends Homey.Device {
         Homey.app.log(`[Device] ${this.getName()} - checkCapabilities for`, driverManifest.id);
         
         await sleep(2500);
-        
+
         if(!driverCapabilities.includes('CMD_SET_ARMING') && this.hasCapability('CMD_SET_ARMING')) {
             Homey.app.log(`[Device] ${this.getName()} - FIX - Remove CMD_SET_ARMING - Homebase integration`);
             this.removeCapability('CMD_SET_ARMING');
@@ -189,7 +189,12 @@ module.exports = class mainDevice extends Homey.Device {
 
                     streamStart = streamStart.replace('rtmp', 'http');
                     streamStart = streamStart.split('?');
-                    streamStart = `http://${localAddress}/stream/?hls=${streamStart[0]}.m3u8?${streamStart[1]}`;
+
+                    const streamUrl = streamStart[0];
+                    let formattedParams = streamStart[1].replace('?', '@');
+                    formattedParams = streamStart[1].replace('&', '$');
+
+                    streamStart = `http://${localAddress}/stream/?hls=${streamUrl}.m3u8&${formattedParams}`;
                 }
 
                 Homey.app.log(`[Device] ${this.getName()} - startStream - hls/rtmp`, streamStart);

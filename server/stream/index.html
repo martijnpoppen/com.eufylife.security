@@ -22,76 +22,10 @@
 }
 
 function getQueryParams() {
-    var reqStr = window.location.search.substring(1);
+    const urlSearchParams = new URLSearchParams(window.location.search);
+const params = Object.fromEntries(urlSearchParams.entries());
 
-    if ('' === reqStr) {
-        return {};
-    }
-
-    var reqStrEncUri = encodeURI(reqStr);
-    var reqStrDecUriComp = decodeURIComponent(reqStr);
-    var params = {};
-    var result = {};
-    var reqStrContainsUrl = false;
-    var containedUrlIsEncoded = false;
-    var containedUrlHasParams = false;
-
-    if (reqStrDecUriComp.indexOf('http://') != -1 || reqStrDecUriComp.indexOf('https://') != -1) {
-        reqStrContainsUrl = true;
-
-        if (reqStrDecUriComp.indexOf('?') != -1) {
-            containedUrlHasParams = true;
-        }
-
-        if (reqStrEncUri.indexOf('http%253A%252F%252F') != -1 || reqStrEncUri.indexOf('https%253A%252F%252F') != -1) {
-            containedUrlIsEncoded = true;
-        }
-    }
-
-    if (!!containedUrlHasParams) {
-        if (containedUrlIsEncoded) {
-            params = reqStrEncUri.split('&');
-        }
-        else {
-            params = encodeURIComponent(reqStr).split('%26');
-        }
-    }
-    else {
-        params = reqStrDecUriComp.split('&');
-    }
-
-    if (params.length) {
-        for (var c, c = 0; c < params.length; c++) {
-            var param = params[c];
-            var d = param.split('=');
-            var key = decodeURIComponent(d[0]);
-            var val = d[1];
-
-            if ('undefined' !== typeof val) {
-            } else {
-                d = param.split('%3D');
-                key = decodeURIComponent(d[0]);
-                val = d[1];
-            }
-
-            if (val.indexOf('http%253A%252F%252F') != -1 || val.indexOf('https%253A%252F%252F') != -1) {
-                val = decodeURIComponent(val);
-            }
-            val = decodeURIComponent(val);
-
-            if (!!containedUrlHasParams && !containedUrlIsEncoded && val.indexOf('?') != -1) {
-                var regex = new RegExp("" + regexEscape(val) + "=(\\w+)&");
-                var res = regex.exec(reqStr);
-                if (!!res && res.length) {
-                    val += '=' + res[1];
-                }
-            }
-
-            result[key] = val;
-        }
-    }
-
-    return result;
+    return params;
 }
 
 function getMimeType(str) {
@@ -195,13 +129,16 @@ function createVideoElem(srcUrl, autostart, fullscreen, muted) {
 
 window.onload = function () {
     var queryParams = getQueryParams()
-      , videoSource = ('undefined' !== typeof queryParams.hls) ? encodeURI(queryParams.hls) : false
-      , autostart = 1
-      , fullscreen = 1
-      , muted = ('undefined' !== typeof queryParams.muted) ? true : false
+      autostart = 1
+      fullscreen = 1
+      muted = ('undefined' !== typeof queryParams.muted) ? true : false
+
+    var hls = queryParams.hls.replace('$', '&');
+    hls = hls.replace('@', '?');
+    var videoSource = ('undefined' !== typeof hls) ? encodeURI(hls) : false
 
     console.log('Request params:');
-    console.dir(queryParams);
+    console.dir(queryParams, videoSource);
     if (!!videoSource && '' !== videoSource) {
         createVideoElem(videoSource, autostart, fullscreen, muted);
     }
