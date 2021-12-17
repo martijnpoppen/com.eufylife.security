@@ -697,5 +697,11 @@
   },
   "2.19.4": {
     "en": "FIX: reset DoorSensor and MotionSensor on app startup"
+  },
+  "2.19.5": {
+    "en": "FIX: stream flowcard. (chromecast stream)"
+  },
+  "2.19.6": {
+    "en": " FIX: stream flowcard. (chromecast stream)"
   }
 }
