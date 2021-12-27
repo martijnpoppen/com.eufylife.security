@@ -706,5 +706,8 @@
   },
   "2.19.7": {
     "en": "ADD: Floodlight trigger to Outdoorcam (Pro)"
+  },
+  "2.19.8": {
+    "en": "ADD: IR Switch flowcard to Outdoorcam (Pro)"
   }
 }
