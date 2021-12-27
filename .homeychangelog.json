@@ -703,5 +703,8 @@
   },
   "2.19.6": {
     "en": " FIX: stream flowcard. (chromecast stream)"
+  },
+  "2.19.7": {
+    "en": "ADD: Floodlight trigger to Outdoorcam (Pro)"
   }
 }
