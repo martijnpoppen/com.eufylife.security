@@ -709,5 +709,8 @@
   },
   "2.19.8": {
     "en": "ADD: IR Switch flowcard to Outdoorcam (Pro)"
+  },
+  "2.20.0": {
+    "en": "ADD: model T8123 to L40 cam"
   }
 }
