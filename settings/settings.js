@@ -32,7 +32,6 @@ function emptyFieldSet() {
 }
 
 function initSave(_settings) {
-    console.log(_settings);
     document.getElementById('save').addEventListener('click', function (e) {
         const error = document.getElementById('error');
         const loading = document.getElementById('loading');

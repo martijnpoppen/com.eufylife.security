@@ -1626,6 +1626,15 @@
           },
           "children": [
             {
+              "id": "LOCAL_STATION_IP",
+              "type": "text",
+              "label": {
+                "en": "LOCAL_STATION_IP",
+                "nl": "LOCAL_STATION_IP"
+              },
+              "value": ""
+            },
+            {
               "id": "HUB_NAME",
               "type": "label",
               "label": {
@@ -1768,6 +1777,15 @@
             "nl": "Hub instellingen"
           },
           "children": [
+            {
+              "id": "LOCAL_STATION_IP",
+              "type": "text",
+              "label": {
+                "en": "LOCAL_STATION_IP",
+                "nl": "LOCAL_STATION_IP"
+              },
+              "value": ""
+            },
             {
               "id": "HUB_NAME",
               "type": "label",
@@ -1915,6 +1933,15 @@
           },
           "children": [
             {
+              "id": "LOCAL_STATION_IP",
+              "type": "text",
+              "label": {
+                "en": "LOCAL_STATION_IP",
+                "nl": "LOCAL_STATION_IP"
+              },
+              "value": ""
+            },
+            {
               "id": "HUB_NAME",
               "type": "label",
               "label": {
@@ -2061,6 +2088,15 @@
             "nl": "Hub instellingen"
           },
           "children": [
+            {
+              "id": "LOCAL_STATION_IP",
+              "type": "text",
+              "label": {
+                "en": "LOCAL_STATION_IP",
+                "nl": "LOCAL_STATION_IP"
+              },
+              "value": ""
+            },
             {
               "id": "HUB_NAME",
               "type": "label",
@@ -2210,6 +2246,15 @@
           },
           "children": [
             {
+              "id": "LOCAL_STATION_IP",
+              "type": "text",
+              "label": {
+                "en": "LOCAL_STATION_IP",
+                "nl": "LOCAL_STATION_IP"
+              },
+              "value": ""
+            },
+            {
               "id": "HUB_NAME",
               "type": "label",
               "label": {
@@ -2357,6 +2402,15 @@
             "nl": "Hub instellingen"
           },
           "children": [
+            {
+              "id": "LOCAL_STATION_IP",
+              "type": "text",
+              "label": {
+                "en": "LOCAL_STATION_IP",
+                "nl": "LOCAL_STATION_IP"
+              },
+              "value": ""
+            },
             {
               "id": "HUB_NAME",
               "type": "label",
@@ -2506,6 +2560,15 @@
           },
           "children": [
             {
+              "id": "LOCAL_STATION_IP",
+              "type": "text",
+              "label": {
+                "en": "LOCAL_STATION_IP",
+                "nl": "LOCAL_STATION_IP"
+              },
+              "value": ""
+            },
+            {
               "id": "HUB_NAME",
               "type": "label",
               "label": {
@@ -2653,6 +2716,15 @@
             "nl": "Hub instellingen"
           },
           "children": [
+            {
+              "id": "LOCAL_STATION_IP",
+              "type": "text",
+              "label": {
+                "en": "LOCAL_STATION_IP",
+                "nl": "LOCAL_STATION_IP"
+              },
+              "value": ""
+            },
             {
               "id": "HUB_NAME",
               "type": "label",
@@ -2802,6 +2874,15 @@
           },
           "children": [
             {
+              "id": "LOCAL_STATION_IP",
+              "type": "text",
+              "label": {
+                "en": "LOCAL_STATION_IP",
+                "nl": "LOCAL_STATION_IP"
+              },
+              "value": ""
+            },
+            {
               "id": "HUB_NAME",
               "type": "label",
               "label": {
@@ -2948,6 +3029,15 @@
             "nl": "Hub instellingen"
           },
           "children": [
+            {
+              "id": "LOCAL_STATION_IP",
+              "type": "text",
+              "label": {
+                "en": "LOCAL_STATION_IP",
+                "nl": "LOCAL_STATION_IP"
+              },
+              "value": ""
+            },
             {
               "id": "HUB_NAME",
               "type": "label",
@@ -3191,6 +3281,15 @@
             "nl": "Hub instellingen"
           },
           "children": [
+            {
+              "id": "LOCAL_STATION_IP",
+              "type": "text",
+              "label": {
+                "en": "LOCAL_STATION_IP",
+                "nl": "LOCAL_STATION_IP"
+              },
+              "value": ""
+            },
             {
               "id": "HUB_NAME",
               "type": "label",
@@ -3556,6 +3655,15 @@
           },
           "children": [
             {
+              "id": "LOCAL_STATION_IP",
+              "type": "text",
+              "label": {
+                "en": "LOCAL_STATION_IP",
+                "nl": "LOCAL_STATION_IP"
+              },
+              "value": ""
+            },
+            {
               "id": "HUB_NAME",
               "type": "label",
               "label": {
@@ -3829,6 +3937,15 @@
             "nl": "Hub instellingen"
           },
           "children": [
+            {
+              "id": "LOCAL_STATION_IP",
+              "type": "text",
+              "label": {
+                "en": "LOCAL_STATION_IP",
+                "nl": "LOCAL_STATION_IP"
+              },
+              "value": ""
+            },
             {
               "id": "HUB_NAME",
               "type": "label",

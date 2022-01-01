@@ -10,6 +10,7 @@ module.exports = class mainHub extends mainDevice {
     async onInit() {
         await this.updateHubSettings();
         await this.setupEufyP2P();
+        await this.findHubIp();
         await this.resetCapabilities();
         await this.checkCapabilities();
         await this.setCapabilitiesListeners();

@@ -18,6 +18,7 @@ module.exports = class mainDevice extends Homey.Device {
         await this.resetCapabilities();
         await this.checkCapabilities();
         await this.setCapabilitiesListeners();
+        await this.findHubIp();
 
         if(!Homey.app.P2P[deviceObject.station_sn]) {
             this.setUnavailable(`Please connect a Homebase to your Homey. Restart the app after that.`);
