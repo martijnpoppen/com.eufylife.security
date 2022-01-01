@@ -10,21 +10,22 @@ let _httpService = undefined;
 
 module.exports = class mainDevice extends Homey.Device {
     async onInit() {
+        const deviceObject = await this.getData();
+
+        await this.updateHubSettings();
         await this.setupEufyP2P();
         await this.deviceImage();
         await this.resetCapabilities();
         await this.checkCapabilities();
         await this.setCapabilitiesListeners();
-        await this.findHubIp();
 
-        this.setAvailable();
+        if(!Homey.app.P2P[deviceObject.station_sn]) {
+            this.setUnavailable(`Please connect a Homebase to your Homey. Restart the app after that.`);
+        } else {
+            this.setAvailable();
+        }
 
         await this.matchDeviceWithDeviceStore(this, true);
-    }
-
-    async onAdded() {
-        const settings = await Homey.app.getSettings();
-        await Homey.app.eufyLogin(settings);
     }
 
     onDeleted() {
@@ -33,10 +34,42 @@ module.exports = class mainDevice extends Homey.Device {
         Homey.app.removeDevice(deviceObject.device_sn);
     }
 
+    async updateHubSettings() {
+        // Check for hub settings in app settings. Move to device. (Cloud integration)
+        const settings = await this.getSettings();
+        const appSettings = Homey.app.appSettings;
+        const deviceObject = await this.getData();
+
+        _httpService = Homey.app.getHttpService();
+
+        if(('STATION_SN' in settings) && settings.STATION_SN === "") {
+            let hubSettings = appSettings.HUBS && appSettings.HUBS[deviceObject.station_sn];
+
+            if(hubSettings) {
+                Homey.app.log('[Device] - setting hub settings to device =>', this.getName());
+            
+                await this.setSettings(hubSettings);
+            }
+        }
+
+        if(('DSK_KEY' in settings) && settings.DSK_KEY === "") {
+            const dsk = await _httpService.stationDskKeys(deviceObject.station_sn);
+
+            await this.setSettings({DSK_KEY: dsk.dsk_keys[0].dsk_key});
+        }
+    }
+
     async setupEufyP2P() {
+        const settings = this.getSettings();
+        const deviceObject = await this.getData();
+
 		Homey.app.log('[Device] - init =>', this.getName());
 
         this.setUnavailable(`Initializing ${this.getName()}`);
+
+        if(('STATION_SN' in settings)) {
+            await Homey.app.EufyP2P.init(settings);
+        }
 
         await sleep(2000);
         await Homey.app.setDevice(this);
@@ -178,7 +211,7 @@ module.exports = class mainDevice extends Homey.Device {
             Homey.app.log(`[Device] ${this.getName()} - startStream - `, startStream);
 
             if(startStream || startStream === '') {
-                const localAddress = await Homey.app.getStreamAddress();
+                const localAddress = await this.getStreamAddress();
 
                 const response = await _httpService.startStream(requestObject);
                 
@@ -215,7 +248,7 @@ module.exports = class mainDevice extends Homey.Device {
     async onCapability_CMD_DOORBELL_QUICK_RESPONSE( value ) {
         try {
             const deviceObject = this.getData();
-            const settings = await Homey.app.getSettings();
+            const settings = this.getSettings()
             const quickResponse = this.getStoreValue('quick_response');
             const deviceId = this.getStoreValue('device_index');
             const poweredDoorbell = this.hasCapability("CMD_DOORBELL_QUICK_RESPONSE_POWERED")
@@ -234,7 +267,7 @@ module.exports = class mainDevice extends Homey.Device {
                 let nested_payload = {
                     "commandType": CommandType.CMD_BIND_BROADCAST,
                     "data": {
-                        "account_id": settings.HUBS[deviceObject.station_sn].ACTOR_ID,
+                        "account_id": settings.ACTOR_ID,
                         "encryptkey": encryptkey,
                         "streamtype": 0
                     }
@@ -336,10 +369,10 @@ module.exports = class mainDevice extends Homey.Device {
     async onCapability_CMD_SET_SNOOZE_MODE(homebase = 0, motion = 0, snooze = 0) {
         const deviceObject = this.getData();
         const deviceId = this.getStoreValue('device_index');
-        const settings = await Homey.app.getSettings(); 
+        const settings = this.getSettings(); 
         
         const nested_payload = {
-            "account_id": settings.HUBS[deviceObject.station_sn].ACTOR_ID,
+            "account_id": settings.ACTOR_ID,
             "chime_onoff":0,
             "homebase_onoff": parseInt(homebase),
             "motion_notify_onoff": parseInt(motion),
@@ -495,7 +528,7 @@ module.exports = class mainDevice extends Homey.Device {
             const deviceObject = this.getData();
 
             let quickResponse = await _httpService.voiceList(deviceObject.device_sn);
-            Homey.app.log(`[Device] ${this.getName()} - Set quickResponse`, quickResponse);
+            Homey.app.log(`[Device] ${this.getName()} - Set quickResponse`);
 
             quickResponse = quickResponse.map(v => v.voice_id);
             Homey.app.log(`[Device] ${this.getName()} - Mapped quickResponse`, quickResponse);
@@ -525,11 +558,11 @@ module.exports = class mainDevice extends Homey.Device {
 
     async findHubIp() {
         try {
-            let settings = await Homey.app.getSettings();
-            const deviceObject = this.getData();
-            if(deviceObject.station_sn === deviceObject.device_sn) {
-                const stationSN = deviceObject.station_sn.slice(deviceObject.station_sn.length - 4)
-                const stationIP = settings.HUBS[deviceObject.station_sn].LOCAL_STATION_IP;
+            const settings = this.getSettings();
+
+            if(('STATION_SN' in settings)) {
+                const stationSN = settings.STATION_SN.slice(settings.STATION_SN.length - 4)
+                const stationIP = settings.LOCAL_STATION_IP;
             
                 const discoveryStrategy = Homey.ManagerDiscovery.getDiscoveryStrategy("homebase_discovery");
         
@@ -539,15 +572,12 @@ module.exports = class mainDevice extends Homey.Device {
                     const name = discoveryResult.name.slice(discoveryResult.name.length - 4) || null ;
                     const address = discoveryResult.address || null;
 
-                    Homey.app.log(`[Device] ${this.getName()} - findHubIp => name match with station SN =>`, name, stationSN);
-                    Homey.app.log(`[Device] ${this.getName()} - findHubIp => Ip match with settings =>`, stationIP, address); 
+                    Homey.app.log(`[Device] ${this.getName()} - findHubIp => Ip/name match with station =>`, name, stationSN, ' => ', stationIP, address);
                 
                     if(stationSN === name && stationIP !== address) {
-                        Homey.app.log(`[Device] ${this.getName()} - findHubIp => name matches - different IP`);               
+                        Homey.app.log(`[Device] ${this.getName()} - findHubIp => name matches - set new IP`, address);               
 
-                        settings.HUBS[deviceObject.station_sn].LOCAL_STATION_IP = address;
-
-                        await Homey.app.updateSettings(settings, false);
+                        await this.setSettings({'LOCAL_STATION_IP': address});;
                     }
                 }
             }

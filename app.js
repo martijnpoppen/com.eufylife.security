@@ -34,10 +34,9 @@ class App extends Homey.App {
 
         await this.initSettings();
 
-        this.log("onInit - Loaded settings", {...this.appSettings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
+        this.log("onInit - Loaded settings", {...this.appSettings, 'USERNAME': 'LOG', PASSWORD: 'LOG', HUBS: 'LOG'});
 
-        if (this.appSettings.HUBS_AMOUNT > 0) {
-            await this.EufyP2P.init(this.appSettings);
+        if (this._httpService) {
             await flowActions.init();
             await flowConditions.init();
         }
@@ -59,35 +58,22 @@ class App extends Homey.App {
   async initSettings() {
     try {
       let settingsInitialized = false;
+      this.EufyP2P = new EufyP2P;
+      this.P2P = {};
+      this._deviceList = [];
+      this._deviceStore = [];
+
       ManagerSettings.getKeys().forEach((key) => {
         if (key == _settingsKey) {
           settingsInitialized = true;
         }
       });
 
-      this.P2P = {};
-      this._deviceList = [];
-      this._deviceStore = [];
-      this.EufyP2P = new EufyP2P;
-
       if (settingsInitialized) {
         this.log("initSettings - Found settings key", _settingsKey);
         this.appSettings = ManagerSettings.get(_settingsKey);
-        
-        if(this.appSettings && !this.appSettings.ADMIN) {
 
-            await this.updateSettings({
-                ...this.appSettings,
-                SET_DEBUG: false
-            });
-        }
-
-        if(this.appSettings && !this.appSettings.ADMIN) {
-            this.appSettings = {...this.appSettings, SET_DEBUG: false};
-            this.saveSettings();
-        }
-
-        if (this.appSettings.HUBS_AMOUNT > 0 && !this._httpService) {
+        if (('USERNAME' in this.appSettings) && !this._httpService) {
             this._httpService = await this.setHttpService(this.appSettings);
         }
 
@@ -102,12 +88,8 @@ class App extends Homey.App {
       this.updateSettings({
         USERNAME: "",
         PASSWORD: "",
-        HUBS: {},
-        HUBS_AMOUNT: 0,
         SET_CREDENTIALS: true,
-        SET_DEBUG: false,
-        CREDENTIALS: "",
-        ADMIN: false
+        CREDENTIALS: ""
       });
     } catch (err) {
       this.error(err);
@@ -115,7 +97,7 @@ class App extends Homey.App {
   }
 
  updateSettings(settings, resetHttpService = true) {
-    this.log("updateSettings - New settings:",  {...settings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
+    this.log("updateSettings - New settings:",  {...settings, 'USERNAME': 'LOG', PASSWORD: 'LOG', HUBS: 'LOG'});
 
     if(resetHttpService) {
         this._httpService = undefined;
@@ -140,34 +122,16 @@ class App extends Homey.App {
   async eufyLogin(data) {
     try {
       let settings = data;
-      this.log("eufyLogin - New settings:",  {...settings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
+      this.log("eufyLogin - New settings:",  {...settings, 'USERNAME': 'LOG', PASSWORD: 'LOG', HUBS: 'LOG'});
       this.log(`eufyLogin - Found username and password. Logging in to Eufy`);
 
       this._httpService = await this.setHttpService(data);
 
       const hubs = await this._httpService.listHubs();
       
-      if(!hubs.length) {
-        return new Error('No hubs found. Did you share the devices to your Eufy Account?');
-      } else {
-        this.log(`eufyLogin - Logged in. Found hubs -`, hubs);
+      if(hubs.length) {
+        this.log(`eufyLogin - Logged in.`);
       }
-
-      hubs.forEach(hub => {
-        const stationSN = hub.station_sn;
-        const localStationIp = settings.HUBS[stationSN] && settings.HUBS[stationSN].LOCAL_STATION_IP
-        this.log(`eufyLogin - Get station`, stationSN);
-
-        settings.HUBS[stationSN] = {
-            HUB_NAME: hub.station_name,
-            P2P_DID: hub.p2p_did,
-            ACTOR_ID: hub.member.action_user_id,
-            STATION_SN: stationSN,
-            LOCAL_STATION_IP: localStationIp ? localStationIp : hub.ip_addr
-        }
-      });
-
-      settings.HUBS_AMOUNT = Object.keys(settings.HUBS).length;
 
       const initNotificationCheckHelper = !settings.CREDENTIALS;
 
@@ -179,11 +143,9 @@ class App extends Homey.App {
 
       this.appSettings = settings;
       this.saveSettings();
-      this.log("eufyLogin - Loaded settings", {...this.appSettings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
+      this.log("eufyLogin - Loaded settings", {...this.appSettings, 'USERNAME': 'LOG', PASSWORD: 'LOG', HUBS: 'LOG'});
 
-      if (settings.HUBS_AMOUNT  > 0) {
-        this.P2P = {};
-        this.EufyP2P.init(this.appSettings);
+      if (this._httpService) {
         await this.setDeviceStore(this);
         flowActions.init();
         flowConditions.init();
@@ -207,10 +169,6 @@ class App extends Homey.App {
 
   // ---------------------------- GETTERS/SETTERS ----------------------------------
 
-  getSettings() {
-    return this.appSettings;
-  }
-
   async setHttpService(settings) {
     try {
       return new HttpService(settings.USERNAME, settings.PASSWORD);
@@ -228,8 +186,6 @@ class App extends Homey.App {
   }
 
   async setDevice(device) {
-    Homey.app.log("setDevice", device);
-
     this._deviceList = [...this._deviceList, device];
   }
 
@@ -250,7 +206,6 @@ class App extends Homey.App {
     ctx._deviceStore = [];
 
     if(devices.length) {
-        Homey.app.log("setDeviceStore - Mapping deviceList", devices);
         devices = devices.map((r, i) => {
             const measure_battery = eufyParameterHelper.getParamData(r.params, "CMD_GET_BATTERY");
             const measure_temperature = eufyParameterHelper.getParamData(r.params, "CMD_GET_BATTERY_TEMP");

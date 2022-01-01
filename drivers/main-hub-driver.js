@@ -44,7 +44,7 @@ module.exports = class mainHubDriver extends mainDriver {
             username = data.username;
             password = data.password;
 
-            const settings = await Homey.app.getSettings();
+            const settings = Homey.app.appSettings;
             const result = await Homey.app.eufyLogin({ ...settings, USERNAME: username, PASSWORD: password });
             if (result instanceof Error) return callback(result);
             return socket.showView('list_devices');
@@ -78,7 +78,8 @@ module.exports = class mainHubDriver extends mainDriver {
                         id: `${h.station_sn}-${h.station_id}`,
                         station_sn: h.station_sn,
                         device_sn: h.station_sn
-                    }
+                    },
+                    settings: {...this.getStationSettings(h)}
                 }));
 
             Homey.app.log('Found devices - ', results);
@@ -87,5 +88,17 @@ module.exports = class mainHubDriver extends mainDriver {
         } catch (e) {
             Homey.app.log(e);
         }
+    }
+
+    getStationSettings(hub) {
+        let hubSettings = {
+            HUB_NAME: hub.station_name,
+            P2P_DID: hub.p2p_did,
+            ACTOR_ID: hub.member.action_user_id,
+            STATION_SN: hub.station_sn,
+            LOCAL_STATION_IP: hub.ip_addr
+        }
+       
+        return hubSettings;
     }
 };

@@ -12,7 +12,6 @@
 </head>
 
 <body>
-
     <h1 data-i18n="settings.title"></h1>
     <p data-i18n="settings.subtitle"></p>
     <fieldset>
@@ -27,15 +26,9 @@
             <input id="eufy_pass" type="password" value="" />
         </div>
     </fieldset>
-    <div id="eufy_HUB_SETTINGS"></div>
-    <fieldset>
-        <legend>DEBUG</legend>
-        <p style="color: red;">(Only enable if requested by the APP-developer)</p>
-        <div class="field row">
-            <label for="eufy_DEBUG">Send logs to developer?</label>
-            <input id="eufy_DEBUG" type="checkbox" />
-        </div>
-    </fieldset>
+    <div>
+        <p style="color: red;">Hub settings are moved to device settings. Since the last update it's not needed to change the IP. The app handles this automatically</p>
+    </div>
     <p id="error" style="color: red;"></p>
     <p id="loading" style="color: #0000FF;"></p>
     <p id="success" style="color: #5fd225;"></p>

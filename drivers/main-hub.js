@@ -8,8 +8,8 @@ const { ARM_TYPES } = require('../constants/capability_types');
 
 module.exports = class mainHub extends mainDevice {
     async onInit() {
+        await this.updateHubSettings();
         await this.setupEufyP2P();
-        await this.findHubIp();
         await this.resetCapabilities();
         await this.checkCapabilities();
         await this.setCapabilitiesListeners();
@@ -18,16 +18,6 @@ module.exports = class mainHub extends mainDevice {
 
         await sleep(9000);
         this.checkSettings(this, true);
-    }
-
-    async setupEufyP2P() {
-		Homey.app.log('[HUB] - init =>', this.getName());
-        Homey.app.log('[HUB] - init =>', this.getData());
-
-        this.setUnavailable(`Initializing ${this.getName()}`);
-
-        await sleep(2000);
-        await Homey.app.setDevice(this);
     }
 
     async onSettings(oldSettings, newSettings, changedKeys) {
@@ -58,9 +48,9 @@ module.exports = class mainHub extends mainDevice {
                 
                 Homey.app.log(`[Device] ${ctx.getName()} - checking settings, found force_switch_mode_notifications`);
                 
-                const settings = await Homey.app.getSettings();
+                const settings = this.getSettings();
                 const nested_payload = {
-                    "account_id": settings.HUBS[deviceObject.station_sn].ACTOR_ID,
+                    "account_id": deviceSettings.ACTOR_ID,
                     "cmd": CommandType.CMD_HUB_NOTIFY_MODE,
                     "mValue3": 0,
                     "payload":{
@@ -123,9 +113,9 @@ module.exports = class mainHub extends mainDevice {
             }
 
             const deviceObject = this.getData();
-            const settings = await Homey.app.getSettings();
+            const settings = this.getSettings();
             const nested_payload = {
-                "account_id": settings.HUBS[deviceObject.station_sn].ACTOR_ID,
+                "account_id": settings.ACTOR_ID,
                 "cmd": CommandType.CMD_SET_ARMING,
                 "mValue3": 0,
                 "payload": {
@@ -146,9 +136,9 @@ module.exports = class mainHub extends mainDevice {
     async onCapability_CMD_TRIGGER_ALARM(time) {
         try {
             const deviceObject = this.getData();
-            const settings = await Homey.app.getSettings();
+            const settings = this.getSettings();
             const nested_payload = {
-                "account_id": settings.HUBS[deviceObject.station_sn].ACTOR_ID,
+                "account_id": settings.ACTOR_ID,
                 "cmd": CommandType.CMD_SET_TONE_FILE,
                 "mValue3": 0,
                 "payload": {
@@ -164,7 +154,7 @@ module.exports = class mainHub extends mainDevice {
             await sleep(time * 1000);
             
             const nested_payload_off = {
-                "account_id": settings.HUBS[deviceObject.station_sn].ACTOR_ID,
+                "account_id": settings.ACTOR_ID,
                 "cmd": CommandType.CMD_SET_TONE_FILE,
                 "mValue3": 0,
                 "payload": {
@@ -184,9 +174,9 @@ module.exports = class mainHub extends mainDevice {
     async onCapability_CMD_SET_HUB_ALARM_CLOSE() {
         try {
             const deviceObject = this.getData();
-            const settings = await Homey.app.getSettings();
+            const settings = this.getSettings();
             const nested_payload = {
-                "account_id": settings.HUBS[deviceObject.station_sn].ACTOR_ID,
+                "account_id": settings.ACTOR_ID,
                 "cmd": CommandType.CMD_SET_TONE_FILE,
                 "mValue3": 0,
                 "payload": {
