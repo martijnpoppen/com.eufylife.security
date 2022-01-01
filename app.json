@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.20.0",
+  "version": "2.21.0",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -43,7 +43,9 @@
       "deurbel"
     ]
   },
-  "category": ["security"],
+  "category": [
+    "security"
+  ],
   "permissions": [],
   "images": {
     "large": "/assets/images/large.jpg",
@@ -1000,7 +1002,10 @@
   "drivers": [
     {
       "id": "driver_EUFYCAM",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1013,7 +1018,9 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "eufyCam 1",
@@ -1089,7 +1096,10 @@
     },
     {
       "id": "driver_EUFYCAM_2",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1102,7 +1112,9 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "eufyCam 2",
@@ -1178,7 +1190,10 @@
     },
     {
       "id": "driver_EUFYCAM_2_PRO",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1191,7 +1206,9 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "eufyCam 2 Pro",
@@ -1267,7 +1284,10 @@
     },
     {
       "id": "driver_EUFYCAM_2C",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1280,7 +1300,9 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "eufyCam 2C",
@@ -1356,7 +1378,10 @@
     },
     {
       "id": "driver_EUFYCAM_2C_PRO",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1369,7 +1394,9 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "eufyCam 2C Pro",
@@ -1445,7 +1472,10 @@
     },
     {
       "id": "driver_EUFYCAM_E",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1457,7 +1487,9 @@
         "NTFY_MOTION_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "eufyCam E",
@@ -1533,7 +1565,10 @@
     },
     {
       "id": "driver_FLOODLIGHT_CAMERA",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1685,7 +1720,10 @@
     },
     {
       "id": "driver_FLOODLIGHT_CAM_PAN_TILT",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1837,7 +1875,10 @@
     },
     {
       "id": "driver_INDOOR_CAM",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1992,7 +2033,10 @@
     },
     {
       "id": "driver_INDOOR_CAM_PAN_TILT",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -2148,7 +2192,10 @@
     },
     {
       "id": "driver_OUTDOOR_CAM",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -2305,7 +2352,10 @@
     },
     {
       "id": "driver_OUTDOOR_CAM_PRO",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -2462,7 +2512,10 @@
     },
     {
       "id": "driver_SOLOCAM_E2040",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -2480,7 +2533,9 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "SoloCam E20 / E40",
@@ -2619,7 +2674,10 @@
     },
     {
       "id": "driver_SOLOCAM_L2040",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -2637,7 +2695,9 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "SoloCam L20 / L40",
@@ -2776,7 +2836,10 @@
     },
     {
       "id": "driver_SOLOCAM_S2040",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -2794,7 +2857,9 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "SoloCam (Solar) S40",
@@ -2933,7 +2998,10 @@
     },
     {
       "id": "driver_VIDEO_DOORBELL_2K_POWERED",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "doorbell",
       "capabilities": [
         "onoff",
@@ -3089,7 +3157,10 @@
     },
     {
       "id": "driver_VIDEO_DOORBELL_2K_BATTERY",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "doorbell",
       "capabilities": [
         "onoff",
@@ -3108,7 +3179,9 @@
         "NTFY_BACKGROUND_ACTIVE"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "Battery Doorbell (1080P/2K)",
@@ -3185,7 +3258,10 @@
     {
       "id": "driver_VIDEO_DOORBELL_1080P_POWERED",
       "deprecated": true,
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "doorbell",
       "capabilities": [
         "onoff",
@@ -3342,7 +3418,10 @@
     {
       "id": "driver_VIDEO_DOORBELL_1080P_BATTERY",
       "deprecated": true,
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "doorbell",
       "capabilities": [
         "onoff",
@@ -3361,7 +3440,9 @@
         "NTFY_BACKGROUND_ACTIVE"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "Video Doorbell 1080p (Battery-Powered)",
@@ -3437,15 +3518,22 @@
     },
     {
       "id": "driver_DOORSENSOR",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "sensor",
-      "capabilities": ["alarm_contact"],
+      "capabilities": [
+        "alarm_contact"
+      ],
       "name": {
         "en": "Doorsensor",
         "nl": "Deursensor"
       },
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "images": {
         "large": "drivers/driver_DOORSENSOR/assets/images/large.jpg",
@@ -3517,15 +3605,22 @@
     },
     {
       "id": "driver_MOTIONSENSOR",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "sensor",
-      "capabilities": ["alarm_motion"],
+      "capabilities": [
+        "alarm_motion"
+      ],
       "name": {
         "en": "Motionsensor",
         "nl": "Bewegingssensor"
       },
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "images": {
         "large": "drivers/driver_MOTIONSENSOR/assets/images/large.jpg",
@@ -3568,7 +3663,10 @@
     },
     {
       "id": "driver_HOMEBASE_1",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "homealarm",
       "capabilities": [
         "CMD_SET_ARMING",
@@ -3714,7 +3812,10 @@
     },
     {
       "id": "driver_HOMEBASE",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "homealarm",
       "capabilities": [
         "CMD_SET_ARMING",
@@ -3794,64 +3895,67 @@
           ]
         },
         {
-            "type": "group",
-            "label": {
-              "en": "Hub settings",
-              "nl": "Hub instellingen"
+          "type": "group",
+          "label": {
+            "en": "Hub settings",
+            "nl": "Hub instellingen"
+          },
+          "children": [
+            {
+              "id": "HUB_NAME",
+              "type": "label",
+              "label": {
+                "en": "HUB_NAME",
+                "nl": "HUB_NAME"
+              },
+              "value": ""
             },
-            "children": [
-              {
-                "id": "HUB_NAME",
-                "type": "label",
-                "label": {
-                  "en": "HUB_NAME",
-                  "nl": "HUB_NAME"
-                },
-                "value": ""
+            {
+              "id": "P2P_DID",
+              "type": "label",
+              "label": {
+                "en": "P2P_DID",
+                "nl": "P2P_DID"
               },
-              {
-                "id": "P2P_DID",
-                "type": "label",
-                "label": {
-                  "en": "P2P_DID",
-                  "nl": "P2P_DID"
-                },
-                "value": ""
+              "value": ""
+            },
+            {
+              "id": "ACTOR_ID",
+              "type": "label",
+              "label": {
+                "en": "ACTOR_ID",
+                "nl": "ACTOR_ID"
               },
-              {
-                "id": "ACTOR_ID",
-                "type": "label",
-                "label": {
-                  "en": "ACTOR_ID",
-                  "nl": "ACTOR_ID"
-                },
-                "value": ""
+              "value": ""
+            },
+            {
+              "id": "STATION_SN",
+              "type": "label",
+              "label": {
+                "en": "STATION_SN",
+                "nl": "STATION_SN"
               },
-              {
-                "id": "STATION_SN",
-                "type": "label",
-                "label": {
-                  "en": "STATION_SN",
-                  "nl": "STATION_SN"
-                },
-                "value": ""
+              "value": ""
+            },
+            {
+              "id": "DSK_KEY",
+              "type": "label",
+              "label": {
+                "en": "DSK_KEY",
+                "nl": "DSK_KEY"
               },
-              {
-                "id": "DSK_KEY",
-                "type": "label",
-                "label": {
-                  "en": "DSK_KEY",
-                  "nl": "DSK_KEY"
-                },
-                "value": ""
-              }
-            ]
-          }
+              "value": ""
+            }
+          ]
+        }
       ]
     },
     {
       "id": "driver_HOMEBASE_CHIME",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "homealarm",
       "capabilities": [
         "CMD_SET_ARMING",
@@ -3997,7 +4101,10 @@
     },
     {
       "id": "driver_KEYPAD",
-      "connectivity": ["cloud", "lan"],
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
       "class": "homealarm",
       "capabilities": [],
       "name": {
