@@ -47,7 +47,7 @@ module.exports = class mainDevice extends Homey.Device {
             let hubSettings = appSettings.HUBS && appSettings.HUBS[deviceObject.station_sn];
 
             if(hubSettings) {
-                Homey.app.log('[Device] - setting hub settings to device =>', this.getName());
+                Homey.app.log('[Device] - setting hub settings to device =>', this.getName(), hubSettings);
             
                 await this.setSettings(hubSettings);
             }
@@ -62,7 +62,6 @@ module.exports = class mainDevice extends Homey.Device {
 
     async setupEufyP2P() {
         const settings = this.getSettings();
-        const deviceObject = await this.getData();
 
 		Homey.app.log('[Device] - init =>', this.getName());
 
