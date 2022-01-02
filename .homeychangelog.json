@@ -715,5 +715,8 @@
   },
   "2.21.0": {
     "en": "1. NEW: Eufy Cloud IP discovery. | 2. NEW: Make all Hub settings part of device. (Removed from settings page) (see image below)| 3. NEW: Retry mechanism if P2P connection failed. 3 tries before fails. `(Local IP, Eufy local IP, Eufy Cloud IP)`| 4. FIX: Improved login system in pairing.| 5. NEW: Warning if user didn't setup a Homebase. (Homebase is required because settings are not global anymore)"
+  },
+  "2.21.1": {
+    "en": "FIX: error logs"
   }
 }
