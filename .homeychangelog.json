@@ -721,5 +721,8 @@
   },
   "2.21.2": {
     "en": "FIX: standalone cam without P2P connection showed a error"
+  },
+  "2.21.3": {
+    "en": "FIX: higher priority for IP discovery"
   }
 }
