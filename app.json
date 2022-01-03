@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.21.1",
+  "version": "2.21.2",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -3901,6 +3901,15 @@
             "nl": "Hub instellingen"
           },
           "children": [
+            {
+              "id": "LOCAL_STATION_IP",
+              "type": "text",
+              "label": {
+                "en": "LOCAL_STATION_IP",
+                "nl": "LOCAL_STATION_IP"
+              },
+              "value": ""
+            },
             {
               "id": "HUB_NAME",
               "type": "label",
