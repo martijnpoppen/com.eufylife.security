@@ -8,6 +8,8 @@ const { ARM_TYPES } = require('../constants/capability_types');
 
 module.exports = class mainHub extends mainDevice {
     async onInit() {
+
+        await this.findHubIp();
         await this.updateHubSettings();
         await this.setupEufyP2P();
         await this.findHubIp();
