@@ -11,6 +11,7 @@ let _httpService = undefined;
 module.exports = class mainDevice extends Homey.Device {
     async onInit() {
         const deviceObject = await this.getData();
+        const settings = await this.getSettings();
 
         await this.updateHubSettings();
         await this.setupEufyP2P();
@@ -20,7 +21,7 @@ module.exports = class mainDevice extends Homey.Device {
         await this.setCapabilitiesListeners();
         await this.findHubIp();
 
-        if(!Homey.app.P2P[deviceObject.station_sn]) {
+        if(!Homey.app.P2P[deviceObject.station_sn] && !('STATION_SN' in settings)) {
             this.setUnavailable(`Please connect a Homebase to your Homey. Restart the app after that.`);
         } else {
             this.setAvailable();

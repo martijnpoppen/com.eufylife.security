@@ -48,8 +48,7 @@ module.exports = class mainHub extends mainDevice {
             if(deviceSettings.force_switch_mode_notifications) {
                 
                 Homey.app.log(`[Device] ${ctx.getName()} - checking settings, found force_switch_mode_notifications`);
-                
-                const settings = this.getSettings();
+
                 const nested_payload = {
                     "account_id": deviceSettings.ACTOR_ID,
                     "cmd": CommandType.CMD_HUB_NOTIFY_MODE,
