@@ -724,5 +724,8 @@
   },
   "2.21.3": {
     "en": "FIX: higher priority for IP discovery"
+  },
+  "2.21.4": {
+    "en": "FIX: Floodlight Pan&Tilt cam - security mode fix"
   }
 }
