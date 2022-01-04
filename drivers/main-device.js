@@ -5,6 +5,7 @@ const { CommandType, sleep } = require('../lib/eufy-homey-client');
 const eufyParameterHelper = require("../../lib/helpers/eufy-parameter.helper");
 const utils = require('../../lib/utils.js');
 const { ARM_TYPES } = require('../constants/capability_types');
+const { DEVICE_TYPES } = require('../../constants/device_types');
 
 let _httpService = undefined;
 
@@ -105,15 +106,6 @@ module.exports = class mainDevice extends Homey.Device {
         const deviceCapabilities = this.getCapabilities();
 
         Homey.app.log(`[Device] ${this.getName()} - checkCapabilities for`, driverManifest.id);
-        
-        await sleep(2500);
-
-        if(!driverCapabilities.includes('CMD_SET_ARMING') && this.hasCapability('CMD_SET_ARMING')) {
-            Homey.app.log(`[Device] ${this.getName()} - FIX - Remove CMD_SET_ARMING - Homebase integration`);
-            this.removeCapability('CMD_SET_ARMING');
-            await sleep(2500);
-        }        
-
         Homey.app.log(`[Device] ${this.getName()} - Found capabilities =>`, deviceCapabilities);
         
         if(driverCapabilities.length !== deviceCapabilities.length) {      
@@ -121,7 +113,8 @@ module.exports = class mainDevice extends Homey.Device {
         }
 
         return;
-    }
+    }y
+
 
     async updateCapabilities(driverCapabilities) {
         Homey.app.log(`[Device] ${this.getName()} - Add new capabilities =>`, driverCapabilities);
@@ -181,6 +174,7 @@ module.exports = class mainDevice extends Homey.Device {
     
     async onCapability_CMD_SET_ARMING( value ) {
         const deviceObject = this.getData();
+        const deviceId = this.getStoreValue('device_index');
 
         try {
             let CMD_SET_ARMING = ARM_TYPES[value];
@@ -189,7 +183,14 @@ module.exports = class mainDevice extends Homey.Device {
                 throw new Error('Not available for this device');
             }
 
-            await Homey.app.EufyP2P.sendCommand('CMD_SET_ARMING', deviceObject.station_sn, CommandType.CMD_SET_ARMING, CMD_SET_ARMING);
+
+            if(DEVICE_TYPES.FLOODLIGHT_CAM_PAN_TILT.some(d => deviceObject.device_sn.startsWith(d))) {
+                await Homey.app.EufyP2P.sendCommand('CMD_SET_ARMING', deviceObject.station_sn, CommandType.CMD_SET_ARMING, CMD_SET_ARMING, deviceId, deviceId);
+            } else {
+                await Homey.app.EufyP2P.sendCommand('CMD_SET_ARMING', deviceObject.station_sn, CommandType.CMD_SET_ARMING, CMD_SET_ARMING);
+            }
+
+            
 
             return Promise.resolve(true);
         } catch (e) {
