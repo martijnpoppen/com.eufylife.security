@@ -733,5 +733,8 @@
   },
   "2.21.6": {
     "en": "FIX: security modes for Floodlight Pan&Tilt"
+  },
+  "2.22.0": {
+    "en": "NEW: renew dskKey when expired"
   }
 }
