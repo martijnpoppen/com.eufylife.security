@@ -183,14 +183,7 @@ module.exports = class mainDevice extends Homey.Device {
                 throw new Error('Not available for this device');
             }
 
-
-            if(DEVICE_TYPES.FLOODLIGHT_CAM_PAN_TILT.some(d => deviceObject.device_sn.startsWith(d))) {
-                await Homey.app.EufyP2P.sendCommand('CMD_SET_ARMING', deviceObject.station_sn, CommandType.CMD_SET_ARMING, CMD_SET_ARMING, deviceId, deviceId);
-            } else {
-                await Homey.app.EufyP2P.sendCommand('CMD_SET_ARMING', deviceObject.station_sn, CommandType.CMD_SET_ARMING, CMD_SET_ARMING);
-            }
-
-            
+            await Homey.app.EufyP2P.sendCommand('CMD_SET_ARMING', deviceObject.station_sn, CommandType.CMD_SET_ARMING, CMD_SET_ARMING);
 
             return Promise.resolve(true);
         } catch (e) {
