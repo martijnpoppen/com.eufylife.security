@@ -730,5 +730,8 @@
   },
   "2.21.5": {
     "en": "FIX: security modes for Floodlight Pan&Tilt"
+  },
+  "2.21.6": {
+    "en": "FIX: security modes for Floodlight Pan&Tilt"
   }
 }
