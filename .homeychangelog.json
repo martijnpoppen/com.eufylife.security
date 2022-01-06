@@ -739,5 +739,8 @@
   },
   "2.22.1": {
     "en": "FIX: wrong context in check Hub settings"
+  },
+  "2.22.2": {
+    "en": "FIX: p2p init once"
   }
 }
