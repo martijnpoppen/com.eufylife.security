@@ -41,7 +41,7 @@ module.exports = class mainHub extends mainDevice {
         }
     }
 
-    async checkSettings( ctx, initCron = false, overrideSettings = {} ) {
+    async checkSettings(ctx, initCron = false, overrideSettings = {} ) {
         try {
             const deviceSettings = Object.keys(overrideSettings).length ? overrideSettings : ctx.getSettings();
             const deviceObject = ctx.getData();
@@ -62,7 +62,7 @@ module.exports = class mainHub extends mainDevice {
                     }
                 }
 
-                await Homey.app.EufyP2P.sendCommand(this, 'CMD_HUB_NOTIFY_MODE', deviceObject.station_sn, CommandType.CMD_HUB_NOTIFY_MODE, nested_payload, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
+                await Homey.app.EufyP2P.sendCommand(ctx, 'CMD_HUB_NOTIFY_MODE', deviceObject.station_sn, CommandType.CMD_HUB_NOTIFY_MODE, nested_payload, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
 
 
                 const payload_edit = {
@@ -73,7 +73,7 @@ module.exports = class mainHub extends mainDevice {
                     }
                 }
 
-                await Homey.app.EufyP2P.sendCommand(this, 'CMD_HUB_NOTIFY_MODE', deviceObject.station_sn, CommandType.CMD_HUB_NOTIFY_MODE, {...nested_payload, ...payload_edit}, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
+                await Homey.app.EufyP2P.sendCommand(ctx, 'CMD_HUB_NOTIFY_MODE', deviceObject.station_sn, CommandType.CMD_HUB_NOTIFY_MODE, {...nested_payload, ...payload_edit}, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
             }
 
             if(initCron) {
