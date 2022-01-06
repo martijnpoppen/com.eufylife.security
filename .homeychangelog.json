@@ -736,5 +736,8 @@
   },
   "2.22.0": {
     "en": "NEW: renew dskKey when expired"
+  },
+  "2.22.1": {
+    "en": "FIX: wrong context in check Hub settings"
   }
 }
