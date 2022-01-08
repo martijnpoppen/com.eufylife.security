@@ -742,5 +742,8 @@
   },
   "2.22.2": {
     "en": "FIX: p2p init once"
+  },
+  "2.22.3": {
+    "en": "FIX: issue with renew DSK key"
   }
 }
