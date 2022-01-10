@@ -757,5 +757,8 @@
   },
   "2.23.1": {
     "en": "FIX: check if Homebase Connected on startup"
+  },
+  "2.24.0": {
+    "en": "NEW: update device station data if it was missing during hub data migration."
   }
 }

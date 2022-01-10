@@ -32,25 +32,45 @@ module.exports = class mainDevice extends Homey.Device {
     }
 
     async updateHubSettings() {
-        // Check for hub settings in app settings. Move to device. (Cloud integration)
-        const settings = await this.getSettings();
-        const appSettings = Homey.app.appSettings;
-        const deviceObject = await this.getData();
+        try {
+            // Check for hub settings in app settings. Move to device. (Cloud integration)
+            const settings = await this.getSettings();
+            const appSettings = Homey.app.appSettings;
+            const deviceObject = await this.getData();
 
-        _httpService = Homey.app.getHttpService();
+            _httpService = Homey.app.getHttpService();
 
-        if(('STATION_SN' in settings) && settings.STATION_SN == "") {
-            let hubSettings = appSettings.HUBS && appSettings.HUBS[deviceObject.station_sn];
-            
-            Homey.app.log('[Device] - updateHubSettings =>', this.getName(), hubSettings);
+            if(('STATION_SN' in settings) && settings.STATION_SN == "") {
+                let hubSettings = appSettings.HUBS && appSettings.HUBS[deviceObject.station_sn];
+                
+                Homey.app.log(`[Device] ${this.getName()} - updateHubSettings =>`, hubSettings);
 
-            if(hubSettings) {
-                await this.setSettings(hubSettings);
+                if(hubSettings) {
+                    await this.setSettings(hubSettings);
+                } else {
+                    const deviceList = await _httpService.listDevices();
+                    const device = deviceList.find(d => d.station_sn === deviceObject.station_sn);
+                    const hub = device.station_conn;
+
+                    const settings = {
+                        HUB_NAME: hub.station_name,
+                        P2P_DID: hub.p2p_did,
+                        ACTOR_ID: device.member.action_user_id,
+                        STATION_SN: device.station_sn
+                    }
+
+                    Homey.app.log(`[Device] ${this.getName()} - updateHubSettings - api fallback =>`, settings);
+
+                    await this.setSettings(settings);
+                }
             }
-        }
 
-        if(('DSK_KEY' in settings) && settings.DSK_KEY == "") {
-            await this.renewDSKKey(this);
+            if(('DSK_KEY' in settings) && settings.DSK_KEY == "") {
+                await this.renewDSKKey(this);
+            }
+
+        } catch (error) {
+            Homey.app.error(error)
         }
     }
 
