@@ -10,9 +10,6 @@ let _httpService = undefined;
 
 module.exports = class mainDevice extends Homey.Device {
     async onInit() {
-        const deviceObject = await this.getData();
-        const settings = await this.getSettings();
-
         await this.findHubIp();
         await this.updateHubSettings();
         await this.setupEufyP2P();
@@ -21,15 +18,11 @@ module.exports = class mainDevice extends Homey.Device {
         await this.checkCapabilities();
         await this.setCapabilitiesListeners();
 
-        this.setAvailable();
+        await this.setAvailable();
 
-        await this.matchDeviceWithDeviceStore(this, true);
+        await this.matchDeviceWithDeviceStore(this, true);       
 
-        await sleep(5000);
-        
-        if(!Homey.app.P2P[deviceObject.station_sn] && !('STATION_SN' in settings)) {
-            this.setUnavailable(`Please connect a Homebase to your Homey. Restart the app after that.`);
-        }
+        await this.checkHomebaseConnected();
     }
 
     onDeleted() {
@@ -93,6 +86,33 @@ module.exports = class mainDevice extends Homey.Device {
 
         await sleep(2000);
         await Homey.app.setDevice(this);
+    }
+
+    async checkHomebaseConnected() {
+        const deviceObject = await this.getData();
+        const settings = await this.getSettings();
+
+        try {
+            if(!('STATION_SN' in settings)) {
+                await sleep(5000);
+
+                const pairedAppDevices = await Homey.app.getDevices();
+
+                const homebasePaired = pairedAppDevices.some((device) => {
+                    const data = device.getData();
+                    return deviceObject.station_sn === data.station_sn
+                });
+
+                if(!homebasePaired) {
+                    Homey.app.log(`[Device] ${this.getName()} - checkHomebaseConnected - hub not found in data`, deviceObject);
+                    this.setUnavailable(`Please connect Homebase with station_sn ${deviceObject.station_sn} to your Homey. Restart the app after that.`);
+                } else {
+                    Homey.app.log(`[Device] ${this.getName()} - checkHomebaseConnected - connected`);
+                }
+            }
+        } catch (error) {
+            Homey.app.log(error)
+        }
     }
 
     async resetCapabilities() {

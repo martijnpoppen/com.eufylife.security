@@ -214,6 +214,7 @@ class App extends Homey.App {
                 name: r.device_name, 
                 index: r.device_channel, 
                 device_sn: r.device_sn,
+                station_sn: r.station_sn,
                 deviceId: `${r.device_sn}-${r.device_id}`,  
                 measure_battery,
                 measure_temperature
