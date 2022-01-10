@@ -760,5 +760,8 @@
   },
   "2.24.0": {
     "en": "NEW: update device station data if it was missing during hub data migration."
+  },
+  "2.25.0": {
+    "en": "HOTFIX: Homey published the wrong app version"
   }
 }
