@@ -754,5 +754,8 @@
   },
   "2.23.0": {
     "en": "FIX: change checks on startup. - FIX: dskkey only for hub devices"
+  },
+  "2.23.1": {
+    "en": "FIX: check if Homebase Connected on startup"
   }
 }
