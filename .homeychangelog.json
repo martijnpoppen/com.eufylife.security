@@ -745,5 +745,11 @@
   },
   "2.22.3": {
     "en": "FIX: issue with renew DSK key"
+  },
+  "2.22.4": {
+    "en": "FIX: extra logs for migration from global settings to device settings"
+  },
+  "2.22.5": {
+    "en": "HOTFIX: homebase devices => wait for Hub to init "
   }
 }
