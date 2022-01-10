@@ -751,5 +751,8 @@
   },
   "2.22.5": {
     "en": "HOTFIX: homebase devices => wait for Hub to init "
+  },
+  "2.23.0": {
+    "en": "FIX: change checks on startup. - FIX: dskkey only for hub devices"
   }
 }
