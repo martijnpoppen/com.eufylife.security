@@ -34,7 +34,7 @@ class App extends Homey.App {
 
         await this.initSettings();
 
-        this.log("onInit - Loaded settings", {...this.appSettings, 'USERNAME': 'LOG', PASSWORD: 'LOG', HUBS: 'LOG'});
+        this.log("onInit - Loaded settings", {...this.appSettings, 'USERNAME': 'LOG', PASSWORD: 'LOG'});
 
         if (this._httpService) {
             await flowActions.init();

@@ -5,7 +5,6 @@ const { CommandType, sleep } = require('../lib/eufy-homey-client');
 const eufyParameterHelper = require("../../lib/helpers/eufy-parameter.helper");
 const utils = require('../../lib/utils.js');
 const { ARM_TYPES } = require('../constants/capability_types');
-const { DEVICE_TYPES } = require('../../constants/device_types');
 
 let _httpService = undefined;
 
@@ -22,13 +21,15 @@ module.exports = class mainDevice extends Homey.Device {
         await this.checkCapabilities();
         await this.setCapabilitiesListeners();
 
-        if(!Homey.app.P2P[deviceObject.station_sn] && !('STATION_SN' in settings)) {
-            this.setUnavailable(`Please connect a Homebase to your Homey. Restart the app after that.`);
-        } else {
-            this.setAvailable();
-        }
+        this.setAvailable();
 
         await this.matchDeviceWithDeviceStore(this, true);
+
+        await sleep(5000);
+        
+        if(!Homey.app.P2P[deviceObject.station_sn] && !('STATION_SN' in settings)) {
+            this.setUnavailable(`Please connect a Homebase to your Homey. Restart the app after that.`);
+        }
     }
 
     onDeleted() {
@@ -45,17 +46,17 @@ module.exports = class mainDevice extends Homey.Device {
 
         _httpService = Homey.app.getHttpService();
 
-        if(('STATION_SN' in settings) && settings.STATION_SN === "") {
+        if(('STATION_SN' in settings) && settings.STATION_SN == "") {
             let hubSettings = appSettings.HUBS && appSettings.HUBS[deviceObject.station_sn];
+            
+            Homey.app.log('[Device] - updateHubSettings =>', this.getName(), hubSettings);
 
             if(hubSettings) {
-                Homey.app.log('[Device] - setting hub settings to device =>', this.getName(), hubSettings);
-            
                 await this.setSettings(hubSettings);
             }
         }
 
-        if(('DSK_KEY' in settings) && settings.DSK_KEY === "") {
+        if(('DSK_KEY' in settings) && settings.DSK_KEY == "") {
             await this.renewDSKKey(this);
         }
     }
@@ -66,11 +67,12 @@ module.exports = class mainDevice extends Homey.Device {
 
         Homey.app.log(`[Device] ${ctx.getName()} - check for renewDskKey`);
 
-        if (settings.DSK_KEY === "" || !('DSK_EXPIRATION' in settings) || (settings.DSK_EXPIRATION && (new Date()).getTime() >= settings.DSK_EXPIRATION.getTime())) {
+        if (('DSK_KEY' in settings) && (settings.DSK_KEY === "" || !('DSK_EXPIRATION' in settings) || (settings.DSK_EXPIRATION && (new Date()).getTime() >= new Date(settings.DSK_EXPIRATION).getTime()))) {
             Homey.app.log(`[Device] ${ctx.getName()} - renewDskKey - expired`);
             const dsk = await _httpService.stationDskKeys(deviceObject.station_sn);
-
-            await ctx.setSettings({DSK_EXPIRATION: new Date(dsk.dsk_keys[0].expiration * 1000) })
+            Homey.app.log(`[Device] ${ctx.getName()} - renewDskKey`,  dsk);
+           
+            await ctx.setSettings({DSK_EXPIRATION: dsk.dsk_keys[0].expiration * 1000 })
             await ctx.setSettings({DSK_KEY: dsk.dsk_keys[0].dsk_key});
 
             const newSettings = ctx.getSettings();
@@ -86,7 +88,7 @@ module.exports = class mainDevice extends Homey.Device {
         this.setUnavailable(`Initializing ${this.getName()}`);
 
         if(('STATION_SN' in settings)) {
-            await Homey.app.EufyP2P.init(settings);
+            await Homey.app.EufyP2P.init(this, settings);
         }
 
         await sleep(2000);
@@ -584,7 +586,7 @@ module.exports = class mainDevice extends Homey.Device {
 
                     Homey.app.log(`[Device] ${this.getName()} - findHubIp => Ip/name match with station =>`, name, stationSN, ' => ', stationIP, address);
                 
-                    if(stationSN === name && stationIP !== address) {
+                    if(stationSN === name && (stationIP !== address || address === '')) {
                         Homey.app.log(`[Device] ${this.getName()} - findHubIp => name matches - set new IP`, address);               
 
                         await this.setSettings({'LOCAL_STATION_IP': address});;
