@@ -71,44 +71,52 @@ module.exports = class mainDevice extends Homey.Device {
     }
 
     async renewSettings(wait = false) {
-        const deviceObject = await this.getData();
-        const deviceList = await _httpService.listDevices();
-        const device = deviceList.find(d => d.station_sn === deviceObject.station_sn);
-        const hub = device.station_conn;
+        try {
+            const deviceObject = await this.getData();
+            const deviceList = await _httpService.listDevices();
+            const device = deviceList.find(d => d.station_sn === deviceObject.station_sn);
+            const hub = device.station_conn;
 
-        const settings = {
-            HUB_NAME: hub.station_name,
-            P2P_DID: hub.p2p_did,
-            ACTOR_ID: device.member.action_user_id,
-            STATION_SN: device.station_sn,
-            RESET_DATA: false
+            const settings = {
+                HUB_NAME: hub.station_name,
+                P2P_DID: hub.p2p_did,
+                ACTOR_ID: device.member.action_user_id,
+                STATION_SN: device.station_sn,
+                RESET_DATA: false
+            }
+
+            Homey.app.log(`[Device] ${this.getName()} - renewSettings =>`, settings);
+
+            if(wait) {
+                await sleep(2000);
+            }
+            
+            await this.setSettings(settings);
+        } catch (error) {
+            Homey.app.error(error)
         }
-
-        Homey.app.log(`[Device] ${this.getName()} - renewSettings =>`, settings);
-
-        if(wait) {
-            await sleep(2000);
-        }
-        
-        await this.setSettings(settings);
     }
 
     async renewDSKKey(ctx) {
-        const settings = ctx.getSettings();
-        const deviceObject = await this.getData();
+        try {
+            const settings = ctx.getSettings();
+            const deviceObject = await this.getData();
 
-        Homey.app.log(`[Device] ${ctx.getName()} - check for renewDskKey`);
+            Homey.app.log(`[Device] ${ctx.getName()} - check for renewDskKey`);
 
-        if (('DSK_KEY' in settings) && (settings.DSK_KEY === "" || !('DSK_EXPIRATION' in settings) || (settings.DSK_EXPIRATION && (new Date()).getTime() >= new Date(settings.DSK_EXPIRATION).getTime()))) {
-            Homey.app.log(`[Device] ${ctx.getName()} - renewDskKey - expired`);
-            const dsk = await _httpService.stationDskKeys(deviceObject.station_sn);
-            Homey.app.log(`[Device] ${ctx.getName()} - renewDskKey`,  dsk);
-           
-            await ctx.setSettings({DSK_EXPIRATION: dsk.dsk_keys[0].expiration * 1000 })
-            await ctx.setSettings({DSK_KEY: dsk.dsk_keys[0].dsk_key});
+            if (('DSK_KEY' in settings) && (settings.DSK_KEY === "" || !('DSK_EXPIRATION' in settings) || (settings.DSK_EXPIRATION && (new Date()).getTime() >= new Date(settings.DSK_EXPIRATION).getTime()))) {
+                Homey.app.log(`[Device] ${ctx.getName()} - renewDskKey - expired`);
+                const dsk = await _httpService.stationDskKeys(deviceObject.station_sn);
+                Homey.app.log(`[Device] ${ctx.getName()} - renewDskKey`,  dsk);
+            
+                await ctx.setSettings({DSK_EXPIRATION: dsk.dsk_keys[0].expiration * 1000 })
+                await ctx.setSettings({DSK_KEY: dsk.dsk_keys[0].dsk_key});
 
-            const newSettings = ctx.getSettings();
-            Homey.app.EufyP2P.setHubData(newSettings);
+                const newSettings = ctx.getSettings();
+                Homey.app.EufyP2P.setHubData(newSettings);
+            }
+        } catch (error) {
+            Homey.app.error(error)
         }
     }
 
