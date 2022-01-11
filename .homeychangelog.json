@@ -763,5 +763,8 @@
   },
   "2.25.0": {
     "en": "HOTFIX: Homey published the wrong app version"
+  },
+  "2.26.1": {
+    "en": "NEW: refreshSettings option in device settings"
   }
 }

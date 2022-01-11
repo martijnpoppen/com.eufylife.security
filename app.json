@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.25.0",
+  "version": "2.26.1",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -1715,18 +1715,18 @@
               "value": ""
             },
             {
-                "id": "RESET_DATA",
-                "type": "checkbox",
-                "label": {
-                  "en": "Reset settings?",
-                  "nl": "Instellingen resetten?"
-                },
-                "hint": {
-                    "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                    "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-                },
-                "value": false
-              }
+              "id": "RESET_DATA",
+              "type": "checkbox",
+              "label": {
+                "en": "Reset settings?",
+                "nl": "Instellingen resetten?"
+              },
+              "hint": {
+                "en": "When checking this setting above settings will be renewed from the Eufy Server",
+                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
+              },
+              "value": false
+            }
           ]
         }
       ]
@@ -1883,18 +1883,18 @@
               "value": ""
             },
             {
-                "id": "RESET_DATA",
-                "type": "checkbox",
-                "label": {
-                  "en": "Reset settings?",
-                  "nl": "Instellingen resetten?"
-                },
-                "hint": {
-                    "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                    "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-                },
-                "value": false
-              }
+              "id": "RESET_DATA",
+              "type": "checkbox",
+              "label": {
+                "en": "Reset settings?",
+                "nl": "Instellingen resetten?"
+              },
+              "hint": {
+                "en": "When checking this setting above settings will be renewed from the Eufy Server",
+                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
+              },
+              "value": false
+            }
           ]
         }
       ]
@@ -2054,18 +2054,18 @@
               "value": ""
             },
             {
-                "id": "RESET_DATA",
-                "type": "checkbox",
-                "label": {
-                  "en": "Reset settings?",
-                  "nl": "Instellingen resetten?"
-                },
-                "hint": {
-                    "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                    "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-                },
-                "value": false
-              }
+              "id": "RESET_DATA",
+              "type": "checkbox",
+              "label": {
+                "en": "Reset settings?",
+                "nl": "Instellingen resetten?"
+              },
+              "hint": {
+                "en": "When checking this setting above settings will be renewed from the Eufy Server",
+                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
+              },
+              "value": false
+            }
           ]
         }
       ]
@@ -2399,18 +2399,18 @@
               "value": ""
             },
             {
-                "id": "RESET_DATA",
-                "type": "checkbox",
-                "label": {
-                  "en": "Reset settings?",
-                  "nl": "Instellingen resetten?"
-                },
-                "hint": {
-                    "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                    "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-                },
-                "value": false
-              }
+              "id": "RESET_DATA",
+              "type": "checkbox",
+              "label": {
+                "en": "Reset settings?",
+                "nl": "Instellingen resetten?"
+              },
+              "hint": {
+                "en": "When checking this setting above settings will be renewed from the Eufy Server",
+                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
+              },
+              "value": false
+            }
           ]
         }
       ]
@@ -2572,18 +2572,18 @@
               "value": ""
             },
             {
-                "id": "RESET_DATA",
-                "type": "checkbox",
-                "label": {
-                  "en": "Reset settings?",
-                  "nl": "Instellingen resetten?"
-                },
-                "hint": {
-                    "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                    "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-                },
-                "value": false
-              }
+              "id": "RESET_DATA",
+              "type": "checkbox",
+              "label": {
+                "en": "Reset settings?",
+                "nl": "Instellingen resetten?"
+              },
+              "hint": {
+                "en": "When checking this setting above settings will be renewed from the Eufy Server",
+                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
+              },
+              "value": false
+            }
           ]
         }
       ]
@@ -2747,18 +2747,18 @@
               "value": ""
             },
             {
-                "id": "RESET_DATA",
-                "type": "checkbox",
-                "label": {
-                  "en": "Reset settings?",
-                  "nl": "Instellingen resetten?"
-                },
-                "hint": {
-                    "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                    "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-                },
-                "value": false
-              }
+              "id": "RESET_DATA",
+              "type": "checkbox",
+              "label": {
+                "en": "Reset settings?",
+                "nl": "Instellingen resetten?"
+              },
+              "hint": {
+                "en": "When checking this setting above settings will be renewed from the Eufy Server",
+                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
+              },
+              "value": false
+            }
           ]
         }
       ]
@@ -2922,18 +2922,18 @@
               "value": ""
             },
             {
-                "id": "RESET_DATA",
-                "type": "checkbox",
-                "label": {
-                  "en": "Reset settings?",
-                  "nl": "Instellingen resetten?"
-                },
-                "hint": {
-                    "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                    "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-                },
-                "value": false
-              }
+              "id": "RESET_DATA",
+              "type": "checkbox",
+              "label": {
+                "en": "Reset settings?",
+                "nl": "Instellingen resetten?"
+              },
+              "hint": {
+                "en": "When checking this setting above settings will be renewed from the Eufy Server",
+                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
+              },
+              "value": false
+            }
           ]
         }
       ]
@@ -3097,18 +3097,18 @@
               "value": ""
             },
             {
-                "id": "RESET_DATA",
-                "type": "checkbox",
-                "label": {
-                  "en": "Reset settings?",
-                  "nl": "Instellingen resetten?"
-                },
-                "hint": {
-                    "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                    "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-                },
-                "value": false
-              }
+              "id": "RESET_DATA",
+              "type": "checkbox",
+              "label": {
+                "en": "Reset settings?",
+                "nl": "Instellingen resetten?"
+              },
+              "hint": {
+                "en": "When checking this setting above settings will be renewed from the Eufy Server",
+                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
+              },
+              "value": false
+            }
           ]
         }
       ]
@@ -3269,18 +3269,18 @@
               "value": ""
             },
             {
-                "id": "RESET_DATA",
-                "type": "checkbox",
-                "label": {
-                  "en": "Reset settings?",
-                  "nl": "Instellingen resetten?"
-                },
-                "hint": {
-                    "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                    "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-                },
-                "value": false
-              }
+              "id": "RESET_DATA",
+              "type": "checkbox",
+              "label": {
+                "en": "Reset settings?",
+                "nl": "Instellingen resetten?"
+              },
+              "hint": {
+                "en": "When checking this setting above settings will be renewed from the Eufy Server",
+                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
+              },
+              "value": false
+            }
           ]
         }
       ]
@@ -3542,18 +3542,18 @@
               "value": ""
             },
             {
-                "id": "RESET_DATA",
-                "type": "checkbox",
-                "label": {
-                  "en": "Reset settings?",
-                  "nl": "Instellingen resetten?"
-                },
-                "hint": {
-                    "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                    "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-                },
-                "value": false
-              }
+              "id": "RESET_DATA",
+              "type": "checkbox",
+              "label": {
+                "en": "Reset settings?",
+                "nl": "Instellingen resetten?"
+              },
+              "hint": {
+                "en": "When checking this setting above settings will be renewed from the Eufy Server",
+                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
+              },
+              "value": false
+            }
           ]
         }
       ]
@@ -3950,18 +3950,18 @@
               "value": ""
             },
             {
-                "id": "RESET_DATA",
-                "type": "checkbox",
-                "label": {
-                  "en": "Reset settings?",
-                  "nl": "Instellingen resetten?"
-                },
-                "hint": {
-                    "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                    "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-                },
-                "value": false
-              }
+              "id": "RESET_DATA",
+              "type": "checkbox",
+              "label": {
+                "en": "Reset settings?",
+                "nl": "Instellingen resetten?"
+              },
+              "hint": {
+                "en": "When checking this setting above settings will be renewed from the Eufy Server",
+                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
+              },
+              "value": false
+            }
           ]
         }
       ]
@@ -4112,18 +4112,18 @@
               "value": ""
             },
             {
-                "id": "RESET_DATA",
-                "type": "checkbox",
-                "label": {
-                  "en": "Reset settings?",
-                  "nl": "Instellingen resetten?"
-                },
-                "hint": {
-                    "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                    "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-                },
-                "value": false
-              }
+              "id": "RESET_DATA",
+              "type": "checkbox",
+              "label": {
+                "en": "Reset settings?",
+                "nl": "Instellingen resetten?"
+              },
+              "hint": {
+                "en": "When checking this setting above settings will be renewed from the Eufy Server",
+                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
+              },
+              "value": false
+            }
           ]
         }
       ]
@@ -4274,18 +4274,18 @@
               "value": ""
             },
             {
-                "id": "RESET_DATA",
-                "type": "checkbox",
-                "label": {
-                  "en": "Reset settings?",
-                  "nl": "Instellingen resetten?"
-                },
-                "hint": {
-                    "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                    "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-                },
-                "value": false
-              }
+              "id": "RESET_DATA",
+              "type": "checkbox",
+              "label": {
+                "en": "Reset settings?",
+                "nl": "Instellingen resetten?"
+              },
+              "hint": {
+                "en": "When checking this setting above settings will be renewed from the Eufy Server",
+                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
+              },
+              "value": false
+            }
           ]
         }
       ]
