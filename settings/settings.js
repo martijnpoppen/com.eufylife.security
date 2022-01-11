@@ -41,14 +41,12 @@ function initSave(_settings) {
         const USERNAME = document.getElementById('eufy_user').value;
         const PASSWORD = document.getElementById('eufy_pass').value;
 
-        let HUBS_OBJECT = _settings.HUBS;
-
         const settings = {
             USERNAME,
             PASSWORD,
-            HUBS: HUBS_OBJECT,
+            HUBS: _settings.HUBS,
             CREDENTIALS: _settings.CREDENTIALS,
-            SET_CREDENTIALS: true
+            SET_CREDENTIALS: _settings.SET_CREDENTIALS
         }
 
         // ----------------------------------------------
@@ -81,42 +79,5 @@ function initSave(_settings) {
             loading.innerHTML = "";
             success.innerHTML = "";
         }
-        
-    });
-}
-
-
-function initClear(_settings) {
-    document.getElementById('clear').addEventListener('click', function (e) {
-        error = document.getElementById('error');
-        loading = document.getElementById('loading');
-        success = document.getElementById('success');
-
-        emptyFieldSet();
-        document.getElementById('eufy_user').value = "";
-        document.getElementById('eufy_pass').value = "";
-        document.getElementById('eufy_DEBUG').checked = false;
-        let HUBS_OBJECT = _settings.HUBS;
-
-        const settings = {
-            USERNAME: "",
-            PASSWORD: "",
-            HUBS: HUBS_OBJECT,
-            CREDENTIALS: undefined,
-            SET_CREDENTIALS: true,
-        }
-
-        Homey.api('PUT', '/settings', settings, function (err, result) {
-            if (err) {
-                error.innerHTML = err;
-                loading.innerHTML = "";
-                success.innerHTML = "";
-                return Homey.alert(err);
-            } else {
-                loading.innerHTML = "";
-                error.innerHTML = "";
-                success.innerHTML = "Cleared & Saved.";
-            }
-        });
     });
 }

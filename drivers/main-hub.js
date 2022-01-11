@@ -29,6 +29,10 @@ module.exports = class mainHub extends mainDevice {
           this.resetCapability('alarm_generic');
         }
 
+        if(changedKeys.includes('RESET_DATA')) {
+            this.renewSettings(true);
+        }
+
         this.checkSettings(this, false, newSettings);
     }
 

@@ -92,3 +92,7 @@ typings/
 package-lock.json
 eufy-homey-client
 build/
+
+
+# Added by Homey CLI
+/.homeybuild/

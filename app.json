@@ -1713,7 +1713,20 @@
                 "nl": "DSK_KEY"
               },
               "value": ""
-            }
+            },
+            {
+                "id": "RESET_DATA",
+                "type": "checkbox",
+                "label": {
+                  "en": "Reset settings?",
+                  "nl": "Instellingen resetten?"
+                },
+                "hint": {
+                    "en": "When checking this setting above settings will be renewed from the Eufy Server",
+                    "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
+                },
+                "value": false
+              }
           ]
         }
       ]
@@ -1868,7 +1881,20 @@
                 "nl": "DSK_KEY"
               },
               "value": ""
-            }
+            },
+            {
+                "id": "RESET_DATA",
+                "type": "checkbox",
+                "label": {
+                  "en": "Reset settings?",
+                  "nl": "Instellingen resetten?"
+                },
+                "hint": {
+                    "en": "When checking this setting above settings will be renewed from the Eufy Server",
+                    "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
+                },
+                "value": false
+              }
           ]
         }
       ]
@@ -2026,7 +2052,20 @@
                 "nl": "DSK_KEY"
               },
               "value": ""
-            }
+            },
+            {
+                "id": "RESET_DATA",
+                "type": "checkbox",
+                "label": {
+                  "en": "Reset settings?",
+                  "nl": "Instellingen resetten?"
+                },
+                "hint": {
+                    "en": "When checking this setting above settings will be renewed from the Eufy Server",
+                    "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
+                },
+                "value": false
+              }
           ]
         }
       ]
@@ -2185,6 +2224,19 @@
                 "nl": "DSK_KEY"
               },
               "value": ""
+            },
+            {
+              "id": "RESET_DATA",
+              "type": "checkbox",
+              "label": {
+                "en": "Reset settings?",
+                "nl": "Instellingen resetten?"
+              },
+              "hint": {
+                "en": "When checking this setting above settings will be renewed from the Eufy Server",
+                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
+              },
+              "value": false
             }
           ]
         }
@@ -2345,7 +2397,20 @@
                 "nl": "DSK_KEY"
               },
               "value": ""
-            }
+            },
+            {
+                "id": "RESET_DATA",
+                "type": "checkbox",
+                "label": {
+                  "en": "Reset settings?",
+                  "nl": "Instellingen resetten?"
+                },
+                "hint": {
+                    "en": "When checking this setting above settings will be renewed from the Eufy Server",
+                    "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
+                },
+                "value": false
+              }
           ]
         }
       ]
@@ -2505,7 +2570,20 @@
                 "nl": "DSK_KEY"
               },
               "value": ""
-            }
+            },
+            {
+                "id": "RESET_DATA",
+                "type": "checkbox",
+                "label": {
+                  "en": "Reset settings?",
+                  "nl": "Instellingen resetten?"
+                },
+                "hint": {
+                    "en": "When checking this setting above settings will be renewed from the Eufy Server",
+                    "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
+                },
+                "value": false
+              }
           ]
         }
       ]
@@ -2667,7 +2745,20 @@
                 "nl": "DSK_KEY"
               },
               "value": ""
-            }
+            },
+            {
+                "id": "RESET_DATA",
+                "type": "checkbox",
+                "label": {
+                  "en": "Reset settings?",
+                  "nl": "Instellingen resetten?"
+                },
+                "hint": {
+                    "en": "When checking this setting above settings will be renewed from the Eufy Server",
+                    "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
+                },
+                "value": false
+              }
           ]
         }
       ]
@@ -2829,7 +2920,20 @@
                 "nl": "DSK_KEY"
               },
               "value": ""
-            }
+            },
+            {
+                "id": "RESET_DATA",
+                "type": "checkbox",
+                "label": {
+                  "en": "Reset settings?",
+                  "nl": "Instellingen resetten?"
+                },
+                "hint": {
+                    "en": "When checking this setting above settings will be renewed from the Eufy Server",
+                    "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
+                },
+                "value": false
+              }
           ]
         }
       ]
@@ -2991,7 +3095,20 @@
                 "nl": "DSK_KEY"
               },
               "value": ""
-            }
+            },
+            {
+                "id": "RESET_DATA",
+                "type": "checkbox",
+                "label": {
+                  "en": "Reset settings?",
+                  "nl": "Instellingen resetten?"
+                },
+                "hint": {
+                    "en": "When checking this setting above settings will be renewed from the Eufy Server",
+                    "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
+                },
+                "value": false
+              }
           ]
         }
       ]
@@ -3150,7 +3267,20 @@
                 "nl": "DSK_KEY"
               },
               "value": ""
-            }
+            },
+            {
+                "id": "RESET_DATA",
+                "type": "checkbox",
+                "label": {
+                  "en": "Reset settings?",
+                  "nl": "Instellingen resetten?"
+                },
+                "hint": {
+                    "en": "When checking this setting above settings will be renewed from the Eufy Server",
+                    "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
+                },
+                "value": false
+              }
           ]
         }
       ]
@@ -3410,7 +3540,20 @@
                 "nl": "DSK_KEY"
               },
               "value": ""
-            }
+            },
+            {
+                "id": "RESET_DATA",
+                "type": "checkbox",
+                "label": {
+                  "en": "Reset settings?",
+                  "nl": "Instellingen resetten?"
+                },
+                "hint": {
+                    "en": "When checking this setting above settings will be renewed from the Eufy Server",
+                    "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
+                },
+                "value": false
+              }
           ]
         }
       ]
@@ -3805,7 +3948,20 @@
                 "nl": "DSK_KEY"
               },
               "value": ""
-            }
+            },
+            {
+                "id": "RESET_DATA",
+                "type": "checkbox",
+                "label": {
+                  "en": "Reset settings?",
+                  "nl": "Instellingen resetten?"
+                },
+                "hint": {
+                    "en": "When checking this setting above settings will be renewed from the Eufy Server",
+                    "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
+                },
+                "value": false
+              }
           ]
         }
       ]
@@ -3954,7 +4110,20 @@
                 "nl": "DSK_KEY"
               },
               "value": ""
-            }
+            },
+            {
+                "id": "RESET_DATA",
+                "type": "checkbox",
+                "label": {
+                  "en": "Reset settings?",
+                  "nl": "Instellingen resetten?"
+                },
+                "hint": {
+                    "en": "When checking this setting above settings will be renewed from the Eufy Server",
+                    "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
+                },
+                "value": false
+              }
           ]
         }
       ]
@@ -4103,7 +4272,20 @@
                 "nl": "DSK_KEY"
               },
               "value": ""
-            }
+            },
+            {
+                "id": "RESET_DATA",
+                "type": "checkbox",
+                "label": {
+                  "en": "Reset settings?",
+                  "nl": "Instellingen resetten?"
+                },
+                "hint": {
+                    "en": "When checking this setting above settings will be renewed from the Eufy Server",
+                    "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
+                },
+                "value": false
+              }
           ]
         }
       ]

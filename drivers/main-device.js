@@ -48,20 +48,7 @@ module.exports = class mainDevice extends Homey.Device {
                 if(hubSettings) {
                     await this.setSettings(hubSettings);
                 } else {
-                    const deviceList = await _httpService.listDevices();
-                    const device = deviceList.find(d => d.station_sn === deviceObject.station_sn);
-                    const hub = device.station_conn;
-
-                    const settings = {
-                        HUB_NAME: hub.station_name,
-                        P2P_DID: hub.p2p_did,
-                        ACTOR_ID: device.member.action_user_id,
-                        STATION_SN: device.station_sn
-                    }
-
-                    Homey.app.log(`[Device] ${this.getName()} - updateHubSettings - api fallback =>`, settings);
-
-                    await this.setSettings(settings);
+                    await this.renewSettings();
                 }
             }
 
@@ -72,6 +59,38 @@ module.exports = class mainDevice extends Homey.Device {
         } catch (error) {
             Homey.app.error(error)
         }
+    }
+
+
+    async onSettings(oldSettings, newSettings, changedKeys) {
+        Homey.app.log(`[Device] ${this.getName()} - onSettings - Old/New`, oldSettings, newSettings);
+
+        if(changedKeys.includes('RESET_DATA') && newSettings.RESET_DATA) {
+            this.renewSettings(true);
+        }   
+    }
+
+    async renewSettings(wait = false) {
+        const deviceObject = await this.getData();
+        const deviceList = await _httpService.listDevices();
+        const device = deviceList.find(d => d.station_sn === deviceObject.station_sn);
+        const hub = device.station_conn;
+
+        const settings = {
+            HUB_NAME: hub.station_name,
+            P2P_DID: hub.p2p_did,
+            ACTOR_ID: device.member.action_user_id,
+            STATION_SN: device.station_sn,
+            RESET_DATA: false
+        }
+
+        Homey.app.log(`[Device] ${this.getName()} - renewSettings =>`, settings);
+
+        if(wait) {
+            await sleep(2000);
+        }
+        
+        await this.setSettings(settings);
     }
 
     async renewDSKKey(ctx) {
