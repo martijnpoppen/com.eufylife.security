@@ -55,7 +55,6 @@ module.exports = class mainDevice extends Homey.Device {
             if(('DSK_KEY' in settings) && settings.DSK_KEY == "") {
                 await this.renewDSKKey(this);
             }
-
         } catch (error) {
             Homey.app.error(error)
         }
@@ -342,11 +341,16 @@ module.exports = class mainDevice extends Homey.Device {
             } else if(poweredDoorbell && quickResponse.length >= value) {
                 const rsa_key = utils.getNewRSAPrivateKey();
                 const encryptkey = rsa_key.exportKey("components-public").n.slice(1).toString("hex")
+                let actorID = settings.ACTOR_ID
+                
+                if(!actorID) {
+                    actorID = await Homey.app.EufyP2P.getActorID(deviceObject.station_sn);
+                }
 
                 let nested_payload = {
                     "commandType": CommandType.CMD_BIND_BROADCAST,
                     "data": {
-                        "account_id": settings.ACTOR_ID,
+                        "account_id": actorID,
                         "encryptkey": encryptkey,
                         "streamtype": 0
                     }
@@ -449,9 +453,14 @@ module.exports = class mainDevice extends Homey.Device {
         const deviceObject = this.getData();
         const deviceId = this.getStoreValue('device_index');
         const settings = this.getSettings(); 
+        let actorID = settings.ACTOR_ID
+                
+        if(!actorID) {
+            actorID = await Homey.app.EufyP2P.getActorID(deviceObject.station_sn);
+        }
         
         const nested_payload = {
-            "account_id": settings.ACTOR_ID,
+            "account_id": actorID,
             "chime_onoff":0,
             "homebase_onoff": parseInt(homebase),
             "motion_notify_onoff": parseInt(motion),
