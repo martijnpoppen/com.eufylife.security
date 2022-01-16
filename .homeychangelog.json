@@ -769,5 +769,8 @@
   },
   "2.26.2": {
     "en": "FIX: P2P actor id not found on Non homebase devices"
+  },
+  "2.26.3": {
+    "en": "ADD: IR Auto/Off to all cameras"
   }
 }
