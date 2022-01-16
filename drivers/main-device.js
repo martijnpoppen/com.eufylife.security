@@ -289,7 +289,7 @@ module.exports = class mainDevice extends Homey.Device {
             Homey.app.log(`[Device] ${this.getName()} - startStream - `, startStream);
 
             if(startStream || startStream === '') {
-                const localAddress = await this.getStreamAddress();
+                const localAddress = await Homey.app.getStreamAddress();
 
                 const response = await _httpService.startStream(requestObject);
                 
