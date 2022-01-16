@@ -775,5 +775,8 @@
   },
   "2.26.4": {
     "en": "HOTFIX: fix stream flowcard"
+  },
+  "2.26.5": {
+    "en": "ADD: IR Auto/Off to all cameras"
   }
 }
