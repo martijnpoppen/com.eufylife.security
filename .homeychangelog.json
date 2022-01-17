@@ -784,5 +784,8 @@
   },
   "2.26.7": {
     "en": "FIX: error on settings page"
+  },
+  "2.26.8": {
+    "en": "HOTFIX: capability_already_exists error"
   }
 }
