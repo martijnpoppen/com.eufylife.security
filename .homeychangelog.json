@@ -781,5 +781,8 @@
   },
   "2.26.6": {
     "en": "OPT: update readme"
+  },
+  "2.26.7": {
+    "en": "FIX: error on settings page"
   }
 }
