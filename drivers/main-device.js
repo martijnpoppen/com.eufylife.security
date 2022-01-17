@@ -204,7 +204,9 @@ module.exports = class mainDevice extends Homey.Device {
         Homey.app.log(`[Device] ${this.getName()} - Add new capabilities =>`, driverCapabilities);
         try {
             driverCapabilities.forEach(c => {
-                this.addCapability(c);
+                if(!this.hasCapability(c)) {
+                    this.addCapability(c);
+                }
             });
             await sleep(2000);
         } catch (error) {

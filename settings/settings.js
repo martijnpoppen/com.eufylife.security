@@ -11,7 +11,6 @@ function onHomeyReady(Homey) {
         document.getElementById('eufy_pass').value = data['PASSWORD'];
 
         initSave(data);
-        initClear(data);
     }
 
     // --------------------------------------------------------------

@@ -9,10 +9,9 @@ and use it with this app. (Make sure 2FA is disabled for this account)
 
 Usage
 - Install this app on your Homey.
-- Go to the app settings and provide your Username and Password. Click Save Changes
-- Other keys will be fetched and filled in to the settings page.
-- Connect a device to Eufy Security
-- Create a flow wit Eufy Security devices
+- Go to `add devices` 
+- Provide your Username and Password. Click Next
+- Available devices show up
 
 Current features:
 - Turn on/off camera (EufyCam pan&tilt will turn its lens)
