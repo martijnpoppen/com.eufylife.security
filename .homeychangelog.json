@@ -778,5 +778,8 @@
   },
   "2.26.5": {
     "en": "ADD: IR Auto/Off to all cameras"
+  },
+  "2.26.6": {
+    "en": "OPT: update readme"
   }
 }
