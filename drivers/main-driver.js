@@ -28,6 +28,8 @@ module.exports = class mainDriver extends Homey.Driver {
                 const _httpService = Homey.app.getHttpService();
                 const deviceList = await _httpService.listDevices();
 
+                Homey.app.log(`[Driver] ${this.id} - deviceList:`, deviceList);
+
                 if (!deviceList.length) {
                     socket.showView('login_credentials');
                 } else {
@@ -43,6 +45,7 @@ module.exports = class mainDriver extends Homey.Driver {
                     }
                 }
             } catch (error) {
+                Homey.app.log(`[Driver] ${this.id} - Error:`, error);
                 socket.showView('login_credentials');
             }
         };

@@ -14,6 +14,7 @@ const eufyParameterHelper = require("./lib/helpers/eufy-parameter.helper");
 
 const ManagerSettings = Homey.ManagerSettings;
 const ManagerCloud = Homey.ManagerCloud;
+const ManagerNotifications = Homey.ManagerNotifications;
 const _settingsKey = `${Homey.manifest.id}.settings`;
 let _serverPort = undefined;
 
@@ -48,6 +49,9 @@ class App extends Homey.App {
         }
 
         _serverPort = await server.init();
+
+        await sleep(2000);
+        await this.sendNotifications();
     } catch (error) {
         Homey.app.log(error);      
     }
@@ -115,6 +119,28 @@ class App extends Homey.App {
 
     this.log("Saved settings.");
     ManagerSettings.set(_settingsKey, this.appSettings);
+  }
+
+  async sendNotifications() {
+     if(!('NOTIFICATIONS' in this.appSettings)) {
+        await this.updateSettings({
+            ...this.appSettings,
+            NOTIFICATIONS: []
+        });
+     }
+
+      const ntfy21012022 = `Eufy Security IOS 4.0.0 introduced Home-Management. Due to this change the device sharing with a extra account has changed. If you are a new user of the Eufy Homey app or you want to add a new camera to Homey this might cause issues. At the current moment there's no fix available yet. For more information see: https://tinyurl.com/eufy-homey`
+
+      if(!this.appSettings.NOTIFICATIONS.includes('ntfy21012022')) {
+        ManagerNotifications.registerNotification({
+            excerpt: ntfy21012022,
+        });
+
+        await this.updateSettings({
+            ...this.appSettings,
+            NOTIFICATIONS: [...this.appSettings.NOTIFICATIONS, 'ntfy21012022']
+        });
+      }
   }
 
   // -------------------- EUFY LOGIN ----------------------

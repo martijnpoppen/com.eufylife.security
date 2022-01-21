@@ -20,6 +20,8 @@ module.exports = class mainHubDriver extends mainDriver {
             try {
                 const _httpService = Homey.app.getHttpService();
                 const hubsList = await _httpService.listHubs();
+                
+                Homey.app.log(`[Driver] ${this.id} - hubsList:`, hubsList);
 
                 if (!hubsList.length) {
                     socket.showView('login_credentials');
@@ -36,6 +38,7 @@ module.exports = class mainHubDriver extends mainDriver {
                     }
                 }
             } catch (error) {
+                Homey.app.log(`[Driver] ${this.id} - Error:`, error);
                 socket.showView('login_credentials');
             }
         };
