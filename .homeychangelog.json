@@ -790,5 +790,8 @@
   },
   "2.26.9": {
     "en": "ADD: important notification about device sharing to timeline"
+  },
+  "2.26.10": {
+    "en": "FIX: issue in start sequence on app boot"
   }
 }
