@@ -787,5 +787,8 @@
   },
   "2.26.8": {
     "en": "HOTFIX: capability_already_exists error"
+  },
+  "2.26.9": {
+    "en": "ADD: important notification about device sharing to timeline"
   }
 }
