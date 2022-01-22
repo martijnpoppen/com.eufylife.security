@@ -793,5 +793,11 @@
   },
   "2.26.10": {
     "en": "FIX: issue in start sequence on app boot"
+  },
+  "2.26.11": {
+    "en": "FIX: wrong device channel when setting snooze mode"
+  },
+  "2.26.12": {
+    "en": "FIX: wrong device channel when setting snooze mode"
   }
 }
