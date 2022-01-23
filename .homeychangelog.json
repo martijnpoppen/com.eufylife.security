@@ -802,5 +802,8 @@
   },
   "2.27.0": {
     "en": "NEW: add PTZ for indoor pan_tilt  camera"
+  },
+  "2.27.1": {
+    "en": "NEW: add PTZ for indoor pan_tilt  camera"
   }
 }

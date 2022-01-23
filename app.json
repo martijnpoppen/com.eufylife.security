@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.27.0",
+  "version": "2.27.1",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -816,7 +816,7 @@
           "nl": "Draai lens"
         },
         "titleFormatted": {
-          "en": "[[device]] Turn lens naar [[action_CMD_INDOOR_PAN_TURN_PTZ_TYPE]],  repeat this [[repeat]] times",
+          "en": "[[device]] Turn lens to [[action_CMD_INDOOR_PAN_TURN_PTZ_TYPE]],  repeat this [[repeat]] times",
           "nl": "[[device]] Draai lens naar [[action_CMD_INDOOR_PAN_TURN_PTZ_TYPE]], herhaal dit [[repeat]] keer"
         },
         "args": [
@@ -828,6 +828,10 @@
           {
             "name": "action_CMD_INDOOR_PAN_TURN_PTZ_TYPE",
             "type": "dropdown",
+            "placeholder": {
+                "en": "direction",
+                "nl": "richting"
+              },
             "values": [
               {
                 "id": "left",
@@ -865,6 +869,7 @@
             "min": 1,
             "max": 90,
             "step": 1,
+            "value": 1,
             "placeholder": {
               "en": "amount",
               "nl": "aantal"
