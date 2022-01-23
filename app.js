@@ -79,6 +79,7 @@ class App extends Homey.App {
 
         if (('USERNAME' in this.appSettings) && !this._httpService) {
             this._httpService = await this.setHttpService(this.appSettings);
+            this._httpService.getToken();
         }
 
         await eufyParameterHelper.unregisterAllTasks();
@@ -152,6 +153,8 @@ class App extends Homey.App {
       this.log(`eufyLogin - Found username and password. Logging in to Eufy`);
 
       this._httpService = await this.setHttpService(data);
+
+      await this._httpService.getToken();
 
       const hubs = await this._httpService.listHubs();
       
