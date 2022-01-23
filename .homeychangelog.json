@@ -799,5 +799,8 @@
   },
   "2.26.12": {
     "en": "FIX: wrong device channel when setting snooze mode"
+  },
+  "2.27.0": {
+    "en": "NEW: add PTZ for indoor pan_tilt  camera"
   }
 }
