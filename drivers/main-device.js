@@ -394,18 +394,54 @@ module.exports = class mainDevice extends Homey.Device {
         }
     }
 
-    async onCapability_CMD_INDOOR_PAN_TURN() {
+    async onCapability_CMD_INDOOR_PAN_TURN(value = "360", repeat = 1) {
         const deviceObject = this.getData();
         const deviceId = this.getStoreValue('device_index');
-        const nested_payload = {
-            "commandType": CommandType.CMD_INDOOR_PAN_TURN,
-            "data": {
+
+        const obj = {
+            "360": {
                 "cmd_type": -1,
                 "rotate_type": 0
+            },
+            "up": {
+                "cmd_type": 1,
+                "rotate_type": 3
+            },
+            "left": {
+                "cmd_type": 1,
+                "rotate_type": 1
+            },
+            "down": {
+                "cmd_type": 1,
+                "rotate_type": 4
+            },
+            "right": {
+                "cmd_type": 1,
+                "rotate_type": 2
             }
+        }
+
+        let command = CommandType.CMD_DOORBELL_SET_PAYLOAD;
+        let nested_payload = {
+            "commandType": CommandType.CMD_INDOOR_PAN_TURN,
+            "data": obj[value]
         };
 
-        await Homey.app.EufyP2P.sendCommand(this, 'CMD_INDOOR_PAN_TURN', deviceObject.station_sn, CommandType.CMD_INDOOR_PAN_TURN, nested_payload, deviceId, deviceId, '', CommandType.CMD_DOORBELL_SET_PAYLOAD);
+        if(this.hasCapability('CMD_SET_FLOODLIGHT_MANUAL_SWITCH')) {
+            nested_payload = {
+                "account_id": actorID,
+                "cmd": CommandType.CMD_INDOOR_ROTATE,
+                "mChannel": deviceId,
+                "mValue3": 0,
+                "payload": obj[value]
+            }
+
+            command = CommandType.CMD_SET_PAYLOAD
+        }
+
+        for(let i = 0; i < repeat; i++) {
+            await Homey.app.EufyP2P.sendCommand(this, 'CMD_INDOOR_PAN_TURN', deviceObject.station_sn, CommandType.CMD_INDOOR_PAN_TURN, nested_payload, deviceId, deviceId, '', command);
+        }
 
     }
 
@@ -515,7 +551,7 @@ module.exports = class mainDevice extends Homey.Device {
             return Promise.reject(e);
         }
     }
-    
+
     async onCapability_NTFY_TRIGGER( message, value ) {
         try {
             const settings = this.getSettings();

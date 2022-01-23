@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.26.12",
+  "version": "2.27.0",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -806,6 +806,69 @@
             "name": "device",
             "type": "device",
             "filter": "capabilities=CMD_INDOOR_PAN_TURN"
+          }
+        ]
+      },
+      {
+        "id": "action_CMD_INDOOR_PAN_TURN_PTZ",
+        "title": {
+          "en": "Turn lens",
+          "nl": "Draai lens"
+        },
+        "titleFormatted": {
+          "en": "[[device]] Turn lens naar [[action_CMD_INDOOR_PAN_TURN_PTZ_TYPE]],  repeat this [[repeat]] times",
+          "nl": "[[device]] Draai lens naar [[action_CMD_INDOOR_PAN_TURN_PTZ_TYPE]], herhaal dit [[repeat]] keer"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "capabilities=CMD_INDOOR_PAN_TURN"
+          },
+          {
+            "name": "action_CMD_INDOOR_PAN_TURN_PTZ_TYPE",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "left",
+                "label": {
+                  "en": "Left",
+                  "nl": "Links"
+                }
+              },
+              {
+                "id": "right",
+                "label": {
+                  "en": "Right",
+                  "nl": "Rechts"
+                }
+              },
+              {
+                "id": "up",
+                "label": {
+                  "en": "Up",
+                  "nl": "Boven"
+                }
+              },
+              {
+                "id": "down",
+                "label": {
+                  "en": "Down",
+                  "nl": "Beneden"
+                }
+              }
+            ]
+          },
+          {
+            "name": "repeat",
+            "type": "number",
+            "min": 1,
+            "max": 90,
+            "step": 1,
+            "placeholder": {
+              "en": "amount",
+              "nl": "aantal"
+            }
           }
         ]
       },
