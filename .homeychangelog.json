@@ -805,5 +805,8 @@
   },
   "2.27.1": {
     "en": "NEW: add PTZ for indoor pan_tilt  camera"
+  },
+  "2.27.2": {
+    "en": "ADD: PTZ to Floodlight camera"
   }
 }

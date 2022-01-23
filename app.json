@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.27.1",
+  "version": "2.27.2",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -829,9 +829,9 @@
             "name": "action_CMD_INDOOR_PAN_TURN_PTZ_TYPE",
             "type": "dropdown",
             "placeholder": {
-                "en": "direction",
-                "nl": "richting"
-              },
+              "en": "direction",
+              "nl": "richting"
+            },
             "values": [
               {
                 "id": "left",
@@ -1818,6 +1818,7 @@
         "alarm_motion",
         "CMD_IRCUT_SWITCH",
         "CMD_SET_FLOODLIGHT_MANUAL_SWITCH",
+        "CMD_INDOOR_PAN_TURN",
         "CMD_SET_ARMING",
         "CMD_REBOOT_HUB",
         "CMD_START_STREAM",
