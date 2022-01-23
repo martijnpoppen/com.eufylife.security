@@ -811,5 +811,8 @@
   },
   "2.27.3": {
     "en": "FIX: unresponsive API url. "
+  },
+  "2.27.4": {
+    "en": "FIX: API url update"
   }
 }
