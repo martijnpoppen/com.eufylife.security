@@ -397,6 +397,11 @@ module.exports = class mainDevice extends Homey.Device {
     async onCapability_CMD_INDOOR_PAN_TURN(value = "360", repeat = 1) {
         const deviceObject = this.getData();
         const deviceId = this.getStoreValue('device_index');
+        let actorID = settings.ACTOR_ID
+                
+        if(!actorID) {
+            actorID = await Homey.app.EufyP2P.getActorID(deviceObject.station_sn);
+        }
 
         const obj = {
             "360": {
