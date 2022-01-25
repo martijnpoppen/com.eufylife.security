@@ -817,5 +817,8 @@
   },
   "2.27.5": {
     "en": "FIX: error on PAN_TURN flowcard"
+  },
+  "2.27.6": {
+    "en": "FIX: error pan_turn flowacard"
   }
 }
