@@ -814,5 +814,8 @@
   },
   "2.27.4": {
     "en": "FIX: API url update"
+  },
+  "2.27.5": {
+    "en": "FIX: error on PAN_TURN flowcard"
   }
 }
