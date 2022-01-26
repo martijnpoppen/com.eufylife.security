@@ -820,5 +820,8 @@
   },
   "2.27.6": {
     "en": "FIX: error pan_turn flowacard"
+  },
+  "2.27.7": {
+    "en": "FIX: floodlight PTZ"
   }
 }
