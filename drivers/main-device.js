@@ -397,6 +397,7 @@ module.exports = class mainDevice extends Homey.Device {
     async onCapability_CMD_INDOOR_PAN_TURN(value = "360", repeat = 1) {
         const deviceObject = this.getData();
         const deviceId = this.getStoreValue('device_index');
+        const settings = this.getSettings();
         let actorID = settings.ACTOR_ID
                 
         if(!actorID) {
@@ -435,7 +436,7 @@ module.exports = class mainDevice extends Homey.Device {
         if(this.hasCapability('CMD_SET_FLOODLIGHT_MANUAL_SWITCH')) {
             nested_payload = {
                 "account_id": actorID,
-                "cmd": CommandType.CMD_INDOOR_ROTATE,
+                "cmd": CommandType.CMD_INDOOR_PAN_TURN,
                 "mChannel": deviceId,
                 "mValue3": 0,
                 "payload": obj[value]
