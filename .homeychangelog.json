@@ -823,5 +823,8 @@
   },
   "2.27.7": {
     "en": "FIX: floodlight PTZ"
+  },
+  "2.27.8": {
+    "en": "NEW: always trigger security mode change card"
   }
 }
