@@ -32,10 +32,10 @@ module.exports = class mainHubDriver extends mainDriver {
                     _devices = await this.onDeviceListRequest(this.id, hubsList);
 
                     Homey.app.log(`[Driver] ${this.id} - Found new devices:`, _devices);
-                    if (_devices && !!_devices.error) {
+                    if (_devices && _devices.length) {
+                        return callback(null, _devices);
+                    } else if (_devices && !!_devices.error) {
                         callback(new Error(_devices.error));
-                    } else if (_devices && _devices.length) {
-                        callback(null, _devices);
                     } else {
                         callback(new Error(Homey.__('pair.no_devices')));
                     }
@@ -52,7 +52,14 @@ module.exports = class mainHubDriver extends mainDriver {
 
             const settings = Homey.app.appSettings;
             const result = await Homey.app.eufyLogin({ ...settings, USERNAME: username, PASSWORD: password });
-            if (result instanceof Error) return callback(result);
+            if (result instanceof Error) {
+                if(result.message.includes('->')) {
+                    const err = new Error(result.message.split('->')[1]);
+                    return callback(err); 
+                }
+            
+                return callback(result);
+            }
             return socket.showView('list_devices');
         };
 
