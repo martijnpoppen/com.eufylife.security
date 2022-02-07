@@ -826,5 +826,8 @@
   },
   "2.27.8": {
     "en": "NEW: always trigger security mode change card"
+  },
+  "2.28.0": {
+    "en": "NEW: integrate Eufy Homemanagement (Eufy firmware v4.0.0)"
   }
 }
