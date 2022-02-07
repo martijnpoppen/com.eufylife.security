@@ -5,6 +5,8 @@ const { DEVICE_TYPES } = require('../../constants/device_types');
 let _devices = [];
 let username = '';
 let password = '';
+let errorMsg = null;
+
 module.exports = class mainHubDriver extends mainDriver {
     onInit() {
         Homey.app.log('[Driver] - init', this.id);
@@ -23,8 +25,9 @@ module.exports = class mainHubDriver extends mainDriver {
                 
                 Homey.app.log(`[Driver] ${this.id} - hubsList:`, hubsList);
 
-                if (!hubsList.length) {
-                    socket.showView('login_credentials');
+                if (!hubsList.length || (('data' in hubsList) && hubsList.data === null)) {
+                    errorMsg = Homey.__('pair.no_data');
+                    return socket.showView('login_eufy');
                 } else {
                     _devices = await this.onDeviceListRequest(this.id, hubsList);
 
@@ -34,12 +37,12 @@ module.exports = class mainHubDriver extends mainDriver {
                     } else if (_devices && _devices.length) {
                         callback(null, _devices);
                     } else {
-                        callback(new Error('No devices found. Make sure you shared the Eufy devices with your extra account'));
+                        callback(new Error(Homey.__('pair.no_devices')));
                     }
                 }
             } catch (error) {
                 Homey.app.log(`[Driver] ${this.id} - Error:`, error);
-                socket.showView('login_credentials');
+                socket.showView('login_eufy');
             }
         };
 
@@ -52,6 +55,14 @@ module.exports = class mainHubDriver extends mainDriver {
             if (result instanceof Error) return callback(result);
             return socket.showView('list_devices');
         };
+
+        socket.on('showView', async function (viewId) {
+            if (errorMsg) {
+                Homey.app.log(`[Driver] - Show errorMsg:`, errorMsg);
+                socket.emit('error_msg', errorMsg);
+                errorMsg = false;
+            }
+        });
 
         socket.on('list_devices', onListDevices);
         socket.on('login', onLogin);

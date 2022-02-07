@@ -9,6 +9,11 @@ function onHomeyReady(Homey) {
 
         document.getElementById('eufy_user').value = data['USERNAME'];
         document.getElementById('eufy_pass').value = data['PASSWORD'];
+        if(document.querySelector(`input[name="region"][value="${data['REGION']}"]`)) {
+            document.querySelector(`input[name="region"][value="${data['REGION']}"]`).checked = true;
+        } else {
+            document.querySelector(`input[name="region"][value="US"]`).checked = true;
+        }
 
         initSave(data);
     }
@@ -39,10 +44,13 @@ function initSave(_settings) {
 
         const USERNAME = document.getElementById('eufy_user').value;
         const PASSWORD = document.getElementById('eufy_pass').value;
+        const regionSelect = document.querySelector('input[name="region"]:checked');
+        const REGION = regionSelect ? regionSelect.value : 'US';
 
         const settings = {
             USERNAME,
             PASSWORD,
+            REGION,
             HUBS: _settings.HUBS,
             CREDENTIALS: _settings.CREDENTIALS,
             SET_CREDENTIALS: _settings.SET_CREDENTIALS

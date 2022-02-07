@@ -1,6 +1,17 @@
 {
-    "settings": {
-      "title": "Eufy Settings Page",
-      "subtitle": "Please log in"
-    }
+  "settings": {
+    "title": "Eufy Settings Page",
+    "subtitle": "Please log in",
+    "account": "Account settings"
+  },
+  "pair": {
+    "usernameLabel": "E-mail address - (Use a extra Eufy admin account - 2FA Disabled)",
+    "usernamePlaceholder": "john@doe.com",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Password",
+    "region": "Region",
+    "login": "Login",
+    "no_data": "No devices found. Try a diferrent region.",
+    "no_devices": "No devices found. Make sure you shared the Eufy devices with your admin extra account"
   }
+}

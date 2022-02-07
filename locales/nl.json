@@ -1,0 +1,17 @@
+{
+  "settings": {
+    "title": "Eufy instellingen",
+    "subtitle": "Login",
+    "account": "Account instellingen"
+  },
+  "pair": {
+    "usernameLabel": "E-mail adres (Gebruik een extra Eufy admin account - 2FA Uitgeschakeld)",
+    "usernamePlaceholder": "john@doe.com",
+    "passwordLabel": "Wachtwoord",
+    "passwordPlaceholder": "Password",
+    "region": "Regio",
+    "login": "Inloggen",
+    "no_data": "Geen apparaten gevonden. Probeer een andere regio",
+    "no_devices": "Geen apparaten gevonden. Zorg ervoor dat je de apparaten gedeeld hebt met je extra account."
+  }
+}

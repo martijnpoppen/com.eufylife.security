@@ -1,0 +1,123 @@
+<div class="hy-view visible" data-id="login_eufy" data-template-id="login_eufy">
+    <div class="hy-tmpl-login_eufy" id="16190758442170.4220669681218383">
+        <style type="text/css">
+            .hy-tmpl-login_eufy {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center
+            }
+
+            .hy-tmpl-login_eufy-form {
+                position: relative;
+                width: 100%
+            }
+
+            .hy-tmpl-login_eufy-logo {
+                display: block;
+                position: relative;
+                width: 25vw;
+                height: 25vw;
+                margin: 20vw auto;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: contain
+            }
+
+            .hy-tmpl-login_eufy-row {
+                margin-bottom: 1em
+            }
+
+            .radio-toolbar input[type="radio"] {
+                display: none;
+            }
+
+            .radio-toolbar label {
+                display: inline-block;
+                background-color: transparent;
+                border: 3px solid;
+                width: 35%;
+                padding: 4px 11px;
+                font-family: Arial;
+                font-size: 16px;
+                cursor: pointer;
+                text-align: center;
+            }
+
+            .radio-toolbar input[type="radio"]:checked+label {
+                background-color: #00c139;
+                border: 3px solid #00c139;
+            }
+        </style>
+
+        <form class="hy-tmpl-login_eufy-form" action="/" method="post">
+            <div class="hy-tmpl-login_eufy-logo" style="background-image: url('eufy.svg');"></div>
+            <div class="hy-tmpl-login_eufy-row row">
+                <label class="hy-label hy-tmpl-login_eufy-label" for="username" data-i18n="pair.usernameLabel"></label>
+                <input class="hy-input-text" name="username" type="text" value=""
+                    data-i18n-placeholder="pair.usernamePlaceholder">
+            </div>
+
+            <div class="hy-tmpl-login_eufy-row row">
+                <label class="hy-label hy-tmpl-login_eufy-label" for="password" data-i18n="pair.passwordLabel"></label>
+                <input class="hy-input-text" name="password" type="password" value=""
+                    data-i18n-placeholder="pair.passwordPlaceholder" required>
+            </div>
+
+            <div class="hy-tmpl-login_eufy-row row">
+                <label class="hy-label hy-tmpl-login_eufy-label" data-i18n="pair.region"></label>
+                <div class="radio-toolbar">
+                    <input id="region1" name="region" type="radio" value="EU">
+                    <label for="region1">EU</label>
+                    <input id="region2" name="region" type="radio" value="US" checked>
+                    <label for="region2">US</label>
+                </div>
+                <br>
+            </div>
+            <div class="hy-tmpl-login_eufy-row row">
+                <input class="hy-button hy-button-primary hy-button-fill hy-tmpl-login_eufy-submit button" type="submit"
+                    value="">
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">!function () {
+        var e = document.getElementById("16190758442170.4220669681218383"),
+            o = e.querySelector(".hy-tmpl-login_eufy-form"),
+            r = e.querySelector(".hy-tmpl-login_eufy-logo"),
+            l = e.querySelector('input[name="username"]'),
+            n = e.querySelector('input[name="password"]'),
+            lgn = e.querySelector('input[type="submit"]'),
+            m = !1;
+            
+            Homey.setTitle(Homey.__("$tmpl.login_credentials.title")),
+            lgn.value = Homey.__("pair.login");
+
+        Homey.on('error_msg', function (e) {
+            Homey.alert(e);
+        })
+            
+        o.addEventListener("submit", function (e) {
+            if (e.preventDefault(), !m) {
+                m = !0,
+                    Homey.showLoadingOverlay(Homey.__("$tmpl.login_credentials.loading"));
+                var z = l.value,
+                    r = n.value,
+                    p = document.querySelector('input[name="region"]:checked').value;
+
+                return Homey.emit("login", { username: z, password: r, region: p }, function (e, o) {
+                    if (e) {
+                        Homey.error(e)
+                    } else if (z) {
+                        Homey.nextView()
+                    } else {
+                        Homey.error(Homey.__("$tmpl.login_credentials.invalid_credentials"))
+                    }
+
+                    m = !1;
+                    Homey.hideLoadingOverlay();
+                })
+            }
+        });
+    }()
+</script>

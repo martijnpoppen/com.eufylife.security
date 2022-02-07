@@ -1103,7 +1103,8 @@
         {
           "id": "list_devices",
           "template": "list_devices",
-          "navigation": {
+         "navigation": {
+            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
@@ -1112,25 +1113,7 @@
           "template": "add_devices"
         },
         {
-          "id": "login_credentials",
-          "template": "login_credentials",
-          "options": {
-            "logo": "/assets/eufy.svg",
-            "usernameLabel": {
-              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
-              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
-            },
-            "usernamePlaceholder": {
-              "en": "john@doe.com"
-            },
-            "passwordLabel": {
-              "en": "Password",
-              "nl": "Wachtwoord"
-            },
-            "passwordPlaceholder": {
-              "en": "Password"
-            }
-          }
+          "id": "login_eufy"
         }
       ],
       "settings": [
@@ -1198,30 +1181,13 @@
         {
           "id": "list_devices",
           "template": "list_devices",
-          "navigation": {
+         "navigation": {
+            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
-          "id": "login_credentials",
-          "template": "login_credentials",
-          "options": {
-            "logo": "eufy.svg",
-            "usernameLabel": {
-              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
-              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
-            },
-            "usernamePlaceholder": {
-              "en": "john@doe.com"
-            },
-            "passwordLabel": {
-              "en": "Password",
-              "nl": "Wachtwoord"
-            },
-            "passwordPlaceholder": {
-              "en": "Password"
-            }
-          }
+         "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -1293,30 +1259,13 @@
         {
           "id": "list_devices",
           "template": "list_devices",
-          "navigation": {
+         "navigation": {
+            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
-          "id": "login_credentials",
-          "template": "login_credentials",
-          "options": {
-            "logo": "eufy.svg",
-            "usernameLabel": {
-              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
-              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
-            },
-            "usernamePlaceholder": {
-              "en": "john@doe.com"
-            },
-            "passwordLabel": {
-              "en": "Password",
-              "nl": "Wachtwoord"
-            },
-            "passwordPlaceholder": {
-              "en": "Password"
-            }
-          }
+         "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -1388,30 +1337,13 @@
         {
           "id": "list_devices",
           "template": "list_devices",
-          "navigation": {
+         "navigation": {
+            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
-          "id": "login_credentials",
-          "template": "login_credentials",
-          "options": {
-            "logo": "eufy.svg",
-            "usernameLabel": {
-              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
-              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
-            },
-            "usernamePlaceholder": {
-              "en": "john@doe.com"
-            },
-            "passwordLabel": {
-              "en": "Password",
-              "nl": "Wachtwoord"
-            },
-            "passwordPlaceholder": {
-              "en": "Password"
-            }
-          }
+         "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -1483,30 +1415,13 @@
         {
           "id": "list_devices",
           "template": "list_devices",
-          "navigation": {
+         "navigation": {
+            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
-          "id": "login_credentials",
-          "template": "login_credentials",
-          "options": {
-            "logo": "eufy.svg",
-            "usernameLabel": {
-              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
-              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
-            },
-            "usernamePlaceholder": {
-              "en": "john@doe.com"
-            },
-            "passwordLabel": {
-              "en": "Password",
-              "nl": "Wachtwoord"
-            },
-            "passwordPlaceholder": {
-              "en": "Password"
-            }
-          }
+         "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -1577,30 +1492,13 @@
         {
           "id": "list_devices",
           "template": "list_devices",
-          "navigation": {
+         "navigation": {
+            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
-          "id": "login_credentials",
-          "template": "login_credentials",
-          "options": {
-            "logo": "eufy.svg",
-            "usernameLabel": {
-              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
-              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
-            },
-            "usernamePlaceholder": {
-              "en": "john@doe.com"
-            },
-            "passwordLabel": {
-              "en": "Password",
-              "nl": "Wachtwoord"
-            },
-            "passwordPlaceholder": {
-              "en": "Password"
-            }
-          }
+         "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -1670,30 +1568,13 @@
         {
           "id": "list_devices",
           "template": "list_devices",
-          "navigation": {
+         "navigation": {
+            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
-          "id": "login_credentials",
-          "template": "login_credentials",
-          "options": {
-            "logo": "eufy.svg",
-            "usernameLabel": {
-              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
-              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
-            },
-            "usernamePlaceholder": {
-              "en": "john@doe.com"
-            },
-            "passwordLabel": {
-              "en": "Password",
-              "nl": "Wachtwoord"
-            },
-            "passwordPlaceholder": {
-              "en": "Password"
-            }
-          }
+         "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -1840,30 +1721,13 @@
         {
           "id": "list_devices",
           "template": "list_devices",
-          "navigation": {
+         "navigation": {
+            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
-          "id": "login_credentials",
-          "template": "login_credentials",
-          "options": {
-            "logo": "eufy.svg",
-            "usernameLabel": {
-              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
-              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
-            },
-            "usernamePlaceholder": {
-              "en": "john@doe.com"
-            },
-            "passwordLabel": {
-              "en": "Password",
-              "nl": "Wachtwoord"
-            },
-            "passwordPlaceholder": {
-              "en": "Password"
-            }
-          }
+         "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -2012,30 +1876,13 @@
         {
           "id": "list_devices",
           "template": "list_devices",
-          "navigation": {
+         "navigation": {
+            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
-          "id": "login_credentials",
-          "template": "login_credentials",
-          "options": {
-            "logo": "eufy.svg",
-            "usernameLabel": {
-              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
-              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
-            },
-            "usernamePlaceholder": {
-              "en": "john@doe.com"
-            },
-            "passwordLabel": {
-              "en": "Password",
-              "nl": "Wachtwoord"
-            },
-            "passwordPlaceholder": {
-              "en": "Password"
-            }
-          }
+         "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -2185,30 +2032,13 @@
         {
           "id": "list_devices",
           "template": "list_devices",
-          "navigation": {
+         "navigation": {
+            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
-          "id": "login_credentials",
-          "template": "login_credentials",
-          "options": {
-            "logo": "eufy.svg",
-            "usernameLabel": {
-              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
-              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
-            },
-            "usernamePlaceholder": {
-              "en": "john@doe.com"
-            },
-            "passwordLabel": {
-              "en": "Password",
-              "nl": "Wachtwoord"
-            },
-            "passwordPlaceholder": {
-              "en": "Password"
-            }
-          }
+         "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -2358,30 +2188,13 @@
         {
           "id": "list_devices",
           "template": "list_devices",
-          "navigation": {
+         "navigation": {
+            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
-          "id": "login_credentials",
-          "template": "login_credentials",
-          "options": {
-            "logo": "eufy.svg",
-            "usernameLabel": {
-              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
-              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
-            },
-            "usernamePlaceholder": {
-              "en": "john@doe.com"
-            },
-            "passwordLabel": {
-              "en": "Password",
-              "nl": "Wachtwoord"
-            },
-            "passwordPlaceholder": {
-              "en": "Password"
-            }
-          }
+         "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -2531,30 +2344,13 @@
         {
           "id": "list_devices",
           "template": "list_devices",
-          "navigation": {
+         "navigation": {
+            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
-          "id": "login_credentials",
-          "template": "login_credentials",
-          "options": {
-            "logo": "eufy.svg",
-            "usernameLabel": {
-              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
-              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
-            },
-            "usernamePlaceholder": {
-              "en": "john@doe.com"
-            },
-            "passwordLabel": {
-              "en": "Password",
-              "nl": "Wachtwoord"
-            },
-            "passwordPlaceholder": {
-              "en": "Password"
-            }
-          }
+         "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -2707,30 +2503,13 @@
         {
           "id": "list_devices",
           "template": "list_devices",
-          "navigation": {
+         "navigation": {
+            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
-          "id": "login_credentials",
-          "template": "login_credentials",
-          "options": {
-            "logo": "eufy.svg",
-            "usernameLabel": {
-              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
-              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
-            },
-            "usernamePlaceholder": {
-              "en": "john@doe.com"
-            },
-            "passwordLabel": {
-              "en": "Password",
-              "nl": "Wachtwoord"
-            },
-            "passwordPlaceholder": {
-              "en": "Password"
-            }
-          }
+         "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -2883,30 +2662,13 @@
         {
           "id": "list_devices",
           "template": "list_devices",
-          "navigation": {
+         "navigation": {
+            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
-          "id": "login_credentials",
-          "template": "login_credentials",
-          "options": {
-            "logo": "eufy.svg",
-            "usernameLabel": {
-              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
-              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
-            },
-            "usernamePlaceholder": {
-              "en": "john@doe.com"
-            },
-            "passwordLabel": {
-              "en": "Password",
-              "nl": "Wachtwoord"
-            },
-            "passwordPlaceholder": {
-              "en": "Password"
-            }
-          }
+         "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -3059,30 +2821,13 @@
         {
           "id": "list_devices",
           "template": "list_devices",
-          "navigation": {
+         "navigation": {
+            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
-          "id": "login_credentials",
-          "template": "login_credentials",
-          "options": {
-            "logo": "eufy.svg",
-            "usernameLabel": {
-              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
-              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
-            },
-            "usernamePlaceholder": {
-              "en": "john@doe.com"
-            },
-            "passwordLabel": {
-              "en": "Password",
-              "nl": "Wachtwoord"
-            },
-            "passwordPlaceholder": {
-              "en": "Password"
-            }
-          }
+         "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -3232,30 +2977,13 @@
         {
           "id": "list_devices",
           "template": "list_devices",
-          "navigation": {
+         "navigation": {
+            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
-          "id": "login_credentials",
-          "template": "login_credentials",
-          "options": {
-            "logo": "eufy.svg",
-            "usernameLabel": {
-              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
-              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
-            },
-            "usernamePlaceholder": {
-              "en": "john@doe.com"
-            },
-            "passwordLabel": {
-              "en": "Password",
-              "nl": "Wachtwoord"
-            },
-            "passwordPlaceholder": {
-              "en": "Password"
-            }
-          }
+         "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -3408,30 +3136,13 @@
         {
           "id": "list_devices",
           "template": "list_devices",
-          "navigation": {
+         "navigation": {
+            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
-          "id": "login_credentials",
-          "template": "login_credentials",
-          "options": {
-            "logo": "eufy.svg",
-            "usernameLabel": {
-              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
-              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
-            },
-            "usernamePlaceholder": {
-              "en": "john@doe.com"
-            },
-            "passwordLabel": {
-              "en": "Password",
-              "nl": "Wachtwoord"
-            },
-            "passwordPlaceholder": {
-              "en": "Password"
-            }
-          }
+         "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -3506,30 +3217,13 @@
         {
           "id": "list_devices",
           "template": "list_devices",
-          "navigation": {
+         "navigation": {
+            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
-          "id": "login_credentials",
-          "template": "login_credentials",
-          "options": {
-            "logo": "eufy.svg",
-            "usernameLabel": {
-              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
-              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
-            },
-            "usernamePlaceholder": {
-              "en": "john@doe.com"
-            },
-            "passwordLabel": {
-              "en": "Password",
-              "nl": "Wachtwoord"
-            },
-            "passwordPlaceholder": {
-              "en": "Password"
-            }
-          }
+         "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -3683,30 +3377,13 @@
         {
           "id": "list_devices",
           "template": "list_devices",
-          "navigation": {
+         "navigation": {
+            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
-          "id": "login_credentials",
-          "template": "login_credentials",
-          "options": {
-            "logo": "eufy.svg",
-            "usernameLabel": {
-              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
-              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
-            },
-            "usernamePlaceholder": {
-              "en": "john@doe.com"
-            },
-            "passwordLabel": {
-              "en": "Password",
-              "nl": "Wachtwoord"
-            },
-            "passwordPlaceholder": {
-              "en": "Password"
-            }
-          }
+         "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -3770,30 +3447,13 @@
         {
           "id": "list_devices",
           "template": "list_devices",
-          "navigation": {
+         "navigation": {
+            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
-          "id": "login_credentials",
-          "template": "login_credentials",
-          "options": {
-            "logo": "eufy.svg",
-            "usernameLabel": {
-              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
-              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
-            },
-            "usernamePlaceholder": {
-              "en": "john@doe.com"
-            },
-            "passwordLabel": {
-              "en": "Password",
-              "nl": "Wachtwoord"
-            },
-            "passwordPlaceholder": {
-              "en": "Password"
-            }
-          }
+         "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -3857,30 +3517,13 @@
         {
           "id": "list_devices",
           "template": "list_devices",
-          "navigation": {
+         "navigation": {
+            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
-          "id": "login_credentials",
-          "template": "login_credentials",
-          "options": {
-            "logo": "eufy.svg",
-            "usernameLabel": {
-              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
-              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
-            },
-            "usernamePlaceholder": {
-              "en": "john@doe.com"
-            },
-            "passwordLabel": {
-              "en": "Password",
-              "nl": "Wachtwoord"
-            },
-            "passwordPlaceholder": {
-              "en": "Password"
-            }
-          }
+         "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -3914,30 +3557,13 @@
         {
           "id": "list_devices",
           "template": "list_devices",
-          "navigation": {
+         "navigation": {
+            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
-          "id": "login_credentials",
-          "template": "login_credentials",
-          "options": {
-            "logo": "eufy.svg",
-            "usernameLabel": {
-              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
-              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
-            },
-            "usernamePlaceholder": {
-              "en": "john@doe.com"
-            },
-            "passwordLabel": {
-              "en": "Password",
-              "nl": "Wachtwoord"
-            },
-            "passwordPlaceholder": {
-              "en": "Password"
-            }
-          }
+         "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -4076,30 +3702,13 @@
         {
           "id": "list_devices",
           "template": "list_devices",
-          "navigation": {
+         "navigation": {
+            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
-          "id": "login_credentials",
-          "template": "login_credentials",
-          "options": {
-            "logo": "eufy.svg",
-            "usernameLabel": {
-              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
-              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
-            },
-            "usernamePlaceholder": {
-              "en": "john@doe.com"
-            },
-            "passwordLabel": {
-              "en": "Password",
-              "nl": "Wachtwoord"
-            },
-            "passwordPlaceholder": {
-              "en": "Password"
-            }
-          }
+         "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -4238,30 +3847,13 @@
         {
           "id": "list_devices",
           "template": "list_devices",
-          "navigation": {
+         "navigation": {
+            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
-          "id": "login_credentials",
-          "template": "login_credentials",
-          "options": {
-            "logo": "eufy.svg",
-            "usernameLabel": {
-              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
-              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
-            },
-            "usernamePlaceholder": {
-              "en": "john@doe.com"
-            },
-            "passwordLabel": {
-              "en": "Password",
-              "nl": "Wachtwoord"
-            },
-            "passwordPlaceholder": {
-              "en": "Password"
-            }
-          }
+         "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -4394,30 +3986,13 @@
         {
           "id": "list_devices",
           "template": "list_devices",
-          "navigation": {
+         "navigation": {
+            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
-          "id": "login_credentials",
-          "template": "login_credentials",
-          "options": {
-            "logo": "eufy.svg",
-            "usernameLabel": {
-              "en": "E-mail address - (Use a extra Eufy account - 2FA Disabled)",
-              "nl": "E-mail adres (Gebruik een extra Eufy account - 2FA Uitgeschakeld)"
-            },
-            "usernamePlaceholder": {
-              "en": "john@doe.com"
-            },
-            "passwordLabel": {
-              "en": "Password",
-              "nl": "Wachtwoord"
-            },
-            "passwordPlaceholder": {
-              "en": "Password"
-            }
-          }
+         "id": "login_eufy"
         },
         {
           "id": "add_devices",

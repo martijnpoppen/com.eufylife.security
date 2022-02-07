@@ -77,6 +77,13 @@ class App extends Homey.App {
         this.log("initSettings - Found settings key", _settingsKey);
         this.appSettings = ManagerSettings.get(_settingsKey);
 
+        if(!('REGION' in this.appSettings)) {
+            await this.updateSettings({
+                ...this.appSettings,
+                REGION: 'US'
+            });
+        }
+
         if (('USERNAME' in this.appSettings) && !this._httpService) {
             this._httpService = await this.setHttpService(this.appSettings);
             this._httpService.getToken();
@@ -94,7 +101,8 @@ class App extends Homey.App {
         USERNAME: "",
         PASSWORD: "",
         SET_CREDENTIALS: true,
-        CREDENTIALS: ""
+        CREDENTIALS: "",
+        REGION: 'US'
       });
     } catch (err) {
       this.error(err);
@@ -130,16 +138,16 @@ class App extends Homey.App {
         });
      }
 
-      const ntfy21012022 = `Eufy Security IOS 4.0.0 introduced Home-Management. Due to this change the device sharing with a extra account has changed. If you are a new user of the Eufy Homey app or you want to add a new camera to Homey this might cause issues. At the current moment there's no fix available yet. For more information see: https://tinyurl.com/eufy-homey`
+      const ntfy07022022 = `Good News! Eufy Security - Home-Management has been integrated in Homey! In case of issues please check: https://tinyurl.com/eufy-homey`
 
-      if(!this.appSettings.NOTIFICATIONS.includes('ntfy21012022')) {
+      if(!this.appSettings.NOTIFICATIONS.includes('ntfy07022022')) {
         ManagerNotifications.registerNotification({
-            excerpt: ntfy21012022,
+            excerpt: ntfy07022022,
         });
 
         await this.updateSettings({
             ...this.appSettings,
-            NOTIFICATIONS: [...this.appSettings.NOTIFICATIONS, 'ntfy21012022']
+            NOTIFICATIONS: [...this.appSettings.NOTIFICATIONS, 'ntfy07022022']
         });
       }
   }
@@ -200,7 +208,7 @@ class App extends Homey.App {
 
   async setHttpService(settings) {
     try {
-      return new HttpService(settings.USERNAME, settings.PASSWORD);
+      return new HttpService(settings.USERNAME, settings.PASSWORD, settings.REGION);
     } catch (err) {
       this.error(err);
     }

@@ -4,6 +4,8 @@ const { DEVICE_TYPES } = require('../../constants/device_types');
 let _devices = [];
 let username = '';
 let password = '';
+let errorMsg = null;
+
 module.exports = class mainDriver extends Homey.Driver {
     onInit() {
         Homey.app.log('[Driver] - init', this.id);
@@ -15,8 +17,11 @@ module.exports = class mainDriver extends Homey.Driver {
     }
 
     onPair(socket) {
+        
         const onListDevices = async (data, callback) => {
             try {
+                const _httpService = Homey.app.getHttpService();
+
                 if (this.id.includes('KEYPAD')) {
                     callback(
                         new Error(
@@ -25,13 +30,16 @@ module.exports = class mainDriver extends Homey.Driver {
                     );
                 }
 
-                const _httpService = Homey.app.getHttpService();
-                const deviceList = await _httpService.listDevices();
+                if (typeof _httpService === 'undefined' || !_httpService) {
+                    return socket.showView('login_eufy');
+                }
 
+                const deviceList = await _httpService.listDevices();
                 Homey.app.log(`[Driver] ${this.id} - deviceList:`, deviceList);
 
-                if (!deviceList.length) {
-                    socket.showView('login_credentials');
+                if (!deviceList.length || (('data' in deviceList) && deviceList.data === null)) {
+                    errorMsg = Homey.__('pair.no_data');
+                    return socket.showView('login_eufy');
                 } else {
                     _devices = await this.onDeviceListRequest(this.id, deviceList);
 
@@ -41,12 +49,12 @@ module.exports = class mainDriver extends Homey.Driver {
                     } else if (_devices && _devices.length) {
                         callback(null, _devices);
                     } else {
-                        callback(new Error('No devices found. Make sure you shared the Eufy devices with your extra account'));
+                        callback(new Error(Homey.__('pair.no_devices')));
                     }
                 }
             } catch (error) {
                 Homey.app.log(`[Driver] ${this.id} - Error:`, error);
-                socket.showView('login_credentials');
+                socket.showView('login_eufy');
             }
         };
 
@@ -55,7 +63,7 @@ module.exports = class mainDriver extends Homey.Driver {
             password = data.password;
 
             const settings = Homey.app.appSettings;
-            const result = await Homey.app.eufyLogin({ ...settings, USERNAME: username, PASSWORD: password });
+            const result = await Homey.app.eufyLogin({ ...settings, USERNAME: username, PASSWORD: password, REGION: data.region });
             if (result instanceof Error) {
                 if(result.message.includes('->')) {
                     const err = new Error(result.message.split('->')[1]);
@@ -66,6 +74,14 @@ module.exports = class mainDriver extends Homey.Driver {
             }
             return socket.showView('list_devices');
         };
+
+        socket.on('showView', async function (viewId) {
+            if (errorMsg) {
+                Homey.app.log(`[Driver] - Show errorMsg:`, errorMsg);
+                socket.emit('error_msg', errorMsg);
+                errorMsg = false;
+            }
+        });
 
         socket.on('list_devices', onListDevices);
         socket.on('login', onLogin);

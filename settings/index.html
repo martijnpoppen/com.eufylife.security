@@ -1,12 +1,33 @@
 <!doctype html>
 <html>
-
 <head>
     <!-- The '/homey.js' script must be included in your settings view to work -->
     <script type="text/javascript" src="/homey.js" data-origin="settings"></script>
     <style>
-        fieldset legend, .hy-fieldset:not(.hy-nostyle) legend {
+        fieldset legend,
+        .hy-fieldset:not(.hy-nostyle) legend {
             font-size: 14px !important;
+        }
+
+        .radio-toolbar input[type="radio"] {
+            display: none;
+        }
+
+        .radio-toolbar label {
+            display: inline-block;
+            background-color: transparent;
+            border: 3px solid;
+            width: 35%;
+            padding: 4px 11px;
+            font-family: Arial;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .radio-toolbar input[type="radio"]:checked+label {
+            background-color: #00c139;
+            border: 3px solid #00c139;
         }
     </style>
 </head>
@@ -15,27 +36,32 @@
     <h1 data-i18n="settings.title"></h1>
     <p data-i18n="settings.subtitle"></p>
     <fieldset>
-        <legend>Eufy Account Settings</legend>
-        <p style="color: red;">(Make sure to use a extra Eufy account. Otherwise you'll get logged out)</p>
+        <legend data-i18n="settings.account"></legend>
         <div class="field row">
-            <label for="eufy_user">Username</label>
+            <label for="eufy_user" data-i18n="pair.usernameLabel" style="color: red;"></label>
             <input id="eufy_user" type="text" value="" />
         </div>
         <div class="field row">
-            <label for="eufy_pass">Password</label>
+            <label for="eufy_pass" data-i18n="pair.passwordLabel"></label>
             <input id="eufy_pass" type="password" value="" />
         </div>
+        <div class="field row">
+            <label class="hy-label hy-tmpl-login_eufy-label" data-i18n="pair.region"></label>
+            <div class="radio-toolbar">
+                <input id="region1" name="region" type="radio" value="EU">
+                <label for="region1">EU</label>
+                <input id="region2" name="region" type="radio" value="US">
+                <label for="region2">US</label>
+            </div>
+            <br>
+        </div>
+        </div>
     </fieldset>
-    <div>
-        <p style="color: red;">Hub settings are moved to device settings. Since the last update it's not needed to change the IP. The app handles this automatically</p>
-    </div>
     <p id="error" style="color: red;"></p>
     <p id="loading" style="color: #0000FF;"></p>
     <p id="success" style="color: #5fd225;"></p>
     <button id="save" class="right">Save changes</button>
 
     <script src="./settings.js"></script>
-
 </body>
-
 </html>
