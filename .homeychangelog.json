@@ -829,5 +829,8 @@
   },
   "2.28.0": {
     "en": "NEW: integrate Eufy Homemanagement (Eufy firmware v4.0.0)"
+  },
+  "2.28.1": {
+    "en": "NEW: integrate Eufy Homemanagement (Eufy firmware v4.0.0) + NEW: account Region Selection"
   }
 }

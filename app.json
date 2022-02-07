@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.28.0",
+  "version": "2.28.1",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -1104,7 +1104,6 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
@@ -1182,7 +1181,6 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
@@ -1260,7 +1258,6 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
@@ -1338,7 +1335,6 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
@@ -1416,7 +1412,6 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
@@ -1493,7 +1488,6 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
@@ -1569,7 +1563,6 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
@@ -1722,7 +1715,6 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
@@ -1877,7 +1869,6 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
@@ -2033,7 +2024,6 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
@@ -2189,7 +2179,6 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
@@ -2345,7 +2334,6 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
@@ -2504,7 +2492,6 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
@@ -2663,7 +2650,6 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
@@ -2822,7 +2808,6 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
@@ -2978,7 +2963,6 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
@@ -3137,7 +3121,6 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
@@ -3218,7 +3201,6 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
@@ -3378,7 +3360,6 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
@@ -3448,7 +3429,6 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
@@ -3518,7 +3498,6 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
@@ -3558,7 +3537,6 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
@@ -3703,7 +3681,6 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
@@ -3848,7 +3825,6 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
@@ -3987,7 +3963,6 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
