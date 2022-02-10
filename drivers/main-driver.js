@@ -144,7 +144,7 @@ module.exports = class mainDriver extends Homey.Driver {
             hubSettings = {
                 HUB_NAME: hub.station_name,
                 P2P_DID: hub.p2p_did,
-                ACTOR_ID: device.member.action_user_id,
+                ACTOR_ID: device.member.admin_user_id,
                 STATION_SN: device.station_sn,
                 LOCAL_STATION_IP: hub.ip_addr
             }

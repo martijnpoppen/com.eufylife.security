@@ -115,7 +115,7 @@ module.exports = class mainHubDriver extends mainDriver {
         let hubSettings = {
             HUB_NAME: hub.station_name,
             P2P_DID: hub.p2p_did,
-            ACTOR_ID: hub.member.action_user_id,
+            ACTOR_ID: hub.member.admin_user_id,
             STATION_SN: hub.station_sn,
             LOCAL_STATION_IP: hub.ip_addr
         }

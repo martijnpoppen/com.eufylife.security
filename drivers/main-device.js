@@ -79,7 +79,7 @@ module.exports = class mainDevice extends Homey.Device {
             const settings = {
                 HUB_NAME: hub.station_name,
                 P2P_DID: hub.p2p_did,
-                ACTOR_ID: device.member.action_user_id,
+                ACTOR_ID: device.member.admin_user_id,
                 STATION_SN: device.station_sn,
                 RESET_DATA: false
             }
