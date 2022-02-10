@@ -13,6 +13,7 @@
     "node-static": "^0.7.11"
   },
   "scripts": {
-    "prepare": "if [ ! -d \"./lib/eufy-homey-client\" ]; then git clone https://github.com/martijnpoppen/eufy-node-client.git ./lib/eufy-homey-client && cd ./lib/eufy-homey-client && yarn --production=true && rm -rf ./src ./wireshark ./frida ./.vscode && cd ..; fi;"
+    "prepare": "if [ ! -d \"./lib/eufy-homey-client\" ]; then git clone https://github.com/martijnpoppen/eufy-node-client.git ./lib/eufy-homey-client && cd ./lib/eufy-homey-client && yarn --production=true && rm -rf ./src ./wireshark ./frida ./.vscode && cd ..; fi;",
+    "sync": "rm -rf ./lib/eufy-homey-client && git clone https://github.com/martijnpoppen/eufy-node-client.git ./lib/eufy-homey-client && cd ./lib/eufy-homey-client && yarn --production=true && rm -rf ./src ./wireshark ./frida ./.vscode && cd ..;"
   }
 }

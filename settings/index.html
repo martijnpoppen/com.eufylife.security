@@ -29,6 +29,16 @@
             background-color: #00c139;
             border: 3px solid #00c139;
         }
+
+        button {
+            background-color: #00c139 !important;
+            width: 100%;
+        }
+
+        button.orange {
+            background-color: orange !important;
+            width: 100%;
+        }
     </style>
 </head>
 
@@ -57,11 +67,16 @@
         </div>
         </div>
     </fieldset>
+    <button id="save">Save changes</button>
+
+    <br><br>
     <p id="error" style="color: red;"></p>
     <p id="loading" style="color: #0000FF;"></p>
-    <p id="success" style="color: #5fd225;"></p>
-    <button id="save" class="right">Save changes</button>
-
+    <p id="success" style="color: green;"></p>
+    <br><br>
+    <button id="reset" class="orange">Reset notification service</button>
+    <label for="reset" data-i18n="pair.reset" style="color: red;"></label>
+    <br><br><br><br>
     <script src="./settings.js"></script>
 </body>
 </html>

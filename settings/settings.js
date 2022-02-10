@@ -16,6 +16,7 @@ function onHomeyReady(Homey) {
         }
 
         initSave(data);
+        initResetNotificationService(data);
     }
 
     // --------------------------------------------------------------
@@ -58,7 +59,6 @@ function initSave(_settings) {
 
         // ----------------------------------------------
 
-        button.disabled = true;
         loading.innerHTML = '<i class="fa fa-spinner fa-spin fa-fw"></i>Logging in. Please wait until all fields are filled in.';
         error.innerHTML = "";
         success.innerHTML = "";
@@ -68,13 +68,11 @@ function initSave(_settings) {
                 if (err) {
                     error.innerHTML = err;
                     loading.innerHTML = "";
-                    button.disabled = false;
                     return Homey.alert(err);
                 } else {
-                    button.disabled = false;
                     loading.innerHTML = "";
                     error.innerHTML = "";
-                    success.innerHTML = "Saved. Logged in to EufyLife";
+                    success.innerHTML = "Saved. Logged in to EufyLife. You can close this screen now.";
                 }
             });
         } else {
@@ -83,6 +81,47 @@ function initSave(_settings) {
 
             error.innerHTML = error;
             button.disabled = false;
+            loading.innerHTML = "";
+            success.innerHTML = "";
+        }
+    });
+}
+
+function initResetNotificationService(_settings) {
+    document.getElementById('reset').addEventListener('click', function (e) {
+        const error = document.getElementById('error');
+        const loading = document.getElementById('loading');
+        const success = document.getElementById('success');
+
+        const settings = {
+            ..._settings,
+            CREDENTIALS: "",
+            SET_CREDENTIALS: true
+        }
+
+        // ----------------------------------------------
+
+        loading.innerHTML = '<i class="fa fa-spinner fa-spin fa-fw"></i>Resetting...';
+        error.innerHTML = "";
+        success.innerHTML = "";
+
+        if(_settings.USERNAME && _settings.PASSWORD) {
+            Homey.api('PUT', '/login', settings, function (err, result) {
+                if (err) {
+                    error.innerHTML = err;
+                    loading.innerHTML = "";
+                    return Homey.alert(err);
+                } else {
+                    loading.innerHTML = "";
+                    error.innerHTML = "";
+                    success.innerHTML = "Succesfully reset the notification service";
+                }
+            });
+        } else {
+            const error = 'Fill in USERNAME and PASSWORD and login first';
+            Homey.alert(error);
+
+            error.innerHTML = error;
             loading.innerHTML = "";
             success.innerHTML = "";
         }

@@ -11,6 +11,7 @@
     "passwordPlaceholder": "Password",
     "region": "Regio",
     "login": "Inloggen",
+    "reset": "Reset de notification service NIET als je al werkende 'ALS' kaarten hebt (persoon gedecteerd etc). <br><br> Het aanklikken van deze knop kan gedupliceerde notificaties veroorzaken!",
     "no_data": "Geen apparaten gevonden. Probeer een andere regio",
     "no_devices": "Geen apparaten gevonden. Zorg ervoor dat je de apparaten gedeeld hebt met je extra account."
   }

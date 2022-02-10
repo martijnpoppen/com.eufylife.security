@@ -11,6 +11,7 @@
     "passwordPlaceholder": "Password",
     "region": "Region",
     "login": "Login",
+    "reset": "Do not reset the notification service if you have working triggers (person detected etc). <br><br> Hitting this button wil create a new instance and might cause duplicate",
     "no_data": "No devices found. Try a diferrent region.",
     "no_devices": "No devices found. Make sure you shared the Eufy devices with your admin extra account"
   }
