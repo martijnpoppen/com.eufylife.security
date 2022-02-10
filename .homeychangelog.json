@@ -838,5 +838,8 @@
   },
   "2.29.0": {
     "en": "NEW: add option to reset the notification service when it is 'stuck'"
+  },
+  "2.29.1": {
+    "en": "FIX: Actor_id was missing after Eufy IOS 4.0.0 migration"
   }
 }
