@@ -191,13 +191,18 @@ module.exports = class mainDevice extends Homey.Device {
 
         Homey.app.log(`[Device] ${this.getName()} - checkCapabilities for`, driverManifest.id);
         Homey.app.log(`[Device] ${this.getName()} - Found capabilities =>`, deviceCapabilities);
+
+        if(driver.id === 'driver_VIDEO_DOORBELL_1080P_POWERED' || driver.id === 'driver_VIDEO_DOORBELL_2K_POWERED') {
+            await this.removeCapability('CMD_SET_SNOOZE_MODE');
+            await sleep(1000);
+        }
         
         if(driverCapabilities.length !== deviceCapabilities.length) {      
             await this.updateCapabilities(driverCapabilities);
         }
 
         return;
-    }y
+    }
 
 
     async updateCapabilities(driverCapabilities) {
@@ -493,7 +498,7 @@ module.exports = class mainDevice extends Homey.Device {
         }
     }
 
-    async onCapability_CMD_SET_SNOOZE_MODE(homebase = 0, motion = 0, snooze = 0) {
+    async onCapability_CMD_SET_SNOOZE_MODE(homebase = 0, motion = 0, snooze = 0, chime = 0) {
         const deviceObject = this.getData();
         const deviceId = this.getStoreValue('device_index');
         const settings = this.getSettings(); 
@@ -505,7 +510,7 @@ module.exports = class mainDevice extends Homey.Device {
         
         const nested_payload = {
             "account_id": actorID,
-            "chime_onoff":0,
+            "chime_onoff": parseInt(chime),
             "homebase_onoff": parseInt(homebase),
             "motion_notify_onoff": parseInt(motion),
             "snooze_time": parseInt(snooze),
