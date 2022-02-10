@@ -841,5 +841,8 @@
   },
   "2.29.1": {
     "en": "FIX: Actor_id was missing after Eufy IOS 4.0.0 migration"
+  },
+  "2.29.2": {
+    "en": "OPT: change wired doorbell snooze mode flowcard"
   }
 }

@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.29.1",
+  "version": "2.29.2",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -4355,14 +4355,14 @@
       }
     },
     "CMD_SET_SNOOZE_MODE_CHIME": {
-        "type": "string",
-        "uiComponent": null,
-        "getable": false,
-        "setable": false,
-        "title": {
-          "en": "Set Chime snooze mode",
-          "nl": "Zet Chime snooze modus"
-        }
+      "type": "string",
+      "uiComponent": null,
+      "getable": false,
+      "setable": false,
+      "title": {
+        "en": "Set Chime snooze mode",
+        "nl": "Zet Chime snooze modus"
+      }
     },
     "CMD_SET_FLOODLIGHT_MANUAL_SWITCH": {
       "type": "boolean",
