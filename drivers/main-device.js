@@ -565,20 +565,35 @@ module.exports = class mainDevice extends Homey.Device {
 
     async onCapability_NTFY_TRIGGER( message, value ) {
         try {
+            const isNormalEvent = message !== 'CMD_SET_ARMING';
             const settings = this.getSettings();
             const setMotionAlarm = message !== 'NTFY_PRESS_DOORBELL' && !!settings.alarm_motion_enabled;
             
             if(this.hasCapability(message)) {
-                this.setCapabilityValue(message, true);
+                if(isNormalEvent) {
+                    this.setCapabilityValue(message, true);
+                } else {
+                    this.setCapabilityValue(message, value);
+                }
+
                 if(setMotionAlarm) this.setCapabilityValue('alarm_motion', true);
 
                 await sleep(5000);
 
-                this.setCapabilityValue(message, false);
-                
+                if(isNormalEvent) {
+                    this.setCapabilityValue(message, false);
+                }
+
                 if(setMotionAlarm) {
                     await sleep(5000);
                     this.setCapabilityValue('alarm_motion', false);
+                }
+            }
+
+            if(this.hasCapability(message)) {
+                if(message !== 'alarm_generic') this.setCapabilityValue(message, value);
+                if(setMotionAlarm) {
+                    this.setCapabilityValue(message, value);
                 }
             }
 
