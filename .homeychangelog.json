@@ -844,5 +844,8 @@
   },
   "2.29.2": {
     "en": "OPT: change wired doorbell snooze mode flowcard"
+  },
+  "2.29.3": {
+    "en": "FIX: floodlight arming change trigger"
   }
 }
