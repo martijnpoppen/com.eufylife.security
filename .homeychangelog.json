@@ -853,5 +853,8 @@
   },
   "2.29.5": {
     "en": "FIX: flowcard filters improved. Show correct cards on app page"
+  },
+  "2.29.6": {
+    "en": "FIX: Floodlight Pan&Tilt Security mode trigger"
   }
 }

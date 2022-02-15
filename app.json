@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.29.5",
+  "version": "2.29.6",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -240,7 +240,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=driver_HOMEBASE_1|driver_HOMEBASE|driver_HOMEBASE_CHIME&capabilities=CMD_SET_ARMING_HUB"
+            "filter": "driver_id=driver_FLOODLIGHT_CAM_PAN_TILT|driver_HOMEBASE_1|driver_HOMEBASE|driver_HOMEBASE_CHIME&capabilities=CMD_SET_ARMING_HUB"
           }
         ]
       }
@@ -1812,6 +1812,7 @@
         "CMD_SET_FLOODLIGHT_MANUAL_SWITCH",
         "CMD_INDOOR_PAN_TURN",
         "CMD_SET_ARMING",
+        "CMD_SET_ARMING_HUB",
         "CMD_REBOOT_HUB",
         "CMD_START_STREAM",
         "CMD_SET_SNOOZE_MODE",
