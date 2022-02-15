@@ -850,5 +850,8 @@
   },
   "2.29.4": {
     "en": "FIX: notification trigger add logs for debug purposes"
+  },
+  "2.29.5": {
+    "en": "FIX: flowcard filters improved. Show correct cards on app page"
   }
 }
