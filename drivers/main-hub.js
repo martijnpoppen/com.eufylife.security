@@ -90,8 +90,10 @@ module.exports = class mainHub extends mainDevice {
 
     async onCapability_NTFY_TRIGGER( message, value ) {
         try {
+            Homey.app.log(`[Device] ${this.getName()} - onCapability_NTFY_TRIGGER => `, message, value);
             const settings = this.getSettings();
             const setMotionAlarm = message === 'alarm_generic' && !!settings.alarm_generic_enabled;
+            Homey.app.log(`[Device] ${this.getName()} - onCapability_NTFY_TRIGGER => isNormalEvent - setMotionAlarm`, isNormalEvent, setMotionAlarm);
 
             if(this.hasCapability(message)) {
                 if(message !== 'alarm_generic') this.setCapabilityValue(message, value);

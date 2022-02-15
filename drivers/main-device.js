@@ -565,10 +565,13 @@ module.exports = class mainDevice extends Homey.Device {
 
     async onCapability_NTFY_TRIGGER( message, value ) {
         try {
+            Homey.app.log(`[Device] ${this.getName()} - onCapability_NTFY_TRIGGER => `, message, value);
             const isNormalEvent = message !== 'CMD_SET_ARMING';
             const settings = this.getSettings();
             const setMotionAlarm = message !== 'NTFY_PRESS_DOORBELL' && !!settings.alarm_motion_enabled;
             
+            Homey.app.log(`[Device] ${this.getName()} - onCapability_NTFY_TRIGGER => isNormalEvent - setMotionAlarm`, isNormalEvent, setMotionAlarm);
+
             if(this.hasCapability(message)) {
                 if(isNormalEvent) {
                     this.setCapabilityValue(message, true);
@@ -587,13 +590,6 @@ module.exports = class mainDevice extends Homey.Device {
                 if(setMotionAlarm) {
                     await sleep(5000);
                     this.setCapabilityValue('alarm_motion', false);
-                }
-            }
-
-            if(this.hasCapability(message)) {
-                if(message !== 'alarm_generic') this.setCapabilityValue(message, value);
-                if(setMotionAlarm) {
-                    this.setCapabilityValue(message, value);
                 }
             }
 
