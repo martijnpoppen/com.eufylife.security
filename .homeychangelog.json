@@ -847,5 +847,8 @@
   },
   "2.29.3": {
     "en": "FIX: floodlight arming change trigger"
+  },
+  "2.29.4": {
+    "en": "FIX: notification trigger add logs for debug purposes"
   }
 }
