@@ -856,5 +856,8 @@
   },
   "2.29.6": {
     "en": "FIX: Floodlight Pan&Tilt Security mode trigger"
+  },
+  "2.29.7": {
+    "en": "HOTFIX: issue in Homebase trigger"
   }
 }
