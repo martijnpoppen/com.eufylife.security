@@ -575,21 +575,23 @@ module.exports = class mainDevice extends Homey.Device {
             if(this.hasCapability(message)) {
                 if(isNormalEvent) {
                     this.setCapabilityValue(message, true);
+
+                    if(setMotionAlarm) {
+                        this.setCapabilityValue('alarm_motion', true);
+                    }
                 } else {
                     this.setCapabilityValue(message, value);
-                }
-
-                if(setMotionAlarm) this.setCapabilityValue('alarm_motion', true);
+                }                
 
                 await sleep(5000);
 
                 if(isNormalEvent) {
                     this.setCapabilityValue(message, false);
-                }
-
-                if(setMotionAlarm) {
-                    await sleep(5000);
-                    this.setCapabilityValue('alarm_motion', false);
+                
+                    if(setMotionAlarm) {
+                        await sleep(5000);
+                        this.setCapabilityValue('alarm_motion', false);
+                    }
                 }
             }
 
