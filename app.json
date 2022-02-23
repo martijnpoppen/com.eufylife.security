@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.30.0",
+  "version": "2.30.1",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -3314,8 +3314,8 @@
         "nl": "Batterij Dual Deurbel"
       },
       "images": {
-        "large": "drivers/driver_VIDEO_DOORBELL_2K_BATTERY/assets/images/large.jpg",
-        "small": "drivers/driver_VIDEO_DOORBELL_2K_BATTERY/assets/images/small.jpg"
+        "large": "drivers/driver_VIDEO_DOORBELL_DUAL_BATTERY/assets/images/large.jpg",
+        "small": "drivers/driver_VIDEO_DOORBELL_DUAL_BATTERY/assets/images/small.jpg"
       },
       "pair": [
         {
