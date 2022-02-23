@@ -859,5 +859,8 @@
   },
   "2.29.7": {
     "en": "HOTFIX: issue in Homebase trigger"
+  },
+  "2.30.0": {
+    "en": "NEW: video doorbell dual"
   }
 }
