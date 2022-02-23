@@ -114,7 +114,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_1080P_BATTERY&capabilities=NTFY_BACKGROUND_ACTIVE"
+            "filter": "driver_id=driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_1080P_BATTERY&capabilities=NTFY_BACKGROUND_ACTIVE"
           }
         ]
       },
@@ -132,7 +132,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2_PRO|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_E|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_1080P_BATTERY&capabilities=NTFY_MOTION_DETECTION"
+            "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2_PRO|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_E|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_1080P_BATTERY&capabilities=NTFY_MOTION_DETECTION"
           }
         ]
       },
@@ -150,7 +150,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2_PRO|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_1080P_BATTERY&capabilities=NTFY_FACE_DETECTION"
+            "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2_PRO|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_1080P_BATTERY&capabilities=NTFY_FACE_DETECTION"
           }
         ]
       },
@@ -168,7 +168,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_1080P_BATTERY&capabilities=NTFY_PRESS_DOORBELL"
+            "filter": "driver_id=driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_1080P_BATTERY&capabilities=NTFY_PRESS_DOORBELL"
           }
         ]
       },
@@ -240,7 +240,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=driver_FLOODLIGHT_CAM_PAN_TILT|driver_HOMEBASE_1|driver_HOMEBASE|driver_HOMEBASE_CHIME&capabilities=CMD_SET_ARMING_HUB"
+            "filter": "driver_id=driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_1080P_POWERED|driver_HOMEBASE_1|driver_HOMEBASE|driver_HOMEBASE_CHIME&capabilities=CMD_SET_ARMING"
           }
         ]
       }
@@ -436,7 +436,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_1080P_BATTERY&capabilities=CMD_DOORBELL_QUICK_RESPONSE"
+            "filter": "driver_id=driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_1080P_BATTERY&capabilities=CMD_DOORBELL_QUICK_RESPONSE"
           },
           {
             "name": "action_CMD_SET_QUICK_RESPONSE_TYPE",
@@ -503,7 +503,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2_PRO|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_E|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_1080P_BATTERY&capabilities=CMD_START_STREAM"
+            "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2_PRO|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_E|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_1080P_BATTERY&capabilities=CMD_START_STREAM"
           }
         ]
       },
@@ -548,7 +548,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2_PRO|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_E|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_1080P_BATTERY&capabilities=CMD_START_STREAM"
+            "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2_PRO|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_E|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_1080P_BATTERY&capabilities=CMD_START_STREAM"
           }
         ]
       },
@@ -566,7 +566,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2_PRO|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_E|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_1080P_BATTERY&capabilities=CMD_START_STREAM"
+            "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2_PRO|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_E|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_1080P_BATTERY&capabilities=CMD_START_STREAM"
           }
         ]
       },
@@ -653,7 +653,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_1080P_BATTERY&capabilities=CMD_BAT_DOORBELL_WDR_SWITCH"
+            "filter": "driver_id=driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_1080P_BATTERY&capabilities=CMD_BAT_DOORBELL_WDR_SWITCH"
           },
           {
             "name": "action_CMD_BAT_DOORBELL_WDR_SWITCH_TYPE",
@@ -691,7 +691,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_1080P_BATTERY&capabilities=CMD_BAT_DOORBELL_VIDEO_QUALITY"
+            "filter": "driver_id=driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_1080P_BATTERY&capabilities=CMD_BAT_DOORBELL_VIDEO_QUALITY"
           },
           {
             "name": "action_CMD_BAT_DOORBELL_VIDEO_QUALITY_TYPE",
@@ -729,7 +729,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2_PRO|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_E|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_1080P_BATTERY&capabilities=CMD_IRCUT_SWITCH"
+            "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2_PRO|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_E|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_1080P_BATTERY&capabilities=CMD_IRCUT_SWITCH"
           },
           {
             "name": "action_CMD_IRCUT_SWITCH_TYPE",
@@ -961,7 +961,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2_PRO|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_E|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_1080P_BATTERY&capabilities=CMD_SET_SNOOZE_MODE_HOMEBASE"
+            "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2_PRO|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_E|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_1080P_BATTERY&capabilities=CMD_SET_SNOOZE_MODE_HOMEBASE"
           },
           {
             "name": "homebase",
@@ -3230,6 +3230,88 @@
       "name": {
         "en": "Battery Doorbell (1080P/2K)",
         "nl": "Batterij Deurbel (1080P/2K)"
+      },
+      "images": {
+        "large": "drivers/driver_VIDEO_DOORBELL_2K_BATTERY/assets/images/large.jpg",
+        "small": "drivers/driver_VIDEO_DOORBELL_2K_BATTERY/assets/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "login_eufy"
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General settings",
+            "nl": "Algemene instellingen"
+          },
+          "children": [
+            {
+              "id": "override_onoff",
+              "type": "checkbox",
+              "label": {
+                "en": "Always on",
+                "nl": "Altijd aan"
+              },
+              "value": false
+            },
+            {
+              "id": "alarm_motion_enabled",
+              "type": "checkbox",
+              "label": {
+                "en": "Use generic motion alarm?",
+                "nl": "Gebruik generiek bewegings alarm"
+              },
+              "value": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "driver_VIDEO_DOORBELL_DUAL_BATTERY",
+      "connectivity": [
+        "cloud",
+        "lan"
+      ],
+      "class": "doorbell",
+      "capabilities": [
+        "onoff",
+        "alarm_motion",
+        "measure_battery",
+        "measure_temperature",
+        "CMD_DOORBELL_QUICK_RESPONSE",
+        "CMD_START_STREAM",
+        "CMD_SET_SNOOZE_MODE_HOMEBASE",
+        "CMD_IRCUT_SWITCH",
+        "CMD_BAT_DOORBELL_VIDEO_QUALITY",
+        "CMD_BAT_DOORBELL_WDR_SWITCH",
+        "NTFY_MOTION_DETECTION",
+        "NTFY_FACE_DETECTION",
+        "NTFY_PRESS_DOORBELL",
+        "NTFY_BACKGROUND_ACTIVE"
+      ],
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      },
+      "name": {
+        "en": "Battery Dual Doorbell",
+        "nl": "Batterij Dual Deurbel"
       },
       "images": {
         "large": "drivers/driver_VIDEO_DOORBELL_2K_BATTERY/assets/images/large.jpg",
