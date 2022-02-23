@@ -1,0 +1,869 @@
+{
+  "1.1.4": {
+    "en": "- turn on/off camera (EufyCam pan&tilt will turn its lens)"
+  },
+  "1.1.5": {
+    "en": "turn on/off camera (EufyCam pan&tilt will turn its lens) | Set guard mode (Home, Away, Disarmed, Schedule) |Add devices and use them in flows. (on/off) |Get notifications based on detection modes for specific devices. (Motion, Face, Sound and Doorbell Press) "
+  },
+  "1.2.1": {
+    "en": "Added all compatible  devices"
+  },
+  "1.2.2": {
+    "en": "turn on/off camera (EufyCam pan&tilt will turn its lens) | Set guard mode (Home, Away, Disarmed, Schedule) |Add devices and use them in flows. (on/off) |Get notifications based on detection modes for specific devices. (Motion, Face, Sound and Doorbell Press) "
+  },
+  "1.3.2": {
+    "en": "Moved all flow logic to the devices. Added EufyCam_E, fixed problem with LOCAL_STATION_IP"
+  },
+  "1.3.3": {
+    "en": "Fixed bug with ECONNRESET and isConnected error"
+  },
+  "1.3.5": {
+    "en": "Fixed timeout on app & added logger"
+  },
+  "1.3.6": {
+    "en": "change readme - Fixed timeout on app & added logger"
+  },
+  "1.3.7": {
+    "en": "Fix for motion detection with doorbell. Fixed Doorbell 2k (wired) notifications"
+  },
+  "1.3.8": {
+    "en": "Fix for motion detection with doorbell. Fixed Doorbell 2k (wired) notifications. Add message to LOCAL_STATION_IP"
+  },
+  "1.3.9": {
+    "en": "change Face detection to Person"
+  },
+  "1.3.10": {
+    "en": "Updated logger"
+  },
+  "1.3.11": {
+    "en": "Debug for doorbell"
+  },
+  "1.3.12": {
+    "en": "Debug Doorbell not responding on notifications"
+  },
+  "1.3.13": {
+    "en": "Fix doorbell response (T8200)"
+  },
+  "1.3.14": {
+    "en": "Fix doorbell T8200"
+  },
+  "1.3.15": {
+    "en": "Fix notifications for EufyCam 2"
+  },
+  "1.3.16": {
+    "en": "Fix support for EufyCam2 and Floodlight Camera"
+  },
+  "1.4.0": {
+    "en": "Add available capabilities to device instead of all."
+  },
+  "1.4.1": {
+    "en": "Add available capabilities to device instead of all."
+  },
+  "1.4.2": {
+    "en": "Add available capabilities to device instead of all. FIX: revert to FACE_DETECTION"
+  },
+  "1.4.3": {
+    "en": "FIX: EufyCam2 crash"
+  },
+  "1.4.4": {
+    "en": "FIX: T8200 set motion detection"
+  },
+  "1.4.5": {
+    "en": "add background active to Doorbell"
+  },
+  "1.4.6": {
+    "en": "FIX: error with parsing Notifications"
+  },
+  "1.4.7": {
+    "en": "Fix app crash for some cameras"
+  },
+  "1.4.8": {
+    "en": "Check for Hubs to support multiple devices - Homebase and stand-alone"
+  },
+  "1.4.9": {
+    "en": "Add homebase to devicetypes"
+  },
+  "1.4.10": {
+    "en": "FIX: error with parsing Notifications"
+  },
+  "1.5.1": {
+    "en": "NEW: support multiple hubs"
+  },
+  "1.6.0": {
+    "en": "Add images to alerts"
+  },
+  "1.6.1": {
+    "en": "Add motion images to notifications and devices"
+  },
+  "1.6.2": {
+    "en": "Fix images not sending to different channels"
+  },
+  "1.6.3": {
+    "en": "Added images and multi hub support"
+  },
+  "1.7.0": {
+    "en": "Fixed device on/off not working correctly - inverted and turning off wrong devices"
+  },
+  "1.7.1": {
+    "en": "Fixed device on/off not working correctly - inverted and turning off wrong devices"
+  },
+  "1.7.2": {
+    "en": "Fixed device on/off not working correctly - inverted and turning off wrong devices"
+  },
+  "1.7.3": {
+    "en": "Fixed device on/off not working correctly - inverted and turning off wrong devices + fix deviceStore"
+  },
+  "1.7.4": {
+    "en": "Fix issues with deviceStore"
+  },
+  "1.8.1": {
+    "en": "NEW: add sensor screen to app"
+  },
+  "1.8.2": {
+    "en": "OPT: set devicestore per hub"
+  },
+  "1.8.3": {
+    "en": "Fixed device on/off not working correctly - inverted and turning off wrong devices + fix deviceStore"
+  },
+  "1.8.4": {
+    "en": "FIX: unable to add multiple device with same id"
+  },
+  "1.8.5": {
+    "en": "FIX: duplicate devices are showing up during pairing"
+  },
+  "1.8.6": {
+    "en": "FIX: duplicate devices are showing up during pairing"
+  },
+  "1.8.7": {
+    "en": "Send quick response for battery doorbell"
+  },
+  "1.8.8": {
+    "en": "Send quick response for battery doorbell"
+  },
+  "1.8.9": {
+    "en": "Added quick response for all doorbells"
+  },
+  "1.8.10": {
+    "en": "Updated index of quick response to trigger correct response"
+  },
+  "1.8.11": {
+    "en": "FIX: wired rdoorbell notifications"
+  },
+  "1.8.12": {
+    "en": "ERnabel doorbell when sending quick response"
+  },
+  "1.8.13": {
+    "en": "Activate doorbell for quick response"
+  },
+  "1.8.14": {
+    "en": "Fix devistore, use index instead of channel"
+  },
+  "1.8.15": {
+    "en": "FIX: wired doorbell notifications"
+  },
+  "1.8.16": {
+    "en": "Doorbell fixes, quick responses, hubstore fix"
+  },
+  "1.8.17": {
+    "en": "Fix Doorbell fixes, quick responses, hubstore fix, Eufy cam 2c image fix"
+  },
+  "1.8.18": {
+    "en": "FIX: notfication images after pairing new device. FIX: commandSend service disconnected after x hours"
+  },
+  "1.8.19": {
+    "en": "OPT: put back quick response quickMenu with list of values"
+  },
+  "1.8.20": {
+    "en": "FIX: commandSendHelper loop when timeout"
+  },
+  "1.8.21": {
+    "en": "OPT: remove quick response and FIX: crash when ip address times out"
+  },
+  "1.8.22": {
+    "en": "FIX: error when no paired devices."
+  },
+  "1.9.0": {
+    "en": "Added quickResponses - Updated p2p library"
+  },
+  "1.9.1": {
+    "en": "Add special functionality for Powered doorbell"
+  },
+  "1.9.2": {
+    "en": "OPT: Add special functionality for Powered doorbell"
+  },
+  "1.9.3": {
+    "en": "OPT: Add special functionality for Powered doorbell"
+  },
+  "1.9.4": {
+    "en": "OPT: Chained commands for Powered doorbell"
+  },
+  "1.9.5": {
+    "en": "FIX doorbell images"
+  },
+  "1.9.6": {
+    "en": "OPT: change device class - prevent turning off per device"
+  },
+  "1.9.7": {
+    "en": "OPT: always on setting"
+  },
+  "1.9.8": {
+    "en": "Update Image init"
+  },
+  "1.9.9": {
+    "en": "OPT: image tab fixes"
+  },
+  "1.10.0": {
+    "en": "NEW: add rewrite for quickResponse for Wired Doorbell"
+  },
+  "1.10.1": {
+    "en": "Change quickresponse for wired doorbell"
+  },
+  "1.10.2": {
+    "en": "Change quick response for wired "
+  },
+  "1.10.3": {
+    "en": "OPT: update wired quick response"
+  },
+  "1.10.4": {
+    "en": "OPT: update wired quick response"
+  },
+  "1.10.5": {
+    "en": "NEW: add: quickResponse for Wireless Doorbell | add: prevent device turn off | fixes for cameraImages | rewrite of p2p lib."
+  },
+  "1.10.6": {
+    "en": "NEW: add: quickResponse for Wireless Doorbell | add: prevent device turn off | fixes for cameraImages | rewrite of p2p lib."
+  },
+  "1.10.7": {
+    "en": "ADD: EufyCam 1"
+  },
+  "1.10.8": {
+    "en": "ADD: Eufycam 1"
+  },
+  "1.10.9": {
+    "en": "ADD: EufyCam 1"
+  },
+  "1.11.0": {
+    "en": "NEW: add doorsensor support"
+  },
+  "1.11.1": {
+    "en": "NEW: add doorsensor "
+  },
+  "1.11.2": {
+    "en": "NEW: add doorsensor"
+  },
+  "1.11.3": {
+    "en": "OPT: fix issue with main sensor"
+  },
+  "1.11.4": {
+    "en": "Fix issue with main sensor"
+  },
+  "1.11.5": {
+    "en": "Fix doorsensor issue in notification service"
+  },
+  "1.11.6": {
+    "en": "FIX: doorsensor events"
+  },
+  "1.11.7": {
+    "en": "FIX: doorsensor events"
+  },
+  "1.11.8": {
+    "en": "NEW: add doorsensor"
+  },
+  "1.11.9": {
+    "en": "FIX: duplicate notifications"
+  },
+  "1.11.11": {
+    "en": "NEW: condition flow card for guard mode"
+  },
+  "1.11.12": {
+    "en": "NEW: Generic alarm for all cameras - triggered on every event (except doorbell_press). Usefull for heimdall or zoneactivity"
+  },
+  "1.12.0": {
+    "en": "NEW: add motion sensor T8910"
+  },
+  "1.12.1": {
+    "en": "Revert alarm_generic to alarm_motion"
+  },
+  "1.12.2": {
+    "en": "OPT: capability fixes"
+  },
+  "1.12.3": {
+    "en": "FIX - Remove quick response from indoor cam"
+  },
+  "1.12.4": {
+    "en": "FIX: issue with Homebase setting devices  on/off "
+  },
+  "1.12.5": {
+    "en": "FIX: on/off homebase devices"
+  },
+  "1.12.7": {
+    "en": "FIX: on/off homebase devices"
+  },
+  "1.12.8": {
+    "en": "FIX: multiple on/off - regression from lib update"
+  },
+  "1.12.9": {
+    "en": "FIX: on/off for homebase devices with rewritten p2p library."
+  },
+  "1.12.10": {
+    "en": "FIX: on/off for homebase devices with rewritten p2p library."
+  },
+  "1.12.11": {
+    "en": "OPT: use device_channel for Hoomebase devices"
+  },
+  "1.12.12": {
+    "en": "OPT: use device_channel for Hoomebase devices"
+  },
+  "1.12.13": {
+    "en": "NEW: add motion sensor T8910 | NEW: Generic alarm for all cameras - triggered on every event (except doorbell_press). Usefull for heimdall or zoneactivity | NEW: Setting to disable generic alarm  | FIX: on/off for homebase devices with rewritten p2p library."
+  },
+  "1.12.14": {
+    "en": "OPT: add real device icons (Thx Robbert Vis!)"
+  },
+  "1.12.15": {
+    "en": "OPT: add real device icons (Thx Robbert Vis!)"
+  },
+  "1.12.16": {
+    "en": "OPT: add custom guard modes"
+  },
+  "1.12.17": {
+    "en": "OPT: update icons"
+  },
+  "1.12.18": {
+    "en": "OPT: Tweaked doorbell icons"
+  },
+  "1.12.19": {
+    "en": "Update community link"
+  },
+  "1.12.20": {
+    "en": "FIX: add reverse guard_modes for indoor cam - add retry when sending command fails"
+  },
+  "1.12.21": {
+    "en": "FIX: disable off for indoor cameras"
+  },
+  "2.0.1": {
+    "en": "Breaking change! - Security modes are moved to Homebase. (Only for homebase camera's) Added: Homebase and Keypad devices"
+  },
+  "2.0.2": {
+    "en": "FIX: security modes for non-Homebase devices"
+  },
+  "2.0.3": {
+    "en": "FIX: wrong condition cards for homebase"
+  },
+  "2.0.4": {
+    "en": "FIX: double pushclientservice"
+  },
+  "2.0.5": {
+    "en": "FIX: Homebase flows not working after restart"
+  },
+  "2.1.0": {
+    "en": "NEW: add stream action card to start the stream and retrieve rmtp url"
+  },
+  "2.1.1": {
+    "en": "update indoor cam names"
+  },
+  "2.2.0": {
+    "en": "NEW: add Homebase_1 hub"
+  },
+  "2.2.1": {
+    "en": "FIX: homebase 1 pairing issue"
+  },
+  "2.2.2": {
+    "en": "FIX: homebase 1 pairing issue"
+  },
+  "2.2.3": {
+    "en": "FIX: keypad driver + Homebase 1 icon"
+  },
+  "2.2.4": {
+    "en": "Breaking change! - Security modes are moved to Homebase. (Only for homebase camera's) Added: Homebase and Keypad devices / Stream flowcards / Multiple Fixes"
+  },
+  "2.2.5": {
+    "en": "Breaking change! - Security modes are moved to Homebase. (Only for homebase camera's) Added: Homebase and Keypad devices / Stream flowcards / Multiple Fixes"
+  },
+  "2.3.0": {
+    "en": "NEW: add battery status and battery temperature"
+  },
+  "2.3.1": {
+    "en": "NEW: add battery status and battery temperature"
+  },
+  "2.3.2": {
+    "en": "NEW: add battery status and battery temperature"
+  },
+  "2.3.3": {
+    "en": "NEW: add battery status and battery temperature"
+  },
+  "2.3.4": {
+    "en": "NEW: add battery status and battery temperature + cronjob fix"
+  },
+  "2.3.5": {
+    "en": "NEW: add battery status and battery temperature + cronjob fix"
+  },
+  "2.3.6": {
+    "en": "NEW: add battery status and battery temperature + cronjob fix + remove battery for sensors"
+  },
+  "2.3.7": {
+    "en": "NEW: add battery status and battery temperature + cronjob fix + remove battery for sensors"
+  },
+  "2.3.8": {
+    "en": "NEW: add battery status and battery temperature + cronjob fix + remove battery for sensors + improve keypad info message"
+  },
+  "2.3.9": {
+    "en": "Add logs for measure_battery"
+  },
+  "2.3.10": {
+    "en": "Add GEO to security modes"
+  },
+  "2.3.11": {
+    "en": "Add GEO to security modes"
+  },
+  "2.3.12": {
+    "en": "FIX: fix Homebase securitymode not changing after firmware (2.1.6.9h) update."
+  },
+  "2.4.0": {
+    "en": "Update to improved Library - Homebase Alarm triggers/actions - Quickresponses Wired doorbell - Reboot Hub FlowCard - improvements - Interval for battery improved"
+  },
+  "2.4.1": {
+    "en": "Update to improved Library - Homebase Alarm triggers/actions - Quickresponses Wired doorbell - Reboot Hub FlowCard - improvements - Interval for battery improved"
+  },
+  "2.4.2": {
+    "en": "Change alarm flowcard to input  seconds. Fix quick response wired doorbell"
+  },
+  "2.4.3": {
+    "en": "FIX: quickresponse wired doorbell"
+  },
+  "2.4.4": {
+    "en": "NEW: add alarm countdown sound for keypad - Homebase flowcard"
+  },
+  "2.4.5": {
+    "en": "NEW: add alarm countdown sound for keypad - Homebase flowcard"
+  },
+  "2.4.6": {
+    "en": "NEW: add setting to Homebase devices to prevent Eufy from turning of Homebase notifications. "
+  },
+  "2.4.7": {
+    "en": "NEW: add setting to Homebase devices to prevent Eufy from turning of Homebase notifications. "
+  },
+  "2.4.8": {
+    "en": "FIX: issue with motions sensor. With devicestore"
+  },
+  "2.4.9": {
+    "en": "FIX: motion sensor device store"
+  },
+  "2.4.10": {
+    "en": "FIX: wired doorbell on/off + quickResponses"
+  },
+  "2.4.11": {
+    "en": "FIX: error in app"
+  },
+  "2.4.12": {
+    "en": "Fix error"
+  },
+  "2.5.1": {
+    "en": "Update to improved Library - Homebase Alarm triggers/actions - Quickresponses Wired doorbell - Reboot Hub FlowCard - improvements - Interval for battery improved - HDR/IR/WDR switch - multiple fixes"
+  },
+  "2.6.0": {
+    "en": "NEW: add Outdoor Cam + Outdoor Cam Pro"
+  },
+  "2.6.1": {
+    "en": "FIX: decrease timeout quickresponse"
+  },
+  "2.6.2": {
+    "en": "FIX: images not updating on EufyCam 2C"
+  },
+  "2.6.3": {
+    "en": "FIX: images not working on eufycam 2c"
+  },
+  "2.6.4": {
+    "en": "FIX: images for 2C"
+  },
+  "2.6.5": {
+    "en": "NEW: add Outdoor Cam + Outdoor Cam Pro | FIX: images not updating on EufyCam 2C | FIX: decrease timeout quickresponse"
+  },
+  "2.6.6": {
+    "en": "FIX: increase timeout quickresponse - wired doorbell"
+  },
+  "2.6.7": {
+    "en": "FIX: issue where Homebase - Away mode was not updated"
+  },
+  "2.6.8": {
+    "en": "FIX: notifcations sent twice. - disable restart homebase"
+  },
+  "2.6.9": {
+    "en": "FIX wired doorbell quickresponse"
+  },
+  "2.6.10": {
+    "en": "FIX: quick response for battery doorbell"
+  },
+  "2.6.11": {
+    "en": "FIX: issue with parsing data on NTFY"
+  },
+  "2.6.12": {
+    "en": "OPT: add logging to find issue with hub data"
+  },
+  "2.6.13": {
+    "en": "FIX: alarm not turning off the alarm generic or when started with timer"
+  },
+  "2.6.14": {
+    "en": "FIX: decrease homebase cronjob. Causing standalone cameras to no respond"
+  },
+  "2.6.15": {
+    "en": "FIX: deviceCapabilities for Floodlight camera"
+  },
+  "2.7.0": {
+    "en": "NEW: add 360 turn flowcard for indoor Cam Pan&Tilt"
+  },
+  "2.7.1": {
+    "en": "FIX: floodlight on/off + reset homebase alarm on start of app"
+  },
+  "2.7.2": {
+    "en": "FIX: remove duplicate driver"
+  },
+  "2.7.3": {
+    "en": "FIX: images not updating after adding a devce"
+  },
+  "2.7.4": {
+    "en": "FIX: double image on added"
+  },
+  "2.7.5": {
+    "en": "FIX: update Hubs after adding a device. (for stand-alone devices)"
+  },
+  "2.8.0": {
+    "en": "NEW: add device filter for pairing new devices - prevent wrong driver match"
+  },
+  "2.8.1": {
+    "en": "FIX: device filter for Homebase"
+  },
+  "2.9.0": {
+    "en": "NEW: add HLS stream card. Compatible with chromecast"
+  },
+  "2.9.1": {
+    "en": "FIX: HLS stream card. (Compatible with Chromecast)"
+  },
+  "2.9.2": {
+    "en": "FIX: remove app notification"
+  },
+  "2.9.4": {
+    "en": "FIX: error on server port + 5 minute timeout on stream card"
+  },
+  "2.9.5": {
+    "en": "FIX port binding for internal stream server"
+  },
+  "2.9.6": {
+    "en": "FIX: streamserver port in use issue - Try to close stream when finished playing"
+  },
+  "2.9.7": {
+    "en": "FIX: start stream as muted when autoplay is not supported"
+  },
+  "2.9.8": {
+    "en": "FIX: start stream as muted when autoplay is not supported"
+  },
+  "2.10.0": {
+    "en": "NEW: use Homey Discovery to find local Homebase IP on app start"
+  },
+  "2.11.0": {
+    "en": "NEW: rewrite P2P service - (Allows synchronous commands for multiple devices)"
+  },
+  "2.11.1": {
+    "en": "FIX: arm mode values - (number to text) - Increase interval for Homebase force_notifications"
+  },
+  "2.11.2": {
+    "en": "FIX: stream url not showing up in flows"
+  },
+  "2.11.3": {
+    "en": "FIX: Homebase couldnt find EufyP2P service."
+  },
+  "2.11.4": {
+    "en": "FIX: prevent invalid arm mode for Homebase"
+  },
+  "2.11.5": {
+    "en": "FIX: homebase not setting away mode"
+  },
+  "2.11.6": {
+    "en": "ADD: outdoor cam s/n"
+  },
+  "2.11.7": {
+    "en": "FIX: support multiple device for 1 Hub / FIX: support multiple standalone devices"
+  },
+  "2.11.8": {
+    "en": "Refresh P2P service when expired"
+  },
+  "2.11.9": {
+    "en": "FIX: retry when timeout"
+  },
+  "2.11.10": {
+    "en": "FIX: Eufy login doesn't see P2P service"
+  },
+  "2.11.11": {
+    "en": "IX: Eufy login doesn't see P2P service"
+  },
+  "2.11.12": {
+    "en": "FIX: reset motion alarm on startup"
+  },
+  "2.11.13": {
+    "en": "FIX: command retry mechanischm for indoor cams"
+  },
+  "2.11.14": {
+    "en": "FIX: Floodcam pairing"
+  },
+  "2.11.15": {
+    "en": "FIX: floodlight 2K pairing - add T8424"
+  },
+  "2.11.16": {
+    "en": "FIX: floodlight 2K pairing - add T8424"
+  },
+  "2.11.17": {
+    "en": "FIX: capability checker for Floodlight - remove old checks"
+  },
+  "2.12.0": {
+    "en": "NEW: add IP checker/changer for stand-alone cameras"
+  },
+  "2.13.0": {
+    "en": "Add Snooze mode Flowcard for all cameras  | FIX: Floodlight not working when notification type is `full effect` "
+  },
+  "2.13.1": {
+    "en": "FIX: full effect mode for Floodlight cam"
+  },
+  "2.13.2": {
+    "en": "FIX: snooze card title for Homey app was not properly set"
+  },
+  "2.13.3": {
+    "en": "ADD: sound alarm option to stand alone cameras"
+  },
+  "2.13.4": {
+    "en": "FIX: Floodlight camera add T8422 to pairing"
+  },
+  "2.13.5": {
+    "en": "FIX: pairing - add T8020 to 1080P powered doorbell. "
+  },
+  "2.14.0": {
+    "en": "NEW: add Homebase-Chime for Battery Doorbell Slim"
+  },
+  "2.15.0": {
+    "en": "NEW: add Solocam Series E20/E40 - NEW: add Solocam Series L20/L40 - NEW: add Solocam Series S40"
+  },
+  "2.16.0": {
+    "en": "NEW: Merge doorbells to - Add doorbell device type - Webapp changes"
+  },
+  "2.17.0": {
+    "en": "NEW: Add login when adding a new device for first time users"
+  },
+  "2.17.1": {
+    "en": "FIX: doorbell press was not working after last release"
+  },
+  "2.17.2": {
+    "en": "FIX: issue with device notifications after last update"
+  },
+  "2.17.3": {
+    "en": "FIX: issue with device notifications and pairing after last update"
+  },
+  "2.17.4": {
+    "en": "NEW: improve device pairing + add error messages on pair"
+  },
+  "2.17.6": {
+    "en": "OPT: add extra logs for floodcam T8420"
+  },
+  "2.17.7": {
+    "en": "FIX: T8420 not reporting notifications."
+  },
+  "2.17.8": {
+    "en": "FIX: cronjobs excluding each other"
+  },
+  "2.17.9": {
+    "en": "FIX: T8420 not reporting notifications."
+  },
+  "2.18.0": {
+    "en": "NEW: add floodlight - light control"
+  },
+  "2.18.1": {
+    "en": "FIX: small fix for httpService"
+  },
+  "2.18.2": {
+    "en": "FIX: small fix for httpService"
+  },
+  "2.18.3": {
+    "en": "FIX: app DeviceStore CronJobs"
+  },
+  "2.19.0": {
+    "en": "NEW: ADD - Floodlight Cam 2 Pro"
+  },
+  "2.19.1": {
+    "en": "NEW: ADD - Floodlight Cam 2 Pro"
+  },
+  "2.19.2": {
+    "en": "REMOVE: 360 roundlook for Floodlight Cam 2 Pro"
+  },
+  "2.19.3": {
+    "en": "FIX: motion sensor not triggering flowcard. "
+  },
+  "2.19.4": {
+    "en": "FIX: reset DoorSensor and MotionSensor on app startup"
+  },
+  "2.19.5": {
+    "en": "FIX: stream flowcard. (chromecast stream)"
+  },
+  "2.19.6": {
+    "en": " FIX: stream flowcard. (chromecast stream)"
+  },
+  "2.19.7": {
+    "en": "ADD: Floodlight trigger to Outdoorcam (Pro)"
+  },
+  "2.19.8": {
+    "en": "ADD: IR Switch flowcard to Outdoorcam (Pro)"
+  },
+  "2.20.0": {
+    "en": "ADD: model T8123 to L40 cam"
+  },
+  "2.21.0": {
+    "en": "1. NEW: Eufy Cloud IP discovery. | 2. NEW: Make all Hub settings part of device. (Removed from settings page) (see image below)| 3. NEW: Retry mechanism if P2P connection failed. 3 tries before fails. `(Local IP, Eufy local IP, Eufy Cloud IP)`| 4. FIX: Improved login system in pairing.| 5. NEW: Warning if user didn't setup a Homebase. (Homebase is required because settings are not global anymore)"
+  },
+  "2.21.1": {
+    "en": "FIX: error logs"
+  },
+  "2.21.2": {
+    "en": "FIX: standalone cam without P2P connection showed a error"
+  },
+  "2.21.3": {
+    "en": "FIX: higher priority for IP discovery"
+  },
+  "2.21.4": {
+    "en": "FIX: Floodlight Pan&Tilt cam - security mode fix"
+  },
+  "2.21.5": {
+    "en": "FIX: security modes for Floodlight Pan&Tilt"
+  },
+  "2.21.6": {
+    "en": "FIX: security modes for Floodlight Pan&Tilt"
+  },
+  "2.22.0": {
+    "en": "NEW: renew dskKey when expired"
+  },
+  "2.22.1": {
+    "en": "FIX: wrong context in check Hub settings"
+  },
+  "2.22.2": {
+    "en": "FIX: p2p init once"
+  },
+  "2.22.3": {
+    "en": "FIX: issue with renew DSK key"
+  },
+  "2.22.4": {
+    "en": "FIX: extra logs for migration from global settings to device settings"
+  },
+  "2.22.5": {
+    "en": "HOTFIX: homebase devices => wait for Hub to init "
+  },
+  "2.23.0": {
+    "en": "FIX: change checks on startup. - FIX: dskkey only for hub devices"
+  },
+  "2.23.1": {
+    "en": "FIX: check if Homebase Connected on startup"
+  },
+  "2.24.0": {
+    "en": "NEW: update device station data if it was missing during hub data migration."
+  },
+  "2.25.0": {
+    "en": "HOTFIX: Homey published the wrong app version"
+  },
+  "2.26.1": {
+    "en": "NEW: refreshSettings option in device settings"
+  },
+  "2.26.2": {
+    "en": "FIX: P2P actor id not found on Non homebase devices"
+  },
+  "2.26.3": {
+    "en": "ADD: IR Auto/Off to all cameras"
+  },
+  "2.26.4": {
+    "en": "HOTFIX: fix stream flowcard"
+  },
+  "2.26.5": {
+    "en": "ADD: IR Auto/Off to all cameras"
+  },
+  "2.26.6": {
+    "en": "OPT: update readme"
+  },
+  "2.26.7": {
+    "en": "FIX: error on settings page"
+  },
+  "2.26.8": {
+    "en": "HOTFIX: capability_already_exists error"
+  },
+  "2.26.9": {
+    "en": "ADD: important notification about device sharing to timeline"
+  },
+  "2.26.10": {
+    "en": "FIX: issue in start sequence on app boot"
+  },
+  "2.26.11": {
+    "en": "FIX: wrong device channel when setting snooze mode"
+  },
+  "2.26.12": {
+    "en": "FIX: wrong device channel when setting snooze mode"
+  },
+  "2.27.0": {
+    "en": "NEW: add PTZ for indoor pan_tilt  camera"
+  },
+  "2.27.1": {
+    "en": "NEW: add PTZ for indoor pan_tilt  camera"
+  },
+  "2.27.2": {
+    "en": "ADD: PTZ to Floodlight camera"
+  },
+  "2.27.3": {
+    "en": "FIX: unresponsive API url. "
+  },
+  "2.27.4": {
+    "en": "FIX: API url update"
+  },
+  "2.27.5": {
+    "en": "FIX: error on PAN_TURN flowcard"
+  },
+  "2.27.6": {
+    "en": "FIX: error pan_turn flowacard"
+  },
+  "2.27.7": {
+    "en": "FIX: floodlight PTZ"
+  },
+  "2.27.8": {
+    "en": "NEW: always trigger security mode change card"
+  },
+  "2.28.0": {
+    "en": "NEW: integrate Eufy Homemanagement (Eufy firmware v4.0.0)"
+  },
+  "2.28.1": {
+    "en": "NEW: integrate Eufy Homemanagement (Eufy firmware v4.0.0) + NEW: account Region Selection"
+  },
+  "2.28.2": {
+    "en": "FIX: wrong eufy-homey-client version"
+  },
+  "2.29.0": {
+    "en": "NEW: add option to reset the notification service when it is 'stuck'"
+  },
+  "2.29.1": {
+    "en": "FIX: Actor_id was missing after Eufy IOS 4.0.0 migration"
+  },
+  "2.29.2": {
+    "en": "OPT: change wired doorbell snooze mode flowcard"
+  },
+  "2.29.3": {
+    "en": "FIX: floodlight arming change trigger"
+  },
+  "2.29.4": {
+    "en": "FIX: notification trigger add logs for debug purposes"
+  },
+  "2.29.5": {
+    "en": "FIX: flowcard filters improved. Show correct cards on app page"
+  },
+  "2.29.6": {
+    "en": "FIX: Floodlight Pan&Tilt Security mode trigger"
+  },
+  "2.29.7": {
+    "en": "HOTFIX: issue in Homebase trigger"
+  },
+  "2.30.0": {
+    "en": "NEW: video doorbell dual"
+  },
+  "2.30.1": {
+    "en": "NEW: video doorbell dual"
+  }
+}
