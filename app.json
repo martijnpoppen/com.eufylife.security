@@ -767,7 +767,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PRO&capabilities=CMD_SET_FLOODLIGHT_MANUAL_SWITCH"
+            "filter": "driver_id=driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PRO&capabilities=CMD_SET_FLOODLIGHT_MANUAL_SWITCH"
           },
           {
             "name": "action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE",
@@ -1432,6 +1432,7 @@
         "CMD_IRCUT_SWITCH",
         "CMD_START_STREAM",
         "CMD_SET_SNOOZE_MODE_HOMEBASE",
+        "CMD_SET_FLOODLIGHT_MANUAL_SWITCH",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION"
       ],
@@ -1509,6 +1510,7 @@
         "CMD_IRCUT_SWITCH",
         "CMD_START_STREAM",
         "CMD_SET_SNOOZE_MODE_HOMEBASE",
+        "CMD_SET_FLOODLIGHT_MANUAL_SWITCH",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION"
       ],
