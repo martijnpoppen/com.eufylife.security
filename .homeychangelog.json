@@ -871,5 +871,8 @@
   },
   "2.31.1": {
     "en": "FIX: notifications"
+  },
+  "2.31.2": {
+    "en": "NEW: Add light switch to indoor cam / solocam L series / solocam S series"
   }
 }
