@@ -92,6 +92,10 @@
             
             Homey.setTitle(Homey.__("$tmpl.login_credentials.title")),
             lgn.value = Homey.__("pair.login");
+
+        Homey.on('error_msg', function (e) {
+            Homey.alert(e);
+        })
             
         o.addEventListener("submit", function (e) {
             if (e.preventDefault(), !m) {

@@ -51,7 +51,7 @@ module.exports = class mainHubDriver extends mainDriver {
             password = data.password;
 
             const settings = Homey.app.appSettings;
-            const result = await Homey.app.eufyLogin({ ...settings, USERNAME: username, PASSWORD: password });
+            const result = await Homey.app.eufyLogin({ ...settings, USERNAME: username, PASSWORD: password, REGION: data.region });
             if (result instanceof Error) {
                 if(result.message.includes('->')) {
                     const err = new Error(result.message.split('->')[1]);
