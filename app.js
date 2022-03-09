@@ -102,7 +102,8 @@ class App extends Homey.App {
         PASSWORD: "",
         SET_CREDENTIALS: true,
         CREDENTIALS: "",
-        REGION: 'US'
+        REGION: 'US',
+        NOTIFICATIONS: []
       });
     } catch (err) {
       this.error(err);
@@ -138,18 +139,18 @@ class App extends Homey.App {
         });
      }
 
-      const ntfy07022022 = `Good News! Eufy Security - Home-Management has been integrated in Homey! In case of issues please check: https://tinyurl.com/eufy-homey`
+    //   const ntfy07022022 = `Good News! Eufy Security - Home-Management has been integrated in Homey! In case of issues please check: https://tinyurl.com/eufy-homey`
 
-      if(!this.appSettings.NOTIFICATIONS.includes('ntfy07022022')) {
-        ManagerNotifications.registerNotification({
-            excerpt: ntfy07022022,
-        });
+    //   if(!this.appSettings.NOTIFICATIONS.includes('ntfy07022022')) {
+    //     ManagerNotifications.registerNotification({
+    //         excerpt: ntfy07022022,
+    //     });
 
-        await this.updateSettings({
-            ...this.appSettings,
-            NOTIFICATIONS: [...this.appSettings.NOTIFICATIONS, 'ntfy07022022']
-        });
-      }
+    //     await this.updateSettings({
+    //         ...this.appSettings,
+    //         NOTIFICATIONS: [...this.appSettings.NOTIFICATIONS, 'ntfy07022022']
+    //     });
+    //   }
   }
 
   // -------------------- EUFY LOGIN ----------------------
