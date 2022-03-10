@@ -880,5 +880,11 @@
   },
   "2.31.4": {
     "en": "FIX: bug in region selector for Homebase"
+  },
+  "2.31.5": {
+    "en": "HOTFIX: motion & doorbell  notifications not coming trough in Homey"
+  },
+  "2.31.6": {
+    "en": "FIX: doorbell press notification not responding when image is missing"
   }
 }
