@@ -886,5 +886,11 @@
   },
   "2.31.6": {
     "en": "FIX: doorbell press notification not responding when image is missing"
+  },
+  "2.31.7": {
+    "en": "NEW: add alarm to Eufy 2C PRO"
+  },
+  "2.31.8": {
+    "en": "NEW: add alarm to Eufy 2C PRO"
   }
 }
