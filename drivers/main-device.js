@@ -196,6 +196,12 @@ module.exports = class mainDevice extends Homey.Device {
             await this.removeCapability('CMD_SET_SNOOZE_MODE');
             await sleep(1000);
         }
+
+        if(driver.id === 'driver_EUFYCAM_2C_PRO') {
+            await this.removeCapability('CMD_TRIGGER_ALARM');
+            await this.removeCapability('CMD_SET_HUB_ALARM_CLOSE');
+            await sleep(1000);
+        }
         
         if(driverCapabilities.length !== deviceCapabilities.length) {      
             await this.updateCapabilities(driverCapabilities);
