@@ -88,7 +88,7 @@ module.exports = class mainHub extends mainDevice {
         }
     }
 
-    async onCapability_NTFY_TRIGGER( message, value ) {
+    async onCapability_NTFY_TRIGGER( message, value) {
         try {
             Homey.app.log(`[Device] ${this.getName()} - onCapability_NTFY_TRIGGER => `, message, value);
             const settings = this.getSettings();
@@ -99,6 +99,10 @@ module.exports = class mainHub extends mainDevice {
                 if(message !== 'alarm_generic') this.setCapabilityValue(message, value);
                 if(setMotionAlarm) {
                     this.setCapabilityValue(message, value);
+                }
+
+                if(message === 'CMD_SET_ARMING') {
+                    this.setCapabilityValue('alarm_arm_mode', value === 'disarmed' || value === 'off');
                 }
             }
          
@@ -131,6 +135,8 @@ module.exports = class mainHub extends mainDevice {
             }
 
             await Homey.app.EufyP2P.sendCommand(this, 'CMD_SET_ARMING', deviceObject.station_sn, CommandType.CMD_SET_ARMING, nested_payload, 0, 0, '', CommandType.CMD_SET_PAYLOAD);
+
+            await this.setCapabilityValue('alarm_arm_mode', value === 'disarmed' || value === 'off');
 
             return Promise.resolve(true);
         } catch (e) {

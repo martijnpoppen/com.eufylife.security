@@ -281,6 +281,8 @@ module.exports = class mainDevice extends Homey.Device {
 
             await Homey.app.EufyP2P.sendCommand(this, 'CMD_SET_ARMING', deviceObject.station_sn, CommandType.CMD_SET_ARMING, CMD_SET_ARMING);
 
+            await this.setCapabilityValue('alarm_arm_mode', value === 'disarmed' || value === 'off');
+
             return Promise.resolve(true);
         } catch (e) {
             Homey.app.error(e);
@@ -587,6 +589,7 @@ module.exports = class mainDevice extends Homey.Device {
                     }
                 } else {
                     this.setCapabilityValue(message, value);
+                    this.setCapabilityValue('alarm_arm_mode', value === 'disarmed' || value === 'off');
                 }                
 
                 await sleep(5000);
