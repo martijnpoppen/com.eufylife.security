@@ -892,5 +892,14 @@
   },
   "2.31.8": {
     "en": "NEW: add alarm to Eufy 2C PRO"
+  },
+  "2.32.0": {
+    "en": "NEW: add User to Arm mode changed flowcard | NEW: add alarm icon when homebase is disarmed/off"
+  },
+  "2.32.1": {
+    "en": "NEW: add User to Arm mode changed flowcard | NEW: add alarm icon when homebase is disarmed/off"
+  },
+  "2.32.2": {
+    "en": " NEW: add User to Arm mode changed flowcard | NEW: add alarm icon when homebase is disarmed/off"
   }
 }
