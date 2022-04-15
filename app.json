@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.32.2",
+  "version": "2.32.3",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -4297,7 +4297,7 @@
       "type": "boolean",
       "title": {
         "en": "Arm mode disarmed",
-        "nl": "Beveliginsmodus uitgeschakeld"
+        "nl": "Beveiligingsmodus uitgeschakeld"
       },
       "icon": "assets/icons/sound.svg",
       "uiComponent": "sensor",

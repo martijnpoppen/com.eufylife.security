@@ -901,5 +901,8 @@
   },
   "2.32.2": {
     "en": " NEW: add User to Arm mode changed flowcard | NEW: add alarm icon when homebase is disarmed/off"
+  },
+  "2.32.3": {
+    "en": "FIX: translation"
   }
 }
