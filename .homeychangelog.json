@@ -904,5 +904,8 @@
   },
   "2.32.3": {
     "en": "FIX: translation"
+  },
+  "2.32.4": {
+    "en": "ADD: option to use disarmed alarm. Makes it optional to use this alarm"
   }
 }
