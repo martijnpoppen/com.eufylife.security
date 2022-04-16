@@ -101,8 +101,11 @@ module.exports = class mainHub extends mainDevice {
                     this.setCapabilityValue(message, value);
                 }
 
-                if(message === 'CMD_SET_ARMING') {
-                    this.setCapabilityValue('alarm_arm_mode', value === 'disarmed' || value === 'off');
+                if(message === 'CMD_SET_ARMING' && settings.alarm_arm_mode && settings.alarm_arm_mode !== 'disabled') {
+                    const values = settings.alarm_arm_mode.split('_');
+                    await this.setCapabilityValue('alarm_arm_mode', values.includes(value));
+                } else if(settings.alarm_arm_mode && settings.alarm_arm_mode === 'disabled') {
+                    await this.setCapabilityValue('alarm_arm_mode', false);
                 }
             }
          

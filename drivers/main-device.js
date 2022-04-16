@@ -271,6 +271,7 @@ module.exports = class mainDevice extends Homey.Device {
     
     async onCapability_CMD_SET_ARMING( value ) {
         const deviceObject = this.getData();
+        const settings = this.getSettings();
 
         try {
             let CMD_SET_ARMING = ARM_TYPES[value];
@@ -281,7 +282,14 @@ module.exports = class mainDevice extends Homey.Device {
 
             await Homey.app.EufyP2P.sendCommand(this, 'CMD_SET_ARMING', deviceObject.station_sn, CommandType.CMD_SET_ARMING, CMD_SET_ARMING);
 
-            await this.setCapabilityValue('alarm_arm_mode', value === 'disarmed' || value === 'off');
+
+            if(settings.alarm_arm_mode && settings.alarm_arm_mode !== 'disabled') {
+                const values = settings.alarm_arm_mode.split('_');
+                await this.setCapabilityValue('alarm_arm_mode', values.includes(value));
+            } else if(settings.alarm_arm_mode && settings.alarm_arm_mode === 'disabled') {
+                await this.setCapabilityValue('alarm_arm_mode', false);
+            }
+            
 
             return Promise.resolve(true);
         } catch (e) {
@@ -589,7 +597,12 @@ module.exports = class mainDevice extends Homey.Device {
                     }
                 } else {
                     this.setCapabilityValue(message, value);
-                    this.setCapabilityValue('alarm_arm_mode', value === 'disarmed' || value === 'off');
+                    if(settings.alarm_arm_mode && settings.alarm_arm_mode !== 'disabled') {
+                        const values = settings.alarm_arm_mode.split('_');
+                        await this.setCapabilityValue('alarm_arm_mode', values.includes(value));
+                    } else {
+                        await this.setCapabilityValue('alarm_arm_mode', false);
+                    }
                 }                
 
                 await sleep(5000);

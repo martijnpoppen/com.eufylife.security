@@ -1263,6 +1263,9 @@
             },
             {
               "id": "alarm_motion_enabled",
+              "hint": {
+                "en": "This alarm will trigger when a detection happens. (Motion/Person/Sound). This generic alarm also allows zone activity and by enabling this you can use the Eufy motion detections as a sensor in Heimdall"
+              },
               "type": "checkbox",
               "label": {
                 "en": "Use generic motion alarm?",
@@ -1340,6 +1343,9 @@
             },
             {
               "id": "alarm_motion_enabled",
+              "hint": {
+                "en": "This alarm will trigger when a detection happens. (Motion/Person/Sound). This generic alarm also allows zone activity and by enabling this you can use the Eufy motion detections as a sensor in Heimdall"
+              },
               "type": "checkbox",
               "label": {
                 "en": "Use generic motion alarm?",
@@ -1417,6 +1423,9 @@
             },
             {
               "id": "alarm_motion_enabled",
+              "hint": {
+                "en": "This alarm will trigger when a detection happens. (Motion/Person/Sound). This generic alarm also allows zone activity and by enabling this you can use the Eufy motion detections as a sensor in Heimdall"
+              },
               "type": "checkbox",
               "label": {
                 "en": "Use generic motion alarm?",
@@ -1495,6 +1504,9 @@
             },
             {
               "id": "alarm_motion_enabled",
+              "hint": {
+                "en": "This alarm will trigger when a detection happens. (Motion/Person/Sound). This generic alarm also allows zone activity and by enabling this you can use the Eufy motion detections as a sensor in Heimdall"
+              },
               "type": "checkbox",
               "label": {
                 "en": "Use generic motion alarm?",
@@ -1573,6 +1585,9 @@
             },
             {
               "id": "alarm_motion_enabled",
+              "hint": {
+                "en": "This alarm will trigger when a detection happens. (Motion/Person/Sound). This generic alarm also allows zone activity and by enabling this you can use the Eufy motion detections as a sensor in Heimdall"
+              },
               "type": "checkbox",
               "label": {
                 "en": "Use generic motion alarm?",
@@ -1649,6 +1664,9 @@
             },
             {
               "id": "alarm_motion_enabled",
+              "hint": {
+                "en": "This alarm will trigger when a detection happens. (Motion/Person/Sound). This generic alarm also allows zone activity and by enabling this you can use the Eufy motion detections as a sensor in Heimdall"
+              },
               "type": "checkbox",
               "label": {
                 "en": "Use generic motion alarm?",
@@ -1725,12 +1743,56 @@
             },
             {
               "id": "alarm_motion_enabled",
+              "hint": {
+                "en": "This alarm will trigger when a detection happens. (Motion/Person/Sound). This generic alarm also allows zone activity and by enabling this you can use the Eufy motion detections as a sensor in Heimdall"
+              },
               "type": "checkbox",
               "label": {
                 "en": "Use generic motion alarm?",
                 "nl": "Gebruik generiek bewegings alarm"
               },
               "value": true
+            },
+            {
+              "id": "alarm_arm_mode",
+              "type": "dropdown",
+              "value": "disabled",
+              "hint": {
+                "en": "This alarm will trigger when the device becomes armed/disarmed"
+              },
+              "label": {
+                "en": "Alarm Disarmed"
+              },
+              "values": [
+                {
+                  "id": "disabled",
+                  "label": {
+                    "en": "No alarm",
+                    "nl": "Geen alarm"
+                  }
+                },
+                {
+                  "id": "off_disarmed",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld"
+                  }
+                },
+                {
+                  "id": "off_disarmed_home",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed / home",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / thuis"
+                  }
+                },
+                {
+                  "id": "off_disarmed_away",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed / away",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / afwezig"
+                  }
+                }
+              ]
             }
           ]
         },
@@ -1879,12 +1941,56 @@
             },
             {
               "id": "alarm_motion_enabled",
+              "hint": {
+                "en": "This alarm will trigger when a detection happens. (Motion/Person/Sound). This generic alarm also allows zone activity and by enabling this you can use the Eufy motion detections as a sensor in Heimdall"
+              },
               "type": "checkbox",
               "label": {
                 "en": "Use generic motion alarm?",
                 "nl": "Gebruik generiek bewegings alarm"
               },
               "value": true
+            },
+            {
+              "id": "alarm_arm_mode",
+              "type": "dropdown",
+              "value": "disabled",
+              "hint": {
+                "en": "This alarm will trigger when the device becomes armed/disarmed"
+              },
+              "label": {
+                "en": "Alarm Disarmed"
+              },
+              "values": [
+                {
+                  "id": "disabled",
+                  "label": {
+                    "en": "No alarm",
+                    "nl": "Geen alarm"
+                  }
+                },
+                {
+                  "id": "off_disarmed",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld"
+                  }
+                },
+                {
+                  "id": "off_disarmed_home",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed / home",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / thuis"
+                  }
+                },
+                {
+                  "id": "off_disarmed_away",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed / away",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / afwezig"
+                  }
+                }
+              ]
             }
           ]
         },
@@ -2035,12 +2141,56 @@
             },
             {
               "id": "alarm_motion_enabled",
+              "hint": {
+                "en": "This alarm will trigger when a detection happens. (Motion/Person/Sound). This generic alarm also allows zone activity and by enabling this you can use the Eufy motion detections as a sensor in Heimdall"
+              },
               "type": "checkbox",
               "label": {
                 "en": "Use generic motion alarm?",
                 "nl": "Gebruik generiek bewegings alarm"
               },
               "value": true
+            },
+            {
+              "id": "alarm_arm_mode",
+              "type": "dropdown",
+              "value": "disabled",
+              "hint": {
+                "en": "This alarm will trigger when the device becomes armed/disarmed"
+              },
+              "label": {
+                "en": "Alarm Disarmed"
+              },
+              "values": [
+                {
+                  "id": "disabled",
+                  "label": {
+                    "en": "No alarm",
+                    "nl": "Geen alarm"
+                  }
+                },
+                {
+                  "id": "off_disarmed",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld"
+                  }
+                },
+                {
+                  "id": "off_disarmed_home",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed / home",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / thuis"
+                  }
+                },
+                {
+                  "id": "off_disarmed_away",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed / away",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / afwezig"
+                  }
+                }
+              ]
             }
           ]
         },
@@ -2191,12 +2341,56 @@
             },
             {
               "id": "alarm_motion_enabled",
+              "hint": {
+                "en": "This alarm will trigger when a detection happens. (Motion/Person/Sound). This generic alarm also allows zone activity and by enabling this you can use the Eufy motion detections as a sensor in Heimdall"
+              },
               "type": "checkbox",
               "label": {
                 "en": "Use generic motion alarm?",
                 "nl": "Gebruik generiek bewegings alarm"
               },
               "value": true
+            },
+            {
+              "id": "alarm_arm_mode",
+              "type": "dropdown",
+              "value": "disabled",
+              "hint": {
+                "en": "This alarm will trigger when the device becomes armed/disarmed"
+              },
+              "label": {
+                "en": "Alarm Disarmed"
+              },
+              "values": [
+                {
+                  "id": "disabled",
+                  "label": {
+                    "en": "No alarm",
+                    "nl": "Geen alarm"
+                  }
+                },
+                {
+                  "id": "off_disarmed",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld"
+                  }
+                },
+                {
+                  "id": "off_disarmed_home",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed / home",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / thuis"
+                  }
+                },
+                {
+                  "id": "off_disarmed_away",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed / away",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / afwezig"
+                  }
+                }
+              ]
             }
           ]
         },
@@ -2347,12 +2541,56 @@
             },
             {
               "id": "alarm_motion_enabled",
+              "hint": {
+                "en": "This alarm will trigger when a detection happens. (Motion/Person/Sound). This generic alarm also allows zone activity and by enabling this you can use the Eufy motion detections as a sensor in Heimdall"
+              },
               "type": "checkbox",
               "label": {
                 "en": "Use generic motion alarm?",
                 "nl": "Gebruik generiek bewegings alarm"
               },
               "value": true
+            },
+            {
+              "id": "alarm_arm_mode",
+              "type": "dropdown",
+              "value": "disabled",
+              "hint": {
+                "en": "This alarm will trigger when the device becomes armed/disarmed"
+              },
+              "label": {
+                "en": "Alarm Disarmed"
+              },
+              "values": [
+                {
+                  "id": "disabled",
+                  "label": {
+                    "en": "No alarm",
+                    "nl": "Geen alarm"
+                  }
+                },
+                {
+                  "id": "off_disarmed",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld"
+                  }
+                },
+                {
+                  "id": "off_disarmed_home",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed / home",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / thuis"
+                  }
+                },
+                {
+                  "id": "off_disarmed_away",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed / away",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / afwezig"
+                  }
+                }
+              ]
             }
           ]
         },
@@ -2503,12 +2741,56 @@
             },
             {
               "id": "alarm_motion_enabled",
+              "hint": {
+                "en": "This alarm will trigger when a detection happens. (Motion/Person/Sound). This generic alarm also allows zone activity and by enabling this you can use the Eufy motion detections as a sensor in Heimdall"
+              },
               "type": "checkbox",
               "label": {
                 "en": "Use generic motion alarm?",
                 "nl": "Gebruik generiek bewegings alarm"
               },
               "value": true
+            },
+            {
+              "id": "alarm_arm_mode",
+              "type": "dropdown",
+              "value": "disabled",
+              "hint": {
+                "en": "This alarm will trigger when the device becomes armed/disarmed"
+              },
+              "label": {
+                "en": "Alarm Disarmed"
+              },
+              "values": [
+                {
+                  "id": "disabled",
+                  "label": {
+                    "en": "No alarm",
+                    "nl": "Geen alarm"
+                  }
+                },
+                {
+                  "id": "off_disarmed",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld"
+                  }
+                },
+                {
+                  "id": "off_disarmed_home",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed / home",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / thuis"
+                  }
+                },
+                {
+                  "id": "off_disarmed_away",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed / away",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / afwezig"
+                  }
+                }
+              ]
             }
           ]
         },
@@ -2662,12 +2944,56 @@
             },
             {
               "id": "alarm_motion_enabled",
+              "hint": {
+                "en": "This alarm will trigger when a detection happens. (Motion/Person/Sound). This generic alarm also allows zone activity and by enabling this you can use the Eufy motion detections as a sensor in Heimdall"
+              },
               "type": "checkbox",
               "label": {
                 "en": "Use generic motion alarm?",
                 "nl": "Gebruik generiek bewegings alarm"
               },
               "value": true
+            },
+            {
+              "id": "alarm_arm_mode",
+              "type": "dropdown",
+              "value": "disabled",
+              "hint": {
+                "en": "This alarm will trigger when the device becomes armed/disarmed"
+              },
+              "label": {
+                "en": "Alarm Disarmed"
+              },
+              "values": [
+                {
+                  "id": "disabled",
+                  "label": {
+                    "en": "No alarm",
+                    "nl": "Geen alarm"
+                  }
+                },
+                {
+                  "id": "off_disarmed",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld"
+                  }
+                },
+                {
+                  "id": "off_disarmed_home",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed / home",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / thuis"
+                  }
+                },
+                {
+                  "id": "off_disarmed_away",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed / away",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / afwezig"
+                  }
+                }
+              ]
             }
           ]
         },
@@ -2822,12 +3148,56 @@
             },
             {
               "id": "alarm_motion_enabled",
+              "hint": {
+                "en": "This alarm will trigger when a detection happens. (Motion/Person/Sound). This generic alarm also allows zone activity and by enabling this you can use the Eufy motion detections as a sensor in Heimdall"
+              },
               "type": "checkbox",
               "label": {
                 "en": "Use generic motion alarm?",
                 "nl": "Gebruik generiek bewegings alarm"
               },
               "value": true
+            },
+            {
+              "id": "alarm_arm_mode",
+              "type": "dropdown",
+              "value": "disabled",
+              "hint": {
+                "en": "This alarm will trigger when the device becomes armed/disarmed"
+              },
+              "label": {
+                "en": "Alarm Disarmed"
+              },
+              "values": [
+                {
+                  "id": "disabled",
+                  "label": {
+                    "en": "No alarm",
+                    "nl": "Geen alarm"
+                  }
+                },
+                {
+                  "id": "off_disarmed",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld"
+                  }
+                },
+                {
+                  "id": "off_disarmed_home",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed / home",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / thuis"
+                  }
+                },
+                {
+                  "id": "off_disarmed_away",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed / away",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / afwezig"
+                  }
+                }
+              ]
             }
           ]
         },
@@ -2982,12 +3352,56 @@
             },
             {
               "id": "alarm_motion_enabled",
+              "hint": {
+                "en": "This alarm will trigger when a detection happens. (Motion/Person/Sound). This generic alarm also allows zone activity and by enabling this you can use the Eufy motion detections as a sensor in Heimdall"
+              },
               "type": "checkbox",
               "label": {
                 "en": "Use generic motion alarm?",
                 "nl": "Gebruik generiek bewegings alarm"
               },
               "value": true
+            },
+            {
+              "id": "alarm_arm_mode",
+              "type": "dropdown",
+              "value": "disabled",
+              "hint": {
+                "en": "This alarm will trigger when the device becomes armed/disarmed"
+              },
+              "label": {
+                "en": "Alarm Disarmed"
+              },
+              "values": [
+                {
+                  "id": "disabled",
+                  "label": {
+                    "en": "No alarm",
+                    "nl": "Geen alarm"
+                  }
+                },
+                {
+                  "id": "off_disarmed",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld"
+                  }
+                },
+                {
+                  "id": "off_disarmed_home",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed / home",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / thuis"
+                  }
+                },
+                {
+                  "id": "off_disarmed_away",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed / away",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / afwezig"
+                  }
+                }
+              ]
             }
           ]
         },
@@ -3138,12 +3552,56 @@
             },
             {
               "id": "alarm_motion_enabled",
+              "hint": {
+                "en": "This alarm will trigger when a detection happens. (Motion/Person/Sound). This generic alarm also allows zone activity and by enabling this you can use the Eufy motion detections as a sensor in Heimdall"
+              },
               "type": "checkbox",
               "label": {
                 "en": "Use generic motion alarm?",
                 "nl": "Gebruik generiek bewegings alarm"
               },
               "value": true
+            },
+            {
+              "id": "alarm_arm_mode",
+              "type": "dropdown",
+              "value": "disabled",
+              "hint": {
+                "en": "This alarm will trigger when the device becomes armed/disarmed"
+              },
+              "label": {
+                "en": "Alarm Disarmed"
+              },
+              "values": [
+                {
+                  "id": "disabled",
+                  "label": {
+                    "en": "No alarm",
+                    "nl": "Geen alarm"
+                  }
+                },
+                {
+                  "id": "off_disarmed",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld"
+                  }
+                },
+                {
+                  "id": "off_disarmed_home",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed / home",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / thuis"
+                  }
+                },
+                {
+                  "id": "off_disarmed_away",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed / away",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / afwezig"
+                  }
+                }
+              ]
             }
           ]
         },
@@ -3296,6 +3754,9 @@
             },
             {
               "id": "alarm_motion_enabled",
+              "hint": {
+                "en": "This alarm will trigger when a detection happens. (Motion/Person/Sound). This generic alarm also allows zone activity and by enabling this you can use the Eufy motion detections as a sensor in Heimdall"
+              },
               "type": "checkbox",
               "label": {
                 "en": "Use generic motion alarm?",
@@ -3378,6 +3839,9 @@
             },
             {
               "id": "alarm_motion_enabled",
+              "hint": {
+                "en": "This alarm will trigger when a detection happens. (Motion/Person/Sound). This generic alarm also allows zone activity and by enabling this you can use the Eufy motion detections as a sensor in Heimdall"
+              },
               "type": "checkbox",
               "label": {
                 "en": "Use generic motion alarm?",
@@ -3459,12 +3923,56 @@
             },
             {
               "id": "alarm_motion_enabled",
+              "hint": {
+                "en": "This alarm will trigger when a detection happens. (Motion/Person/Sound). This generic alarm also allows zone activity and by enabling this you can use the Eufy motion detections as a sensor in Heimdall"
+              },
               "type": "checkbox",
               "label": {
                 "en": "Use generic motion alarm?",
                 "nl": "Gebruik generiek bewegings alarm"
               },
               "value": true
+            },
+            {
+              "id": "alarm_arm_mode",
+              "type": "dropdown",
+              "value": "disabled",
+              "hint": {
+                "en": "This alarm will trigger when the device becomes armed/disarmed"
+              },
+              "label": {
+                "en": "Alarm Disarmed"
+              },
+              "values": [
+                {
+                  "id": "disabled",
+                  "label": {
+                    "en": "No alarm",
+                    "nl": "Geen alarm"
+                  }
+                },
+                {
+                  "id": "off_disarmed",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld"
+                  }
+                },
+                {
+                  "id": "off_disarmed_home",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed / home",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / thuis"
+                  }
+                },
+                {
+                  "id": "off_disarmed_away",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed / away",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / afwezig"
+                  }
+                }
+              ]
             }
           ]
         },
@@ -3618,6 +4126,9 @@
             },
             {
               "id": "alarm_motion_enabled",
+              "hint": {
+                "en": "This alarm will trigger when a detection happens. (Motion/Person/Sound). This generic alarm also allows zone activity and by enabling this you can use the Eufy motion detections as a sensor in Heimdall"
+              },
               "type": "checkbox",
               "label": {
                 "en": "Use generic motion alarm?",
@@ -3687,6 +4198,9 @@
             },
             {
               "id": "alarm_motion_enabled",
+              "hint": {
+                "en": "This alarm will trigger when a detection happens. (Motion/Person/Sound). This generic alarm also allows zone activity and by enabling this you can use the Eufy motion detections as a sensor in Heimdall"
+              },
               "type": "checkbox",
               "label": {
                 "en": "Use generic motion alarm?",
@@ -3788,11 +4302,55 @@
             {
               "id": "alarm_generic_enabled",
               "type": "checkbox",
+              "hint": {
+                "en": "This alarm will trigger when the Homebase alarm turns on"
+              },
               "label": {
                 "en": "Use generic alarm?",
                 "nl": "Gebruik algemeen alarm?"
               },
               "value": true
+            },
+            {
+              "id": "alarm_arm_mode",
+              "type": "dropdown",
+              "value": "disabled",
+              "hint": {
+                "en": "This alarm will trigger when the device becomes armed/disarmed"
+              },
+              "label": {
+                "en": "Alarm Disarmed"
+              },
+              "values": [
+                {
+                  "id": "disabled",
+                  "label": {
+                    "en": "No alarm",
+                    "nl": "Geen alarm"
+                  }
+                },
+                {
+                  "id": "off_disarmed",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld"
+                  }
+                },
+                {
+                  "id": "off_disarmed_home",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed / home",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / thuis"
+                  }
+                },
+                {
+                  "id": "off_disarmed_away",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed / away",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / afwezig"
+                  }
+                }
+              ]
             },
             {
               "id": "force_switch_mode_notifications",
@@ -3933,6 +4491,9 @@
             {
               "id": "alarm_generic_enabled",
               "type": "checkbox",
+              "hint": {
+                "en": "This alarm will trigger when the Homebase alarm turns on"
+              },
               "label": {
                 "en": "Use generic alarm?",
                 "nl": "Gebruik algemeen alarm?"
@@ -3947,6 +4508,47 @@
                 "nl": "Forceer Homebase notificatie (voorkom uitschakelen door Eufy)"
               },
               "value": true
+            },
+            {
+              "id": "alarm_arm_mode",
+              "type": "dropdown",
+              "value": "disabled",
+              "hint": {
+                "en": "This alarm will trigger when the device becomes armed/disarmed"
+              },
+              "label": {
+                "en": "Alarm Disarmed"
+              },
+              "values": [
+                {
+                  "id": "disabled",
+                  "label": {
+                    "en": "No alarm",
+                    "nl": "Geen alarm"
+                  }
+                },
+                {
+                  "id": "off_disarmed",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld"
+                  }
+                },
+                {
+                  "id": "off_disarmed_home",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed / home",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / thuis"
+                  }
+                },
+                {
+                  "id": "off_disarmed_away",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed / away",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / afwezig"
+                  }
+                }
+              ]
             }
           ]
         },
@@ -4078,6 +4680,9 @@
             {
               "id": "alarm_generic_enabled",
               "type": "checkbox",
+              "hint": {
+                "en": "This alarm will trigger when the Homebase alarm turns on"
+              },
               "label": {
                 "en": "Use generic alarm?",
                 "nl": "Gebruik algemeen alarm?"
@@ -4092,6 +4697,47 @@
                 "nl": "Forceer Homebase notificatie (voorkom uitschakelen door Eufy)"
               },
               "value": true
+            },
+            {
+              "id": "alarm_arm_mode",
+              "type": "dropdown",
+              "value": "disabled",
+              "hint": {
+                "en": "This alarm will trigger when the device becomes armed/disarmed"
+              },
+              "label": {
+                "en": "Alarm Disarmed"
+              },
+              "values": [
+                {
+                  "id": "disabled",
+                  "label": {
+                    "en": "No alarm",
+                    "nl": "Geen alarm"
+                  }
+                },
+                {
+                  "id": "off_disarmed",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld"
+                  }
+                },
+                {
+                  "id": "off_disarmed_home",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed / home",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / thuis"
+                  }
+                },
+                {
+                  "id": "off_disarmed_away",
+                  "label": {
+                    "en": "Enable when security mode is: off / disarmed / away",
+                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / afwezig"
+                  }
+                }
+              ]
             }
           ]
         },
@@ -4296,8 +4942,8 @@
     "alarm_arm_mode": {
       "type": "boolean",
       "title": {
-        "en": "Arm mode disarmed",
-        "nl": "Beveiligingsmodus uitgeschakeld"
+        "en": "Arm mode disarmed / home",
+        "nl": "Beveiligingsmodus uitgeschakeld / thuis"
       },
       "icon": "assets/icons/sound.svg",
       "uiComponent": "sensor",
