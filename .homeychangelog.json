@@ -907,5 +907,8 @@
   },
   "2.32.4": {
     "en": "ADD: option to use disarmed alarm. Makes it optional to use this alarm"
+  },
+  "2.32.5": {
+    "en": "FIX: disabled alarm dropdown texts for mobile app"
   }
 }

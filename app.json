@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.32.4",
+  "version": "2.32.5",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -1774,22 +1774,22 @@
                 {
                   "id": "off_disarmed",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld"
+                    "en": "off / disarmed",
+                    "nl": "uit / uitgeschakeld"
                   }
                 },
                 {
                   "id": "off_disarmed_home",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed / home",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / thuis"
+                    "en": "off / disarmed / home",
+                    "nl": "uit / uitgeschakeld / thuis"
                   }
                 },
                 {
                   "id": "off_disarmed_away",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed / away",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / afwezig"
+                    "en": "off / disarmed / away",
+                    "nl": "uit / uitgeschakeld / afwezig"
                   }
                 }
               ]
@@ -1972,22 +1972,22 @@
                 {
                   "id": "off_disarmed",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld"
+                    "en": "off / disarmed",
+                    "nl": "uit / uitgeschakeld"
                   }
                 },
                 {
                   "id": "off_disarmed_home",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed / home",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / thuis"
+                    "en": "off / disarmed / home",
+                    "nl": "uit / uitgeschakeld / thuis"
                   }
                 },
                 {
                   "id": "off_disarmed_away",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed / away",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / afwezig"
+                    "en": "off / disarmed / away",
+                    "nl": "uit / uitgeschakeld / afwezig"
                   }
                 }
               ]
@@ -2172,22 +2172,22 @@
                 {
                   "id": "off_disarmed",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld"
+                    "en": "off / disarmed",
+                    "nl": "uit / uitgeschakeld"
                   }
                 },
                 {
                   "id": "off_disarmed_home",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed / home",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / thuis"
+                    "en": "off / disarmed / home",
+                    "nl": "uit / uitgeschakeld / thuis"
                   }
                 },
                 {
                   "id": "off_disarmed_away",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed / away",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / afwezig"
+                    "en": "off / disarmed / away",
+                    "nl": "uit / uitgeschakeld / afwezig"
                   }
                 }
               ]
@@ -2372,22 +2372,22 @@
                 {
                   "id": "off_disarmed",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld"
+                    "en": "off / disarmed",
+                    "nl": "uit / uitgeschakeld"
                   }
                 },
                 {
                   "id": "off_disarmed_home",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed / home",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / thuis"
+                    "en": "off / disarmed / home",
+                    "nl": "uit / uitgeschakeld / thuis"
                   }
                 },
                 {
                   "id": "off_disarmed_away",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed / away",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / afwezig"
+                    "en": "off / disarmed / away",
+                    "nl": "uit / uitgeschakeld / afwezig"
                   }
                 }
               ]
@@ -2572,22 +2572,22 @@
                 {
                   "id": "off_disarmed",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld"
+                    "en": "off / disarmed",
+                    "nl": "uit / uitgeschakeld"
                   }
                 },
                 {
                   "id": "off_disarmed_home",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed / home",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / thuis"
+                    "en": "off / disarmed / home",
+                    "nl": "uit / uitgeschakeld / thuis"
                   }
                 },
                 {
                   "id": "off_disarmed_away",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed / away",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / afwezig"
+                    "en": "off / disarmed / away",
+                    "nl": "uit / uitgeschakeld / afwezig"
                   }
                 }
               ]
@@ -2772,22 +2772,22 @@
                 {
                   "id": "off_disarmed",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld"
+                    "en": "off / disarmed",
+                    "nl": "uit / uitgeschakeld"
                   }
                 },
                 {
                   "id": "off_disarmed_home",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed / home",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / thuis"
+                    "en": "off / disarmed / home",
+                    "nl": "uit / uitgeschakeld / thuis"
                   }
                 },
                 {
                   "id": "off_disarmed_away",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed / away",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / afwezig"
+                    "en": "off / disarmed / away",
+                    "nl": "uit / uitgeschakeld / afwezig"
                   }
                 }
               ]
@@ -2975,22 +2975,22 @@
                 {
                   "id": "off_disarmed",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld"
+                    "en": "off / disarmed",
+                    "nl": "uit / uitgeschakeld"
                   }
                 },
                 {
                   "id": "off_disarmed_home",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed / home",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / thuis"
+                    "en": "off / disarmed / home",
+                    "nl": "uit / uitgeschakeld / thuis"
                   }
                 },
                 {
                   "id": "off_disarmed_away",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed / away",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / afwezig"
+                    "en": "off / disarmed / away",
+                    "nl": "uit / uitgeschakeld / afwezig"
                   }
                 }
               ]
@@ -3179,22 +3179,22 @@
                 {
                   "id": "off_disarmed",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld"
+                    "en": "off / disarmed",
+                    "nl": "uit / uitgeschakeld"
                   }
                 },
                 {
                   "id": "off_disarmed_home",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed / home",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / thuis"
+                    "en": "off / disarmed / home",
+                    "nl": "uit / uitgeschakeld / thuis"
                   }
                 },
                 {
                   "id": "off_disarmed_away",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed / away",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / afwezig"
+                    "en": "off / disarmed / away",
+                    "nl": "uit / uitgeschakeld / afwezig"
                   }
                 }
               ]
@@ -3383,22 +3383,22 @@
                 {
                   "id": "off_disarmed",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld"
+                    "en": "off / disarmed",
+                    "nl": "uit / uitgeschakeld"
                   }
                 },
                 {
                   "id": "off_disarmed_home",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed / home",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / thuis"
+                    "en": "off / disarmed / home",
+                    "nl": "uit / uitgeschakeld / thuis"
                   }
                 },
                 {
                   "id": "off_disarmed_away",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed / away",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / afwezig"
+                    "en": "off / disarmed / away",
+                    "nl": "uit / uitgeschakeld / afwezig"
                   }
                 }
               ]
@@ -3583,22 +3583,22 @@
                 {
                   "id": "off_disarmed",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld"
+                    "en": "off / disarmed",
+                    "nl": "uit / uitgeschakeld"
                   }
                 },
                 {
                   "id": "off_disarmed_home",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed / home",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / thuis"
+                    "en": "off / disarmed / home",
+                    "nl": "uit / uitgeschakeld / thuis"
                   }
                 },
                 {
                   "id": "off_disarmed_away",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed / away",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / afwezig"
+                    "en": "off / disarmed / away",
+                    "nl": "uit / uitgeschakeld / afwezig"
                   }
                 }
               ]
@@ -3954,22 +3954,22 @@
                 {
                   "id": "off_disarmed",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld"
+                    "en": "off / disarmed",
+                    "nl": "uit / uitgeschakeld"
                   }
                 },
                 {
                   "id": "off_disarmed_home",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed / home",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / thuis"
+                    "en": "off / disarmed / home",
+                    "nl": "uit / uitgeschakeld / thuis"
                   }
                 },
                 {
                   "id": "off_disarmed_away",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed / away",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / afwezig"
+                    "en": "off / disarmed / away",
+                    "nl": "uit / uitgeschakeld / afwezig"
                   }
                 }
               ]
@@ -4332,22 +4332,22 @@
                 {
                   "id": "off_disarmed",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld"
+                    "en": "off / disarmed",
+                    "nl": "uit / uitgeschakeld"
                   }
                 },
                 {
                   "id": "off_disarmed_home",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed / home",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / thuis"
+                    "en": "off / disarmed / home",
+                    "nl": "uit / uitgeschakeld / thuis"
                   }
                 },
                 {
                   "id": "off_disarmed_away",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed / away",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / afwezig"
+                    "en": "off / disarmed / away",
+                    "nl": "uit / uitgeschakeld / afwezig"
                   }
                 }
               ]
@@ -4530,22 +4530,22 @@
                 {
                   "id": "off_disarmed",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld"
+                    "en": "off / disarmed",
+                    "nl": "uit / uitgeschakeld"
                   }
                 },
                 {
                   "id": "off_disarmed_home",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed / home",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / thuis"
+                    "en": "off / disarmed / home",
+                    "nl": "uit / uitgeschakeld / thuis"
                   }
                 },
                 {
                   "id": "off_disarmed_away",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed / away",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / afwezig"
+                    "en": "off / disarmed / away",
+                    "nl": "uit / uitgeschakeld / afwezig"
                   }
                 }
               ]
@@ -4719,22 +4719,22 @@
                 {
                   "id": "off_disarmed",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld"
+                    "en": "off / disarmed",
+                    "nl": "uit / uitgeschakeld"
                   }
                 },
                 {
                   "id": "off_disarmed_home",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed / home",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / thuis"
+                    "en": "off / disarmed / home",
+                    "nl": "uit / uitgeschakeld / thuis"
                   }
                 },
                 {
                   "id": "off_disarmed_away",
                   "label": {
-                    "en": "Enable when security mode is: off / disarmed / away",
-                    "nl": "Inschakelen als beveiligingsmodus = uit / uitgeschakeld / afwezig"
+                    "en": "off / disarmed / away",
+                    "nl": "uit / uitgeschakeld / afwezig"
                   }
                 }
               ]
@@ -4942,8 +4942,8 @@
     "alarm_arm_mode": {
       "type": "boolean",
       "title": {
-        "en": "Arm mode disarmed / home",
-        "nl": "Beveiligingsmodus uitgeschakeld / thuis"
+        "en": "Disarmed",
+        "nl": "Uitgeschakeld"
       },
       "icon": "assets/icons/sound.svg",
       "uiComponent": "sensor",
