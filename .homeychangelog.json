@@ -910,5 +910,8 @@
   },
   "2.32.5": {
     "en": "FIX: disabled alarm dropdown texts for mobile app"
+  },
+  "2.33.0": {
+    "en": "NEW: add camera alarm"
   }
 }

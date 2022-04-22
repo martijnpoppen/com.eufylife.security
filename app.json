@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.32.5",
+  "version": "2.33.0",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -613,7 +613,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_1080P_POWERED|driver_HOMEBASE_1|driver_HOMEBASE|driver_HOMEBASE_CHIME&capabilities=CMD_TRIGGER_ALARM"
+            "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2_PRO|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_E|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_1080P_BATTERY|driver_HOMEBASE_1|driver_HOMEBASE|driver_HOMEBASE_CHIME&capabilities=CMD_TRIGGER_ALARM"
           },
           {
             "name": "action_CMD_TRIGGER_ALARM_TIME",
@@ -646,7 +646,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_1080P_POWERED|driver_HOMEBASE_1|driver_HOMEBASE|driver_HOMEBASE_CHIME&capabilities=CMD_SET_HUB_ALARM_CLOSE"
+            "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2_PRO|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_E|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_1080P_BATTERY|driver_HOMEBASE_1|driver_HOMEBASE|driver_HOMEBASE_CHIME&capabilities=CMD_SET_HUB_ALARM_CLOSE"
           }
         ]
       },
@@ -1211,6 +1211,8 @@
         "measure_temperature",
         "CMD_IRCUT_SWITCH",
         "CMD_START_STREAM",
+        "CMD_TRIGGER_ALARM",
+        "CMD_SET_HUB_ALARM_CLOSE",
         "CMD_SET_SNOOZE_MODE_HOMEBASE",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION"
@@ -1291,6 +1293,8 @@
         "measure_temperature",
         "CMD_IRCUT_SWITCH",
         "CMD_START_STREAM",
+        "CMD_TRIGGER_ALARM",
+        "CMD_SET_HUB_ALARM_CLOSE",
         "CMD_SET_SNOOZE_MODE_HOMEBASE",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION"
@@ -1371,6 +1375,8 @@
         "measure_temperature",
         "CMD_IRCUT_SWITCH",
         "CMD_START_STREAM",
+        "CMD_TRIGGER_ALARM",
+        "CMD_SET_HUB_ALARM_CLOSE",
         "CMD_SET_SNOOZE_MODE_HOMEBASE",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION"
@@ -1451,6 +1457,8 @@
         "measure_temperature",
         "CMD_IRCUT_SWITCH",
         "CMD_START_STREAM",
+        "CMD_TRIGGER_ALARM",
+        "CMD_SET_HUB_ALARM_CLOSE",
         "CMD_SET_SNOOZE_MODE_HOMEBASE",
         "CMD_SET_FLOODLIGHT_MANUAL_SWITCH",
         "NTFY_MOTION_DETECTION",
@@ -1532,6 +1540,8 @@
         "measure_temperature",
         "CMD_IRCUT_SWITCH",
         "CMD_START_STREAM",
+        "CMD_TRIGGER_ALARM",
+        "CMD_SET_HUB_ALARM_CLOSE",
         "CMD_SET_SNOOZE_MODE_HOMEBASE",
         "CMD_SET_FLOODLIGHT_MANUAL_SWITCH",
         "NTFY_MOTION_DETECTION",
@@ -1613,6 +1623,8 @@
         "measure_temperature",
         "CMD_IRCUT_SWITCH",
         "CMD_START_STREAM",
+        "CMD_TRIGGER_ALARM",
+        "CMD_SET_HUB_ALARM_CLOSE",
         "CMD_SET_SNOOZE_MODE_HOMEBASE",
         "NTFY_MOTION_DETECTION"
       ],
@@ -3782,6 +3794,8 @@
         "measure_temperature",
         "CMD_DOORBELL_QUICK_RESPONSE",
         "CMD_START_STREAM",
+        "CMD_TRIGGER_ALARM",
+        "CMD_SET_HUB_ALARM_CLOSE",
         "CMD_SET_SNOOZE_MODE_HOMEBASE",
         "CMD_IRCUT_SWITCH",
         "CMD_BAT_DOORBELL_VIDEO_QUALITY",
@@ -4069,6 +4083,8 @@
         "measure_temperature",
         "CMD_DOORBELL_QUICK_RESPONSE",
         "CMD_START_STREAM",
+        "CMD_TRIGGER_ALARM",
+        "CMD_SET_HUB_ALARM_CLOSE",
         "CMD_SET_SNOOZE_MODE_HOMEBASE",
         "CMD_IRCUT_SWITCH",
         "CMD_BAT_DOORBELL_VIDEO_QUALITY",
