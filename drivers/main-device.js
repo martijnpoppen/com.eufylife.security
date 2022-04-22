@@ -543,8 +543,9 @@ module.exports = class mainDevice extends Homey.Device {
         try {
             const deviceObject = this.getData();
             const deviceId = this.getStoreValue('device_index');
-            await Homey.app.EufyP2P.sendCommand(this, 'CMD_SET_TONE_FILE', deviceObject.station_sn, CommandType.CMD_SET_TONE_FILE, time, deviceId, deviceId);
             
+            await Homey.app.EufyP2P.sendCommand(this, 'CMD_SET_DEVS_TONE_FILE', deviceObject.station_sn, CommandType.CMD_SET_DEVS_TONE_FILE, time, deviceId, deviceId);
+
             return Promise.resolve(true);
         } catch (e) {
             Homey.app.error(e);
@@ -557,7 +558,7 @@ module.exports = class mainDevice extends Homey.Device {
             const deviceObject = this.getData();
             const deviceId = this.getStoreValue('device_index');
 
-            await Homey.app.EufyP2P.sendCommand(this, 'CMD_SET_TONE_FILE', deviceObject.station_sn, CommandType.CMD_SET_TONE_FILE, 0, deviceId, deviceId);
+            await Homey.app.EufyP2P.sendCommand(this, 'CMD_SET_DEVS_TONE_FILE', deviceObject.station_sn, CommandType.CMD_SET_DEVS_TONE_FILE, 0, deviceId, deviceId);
             
             return Promise.resolve(true);
         } catch (e) {
