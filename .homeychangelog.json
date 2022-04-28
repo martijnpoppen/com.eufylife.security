@@ -916,5 +916,8 @@
   },
   "2.34.0": {
     "en": "HOTFIX: prepare for Homey 7.4.0. Fix all errors which are cause by 7.4.0"
+  },
+  "2.35.0": {
+    "en": "HOTFIX: fixes for Homey 7.4.0"
   }
 }
