@@ -228,55 +228,73 @@ class App extends Homey.App {
   }
 
   async removeDevice(device_sn) {
-    Homey.app.log("removeDevice", device_sn);
+      try {
+        Homey.app.log("removeDevice", device_sn);
 
-    const filteredList = this._deviceList.filter(dl => {
-        const data = dl.getData()
-        return data.device_sn !== device_sn
-    });
-
-    this._deviceList = filteredList;
+        const filteredList = this._deviceList.filter(dl => {
+            const data = dl.getData()
+            return data.device_sn !== device_sn
+        });
+    
+        this._deviceList = filteredList;
+      } catch (error) {
+        this.error(error);
+      }
+   
   }
 
   async setDeviceStore(ctx, initCron = false) {
-    let devices = await ctx._httpService.listDevices();
+      try {
+        if(!ctx._httpService) {
+            return [];
+        }
+        
+        let devices = await ctx._httpService.listDevices();
 
-    ctx._deviceStore = [];
+        ctx._deviceStore = [];
 
-    if(devices.length) {
-        devices = devices.map((r, i) => {
-            const measure_battery = eufyParameterHelper.getParamData(r.params, "CMD_GET_BATTERY");
-            const measure_temperature = eufyParameterHelper.getParamData(r.params, "CMD_GET_BATTERY_TEMP");
+        if(devices.length) {
+            devices = devices.map((r, i) => {
+                const measure_battery = eufyParameterHelper.getParamData(r.params, "CMD_GET_BATTERY");
+                const measure_temperature = eufyParameterHelper.getParamData(r.params, "CMD_GET_BATTERY_TEMP");
 
-            return {
-                name: r.device_name, 
-                index: r.device_channel, 
-                device_sn: r.device_sn,
-                station_sn: r.station_sn,
-                deviceId: `${r.device_sn}-${r.device_id}`,  
-                measure_battery,
-                measure_temperature
-            }
-        });
+                return {
+                    name: r.device_name, 
+                    index: r.device_channel, 
+                    device_sn: r.device_sn,
+                    station_sn: r.station_sn,
+                    deviceId: `${r.device_sn}-${r.device_id}`,  
+                    measure_battery,
+                    measure_temperature
+                }
+            });
 
-        ctx._deviceStore.push(...devices);
+            ctx._deviceStore.push(...devices);
+        }
+
+        Homey.app.log("setDeviceStore - Setting up DeviceStore", ctx._deviceStore);
+
+        if(initCron) {
+            await eufyParameterHelper.registerCronTask("setDeviceStore", "EVERY_HALVE_HOURS", ctx.setDeviceStore, ctx)
+        }
+        
+
+        return ctx._deviceStore;
+    } catch (err) {
+        ctx.error(err);
     }
-
-    Homey.app.log("setDeviceStore - Setting up DeviceStore", ctx._deviceStore);
-
-    if(initCron) {
-        await eufyParameterHelper.registerCronTask("setDeviceStore", "EVERY_HALVE_HOURS", ctx.setDeviceStore, ctx)
-    }
-    
-
-    return ctx._deviceStore;
   }
 
   async getStreamAddress() {
-    const internalIp = (await ManagerCloud.getLocalAddress()).replace(/:.*/, '');
-    this.log(`getStreamAddress - Set internalIp`, internalIp);
-    
-    return `${internalIp}:${_serverPort}`;
+      try {
+        const internalIp = (await ManagerCloud.getLocalAddress()).replace(/:.*/, '');
+        this.log(`getStreamAddress - Set internalIp`, internalIp);
+        
+        return `${internalIp}:${_serverPort}`;
+      } catch (error) {
+          this.error(error);
+      }
+   
   }
 }
 

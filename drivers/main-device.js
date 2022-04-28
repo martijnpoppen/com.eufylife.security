@@ -71,6 +71,8 @@ module.exports = class mainDevice extends Homey.Device {
 
     async renewSettings(wait = false) {
         try {
+            _httpService = Homey.app.getHttpService();
+
             const deviceObject = await this.getData();
             const deviceList = await _httpService.listDevices();
             const device = deviceList.find(d => d.station_sn === deviceObject.station_sn);
@@ -342,6 +344,9 @@ module.exports = class mainDevice extends Homey.Device {
             return Promise.resolve(true);
         } catch (e) {
             Homey.app.error(e);
+            if(typeof e ==='object') {
+                return Promise.reject(JSON.stringify(e));
+            }
             return Promise.reject(e);
         }
     }

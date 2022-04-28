@@ -132,6 +132,9 @@ module.exports = class mainDriver extends Homey.Driver {
 
             return Promise.resolve(results);
         } catch (e) {
+            if(typeof e ==='object') {
+                return Promise.reject(JSON.stringify(e));
+            }
             Homey.app.log(e);
         }
     }
