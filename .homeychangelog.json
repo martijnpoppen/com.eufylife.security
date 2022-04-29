@@ -919,5 +919,8 @@
   },
   "2.35.0": {
     "en": "HOTFIX: fixes for Homey 7.4.0"
+  },
+  "2.35.1": {
+    "en": "HOTFIX: fixes for Homey 7.4.0"
   }
 }
