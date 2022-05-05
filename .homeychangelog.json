@@ -925,5 +925,8 @@
   },
   "2.35.2": {
     "en": "FIX: left over from old Camera Alarm for Eufy 2C Pro | NEW: add extra options for arming icon"
+  },
+  "2.35.3": {
+    "en": "FIX: alarm arm mode settings"
   }
 }
