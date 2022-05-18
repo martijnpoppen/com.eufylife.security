@@ -628,13 +628,13 @@ module.exports = class mainDevice extends Homey.Device {
         }
     }
 
-    async deviceImage(imagePath = "assets/images/large.jpg") {
+    async deviceImage(imagePath = "assets/images/stream.jpg") {
         try {
             const deviceObject = this.getData();
             Homey.app.log(`[Device] ${this.getName()} - Set image - `, imagePath, this._image);
 
 
-            if(imagePath !== "assets/images/large.jpg") {
+            if(imagePath !== "assets/images/stream.jpg") {
                 await this._image.setStream(async (stream) => {
                     const res = await fetch(imagePath);
                     if(!res.ok)
