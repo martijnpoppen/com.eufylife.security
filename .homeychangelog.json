@@ -928,5 +928,8 @@
   },
   "2.35.3": {
     "en": "FIX: alarm arm mode settings"
+  },
+  "2.35.4": {
+    "en": "FIX: error handling for Homey 7.4.1"
   }
 }
