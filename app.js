@@ -171,6 +171,10 @@ class App extends Homey.App {
         this.log(`eufyLogin - Logged in.`);
       }
 
+      if(hubs.error) {
+        Homey.app.log(`eufyLogin => error =>`, hubs);
+      }
+
       const initNotificationCheckHelper = !settings.CREDENTIALS;
 
       if (!settings.CREDENTIALS && settings.SET_CREDENTIALS) {
@@ -250,6 +254,10 @@ class App extends Homey.App {
         }
         
         let devices = await ctx._httpService.listDevices();
+
+        if(devices.error) {
+            Homey.app.log(`setDeviceStore => error =>`, devices);
+        }
 
         ctx._deviceStore = [];
 

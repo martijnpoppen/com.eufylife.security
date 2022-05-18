@@ -86,6 +86,10 @@ module.exports = class mainDevice extends Homey.Device {
                 RESET_DATA: false
             }
 
+            if(deviceList.error) {
+                Homey.app.log(`[Device] ${this.getName()} - renewSettings => deviceList =>`, deviceList);
+            }
+            
             Homey.app.log(`[Device] ${this.getName()} - renewSettings =>`, settings);
 
             if(wait) {
@@ -196,12 +200,6 @@ module.exports = class mainDevice extends Homey.Device {
 
         if(driver.id === 'driver_VIDEO_DOORBELL_1080P_POWERED' || driver.id === 'driver_VIDEO_DOORBELL_2K_POWERED') {
             await this.removeCapability('CMD_SET_SNOOZE_MODE');
-            await sleep(1000);
-        }
-
-        if(driver.id === 'driver_EUFYCAM_2C_PRO') {
-            await this.removeCapability('CMD_TRIGGER_ALARM');
-            await this.removeCapability('CMD_SET_HUB_ALARM_CLOSE');
             await sleep(1000);
         }
         
