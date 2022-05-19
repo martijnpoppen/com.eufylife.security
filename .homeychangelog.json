@@ -931,5 +931,8 @@
   },
   "2.35.4": {
     "en": "FIX: error handling for Homey 7.4.1"
+  },
+  "2.35.5": {
+    "en": "FIX: auth token"
   }
 }
