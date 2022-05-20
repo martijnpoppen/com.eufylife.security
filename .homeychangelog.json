@@ -934,5 +934,8 @@
   },
   "2.35.5": {
     "en": "FIX: auth token"
+  },
+  "2.35.6": {
+    "en": "FIX: 7.4.1 error reports"
   }
 }
