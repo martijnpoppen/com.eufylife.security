@@ -937,5 +937,8 @@
   },
   "2.35.6": {
     "en": "FIX: 7.4.1 error reports"
+  },
+  "2.35.7": {
+    "en": "NEW: add indoor cam mini"
   }
 }
