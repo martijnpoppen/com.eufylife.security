@@ -940,5 +940,8 @@
   },
   "2.35.7": {
     "en": "NEW: add indoor cam mini"
+  },
+  "2.36.0": {
+    "en": "FIX: streams & NEW: secure streams for embedding and casting"
   }
 }
