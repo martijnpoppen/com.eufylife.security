@@ -6,7 +6,6 @@ const { PushRegisterService, HttpService, PushClient, sleep } = require("./lib/e
 const flowActions = require("./lib/flow/actions.js");
 const flowConditions = require("./lib/flow/conditions.js");
 const flowTriggers = require("./lib/flow/triggers.js");
-const server = require("./server/index.js");
 
 const EufyP2P = require("./lib/helpers/eufy-p2p.helper");
 const eufyNotificationCheckHelper = require("./lib/helpers/eufy-notification-check.helper");
@@ -16,7 +15,6 @@ const ManagerSettings = Homey.ManagerSettings;
 const ManagerCloud = Homey.ManagerCloud;
 const ManagerNotifications = Homey.ManagerNotifications;
 const _settingsKey = `${Homey.manifest.id}.settings`;
-let _serverPort = undefined;
 
 class App extends Homey.App {
   log() {
@@ -47,8 +45,6 @@ class App extends Homey.App {
             await eufyNotificationCheckHelper.init(this.appSettings);
             await flowTriggers.init();
         }
-
-        _serverPort = await server.init();
 
         await sleep(2000);
         await this.sendNotifications();
@@ -295,10 +291,11 @@ class App extends Homey.App {
 
   async getStreamAddress() {
       try {
-        const internalIp = (await ManagerCloud.getLocalAddress()).replace(/:.*/, '');
+        let internalIp = (await ManagerCloud.getLocalAddress()).replace(/:.*/, '');
+        internalIp = internalIp.replace(/\./g, '-');
         this.log(`getStreamAddress - Set internalIp`, internalIp);
         
-        return `${internalIp}:${_serverPort}`;
+        return `https://${internalIp}.homey.homeylocal.com`;
       } catch (error) {
           this.error(error);
       }

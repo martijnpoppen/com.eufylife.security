@@ -319,21 +319,30 @@ module.exports = class mainDevice extends Homey.Device {
                 let streamStart = response.url ? response.url : null;
 
                 if(streamStart && startStream.includes('hls')) {
-                    Homey.app.log(`[Device] ${this.getName()} - startStream - hls`, streamStart);
+                    Homey.app.log(`[Device] ${this.getName()} - startStream - ${startStream}`, streamStart);
 
-                    streamStart = streamStart.replace('rtmp', 'http');
-                    streamStart = streamStart.split('?');
+                    streamStart = streamStart.replace('rtmp', 'https');
+                    streamStart = streamStart.split('/hls/');
 
-                    const streamUrl = streamStart[0];
-                    let formattedParams = streamStart[1].replace('?', '@');
-                    formattedParams = streamStart[1].replace('&', '$');
+                    const streamKey = streamStart[1].split('?');
 
-                    streamStart = `http://${localAddress}/stream/?hls=${streamUrl}.m3u8&${formattedParams}`;
+                    const streamUrl = `${streamStart[0]}:1443/hls/${streamKey[0]}.m3u8`;
+
+                    if(startStream === 'hls_only') {
+                        streamStart = streamUrl;
+                    } else {
+                        streamStart = `${localAddress}/app/${Homey.manifest.id}/settings/stream?hls=${streamUrl}`;
+                    }   
                 }
 
-                Homey.app.log(`[Device] ${this.getName()} - startStream - hls/rtmp`, streamStart);
+                Homey.app.log(`[Device] ${this.getName()} - startStream - ${startStream}`, streamStart);
                 
                 await this.setCapabilityValue( 'CMD_START_STREAM', streamStart);
+
+                Homey.app[`trigger_STREAM_STARTED`]
+                .trigger(this, {'url': streamStart})
+                .catch( this.error )
+                .then(Homey.app.log(`[NTFY] - Triggered trigger_STREAM_STARTED`)); 
             } else {
                 await this.setCapabilityValue( 'CMD_START_STREAM', 'No stream found');
                 await _httpService.stopStream(requestObject);
