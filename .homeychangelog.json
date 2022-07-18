@@ -943,5 +943,8 @@
   },
   "2.36.0": {
     "en": "FIX: streams & NEW: secure streams for embedding and casting"
+  },
+  "2.36.1": {
+    "en": "NEW: get videoplayer by station_sn. Allow embedding"
   }
 }
