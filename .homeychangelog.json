@@ -946,5 +946,8 @@
   },
   "2.36.1": {
     "en": "NEW: get videoplayer by station_sn. Allow embedding"
+  },
+  "2.36.2": {
+    "en": "NEW: videojs 7"
   }
 }
