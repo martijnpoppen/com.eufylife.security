@@ -317,6 +317,7 @@ module.exports = class mainDevice extends Homey.Device {
                 const response = await _httpService.startStream(requestObject);
                 
                 let streamStart = response.url ? response.url : null;
+                let streamUrl = '';
 
                 if(streamStart && startStream.includes('hls')) {
                     Homey.app.log(`[Device] ${this.getName()} - startStream - ${startStream}`, streamStart);
@@ -326,18 +327,19 @@ module.exports = class mainDevice extends Homey.Device {
 
                     const streamKey = streamStart[1].split('?');
 
-                    const streamUrl = `${streamStart[0]}:1443/hls/${streamKey[0]}.m3u8`;
+                    streamUrl = `${streamStart[0]}:1443/hls/${streamKey[0]}.m3u8`;
 
                     if(startStream === 'hls_only') {
                         streamStart = streamUrl;
                     } else {
-                        streamStart = `${localAddress}/app/${Homey.manifest.id}/settings/stream?hls=${streamUrl}`;
+                        streamStart = `${localAddress}/app/${Homey.manifest.id}/settings/stream?device_sn=${deviceObject.device_sn}`;
                     }   
                 }
 
                 Homey.app.log(`[Device] ${this.getName()} - startStream - ${startStream}`, streamStart);
                 
                 await this.setCapabilityValue( 'CMD_START_STREAM', streamStart);
+                await this.setSettings({'CLOUD_STREAM_URL': streamUrl});
 
                 Homey.app[`trigger_STREAM_STARTED`]
                 .trigger(this, {'url': streamStart})
@@ -762,8 +764,8 @@ module.exports = class mainDevice extends Homey.Device {
                     if(stationSN === name && (stationIP !== address || address === '')) {
                         Homey.app.log(`[Device] ${this.getName()} - findHubIp => name matches - set new IP`, address);               
 
-                        await this.setSettings({'LOCAL_STATION_IP': address});;
-                    }
+                        await this.setSettings({'LOCAL_STATION_IP': address});
+                 }
                 }
             }
         } catch (error) {

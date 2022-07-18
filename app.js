@@ -289,6 +289,8 @@ class App extends Homey.App {
     }
   }
 
+  /// ----------------- Streaming ---------------------
+
   async getStreamAddress() {
       try {
         let internalIp = (await ManagerCloud.getLocalAddress()).replace(/:.*/, '');
@@ -301,6 +303,27 @@ class App extends Homey.App {
       }
    
   }
+
+  async getStreamUrl(device_sn) {
+    try {
+        const pairedDevices = await Homey.app.getDevices();
+        const device = pairedDevices.find(d => {
+            const data = d.getData();
+            this.log(`getStreamUrl - device_sn`, device_sn);
+            this.log(`getStreamUrl - data`, data);
+
+            return data.device_sn === device_sn;
+        }) 
+        
+            
+        const settings = device.getSettings();
+        this.log(`getStreamUrl - settings`, settings);
+        return settings.CLOUD_STREAM_URL ? settings.CLOUD_STREAM_URL : null;
+    } catch (error) {
+        this.error(error);
+    }
+ 
+}
 }
 
 module.exports = App;

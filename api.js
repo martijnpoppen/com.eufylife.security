@@ -20,5 +20,17 @@ module.exports = [
             if (result instanceof Error) return callback(result);
             return callback(null, result);
         }
-    }
+    },
+    {
+        method: 'GET',
+        path: '/streamurl',
+        public: true,
+        fn: async function (args, callback) {
+            const device_sn = args.query.device_sn;
+            
+            const result = await Homey.app.getStreamUrl(device_sn);
+            if (result instanceof Error) return callback(result);
+            return callback(null, result);
+        }
+    },
 ];
