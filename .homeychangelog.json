@@ -952,5 +952,8 @@
   },
   "2.36.3": {
     "en": "new: videojs 7"
+  },
+  "2.36.4": {
+    "en": "FIX: videojs fullscreen + dingdong mp3"
   }
 }
