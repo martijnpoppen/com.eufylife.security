@@ -958,5 +958,8 @@
   },
   "2.36.5": {
     "en": "FIX: set LOCAL_STATION_IP for standalone cameras when Adding a new camera"
+  },
+  "2.36.6": {
+    "en": "FIX: set notificaction service when new device was added"
   }
 }
