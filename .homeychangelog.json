@@ -955,5 +955,8 @@
   },
   "2.36.4": {
     "en": "FIX: videojs fullscreen + dingdong mp3"
+  },
+  "2.36.5": {
+    "en": "FIX: set LOCAL_STATION_IP for standalone cameras when Adding a new camera"
   }
 }
