@@ -190,10 +190,8 @@ class App extends Homey.App {
       } 
 
       if (settings.CREDENTIALS) {
-        if(initNotificationCheckHelper) {
-            PushClient.init();
-            eufyNotificationCheckHelper.init(this.appSettings);
-        } 
+        PushClient.init();
+        eufyNotificationCheckHelper.init(this.appSettings);
         
         flowTriggers.init();
       }

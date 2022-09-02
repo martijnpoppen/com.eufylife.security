@@ -149,7 +149,7 @@ module.exports = class mainDriver extends Homey.Driver {
                 P2P_DID: hub.p2p_did,
                 ACTOR_ID: device.member.admin_user_id,
                 STATION_SN: device.station_sn,
-                LOCAL_STATION_IP: hub.ip_addr
+                LOCAL_STATION_IP: hub.ip_addr ? hub.ip_addr : device.ip_addr
             }
         }
        
