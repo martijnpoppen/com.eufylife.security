@@ -961,5 +961,8 @@
   },
   "2.36.6": {
     "en": "FIX: set notificaction service when new device was added"
+  },
+  "2.36.7": {
+    "en": "FIX: pair issue stand alone camera"
   }
 }
