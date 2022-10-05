@@ -967,5 +967,8 @@
   },
   "2.36.8": {
     "en": "FIX: update Eufy library. Improve P2P for stand alone cameras"
+  },
+  "2.36.9": {
+    "en": "FIX: light for outdoorcam pro | NEW: add status led flowcards"
   }
 }

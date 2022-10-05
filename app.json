@@ -1,8 +1,8 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.36.8",
-  "compatibility": ">=4.2.0",
-  "sdk": 2,
+  "version": "2.36.9",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
   "brandColor": "#2a6185",
   "name": {
     "en": "Eufy Security",
@@ -5836,6 +5836,16 @@
       "title": {
         "en": "Light",
         "nl": "Lamp"
+      }
+    },
+    "CMD_DEV_LED_SWITCH": {
+      "type": "boolean",
+      "uiComponent": null,
+      "getable": false,
+      "setable": false,
+      "title": {
+        "en": "Status LED",
+        "nl": "Status LED"
       }
     },
     "NTFY_BACKGROUND_ACTIVE": {
