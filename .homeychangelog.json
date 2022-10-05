@@ -964,5 +964,8 @@
   },
   "2.36.7": {
     "en": "FIX: pair issue stand alone camera"
+  },
+  "2.36.8": {
+    "en": "FIX: update Eufy library. Improve P2P for stand alone cameras"
   }
 }

@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.36.7",
+  "version": "2.36.8",
   "compatibility": ">=4.2.0",
   "sdk": 2,
   "brandColor": "#2a6185",
@@ -835,6 +835,44 @@
         ]
       },
       {
+        "id": "action_CMD_DEV_LED_SWITCH",
+        "title": {
+          "en": "Toggle Light",
+          "nl": "Zet lamp aan/uit"
+        },
+        "titleFormatted": {
+          "en": "Toggle status LED [[action_CMD_DEV_LED_SWITCH_TYPE]]",
+          "nl": "Zet status LED [[action_CMD_DEV_LED_SWITCH_TYPE]]"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2_PRO|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_E|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_1080P_BATTERY&capabilities=CMD_DEV_LED_SWITCH"
+          },
+          {
+            "name": "action_CMD_DEV_LED_SWITCH_TYPE",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "On",
+                  "nl": "Aan"
+                }
+              },
+              {
+                "id": "0",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
         "id": "action_CMD_INDOOR_PAN_TURN",
         "title": {
           "en": "Turn 360 (Room scan)",
@@ -1238,6 +1276,7 @@
       "class": "camera",
       "capabilities": [
         "onoff",
+        "CMD_DEV_LED_SWITCH",
         "alarm_motion",
         "measure_battery",
         "measure_temperature",
@@ -1320,6 +1359,7 @@
       "class": "camera",
       "capabilities": [
         "onoff",
+        "CMD_DEV_LED_SWITCH",
         "alarm_motion",
         "measure_battery",
         "measure_temperature",
@@ -1402,6 +1442,7 @@
       "class": "camera",
       "capabilities": [
         "onoff",
+        "CMD_DEV_LED_SWITCH",
         "alarm_motion",
         "measure_battery",
         "measure_temperature",
@@ -1484,6 +1525,7 @@
       "class": "camera",
       "capabilities": [
         "onoff",
+        "CMD_DEV_LED_SWITCH",
         "alarm_motion",
         "measure_battery",
         "measure_temperature",
@@ -1567,6 +1609,7 @@
       "class": "camera",
       "capabilities": [
         "onoff",
+        "CMD_DEV_LED_SWITCH",
         "alarm_motion",
         "measure_battery",
         "measure_temperature",
@@ -1650,6 +1693,7 @@
       "class": "camera",
       "capabilities": [
         "onoff",
+        "CMD_DEV_LED_SWITCH",
         "alarm_motion",
         "measure_battery",
         "measure_temperature",
@@ -1731,6 +1775,7 @@
       "class": "camera",
       "capabilities": [
         "onoff",
+        "CMD_DEV_LED_SWITCH",
         "alarm_motion",
         "CMD_IRCUT_SWITCH",
         "CMD_SET_FLOODLIGHT_MANUAL_SWITCH",
@@ -1969,6 +2014,7 @@
       "class": "camera",
       "capabilities": [
         "onoff",
+        "CMD_DEV_LED_SWITCH",
         "alarm_motion",
         "CMD_IRCUT_SWITCH",
         "CMD_SET_FLOODLIGHT_MANUAL_SWITCH",
@@ -2209,6 +2255,7 @@
       "class": "camera",
       "capabilities": [
         "onoff",
+        "CMD_DEV_LED_SWITCH",
         "alarm_motion",
         "CMD_IRCUT_SWITCH",
         "alarm_arm_mode",
@@ -2451,6 +2498,7 @@
       "class": "camera",
       "capabilities": [
         "onoff",
+        "CMD_DEV_LED_SWITCH",
         "alarm_motion",
         "CMD_IRCUT_SWITCH",
         "alarm_arm_mode",
@@ -2693,6 +2741,7 @@
       "class": "camera",
       "capabilities": [
         "onoff",
+        "CMD_DEV_LED_SWITCH",
         "alarm_motion",
         "alarm_arm_mode",
         "CMD_SET_ARMING",
@@ -2935,6 +2984,7 @@
       "class": "camera",
       "capabilities": [
         "onoff",
+        "CMD_DEV_LED_SWITCH",
         "alarm_motion",
         "alarm_arm_mode",
         "CMD_SET_ARMING",
@@ -3177,6 +3227,7 @@
       "class": "camera",
       "capabilities": [
         "onoff",
+        "CMD_DEV_LED_SWITCH",
         "alarm_motion",
         "measure_battery",
         "measure_temperature",
@@ -3422,6 +3473,7 @@
       "class": "camera",
       "capabilities": [
         "onoff",
+        "CMD_DEV_LED_SWITCH",
         "alarm_motion",
         "measure_battery",
         "measure_temperature",
@@ -3668,6 +3720,7 @@
       "class": "camera",
       "capabilities": [
         "onoff",
+        "CMD_DEV_LED_SWITCH",
         "alarm_motion",
         "measure_battery",
         "measure_temperature",
@@ -3914,6 +3967,7 @@
       "class": "doorbell",
       "capabilities": [
         "onoff",
+        "CMD_DEV_LED_SWITCH",
         "alarm_motion",
         "CMD_IRCUT_SWITCH",
         "alarm_arm_mode",
@@ -4156,6 +4210,7 @@
       "class": "doorbell",
       "capabilities": [
         "onoff",
+        "CMD_DEV_LED_SWITCH",
         "alarm_motion",
         "measure_battery",
         "measure_temperature",
@@ -4241,6 +4296,7 @@
       "class": "doorbell",
       "capabilities": [
         "onoff",
+        "CMD_DEV_LED_SWITCH",
         "alarm_motion",
         "measure_battery",
         "measure_temperature",
@@ -4329,6 +4385,7 @@
       "class": "doorbell",
       "capabilities": [
         "onoff",
+        "CMD_DEV_LED_SWITCH",
         "alarm_motion",
         "CMD_IRCUT_SWITCH",
         "alarm_arm_mode",
@@ -4572,6 +4629,7 @@
       "class": "doorbell",
       "capabilities": [
         "onoff",
+        "CMD_DEV_LED_SWITCH",
         "alarm_motion",
         "measure_battery",
         "measure_temperature",

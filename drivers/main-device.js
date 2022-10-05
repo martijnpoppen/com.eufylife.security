@@ -585,7 +585,24 @@ module.exports = class mainDevice extends Homey.Device {
         try {
             const deviceObject = this.getData();
             const deviceId = this.getStoreValue('device_index');
+            
             await Homey.app.EufyP2P.sendCommand(this, 'CMD_SET_FLOODLIGHT_MANUAL_SWITCH', deviceObject.station_sn, CommandType.CMD_SET_FLOODLIGHT_MANUAL_SWITCH, value, deviceId, deviceId);
+            await Homey.app.EufyP2P.sendCommand(this, 'CMD_SET_FLOODLIGHT_MANUAL_SWITCH', deviceObject.station_sn, CommandType.CMD_SET_FLOODLIGHT_MANUAL_SWITCH, value, deviceId, deviceId);
+            await Homey.app.EufyP2P.sendCommand(this, 'CMD_SET_FLOODLIGHT_MANUAL_SWITCH', deviceObject.station_sn, CommandType.CMD_SET_FLOODLIGHT_MANUAL_SWITCH, value, deviceId, deviceId);
+
+            return Promise.resolve(true);
+        } catch (e) {
+            Homey.app.error(e);
+            return Promise.reject(e);
+        }
+    }
+
+    async onCapability_CMD_DEV_LED_SWITCH(value) {    
+        try {
+            const deviceObject = this.getData();
+            const deviceId = this.getStoreValue('device_index');
+
+            await Homey.app.EufyP2P.sendCommand(this, 'CMD_DEV_LED_SWITCH', deviceObject.station_sn, CommandType.CMD_DEV_LED_SWITCH, value, deviceId, deviceId);
 
             return Promise.resolve(true);
         } catch (e) {
