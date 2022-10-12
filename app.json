@@ -1,8 +1,8 @@
 {
   "id": "com.eufylife.security",
   "version": "2.36.9",
-  "compatibility": ">=5.0.0",
-  "sdk": 3,
+  "compatibility": ">=4.2.0",
+  "sdk": 2,
   "brandColor": "#2a6185",
   "name": {
     "en": "Eufy Security",
