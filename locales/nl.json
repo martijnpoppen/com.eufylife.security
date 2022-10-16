@@ -13,6 +13,7 @@
     "login": "Inloggen",
     "reset": "Reset de notification service NIET als je al werkende 'ALS' kaarten hebt (persoon gedecteerd etc). <br><br> Het aanklikken van deze knop kan gedupliceerde notificaties veroorzaken!",
     "no_data": "Geen apparaten gevonden. Probeer een andere regio",
-    "no_devices": "Geen apparaten gevonden. Zorg ervoor dat je de apparaten gedeeld hebt met je extra account."
+    "no_devices": "Geen apparaten gevonden. Zorg ervoor dat je de apparaten gedeeld hebt met je extra account.",
+    "keypad": "Het toetsenbord is een fysiek apparaat om de beveiligingsmodus voor de Homebase in te stellen. Daarom heeft dit geen eigen functionaliteit in de Homey app. Om flows te maken op basis van of het wijzigen van beveiligingsmodi voegt u in plaats daarvan de homebase toe (als dat nog niet is gebeurd). Daar vindt u de beveiligingsmodi en stroomkaarten voor beveiligingsmodi."
   }
 }

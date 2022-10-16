@@ -1,9 +1,12 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.36.9",
+  "version": "3.0.10",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "brandColor": "#2a6185",
+  "platforms": [
+    "local"
+  ],
   "name": {
     "en": "Eufy Security",
     "nl": "Eufy Security"
@@ -25,7 +28,8 @@
       "Heimdall",
       "Doorbell",
       "outdoor camera",
-      "indoor camera"
+      "indoor camera",
+      "homebase"
     ],
     "nl": [
       "Video doorbell",
@@ -79,6 +83,9 @@
     "donate": {
       "paypal": {
         "username": "martijnpoppen"
+      },
+      "bunq": {
+        "username": "martijnpoppen"
       }
     }
   },
@@ -88,14 +95,19 @@
   "source": "https://github.com/martijnpoppen/com.eufylife.security",
   "homeyCommunityTopicId": 44921,
   "support": "https://community.athom.com/t/app-eufy-security/44921",
-  "discovery": {
-    "homebase_discovery": {
-      "type": "mdns-sd",
-      "mdns-sd": {
-        "protocol": "tcp",
-        "name": "_hap"
-      },
-      "id": "{{txt.id}}"
+  "api": {
+    "login": {
+      "method": "put",
+      "path": "/login/"
+    },
+    "settings": {
+      "method": "put",
+      "path": "/settings/"
+    },
+    "streamUrl": {
+      "method": "get",
+      "path": "/streamurl/",
+      "public": true
     }
   },
   "flow": {
@@ -146,6 +158,21 @@
           "en": "Person Detected",
           "nl": "Persoon Gedetecteerd"
         },
+        "hint": {
+          "en": "This flowcard will contain a known person token (Dual doorbell only)",
+          "nl": "Deze flowkaart bevat een bekend persoon token (Alleen voor Dual deurbel)"
+        },
+        "tokens": [
+          {
+            "name": "user",
+            "type": "string",
+            "title": {
+              "en": "Person",
+              "nl": "Persoon"
+            },
+            "example": "John Doe"
+          }
+        ],
         "args": [
           {
             "name": "device",
@@ -1269,9 +1296,11 @@
   "drivers": [
     {
       "id": "driver_EUFYCAM",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "camera",
       "capabilities": [
@@ -1303,6 +1332,13 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
@@ -1312,9 +1348,6 @@
         {
           "id": "add_devices",
           "template": "add_devices"
-        },
-        {
-          "id": "login_eufy"
         }
       ],
       "settings": [
@@ -1352,9 +1385,11 @@
     },
     {
       "id": "driver_EUFYCAM_2",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "camera",
       "capabilities": [
@@ -1386,14 +1421,18 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
             "next": "add_devices"
           }
-        },
-        {
-          "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -1435,9 +1474,11 @@
     },
     {
       "id": "driver_EUFYCAM_2_PRO",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "camera",
       "capabilities": [
@@ -1469,14 +1510,18 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
             "next": "add_devices"
           }
-        },
-        {
-          "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -1518,9 +1563,11 @@
     },
     {
       "id": "driver_EUFYCAM_2C",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "camera",
       "capabilities": [
@@ -1553,14 +1600,18 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
             "next": "add_devices"
           }
-        },
-        {
-          "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -1602,9 +1653,11 @@
     },
     {
       "id": "driver_EUFYCAM_2C_PRO",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "camera",
       "capabilities": [
@@ -1637,14 +1690,18 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
             "next": "add_devices"
           }
-        },
-        {
-          "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -1686,9 +1743,11 @@
     },
     {
       "id": "driver_EUFYCAM_E",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "camera",
       "capabilities": [
@@ -1719,14 +1778,18 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
             "next": "add_devices"
           }
-        },
-        {
-          "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -1768,9 +1831,11 @@
     },
     {
       "id": "driver_FLOODLIGHT_CAMERA",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "camera",
       "capabilities": [
@@ -1799,14 +1864,18 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
             "next": "add_devices"
           }
-        },
-        {
-          "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -1935,42 +2004,6 @@
           },
           "children": [
             {
-              "id": "LOCAL_STATION_IP",
-              "type": "text",
-              "label": {
-                "en": "LOCAL_STATION_IP",
-                "nl": "LOCAL_STATION_IP"
-              },
-              "value": ""
-            },
-            {
-              "id": "HUB_NAME",
-              "type": "label",
-              "label": {
-                "en": "HUB_NAME",
-                "nl": "HUB_NAME"
-              },
-              "value": ""
-            },
-            {
-              "id": "P2P_DID",
-              "type": "label",
-              "label": {
-                "en": "P2P_DID",
-                "nl": "P2P_DID"
-              },
-              "value": ""
-            },
-            {
-              "id": "ACTOR_ID",
-              "type": "label",
-              "label": {
-                "en": "ACTOR_ID",
-                "nl": "ACTOR_ID"
-              },
-              "value": ""
-            },
-            {
               "id": "STATION_SN",
               "type": "label",
               "label": {
@@ -1978,28 +2011,6 @@
                 "nl": "STATION_SN"
               },
               "value": ""
-            },
-            {
-              "id": "DSK_KEY",
-              "type": "label",
-              "label": {
-                "en": "DSK_KEY",
-                "nl": "DSK_KEY"
-              },
-              "value": ""
-            },
-            {
-              "id": "RESET_DATA",
-              "type": "checkbox",
-              "label": {
-                "en": "Reset settings?",
-                "nl": "Instellingen resetten?"
-              },
-              "hint": {
-                "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-              },
-              "value": false
             }
           ]
         }
@@ -2007,9 +2018,11 @@
     },
     {
       "id": "driver_FLOODLIGHT_CAM_PAN_TILT",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "camera",
       "capabilities": [
@@ -2040,14 +2053,18 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
             "next": "add_devices"
           }
-        },
-        {
-          "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -2176,42 +2193,6 @@
           },
           "children": [
             {
-              "id": "LOCAL_STATION_IP",
-              "type": "text",
-              "label": {
-                "en": "LOCAL_STATION_IP",
-                "nl": "LOCAL_STATION_IP"
-              },
-              "value": ""
-            },
-            {
-              "id": "HUB_NAME",
-              "type": "label",
-              "label": {
-                "en": "HUB_NAME",
-                "nl": "HUB_NAME"
-              },
-              "value": ""
-            },
-            {
-              "id": "P2P_DID",
-              "type": "label",
-              "label": {
-                "en": "P2P_DID",
-                "nl": "P2P_DID"
-              },
-              "value": ""
-            },
-            {
-              "id": "ACTOR_ID",
-              "type": "label",
-              "label": {
-                "en": "ACTOR_ID",
-                "nl": "ACTOR_ID"
-              },
-              "value": ""
-            },
-            {
               "id": "STATION_SN",
               "type": "label",
               "label": {
@@ -2219,28 +2200,6 @@
                 "nl": "STATION_SN"
               },
               "value": ""
-            },
-            {
-              "id": "DSK_KEY",
-              "type": "label",
-              "label": {
-                "en": "DSK_KEY",
-                "nl": "DSK_KEY"
-              },
-              "value": ""
-            },
-            {
-              "id": "RESET_DATA",
-              "type": "checkbox",
-              "label": {
-                "en": "Reset settings?",
-                "nl": "Instellingen resetten?"
-              },
-              "hint": {
-                "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-              },
-              "value": false
             }
           ]
         }
@@ -2248,9 +2207,11 @@
     },
     {
       "id": "driver_INDOOR_CAM",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "camera",
       "capabilities": [
@@ -2283,14 +2244,18 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
             "next": "add_devices"
           }
-        },
-        {
-          "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -2419,42 +2384,6 @@
           },
           "children": [
             {
-              "id": "LOCAL_STATION_IP",
-              "type": "text",
-              "label": {
-                "en": "LOCAL_STATION_IP",
-                "nl": "LOCAL_STATION_IP"
-              },
-              "value": ""
-            },
-            {
-              "id": "HUB_NAME",
-              "type": "label",
-              "label": {
-                "en": "HUB_NAME",
-                "nl": "HUB_NAME"
-              },
-              "value": ""
-            },
-            {
-              "id": "P2P_DID",
-              "type": "label",
-              "label": {
-                "en": "P2P_DID",
-                "nl": "P2P_DID"
-              },
-              "value": ""
-            },
-            {
-              "id": "ACTOR_ID",
-              "type": "label",
-              "label": {
-                "en": "ACTOR_ID",
-                "nl": "ACTOR_ID"
-              },
-              "value": ""
-            },
-            {
               "id": "STATION_SN",
               "type": "label",
               "label": {
@@ -2462,28 +2391,6 @@
                 "nl": "STATION_SN"
               },
               "value": ""
-            },
-            {
-              "id": "DSK_KEY",
-              "type": "label",
-              "label": {
-                "en": "DSK_KEY",
-                "nl": "DSK_KEY"
-              },
-              "value": ""
-            },
-            {
-              "id": "RESET_DATA",
-              "type": "checkbox",
-              "label": {
-                "en": "Reset settings?",
-                "nl": "Instellingen resetten?"
-              },
-              "hint": {
-                "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-              },
-              "value": false
             }
           ]
         }
@@ -2491,9 +2398,11 @@
     },
     {
       "id": "driver_INDOOR_CAM_PAN_TILT",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "camera",
       "capabilities": [
@@ -2526,14 +2435,18 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
             "next": "add_devices"
           }
-        },
-        {
-          "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -2662,42 +2575,6 @@
           },
           "children": [
             {
-              "id": "LOCAL_STATION_IP",
-              "type": "text",
-              "label": {
-                "en": "LOCAL_STATION_IP",
-                "nl": "LOCAL_STATION_IP"
-              },
-              "value": ""
-            },
-            {
-              "id": "HUB_NAME",
-              "type": "label",
-              "label": {
-                "en": "HUB_NAME",
-                "nl": "HUB_NAME"
-              },
-              "value": ""
-            },
-            {
-              "id": "P2P_DID",
-              "type": "label",
-              "label": {
-                "en": "P2P_DID",
-                "nl": "P2P_DID"
-              },
-              "value": ""
-            },
-            {
-              "id": "ACTOR_ID",
-              "type": "label",
-              "label": {
-                "en": "ACTOR_ID",
-                "nl": "ACTOR_ID"
-              },
-              "value": ""
-            },
-            {
               "id": "STATION_SN",
               "type": "label",
               "label": {
@@ -2705,28 +2582,6 @@
                 "nl": "STATION_SN"
               },
               "value": ""
-            },
-            {
-              "id": "DSK_KEY",
-              "type": "label",
-              "label": {
-                "en": "DSK_KEY",
-                "nl": "DSK_KEY"
-              },
-              "value": ""
-            },
-            {
-              "id": "RESET_DATA",
-              "type": "checkbox",
-              "label": {
-                "en": "Reset settings?",
-                "nl": "Instellingen resetten?"
-              },
-              "hint": {
-                "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-              },
-              "value": false
             }
           ]
         }
@@ -2734,9 +2589,11 @@
     },
     {
       "id": "driver_OUTDOOR_CAM",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "camera",
       "capabilities": [
@@ -2769,14 +2626,18 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
             "next": "add_devices"
           }
-        },
-        {
-          "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -2905,42 +2766,6 @@
           },
           "children": [
             {
-              "id": "LOCAL_STATION_IP",
-              "type": "text",
-              "label": {
-                "en": "LOCAL_STATION_IP",
-                "nl": "LOCAL_STATION_IP"
-              },
-              "value": ""
-            },
-            {
-              "id": "HUB_NAME",
-              "type": "label",
-              "label": {
-                "en": "HUB_NAME",
-                "nl": "HUB_NAME"
-              },
-              "value": ""
-            },
-            {
-              "id": "P2P_DID",
-              "type": "label",
-              "label": {
-                "en": "P2P_DID",
-                "nl": "P2P_DID"
-              },
-              "value": ""
-            },
-            {
-              "id": "ACTOR_ID",
-              "type": "label",
-              "label": {
-                "en": "ACTOR_ID",
-                "nl": "ACTOR_ID"
-              },
-              "value": ""
-            },
-            {
               "id": "STATION_SN",
               "type": "label",
               "label": {
@@ -2948,28 +2773,6 @@
                 "nl": "STATION_SN"
               },
               "value": ""
-            },
-            {
-              "id": "DSK_KEY",
-              "type": "label",
-              "label": {
-                "en": "DSK_KEY",
-                "nl": "DSK_KEY"
-              },
-              "value": ""
-            },
-            {
-              "id": "RESET_DATA",
-              "type": "checkbox",
-              "label": {
-                "en": "Reset settings?",
-                "nl": "Instellingen resetten?"
-              },
-              "hint": {
-                "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-              },
-              "value": false
             }
           ]
         }
@@ -2977,9 +2780,11 @@
     },
     {
       "id": "driver_OUTDOOR_CAM_PRO",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "camera",
       "capabilities": [
@@ -3012,14 +2817,18 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
             "next": "add_devices"
           }
-        },
-        {
-          "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -3148,42 +2957,6 @@
           },
           "children": [
             {
-              "id": "LOCAL_STATION_IP",
-              "type": "text",
-              "label": {
-                "en": "LOCAL_STATION_IP",
-                "nl": "LOCAL_STATION_IP"
-              },
-              "value": ""
-            },
-            {
-              "id": "HUB_NAME",
-              "type": "label",
-              "label": {
-                "en": "HUB_NAME",
-                "nl": "HUB_NAME"
-              },
-              "value": ""
-            },
-            {
-              "id": "P2P_DID",
-              "type": "label",
-              "label": {
-                "en": "P2P_DID",
-                "nl": "P2P_DID"
-              },
-              "value": ""
-            },
-            {
-              "id": "ACTOR_ID",
-              "type": "label",
-              "label": {
-                "en": "ACTOR_ID",
-                "nl": "ACTOR_ID"
-              },
-              "value": ""
-            },
-            {
               "id": "STATION_SN",
               "type": "label",
               "label": {
@@ -3191,28 +2964,6 @@
                 "nl": "STATION_SN"
               },
               "value": ""
-            },
-            {
-              "id": "DSK_KEY",
-              "type": "label",
-              "label": {
-                "en": "DSK_KEY",
-                "nl": "DSK_KEY"
-              },
-              "value": ""
-            },
-            {
-              "id": "RESET_DATA",
-              "type": "checkbox",
-              "label": {
-                "en": "Reset settings?",
-                "nl": "Instellingen resetten?"
-              },
-              "hint": {
-                "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-              },
-              "value": false
             }
           ]
         }
@@ -3220,9 +2971,11 @@
     },
     {
       "id": "driver_SOLOCAM_E2040",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "camera",
       "capabilities": [
@@ -3258,14 +3011,18 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
             "next": "add_devices"
           }
-        },
-        {
-          "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -3394,42 +3151,6 @@
           },
           "children": [
             {
-              "id": "LOCAL_STATION_IP",
-              "type": "text",
-              "label": {
-                "en": "LOCAL_STATION_IP",
-                "nl": "LOCAL_STATION_IP"
-              },
-              "value": ""
-            },
-            {
-              "id": "HUB_NAME",
-              "type": "label",
-              "label": {
-                "en": "HUB_NAME",
-                "nl": "HUB_NAME"
-              },
-              "value": ""
-            },
-            {
-              "id": "P2P_DID",
-              "type": "label",
-              "label": {
-                "en": "P2P_DID",
-                "nl": "P2P_DID"
-              },
-              "value": ""
-            },
-            {
-              "id": "ACTOR_ID",
-              "type": "label",
-              "label": {
-                "en": "ACTOR_ID",
-                "nl": "ACTOR_ID"
-              },
-              "value": ""
-            },
-            {
               "id": "STATION_SN",
               "type": "label",
               "label": {
@@ -3437,28 +3158,6 @@
                 "nl": "STATION_SN"
               },
               "value": ""
-            },
-            {
-              "id": "DSK_KEY",
-              "type": "label",
-              "label": {
-                "en": "DSK_KEY",
-                "nl": "DSK_KEY"
-              },
-              "value": ""
-            },
-            {
-              "id": "RESET_DATA",
-              "type": "checkbox",
-              "label": {
-                "en": "Reset settings?",
-                "nl": "Instellingen resetten?"
-              },
-              "hint": {
-                "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-              },
-              "value": false
             }
           ]
         }
@@ -3466,9 +3165,11 @@
     },
     {
       "id": "driver_SOLOCAM_L2040",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "camera",
       "capabilities": [
@@ -3505,14 +3206,18 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
             "next": "add_devices"
           }
-        },
-        {
-          "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -3641,42 +3346,6 @@
           },
           "children": [
             {
-              "id": "LOCAL_STATION_IP",
-              "type": "text",
-              "label": {
-                "en": "LOCAL_STATION_IP",
-                "nl": "LOCAL_STATION_IP"
-              },
-              "value": ""
-            },
-            {
-              "id": "HUB_NAME",
-              "type": "label",
-              "label": {
-                "en": "HUB_NAME",
-                "nl": "HUB_NAME"
-              },
-              "value": ""
-            },
-            {
-              "id": "P2P_DID",
-              "type": "label",
-              "label": {
-                "en": "P2P_DID",
-                "nl": "P2P_DID"
-              },
-              "value": ""
-            },
-            {
-              "id": "ACTOR_ID",
-              "type": "label",
-              "label": {
-                "en": "ACTOR_ID",
-                "nl": "ACTOR_ID"
-              },
-              "value": ""
-            },
-            {
               "id": "STATION_SN",
               "type": "label",
               "label": {
@@ -3684,28 +3353,6 @@
                 "nl": "STATION_SN"
               },
               "value": ""
-            },
-            {
-              "id": "DSK_KEY",
-              "type": "label",
-              "label": {
-                "en": "DSK_KEY",
-                "nl": "DSK_KEY"
-              },
-              "value": ""
-            },
-            {
-              "id": "RESET_DATA",
-              "type": "checkbox",
-              "label": {
-                "en": "Reset settings?",
-                "nl": "Instellingen resetten?"
-              },
-              "hint": {
-                "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-              },
-              "value": false
             }
           ]
         }
@@ -3713,9 +3360,11 @@
     },
     {
       "id": "driver_SOLOCAM_S2040",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "camera",
       "capabilities": [
@@ -3752,14 +3401,18 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
             "next": "add_devices"
           }
-        },
-        {
-          "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -3888,42 +3541,6 @@
           },
           "children": [
             {
-              "id": "LOCAL_STATION_IP",
-              "type": "text",
-              "label": {
-                "en": "LOCAL_STATION_IP",
-                "nl": "LOCAL_STATION_IP"
-              },
-              "value": ""
-            },
-            {
-              "id": "HUB_NAME",
-              "type": "label",
-              "label": {
-                "en": "HUB_NAME",
-                "nl": "HUB_NAME"
-              },
-              "value": ""
-            },
-            {
-              "id": "P2P_DID",
-              "type": "label",
-              "label": {
-                "en": "P2P_DID",
-                "nl": "P2P_DID"
-              },
-              "value": ""
-            },
-            {
-              "id": "ACTOR_ID",
-              "type": "label",
-              "label": {
-                "en": "ACTOR_ID",
-                "nl": "ACTOR_ID"
-              },
-              "value": ""
-            },
-            {
               "id": "STATION_SN",
               "type": "label",
               "label": {
@@ -3931,28 +3548,6 @@
                 "nl": "STATION_SN"
               },
               "value": ""
-            },
-            {
-              "id": "DSK_KEY",
-              "type": "label",
-              "label": {
-                "en": "DSK_KEY",
-                "nl": "DSK_KEY"
-              },
-              "value": ""
-            },
-            {
-              "id": "RESET_DATA",
-              "type": "checkbox",
-              "label": {
-                "en": "Reset settings?",
-                "nl": "Instellingen resetten?"
-              },
-              "hint": {
-                "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-              },
-              "value": false
             }
           ]
         }
@@ -3960,9 +3555,11 @@
     },
     {
       "id": "driver_VIDEO_DOORBELL_2K_POWERED",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "doorbell",
       "capabilities": [
@@ -3982,8 +3579,7 @@
         "CMD_SET_HUB_ALARM_CLOSE",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
-        "NTFY_PRESS_DOORBELL",
-        "NTFY_BACKGROUND_ACTIVE"
+        "NTFY_PRESS_DOORBELL"
       ],
       "name": {
         "en": "Wired Doorbell (1080P/2K)",
@@ -3995,14 +3591,18 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
             "next": "add_devices"
           }
-        },
-        {
-          "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -4131,42 +3731,6 @@
           },
           "children": [
             {
-              "id": "LOCAL_STATION_IP",
-              "type": "text",
-              "label": {
-                "en": "LOCAL_STATION_IP",
-                "nl": "LOCAL_STATION_IP"
-              },
-              "value": ""
-            },
-            {
-              "id": "HUB_NAME",
-              "type": "label",
-              "label": {
-                "en": "HUB_NAME",
-                "nl": "HUB_NAME"
-              },
-              "value": ""
-            },
-            {
-              "id": "P2P_DID",
-              "type": "label",
-              "label": {
-                "en": "P2P_DID",
-                "nl": "P2P_DID"
-              },
-              "value": ""
-            },
-            {
-              "id": "ACTOR_ID",
-              "type": "label",
-              "label": {
-                "en": "ACTOR_ID",
-                "nl": "ACTOR_ID"
-              },
-              "value": ""
-            },
-            {
               "id": "STATION_SN",
               "type": "label",
               "label": {
@@ -4174,28 +3738,6 @@
                 "nl": "STATION_SN"
               },
               "value": ""
-            },
-            {
-              "id": "DSK_KEY",
-              "type": "label",
-              "label": {
-                "en": "DSK_KEY",
-                "nl": "DSK_KEY"
-              },
-              "value": ""
-            },
-            {
-              "id": "RESET_DATA",
-              "type": "checkbox",
-              "label": {
-                "en": "Reset settings?",
-                "nl": "Instellingen resetten?"
-              },
-              "hint": {
-                "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-              },
-              "value": false
             }
           ]
         }
@@ -4203,9 +3745,11 @@
     },
     {
       "id": "driver_VIDEO_DOORBELL_2K_BATTERY",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "doorbell",
       "capabilities": [
@@ -4222,8 +3766,7 @@
         "CMD_BAT_DOORBELL_WDR_SWITCH",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
-        "NTFY_PRESS_DOORBELL",
-        "NTFY_BACKGROUND_ACTIVE"
+        "NTFY_PRESS_DOORBELL"
       ],
       "energy": {
         "batteries": [
@@ -4240,14 +3783,18 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
             "next": "add_devices"
           }
-        },
-        {
-          "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -4289,9 +3836,11 @@
     },
     {
       "id": "driver_VIDEO_DOORBELL_DUAL_BATTERY",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "doorbell",
       "capabilities": [
@@ -4310,8 +3859,7 @@
         "CMD_BAT_DOORBELL_WDR_SWITCH",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
-        "NTFY_PRESS_DOORBELL",
-        "NTFY_BACKGROUND_ACTIVE"
+        "NTFY_PRESS_DOORBELL"
       ],
       "energy": {
         "batteries": [
@@ -4328,14 +3876,18 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
             "next": "add_devices"
           }
-        },
-        {
-          "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -4377,10 +3929,12 @@
     },
     {
       "id": "driver_VIDEO_DOORBELL_1080P_POWERED",
+      "platforms": [
+        "local"
+      ],
       "deprecated": true,
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "doorbell",
       "capabilities": [
@@ -4400,8 +3954,7 @@
         "CMD_SET_HUB_ALARM_CLOSE",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
-        "NTFY_PRESS_DOORBELL",
-        "NTFY_BACKGROUND_ACTIVE"
+        "NTFY_PRESS_DOORBELL"
       ],
       "name": {
         "en": "Video Doorbell 1080p (Wired)",
@@ -4413,14 +3966,18 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
             "next": "add_devices"
           }
-        },
-        {
-          "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -4549,42 +4106,6 @@
           },
           "children": [
             {
-              "id": "LOCAL_STATION_IP",
-              "type": "text",
-              "label": {
-                "en": "LOCAL_STATION_IP",
-                "nl": "LOCAL_STATION_IP"
-              },
-              "value": ""
-            },
-            {
-              "id": "HUB_NAME",
-              "type": "label",
-              "label": {
-                "en": "HUB_NAME",
-                "nl": "HUB_NAME"
-              },
-              "value": ""
-            },
-            {
-              "id": "P2P_DID",
-              "type": "label",
-              "label": {
-                "en": "P2P_DID",
-                "nl": "P2P_DID"
-              },
-              "value": ""
-            },
-            {
-              "id": "ACTOR_ID",
-              "type": "label",
-              "label": {
-                "en": "ACTOR_ID",
-                "nl": "ACTOR_ID"
-              },
-              "value": ""
-            },
-            {
               "id": "STATION_SN",
               "type": "label",
               "label": {
@@ -4592,28 +4113,6 @@
                 "nl": "STATION_SN"
               },
               "value": ""
-            },
-            {
-              "id": "DSK_KEY",
-              "type": "label",
-              "label": {
-                "en": "DSK_KEY",
-                "nl": "DSK_KEY"
-              },
-              "value": ""
-            },
-            {
-              "id": "RESET_DATA",
-              "type": "checkbox",
-              "label": {
-                "en": "Reset settings?",
-                "nl": "Instellingen resetten?"
-              },
-              "hint": {
-                "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-              },
-              "value": false
             }
           ]
         }
@@ -4621,10 +4120,12 @@
     },
     {
       "id": "driver_VIDEO_DOORBELL_1080P_BATTERY",
+      "platforms": [
+        "local"
+      ],
       "deprecated": true,
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "doorbell",
       "capabilities": [
@@ -4643,8 +4144,7 @@
         "CMD_BAT_DOORBELL_WDR_SWITCH",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
-        "NTFY_PRESS_DOORBELL",
-        "NTFY_BACKGROUND_ACTIVE"
+        "NTFY_PRESS_DOORBELL"
       ],
       "energy": {
         "batteries": [
@@ -4661,14 +4161,18 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
             "next": "add_devices"
           }
-        },
-        {
-          "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -4710,9 +4214,11 @@
     },
     {
       "id": "driver_DOORSENSOR",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "sensor",
       "capabilities": [
@@ -4733,14 +4239,18 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
             "next": "add_devices"
           }
-        },
-        {
-          "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -4782,9 +4292,11 @@
     },
     {
       "id": "driver_MOTIONSENSOR",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "sensor",
       "capabilities": [
@@ -4805,14 +4317,18 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
             "next": "add_devices"
           }
-        },
-        {
-          "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -4822,9 +4338,11 @@
     },
     {
       "id": "driver_HOMEBASE_1",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "homealarm",
       "capabilities": [
@@ -4845,14 +4363,18 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
             "next": "add_devices"
           }
-        },
-        {
-          "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -4981,42 +4503,6 @@
           },
           "children": [
             {
-              "id": "LOCAL_STATION_IP",
-              "type": "text",
-              "label": {
-                "en": "LOCAL_STATION_IP",
-                "nl": "LOCAL_STATION_IP"
-              },
-              "value": ""
-            },
-            {
-              "id": "HUB_NAME",
-              "type": "label",
-              "label": {
-                "en": "HUB_NAME",
-                "nl": "HUB_NAME"
-              },
-              "value": ""
-            },
-            {
-              "id": "P2P_DID",
-              "type": "label",
-              "label": {
-                "en": "P2P_DID",
-                "nl": "P2P_DID"
-              },
-              "value": ""
-            },
-            {
-              "id": "ACTOR_ID",
-              "type": "label",
-              "label": {
-                "en": "ACTOR_ID",
-                "nl": "ACTOR_ID"
-              },
-              "value": ""
-            },
-            {
               "id": "STATION_SN",
               "type": "label",
               "label": {
@@ -5024,28 +4510,6 @@
                 "nl": "STATION_SN"
               },
               "value": ""
-            },
-            {
-              "id": "DSK_KEY",
-              "type": "label",
-              "label": {
-                "en": "DSK_KEY",
-                "nl": "DSK_KEY"
-              },
-              "value": ""
-            },
-            {
-              "id": "RESET_DATA",
-              "type": "checkbox",
-              "label": {
-                "en": "Reset settings?",
-                "nl": "Instellingen resetten?"
-              },
-              "hint": {
-                "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-              },
-              "value": false
             }
           ]
         }
@@ -5053,9 +4517,11 @@
     },
     {
       "id": "driver_HOMEBASE",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "homealarm",
       "capabilities": [
@@ -5076,14 +4542,18 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
             "next": "add_devices"
           }
-        },
-        {
-          "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -5212,42 +4682,6 @@
           },
           "children": [
             {
-              "id": "LOCAL_STATION_IP",
-              "type": "text",
-              "label": {
-                "en": "LOCAL_STATION_IP",
-                "nl": "LOCAL_STATION_IP"
-              },
-              "value": ""
-            },
-            {
-              "id": "HUB_NAME",
-              "type": "label",
-              "label": {
-                "en": "HUB_NAME",
-                "nl": "HUB_NAME"
-              },
-              "value": ""
-            },
-            {
-              "id": "P2P_DID",
-              "type": "label",
-              "label": {
-                "en": "P2P_DID",
-                "nl": "P2P_DID"
-              },
-              "value": ""
-            },
-            {
-              "id": "ACTOR_ID",
-              "type": "label",
-              "label": {
-                "en": "ACTOR_ID",
-                "nl": "ACTOR_ID"
-              },
-              "value": ""
-            },
-            {
               "id": "STATION_SN",
               "type": "label",
               "label": {
@@ -5255,28 +4689,6 @@
                 "nl": "STATION_SN"
               },
               "value": ""
-            },
-            {
-              "id": "DSK_KEY",
-              "type": "label",
-              "label": {
-                "en": "DSK_KEY",
-                "nl": "DSK_KEY"
-              },
-              "value": ""
-            },
-            {
-              "id": "RESET_DATA",
-              "type": "checkbox",
-              "label": {
-                "en": "Reset settings?",
-                "nl": "Instellingen resetten?"
-              },
-              "hint": {
-                "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-              },
-              "value": false
             }
           ]
         }
@@ -5284,9 +4696,11 @@
     },
     {
       "id": "driver_HOMEBASE_CHIME",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "homealarm",
       "capabilities": [
@@ -5307,14 +4721,18 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
             "next": "add_devices"
           }
-        },
-        {
-          "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -5443,42 +4861,6 @@
           },
           "children": [
             {
-              "id": "LOCAL_STATION_IP",
-              "type": "text",
-              "label": {
-                "en": "LOCAL_STATION_IP",
-                "nl": "LOCAL_STATION_IP"
-              },
-              "value": ""
-            },
-            {
-              "id": "HUB_NAME",
-              "type": "label",
-              "label": {
-                "en": "HUB_NAME",
-                "nl": "HUB_NAME"
-              },
-              "value": ""
-            },
-            {
-              "id": "P2P_DID",
-              "type": "label",
-              "label": {
-                "en": "P2P_DID",
-                "nl": "P2P_DID"
-              },
-              "value": ""
-            },
-            {
-              "id": "ACTOR_ID",
-              "type": "label",
-              "label": {
-                "en": "ACTOR_ID",
-                "nl": "ACTOR_ID"
-              },
-              "value": ""
-            },
-            {
               "id": "STATION_SN",
               "type": "label",
               "label": {
@@ -5486,28 +4868,6 @@
                 "nl": "STATION_SN"
               },
               "value": ""
-            },
-            {
-              "id": "DSK_KEY",
-              "type": "label",
-              "label": {
-                "en": "DSK_KEY",
-                "nl": "DSK_KEY"
-              },
-              "value": ""
-            },
-            {
-              "id": "RESET_DATA",
-              "type": "checkbox",
-              "label": {
-                "en": "Reset settings?",
-                "nl": "Instellingen resetten?"
-              },
-              "hint": {
-                "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-              },
-              "value": false
             }
           ]
         }
@@ -5515,15 +4875,25 @@
     },
     {
       "id": "driver_KEYPAD",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "homealarm",
-      "capabilities": [],
+      "capabilities": [
+        "measure_battery",
+        "measure_temperature"
+      ],
       "name": {
         "en": "Keypad",
         "nl": "Keypad"
+      },
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "images": {
         "large": "drivers/driver_KEYPAD/assets/images/large.jpg",
@@ -5531,14 +4901,19 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "next": "add_devices"
+            "next": "add_devices",
+            "prev": "login_eufy"
           }
-        },
-        {
-          "id": "login_eufy"
         },
         {
           "id": "add_devices",
@@ -5769,30 +5144,30 @@
       }
     },
     "CMD_IRCUT_SWITCH": {
-      "type": "string",
-      "uiComponent": null,
-      "getable": false,
-      "setable": false,
+      "type": "boolean",
+      "getable": true,
+      "setable": true,
+      "uiComponent": "button",
       "title": {
         "en": "Toggle IR",
         "nl": "Zet Infrarood aan/uit"
       }
     },
     "CMD_BAT_DOORBELL_VIDEO_QUALITY": {
-      "type": "string",
-      "uiComponent": null,
-      "getable": false,
-      "setable": false,
+      "type": "boolean",
+      "getable": true,
+      "setable": true,
+      "uiComponent": "button",
       "title": {
         "en": "Toggle HDR",
         "nl": "Zet HDR aan/uit"
       }
     },
     "CMD_BAT_DOORBELL_WDR_SWITCH": {
-      "type": "string",
-      "uiComponent": null,
-      "getable": false,
-      "setable": false,
+      "type": "boolean",
+      "getable": true,
+      "setable": true,
+      "uiComponent": "button",
       "title": {
         "en": "Toggle WDR switch",
         "nl": "Zet WDR aan/uit"

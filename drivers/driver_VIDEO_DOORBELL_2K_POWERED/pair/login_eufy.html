@@ -67,7 +67,7 @@
             <div class="hy-tmpl-login_eufy-row row">
                 <label class="hy-label hy-tmpl-login_eufy-label" data-i18n="pair.region"></label>
                 <div class="radio-toolbar">
-                    <input id="region1" name="region" type="radio" value="EU">
+                    <input id="region1" name="region" type="radio" value="NL">
                     <label for="region1">EU</label>
                     <input id="region2" name="region" type="radio" value="US" checked>
                     <label for="region2">US</label>
@@ -92,10 +92,6 @@
             
             Homey.setTitle(Homey.__("$tmpl.login_credentials.title")),
             lgn.value = Homey.__("pair.login");
-
-        Homey.on('error_msg', function (e) {
-            Homey.alert(e);
-        })
             
         o.addEventListener("submit", function (e) {
             if (e.preventDefault(), !m) {

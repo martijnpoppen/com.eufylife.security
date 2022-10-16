@@ -1,125 +1,129 @@
 const Homey = require('homey');
-const mainDriver = require('./main-driver');
-const { DEVICE_TYPES } = require('../../constants/device_types');
+const { sleep } = require('../lib/utils.js');
 
-let _devices = [];
-let username = '';
-let password = '';
-let errorMsg = null;
-
-module.exports = class mainHubDriver extends mainDriver {
+module.exports = class mainDriver extends Homey.Driver {
     onInit() {
-        Homey.app.log('[Driver] - init', this.id);
-        Homey.app.log(`[Driver] - version`, Homey.manifest.version);
+        this.homey.app.log('[Driver] - init', this.id);
+        
+        this.homey.app.setDevices(this.getDevices());
     }
 
     deviceType() {
-        return DEVICE_TYPES.OTHER;
+        return this.homey.app.deviceTypes.OTHER;
     }
 
-    onPair(socket) {
-        const onListDevices = async (data, callback) => {
-            try {
-                const _httpService = Homey.app.getHttpService();
-                const hubsList = await _httpService.listHubs();
-                
-                Homey.app.log(`[Driver] ${this.id} - hubsList:`, hubsList);
+    async onPair(session) {
+        this.deviceError = false;
+        this._devices = [];
 
-                if (!hubsList.length || (('data' in hubsList) && hubsList.data === null)) {
-                    errorMsg = Homey.__('pair.no_data');
-                    return socket.showView('login_eufy');
-                } else {
-                    _devices = await this.onDeviceListRequest(this.id, hubsList);
+        session.setHandler('showView', async (view) => {
+            this.homey.app.log(`[Driver] ${this.id} - currentView:`, view);
 
-                    Homey.app.log(`[Driver] ${this.id} - Found new devices:`, _devices);
-                    if (_devices && _devices.length) {
-                        return callback(null, _devices);
-                    } else if (_devices && !!_devices.error) {
-                        callback(new Error(_devices.error));
-                    } else {
-                        callback(new Error(Homey.__('pair.no_devices')));
-                    }
-                }
-            } catch (error) {
-                Homey.app.log(`[Driver] ${this.id} - Error:`, error);
-                socket.showView('login_eufy');
+            if (view === 'login_eufy' && this.homey.app.eufyClient.isConnected() && !this.deviceError) {
+                session.nextView();
+                return true;
             }
-        };
 
-        const onLogin = async (data, callback) => {
-            username = data.username;
-            password = data.password;
+            if (view === 'loading') {
+                this.deviceList = await waitForResults(this);
 
-            const settings = Homey.app.appSettings;
-            const result = await Homey.app.eufyLogin({ ...settings, USERNAME: username, PASSWORD: password, REGION: data.region });
-            if (result instanceof Error) {
-                if(result.message.includes('->')) {
-                    const err = new Error(result.message.split('->')[1]);
-                    return callback(err); 
-                }
-            
-                return callback(result);
-            }
-            return socket.showView('list_devices');
-        };
+                this.homey.app.log(`[Driver] ${this.id} - deviceList:`, this.deviceList.length, !!this.deviceList.length);
 
-        socket.on('showView', async function (viewId) {
-            if (errorMsg) {
-                Homey.app.log(`[Driver] - Show errorMsg:`, errorMsg);
-                socket.emit('error_msg', errorMsg);
-                errorMsg = false;
+                session.nextView();
+                return true;
             }
         });
 
-        socket.on('list_devices', onListDevices);
-        socket.on('login', onLogin);
+        session.setHandler('login', async (data) => {
+            const username = data.username;
+            const password = data.password;
+
+            const settings = this.homey.app.appSettings;
+            const result = await this.homey.app.eufyLogin({ ...settings, USERNAME: username, PASSWORD: password, REGION: data.region });
+            if (result === false) {
+                throw new Error(this.homey.__('pair.no_data'));
+            }
+
+            return result;
+        });
+
+        session.setHandler('list_devices', async () => {
+            try {
+                this._devices = await this.onDeviceListRequest(this.id, this.deviceList);
+
+                this.homey.app.log(`[Driver] ${this.id} - Found new devices:`, this._devices);
+
+                if (this._devices && this._devices.length) {
+                    return this._devices;
+                } else if (this._devices && !!this._devices.error) {
+                    throw new Error(this._devices.error);
+                } else {
+                    throw new Error(this.homey.__('pair.no_devices'));
+                }
+            } catch (error) {
+                this.homey.app.log(`[Driver] ${this.id} - Error:`, error);
+                this.deviceError = true;
+                throw new Error(error);
+            }
+        });
+
+        async function waitForResults(ctx, retry = 10) {
+            for (let i = 1; i <= retry; i++) {
+                ctx.homey.app.log(`[Driver] ${ctx.id} - eufyDeviceData - try: ${i}`);
+                await sleep(500);
+                const eufyDevices = await ctx.homey.app.eufyClient.getStations();
+
+                if (eufyDevices.length) {
+                    return Promise.resolve(eufyDevices);
+                } else if (retry === 9) {
+                    return Promise.resolve([]);
+                }
+            }
+
+            return Promise.resolve([]);
+        }
     }
 
     // ---------------------------------------AUTO COMPLETE HELPERS----------------------------------------------------------
-    async onDeviceListRequest(driverId, hubsList) {
+    async onDeviceListRequest(driverId, deviceList) {
         try {
             const deviceType = this.deviceType();
-            const deviceList = await Homey.app.getDevices();
+
+            const deviceList = await this.homey.app.deviceList;
             const pairedDevicesArray = [];
 
             deviceList.forEach((device) => {
                 const data = device.getData();
-                pairedDevicesArray.push(data.device_sn);
+
+                pairedDevicesArray.push(data.station_sn);
             });
 
-            Homey.app.log(`[Driver] ${driverId} - pairedDevicesArray`, pairedDevicesArray);
+            this.homey.app.log(`[Driver] [onDeviceListRequest] ${driverId} - pairedDevicesArray`, pairedDevicesArray);
 
-            const results = hubsList
-                .filter((hub) => deviceType.some((v) => hub.station_sn.includes(v)))
-                .map((h, i) => ({
-                    name: h.station_name,
+            const results = deviceList
+                .filter((device) => !pairedDevicesArray.includes(device.rawStation.station_sn))
+                .filter((device) => deviceType.some((v) => device.rawStation.station_sn.includes(v)))
+                .map((d, i) => ({
+                    name: d.rawStation.device_name,
                     data: {
-                        name: h.station_name,
+                        name: d.rawStation.device_name,
                         index: i,
-                        id: `${h.station_sn}-${h.station_id}`,
-                        station_sn: h.station_sn,
-                        device_sn: h.station_sn
+                        id: `${d.rawStation.station_sn}-${d.rawStation.device_id}`,
+                        station_sn: d.rawStation.station_sn,
+                        device_sn: d.rawStation.station_sn
                     },
-                    settings: {...this.getStationSettings(h)}
+                    settings: { STATION_SN: d.rawStation.station_sn }
                 }));
 
-            Homey.app.log('Found devices - ', results);
+            this.homey.app.log(`[Driver] [onDeviceListRequest] ${driverId} - Found devices - `, results);
 
             return Promise.resolve(results);
         } catch (e) {
-            Homey.app.log(e);
-        }
-    }
+            this.homey.app.log('Error when trying to connect new device', e);
 
-    getStationSettings(hub) {
-        let hubSettings = {
-            HUB_NAME: hub.station_name,
-            P2P_DID: hub.p2p_did,
-            ACTOR_ID: hub.member.admin_user_id,
-            STATION_SN: hub.station_sn,
-            LOCAL_STATION_IP: hub.ip_addr
+            if (typeof e === 'object') {
+                return Promise.reject(JSON.stringify(e));
+            }
         }
-       
-        return hubSettings;
     }
 };

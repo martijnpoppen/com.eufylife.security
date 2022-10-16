@@ -1,4 +1,10 @@
 # Logs
+env.json
+node_modules/
+assets/.DS_Store
+
+.DS_Store
+
 logs
 *.log
 npm-debug.log*
@@ -87,10 +93,6 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
-.DS_Store
-
-package-lock.json
-eufy-homey-client
 build/
 
 
