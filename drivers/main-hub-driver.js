@@ -49,7 +49,7 @@ module.exports = class mainDriver extends Homey.Driver {
 
         session.setHandler('list_devices', async () => {
             try {
-                this._devices = await this.onDeviceListRequest(this.id, this.deviceList);
+                this._devices = await this.onDeviceListRequest(this.id);
 
                 this.homey.app.log(`[Driver] ${this.id} - Found new devices:`, this._devices);
 
@@ -85,7 +85,7 @@ module.exports = class mainDriver extends Homey.Driver {
     }
 
     // ---------------------------------------AUTO COMPLETE HELPERS----------------------------------------------------------
-    async onDeviceListRequest(driverId, deviceList) {
+    async onDeviceListRequest(driverId) {
         try {
             const deviceType = this.deviceType();
 
@@ -100,7 +100,7 @@ module.exports = class mainDriver extends Homey.Driver {
 
             this.homey.app.log(`[Driver] [onDeviceListRequest] ${driverId} - pairedDevicesArray`, pairedDevicesArray);
 
-            const results = deviceList
+            const results = this.deviceList
                 .filter((device) => !pairedDevicesArray.includes(device.rawStation.station_sn))
                 .filter((device) => deviceType.some((v) => device.rawStation.station_sn.includes(v)))
                 .map((d, i) => ({

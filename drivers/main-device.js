@@ -34,8 +34,12 @@ module.exports = class mainDevice extends Homey.Device {
         }
     }
 
-    onAdded() {
+    async onAdded() {
         this.homey.app.setDevice(this);
+
+        await sleep(7000);
+
+        this.onStartup();
     }
 
     onDeleted() {

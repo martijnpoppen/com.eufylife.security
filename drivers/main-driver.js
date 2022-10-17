@@ -53,7 +53,7 @@ module.exports = class mainDriver extends Homey.Driver {
                     throw new Error(this.homey.__('pair.keypad'));
                 }
 
-                this._devices = await this.onDeviceListRequest(this.id, this.deviceList);
+                this._devices = await this.onDeviceListRequest(this.id);
 
                 this.homey.app.log(`[Driver] ${this.id} - Found new devices:`, this._devices);
 
@@ -89,7 +89,7 @@ module.exports = class mainDriver extends Homey.Driver {
     }
 
     // ---------------------------------------AUTO COMPLETE HELPERS----------------------------------------------------------
-    async onDeviceListRequest(driverId, deviceList) {
+    async onDeviceListRequest(driverId) {
         try {
             const deviceType = this.deviceType();
             const driverManifest = this.manifest;
@@ -117,7 +117,7 @@ module.exports = class mainDriver extends Homey.Driver {
                 return { error: 'Please add a Homebase before adding this device' };
             }
 
-            const results = deviceList
+            const results = this.deviceList
                 .filter((device) => !pairedDevicesArray.includes(device.rawDevice.device_sn))
                 .filter((device) => deviceType.some((v) => device.rawDevice.device_sn.includes(v)))
                 .map((d, i) => ({
