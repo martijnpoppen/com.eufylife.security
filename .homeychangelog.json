@@ -971,13 +971,7 @@
   "2.36.9": {
     "en": "FIX: light for outdoorcam pro | NEW: add status led flowcards"
   },
-  "3.0.9": {
+  "3.0.12": {
     "en": "BREAK: Update Eufy Library | BREAK: Update to Homey SDK 3 | Check on community page for full changelog"
-  },
-  "3.0.10": {
-    "en": "BREAK: Update Eufy Library | BREAK: Update to Homey SDK 3 | Check on community page for full changelog"
-  },
-  "3.0.11": {
-    "en": "FIX: pairing and initial device init"
   }
 }

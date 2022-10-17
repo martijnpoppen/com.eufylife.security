@@ -44,6 +44,11 @@ module.exports = class mainHub extends mainDevice {
         }
     }
 
+    async onCapability_CMD_TRIGGER_RINGTONE_HUB(value) {
+        this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_TRIGGER_RINGTONE_HUB - `, value);
+        await this.homey.app.eufyClient.setDeviceProperty(this.HomeyDevice.station_sn, PropertyName.DeviceChimeHomebaseRingtoneType, value);
+    }
+
     async onCapability_NTFY_TRIGGER(message, value) {
         try {
             this.homey.app.log(`[Device] ${this.getName()} - onCapability_NTFY_TRIGGER => `, message, value);
