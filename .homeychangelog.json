@@ -976,5 +976,8 @@
   },
   "3.0.10": {
     "en": "BREAK: Update Eufy Library | BREAK: Update to Homey SDK 3 | Check on community page for full changelog"
+  },
+  "3.0.11": {
+    "en": "FIX: pairing and initial device init"
   }
 }
