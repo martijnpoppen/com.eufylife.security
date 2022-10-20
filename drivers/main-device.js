@@ -10,7 +10,7 @@ module.exports = class mainDevice extends Homey.Device {
 
         this.homey.app.homeyEvents.once('eufyClientConnected', () => {
             this.onStartup();
-        })
+        });
     }
 
     async onStartup() {
@@ -19,14 +19,14 @@ module.exports = class mainDevice extends Homey.Device {
 
             this.EufyDevice = await this.homey.app.eufyClient.getDevice(this.HomeyDevice.device_sn);
             this.EufyStation = await this.homey.app.eufyClient.getStation(this.HomeyDevice.station_sn);
-    
+
             this.EufyStation.rawStation.member.nick_name = 'Homey';
-    
+
             await this.deviceImage();
             await this.resetCapabilities();
             await this.checkCapabilities();
             await this.setCapabilitiesListeners();
-    
+
             await this.setAvailable();
         } catch (error) {
             this.setUnavailable(error);
@@ -47,10 +47,10 @@ module.exports = class mainDevice extends Homey.Device {
         this.homey.app.removeDevice(deviceObject.device_sn);
     }
 
-    async onSettings(oldSettings, newSettings, changedKeys) {
+    async onSettings({ oldSettings, newSettings, changedKeys }) {
         this.homey.app.log(`[Device] ${this.getName()} - onSettings - Old/New`, oldSettings, newSettings);
 
-        if (this.hasCapability('alarm_generic') && changedKeys.includes('alarm_generic_enabled')) {
+        if (changedKeys.includes('alarm_generic_enabled')) {
             this.resetCapability('alarm_generic');
         }
     }
@@ -69,24 +69,19 @@ module.exports = class mainDevice extends Homey.Device {
 
     async resetCapabilities() {
         try {
-            if (this.hasCapability('alarm_motion')) {
-                this.resetCapability('alarm_motion');
-            }
-
-            if (this.hasCapability('alarm_contact')) {
-                this.resetCapability('alarm_contact');
-            }
-
-            if (this.hasCapability('alarm_generic')) {
-                this.resetCapability('alarm_generic');
-            }
+            await this.resetCapability('alarm_motion');
+            await this.resetCapability('alarm_contact');
+            await this.resetCapability('alarm_generic');
+            await this.resetCapability('alarm_arm_mode');
         } catch (error) {
             this.homey.app.log(error);
         }
     }
 
     async resetCapability(name, value = false) {
-        this.setCapabilityValue(name, value);
+        if (this.hasCapability(name)) {
+            this.setCapabilityValue(name, value);
+        }
     }
 
     async checkCapabilities() {
@@ -181,8 +176,6 @@ module.exports = class mainDevice extends Homey.Device {
     }
 
     async onCapability_CMD_SET_ARMING(value) {
-        const settings = this.getSettings();
-
         try {
             let CMD_SET_ARMING = ARM_TYPES[value];
 
@@ -195,9 +188,7 @@ module.exports = class mainDevice extends Homey.Device {
             this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_SET_ARMING - `, value, CMD_SET_ARMING);
             await this.homey.app.eufyClient.setStationProperty(this.HomeyDevice.station_sn, PropertyName.StationGuardMode, CMD_SET_ARMING);
 
-            if (settings.alarm_arm_mode) {
-                await this.setCapabilityValue('alarm_arm_mode', value === 'disarmed' || value === 'off');
-            }
+            await this.set_alarm_arm_mode(value);
 
             return Promise.resolve(true);
         } catch (e) {
@@ -424,12 +415,7 @@ module.exports = class mainDevice extends Homey.Device {
                     }
                 } else {
                     this.setCapabilityValue(message, value);
-                    if (settings.alarm_arm_mode && settings.alarm_arm_mode !== 'disabled') {
-                        const values = settings.alarm_arm_mode.split('_');
-                        await this.setCapabilityValue('alarm_arm_mode', values.includes(value));
-                    } else {
-                        await this.setCapabilityValue('alarm_arm_mode', false);
-                    }
+                    await this.set_alarm_arm_mode(value);
                 }
 
                 await sleep(5000);
@@ -487,6 +473,19 @@ module.exports = class mainDevice extends Homey.Device {
         } catch (e) {
             this.homey.app.error(e);
             return Promise.reject(e);
+        }
+    }
+
+    async set_alarm_arm_mode(value) {
+        const settings = this.getSettings();
+
+        this.homey.app.log(`[Device] ${this.getName()} - set_alarm_arm_mode ${settings.alarm_arm_mode} - to: `, value);
+
+        if (settings.alarm_arm_mode && settings.alarm_arm_mode !== 'disabled') {
+            const values = settings.alarm_arm_mode.split('_');
+            await this.setCapabilityValue('alarm_arm_mode', values.includes(value));
+        } else {
+            await this.setCapabilityValue('alarm_arm_mode', false);
         }
     }
 };

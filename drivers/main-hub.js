@@ -14,10 +14,27 @@ module.exports = class mainHub extends mainDevice {
             await this.checkCapabilities();
             await this.setCapabilitiesListeners();
 
+            await this.setHubNotificationSettings()
+
             await this.setAvailable();
+
+            this.homey.setInterval(() => {
+                this.setHubNotificationSettings();
+            }, (15 * 60 * 1000));
         } catch (error) {
             this.setUnavailable(error);
             this.homey.app.log(error);
+        }
+    }
+
+    async setHubNotificationSettings() {
+        const settings = this.getSettings();
+        if(settings.force_switch_mode_notifications) {
+            this.homey.app.log(`[Device] ${this.getName()} - setHubNotificationSettings - StationNotificationSwitchModeApp`);
+            await this.homey.app.eufyClient.setStationProperty(this.HomeyDevice.station_sn, PropertyName.StationNotificationSwitchModeApp, true);
+
+            this.homey.app.log(`[Device] ${this.getName()} - setHubNotificationSettings - StationNotificationSwitchModeKeypad`);
+            await this.homey.app.eufyClient.setStationProperty(this.HomeyDevice.station_sn, PropertyName.StationNotificationSwitchModeKeypad, true);
         }
     }
 
@@ -35,7 +52,7 @@ module.exports = class mainHub extends mainDevice {
             this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_SET_ARMING - `, value, CMD_SET_ARMING);
             await this.homey.app.eufyClient.setStationProperty(this.HomeyDevice.station_sn, PropertyName.StationGuardMode, CMD_SET_ARMING);
 
-            await this.setCapabilityValue('alarm_arm_mode', value === 'disarmed' || value === 'off');
+            await this.set_alarm_arm_mode(value);
 
             return Promise.resolve(true);
         } catch (e) {
@@ -62,11 +79,8 @@ module.exports = class mainHub extends mainDevice {
                     this.homey.app.log(`[Device] ${this.getName()} - onCapability_NTFY_TRIGGER => setMotionAlarm`, value);
                 }
 
-                if (message === 'CMD_SET_ARMING' && settings.alarm_arm_mode && settings.alarm_arm_mode !== 'disabled') {
-                    const values = settings.alarm_arm_mode.split('_');
-                    await this.setCapabilityValue('alarm_arm_mode', values.includes(value));
-                } else if (settings.alarm_arm_mode && settings.alarm_arm_mode === 'disabled') {
-                    await this.setCapabilityValue('alarm_arm_mode', false);
+                if (message === 'CMD_SET_ARMING') {
+                   this.set_alarm_arm_mode(value);
                 }
             }
 
