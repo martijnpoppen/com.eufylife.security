@@ -973,5 +973,8 @@
   },
   "3.0.12": {
     "en": "BREAK: Update Eufy Library | BREAK: Update to Homey SDK 3 | Check on community page for full changelog"
+  },
+  "3.0.13": {
+    "en": "FIX: several fixes for new library - see community topic for more info"
   }
 }

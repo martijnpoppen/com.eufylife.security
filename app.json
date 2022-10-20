@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "3.0.12",
+  "version": "3.0.13",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "brandColor": "#2a6185",
@@ -4665,15 +4665,15 @@
       }
     },
     "CMD_TRIGGER_RINGTONE_HUB": {
-        "type": "string",
-        "uiComponent": null,
-        "getable": false,
-        "setable": false,
-        "title": {
-            "en": "Trigger chime",
-            "nl": "Activeer chime"
-        }
-      },
+      "type": "string",
+      "uiComponent": null,
+      "getable": false,
+      "setable": false,
+      "title": {
+        "en": "Trigger chime",
+        "nl": "Activeer chime"
+      }
+    },
     "CMD_IRCUT_SWITCH": {
       "type": "boolean",
       "getable": true,
