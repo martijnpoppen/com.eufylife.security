@@ -2040,48 +2040,6 @@
                     "en": "off / disarmed / away",
                     "nl": "uit / uitgeschakeld / afwezig"
                   }
-                },
-                {
-                  "id": "away_custom_1",
-                  "label": {
-                    "en": "away / custom 1",
-                    "nl": "afwezig / custom 1"
-                  }
-                },
-                {
-                  "id": "away_custom_2",
-                  "label": {
-                    "en": "away / custom 2",
-                    "nl": "afwezig / custom 2"
-                  }
-                },
-                {
-                  "id": "away_custom_3",
-                  "label": {
-                    "en": "away / custom 3",
-                    "nl": "afwezig / custom 3"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_1",
-                  "label": {
-                    "en": "off / disarmed / custom 1",
-                    "nl": "uit / uitgeschakeld / custom 1"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_2",
-                  "label": {
-                    "en": "off / disarmed / custom 2",
-                    "nl": "uit / uitgeschakeld / custom 2"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_3",
-                  "label": {
-                    "en": "off / disarmed / custom 3",
-                    "nl": "uit / uitgeschakeld / custom 3"
-                  }
                 }
               ]
             }
@@ -2229,48 +2187,6 @@
                   "label": {
                     "en": "off / disarmed / away",
                     "nl": "uit / uitgeschakeld / afwezig"
-                  }
-                },
-                {
-                  "id": "away_custom_1",
-                  "label": {
-                    "en": "away / custom 1",
-                    "nl": "afwezig / custom 1"
-                  }
-                },
-                {
-                  "id": "away_custom_2",
-                  "label": {
-                    "en": "away / custom 2",
-                    "nl": "afwezig / custom 2"
-                  }
-                },
-                {
-                  "id": "away_custom_3",
-                  "label": {
-                    "en": "away / custom 3",
-                    "nl": "afwezig / custom 3"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_1",
-                  "label": {
-                    "en": "off / disarmed / custom 1",
-                    "nl": "uit / uitgeschakeld / custom 1"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_2",
-                  "label": {
-                    "en": "off / disarmed / custom 2",
-                    "nl": "uit / uitgeschakeld / custom 2"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_3",
-                  "label": {
-                    "en": "off / disarmed / custom 3",
-                    "nl": "uit / uitgeschakeld / custom 3"
                   }
                 }
               ]
@@ -2422,48 +2338,6 @@
                     "en": "off / disarmed / away",
                     "nl": "uit / uitgeschakeld / afwezig"
                   }
-                },
-                {
-                  "id": "away_custom_1",
-                  "label": {
-                    "en": "away / custom 1",
-                    "nl": "afwezig / custom 1"
-                  }
-                },
-                {
-                  "id": "away_custom_2",
-                  "label": {
-                    "en": "away / custom 2",
-                    "nl": "afwezig / custom 2"
-                  }
-                },
-                {
-                  "id": "away_custom_3",
-                  "label": {
-                    "en": "away / custom 3",
-                    "nl": "afwezig / custom 3"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_1",
-                  "label": {
-                    "en": "off / disarmed / custom 1",
-                    "nl": "uit / uitgeschakeld / custom 1"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_2",
-                  "label": {
-                    "en": "off / disarmed / custom 2",
-                    "nl": "uit / uitgeschakeld / custom 2"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_3",
-                  "label": {
-                    "en": "off / disarmed / custom 3",
-                    "nl": "uit / uitgeschakeld / custom 3"
-                  }
                 }
               ]
             }
@@ -2613,48 +2487,6 @@
                   "label": {
                     "en": "off / disarmed / away",
                     "nl": "uit / uitgeschakeld / afwezig"
-                  }
-                },
-                {
-                  "id": "away_custom_1",
-                  "label": {
-                    "en": "away / custom 1",
-                    "nl": "afwezig / custom 1"
-                  }
-                },
-                {
-                  "id": "away_custom_2",
-                  "label": {
-                    "en": "away / custom 2",
-                    "nl": "afwezig / custom 2"
-                  }
-                },
-                {
-                  "id": "away_custom_3",
-                  "label": {
-                    "en": "away / custom 3",
-                    "nl": "afwezig / custom 3"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_1",
-                  "label": {
-                    "en": "off / disarmed / custom 1",
-                    "nl": "uit / uitgeschakeld / custom 1"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_2",
-                  "label": {
-                    "en": "off / disarmed / custom 2",
-                    "nl": "uit / uitgeschakeld / custom 2"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_3",
-                  "label": {
-                    "en": "off / disarmed / custom 3",
-                    "nl": "uit / uitgeschakeld / custom 3"
                   }
                 }
               ]
@@ -2806,48 +2638,6 @@
                     "en": "off / disarmed / away",
                     "nl": "uit / uitgeschakeld / afwezig"
                   }
-                },
-                {
-                  "id": "away_custom_1",
-                  "label": {
-                    "en": "away / custom 1",
-                    "nl": "afwezig / custom 1"
-                  }
-                },
-                {
-                  "id": "away_custom_2",
-                  "label": {
-                    "en": "away / custom 2",
-                    "nl": "afwezig / custom 2"
-                  }
-                },
-                {
-                  "id": "away_custom_3",
-                  "label": {
-                    "en": "away / custom 3",
-                    "nl": "afwezig / custom 3"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_1",
-                  "label": {
-                    "en": "off / disarmed / custom 1",
-                    "nl": "uit / uitgeschakeld / custom 1"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_2",
-                  "label": {
-                    "en": "off / disarmed / custom 2",
-                    "nl": "uit / uitgeschakeld / custom 2"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_3",
-                  "label": {
-                    "en": "off / disarmed / custom 3",
-                    "nl": "uit / uitgeschakeld / custom 3"
-                  }
                 }
               ]
             }
@@ -2997,48 +2787,6 @@
                   "label": {
                     "en": "off / disarmed / away",
                     "nl": "uit / uitgeschakeld / afwezig"
-                  }
-                },
-                {
-                  "id": "away_custom_1",
-                  "label": {
-                    "en": "away / custom 1",
-                    "nl": "afwezig / custom 1"
-                  }
-                },
-                {
-                  "id": "away_custom_2",
-                  "label": {
-                    "en": "away / custom 2",
-                    "nl": "afwezig / custom 2"
-                  }
-                },
-                {
-                  "id": "away_custom_3",
-                  "label": {
-                    "en": "away / custom 3",
-                    "nl": "afwezig / custom 3"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_1",
-                  "label": {
-                    "en": "off / disarmed / custom 1",
-                    "nl": "uit / uitgeschakeld / custom 1"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_2",
-                  "label": {
-                    "en": "off / disarmed / custom 2",
-                    "nl": "uit / uitgeschakeld / custom 2"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_3",
-                  "label": {
-                    "en": "off / disarmed / custom 3",
-                    "nl": "uit / uitgeschakeld / custom 3"
                   }
                 }
               ]
@@ -3192,48 +2940,6 @@
                   "label": {
                     "en": "off / disarmed / away",
                     "nl": "uit / uitgeschakeld / afwezig"
-                  }
-                },
-                {
-                  "id": "away_custom_1",
-                  "label": {
-                    "en": "away / custom 1",
-                    "nl": "afwezig / custom 1"
-                  }
-                },
-                {
-                  "id": "away_custom_2",
-                  "label": {
-                    "en": "away / custom 2",
-                    "nl": "afwezig / custom 2"
-                  }
-                },
-                {
-                  "id": "away_custom_3",
-                  "label": {
-                    "en": "away / custom 3",
-                    "nl": "afwezig / custom 3"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_1",
-                  "label": {
-                    "en": "off / disarmed / custom 1",
-                    "nl": "uit / uitgeschakeld / custom 1"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_2",
-                  "label": {
-                    "en": "off / disarmed / custom 2",
-                    "nl": "uit / uitgeschakeld / custom 2"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_3",
-                  "label": {
-                    "en": "off / disarmed / custom 3",
-                    "nl": "uit / uitgeschakeld / custom 3"
                   }
                 }
               ]
@@ -3389,48 +3095,6 @@
                     "en": "off / disarmed / away",
                     "nl": "uit / uitgeschakeld / afwezig"
                   }
-                },
-                {
-                  "id": "away_custom_1",
-                  "label": {
-                    "en": "away / custom 1",
-                    "nl": "afwezig / custom 1"
-                  }
-                },
-                {
-                  "id": "away_custom_2",
-                  "label": {
-                    "en": "away / custom 2",
-                    "nl": "afwezig / custom 2"
-                  }
-                },
-                {
-                  "id": "away_custom_3",
-                  "label": {
-                    "en": "away / custom 3",
-                    "nl": "afwezig / custom 3"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_1",
-                  "label": {
-                    "en": "off / disarmed / custom 1",
-                    "nl": "uit / uitgeschakeld / custom 1"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_2",
-                  "label": {
-                    "en": "off / disarmed / custom 2",
-                    "nl": "uit / uitgeschakeld / custom 2"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_3",
-                  "label": {
-                    "en": "off / disarmed / custom 3",
-                    "nl": "uit / uitgeschakeld / custom 3"
-                  }
                 }
               ]
             }
@@ -3585,48 +3249,6 @@
                     "en": "off / disarmed / away",
                     "nl": "uit / uitgeschakeld / afwezig"
                   }
-                },
-                {
-                  "id": "away_custom_1",
-                  "label": {
-                    "en": "away / custom 1",
-                    "nl": "afwezig / custom 1"
-                  }
-                },
-                {
-                  "id": "away_custom_2",
-                  "label": {
-                    "en": "away / custom 2",
-                    "nl": "afwezig / custom 2"
-                  }
-                },
-                {
-                  "id": "away_custom_3",
-                  "label": {
-                    "en": "away / custom 3",
-                    "nl": "afwezig / custom 3"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_1",
-                  "label": {
-                    "en": "off / disarmed / custom 1",
-                    "nl": "uit / uitgeschakeld / custom 1"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_2",
-                  "label": {
-                    "en": "off / disarmed / custom 2",
-                    "nl": "uit / uitgeschakeld / custom 2"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_3",
-                  "label": {
-                    "en": "off / disarmed / custom 3",
-                    "nl": "uit / uitgeschakeld / custom 3"
-                  }
                 }
               ]
             }
@@ -3775,48 +3397,6 @@
                   "label": {
                     "en": "off / disarmed / away",
                     "nl": "uit / uitgeschakeld / afwezig"
-                  }
-                },
-                {
-                  "id": "away_custom_1",
-                  "label": {
-                    "en": "away / custom 1",
-                    "nl": "afwezig / custom 1"
-                  }
-                },
-                {
-                  "id": "away_custom_2",
-                  "label": {
-                    "en": "away / custom 2",
-                    "nl": "afwezig / custom 2"
-                  }
-                },
-                {
-                  "id": "away_custom_3",
-                  "label": {
-                    "en": "away / custom 3",
-                    "nl": "afwezig / custom 3"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_1",
-                  "label": {
-                    "en": "off / disarmed / custom 1",
-                    "nl": "uit / uitgeschakeld / custom 1"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_2",
-                  "label": {
-                    "en": "off / disarmed / custom 2",
-                    "nl": "uit / uitgeschakeld / custom 2"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_3",
-                  "label": {
-                    "en": "off / disarmed / custom 3",
-                    "nl": "uit / uitgeschakeld / custom 3"
                   }
                 }
               ]
@@ -4153,48 +3733,6 @@
                   "label": {
                     "en": "off / disarmed / away",
                     "nl": "uit / uitgeschakeld / afwezig"
-                  }
-                },
-                {
-                  "id": "away_custom_1",
-                  "label": {
-                    "en": "away / custom 1",
-                    "nl": "afwezig / custom 1"
-                  }
-                },
-                {
-                  "id": "away_custom_2",
-                  "label": {
-                    "en": "away / custom 2",
-                    "nl": "afwezig / custom 2"
-                  }
-                },
-                {
-                  "id": "away_custom_3",
-                  "label": {
-                    "en": "away / custom 3",
-                    "nl": "afwezig / custom 3"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_1",
-                  "label": {
-                    "en": "off / disarmed / custom 1",
-                    "nl": "uit / uitgeschakeld / custom 1"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_2",
-                  "label": {
-                    "en": "off / disarmed / custom 2",
-                    "nl": "uit / uitgeschakeld / custom 2"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_3",
-                  "label": {
-                    "en": "off / disarmed / custom 3",
-                    "nl": "uit / uitgeschakeld / custom 3"
                   }
                 }
               ]
@@ -4546,48 +4084,6 @@
                     "en": "off / disarmed / away",
                     "nl": "uit / uitgeschakeld / afwezig"
                   }
-                },
-                {
-                  "id": "away_custom_1",
-                  "label": {
-                    "en": "away / custom 1",
-                    "nl": "afwezig / custom 1"
-                  }
-                },
-                {
-                  "id": "away_custom_2",
-                  "label": {
-                    "en": "away / custom 2",
-                    "nl": "afwezig / custom 2"
-                  }
-                },
-                {
-                  "id": "away_custom_3",
-                  "label": {
-                    "en": "away / custom 3",
-                    "nl": "afwezig / custom 3"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_1",
-                  "label": {
-                    "en": "off / disarmed / custom 1",
-                    "nl": "uit / uitgeschakeld / custom 1"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_2",
-                  "label": {
-                    "en": "off / disarmed / custom 2",
-                    "nl": "uit / uitgeschakeld / custom 2"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_3",
-                  "label": {
-                    "en": "off / disarmed / custom 3",
-                    "nl": "uit / uitgeschakeld / custom 3"
-                  }
                 }
               ]
             },
@@ -4735,48 +4231,6 @@
                     "en": "off / disarmed / away",
                     "nl": "uit / uitgeschakeld / afwezig"
                   }
-                },
-                {
-                  "id": "away_custom_1",
-                  "label": {
-                    "en": "away / custom 1",
-                    "nl": "afwezig / custom 1"
-                  }
-                },
-                {
-                  "id": "away_custom_2",
-                  "label": {
-                    "en": "away / custom 2",
-                    "nl": "afwezig / custom 2"
-                  }
-                },
-                {
-                  "id": "away_custom_3",
-                  "label": {
-                    "en": "away / custom 3",
-                    "nl": "afwezig / custom 3"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_1",
-                  "label": {
-                    "en": "off / disarmed / custom 1",
-                    "nl": "uit / uitgeschakeld / custom 1"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_2",
-                  "label": {
-                    "en": "off / disarmed / custom 2",
-                    "nl": "uit / uitgeschakeld / custom 2"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_3",
-                  "label": {
-                    "en": "off / disarmed / custom 3",
-                    "nl": "uit / uitgeschakeld / custom 3"
-                  }
                 }
               ]
             }
@@ -4914,48 +4368,6 @@
                   "label": {
                     "en": "off / disarmed / away",
                     "nl": "uit / uitgeschakeld / afwezig"
-                  }
-                },
-                {
-                  "id": "away_custom_1",
-                  "label": {
-                    "en": "away / custom 1",
-                    "nl": "afwezig / custom 1"
-                  }
-                },
-                {
-                  "id": "away_custom_2",
-                  "label": {
-                    "en": "away / custom 2",
-                    "nl": "afwezig / custom 2"
-                  }
-                },
-                {
-                  "id": "away_custom_3",
-                  "label": {
-                    "en": "away / custom 3",
-                    "nl": "afwezig / custom 3"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_1",
-                  "label": {
-                    "en": "off / disarmed / custom 1",
-                    "nl": "uit / uitgeschakeld / custom 1"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_2",
-                  "label": {
-                    "en": "off / disarmed / custom 2",
-                    "nl": "uit / uitgeschakeld / custom 2"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_3",
-                  "label": {
-                    "en": "off / disarmed / custom 3",
-                    "nl": "uit / uitgeschakeld / custom 3"
                   }
                 }
               ]

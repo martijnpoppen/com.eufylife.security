@@ -479,12 +479,15 @@ module.exports = class mainDevice extends Homey.Device {
     async set_alarm_arm_mode(value) {
         const settings = this.getSettings();
 
-        this.homey.app.log(`[Device] ${this.getName()} - set_alarm_arm_mode ${settings.alarm_arm_mode} - to: `, value);
-
         if (settings.alarm_arm_mode && settings.alarm_arm_mode !== 'disabled') {
             const values = settings.alarm_arm_mode.split('_');
+
+            this.homey.app.log(`[Device] ${this.getName()} - set_alarm_arm_mode: ${settings.alarm_arm_mode} - value: `, value, values.includes(value));
+
             await this.setCapabilityValue('alarm_arm_mode', values.includes(value));
         } else {
+            this.homey.app.log(`[Device] ${this.getName()} - set_alarm_arm_mode: ${settings.alarm_arm_mode}`, false);
+
             await this.setCapabilityValue('alarm_arm_mode', false);
         }
     }
