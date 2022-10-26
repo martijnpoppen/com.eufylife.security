@@ -260,7 +260,8 @@ class App extends Homey.App {
                 language: 'EN',
                 persistentDir: path.resolve(__dirname, '/userdata/'),
                 trustedDeviceName: 'Homey',
-                acceptInvitations: true
+                acceptInvitations: true,
+                pollingIntervalMinutes: 15
             };
 
             await this.resetEufyClient();

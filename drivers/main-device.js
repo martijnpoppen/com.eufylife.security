@@ -447,7 +447,7 @@ module.exports = class mainDevice extends Homey.Device {
                     this.homey.app.log(`[Device] ${this.getName()} - Set image - `, imagePath);
                     const res = await fetch(imagePath);
 
-                    if (!res.ok) throw new Error('Cannot fetch realtime image');
+                    if (!res.status === 200) throw new Error('Cannot fetch realtime image');
 
                     return res.body.pipe(stream);
                 });

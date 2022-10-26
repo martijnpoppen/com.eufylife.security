@@ -20,7 +20,7 @@ module.exports = class mainHub extends mainDevice {
 
             this.homey.setInterval(() => {
                 this.setHubNotificationSettings();
-            }, (15 * 60 * 1000));
+            }, (30 * 60 * 1000));
         } catch (error) {
             this.setUnavailable(error);
             this.homey.app.log(error);
