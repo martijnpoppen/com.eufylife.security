@@ -4675,30 +4675,30 @@
       }
     },
     "CMD_IRCUT_SWITCH": {
-      "type": "boolean",
-      "getable": true,
-      "setable": true,
-      "uiComponent": "button",
+      "type": "string",
+      "uiComponent": null,
+      "getable": false,
+      "setable": false,
       "title": {
         "en": "Toggle IR",
         "nl": "Zet Infrarood aan/uit"
       }
     },
     "CMD_BAT_DOORBELL_VIDEO_QUALITY": {
-      "type": "boolean",
-      "getable": true,
-      "setable": true,
-      "uiComponent": "button",
+      "type": "string",
+      "uiComponent": null,
+      "getable": false,
+      "setable": false,
       "title": {
         "en": "Toggle HDR",
         "nl": "Zet HDR aan/uit"
       }
     },
     "CMD_BAT_DOORBELL_WDR_SWITCH": {
-      "type": "boolean",
-      "getable": true,
-      "setable": true,
-      "uiComponent": "button",
+      "type": "string",
+      "uiComponent": null,
+      "getable": false,
+      "setable": false,
       "title": {
         "en": "Toggle WDR switch",
         "nl": "Zet WDR aan/uit"

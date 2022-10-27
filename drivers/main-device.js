@@ -442,14 +442,16 @@ module.exports = class mainDevice extends Homey.Device {
             if (!this._image) {
                 this._image = await this.homey.images.createImage();
                 this._image.setStream(async (stream) => {
-                    const imagePath = this.EufyDevice.getLastCameraImageURL() || 'assets/images/stream.jpg';
+                    const imagePath = this.EufyDevice.getLastCameraImageURL();
 
-                    this.homey.app.log(`[Device] ${this.getName()} - Set image - `, imagePath);
-                    const res = await fetch(imagePath);
-
-                    if (!res.status === 200) throw new Error('Cannot fetch realtime image');
-
-                    return res.body.pipe(stream);
+                    if(imagePath.length) {
+                        this.homey.app.log(`[Device] ${this.getName()} - Set image - `, imagePath);
+                        const res = await fetch(imagePath);
+    
+                        if (!res.status === 200) throw new Error('Cannot fetch realtime image');
+    
+                        return res.body.pipe(stream);
+                    }
                 });
             }
 
