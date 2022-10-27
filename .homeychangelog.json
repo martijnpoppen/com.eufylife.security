@@ -979,5 +979,8 @@
   },
   "3.0.14": {
     "en": "FIX: several fixes for new library - see community topic for more info"
+  },
+  "3.0.15": {
+    "en": "FIX: mobile app empty screen"
   }
 }
