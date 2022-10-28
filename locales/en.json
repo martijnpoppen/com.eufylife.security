@@ -15,5 +15,8 @@
     "no_data": "No devices found. Try a diferrent region.",
     "no_devices": "No devices found. Make sure you shared the Eufy devices with your admin extra account",
     "keypad": "The keypad is a physical device to set the security mode for the Homebase. Therefore this has no own functionality in the Homey app. To make flows based on or change security modes please add the homebase instead (if not already done so). There you can find the security modes and flow cards for security modes."
+  },
+  "device": {
+    "init": "is connecting to Eufy Server..."
   }
 }

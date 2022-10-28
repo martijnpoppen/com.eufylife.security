@@ -15,7 +15,7 @@ module.exports = class mainDevice extends Homey.Device {
 
     async onStartup() {
         try {
-            this.homey.app.log('[Device] - starting =>', this.getName());
+            this.homey.app.log(`[Device] ${this.getName()} - starting`);
 
             this.EufyDevice = await this.homey.app.eufyClient.getDevice(this.HomeyDevice.device_sn);
             this.EufyStation = await this.homey.app.eufyClient.getStation(this.HomeyDevice.station_sn);
@@ -28,6 +28,12 @@ module.exports = class mainDevice extends Homey.Device {
             await this.setCapabilitiesListeners();
 
             await this.setAvailable();
+
+            await this.setSettings({
+                LOCAL_STATION_IP: this.EufyStation.getLANIPAddress(),
+                STATION_SN: this.EufyStation.getSerial(),
+                DEVICE_SN: this.EufyDevice.getSerial()
+            });
         } catch (error) {
             this.setUnavailable(error);
             this.homey.app.log(error);
@@ -58,7 +64,7 @@ module.exports = class mainDevice extends Homey.Device {
     async setupDevice() {
         this.homey.app.log('[Device] - init =>', this.getName());
 
-        this.setUnavailable(`Initializing ${this.getName()}`);
+        this.setUnavailable(`${this.getName()} ${this.homey.__('device.init')}`);
 
         const deviceObject = this.getData();
         this.HomeyDevice = deviceObject;
@@ -139,18 +145,6 @@ module.exports = class mainDevice extends Homey.Device {
 
             if (this.hasCapability('CMD_SET_FLOODLIGHT_MANUAL_SWITCH')) {
                 this.registerCapabilityListener('CMD_SET_FLOODLIGHT_MANUAL_SWITCH', this.onCapability_CMD_SET_FLOODLIGHT_MANUAL_SWITCH.bind(this));
-            }
-
-            if (this.hasCapability('CMD_IRCUT_SWITCH')) {
-                this.registerCapabilityListener('CMD_IRCUT_SWITCH', this.onCapability_CMD_IRCUT_SWITCH.bind(this));
-            }
-
-            if (this.hasCapability('CMD_BAT_DOORBELL_VIDEO_QUALITY')) {
-                this.registerCapabilityListener('CMD_BAT_DOORBELL_VIDEO_QUALITY', this.onCapability_CMD_BAT_DOORBELL_VIDEO_QUALITY.bind(this));
-            }
-
-            if (this.hasCapability('CMD_BAT_DOORBELL_WDR_SWITCH')) {
-                this.registerCapabilityListener('CMD_BAT_DOORBELL_WDR_SWITCH', this.onCapability_CMD_BAT_DOORBELL_WDR_SWITCH.bind(this));
             }
         } catch (error) {
             this.homey.app.log(error);
@@ -262,7 +256,7 @@ module.exports = class mainDevice extends Homey.Device {
     async onCapability_CMD_BAT_DOORBELL_VIDEO_QUALITY(value) {
         try {
             this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_BAT_DOORBELL_VIDEO_QUALITY - `, value);
-            await this.homey.app.eufyClient.setDeviceProperty(this.HomeyDevice.device_sn, PropertyName.setVideoStreamingQuality, value);
+            await this.homey.app.eufyClient.setDeviceProperty(this.HomeyDevice.device_sn, PropertyName.DeviceVideoStreamingQuality, value);
 
             return Promise.resolve(true);
         } catch (e) {

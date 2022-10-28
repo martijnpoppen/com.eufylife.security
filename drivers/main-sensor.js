@@ -3,7 +3,7 @@ const mainDevice = require('./main-device');
 module.exports = class mainSensor extends mainDevice {
     async onStartup() {
         try {
-            this.homey.app.log('[Device] - starting =>', this.getName());
+            this.homey.app.log(`[Device] ${this.getName()} - starting`);
 
             this.EufyDevice = await this.homey.app.eufyClient.getDevice(this.HomeyDevice.device_sn);
             this.EufyStation = await this.homey.app.eufyClient.getStation(this.HomeyDevice.station_sn);
@@ -13,6 +13,12 @@ module.exports = class mainSensor extends mainDevice {
             await this.setCapabilitiesListeners();
     
             await this.setAvailable();
+
+            await this.setSettings({ 
+                LOCAL_STATION_IP: this.EufyStation.getLANIPAddress(), 
+                STATION_SN: this.EufyStation.getSerial(), 
+                DEVICE_SN: this.EufyDevice.getSerial() 
+            });
         } catch (error) {
             this.setUnavailable(error);
             this.homey.app.log(error);

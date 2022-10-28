@@ -6,7 +6,7 @@ const { PropertyName } = require('eufy-security-client');
 module.exports = class mainHub extends mainDevice {
     async onStartup() {
         try {
-            this.homey.app.log('[Device] - starting =>', this.getName());
+            this.homey.app.log(`[Device] ${this.getName()} - starting`);
 
             this.EufyStation = await this.homey.app.eufyClient.getStation(this.HomeyDevice.station_sn);
 
@@ -17,6 +17,12 @@ module.exports = class mainHub extends mainDevice {
             await this.setHubNotificationSettings()
 
             await this.setAvailable();
+
+            await this.setSettings({ 
+                LOCAL_STATION_IP: this.EufyStation.getLANIPAddress(), 
+                STATION_SN: this.EufyStation.getSerial(), 
+                DEVICE_SN: this.EufyStation.getSerial() 
+            });
 
             this.homey.setInterval(() => {
                 this.setHubNotificationSettings();
