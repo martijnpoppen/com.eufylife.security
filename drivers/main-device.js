@@ -29,10 +29,10 @@ module.exports = class mainDevice extends Homey.Device {
 
             await this.setAvailable();
 
-            await this.setSettings({
-                LOCAL_STATION_IP: this.EufyStation.getLANIPAddress(),
-                STATION_SN: this.EufyStation.getSerial(),
-                DEVICE_SN: this.EufyDevice.getSerial()
+            await this.setSettings({ 
+                LOCAL_STATION_IP: this.EufyStation.getLANIPAddress(), 
+                STATION_SN: this.EufyStation.getSerial(), 
+                DEVICE_SN: this.EufyDevice.getSerial() 
             });
         } catch (error) {
             this.setUnavailable(error);
@@ -435,23 +435,36 @@ module.exports = class mainDevice extends Homey.Device {
         try {
             if (!this._image) {
                 this._image = await this.homey.images.createImage();
-                this._image.setStream(async (stream) => {
+
+                this.homey.app.log(`[Device] ${this.getName()} - Registering Device image`);
+
+                this.setCameraImage(this.HomeyDevice.station_sn, this.getName(), this._image).catch(this.err);
+            }
+
+
+                await this._image.setStream(async (stream) => {
                     const imagePath = this.EufyDevice.getLastCameraImageURL();
 
                     if(imagePath.length) {
                         this.homey.app.log(`[Device] ${this.getName()} - Set image - `, imagePath);
-                        const res = await fetch(imagePath);
+                        let res = await fetch(imagePath);
     
-                        if (!res.status === 200) throw new Error('Cannot fetch realtime image');
-    
+                        if (!res.ok) {
+                            this.homey.app.log(`[Device] ${this.getName()} - Couldnt fetch image - Retry: `, res.url);
+                            console.log(res.status)
+                            res = await fetch(res.url);
+                        }
+
+                        if (!res.ok) {
+                            this.homey.app.log(`[Device] ${this.getName()} - Couldnt fetch image - Failed: `, res.url);
+                            throw new Error('Cannot fetch image from Eufy Server');
+                        }
+
+                        this.homey.app.log(`[Device] ${this.getName()} - fetch image - Succes: `, res.url);
+
                         return res.body.pipe(stream);
                     }
                 });
-            }
-
-            this.homey.app.log(`[Device] ${this.getName()} - Registering Device image`);
-
-            this.setCameraImage(this.HomeyDevice.station_sn, this.getName(), this._image).catch(this.err);
 
             return Promise.resolve(true);
         } catch (e) {
