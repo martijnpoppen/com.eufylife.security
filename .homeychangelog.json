@@ -985,5 +985,8 @@
   },
   "3.0.16": {
     "en": "FIX: motion image not fetched properly"
+  },
+  "3.0.17": {
+    "en": "FIX: outdate motion image "
   }
 }
