@@ -988,5 +988,8 @@
   },
   "3.0.17": {
     "en": "FIX: outdate motion image "
+  },
+  "3.0.18": {
+    "en": "FIX: outdated motion image"
   }
 }
