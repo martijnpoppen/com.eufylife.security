@@ -991,5 +991,8 @@
   },
   "3.0.18": {
     "en": "FIX: outdated motion image"
+  },
+  "3.1.0": {
+    "en": "FIX: alarm event | FIX: image update | NEW: trigger Doorbell sound on Homebase"
   }
 }
