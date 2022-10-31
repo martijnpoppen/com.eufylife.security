@@ -994,5 +994,8 @@
   },
   "3.1.0": {
     "en": "FIX: alarm event | FIX: image update | NEW: trigger Doorbell sound on Homebase"
+  },
+  "3.1.1": {
+    "en": "FIX: crash in ntfy"
   }
 }
