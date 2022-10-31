@@ -997,5 +997,8 @@
   },
   "3.1.1": {
     "en": "FIX: crash in ntfy"
+  },
+  "3.1.2": {
+    "en": "FIX: force notification settings for cameras"
   }
 }
