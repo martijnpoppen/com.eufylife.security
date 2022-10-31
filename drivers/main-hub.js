@@ -10,6 +10,9 @@ module.exports = class mainHub extends mainDevice {
 
             this.EufyStation = await this.homey.app.eufyClient.getStation(this.HomeyDevice.station_sn);
 
+            // When we need station calls and the device is the same as the station
+            this.EufyStationDevice = await this.homey.app.eufyClient.getStationDevice(this.HomeyDevice.station_sn, 0);
+
             await this.resetCapabilities();
             await this.checkCapabilities();
             await this.setCapabilitiesListeners();
@@ -69,7 +72,7 @@ module.exports = class mainHub extends mainDevice {
 
     async onCapability_CMD_TRIGGER_RINGTONE_HUB(value) {
         this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_TRIGGER_RINGTONE_HUB - `, value);
-        await this.homey.app.eufyClient.setDeviceProperty(this.HomeyDevice.station_sn, PropertyName.DeviceChimeHomebaseRingtoneType, value);
+        await this.EufyStation.setHomebaseChimeRingtoneType(this.EufyStationDevice, value)
     }
 
     async onCapability_NTFY_TRIGGER(message, value) {

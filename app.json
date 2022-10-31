@@ -4633,6 +4633,7 @@
         "CMD_SET_ARMING_HUB",
         "CMD_TRIGGER_ALARM",
         "CMD_SET_HUB_ALARM_CLOSE",
+        "CMD_TRIGGER_RINGTONE_HUB",
         "alarm_generic"
       ],
       "name": {
@@ -4789,6 +4790,7 @@
         "CMD_SET_ARMING_HUB",
         "CMD_TRIGGER_ALARM",
         "CMD_SET_HUB_ALARM_CLOSE",
+        "CMD_TRIGGER_RINGTONE_HUB",
         "alarm_generic"
       ],
       "name": {
@@ -4945,6 +4947,7 @@
         "CMD_SET_ARMING_HUB",
         "CMD_TRIGGER_ALARM",
         "CMD_SET_HUB_ALARM_CLOSE",
+        "CMD_TRIGGER_RINGTONE_HUB",
         "alarm_generic"
       ],
       "name": {
