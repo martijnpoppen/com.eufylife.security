@@ -90,10 +90,13 @@
             lgn = e.querySelector('input[type="submit"]'),
             m = !1;
             
-            Homey.setTitle(Homey.__("$tmpl.login_credentials.title")),
+            Homey.setTitle(Homey.__("pair.login")),
             lgn.value = Homey.__("pair.login");
 
-
+            Homey.on("deviceError", function(message) {
+                Homey.alert(message)
+                return true
+            });
             
         o.addEventListener("submit", function (e) {
             if (e.preventDefault(), !m) {

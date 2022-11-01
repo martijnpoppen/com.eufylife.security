@@ -17,8 +17,6 @@ module.exports = class mainHub extends mainDevice {
             await this.checkCapabilities();
             await this.setCapabilitiesListeners();
 
-            await this.setHubNotificationSettings()
-
             await this.setAvailable();
 
             await this.setSettings({ 
@@ -26,24 +24,9 @@ module.exports = class mainHub extends mainDevice {
                 STATION_SN: this.EufyStation.getSerial(), 
                 DEVICE_SN: this.EufyStation.getSerial() 
             });
-
-            this.homey.setInterval(() => {
-                this.setHubNotificationSettings();
-            }, (30 * 60 * 1000));
         } catch (error) {
             this.setUnavailable(error);
             this.homey.app.log(error);
-        }
-    }
-
-    async setHubNotificationSettings() {
-        const settings = this.getSettings();
-        if(settings.force_switch_mode_notifications) {
-            this.homey.app.log(`[Device] ${this.getName()} - setHubNotificationSettings - StationNotificationSwitchModeApp`);
-            await this.homey.app.eufyClient.setStationProperty(this.HomeyDevice.station_sn, PropertyName.StationNotificationSwitchModeApp, true);
-
-            this.homey.app.log(`[Device] ${this.getName()} - setHubNotificationSettings - StationNotificationSwitchModeKeypad`);
-            await this.homey.app.eufyClient.setStationProperty(this.HomeyDevice.station_sn, PropertyName.StationNotificationSwitchModeKeypad, true);
         }
     }
 

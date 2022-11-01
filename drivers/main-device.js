@@ -32,7 +32,8 @@ module.exports = class mainDevice extends Homey.Device {
             await this.setSettings({ 
                 LOCAL_STATION_IP: this.EufyStation.getLANIPAddress(), 
                 STATION_SN: this.EufyStation.getSerial(), 
-                DEVICE_SN: this.EufyDevice.getSerial() 
+                DEVICE_SN: this.EufyDevice.getSerial(),
+                force_include_thumbnail: true
             });
         } catch (error) {
             this.setUnavailable(error);

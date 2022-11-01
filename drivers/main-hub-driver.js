@@ -22,6 +22,9 @@ module.exports = class mainDriver extends Homey.Driver {
             if (view === 'login_eufy' && this.homey.app.eufyClient.isConnected() && !this.deviceError) {
                 session.nextView();
                 return true;
+            } else if(view === 'login_eufy' && this.deviceError) {
+                await session.emit('deviceError', this.deviceError);
+                this.deviceError = false;
             }
 
             if (view === 'loading') {
@@ -29,7 +32,14 @@ module.exports = class mainDriver extends Homey.Driver {
 
                 this.homey.app.log(`[Driver] ${this.id} - deviceList:`, this.deviceList.length, !!this.deviceList.length);
 
-                session.nextView();
+
+                if(this.deviceList.length) {
+                    session.nextView();
+                } else {
+                    this.deviceError = this.homey.__('pair.no_devices');
+                    session.prevView();
+                }
+                
                 return true;
             }
         });
@@ -41,7 +51,7 @@ module.exports = class mainDriver extends Homey.Driver {
             const settings = this.homey.app.appSettings;
             const result = await this.homey.app.eufyLogin({ ...settings, USERNAME: username, PASSWORD: password, REGION: data.region });
             if (result === false) {
-                throw new Error(this.homey.__('pair.no_data'));
+                this.deviceError = this.homey.__('pair.no_data');
             }
 
             return result;
@@ -55,15 +65,18 @@ module.exports = class mainDriver extends Homey.Driver {
 
                 if (this._devices && this._devices.length) {
                     return this._devices;
-                } else if (this._devices && !!this._devices.error) {
-                    throw new Error(this._devices.error);
                 } else {
-                    throw new Error(this.homey.__('pair.no_devices'));
+                    this.deviceError = this.homey.__('pair.no_devices');
+
+                    session.showView('login_eufy');
+                    return [];
                 }
             } catch (error) {
                 this.homey.app.log(`[Driver] ${this.id} - Error:`, error);
-                this.deviceError = true;
-                throw new Error(error);
+                this.deviceError = error;
+
+                session.showView('login_eufy');
+                return [];
             }
         });
 
@@ -104,11 +117,11 @@ module.exports = class mainDriver extends Homey.Driver {
                 .filter((device) => !pairedDevicesArray.includes(device.rawStation.station_sn))
                 .filter((device) => deviceType.some((v) => device.rawStation.station_sn.includes(v)))
                 .map((d, i) => ({
-                    name: d.rawStation.device_name,
+                    name: d.rawStation.station_name,
                     data: {
-                        name: d.rawStation.device_name,
+                        name: d.rawStation.station_name,
                         index: i,
-                        id: `${d.rawStation.station_sn}-${d.rawStation.device_id}`,
+                        id: `${d.rawStation.station_sn}-${d.rawStation.station_id}`,
                         station_sn: d.rawStation.station_sn,
                         device_sn: d.rawStation.station_sn
                     },
