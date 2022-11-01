@@ -19,6 +19,18 @@ module.exports = class mainDriver extends Homey.Driver {
         session.setHandler('showView', async (view) => {
             this.homey.app.log(`[Driver] ${this.id} - currentView:`, view);
 
+            if(view === 'login_eufy') {
+                this.appSettings = this.homey.app.appSettings;
+
+                if(this.appSettings && this.appSettings.USERNAME) {
+                    await session.emit('set_user', this.appSettings.USERNAME);
+                }
+
+                if(this.appSettings && this.appSettings.PASSWORD) {
+                    await session.emit('set_password', this.appSettings.PASSWORD);
+                }
+            }
+
             if (view === 'login_eufy' && this.homey.app.eufyClient.isConnected() && !this.deviceError) {
                 session.nextView();
                 return true;
@@ -34,9 +46,14 @@ module.exports = class mainDriver extends Homey.Driver {
 
                 if(this.deviceList.length) {
                     session.nextView();
+                } else if(this.deviceError) {
+                    session.prevView();
+
+                    return [];
                 } else {
                     this.deviceError = this.homey.__('pair.no_devices');
                     session.prevView();
+                    return [];
                 }
 
                 return true;
@@ -62,7 +79,7 @@ module.exports = class mainDriver extends Homey.Driver {
                     this.deviceError = this.homey.__('pair.keypad');
                     
                     session.showView('login_eufy');
-                    return [[]];
+                    return [];
                 }
 
                 this._devices = await this.onDeviceListRequest(this.id);

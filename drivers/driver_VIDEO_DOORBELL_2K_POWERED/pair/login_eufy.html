@@ -93,9 +93,19 @@
             Homey.setTitle(Homey.__("pair.login")),
                         lgn.value = Homey.__("pair.login");
 
-            Homey.on("deviceError", function(message) {
+                       Homey.on("deviceError", function(message) {
                 Homey.alert(message)
                 return true
+            });
+
+            Homey.on('set_user', function (user) {
+                console.log('user', user);
+                l.value = user;
+            });
+
+            Homey.on('set_password', function (password) {
+                console.log('password', password);
+                n.value = password;
             });
             
         o.addEventListener("submit", function (e) {

@@ -98,6 +98,16 @@
                 return true
             });
 
+            Homey.on('set_user', function (user) {
+                console.log('user', user);
+                l.value = user;
+            });
+
+            Homey.on('set_password', function (password) {
+                console.log('password', password);
+                n.value = password;
+            });
+
 
             
         o.addEventListener("submit", function (e) {

@@ -89,17 +89,25 @@
             n = e.querySelector('input[name="password"]'),
             lgn = e.querySelector('input[type="submit"]'),
             m = !1;
-            
-            Homey.setTitle(Homey.__("pair.login")),
-                        lgn.value = Homey.__("pair.login");
 
-            Homey.on("deviceError", function(message) {
-                Homey.alert(message)
-                return true
-            });
+        Homey.setTitle(Homey.__("pair.login")),
+            lgn.value = Homey.__("pair.login");
 
+        Homey.on("deviceError", function (message) {
+            Homey.alert(message)
+            return true
+        });
 
-            
+        Homey.on('set_user', function (user) {
+            console.log('user', user);
+            l.value = user;
+        });
+
+        Homey.on('set_password', function (password) {
+            console.log('password', password);
+            n.value = password;
+        });
+
         o.addEventListener("submit", function (e) {
             if (e.preventDefault(), !m) {
                 m = !0,
