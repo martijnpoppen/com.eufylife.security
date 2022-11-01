@@ -1006,5 +1006,8 @@
   },
   "3.1.4": {
     "en": "FIX: issue in NotificationType"
+  },
+  "3.1.5": {
+    "en": "FIX: issue in NotificationType"
   }
 }
