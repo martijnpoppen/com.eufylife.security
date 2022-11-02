@@ -18,6 +18,7 @@
     "keypad": "Het toetsenbord is een fysiek apparaat om de beveiligingsmodus voor de Homebase in te stellen. Daarom heeft dit geen eigen functionaliteit in de Homey app. Om flows te maken op basis van of het wijzigen van beveiligingsmodi voegt u in plaats daarvan de homebase toe (als dat nog niet is gebeurd). Daar vindt u de beveiligingsmodi en stroomkaarten voor beveiligingsmodi."
   },
   "device": {
-    "init": "maakt verbinding met Eufy Server..."
+    "init": "maakt verbinding met Eufy Server...",
+    "needCaptcha": "Verbinding mislukt (Captcha vereist). Probeer het apparaat te repareren. Apparaat instellingen -> onderhoud -> repareren"
   }
 }

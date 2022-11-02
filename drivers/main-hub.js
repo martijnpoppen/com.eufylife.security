@@ -1,6 +1,5 @@
 const mainDevice = require('./main-device');
 const { ARM_TYPES } = require('../constants/capability_types');
-const { sleep } = require('../lib/utils.js');
 const { PropertyName } = require('eufy-security-client');
 
 module.exports = class mainHub extends mainDevice {

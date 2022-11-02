@@ -70,7 +70,22 @@ module.exports = class mainDriver extends Homey.Driver {
                 this.homey.app.log(`[Driver] ${this.id} - deviceList:`, this.deviceList.length, !!this.deviceList.length);
 
                 if(!!this.deviceList.length) {
-                    session.nextView();
+                    this._devices = await this.onDeviceListRequest(this.id);
+
+                    this.homey.app.log(`[Driver] ${this.id} - Found new devices:`, this._devices);
+    
+                    if (this._devices && this._devices.length) {
+                        session.nextView();
+                    } else if (this._devices && !!this._devices.info) {
+                        this.deviceError = this._devices.info;
+                        
+                        session.showView('error');
+                    } else {
+                        this.deviceError = this.homey.__('pair.no_devices');
+                        
+                        session.showView('error');
+                    }
+
                 } else if(this.homey.app.needCaptcha) {
                     this.homey.app.log(`[Driver] ${this.id} - needCaptcha`);
                     session.showView('login_captcha')
@@ -119,21 +134,7 @@ module.exports = class mainDriver extends Homey.Driver {
                     return session.showView('done');
                 }
 
-                this._devices = await this.onDeviceListRequest(this.id);
-
-                this.homey.app.log(`[Driver] ${this.id} - Found new devices:`, this._devices);
-
-                if (this._devices && this._devices.length) {
-                    return this._devices;
-                } else if (this._devices && !!this._devices.info) {
-                    this.deviceError = this._devices.info;
-                    
-                    session.showView('error');
-                } else {
-                    this.deviceError = this.homey.__('pair.no_devices');
-                    
-                    session.showView('error');
-                }
+                return this._devices;
             } catch (error) {
                 this.homey.app.log(`[Driver] ${this.id} - Error:`, error);
                 this.deviceError = error;

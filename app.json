@@ -1471,8 +1471,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -1480,8 +1479,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -1519,8 +1518,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -1528,8 +1526,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -1666,8 +1664,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -1675,8 +1672,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -1714,8 +1711,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -1723,8 +1719,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -1861,8 +1857,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -1870,8 +1865,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -1909,8 +1904,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -1918,8 +1912,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -2057,8 +2051,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -2066,8 +2059,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -2105,8 +2098,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -2114,8 +2106,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -2253,8 +2245,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -2262,8 +2253,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -2301,8 +2292,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -2310,8 +2300,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -2447,8 +2437,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -2456,8 +2445,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -2495,8 +2484,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -2504,8 +2492,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -2641,8 +2629,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -2650,8 +2637,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -2689,8 +2676,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -2698,8 +2684,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -2878,8 +2864,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -2887,8 +2872,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -2926,8 +2911,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -2935,8 +2919,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -3117,8 +3101,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -3126,8 +3109,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -3165,8 +3148,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -3174,8 +3156,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -3356,8 +3338,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -3365,8 +3346,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -3404,8 +3385,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -3413,8 +3393,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -3595,8 +3575,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -3604,8 +3583,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -3643,8 +3622,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -3652,8 +3630,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -3834,8 +3812,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -3843,8 +3820,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -3882,8 +3859,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -3891,8 +3867,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -4074,8 +4050,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -4083,8 +4058,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -4122,8 +4097,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -4131,8 +4105,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -4315,8 +4289,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -4324,8 +4297,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -4363,8 +4336,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -4372,8 +4344,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -4556,8 +4528,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -4565,8 +4536,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -4604,8 +4575,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -4613,8 +4583,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -4794,8 +4764,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -4803,8 +4772,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -4842,8 +4811,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -4851,8 +4819,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -5032,8 +5000,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -5041,8 +5008,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -5080,8 +5047,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -5089,8 +5055,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -5231,8 +5197,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -5240,8 +5205,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -5279,8 +5244,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -5288,8 +5252,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -5429,8 +5393,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -5438,8 +5401,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -5477,8 +5440,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -5486,8 +5448,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -5670,8 +5632,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -5679,8 +5640,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -5718,8 +5679,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -5727,8 +5687,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -5852,8 +5812,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -5861,8 +5820,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -5900,8 +5859,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -5909,8 +5867,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -6034,8 +5992,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -6043,8 +6000,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -6082,8 +6039,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -6091,8 +6047,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -6191,8 +6147,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -6200,8 +6155,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -6239,8 +6194,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -6248,8 +6202,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -6419,8 +6373,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -6428,8 +6381,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -6467,8 +6420,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -6476,8 +6428,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -6647,8 +6599,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -6656,8 +6607,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -6695,8 +6646,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -6704,8 +6654,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -6879,8 +6829,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -6888,8 +6837,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
@@ -6927,8 +6876,7 @@
         {
           "id": "error",
           "navigation": {
-            "prev": "login_eufy",
-            "next": "done"
+            "prev": "login_eufy"
           },
           "options": {
             "title": {
@@ -6936,8 +6884,8 @@
               "nl": "Error"
             },
             "text": {
-              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
-              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
             }
           }
         },
