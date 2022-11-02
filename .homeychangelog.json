@@ -1012,5 +1012,8 @@
   },
   "3.2.0": {
     "en": "NEW: add captcha to login | NEW: add repair option | FIX: remove settings page"
+  },
+  "3.2.1": {
+    "en": "FIX: pair and repair process"
   }
 }
