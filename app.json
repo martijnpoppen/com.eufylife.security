@@ -1,11 +1,11 @@
 {
   "id": "com.eufylife.security",
-  "version": "3.1.5",
+  "version": "3.2.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "brandColor": "#2a6185",
   "platforms": [
-    "local", "cloud"
+    "local"
   ],
   "name": {
     "en": "Eufy Security",
@@ -1414,8 +1414,12 @@
   "drivers": [
     {
       "id": "driver_EUFYCAM",
-      "platforms": ["local", "cloud"],
-      "connectivity": ["cloud"],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1432,7 +1436,9 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "eufyCam 1",
@@ -1607,8 +1613,12 @@
     },
     {
       "id": "driver_EUFYCAM_2",
-      "platforms": ["local", "cloud"],
-      "connectivity": ["cloud"],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1625,7 +1635,9 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "eufyCam 2",
@@ -1800,8 +1812,12 @@
     },
     {
       "id": "driver_EUFYCAM_2_PRO",
-      "platforms": ["local", "cloud"],
-      "connectivity": ["cloud"],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1818,7 +1834,9 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "eufyCam 2 Pro",
@@ -1993,8 +2011,12 @@
     },
     {
       "id": "driver_EUFYCAM_2C",
-      "platforms": ["local", "cloud"],
-      "connectivity": ["cloud"],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -2012,7 +2034,9 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "eufyCam 2C",
@@ -2187,8 +2211,12 @@
     },
     {
       "id": "driver_EUFYCAM_2C_PRO",
-      "platforms": ["local", "cloud"],
-      "connectivity": ["cloud"],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -2206,7 +2234,9 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "eufyCam 2C Pro",
@@ -2381,8 +2411,12 @@
     },
     {
       "id": "driver_EUFYCAM_E",
-      "platforms": ["local", "cloud"],
-      "connectivity": ["cloud"],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -2398,7 +2432,9 @@
         "NTFY_MOTION_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "eufyCam E",
@@ -2573,8 +2609,12 @@
     },
     {
       "id": "driver_FLOODLIGHT_CAMERA",
-      "platforms": ["local", "cloud"],
-      "connectivity": ["cloud"],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -2806,8 +2846,12 @@
     },
     {
       "id": "driver_FLOODLIGHT_CAM_PAN_TILT",
-      "platforms": ["local", "cloud"],
-      "connectivity": ["cloud"],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -3041,8 +3085,12 @@
     },
     {
       "id": "driver_INDOOR_CAM",
-      "platforms": ["local", "cloud"],
-      "connectivity": ["cloud"],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -3278,8 +3326,12 @@
     },
     {
       "id": "driver_INDOOR_CAM_PAN_TILT",
-      "platforms": ["local", "cloud"],
-      "connectivity": ["cloud"],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -3515,8 +3567,12 @@
     },
     {
       "id": "driver_OUTDOOR_CAM",
-      "platforms": ["local", "cloud"],
-      "connectivity": ["cloud"],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -3752,8 +3808,12 @@
     },
     {
       "id": "driver_OUTDOOR_CAM_PRO",
-      "platforms": ["local", "cloud"],
-      "connectivity": ["cloud"],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -3989,8 +4049,12 @@
     },
     {
       "id": "driver_SOLOCAM_E2040",
-      "platforms": ["local", "cloud"],
-      "connectivity": ["cloud"],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -4011,7 +4075,9 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "SoloCam E20 / E40",
@@ -4227,8 +4293,12 @@
     },
     {
       "id": "driver_SOLOCAM_L2040",
-      "platforms": ["local", "cloud"],
-      "connectivity": ["cloud"],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -4250,7 +4320,9 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "SoloCam L20 / L40",
@@ -4466,8 +4538,12 @@
     },
     {
       "id": "driver_SOLOCAM_S2040",
-      "platforms": ["local", "cloud"],
-      "connectivity": ["cloud"],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -4489,7 +4565,9 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "SoloCam (Solar) S40",
@@ -4705,8 +4783,12 @@
     },
     {
       "id": "driver_VIDEO_DOORBELL_2K_POWERED",
-      "platforms": ["local", "cloud"],
-      "connectivity": ["cloud"],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
       "class": "doorbell",
       "capabilities": [
         "onoff",
@@ -4941,8 +5023,12 @@
     },
     {
       "id": "driver_VIDEO_DOORBELL_2K_BATTERY",
-      "platforms": ["local", "cloud"],
-      "connectivity": ["cloud"],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
       "class": "doorbell",
       "capabilities": [
         "onoff",
@@ -4961,7 +5047,9 @@
         "NTFY_PRESS_DOORBELL"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "Battery Doorbell (1080P/2K)",
@@ -5136,8 +5224,12 @@
     },
     {
       "id": "driver_VIDEO_DOORBELL_DUAL_BATTERY",
-      "platforms": ["local", "cloud"],
-      "connectivity": ["cloud"],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
       "class": "doorbell",
       "capabilities": [
         "onoff",
@@ -5158,7 +5250,9 @@
         "NTFY_PRESS_DOORBELL"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "Battery Dual Doorbell",
@@ -5333,9 +5427,13 @@
     },
     {
       "id": "driver_VIDEO_DOORBELL_1080P_POWERED",
-      "platforms": ["local", "cloud"],
+      "platforms": [
+        "local"
+      ],
       "deprecated": true,
-      "connectivity": ["cloud"],
+      "connectivity": [
+        "cloud"
+      ],
       "class": "doorbell",
       "capabilities": [
         "onoff",
@@ -5570,9 +5668,13 @@
     },
     {
       "id": "driver_VIDEO_DOORBELL_1080P_BATTERY",
-      "platforms": ["local", "cloud"],
+      "platforms": [
+        "local"
+      ],
       "deprecated": true,
-      "connectivity": ["cloud"],
+      "connectivity": [
+        "cloud"
+      ],
       "class": "doorbell",
       "capabilities": [
         "onoff",
@@ -5593,7 +5695,9 @@
         "NTFY_PRESS_DOORBELL"
       ],
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "name": {
         "en": "Video Doorbell 1080p (Battery-Powered)",
@@ -5768,16 +5872,24 @@
     },
     {
       "id": "driver_DOORSENSOR",
-      "platforms": ["local", "cloud"],
-      "connectivity": ["cloud"],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
       "class": "sensor",
-      "capabilities": ["alarm_contact"],
+      "capabilities": [
+        "alarm_contact"
+      ],
       "name": {
         "en": "Doorsensor",
         "nl": "Deursensor"
       },
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "images": {
         "large": "drivers/driver_DOORSENSOR/assets/images/large.jpg",
@@ -5948,16 +6060,24 @@
     },
     {
       "id": "driver_MOTIONSENSOR",
-      "platforms": ["local", "cloud"],
-      "connectivity": ["cloud"],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
       "class": "sensor",
-      "capabilities": ["alarm_motion"],
+      "capabilities": [
+        "alarm_motion"
+      ],
       "name": {
         "en": "Motionsensor",
         "nl": "Bewegingssensor"
       },
       "energy": {
-        "batteries": ["INTERNAL"]
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "images": {
         "large": "drivers/driver_MOTIONSENSOR/assets/images/large.jpg",
@@ -6098,8 +6218,12 @@
     },
     {
       "id": "driver_HOMEBASE_1",
-      "platforms": ["local", "cloud"],
-      "connectivity": ["cloud"],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
       "class": "homealarm",
       "capabilities": [
         "alarm_arm_mode",
@@ -6324,8 +6448,12 @@
     },
     {
       "id": "driver_HOMEBASE",
-      "platforms": ["local", "cloud"],
-      "connectivity": ["cloud"],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
       "class": "homealarm",
       "capabilities": [
         "alarm_arm_mode",
@@ -6550,8 +6678,12 @@
     },
     {
       "id": "driver_HOMEBASE_CHIME",
-      "platforms": ["local", "cloud"],
-      "connectivity": ["cloud"],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
       "class": "homealarm",
       "capabilities": [
         "alarm_arm_mode",
@@ -6777,7 +6909,7 @@
     {
       "id": "driver_KEYPAD",
       "platforms": [
-        "local", "cloud"
+        "local"
       ],
       "connectivity": [
         "cloud"

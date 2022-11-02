@@ -1009,5 +1009,8 @@
   },
   "3.1.5": {
     "en": "FIX: issue in NotificationType"
+  },
+  "3.2.0": {
+    "en": "NEW: add captcha to login | NEW: add repair option | FIX: remove settings page"
   }
 }
