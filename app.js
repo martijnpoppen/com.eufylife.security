@@ -244,6 +244,8 @@ class App extends Homey.App {
             if (loggedIn) {
                 this.log('eufyCaptcha - Succes');
                 this.needCaptcha = null;
+
+                this.eufyClient.writePersistentData();
             } else {
                 return false;
             }
