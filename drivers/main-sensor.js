@@ -5,6 +5,8 @@ module.exports = class mainSensor extends mainDevice {
         try {
             this.homey.app.log(`[Device] ${this.getName()} - starting`);
 
+            this.setUnavailable(`${this.getName()} ${this.homey.__('device.init')}`);
+
             this.EufyDevice = await this.homey.app.eufyClient.getDevice(this.HomeyDevice.device_sn);
             this.EufyStation = await this.homey.app.eufyClient.getStation(this.HomeyDevice.station_sn);
     

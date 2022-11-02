@@ -17,6 +17,8 @@ module.exports = class mainDevice extends Homey.Device {
         try {
             this.homey.app.log(`[Device] ${this.getName()} - starting`);
 
+            this.setUnavailable(`${this.getName()} ${this.homey.__('device.init')}`);
+
             this.EufyDevice = await this.homey.app.eufyClient.getDevice(this.HomeyDevice.device_sn);
             this.EufyStation = await this.homey.app.eufyClient.getStation(this.HomeyDevice.station_sn);
 
@@ -72,6 +74,10 @@ module.exports = class mainDevice extends Homey.Device {
         this._image = null;
 
         await sleep(6500);
+
+        if(this.homey.app.needCaptcha) {
+            this.setUnavailable(`${this.getName()} ${this.homey.__('device.needCaptcha')}`);
+        }
     }
 
     async resetCapabilities() {

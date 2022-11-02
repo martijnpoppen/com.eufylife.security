@@ -7,6 +7,8 @@ module.exports = class mainHub extends mainDevice {
         try {
             this.homey.app.log(`[Device] ${this.getName()} - starting`);
 
+            this.setUnavailable(`${this.getName()} ${this.homey.__('device.init')}`);
+
             this.EufyStation = await this.homey.app.eufyClient.getStation(this.HomeyDevice.station_sn);
 
             // When we need station calls and the device is the same as the station
