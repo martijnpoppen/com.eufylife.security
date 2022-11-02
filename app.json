@@ -5,7 +5,7 @@
   "sdk": 3,
   "brandColor": "#2a6185",
   "platforms": [
-    "local"
+    "local", "cloud"
   ],
   "name": {
     "en": "Eufy Security",
@@ -96,14 +96,6 @@
   "homeyCommunityTopicId": 44921,
   "support": "https://community.athom.com/t/app-eufy-security/44921",
   "api": {
-    "login": {
-      "method": "put",
-      "path": "/login/"
-    },
-    "settings": {
-      "method": "put",
-      "path": "/settings/"
-    },
     "streamUrl": {
       "method": "get",
       "path": "/streamurl/",
@@ -1422,12 +1414,8 @@
   "drivers": [
     {
       "id": "driver_EUFYCAM",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local", "cloud"],
+      "connectivity": ["cloud"],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1444,9 +1432,7 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "name": {
         "en": "eufyCam 1",
@@ -1468,13 +1454,88 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -1548,12 +1609,8 @@
     },
     {
       "id": "driver_EUFYCAM_2",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local", "cloud"],
+      "connectivity": ["cloud"],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1570,9 +1627,7 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "name": {
         "en": "eufyCam 2",
@@ -1594,13 +1649,88 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -1674,12 +1804,8 @@
     },
     {
       "id": "driver_EUFYCAM_2_PRO",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local", "cloud"],
+      "connectivity": ["cloud"],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1696,9 +1822,7 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "name": {
         "en": "eufyCam 2 Pro",
@@ -1720,13 +1844,88 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -1800,12 +1999,8 @@
     },
     {
       "id": "driver_EUFYCAM_2C",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local", "cloud"],
+      "connectivity": ["cloud"],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1823,9 +2018,7 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "name": {
         "en": "eufyCam 2C",
@@ -1847,13 +2040,88 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -1927,12 +2195,8 @@
     },
     {
       "id": "driver_EUFYCAM_2C_PRO",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local", "cloud"],
+      "connectivity": ["cloud"],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -1950,9 +2214,7 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "name": {
         "en": "eufyCam 2C Pro",
@@ -1974,13 +2236,88 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -2054,12 +2391,8 @@
     },
     {
       "id": "driver_EUFYCAM_E",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local", "cloud"],
+      "connectivity": ["cloud"],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -2075,9 +2408,7 @@
         "NTFY_MOTION_DETECTION"
       ],
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "name": {
         "en": "eufyCam E",
@@ -2099,13 +2430,88 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -2179,12 +2585,8 @@
     },
     {
       "id": "driver_FLOODLIGHT_CAMERA",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local", "cloud"],
+      "connectivity": ["cloud"],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -2222,13 +2624,88 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -2343,12 +2820,8 @@
     },
     {
       "id": "driver_FLOODLIGHT_CAM_PAN_TILT",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local", "cloud"],
+      "connectivity": ["cloud"],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -2388,13 +2861,88 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -2509,12 +3057,8 @@
     },
     {
       "id": "driver_INDOOR_CAM",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local", "cloud"],
+      "connectivity": ["cloud"],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -2556,13 +3100,88 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -2677,12 +3296,8 @@
     },
     {
       "id": "driver_INDOOR_CAM_PAN_TILT",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local", "cloud"],
+      "connectivity": ["cloud"],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -2724,13 +3339,88 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -2845,12 +3535,8 @@
     },
     {
       "id": "driver_OUTDOOR_CAM",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local", "cloud"],
+      "connectivity": ["cloud"],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -2892,13 +3578,88 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -3013,12 +3774,8 @@
     },
     {
       "id": "driver_OUTDOOR_CAM_PRO",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local", "cloud"],
+      "connectivity": ["cloud"],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -3060,13 +3817,88 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -3181,12 +4013,8 @@
     },
     {
       "id": "driver_SOLOCAM_E2040",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local", "cloud"],
+      "connectivity": ["cloud"],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -3207,9 +4035,7 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "name": {
         "en": "SoloCam E20 / E40",
@@ -3231,13 +4057,88 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -3352,12 +4253,8 @@
     },
     {
       "id": "driver_SOLOCAM_L2040",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local", "cloud"],
+      "connectivity": ["cloud"],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -3379,9 +4276,7 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "name": {
         "en": "SoloCam L20 / L40",
@@ -3403,13 +4298,88 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -3524,12 +4494,8 @@
     },
     {
       "id": "driver_SOLOCAM_S2040",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local", "cloud"],
+      "connectivity": ["cloud"],
       "class": "camera",
       "capabilities": [
         "onoff",
@@ -3551,9 +4517,7 @@
         "NTFY_FACE_DETECTION"
       ],
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "name": {
         "en": "SoloCam (Solar) S40",
@@ -3575,13 +4539,88 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -3696,12 +4735,8 @@
     },
     {
       "id": "driver_VIDEO_DOORBELL_2K_POWERED",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local", "cloud"],
+      "connectivity": ["cloud"],
       "class": "doorbell",
       "capabilities": [
         "onoff",
@@ -3742,13 +4777,88 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -3863,12 +4973,8 @@
     },
     {
       "id": "driver_VIDEO_DOORBELL_2K_BATTERY",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local", "cloud"],
+      "connectivity": ["cloud"],
       "class": "doorbell",
       "capabilities": [
         "onoff",
@@ -3887,9 +4993,7 @@
         "NTFY_PRESS_DOORBELL"
       ],
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "name": {
         "en": "Battery Doorbell (1080P/2K)",
@@ -3911,13 +5015,88 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -3991,12 +5170,8 @@
     },
     {
       "id": "driver_VIDEO_DOORBELL_DUAL_BATTERY",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local", "cloud"],
+      "connectivity": ["cloud"],
       "class": "doorbell",
       "capabilities": [
         "onoff",
@@ -4017,9 +5192,7 @@
         "NTFY_PRESS_DOORBELL"
       ],
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "name": {
         "en": "Battery Dual Doorbell",
@@ -4041,13 +5214,88 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -4121,13 +5369,9 @@
     },
     {
       "id": "driver_VIDEO_DOORBELL_1080P_POWERED",
-      "platforms": [
-        "local"
-      ],
+      "platforms": ["local", "cloud"],
       "deprecated": true,
-      "connectivity": [
-        "cloud"
-      ],
+      "connectivity": ["cloud"],
       "class": "doorbell",
       "capabilities": [
         "onoff",
@@ -4168,13 +5412,88 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -4289,13 +5608,9 @@
     },
     {
       "id": "driver_VIDEO_DOORBELL_1080P_BATTERY",
-      "platforms": [
-        "local"
-      ],
+      "platforms": ["local", "cloud"],
       "deprecated": true,
-      "connectivity": [
-        "cloud"
-      ],
+      "connectivity": ["cloud"],
       "class": "doorbell",
       "capabilities": [
         "onoff",
@@ -4316,9 +5631,7 @@
         "NTFY_PRESS_DOORBELL"
       ],
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "name": {
         "en": "Video Doorbell 1080p (Battery-Powered)",
@@ -4340,13 +5653,88 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -4420,24 +5808,16 @@
     },
     {
       "id": "driver_DOORSENSOR",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local", "cloud"],
+      "connectivity": ["cloud"],
       "class": "sensor",
-      "capabilities": [
-        "alarm_contact"
-      ],
+      "capabilities": ["alarm_contact"],
       "name": {
         "en": "Doorsensor",
         "nl": "Deursensor"
       },
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "images": {
         "large": "drivers/driver_DOORSENSOR/assets/images/large.jpg",
@@ -4455,13 +5835,88 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -4535,24 +5990,16 @@
     },
     {
       "id": "driver_MOTIONSENSOR",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local", "cloud"],
+      "connectivity": ["cloud"],
       "class": "sensor",
-      "capabilities": [
-        "alarm_motion"
-      ],
+      "capabilities": ["alarm_motion"],
       "name": {
         "en": "Motionsensor",
         "nl": "Bewegingssensor"
       },
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "images": {
         "large": "drivers/driver_MOTIONSENSOR/assets/images/large.jpg",
@@ -4570,13 +6017,88 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -4620,12 +6142,8 @@
     },
     {
       "id": "driver_HOMEBASE_1",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local", "cloud"],
+      "connectivity": ["cloud"],
       "class": "homealarm",
       "capabilities": [
         "alarm_arm_mode",
@@ -4656,13 +6174,88 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -4777,12 +6370,8 @@
     },
     {
       "id": "driver_HOMEBASE",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local", "cloud"],
+      "connectivity": ["cloud"],
       "class": "homealarm",
       "capabilities": [
         "alarm_arm_mode",
@@ -4813,13 +6402,88 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -4934,12 +6598,8 @@
     },
     {
       "id": "driver_HOMEBASE_CHIME",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local", "cloud"],
+      "connectivity": ["cloud"],
       "class": "homealarm",
       "capabilities": [
         "alarm_arm_mode",
@@ -4970,13 +6630,88 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -5092,7 +6827,7 @@
     {
       "id": "driver_KEYPAD",
       "platforms": [
-        "local"
+        "local", "cloud"
       ],
       "connectivity": [
         "cloud"
@@ -5127,13 +6862,88 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "prev": "login_eufy",
             "next": "add_devices"
           }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy",
+            "next": "done"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back. Or click next<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug. Of klik verder<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ]
     }

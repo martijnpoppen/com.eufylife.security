@@ -93,10 +93,7 @@
             Homey.setTitle(Homey.__("pair.login")),
                         lgn.value = Homey.__("pair.login");
 
-                       Homey.on("deviceError", function(message) {
-                Homey.alert(message)
-                return true
-            });
+                      
 
             Homey.on('set_user', function (user) {
                 console.log('user', user);
@@ -113,7 +110,7 @@
         o.addEventListener("submit", function (e) {
             if (e.preventDefault(), !m) {
                 m = !0,
-                    Homey.showLoadingOverlay(Homey.__("$tmpl.login_credentials.loading"));
+                    Homey.showLoadingOverlay(Homey.__("pair.loading"));
                 var z = l.value,
                     r = n.value,
                     p = document.querySelector('input[name="region"]:checked').value;

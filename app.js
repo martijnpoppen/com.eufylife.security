@@ -79,6 +79,9 @@ class App extends Homey.App {
         this.eufyClientConnected = false;
         this.eufyClient = null;
 
+        this.needCaptcha = null;
+        this.need2FA = null;
+
         this.homeyLog = new Log({ homey: this.homey });
 
         this.homey.settings.getKeys().forEach((key) => {
@@ -227,9 +230,34 @@ class App extends Homey.App {
         }
     }
 
-    async checkLogin() {
+    async eufyCaptcha(data) {
         try {
-            await this.eufyClient.connect();
+            this.log(`eufyCaptcha - Found captcha. Logging in to Eufy`);
+
+            const loggedIn = await this.checkLogin({
+                captcha: {
+                    captchaCode: data,
+                    captchaId: this.needCaptcha.id
+                }
+            });
+
+            if (loggedIn) {
+                this.log('eufyCaptcha - Succes');
+                this.needCaptcha = null;
+            } else {
+                return false;
+            }
+
+            return true;
+        } catch (err) {
+            this.error(err);
+            return err;
+        }
+    }
+
+    async checkLogin(options = {}) {
+        try {
+            await this.eufyClient.connect(options);
             this.log('eufyClient connected = ' + this.eufyClient.isConnected());
 
             return this.eufyClient.isConnected();
@@ -286,8 +314,15 @@ class App extends Homey.App {
     }
 
     connectEufyClientHandlers() {
-        // this.eufyClient.on('tfa request', () => this.onTFARequest());
-        // this.eufyClient.on('captcha request', (id, captcha) => this.onCaptchaRequest(id, captcha));
+        this.eufyClient.on('tfa request', () => this.log('Event: tfa request (2FA)'));
+        this.eufyClient.on('captcha request', (id, captcha) => {
+            this.log('Event: captcha request', id);
+
+            this.needCaptcha = {
+                captcha,
+                id
+            };
+        });
         this.eufyClient.on('connect', async () => {
             this.log('Event: connected');
 
