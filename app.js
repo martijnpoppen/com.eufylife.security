@@ -333,7 +333,7 @@ class App extends Homey.App {
     }
 
     async switchRegions() {
-        await sleep(3000);
+        await sleep(4000);
         const eufyDevices = await this.eufyClient.getDevices();
 
         this.log('switchRegions', { region: this.appSettings.REGION, eufyRegionSwitchAllowed: this.eufyRegionSwitchAllowed, deviceList: this.deviceList.length, eufyDevices: eufyDevices.length });
