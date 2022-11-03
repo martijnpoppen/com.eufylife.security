@@ -1015,5 +1015,8 @@
   },
   "3.2.1": {
     "en": "FIX: pair and repair process"
+  },
+  "3.2.2": {
+    "en": "FIX: repair | FIX: issue with event helper"
   }
 }
