@@ -1,6 +1,6 @@
-const mainHub = require('../main-hub');
+const mainSensor = require('../main-sensor');
 
-module.exports = class device_KEYPAD extends mainHub {
+module.exports = class device_KEYPAD extends mainSensor {
 
 	
 }

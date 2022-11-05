@@ -67,7 +67,7 @@
             <div class="hy-tmpl-login_eufy-row row">
                 <label class="hy-label hy-tmpl-login_eufy-label" data-i18n="pair.region"></label>
                 <div class="radio-toolbar">
-                    <input id="region1" name="region" type="radio" value="EU">
+                    <input id="region1" name="region" type="radio" value="NL">
                     <label for="region1">EU</label>
                     <input id="region2" name="region" type="radio" value="US" checked>
                     <label for="region2">US</label>
@@ -90,17 +90,25 @@
             lgn = e.querySelector('input[type="submit"]'),
             m = !1;
             
-            Homey.setTitle(Homey.__("$tmpl.login_credentials.title")),
-            lgn.value = Homey.__("pair.login");
+            Homey.setTitle(Homey.__("pair.login")),
+                        lgn.value = Homey.__("pair.login");
 
-        Homey.on('error_msg', function (e) {
-            Homey.alert(e);
-        })
+                      
+
+            Homey.on('set_user', function (user) {
+                console.log('user', user);
+                l.value = user;
+            });
+
+            Homey.on('set_password', function (password) {
+                console.log('password', password);
+                n.value = password;
+            });
             
         o.addEventListener("submit", function (e) {
             if (e.preventDefault(), !m) {
                 m = !0,
-                    Homey.showLoadingOverlay(Homey.__("$tmpl.login_credentials.loading"));
+                    Homey.showLoadingOverlay(Homey.__("pair.loading"));
                 var z = l.value,
                     r = n.value,
                     p = document.querySelector('input[name="region"]:checked').value;

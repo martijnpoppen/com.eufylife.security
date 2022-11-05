@@ -1,9 +1,12 @@
 {
   "id": "com.eufylife.security",
-  "version": "2.36.9",
-  "compatibility": ">=4.2.0",
-  "sdk": 2,
+  "version": "3.2.3",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
   "brandColor": "#2a6185",
+  "platforms": [
+    "local"
+  ],
   "name": {
     "en": "Eufy Security",
     "nl": "Eufy Security"
@@ -25,7 +28,8 @@
       "Heimdall",
       "Doorbell",
       "outdoor camera",
-      "indoor camera"
+      "indoor camera",
+      "homebase"
     ],
     "nl": [
       "Video doorbell",
@@ -79,6 +83,9 @@
     "donate": {
       "paypal": {
         "username": "martijnpoppen"
+      },
+      "bunq": {
+        "username": "martijnpoppen"
       }
     }
   },
@@ -88,14 +95,11 @@
   "source": "https://github.com/martijnpoppen/com.eufylife.security",
   "homeyCommunityTopicId": 44921,
   "support": "https://community.athom.com/t/app-eufy-security/44921",
-  "discovery": {
-    "homebase_discovery": {
-      "type": "mdns-sd",
-      "mdns-sd": {
-        "protocol": "tcp",
-        "name": "_hap"
-      },
-      "id": "{{txt.id}}"
+  "api": {
+    "streamUrl": {
+      "method": "get",
+      "path": "/streamurl/",
+      "public": true
     }
   },
   "flow": {
@@ -146,6 +150,21 @@
           "en": "Person Detected",
           "nl": "Persoon Gedetecteerd"
         },
+        "hint": {
+          "en": "This flowcard will contain a known person token (Dual doorbell only)",
+          "nl": "Deze flowkaart bevat een bekend persoon token (Alleen voor Dual deurbel)"
+        },
+        "tokens": [
+          {
+            "name": "user",
+            "type": "string",
+            "title": {
+              "en": "Person",
+              "nl": "Persoon"
+            },
+            "example": "John Doe"
+          }
+        ],
         "args": [
           {
             "name": "device",
@@ -532,6 +551,90 @@
         ]
       },
       {
+        "id": "action_CMD_TRIGGER_RINGTONE_HUB",
+        "title": {
+          "en": "Trigger chime",
+          "nl": "Activeer chime"
+        },
+        "titleFormatted": {
+          "en": "Trigger chime [[action_CMD_TRIGGER_RINGTONE_HUB_TYPE]]",
+          "nl": "Activeer chime [[action_CMD_TRIGGER_RINGTONE_HUB_TYPE]]"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=driver_HOMEBASE_1|driver_HOMEBASE|driver_HOMEBASE_CHIME&capabilities=CMD_TRIGGER_RINGTONE_HUB"
+          },
+          {
+            "name": "action_CMD_TRIGGER_RINGTONE_HUB_TYPE",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "0",
+                "label": {
+                  "en": "Default"
+                }
+              },
+              {
+                "id": "1",
+                "label": {
+                  "en": "Silent"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Beacon"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Chord"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Christmas"
+                }
+              },
+              {
+                "id": "5",
+                "label": {
+                  "en": "Circuit"
+                }
+              },
+              {
+                "id": "6",
+                "label": {
+                  "en": "Clock"
+                }
+              },
+              {
+                "id": "7",
+                "label": {
+                  "en": "Ding"
+                }
+              },
+              {
+                "id": "8",
+                "label": {
+                  "en": "Hillside"
+                }
+              },
+              {
+                "id": "9",
+                "label": {
+                  "en": "Presto"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
         "id": "action_CMD_START_STREAM",
         "deprecated": true,
         "title": {
@@ -723,12 +826,12 @@
       {
         "id": "action_CMD_BAT_DOORBELL_VIDEO_QUALITY",
         "title": {
-          "en": "Toggle HDR",
-          "nl": "Zet HDR aan/uit"
+          "en": "Set Video quality",
+          "nl": "Stel Video kwaliteit in"
         },
         "titleFormatted": {
-          "en": "Toggle HDR [[action_CMD_BAT_DOORBELL_VIDEO_QUALITY_TYPE]]",
-          "nl": "Zet HDR [[action_CMD_BAT_DOORBELL_VIDEO_QUALITY_TYPE]]"
+          "en": "Set Video quality to [[action_CMD_BAT_DOORBELL_VIDEO_QUALITY_TYPE]]",
+          "nl": "Stel Video kwaliteit in aan [[action_CMD_BAT_DOORBELL_VIDEO_QUALITY_TYPE]]"
         },
         "args": [
           {
@@ -741,17 +844,59 @@
             "type": "dropdown",
             "values": [
               {
-                "id": "8",
+                "id": "0",
                 "label": {
-                  "en": "On",
-                  "nl": "Aan"
+                  "en": "Auto / Low Encoding",
+                  "nl": "Auto / Lage Encoding"
+                }
+              },
+              {
+                "id": "1",
+                "label": {
+                  "en": "Low / Low Encoding",
+                  "nl": "Laag / Lage Encoding"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Medium / Low Encoding",
+                  "nl": "Middel / Lage Encoding"
                 }
               },
               {
                 "id": "3",
                 "label": {
-                  "en": "Off",
-                  "nl": "Uit"
+                  "en": "High / Low Encoding",
+                  "nl": "Hoog / Lage Encoding"
+                }
+              },
+              {
+                "id": "5",
+                "label": {
+                  "en": "Auto / High Encoding",
+                  "nl": "Auto / Hoge Encoding"
+                }
+              },
+              {
+                "id": "6",
+                "label": {
+                  "en": "Low / High Encoding",
+                  "nl": "Laag / Hoge Encoding"
+                }
+              },
+              {
+                "id": "7",
+                "label": {
+                  "en": "Medium / High Encoding",
+                  "nl": "Middel / Hoge Encoding"
+                }
+              },
+              {
+                "id": "8",
+                "label": {
+                  "en": "High / High Encoding",
+                  "nl": "Hoog / Hoge Encoding"
                 }
               }
             ]
@@ -1269,9 +1414,11 @@
   "drivers": [
     {
       "id": "driver_EUFYCAM",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "camera",
       "capabilities": [
@@ -1303,6 +1450,13 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
@@ -1314,7 +1468,78 @@
           "template": "add_devices"
         },
         {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
           "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -1347,14 +1572,52 @@
               "value": true
             }
           ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Hub settings",
+            "nl": "Hub instellingen"
+          },
+          "children": [
+            {
+              "id": "STATION_SN",
+              "type": "label",
+              "label": {
+                "en": "Station S/N",
+                "nl": "Station S/N"
+              },
+              "value": ""
+            },
+            {
+              "id": "DEVICE_SN",
+              "type": "label",
+              "label": {
+                "en": "Device S/N",
+                "nl": "Apparaat S/N"
+              },
+              "value": ""
+            },
+            {
+              "id": "LOCAL_STATION_IP",
+              "type": "label",
+              "label": {
+                "en": "Station IP",
+                "nl": "Station IP"
+              },
+              "value": ""
+            }
+          ]
         }
       ]
     },
     {
       "id": "driver_EUFYCAM_2",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "camera",
       "capabilities": [
@@ -1386,6 +1649,13 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
@@ -1393,11 +1663,82 @@
           }
         },
         {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
           "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -1430,14 +1771,52 @@
               "value": true
             }
           ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Hub settings",
+            "nl": "Hub instellingen"
+          },
+          "children": [
+            {
+              "id": "STATION_SN",
+              "type": "label",
+              "label": {
+                "en": "Station S/N",
+                "nl": "Station S/N"
+              },
+              "value": ""
+            },
+            {
+              "id": "DEVICE_SN",
+              "type": "label",
+              "label": {
+                "en": "Device S/N",
+                "nl": "Apparaat S/N"
+              },
+              "value": ""
+            },
+            {
+              "id": "LOCAL_STATION_IP",
+              "type": "label",
+              "label": {
+                "en": "Station IP",
+                "nl": "Station IP"
+              },
+              "value": ""
+            }
+          ]
         }
       ]
     },
     {
       "id": "driver_EUFYCAM_2_PRO",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "camera",
       "capabilities": [
@@ -1469,6 +1848,13 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
@@ -1476,11 +1862,82 @@
           }
         },
         {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
           "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -1513,14 +1970,52 @@
               "value": true
             }
           ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Hub settings",
+            "nl": "Hub instellingen"
+          },
+          "children": [
+            {
+              "id": "STATION_SN",
+              "type": "label",
+              "label": {
+                "en": "Station S/N",
+                "nl": "Station S/N"
+              },
+              "value": ""
+            },
+            {
+              "id": "DEVICE_SN",
+              "type": "label",
+              "label": {
+                "en": "Device S/N",
+                "nl": "Apparaat S/N"
+              },
+              "value": ""
+            },
+            {
+              "id": "LOCAL_STATION_IP",
+              "type": "label",
+              "label": {
+                "en": "Station IP",
+                "nl": "Station IP"
+              },
+              "value": ""
+            }
+          ]
         }
       ]
     },
     {
       "id": "driver_EUFYCAM_2C",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "camera",
       "capabilities": [
@@ -1553,6 +2048,13 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
@@ -1560,11 +2062,82 @@
           }
         },
         {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
           "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -1597,14 +2170,52 @@
               "value": true
             }
           ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Hub settings",
+            "nl": "Hub instellingen"
+          },
+          "children": [
+            {
+              "id": "STATION_SN",
+              "type": "label",
+              "label": {
+                "en": "Station S/N",
+                "nl": "Station S/N"
+              },
+              "value": ""
+            },
+            {
+              "id": "DEVICE_SN",
+              "type": "label",
+              "label": {
+                "en": "Device S/N",
+                "nl": "Apparaat S/N"
+              },
+              "value": ""
+            },
+            {
+              "id": "LOCAL_STATION_IP",
+              "type": "label",
+              "label": {
+                "en": "Station IP",
+                "nl": "Station IP"
+              },
+              "value": ""
+            }
+          ]
         }
       ]
     },
     {
       "id": "driver_EUFYCAM_2C_PRO",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "camera",
       "capabilities": [
@@ -1637,6 +2248,13 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
@@ -1644,11 +2262,82 @@
           }
         },
         {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
           "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -1681,14 +2370,52 @@
               "value": true
             }
           ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Hub settings",
+            "nl": "Hub instellingen"
+          },
+          "children": [
+            {
+              "id": "STATION_SN",
+              "type": "label",
+              "label": {
+                "en": "Station S/N",
+                "nl": "Station S/N"
+              },
+              "value": ""
+            },
+            {
+              "id": "DEVICE_SN",
+              "type": "label",
+              "label": {
+                "en": "Device S/N",
+                "nl": "Apparaat S/N"
+              },
+              "value": ""
+            },
+            {
+              "id": "LOCAL_STATION_IP",
+              "type": "label",
+              "label": {
+                "en": "Station IP",
+                "nl": "Station IP"
+              },
+              "value": ""
+            }
+          ]
         }
       ]
     },
     {
       "id": "driver_EUFYCAM_E",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "camera",
       "capabilities": [
@@ -1719,6 +2446,13 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
@@ -1726,11 +2460,82 @@
           }
         },
         {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
           "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -1763,14 +2568,52 @@
               "value": true
             }
           ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Hub settings",
+            "nl": "Hub instellingen"
+          },
+          "children": [
+            {
+              "id": "STATION_SN",
+              "type": "label",
+              "label": {
+                "en": "Station S/N",
+                "nl": "Station S/N"
+              },
+              "value": ""
+            },
+            {
+              "id": "DEVICE_SN",
+              "type": "label",
+              "label": {
+                "en": "Device S/N",
+                "nl": "Apparaat S/N"
+              },
+              "value": ""
+            },
+            {
+              "id": "LOCAL_STATION_IP",
+              "type": "label",
+              "label": {
+                "en": "Station IP",
+                "nl": "Station IP"
+              },
+              "value": ""
+            }
+          ]
         }
       ]
     },
     {
       "id": "driver_FLOODLIGHT_CAMERA",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "camera",
       "capabilities": [
@@ -1799,6 +2642,13 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
@@ -1806,11 +2656,82 @@
           }
         },
         {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
           "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -1880,48 +2801,6 @@
                     "en": "off / disarmed / away",
                     "nl": "uit / uitgeschakeld / afwezig"
                   }
-                },
-                {
-                  "id": "away_custom_1",
-                  "label": {
-                    "en": "away / custom 1",
-                    "nl": "afwezig / custom 1"
-                  }
-                },
-                {
-                  "id": "away_custom_2",
-                  "label": {
-                    "en": "away / custom 2",
-                    "nl": "afwezig / custom 2"
-                  }
-                },
-                {
-                  "id": "away_custom_3",
-                  "label": {
-                    "en": "away / custom 3",
-                    "nl": "afwezig / custom 3"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_1",
-                  "label": {
-                    "en": "off / disarmed / custom 1",
-                    "nl": "uit / uitgeschakeld / custom 1"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_2",
-                  "label": {
-                    "en": "off / disarmed / custom 2",
-                    "nl": "uit / uitgeschakeld / custom 2"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_3",
-                  "label": {
-                    "en": "off / disarmed / custom 3",
-                    "nl": "uit / uitgeschakeld / custom 3"
-                  }
                 }
               ]
             }
@@ -1935,71 +2814,31 @@
           },
           "children": [
             {
-              "id": "LOCAL_STATION_IP",
-              "type": "text",
-              "label": {
-                "en": "LOCAL_STATION_IP",
-                "nl": "LOCAL_STATION_IP"
-              },
-              "value": ""
-            },
-            {
-              "id": "HUB_NAME",
-              "type": "label",
-              "label": {
-                "en": "HUB_NAME",
-                "nl": "HUB_NAME"
-              },
-              "value": ""
-            },
-            {
-              "id": "P2P_DID",
-              "type": "label",
-              "label": {
-                "en": "P2P_DID",
-                "nl": "P2P_DID"
-              },
-              "value": ""
-            },
-            {
-              "id": "ACTOR_ID",
-              "type": "label",
-              "label": {
-                "en": "ACTOR_ID",
-                "nl": "ACTOR_ID"
-              },
-              "value": ""
-            },
-            {
               "id": "STATION_SN",
               "type": "label",
               "label": {
-                "en": "STATION_SN",
-                "nl": "STATION_SN"
+                "en": "Station S/N",
+                "nl": "Station S/N"
               },
               "value": ""
             },
             {
-              "id": "DSK_KEY",
+              "id": "DEVICE_SN",
               "type": "label",
               "label": {
-                "en": "DSK_KEY",
-                "nl": "DSK_KEY"
+                "en": "Device S/N",
+                "nl": "Apparaat S/N"
               },
               "value": ""
             },
             {
-              "id": "RESET_DATA",
-              "type": "checkbox",
+              "id": "LOCAL_STATION_IP",
+              "type": "label",
               "label": {
-                "en": "Reset settings?",
-                "nl": "Instellingen resetten?"
+                "en": "Station IP",
+                "nl": "Station IP"
               },
-              "hint": {
-                "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-              },
-              "value": false
+              "value": ""
             }
           ]
         }
@@ -2007,9 +2846,11 @@
     },
     {
       "id": "driver_FLOODLIGHT_CAM_PAN_TILT",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "camera",
       "capabilities": [
@@ -2040,6 +2881,13 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
@@ -2047,11 +2895,82 @@
           }
         },
         {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
           "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -2121,48 +3040,6 @@
                     "en": "off / disarmed / away",
                     "nl": "uit / uitgeschakeld / afwezig"
                   }
-                },
-                {
-                  "id": "away_custom_1",
-                  "label": {
-                    "en": "away / custom 1",
-                    "nl": "afwezig / custom 1"
-                  }
-                },
-                {
-                  "id": "away_custom_2",
-                  "label": {
-                    "en": "away / custom 2",
-                    "nl": "afwezig / custom 2"
-                  }
-                },
-                {
-                  "id": "away_custom_3",
-                  "label": {
-                    "en": "away / custom 3",
-                    "nl": "afwezig / custom 3"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_1",
-                  "label": {
-                    "en": "off / disarmed / custom 1",
-                    "nl": "uit / uitgeschakeld / custom 1"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_2",
-                  "label": {
-                    "en": "off / disarmed / custom 2",
-                    "nl": "uit / uitgeschakeld / custom 2"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_3",
-                  "label": {
-                    "en": "off / disarmed / custom 3",
-                    "nl": "uit / uitgeschakeld / custom 3"
-                  }
                 }
               ]
             }
@@ -2176,71 +3053,31 @@
           },
           "children": [
             {
-              "id": "LOCAL_STATION_IP",
-              "type": "text",
-              "label": {
-                "en": "LOCAL_STATION_IP",
-                "nl": "LOCAL_STATION_IP"
-              },
-              "value": ""
-            },
-            {
-              "id": "HUB_NAME",
-              "type": "label",
-              "label": {
-                "en": "HUB_NAME",
-                "nl": "HUB_NAME"
-              },
-              "value": ""
-            },
-            {
-              "id": "P2P_DID",
-              "type": "label",
-              "label": {
-                "en": "P2P_DID",
-                "nl": "P2P_DID"
-              },
-              "value": ""
-            },
-            {
-              "id": "ACTOR_ID",
-              "type": "label",
-              "label": {
-                "en": "ACTOR_ID",
-                "nl": "ACTOR_ID"
-              },
-              "value": ""
-            },
-            {
               "id": "STATION_SN",
               "type": "label",
               "label": {
-                "en": "STATION_SN",
-                "nl": "STATION_SN"
+                "en": "Station S/N",
+                "nl": "Station S/N"
               },
               "value": ""
             },
             {
-              "id": "DSK_KEY",
+              "id": "DEVICE_SN",
               "type": "label",
               "label": {
-                "en": "DSK_KEY",
-                "nl": "DSK_KEY"
+                "en": "Device S/N",
+                "nl": "Apparaat S/N"
               },
               "value": ""
             },
             {
-              "id": "RESET_DATA",
-              "type": "checkbox",
+              "id": "LOCAL_STATION_IP",
+              "type": "label",
               "label": {
-                "en": "Reset settings?",
-                "nl": "Instellingen resetten?"
+                "en": "Station IP",
+                "nl": "Station IP"
               },
-              "hint": {
-                "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-              },
-              "value": false
+              "value": ""
             }
           ]
         }
@@ -2248,9 +3085,11 @@
     },
     {
       "id": "driver_INDOOR_CAM",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "camera",
       "capabilities": [
@@ -2283,6 +3122,13 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
@@ -2290,11 +3136,82 @@
           }
         },
         {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
           "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -2364,48 +3281,6 @@
                     "en": "off / disarmed / away",
                     "nl": "uit / uitgeschakeld / afwezig"
                   }
-                },
-                {
-                  "id": "away_custom_1",
-                  "label": {
-                    "en": "away / custom 1",
-                    "nl": "afwezig / custom 1"
-                  }
-                },
-                {
-                  "id": "away_custom_2",
-                  "label": {
-                    "en": "away / custom 2",
-                    "nl": "afwezig / custom 2"
-                  }
-                },
-                {
-                  "id": "away_custom_3",
-                  "label": {
-                    "en": "away / custom 3",
-                    "nl": "afwezig / custom 3"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_1",
-                  "label": {
-                    "en": "off / disarmed / custom 1",
-                    "nl": "uit / uitgeschakeld / custom 1"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_2",
-                  "label": {
-                    "en": "off / disarmed / custom 2",
-                    "nl": "uit / uitgeschakeld / custom 2"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_3",
-                  "label": {
-                    "en": "off / disarmed / custom 3",
-                    "nl": "uit / uitgeschakeld / custom 3"
-                  }
                 }
               ]
             }
@@ -2419,71 +3294,31 @@
           },
           "children": [
             {
-              "id": "LOCAL_STATION_IP",
-              "type": "text",
-              "label": {
-                "en": "LOCAL_STATION_IP",
-                "nl": "LOCAL_STATION_IP"
-              },
-              "value": ""
-            },
-            {
-              "id": "HUB_NAME",
-              "type": "label",
-              "label": {
-                "en": "HUB_NAME",
-                "nl": "HUB_NAME"
-              },
-              "value": ""
-            },
-            {
-              "id": "P2P_DID",
-              "type": "label",
-              "label": {
-                "en": "P2P_DID",
-                "nl": "P2P_DID"
-              },
-              "value": ""
-            },
-            {
-              "id": "ACTOR_ID",
-              "type": "label",
-              "label": {
-                "en": "ACTOR_ID",
-                "nl": "ACTOR_ID"
-              },
-              "value": ""
-            },
-            {
               "id": "STATION_SN",
               "type": "label",
               "label": {
-                "en": "STATION_SN",
-                "nl": "STATION_SN"
+                "en": "Station S/N",
+                "nl": "Station S/N"
               },
               "value": ""
             },
             {
-              "id": "DSK_KEY",
+              "id": "DEVICE_SN",
               "type": "label",
               "label": {
-                "en": "DSK_KEY",
-                "nl": "DSK_KEY"
+                "en": "Device S/N",
+                "nl": "Apparaat S/N"
               },
               "value": ""
             },
             {
-              "id": "RESET_DATA",
-              "type": "checkbox",
+              "id": "LOCAL_STATION_IP",
+              "type": "label",
               "label": {
-                "en": "Reset settings?",
-                "nl": "Instellingen resetten?"
+                "en": "Station IP",
+                "nl": "Station IP"
               },
-              "hint": {
-                "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-              },
-              "value": false
+              "value": ""
             }
           ]
         }
@@ -2491,9 +3326,11 @@
     },
     {
       "id": "driver_INDOOR_CAM_PAN_TILT",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "camera",
       "capabilities": [
@@ -2526,6 +3363,13 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
@@ -2533,11 +3377,82 @@
           }
         },
         {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
           "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -2607,48 +3522,6 @@
                     "en": "off / disarmed / away",
                     "nl": "uit / uitgeschakeld / afwezig"
                   }
-                },
-                {
-                  "id": "away_custom_1",
-                  "label": {
-                    "en": "away / custom 1",
-                    "nl": "afwezig / custom 1"
-                  }
-                },
-                {
-                  "id": "away_custom_2",
-                  "label": {
-                    "en": "away / custom 2",
-                    "nl": "afwezig / custom 2"
-                  }
-                },
-                {
-                  "id": "away_custom_3",
-                  "label": {
-                    "en": "away / custom 3",
-                    "nl": "afwezig / custom 3"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_1",
-                  "label": {
-                    "en": "off / disarmed / custom 1",
-                    "nl": "uit / uitgeschakeld / custom 1"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_2",
-                  "label": {
-                    "en": "off / disarmed / custom 2",
-                    "nl": "uit / uitgeschakeld / custom 2"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_3",
-                  "label": {
-                    "en": "off / disarmed / custom 3",
-                    "nl": "uit / uitgeschakeld / custom 3"
-                  }
                 }
               ]
             }
@@ -2662,71 +3535,31 @@
           },
           "children": [
             {
-              "id": "LOCAL_STATION_IP",
-              "type": "text",
-              "label": {
-                "en": "LOCAL_STATION_IP",
-                "nl": "LOCAL_STATION_IP"
-              },
-              "value": ""
-            },
-            {
-              "id": "HUB_NAME",
-              "type": "label",
-              "label": {
-                "en": "HUB_NAME",
-                "nl": "HUB_NAME"
-              },
-              "value": ""
-            },
-            {
-              "id": "P2P_DID",
-              "type": "label",
-              "label": {
-                "en": "P2P_DID",
-                "nl": "P2P_DID"
-              },
-              "value": ""
-            },
-            {
-              "id": "ACTOR_ID",
-              "type": "label",
-              "label": {
-                "en": "ACTOR_ID",
-                "nl": "ACTOR_ID"
-              },
-              "value": ""
-            },
-            {
               "id": "STATION_SN",
               "type": "label",
               "label": {
-                "en": "STATION_SN",
-                "nl": "STATION_SN"
+                "en": "Station S/N",
+                "nl": "Station S/N"
               },
               "value": ""
             },
             {
-              "id": "DSK_KEY",
+              "id": "DEVICE_SN",
               "type": "label",
               "label": {
-                "en": "DSK_KEY",
-                "nl": "DSK_KEY"
+                "en": "Device S/N",
+                "nl": "Apparaat S/N"
               },
               "value": ""
             },
             {
-              "id": "RESET_DATA",
-              "type": "checkbox",
+              "id": "LOCAL_STATION_IP",
+              "type": "label",
               "label": {
-                "en": "Reset settings?",
-                "nl": "Instellingen resetten?"
+                "en": "Station IP",
+                "nl": "Station IP"
               },
-              "hint": {
-                "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-              },
-              "value": false
+              "value": ""
             }
           ]
         }
@@ -2734,9 +3567,11 @@
     },
     {
       "id": "driver_OUTDOOR_CAM",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "camera",
       "capabilities": [
@@ -2769,6 +3604,13 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
@@ -2776,11 +3618,82 @@
           }
         },
         {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
           "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -2850,48 +3763,6 @@
                     "en": "off / disarmed / away",
                     "nl": "uit / uitgeschakeld / afwezig"
                   }
-                },
-                {
-                  "id": "away_custom_1",
-                  "label": {
-                    "en": "away / custom 1",
-                    "nl": "afwezig / custom 1"
-                  }
-                },
-                {
-                  "id": "away_custom_2",
-                  "label": {
-                    "en": "away / custom 2",
-                    "nl": "afwezig / custom 2"
-                  }
-                },
-                {
-                  "id": "away_custom_3",
-                  "label": {
-                    "en": "away / custom 3",
-                    "nl": "afwezig / custom 3"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_1",
-                  "label": {
-                    "en": "off / disarmed / custom 1",
-                    "nl": "uit / uitgeschakeld / custom 1"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_2",
-                  "label": {
-                    "en": "off / disarmed / custom 2",
-                    "nl": "uit / uitgeschakeld / custom 2"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_3",
-                  "label": {
-                    "en": "off / disarmed / custom 3",
-                    "nl": "uit / uitgeschakeld / custom 3"
-                  }
                 }
               ]
             }
@@ -2905,71 +3776,31 @@
           },
           "children": [
             {
-              "id": "LOCAL_STATION_IP",
-              "type": "text",
-              "label": {
-                "en": "LOCAL_STATION_IP",
-                "nl": "LOCAL_STATION_IP"
-              },
-              "value": ""
-            },
-            {
-              "id": "HUB_NAME",
-              "type": "label",
-              "label": {
-                "en": "HUB_NAME",
-                "nl": "HUB_NAME"
-              },
-              "value": ""
-            },
-            {
-              "id": "P2P_DID",
-              "type": "label",
-              "label": {
-                "en": "P2P_DID",
-                "nl": "P2P_DID"
-              },
-              "value": ""
-            },
-            {
-              "id": "ACTOR_ID",
-              "type": "label",
-              "label": {
-                "en": "ACTOR_ID",
-                "nl": "ACTOR_ID"
-              },
-              "value": ""
-            },
-            {
               "id": "STATION_SN",
               "type": "label",
               "label": {
-                "en": "STATION_SN",
-                "nl": "STATION_SN"
+                "en": "Station S/N",
+                "nl": "Station S/N"
               },
               "value": ""
             },
             {
-              "id": "DSK_KEY",
+              "id": "DEVICE_SN",
               "type": "label",
               "label": {
-                "en": "DSK_KEY",
-                "nl": "DSK_KEY"
+                "en": "Device S/N",
+                "nl": "Apparaat S/N"
               },
               "value": ""
             },
             {
-              "id": "RESET_DATA",
-              "type": "checkbox",
+              "id": "LOCAL_STATION_IP",
+              "type": "label",
               "label": {
-                "en": "Reset settings?",
-                "nl": "Instellingen resetten?"
+                "en": "Station IP",
+                "nl": "Station IP"
               },
-              "hint": {
-                "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-              },
-              "value": false
+              "value": ""
             }
           ]
         }
@@ -2977,9 +3808,11 @@
     },
     {
       "id": "driver_OUTDOOR_CAM_PRO",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "camera",
       "capabilities": [
@@ -3012,6 +3845,13 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
@@ -3019,11 +3859,82 @@
           }
         },
         {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
           "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -3093,48 +4004,6 @@
                     "en": "off / disarmed / away",
                     "nl": "uit / uitgeschakeld / afwezig"
                   }
-                },
-                {
-                  "id": "away_custom_1",
-                  "label": {
-                    "en": "away / custom 1",
-                    "nl": "afwezig / custom 1"
-                  }
-                },
-                {
-                  "id": "away_custom_2",
-                  "label": {
-                    "en": "away / custom 2",
-                    "nl": "afwezig / custom 2"
-                  }
-                },
-                {
-                  "id": "away_custom_3",
-                  "label": {
-                    "en": "away / custom 3",
-                    "nl": "afwezig / custom 3"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_1",
-                  "label": {
-                    "en": "off / disarmed / custom 1",
-                    "nl": "uit / uitgeschakeld / custom 1"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_2",
-                  "label": {
-                    "en": "off / disarmed / custom 2",
-                    "nl": "uit / uitgeschakeld / custom 2"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_3",
-                  "label": {
-                    "en": "off / disarmed / custom 3",
-                    "nl": "uit / uitgeschakeld / custom 3"
-                  }
                 }
               ]
             }
@@ -3148,71 +4017,31 @@
           },
           "children": [
             {
-              "id": "LOCAL_STATION_IP",
-              "type": "text",
-              "label": {
-                "en": "LOCAL_STATION_IP",
-                "nl": "LOCAL_STATION_IP"
-              },
-              "value": ""
-            },
-            {
-              "id": "HUB_NAME",
-              "type": "label",
-              "label": {
-                "en": "HUB_NAME",
-                "nl": "HUB_NAME"
-              },
-              "value": ""
-            },
-            {
-              "id": "P2P_DID",
-              "type": "label",
-              "label": {
-                "en": "P2P_DID",
-                "nl": "P2P_DID"
-              },
-              "value": ""
-            },
-            {
-              "id": "ACTOR_ID",
-              "type": "label",
-              "label": {
-                "en": "ACTOR_ID",
-                "nl": "ACTOR_ID"
-              },
-              "value": ""
-            },
-            {
               "id": "STATION_SN",
               "type": "label",
               "label": {
-                "en": "STATION_SN",
-                "nl": "STATION_SN"
+                "en": "Station S/N",
+                "nl": "Station S/N"
               },
               "value": ""
             },
             {
-              "id": "DSK_KEY",
+              "id": "DEVICE_SN",
               "type": "label",
               "label": {
-                "en": "DSK_KEY",
-                "nl": "DSK_KEY"
+                "en": "Device S/N",
+                "nl": "Apparaat S/N"
               },
               "value": ""
             },
             {
-              "id": "RESET_DATA",
-              "type": "checkbox",
+              "id": "LOCAL_STATION_IP",
+              "type": "label",
               "label": {
-                "en": "Reset settings?",
-                "nl": "Instellingen resetten?"
+                "en": "Station IP",
+                "nl": "Station IP"
               },
-              "hint": {
-                "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-              },
-              "value": false
+              "value": ""
             }
           ]
         }
@@ -3220,9 +4049,11 @@
     },
     {
       "id": "driver_SOLOCAM_E2040",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "camera",
       "capabilities": [
@@ -3258,6 +4089,13 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
@@ -3265,11 +4103,82 @@
           }
         },
         {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
           "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -3339,48 +4248,6 @@
                     "en": "off / disarmed / away",
                     "nl": "uit / uitgeschakeld / afwezig"
                   }
-                },
-                {
-                  "id": "away_custom_1",
-                  "label": {
-                    "en": "away / custom 1",
-                    "nl": "afwezig / custom 1"
-                  }
-                },
-                {
-                  "id": "away_custom_2",
-                  "label": {
-                    "en": "away / custom 2",
-                    "nl": "afwezig / custom 2"
-                  }
-                },
-                {
-                  "id": "away_custom_3",
-                  "label": {
-                    "en": "away / custom 3",
-                    "nl": "afwezig / custom 3"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_1",
-                  "label": {
-                    "en": "off / disarmed / custom 1",
-                    "nl": "uit / uitgeschakeld / custom 1"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_2",
-                  "label": {
-                    "en": "off / disarmed / custom 2",
-                    "nl": "uit / uitgeschakeld / custom 2"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_3",
-                  "label": {
-                    "en": "off / disarmed / custom 3",
-                    "nl": "uit / uitgeschakeld / custom 3"
-                  }
                 }
               ]
             }
@@ -3394,71 +4261,31 @@
           },
           "children": [
             {
-              "id": "LOCAL_STATION_IP",
-              "type": "text",
-              "label": {
-                "en": "LOCAL_STATION_IP",
-                "nl": "LOCAL_STATION_IP"
-              },
-              "value": ""
-            },
-            {
-              "id": "HUB_NAME",
-              "type": "label",
-              "label": {
-                "en": "HUB_NAME",
-                "nl": "HUB_NAME"
-              },
-              "value": ""
-            },
-            {
-              "id": "P2P_DID",
-              "type": "label",
-              "label": {
-                "en": "P2P_DID",
-                "nl": "P2P_DID"
-              },
-              "value": ""
-            },
-            {
-              "id": "ACTOR_ID",
-              "type": "label",
-              "label": {
-                "en": "ACTOR_ID",
-                "nl": "ACTOR_ID"
-              },
-              "value": ""
-            },
-            {
               "id": "STATION_SN",
               "type": "label",
               "label": {
-                "en": "STATION_SN",
-                "nl": "STATION_SN"
+                "en": "Station S/N",
+                "nl": "Station S/N"
               },
               "value": ""
             },
             {
-              "id": "DSK_KEY",
+              "id": "DEVICE_SN",
               "type": "label",
               "label": {
-                "en": "DSK_KEY",
-                "nl": "DSK_KEY"
+                "en": "Device S/N",
+                "nl": "Apparaat S/N"
               },
               "value": ""
             },
             {
-              "id": "RESET_DATA",
-              "type": "checkbox",
+              "id": "LOCAL_STATION_IP",
+              "type": "label",
               "label": {
-                "en": "Reset settings?",
-                "nl": "Instellingen resetten?"
+                "en": "Station IP",
+                "nl": "Station IP"
               },
-              "hint": {
-                "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-              },
-              "value": false
+              "value": ""
             }
           ]
         }
@@ -3466,9 +4293,11 @@
     },
     {
       "id": "driver_SOLOCAM_L2040",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "camera",
       "capabilities": [
@@ -3505,6 +4334,13 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
@@ -3512,11 +4348,82 @@
           }
         },
         {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
           "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -3586,48 +4493,6 @@
                     "en": "off / disarmed / away",
                     "nl": "uit / uitgeschakeld / afwezig"
                   }
-                },
-                {
-                  "id": "away_custom_1",
-                  "label": {
-                    "en": "away / custom 1",
-                    "nl": "afwezig / custom 1"
-                  }
-                },
-                {
-                  "id": "away_custom_2",
-                  "label": {
-                    "en": "away / custom 2",
-                    "nl": "afwezig / custom 2"
-                  }
-                },
-                {
-                  "id": "away_custom_3",
-                  "label": {
-                    "en": "away / custom 3",
-                    "nl": "afwezig / custom 3"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_1",
-                  "label": {
-                    "en": "off / disarmed / custom 1",
-                    "nl": "uit / uitgeschakeld / custom 1"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_2",
-                  "label": {
-                    "en": "off / disarmed / custom 2",
-                    "nl": "uit / uitgeschakeld / custom 2"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_3",
-                  "label": {
-                    "en": "off / disarmed / custom 3",
-                    "nl": "uit / uitgeschakeld / custom 3"
-                  }
                 }
               ]
             }
@@ -3641,71 +4506,31 @@
           },
           "children": [
             {
-              "id": "LOCAL_STATION_IP",
-              "type": "text",
-              "label": {
-                "en": "LOCAL_STATION_IP",
-                "nl": "LOCAL_STATION_IP"
-              },
-              "value": ""
-            },
-            {
-              "id": "HUB_NAME",
-              "type": "label",
-              "label": {
-                "en": "HUB_NAME",
-                "nl": "HUB_NAME"
-              },
-              "value": ""
-            },
-            {
-              "id": "P2P_DID",
-              "type": "label",
-              "label": {
-                "en": "P2P_DID",
-                "nl": "P2P_DID"
-              },
-              "value": ""
-            },
-            {
-              "id": "ACTOR_ID",
-              "type": "label",
-              "label": {
-                "en": "ACTOR_ID",
-                "nl": "ACTOR_ID"
-              },
-              "value": ""
-            },
-            {
               "id": "STATION_SN",
               "type": "label",
               "label": {
-                "en": "STATION_SN",
-                "nl": "STATION_SN"
+                "en": "Station S/N",
+                "nl": "Station S/N"
               },
               "value": ""
             },
             {
-              "id": "DSK_KEY",
+              "id": "DEVICE_SN",
               "type": "label",
               "label": {
-                "en": "DSK_KEY",
-                "nl": "DSK_KEY"
+                "en": "Device S/N",
+                "nl": "Apparaat S/N"
               },
               "value": ""
             },
             {
-              "id": "RESET_DATA",
-              "type": "checkbox",
+              "id": "LOCAL_STATION_IP",
+              "type": "label",
               "label": {
-                "en": "Reset settings?",
-                "nl": "Instellingen resetten?"
+                "en": "Station IP",
+                "nl": "Station IP"
               },
-              "hint": {
-                "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-              },
-              "value": false
+              "value": ""
             }
           ]
         }
@@ -3713,9 +4538,11 @@
     },
     {
       "id": "driver_SOLOCAM_S2040",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "camera",
       "capabilities": [
@@ -3752,6 +4579,13 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
@@ -3759,11 +4593,82 @@
           }
         },
         {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
           "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -3833,48 +4738,6 @@
                     "en": "off / disarmed / away",
                     "nl": "uit / uitgeschakeld / afwezig"
                   }
-                },
-                {
-                  "id": "away_custom_1",
-                  "label": {
-                    "en": "away / custom 1",
-                    "nl": "afwezig / custom 1"
-                  }
-                },
-                {
-                  "id": "away_custom_2",
-                  "label": {
-                    "en": "away / custom 2",
-                    "nl": "afwezig / custom 2"
-                  }
-                },
-                {
-                  "id": "away_custom_3",
-                  "label": {
-                    "en": "away / custom 3",
-                    "nl": "afwezig / custom 3"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_1",
-                  "label": {
-                    "en": "off / disarmed / custom 1",
-                    "nl": "uit / uitgeschakeld / custom 1"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_2",
-                  "label": {
-                    "en": "off / disarmed / custom 2",
-                    "nl": "uit / uitgeschakeld / custom 2"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_3",
-                  "label": {
-                    "en": "off / disarmed / custom 3",
-                    "nl": "uit / uitgeschakeld / custom 3"
-                  }
                 }
               ]
             }
@@ -3888,71 +4751,31 @@
           },
           "children": [
             {
-              "id": "LOCAL_STATION_IP",
-              "type": "text",
-              "label": {
-                "en": "LOCAL_STATION_IP",
-                "nl": "LOCAL_STATION_IP"
-              },
-              "value": ""
-            },
-            {
-              "id": "HUB_NAME",
-              "type": "label",
-              "label": {
-                "en": "HUB_NAME",
-                "nl": "HUB_NAME"
-              },
-              "value": ""
-            },
-            {
-              "id": "P2P_DID",
-              "type": "label",
-              "label": {
-                "en": "P2P_DID",
-                "nl": "P2P_DID"
-              },
-              "value": ""
-            },
-            {
-              "id": "ACTOR_ID",
-              "type": "label",
-              "label": {
-                "en": "ACTOR_ID",
-                "nl": "ACTOR_ID"
-              },
-              "value": ""
-            },
-            {
               "id": "STATION_SN",
               "type": "label",
               "label": {
-                "en": "STATION_SN",
-                "nl": "STATION_SN"
+                "en": "Station S/N",
+                "nl": "Station S/N"
               },
               "value": ""
             },
             {
-              "id": "DSK_KEY",
+              "id": "DEVICE_SN",
               "type": "label",
               "label": {
-                "en": "DSK_KEY",
-                "nl": "DSK_KEY"
+                "en": "Device S/N",
+                "nl": "Apparaat S/N"
               },
               "value": ""
             },
             {
-              "id": "RESET_DATA",
-              "type": "checkbox",
+              "id": "LOCAL_STATION_IP",
+              "type": "label",
               "label": {
-                "en": "Reset settings?",
-                "nl": "Instellingen resetten?"
+                "en": "Station IP",
+                "nl": "Station IP"
               },
-              "hint": {
-                "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-              },
-              "value": false
+              "value": ""
             }
           ]
         }
@@ -3960,9 +4783,11 @@
     },
     {
       "id": "driver_VIDEO_DOORBELL_2K_POWERED",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "doorbell",
       "capabilities": [
@@ -3982,8 +4807,7 @@
         "CMD_SET_HUB_ALARM_CLOSE",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
-        "NTFY_PRESS_DOORBELL",
-        "NTFY_BACKGROUND_ACTIVE"
+        "NTFY_PRESS_DOORBELL"
       ],
       "name": {
         "en": "Wired Doorbell (1080P/2K)",
@@ -3995,6 +4819,13 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
@@ -4002,11 +4833,82 @@
           }
         },
         {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
           "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -4076,48 +4978,6 @@
                     "en": "off / disarmed / away",
                     "nl": "uit / uitgeschakeld / afwezig"
                   }
-                },
-                {
-                  "id": "away_custom_1",
-                  "label": {
-                    "en": "away / custom 1",
-                    "nl": "afwezig / custom 1"
-                  }
-                },
-                {
-                  "id": "away_custom_2",
-                  "label": {
-                    "en": "away / custom 2",
-                    "nl": "afwezig / custom 2"
-                  }
-                },
-                {
-                  "id": "away_custom_3",
-                  "label": {
-                    "en": "away / custom 3",
-                    "nl": "afwezig / custom 3"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_1",
-                  "label": {
-                    "en": "off / disarmed / custom 1",
-                    "nl": "uit / uitgeschakeld / custom 1"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_2",
-                  "label": {
-                    "en": "off / disarmed / custom 2",
-                    "nl": "uit / uitgeschakeld / custom 2"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_3",
-                  "label": {
-                    "en": "off / disarmed / custom 3",
-                    "nl": "uit / uitgeschakeld / custom 3"
-                  }
                 }
               ]
             }
@@ -4131,71 +4991,31 @@
           },
           "children": [
             {
-              "id": "LOCAL_STATION_IP",
-              "type": "text",
-              "label": {
-                "en": "LOCAL_STATION_IP",
-                "nl": "LOCAL_STATION_IP"
-              },
-              "value": ""
-            },
-            {
-              "id": "HUB_NAME",
-              "type": "label",
-              "label": {
-                "en": "HUB_NAME",
-                "nl": "HUB_NAME"
-              },
-              "value": ""
-            },
-            {
-              "id": "P2P_DID",
-              "type": "label",
-              "label": {
-                "en": "P2P_DID",
-                "nl": "P2P_DID"
-              },
-              "value": ""
-            },
-            {
-              "id": "ACTOR_ID",
-              "type": "label",
-              "label": {
-                "en": "ACTOR_ID",
-                "nl": "ACTOR_ID"
-              },
-              "value": ""
-            },
-            {
               "id": "STATION_SN",
               "type": "label",
               "label": {
-                "en": "STATION_SN",
-                "nl": "STATION_SN"
+                "en": "Station S/N",
+                "nl": "Station S/N"
               },
               "value": ""
             },
             {
-              "id": "DSK_KEY",
+              "id": "DEVICE_SN",
               "type": "label",
               "label": {
-                "en": "DSK_KEY",
-                "nl": "DSK_KEY"
+                "en": "Device S/N",
+                "nl": "Apparaat S/N"
               },
               "value": ""
             },
             {
-              "id": "RESET_DATA",
-              "type": "checkbox",
+              "id": "LOCAL_STATION_IP",
+              "type": "label",
               "label": {
-                "en": "Reset settings?",
-                "nl": "Instellingen resetten?"
+                "en": "Station IP",
+                "nl": "Station IP"
               },
-              "hint": {
-                "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-              },
-              "value": false
+              "value": ""
             }
           ]
         }
@@ -4203,9 +5023,11 @@
     },
     {
       "id": "driver_VIDEO_DOORBELL_2K_BATTERY",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "doorbell",
       "capabilities": [
@@ -4222,8 +5044,7 @@
         "CMD_BAT_DOORBELL_WDR_SWITCH",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
-        "NTFY_PRESS_DOORBELL",
-        "NTFY_BACKGROUND_ACTIVE"
+        "NTFY_PRESS_DOORBELL"
       ],
       "energy": {
         "batteries": [
@@ -4240,6 +5061,13 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
@@ -4247,11 +5075,82 @@
           }
         },
         {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
           "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -4284,14 +5183,52 @@
               "value": true
             }
           ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Hub settings",
+            "nl": "Hub instellingen"
+          },
+          "children": [
+            {
+              "id": "STATION_SN",
+              "type": "label",
+              "label": {
+                "en": "Station S/N",
+                "nl": "Station S/N"
+              },
+              "value": ""
+            },
+            {
+              "id": "DEVICE_SN",
+              "type": "label",
+              "label": {
+                "en": "Device S/N",
+                "nl": "Apparaat S/N"
+              },
+              "value": ""
+            },
+            {
+              "id": "LOCAL_STATION_IP",
+              "type": "label",
+              "label": {
+                "en": "Station IP",
+                "nl": "Station IP"
+              },
+              "value": ""
+            }
+          ]
         }
       ]
     },
     {
       "id": "driver_VIDEO_DOORBELL_DUAL_BATTERY",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "doorbell",
       "capabilities": [
@@ -4310,8 +5247,7 @@
         "CMD_BAT_DOORBELL_WDR_SWITCH",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
-        "NTFY_PRESS_DOORBELL",
-        "NTFY_BACKGROUND_ACTIVE"
+        "NTFY_PRESS_DOORBELL"
       ],
       "energy": {
         "batteries": [
@@ -4328,6 +5264,13 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
@@ -4335,11 +5278,82 @@
           }
         },
         {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
           "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -4372,15 +5386,53 @@
               "value": true
             }
           ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Hub settings",
+            "nl": "Hub instellingen"
+          },
+          "children": [
+            {
+              "id": "STATION_SN",
+              "type": "label",
+              "label": {
+                "en": "Station S/N",
+                "nl": "Station S/N"
+              },
+              "value": ""
+            },
+            {
+              "id": "DEVICE_SN",
+              "type": "label",
+              "label": {
+                "en": "Device S/N",
+                "nl": "Apparaat S/N"
+              },
+              "value": ""
+            },
+            {
+              "id": "LOCAL_STATION_IP",
+              "type": "label",
+              "label": {
+                "en": "Station IP",
+                "nl": "Station IP"
+              },
+              "value": ""
+            }
+          ]
         }
       ]
     },
     {
       "id": "driver_VIDEO_DOORBELL_1080P_POWERED",
+      "platforms": [
+        "local"
+      ],
       "deprecated": true,
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "doorbell",
       "capabilities": [
@@ -4400,8 +5452,7 @@
         "CMD_SET_HUB_ALARM_CLOSE",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
-        "NTFY_PRESS_DOORBELL",
-        "NTFY_BACKGROUND_ACTIVE"
+        "NTFY_PRESS_DOORBELL"
       ],
       "name": {
         "en": "Video Doorbell 1080p (Wired)",
@@ -4413,6 +5464,13 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
@@ -4420,11 +5478,82 @@
           }
         },
         {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
           "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -4494,48 +5623,6 @@
                     "en": "off / disarmed / away",
                     "nl": "uit / uitgeschakeld / afwezig"
                   }
-                },
-                {
-                  "id": "away_custom_1",
-                  "label": {
-                    "en": "away / custom 1",
-                    "nl": "afwezig / custom 1"
-                  }
-                },
-                {
-                  "id": "away_custom_2",
-                  "label": {
-                    "en": "away / custom 2",
-                    "nl": "afwezig / custom 2"
-                  }
-                },
-                {
-                  "id": "away_custom_3",
-                  "label": {
-                    "en": "away / custom 3",
-                    "nl": "afwezig / custom 3"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_1",
-                  "label": {
-                    "en": "off / disarmed / custom 1",
-                    "nl": "uit / uitgeschakeld / custom 1"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_2",
-                  "label": {
-                    "en": "off / disarmed / custom 2",
-                    "nl": "uit / uitgeschakeld / custom 2"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_3",
-                  "label": {
-                    "en": "off / disarmed / custom 3",
-                    "nl": "uit / uitgeschakeld / custom 3"
-                  }
                 }
               ]
             }
@@ -4549,71 +5636,31 @@
           },
           "children": [
             {
-              "id": "LOCAL_STATION_IP",
-              "type": "text",
-              "label": {
-                "en": "LOCAL_STATION_IP",
-                "nl": "LOCAL_STATION_IP"
-              },
-              "value": ""
-            },
-            {
-              "id": "HUB_NAME",
-              "type": "label",
-              "label": {
-                "en": "HUB_NAME",
-                "nl": "HUB_NAME"
-              },
-              "value": ""
-            },
-            {
-              "id": "P2P_DID",
-              "type": "label",
-              "label": {
-                "en": "P2P_DID",
-                "nl": "P2P_DID"
-              },
-              "value": ""
-            },
-            {
-              "id": "ACTOR_ID",
-              "type": "label",
-              "label": {
-                "en": "ACTOR_ID",
-                "nl": "ACTOR_ID"
-              },
-              "value": ""
-            },
-            {
               "id": "STATION_SN",
               "type": "label",
               "label": {
-                "en": "STATION_SN",
-                "nl": "STATION_SN"
+                "en": "Station S/N",
+                "nl": "Station S/N"
               },
               "value": ""
             },
             {
-              "id": "DSK_KEY",
+              "id": "DEVICE_SN",
               "type": "label",
               "label": {
-                "en": "DSK_KEY",
-                "nl": "DSK_KEY"
+                "en": "Device S/N",
+                "nl": "Apparaat S/N"
               },
               "value": ""
             },
             {
-              "id": "RESET_DATA",
-              "type": "checkbox",
+              "id": "LOCAL_STATION_IP",
+              "type": "label",
               "label": {
-                "en": "Reset settings?",
-                "nl": "Instellingen resetten?"
+                "en": "Station IP",
+                "nl": "Station IP"
               },
-              "hint": {
-                "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-              },
-              "value": false
+              "value": ""
             }
           ]
         }
@@ -4621,10 +5668,12 @@
     },
     {
       "id": "driver_VIDEO_DOORBELL_1080P_BATTERY",
+      "platforms": [
+        "local"
+      ],
       "deprecated": true,
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "doorbell",
       "capabilities": [
@@ -4643,8 +5692,7 @@
         "CMD_BAT_DOORBELL_WDR_SWITCH",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
-        "NTFY_PRESS_DOORBELL",
-        "NTFY_BACKGROUND_ACTIVE"
+        "NTFY_PRESS_DOORBELL"
       ],
       "energy": {
         "batteries": [
@@ -4661,6 +5709,13 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
@@ -4668,11 +5723,82 @@
           }
         },
         {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
           "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -4705,14 +5831,52 @@
               "value": true
             }
           ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Hub settings",
+            "nl": "Hub instellingen"
+          },
+          "children": [
+            {
+              "id": "STATION_SN",
+              "type": "label",
+              "label": {
+                "en": "Station S/N",
+                "nl": "Station S/N"
+              },
+              "value": ""
+            },
+            {
+              "id": "DEVICE_SN",
+              "type": "label",
+              "label": {
+                "en": "Device S/N",
+                "nl": "Apparaat S/N"
+              },
+              "value": ""
+            },
+            {
+              "id": "LOCAL_STATION_IP",
+              "type": "label",
+              "label": {
+                "en": "Station IP",
+                "nl": "Station IP"
+              },
+              "value": ""
+            }
+          ]
         }
       ]
     },
     {
       "id": "driver_DOORSENSOR",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "sensor",
       "capabilities": [
@@ -4733,6 +5897,13 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
@@ -4740,11 +5911,82 @@
           }
         },
         {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
           "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -4777,14 +6019,52 @@
               "value": true
             }
           ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Hub settings",
+            "nl": "Hub instellingen"
+          },
+          "children": [
+            {
+              "id": "STATION_SN",
+              "type": "label",
+              "label": {
+                "en": "Station S/N",
+                "nl": "Station S/N"
+              },
+              "value": ""
+            },
+            {
+              "id": "DEVICE_SN",
+              "type": "label",
+              "label": {
+                "en": "Device S/N",
+                "nl": "Apparaat S/N"
+              },
+              "value": ""
+            },
+            {
+              "id": "LOCAL_STATION_IP",
+              "type": "label",
+              "label": {
+                "en": "Station IP",
+                "nl": "Station IP"
+              },
+              "value": ""
+            }
+          ]
         }
       ]
     },
     {
       "id": "driver_MOTIONSENSOR",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "sensor",
       "capabilities": [
@@ -4805,6 +6085,13 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
@@ -4812,19 +6099,130 @@
           }
         },
         {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
           "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Hub settings",
+            "nl": "Hub instellingen"
+          },
+          "children": [
+            {
+              "id": "STATION_SN",
+              "type": "label",
+              "label": {
+                "en": "Station S/N",
+                "nl": "Station S/N"
+              },
+              "value": ""
+            },
+            {
+              "id": "DEVICE_SN",
+              "type": "label",
+              "label": {
+                "en": "Device S/N",
+                "nl": "Apparaat S/N"
+              },
+              "value": ""
+            },
+            {
+              "id": "LOCAL_STATION_IP",
+              "type": "label",
+              "label": {
+                "en": "Station IP",
+                "nl": "Station IP"
+              },
+              "value": ""
+            }
+          ]
         }
       ]
     },
     {
       "id": "driver_HOMEBASE_1",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "homealarm",
       "capabilities": [
@@ -4833,6 +6231,7 @@
         "CMD_SET_ARMING_HUB",
         "CMD_TRIGGER_ALARM",
         "CMD_SET_HUB_ALARM_CLOSE",
+        "CMD_TRIGGER_RINGTONE_HUB",
         "alarm_generic"
       ],
       "name": {
@@ -4845,6 +6244,13 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
@@ -4852,11 +6258,82 @@
           }
         },
         {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
           "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -4917,48 +6394,6 @@
                     "en": "off / disarmed / away",
                     "nl": "uit / uitgeschakeld / afwezig"
                   }
-                },
-                {
-                  "id": "away_custom_1",
-                  "label": {
-                    "en": "away / custom 1",
-                    "nl": "afwezig / custom 1"
-                  }
-                },
-                {
-                  "id": "away_custom_2",
-                  "label": {
-                    "en": "away / custom 2",
-                    "nl": "afwezig / custom 2"
-                  }
-                },
-                {
-                  "id": "away_custom_3",
-                  "label": {
-                    "en": "away / custom 3",
-                    "nl": "afwezig / custom 3"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_1",
-                  "label": {
-                    "en": "off / disarmed / custom 1",
-                    "nl": "uit / uitgeschakeld / custom 1"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_2",
-                  "label": {
-                    "en": "off / disarmed / custom 2",
-                    "nl": "uit / uitgeschakeld / custom 2"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_3",
-                  "label": {
-                    "en": "off / disarmed / custom 3",
-                    "nl": "uit / uitgeschakeld / custom 3"
-                  }
                 }
               ]
             },
@@ -4981,71 +6416,31 @@
           },
           "children": [
             {
-              "id": "LOCAL_STATION_IP",
-              "type": "text",
-              "label": {
-                "en": "LOCAL_STATION_IP",
-                "nl": "LOCAL_STATION_IP"
-              },
-              "value": ""
-            },
-            {
-              "id": "HUB_NAME",
-              "type": "label",
-              "label": {
-                "en": "HUB_NAME",
-                "nl": "HUB_NAME"
-              },
-              "value": ""
-            },
-            {
-              "id": "P2P_DID",
-              "type": "label",
-              "label": {
-                "en": "P2P_DID",
-                "nl": "P2P_DID"
-              },
-              "value": ""
-            },
-            {
-              "id": "ACTOR_ID",
-              "type": "label",
-              "label": {
-                "en": "ACTOR_ID",
-                "nl": "ACTOR_ID"
-              },
-              "value": ""
-            },
-            {
               "id": "STATION_SN",
               "type": "label",
               "label": {
-                "en": "STATION_SN",
-                "nl": "STATION_SN"
+                "en": "Station S/N",
+                "nl": "Station S/N"
               },
               "value": ""
             },
             {
-              "id": "DSK_KEY",
+              "id": "DEVICE_SN",
               "type": "label",
               "label": {
-                "en": "DSK_KEY",
-                "nl": "DSK_KEY"
+                "en": "Device S/N",
+                "nl": "Apparaat S/N"
               },
               "value": ""
             },
             {
-              "id": "RESET_DATA",
-              "type": "checkbox",
+              "id": "LOCAL_STATION_IP",
+              "type": "label",
               "label": {
-                "en": "Reset settings?",
-                "nl": "Instellingen resetten?"
+                "en": "Station IP",
+                "nl": "Station IP"
               },
-              "hint": {
-                "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-              },
-              "value": false
+              "value": ""
             }
           ]
         }
@@ -5053,9 +6448,11 @@
     },
     {
       "id": "driver_HOMEBASE",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "homealarm",
       "capabilities": [
@@ -5064,6 +6461,7 @@
         "CMD_SET_ARMING_HUB",
         "CMD_TRIGGER_ALARM",
         "CMD_SET_HUB_ALARM_CLOSE",
+        "CMD_TRIGGER_RINGTONE_HUB",
         "alarm_generic"
       ],
       "name": {
@@ -5076,6 +6474,13 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
@@ -5083,11 +6488,82 @@
           }
         },
         {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
           "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -5157,48 +6633,6 @@
                     "en": "off / disarmed / away",
                     "nl": "uit / uitgeschakeld / afwezig"
                   }
-                },
-                {
-                  "id": "away_custom_1",
-                  "label": {
-                    "en": "away / custom 1",
-                    "nl": "afwezig / custom 1"
-                  }
-                },
-                {
-                  "id": "away_custom_2",
-                  "label": {
-                    "en": "away / custom 2",
-                    "nl": "afwezig / custom 2"
-                  }
-                },
-                {
-                  "id": "away_custom_3",
-                  "label": {
-                    "en": "away / custom 3",
-                    "nl": "afwezig / custom 3"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_1",
-                  "label": {
-                    "en": "off / disarmed / custom 1",
-                    "nl": "uit / uitgeschakeld / custom 1"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_2",
-                  "label": {
-                    "en": "off / disarmed / custom 2",
-                    "nl": "uit / uitgeschakeld / custom 2"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_3",
-                  "label": {
-                    "en": "off / disarmed / custom 3",
-                    "nl": "uit / uitgeschakeld / custom 3"
-                  }
                 }
               ]
             }
@@ -5212,71 +6646,31 @@
           },
           "children": [
             {
-              "id": "LOCAL_STATION_IP",
-              "type": "text",
-              "label": {
-                "en": "LOCAL_STATION_IP",
-                "nl": "LOCAL_STATION_IP"
-              },
-              "value": ""
-            },
-            {
-              "id": "HUB_NAME",
-              "type": "label",
-              "label": {
-                "en": "HUB_NAME",
-                "nl": "HUB_NAME"
-              },
-              "value": ""
-            },
-            {
-              "id": "P2P_DID",
-              "type": "label",
-              "label": {
-                "en": "P2P_DID",
-                "nl": "P2P_DID"
-              },
-              "value": ""
-            },
-            {
-              "id": "ACTOR_ID",
-              "type": "label",
-              "label": {
-                "en": "ACTOR_ID",
-                "nl": "ACTOR_ID"
-              },
-              "value": ""
-            },
-            {
               "id": "STATION_SN",
               "type": "label",
               "label": {
-                "en": "STATION_SN",
-                "nl": "STATION_SN"
+                "en": "Station S/N",
+                "nl": "Station S/N"
               },
               "value": ""
             },
             {
-              "id": "DSK_KEY",
+              "id": "DEVICE_SN",
               "type": "label",
               "label": {
-                "en": "DSK_KEY",
-                "nl": "DSK_KEY"
+                "en": "Device S/N",
+                "nl": "Apparaat S/N"
               },
               "value": ""
             },
             {
-              "id": "RESET_DATA",
-              "type": "checkbox",
+              "id": "LOCAL_STATION_IP",
+              "type": "label",
               "label": {
-                "en": "Reset settings?",
-                "nl": "Instellingen resetten?"
+                "en": "Station IP",
+                "nl": "Station IP"
               },
-              "hint": {
-                "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-              },
-              "value": false
+              "value": ""
             }
           ]
         }
@@ -5284,9 +6678,11 @@
     },
     {
       "id": "driver_HOMEBASE_CHIME",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "homealarm",
       "capabilities": [
@@ -5295,6 +6691,7 @@
         "CMD_SET_ARMING_HUB",
         "CMD_TRIGGER_ALARM",
         "CMD_SET_HUB_ALARM_CLOSE",
+        "CMD_TRIGGER_RINGTONE_HUB",
         "alarm_generic"
       ],
       "name": {
@@ -5307,6 +6704,13 @@
       },
       "pair": [
         {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
@@ -5314,11 +6718,82 @@
           }
         },
         {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
           "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ],
       "settings": [
@@ -5388,48 +6863,6 @@
                     "en": "off / disarmed / away",
                     "nl": "uit / uitgeschakeld / afwezig"
                   }
-                },
-                {
-                  "id": "away_custom_1",
-                  "label": {
-                    "en": "away / custom 1",
-                    "nl": "afwezig / custom 1"
-                  }
-                },
-                {
-                  "id": "away_custom_2",
-                  "label": {
-                    "en": "away / custom 2",
-                    "nl": "afwezig / custom 2"
-                  }
-                },
-                {
-                  "id": "away_custom_3",
-                  "label": {
-                    "en": "away / custom 3",
-                    "nl": "afwezig / custom 3"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_1",
-                  "label": {
-                    "en": "off / disarmed / custom 1",
-                    "nl": "uit / uitgeschakeld / custom 1"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_2",
-                  "label": {
-                    "en": "off / disarmed / custom 2",
-                    "nl": "uit / uitgeschakeld / custom 2"
-                  }
-                },
-                {
-                  "id": "off_disarmed_custom_3",
-                  "label": {
-                    "en": "off / disarmed / custom 3",
-                    "nl": "uit / uitgeschakeld / custom 3"
-                  }
                 }
               ]
             }
@@ -5443,71 +6876,31 @@
           },
           "children": [
             {
-              "id": "LOCAL_STATION_IP",
-              "type": "text",
-              "label": {
-                "en": "LOCAL_STATION_IP",
-                "nl": "LOCAL_STATION_IP"
-              },
-              "value": ""
-            },
-            {
-              "id": "HUB_NAME",
-              "type": "label",
-              "label": {
-                "en": "HUB_NAME",
-                "nl": "HUB_NAME"
-              },
-              "value": ""
-            },
-            {
-              "id": "P2P_DID",
-              "type": "label",
-              "label": {
-                "en": "P2P_DID",
-                "nl": "P2P_DID"
-              },
-              "value": ""
-            },
-            {
-              "id": "ACTOR_ID",
-              "type": "label",
-              "label": {
-                "en": "ACTOR_ID",
-                "nl": "ACTOR_ID"
-              },
-              "value": ""
-            },
-            {
               "id": "STATION_SN",
               "type": "label",
               "label": {
-                "en": "STATION_SN",
-                "nl": "STATION_SN"
+                "en": "Station S/N",
+                "nl": "Station S/N"
               },
               "value": ""
             },
             {
-              "id": "DSK_KEY",
+              "id": "DEVICE_SN",
               "type": "label",
               "label": {
-                "en": "DSK_KEY",
-                "nl": "DSK_KEY"
+                "en": "Device S/N",
+                "nl": "Apparaat S/N"
               },
               "value": ""
             },
             {
-              "id": "RESET_DATA",
-              "type": "checkbox",
+              "id": "LOCAL_STATION_IP",
+              "type": "label",
               "label": {
-                "en": "Reset settings?",
-                "nl": "Instellingen resetten?"
+                "en": "Station IP",
+                "nl": "Station IP"
               },
-              "hint": {
-                "en": "When checking this setting above settings will be renewed from the Eufy Server",
-                "nl": "Door deze instelling aan te vinken zullen bovenstaande instellingen ververst worden van de Eufy Server"
-              },
-              "value": false
+              "value": ""
             }
           ]
         }
@@ -5515,21 +6908,38 @@
     },
     {
       "id": "driver_KEYPAD",
+      "platforms": [
+        "local"
+      ],
       "connectivity": [
-        "cloud",
-        "lan"
+        "cloud"
       ],
       "class": "homealarm",
-      "capabilities": [],
+      "capabilities": [
+        "measure_battery",
+        "measure_temperature"
+      ],
       "name": {
         "en": "Keypad",
         "nl": "Keypad"
+      },
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
       },
       "images": {
         "large": "drivers/driver_KEYPAD/assets/images/large.jpg",
         "small": "drivers/driver_KEYPAD/assets/images/small.jpg"
       },
       "pair": [
+        {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
         {
           "id": "list_devices",
           "template": "list_devices",
@@ -5538,11 +6948,82 @@
           }
         },
         {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
           "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
         },
         {
           "id": "add_devices",
           "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click back.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik terug.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
         }
       ]
     }
@@ -5766,6 +7247,16 @@
       "title": {
         "en": "Turn generic alarm off",
         "nl": "Zet algemeen alarm uit"
+      }
+    },
+    "CMD_TRIGGER_RINGTONE_HUB": {
+      "type": "string",
+      "uiComponent": null,
+      "getable": false,
+      "setable": false,
+      "title": {
+        "en": "Trigger chime",
+        "nl": "Activeer chime"
       }
     },
     "CMD_IRCUT_SWITCH": {
