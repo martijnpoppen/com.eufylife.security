@@ -49,7 +49,7 @@ module.exports = class mainDriver extends Homey.Driver {
                 }
             }
 
-            if (view === 'login_eufy' && this.homey.app.eufyClient.isConnected() && !this.deviceError) {
+            if (view === 'login_eufy' && this.homey.app.eufyClient.isConnected() && !this.deviceError && this.type === 'pair') {
                 session.nextView();
                 return true;
             }
@@ -92,7 +92,7 @@ module.exports = class mainDriver extends Homey.Driver {
 
                     return [];
                 } else {
-                    this.deviceError = this.homey.__('pair.no_devices');
+                    this.deviceError = this.type === 'repair' ? this.homey.__('pair.no_devices_repair') : this.homey.__('pair.no_devices');
                     session.showView('error');
 
                     return [];

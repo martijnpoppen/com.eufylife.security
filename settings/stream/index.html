@@ -78,10 +78,33 @@
 
             })
 
+            player.reloadSourceOnError({
+                getSource: function(reload) {
+                    player.createModal('Retrying connection with Eufy Server');
+                    // call reload() with a fresh source object
+                    // you can do this step asynchronously if you want (but the error dialog will
+                    // show up while you're waiting)
+                    reload({
+                        src: srcUrl,
+                        type: 'application/x-mpegURL'
+                    });
+                },
+                errorInterval: 5
+            });
+
             setFullscreenStyles();
 
             function errHandler (e) {
                 console.log('error', e);
+                // player.createModal('Retrying connection with Eufy Server');
+                // if (player.error().code === 4) {
+                //     this.player.retryLock = setTimeout(() => {
+                //         player.src({
+                //             src: data.url
+                //         });
+                //         player.load();
+                //     }, 5000);
+                // }
             }
         };
 
@@ -91,13 +114,13 @@
             let hls = '';
 
             if (queryParams.device_sn) {
-                var streamurl = `https://${window.location.hostname}/api/app/com.eufylife.security/streamurl?device_sn=${queryParams.device_sn}`;
+                var streamurl = `https://192-168-178-14.homey.homeylocal.com/api/app/com.eufylife.security/streamurl?device_sn=${queryParams.device_sn}`;
 
                 let response = await fetch(streamurl);
                 hls = await response.json();
             }
 
-            if(queryParams.hls) {
+            if (queryParams.hls) {
                 hls = queryParams.hls;
             }
 
