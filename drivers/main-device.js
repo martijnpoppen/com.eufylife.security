@@ -38,6 +38,7 @@ module.exports = class mainDevice extends Homey.Device {
                 force_include_thumbnail: true
             });
         } catch (error) {
+            this.setUnavailable(error);
             this.homey.app.log(error);
         }
     }

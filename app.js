@@ -361,6 +361,8 @@ class App extends Homey.App {
             this.eufyRegionSwitchAllowed = false;
             this.eufyClientConnected = true;
 
+            await sleep(4000);
+
             this.homeyEvents.emit('eufyClientConnected');
 
             this.initEvents();
