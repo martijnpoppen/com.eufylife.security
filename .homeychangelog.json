@@ -982,5 +982,8 @@
   },
   "3.2.8": {
     "en": "FIX: improve repair and reconnect "
+  },
+  "3.2.10": {
+    "en": "FIX: issue where Homebase couldn't find the first device - causing startup to break"
   }
 }
