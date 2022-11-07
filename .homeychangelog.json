@@ -985,5 +985,8 @@
   },
   "3.2.10": {
     "en": "FIX: issue where Homebase couldn't find the first device - causing startup to break"
+  },
+  "3.2.11": {
+    "en": "FIX: hub pairing"
   }
 }
