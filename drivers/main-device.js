@@ -38,7 +38,6 @@ module.exports = class mainDevice extends Homey.Device {
                 force_include_thumbnail: true
             });
         } catch (error) {
-            this.setUnavailable(error);
             this.homey.app.log(error);
         }
     }
@@ -167,7 +166,6 @@ module.exports = class mainDevice extends Homey.Device {
             return Promise.resolve(true);
         } catch (e) {
             this.homey.app.error(e);
-            return Promise.reject(e);
         }
     }
 
@@ -189,7 +187,6 @@ module.exports = class mainDevice extends Homey.Device {
             return Promise.resolve(true);
         } catch (e) {
             this.homey.app.error(e);
-            return Promise.reject(e);
         }
     }
 
@@ -211,7 +208,6 @@ module.exports = class mainDevice extends Homey.Device {
             return Promise.resolve(true);
         } catch (e) {
             this.homey.app.error(e);
-            return Promise.reject(e);
         }
     }
 
@@ -224,7 +220,6 @@ module.exports = class mainDevice extends Homey.Device {
             return Promise.resolve(true);
         } catch (e) {
             this.homey.app.error(e);
-            return Promise.reject(e);
         }
     }
 
@@ -251,7 +246,6 @@ module.exports = class mainDevice extends Homey.Device {
             return Promise.resolve(true);
         } catch (e) {
             this.homey.app.error(e);
-            return Promise.reject(e);
         }
     }
 
@@ -263,7 +257,6 @@ module.exports = class mainDevice extends Homey.Device {
             return Promise.resolve(true);
         } catch (e) {
             this.homey.app.error(e);
-            return Promise.reject(e);
         }
     }
 
@@ -275,7 +268,6 @@ module.exports = class mainDevice extends Homey.Device {
             return Promise.resolve(true);
         } catch (e) {
             this.homey.app.error(e);
-            return Promise.reject(e);
         }
     }
 
@@ -306,7 +298,6 @@ module.exports = class mainDevice extends Homey.Device {
             return Promise.resolve(true);
         } catch (e) {
             this.homey.app.error(e);
-            return Promise.reject(e);
         }
     }
 
@@ -318,7 +309,6 @@ module.exports = class mainDevice extends Homey.Device {
             return Promise.resolve(true);
         } catch (e) {
             this.homey.app.error(e);
-            return Promise.reject(e);
         }
     }
 
@@ -330,7 +320,6 @@ module.exports = class mainDevice extends Homey.Device {
             return Promise.resolve(true);
         } catch (e) {
             this.homey.app.error(e);
-            return Promise.reject(e);
         }
     }
 
@@ -342,7 +331,6 @@ module.exports = class mainDevice extends Homey.Device {
             return Promise.resolve(true);
         } catch (e) {
             this.homey.app.error(e);
-            return Promise.reject(e);
         }
     }
 
@@ -389,7 +377,6 @@ module.exports = class mainDevice extends Homey.Device {
             if (typeof e === 'object') {
                 return Promise.reject(JSON.stringify(e));
             }
-            return Promise.reject(e);
         }
     }
 
@@ -429,7 +416,6 @@ module.exports = class mainDevice extends Homey.Device {
             return Promise.resolve(true);
         } catch (e) {
             this.homey.app.error(e);
-            return Promise.reject(e);
         }
     }
 
@@ -471,7 +457,6 @@ module.exports = class mainDevice extends Homey.Device {
             return Promise.resolve(true);
         } catch (e) {
             this.homey.app.error(e);
-            return Promise.reject(e);
         }
     }
 
@@ -483,7 +468,6 @@ module.exports = class mainDevice extends Homey.Device {
             return Promise.resolve(true);
         } catch (e) {
             this.homey.app.error(e);
-            return Promise.reject(e);
         }
     }
 
