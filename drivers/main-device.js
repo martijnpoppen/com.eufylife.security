@@ -105,11 +105,6 @@ module.exports = class mainDevice extends Homey.Device {
         this.homey.app.log(`[Device] ${this.getName()} - checkCapabilities for`, driverManifest.id);
         this.homey.app.log(`[Device] ${this.getName()} - Found capabilities =>`, deviceCapabilities);
 
-        if (this.driver.id === 'driver_VIDEO_DOORBELL_1080P_POWERED' || this.driver.id === 'driver_VIDEO_DOORBELL_2K_POWERED') {
-            await this.removeCapability('CMD_SET_SNOOZE_MODE');
-            await sleep(1000);
-        }
-
         await this.updateCapabilities(driverCapabilities, deviceCapabilities);
 
         return;
