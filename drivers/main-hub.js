@@ -12,7 +12,8 @@ module.exports = class mainHub extends mainDevice {
             this.EufyStation = await this.homey.app.eufyClient.getStation(this.HomeyDevice.station_sn);
 
             // When we need station calls and the device is the same as the station
-            this.EufyStationDevice = await this.homey.app.eufyClient.getStationDevice(this.HomeyDevice.station_sn, 0);
+            const eufyDevices = await this.homey.app.eufyClient.getDevices();
+            this.EufyStationDevice = eufyDevices.find(d => d.getStationSerial() === this.EufyStation.getSerial());
 
             await this.resetCapabilities();
 
@@ -53,13 +54,17 @@ module.exports = class mainHub extends mainDevice {
             return Promise.resolve(true);
         } catch (e) {
             this.homey.app.error(e);
-            return Promise.reject(e);
         }
     }
 
     async onCapability_CMD_TRIGGER_RINGTONE_HUB(value) {
-        this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_TRIGGER_RINGTONE_HUB - `, value);
-        await this.EufyStation.setHomebaseChimeRingtoneType(this.EufyStationDevice, value)
+        try {
+            this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_TRIGGER_RINGTONE_HUB - `, value);
+            await this.EufyStation.setHomebaseChimeRingtoneType(this.EufyStationDevice, value)
+        } catch (e) {
+            this.homey.app.error(e);
+        }
+       
     }
 
     async onCapability_NTFY_TRIGGER(message, value) {
@@ -83,7 +88,6 @@ module.exports = class mainHub extends mainDevice {
             return Promise.resolve(true);
         } catch (e) {
             this.homey.app.error(e);
-            return Promise.reject(e);
         }
     }
 };

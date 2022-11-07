@@ -16,7 +16,7 @@ module.exports = class mainHubDriver extends mainDriver {
             deviceList.forEach((device) => {
                 const data = device.getData();
 
-                pairedDevicesArray.push(data.station_sn);
+                pairedDevicesArray.push(data.device_sn);
             });
 
             this.homey.app.log(`[Driver] [onDeviceListRequest] ${driverId} - pairedDevicesArray`, pairedDevicesArray);
