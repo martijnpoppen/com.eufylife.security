@@ -1,7 +1,7 @@
 const mainDevice = require('./main-device');
 
 module.exports = class mainSensor extends mainDevice {
-    async onStartup() {
+    async onStartup(initial = false) {
         try {
             this.homey.app.log(`[Device] ${this.getName()} - starting`);
 
@@ -11,8 +11,11 @@ module.exports = class mainSensor extends mainDevice {
             this.EufyStation = await this.homey.app.eufyClient.getStation(this.HomeyDevice.station_sn);
     
             await this.resetCapabilities();
-            await this.checkCapabilities();
-            await this.setCapabilitiesListeners();
+
+            if(initial) {
+                await this.checkCapabilities();
+                await this.setCapabilitiesListeners();
+            }
     
             await this.setAvailable();
 
@@ -22,7 +25,7 @@ module.exports = class mainSensor extends mainDevice {
                 DEVICE_SN: this.EufyDevice.getSerial() 
             });
         } catch (error) {
-            this.setUnavailable(error);
+            this.setUnavailable(this.homey.__('device.serial_failure'));
             this.homey.app.log(error);
         }
        

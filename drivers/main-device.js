@@ -9,11 +9,16 @@ module.exports = class mainDevice extends Homey.Device {
         await this.setupDevice();
 
         this.homey.app.homeyEvents.once('eufyClientConnected', () => {
+            const initial = true;
+            this.onStartup(initial);
+        });
+
+        this.homey.app.homeyEvents.on('eufyClientConnectedRepair', () => {
             this.onStartup();
         });
     }
 
-    async onStartup() {
+    async onStartup(initial = false) {
         try {
             this.homey.app.log(`[Device] ${this.getName()} - starting`);
 
@@ -25,9 +30,13 @@ module.exports = class mainDevice extends Homey.Device {
             this.EufyStation.rawStation.member.nick_name = 'Homey';
 
             await this.deviceImage();
+
             await this.resetCapabilities();
-            await this.checkCapabilities();
-            await this.setCapabilitiesListeners();
+            
+            if(initial) {
+                await this.checkCapabilities();
+                await this.setCapabilitiesListeners();
+            }
 
             await this.setAvailable();
 
@@ -38,7 +47,7 @@ module.exports = class mainDevice extends Homey.Device {
                 force_include_thumbnail: true
             });
         } catch (error) {
-            this.setUnavailable(error);
+            this.setUnavailable(this.homey.__('device.serial_failure'));
             this.homey.app.log(error);
         }
     }
@@ -76,7 +85,7 @@ module.exports = class mainDevice extends Homey.Device {
         await sleep(6500);
 
         if(this.homey.app.needCaptcha) {
-            this.setUnavailable(`${this.getName()} ${this.homey.__('device.needCaptcha')}`);
+            this.setUnavailable(`${this.getName()} ${this.homey.__('device.need_captcha')}`);
         }
     }
 

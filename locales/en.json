@@ -21,6 +21,8 @@
   },
   "device": {
     "init": "is connecting to Eufy Server...",
-    "needCaptcha": "Connection failed (Captcha neeeded). Try to repair the device. Device settings -> maintenance -> repair"
+    "need_captcha": "Connection failed (Captcha neeeded). Try to repair the device. Device settings -> maintenance -> repair",
+    "serial_failure": "Connection failed (Device Serial not found). Try to repair the device. Device settings -> maintenance -> repair",
+    "serial_failure_station": "Connection failed (Station Serial not found). Try to repair the device. Device settings -> maintenance -> repair"
   }
 }

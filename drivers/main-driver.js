@@ -73,6 +73,7 @@ module.exports = class mainDriver extends Homey.Driver {
                     this.homey.app.log(`[Driver] ${this.id} - Found new devices:`, this._devices);
 
                     if (this.type === 'repair') {
+                        this.homey.app.homeyEvents.emit('eufyClientConnectedRepair');
                         this.homey.app.log(`[Driver] ${this.id} - list_devices: repair mode -> Closing repair`);
                         return session.showView('done');
                     } else if (this._devices && this._devices.length) {
