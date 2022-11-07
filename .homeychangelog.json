@@ -971,55 +971,10 @@
   "2.36.9": {
     "en": "FIX: light for outdoorcam pro | NEW: add status led flowcards"
   },
-  "3.0.12": {
+  "3.2.5": {
     "en": "BREAK: Update Eufy Library | BREAK: Update to Homey SDK 3 | Check on community page for full changelog"
   },
-  "3.0.13": {
-    "en": "FIX: several fixes for new library - see community topic for more info"
-  },
-  "3.0.14": {
-    "en": "FIX: several fixes for new library - see community topic for more info"
-  },
-  "3.0.15": {
-    "en": "FIX: mobile app empty screen"
-  },
-  "3.0.16": {
-    "en": "FIX: motion image not fetched properly"
-  },
-  "3.0.17": {
-    "en": "FIX: outdate motion image "
-  },
-  "3.0.18": {
-    "en": "FIX: outdated motion image"
-  },
-  "3.1.0": {
-    "en": "FIX: alarm event | FIX: image update | NEW: trigger Doorbell sound on Homebase"
-  },
-  "3.1.1": {
-    "en": "FIX: crash in ntfy"
-  },
-  "3.1.2": {
-    "en": "FIX: force notification settings for cameras"
-  },
-  "3.1.3": {
-    "en": "FIX: issue in NotificationType"
-  },
-  "3.1.4": {
-    "en": "FIX: issue in NotificationType"
-  },
-  "3.1.5": {
-    "en": "FIX: issue in NotificationType"
-  },
-  "3.2.0": {
-    "en": "NEW: add captcha to login | NEW: add repair option | FIX: remove settings page"
-  },
-  "3.2.1": {
-    "en": "FIX: pair and repair process"
-  },
-  "3.2.2": {
-    "en": "FIX: repair | FIX: issue with event helper"
-  },
-  "3.2.3": {
-    "en": "FIX: repair | FIX: issue with event helper"
+  "3.2.6": {
+    "en": "FIX: app soft errors "
   }
 }
