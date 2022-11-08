@@ -100,6 +100,13 @@ module.exports = class mainDevice extends Homey.Device {
             await this.resetCapability('alarm_contact');
             await this.resetCapability('alarm_generic');
             await this.resetCapability('alarm_arm_mode');
+            await this.resetCapability('NTFY_MOTION_DETECTION');
+            await this.resetCapability('NTFY_FACE_DETECTION');
+            await this.resetCapability('NTFY_CRYING_DETECTED');
+            await this.resetCapability('NTFY_SOUND_DETECTED');
+            await this.resetCapability('NTFY_PET_DETECTED');
+            await this.resetCapability('NTFY_VEHICLE_DETECTED');
+            await this.resetCapability('NTFY_PRESS_DOORBELL');
         } catch (error) {
             this.homey.app.log(error);
         }

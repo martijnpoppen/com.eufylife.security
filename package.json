@@ -8,7 +8,6 @@
   },
   "dependencies": {
     "consola": "^2.15.3",
-    "eufy-security-client": "^2.2.2",
     "homey-log": "^2.1.0",
     "node-fetch": "^2.6.1"
   },
