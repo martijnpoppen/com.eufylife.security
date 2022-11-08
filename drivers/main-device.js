@@ -2,7 +2,7 @@ const Homey = require('homey');
 const fetch = require('node-fetch');
 const { ARM_TYPES } = require('../constants/capability_types');
 const { sleep } = require('../lib/utils.js');
-const { PropertyName } = require('eufy-security-client');
+const { PropertyName } = require('../lib/eufy-homey-client');
 
 module.exports = class mainDevice extends Homey.Device {
     async onInit() {

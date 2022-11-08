@@ -8,8 +8,12 @@
   },
   "dependencies": {
     "consola": "^2.15.3",
-    "eufy-security-client": "^2.2.0-rc.2",
+    "eufy-security-client": "^2.2.2",
     "homey-log": "^2.1.0",
     "node-fetch": "^2.6.1"
+  },
+  "scripts": {
+    "prepare": "if [ ! -d \"./lib/eufy-homey-client\" ]; then git clone --branch feature/homey-integration https://github.com/martijnpoppen/eufy-security-client.git ./lib/eufy-homey-client && cd ./lib/eufy-homey-client && npm i --production && rm -rf ./src ./wireshark ./frida ./.vscode ./docs ./.github ./.git && cd ..; fi;",
+    "sync": "rm -rf ./lib/eufy-homey-client && git clone --branch feature/homey-integration https://github.com/martijnpoppen/eufy-security-client.git ./lib/eufy-homey-client && cd ./lib/eufy-homey-client && npm i --production && rm -rf ./src ./wireshark ./frida ./.vscode ./docs ./.github ./.git && cd ..;"
   }
 }

@@ -98,3 +98,4 @@ build/
 
 # Added by Homey CLI
 /.homeybuild/
+eufy-homey-client

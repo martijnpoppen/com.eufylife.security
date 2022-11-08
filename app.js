@@ -5,7 +5,7 @@ const path = require('path');
 
 const { EventEmitter } = require('events');
 
-const { EufySecurity } = require('eufy-security-client');
+const { EufySecurity } = require('./lib/eufy-node-client');
 
 const { DEVICE_TYPES } = require('./constants/device_types.js');
 
