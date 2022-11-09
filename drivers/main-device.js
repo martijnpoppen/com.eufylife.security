@@ -34,17 +34,17 @@ module.exports = class mainDevice extends Homey.Device {
             await this.deviceImage();
 
             await this.resetCapabilities();
-            
-            if(initial) {
+
+            if (initial) {
                 await this.checkCapabilities();
                 await this.setCapabilitiesListeners();
             }
 
             await this.setAvailable();
 
-            await this.setSettings({ 
-                LOCAL_STATION_IP: this.EufyStation.getLANIPAddress(), 
-                STATION_SN: this.EufyStation.getSerial(), 
+            await this.setSettings({
+                LOCAL_STATION_IP: this.EufyStation.getLANIPAddress(),
+                STATION_SN: this.EufyStation.getSerial(),
                 DEVICE_SN: this.EufyDevice.getSerial(),
                 force_include_thumbnail: true
             });
@@ -90,7 +90,7 @@ module.exports = class mainDevice extends Homey.Device {
 
         await sleep(6500);
 
-        if(this.homey.app.needCaptcha) {
+        if (this.homey.app.needCaptcha) {
             this.setUnavailable(`${this.getName()} ${this.homey.__('device.need_captcha')}`);
         }
     }
@@ -450,31 +450,30 @@ module.exports = class mainDevice extends Homey.Device {
                 this.setCameraImage(this.HomeyDevice.station_sn, this.getName(), this._image).catch(this.err);
             }
 
+            await this._image.setStream(async (stream) => {
+                const imagePath = this.EufyDevice.getLastCameraImageURL();
 
-                await this._image.setStream(async (stream) => {
-                    const imagePath = this.EufyDevice.getLastCameraImageURL();
+                this.homey.app.log(`[Device] ${this.getName()} - Setting image - `, imagePath);
 
-                    this.homey.app.log(`[Device] ${this.getName()} - Setting image - `, imagePath);
-                    
-                    if(imagePath && imagePath.length) {
-                        let res = await fetch(imagePath);
-    
-                        if (!res.ok) {
-                            this.homey.app.log(`[Device] ${this.getName()} - Couldnt fetch image - Retry: `, res.url);
-                            console.log(res.status)
-                            res = await fetch(res.url);
-                        }
+                if (imagePath && imagePath.length) {
+                    let res = await fetch(imagePath);
 
-                        if (!res.ok) {
-                            this.homey.app.log(`[Device] ${this.getName()} - Couldnt fetch image - Failed: `, res.url);
-                            throw new Error('Cannot fetch image from Eufy Server');
-                        }
-
-                        this.homey.app.log(`[Device] ${this.getName()} - fetch image - Succes: `, res.url);
-
-                        return res.body.pipe(stream);
+                    if (!res.ok) {
+                        this.homey.app.log(`[Device] ${this.getName()} - Couldnt fetch image - Retry: `, res.url);
+                        console.log(res.status);
+                        res = await fetch(res.url);
                     }
-                });
+
+                    if (!res.ok) {
+                        this.homey.app.log(`[Device] ${this.getName()} - Couldnt fetch image - Failed: `, res.url);
+                        throw new Error('Cannot fetch image from Eufy Server');
+                    }
+
+                    this.homey.app.log(`[Device] ${this.getName()} - fetch image - Succes: `, res.url);
+
+                    return res.body.pipe(stream);
+                }
+            });
 
             return Promise.resolve(true);
         } catch (e) {
@@ -495,26 +494,28 @@ module.exports = class mainDevice extends Homey.Device {
     }
 
     async set_alarm_arm_mode(value) {
-        const settings = this.getSettings();
+        if (this.hasCapability('alarm_arm_mode')) {
+            const settings = this.getSettings();
 
-        if (settings.alarm_arm_mode && settings.alarm_arm_mode !== 'disabled') {
-            const values = settings.alarm_arm_mode.split('_');
+            if (settings.alarm_arm_mode && settings.alarm_arm_mode !== 'disabled') {
+                const values = settings.alarm_arm_mode.split('_');
 
-            this.homey.app.log(`[Device] ${this.getName()} - set_alarm_arm_mode: ${settings.alarm_arm_mode} - value: `, value, values.includes(value));
+                this.homey.app.log(`[Device] ${this.getName()} - set_alarm_arm_mode: ${settings.alarm_arm_mode} - value: `, value, values.includes(value));
 
-            await this.setCapabilityValue('alarm_arm_mode', values.includes(value));
-        } else {
-            this.homey.app.log(`[Device] ${this.getName()} - set_alarm_arm_mode: ${settings.alarm_arm_mode}`, false);
+                await this.setCapabilityValue('alarm_arm_mode', values.includes(value));
+            } else {
+                this.homey.app.log(`[Device] ${this.getName()} - set_alarm_arm_mode: ${settings.alarm_arm_mode}`, false);
 
-            await this.setCapabilityValue('alarm_arm_mode', false);
+                await this.setCapabilityValue('alarm_arm_mode', false);
+            }
         }
     }
 
     async check_alarm_arm_mode(settings) {
-        if(settings.alarm_arm_mode === 'disabled' && this.hasCapability('alarm_arm_mode')) {
+        if (settings.alarm_arm_mode === 'disabled' && this.hasCapability('alarm_arm_mode')) {
             this.homey.app.log(`[Device] ${this.getName()} - check_alarm_arm_mode: removing alarm_arm_mode`);
             this.removeCapability('alarm_arm_mode');
-        } else if(!!settings.alarm_arm_mode && !this.hasCapability('alarm_arm_mode')) {
+        } else if (!!settings.alarm_arm_mode && !this.hasCapability('alarm_arm_mode')) {
             this.homey.app.log(`[Device] ${this.getName()} - check_alarm_arm_mode: adding alarm_arm_mode`);
             this.addCapability('alarm_arm_mode');
         }
