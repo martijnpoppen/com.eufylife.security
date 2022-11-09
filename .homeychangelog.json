@@ -991,5 +991,8 @@
   },
   "3.2.12": {
     "en": "FIX: errors with wrong station_sn | FIX: various tweaks and fixes"
+  },
+  "3.2.13": {
+    "en": "FIX: errors with wrong station_sn | FIX: various tweaks and fixes"
   }
 }
