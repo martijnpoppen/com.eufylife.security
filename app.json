@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "3.2.11",
+  "version": "3.2.12",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "brandColor": "#2a6185",
@@ -104,24 +104,6 @@
   },
   "flow": {
     "triggers": [
-      {
-        "id": "trigger_NTFY_BACKGROUND_ACTIVE",
-        "title": {
-          "en": "Background movement Detected",
-          "nl": "Achtergrond Beweging Gedetecteerd"
-        },
-        "titleFormatted": {
-          "en": "Background movement Detected",
-          "nl": "Achtergrond Beweging Gedetecteerd"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_1080P_BATTERY&capabilities=NTFY_BACKGROUND_ACTIVE"
-          }
-        ]
-      },
       {
         "id": "trigger_NTFY_MOTION_DETECTION",
         "title": {
@@ -7337,29 +7319,6 @@
       "title": {
         "en": "Status LED",
         "nl": "Status LED"
-      }
-    },
-    "NTFY_BACKGROUND_ACTIVE": {
-      "type": "boolean",
-      "uiComponent": "sensor",
-      "getable": true,
-      "setable": true,
-      "icon": "assets/icons/motion.svg",
-      "options": {
-        "zoneActivity": true
-      },
-      "insights": true,
-      "insightsTitleTrue": {
-        "en": "Background movement Detected - on",
-        "nl": "Achtergrond Bewegings Gedetecteerd - aan"
-      },
-      "insightsTitleFalse": {
-        "en": "Background movement Detected - off",
-        "nl": "Achtergrond Bewegings Gedetecteerd - uit"
-      },
-      "title": {
-        "en": "Background movement Detected",
-        "nl": "Achtergrond Beweging Gedetecteerd"
       }
     },
     "NTFY_MOTION_DETECTION": {

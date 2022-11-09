@@ -91,6 +91,7 @@ class App extends Homey.App {
         });
 
         this.homeyEvents = new EventEmitter();
+        this.homeyEvents.setMaxListeners(100);
     }
 
     async initSettings() {
