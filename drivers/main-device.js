@@ -25,6 +25,8 @@ module.exports = class mainDevice extends Homey.Device {
             this.setUnavailable(`${this.getName()} ${this.homey.__('device.init')}`);
 
             this.EufyDevice = await this.homey.app.eufyClient.getDevice(this.HomeyDevice.device_sn);
+            this.HomeyDevice.station_sn = await this.EufyDevice.getStationSerial();
+
             this.EufyStation = await this.homey.app.eufyClient.getStation(this.HomeyDevice.station_sn);
 
             this.EufyStation.rawStation.member.nick_name = 'Homey';
@@ -479,6 +481,7 @@ module.exports = class mainDevice extends Homey.Device {
 
                 await this._image.setStream(async (stream) => {
                     const imagePath = this.EufyDevice.getLastCameraImageURL();
+
                     this.homey.app.log(`[Device] ${this.getName()} - Setting image - `, imagePath);
                     
                     if(imagePath && imagePath.length) {

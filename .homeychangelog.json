@@ -988,5 +988,8 @@
   },
   "3.2.11": {
     "en": "FIX: hub pairing"
+  },
+  "3.2.12": {
+    "en": "FIX: errors with wrong station_sn | FIX: various tweaks and fixes"
   }
 }
