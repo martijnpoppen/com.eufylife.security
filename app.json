@@ -183,10 +183,6 @@
           "en": "Crying Detected",
           "nl": "Huilen Gedetecteerd"
         },
-        "hint": {
-            "en": "This flowcard will only work for Indoor cameras / Homebase 3 connected cameras",
-            "nl": "Deze flowkaart werkt alleen voor Indoor cameras en Homebase 3 cameras"
-          },
         "args": [
           {
             "name": "device",
@@ -205,10 +201,6 @@
           "en": "Sound Detected",
           "nl": "Geluid Gedetecteerd"
         },
-        "hint": {
-            "en": "This flowcard will only work for Indoor cameras / Homebase 3 connected cameras",
-            "nl": "Deze flowkaart werkt alleen voor Indoor cameras en Homebase 3 cameras"
-          },
         "args": [
           {
             "name": "device",
@@ -229,7 +221,7 @@
         },
         "hint": {
             "en": "This flowcard will only work for Indoor cameras / Homebase 3 connected cameras",
-            "nl": "Deze flowkaart werkt alleen voor Indoor cameras en Homebase 3 cameras"
+            "nl": "Deze flowkaart werkt alleen voor Indoor cameras / Homebase 3 verbonden cameras"
           },
         "args": [
           {
@@ -250,8 +242,8 @@
           "nl": "Voertuig Gedetecteerd"
         },
         "hint": {
-            "en": "This flowcard will only work for Indoor cameras / Homebase 3 connected cameras",
-            "nl": "Deze flowkaart werkt alleen voor Indoor cameras en Homebase 3 cameras"
+            "en": "This flowcard will only work for Homebase 3 connected cameras",
+            "nl": "Deze flowkaart werkt alleen voor Homebase 3 verbonden cameras"
           },
         "args": [
           {
@@ -1450,8 +1442,6 @@
         "CMD_SET_SNOOZE_MODE_HOMEBASE",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
-         "NTFY_CRYING_DETECTED",
-        "NTFY_SOUND_DETECTED",
         "NTFY_PET_DETECTED",
         "NTFY_VEHICLE_DETECTED",
         "NTFY_VEHICLE_DETECTED"
@@ -1654,8 +1644,6 @@
         "CMD_SET_SNOOZE_MODE_HOMEBASE",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
-         "NTFY_CRYING_DETECTED",
-        "NTFY_SOUND_DETECTED",
         "NTFY_PET_DETECTED",
         "NTFY_VEHICLE_DETECTED"
       ],
@@ -1665,8 +1653,8 @@
         ]
       },
       "name": {
-        "en": "eufyCam 2",
-        "nl": "eufyCam 2"
+        "en": "eufyCam 2 / 2 Pro",
+        "nl": "eufyCam 2 / 2 Pro"
       },
       "images": {
         "large": "drivers/driver_EUFYCAM_2/assets/images/large.jpg",
@@ -1836,6 +1824,7 @@
       ]
     },
     {
+      "deprecated": true,
       "id": "driver_EUFYCAM_2_PRO",
       "platforms": [
         "local"
@@ -1857,8 +1846,6 @@
         "CMD_SET_SNOOZE_MODE_HOMEBASE",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
-         "NTFY_CRYING_DETECTED",
-        "NTFY_SOUND_DETECTED",
         "NTFY_PET_DETECTED",
         "NTFY_VEHICLE_DETECTED"
       ],
@@ -2061,8 +2048,6 @@
         "CMD_SET_FLOODLIGHT_MANUAL_SWITCH",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
-         "NTFY_CRYING_DETECTED",
-        "NTFY_SOUND_DETECTED",
         "NTFY_PET_DETECTED",
         "NTFY_VEHICLE_DETECTED"
       ],
@@ -2072,8 +2057,8 @@
         ]
       },
       "name": {
-        "en": "eufyCam 2C",
-        "nl": "eufyCam 2C"
+        "en": "eufyCam 2C / 2C (Pro)",
+        "nl": "eufyCam 2C / 2C (Pro)"
       },
       "images": {
         "large": "drivers/driver_EUFYCAM_2C/assets/images/large.jpg",
@@ -2243,6 +2228,7 @@
       ]
     },
     {
+      "deprecated": true,
       "id": "driver_EUFYCAM_2C_PRO",
       "platforms": [
         "local"
@@ -2265,8 +2251,6 @@
         "CMD_SET_FLOODLIGHT_MANUAL_SWITCH",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
-         "NTFY_CRYING_DETECTED",
-        "NTFY_SOUND_DETECTED",
         "NTFY_PET_DETECTED",
         "NTFY_VEHICLE_DETECTED"
       ],
@@ -2468,8 +2452,7 @@
           "CMD_SET_SNOOZE_MODE_HOMEBASE",
           "NTFY_MOTION_DETECTION",
           "NTFY_FACE_DETECTION",
-           "NTFY_CRYING_DETECTED",
-        "NTFY_SOUND_DETECTED",
+
         "NTFY_PET_DETECTED",
         "NTFY_VEHICLE_DETECTED"
         ],
@@ -2672,8 +2655,7 @@
           "CMD_SET_FLOODLIGHT_MANUAL_SWITCH",
           "NTFY_MOTION_DETECTION",
           "NTFY_FACE_DETECTION",
-           "NTFY_CRYING_DETECTED",
-        "NTFY_SOUND_DETECTED",
+
         "NTFY_PET_DETECTED",
         "NTFY_VEHICLE_DETECTED"
         ],
@@ -3075,8 +3057,6 @@
         "CMD_SET_HUB_ALARM_CLOSE",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
-         "NTFY_CRYING_DETECTED",
-        "NTFY_SOUND_DETECTED",
         "NTFY_PET_DETECTED",
         "NTFY_VEHICLE_DETECTED"
       ],
@@ -3318,8 +3298,6 @@
         "CMD_SET_HUB_ALARM_CLOSE",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
-         "NTFY_CRYING_DETECTED",
-        "NTFY_SOUND_DETECTED",
         "NTFY_PET_DETECTED",
         "NTFY_VEHICLE_DETECTED"
       ],
@@ -4050,8 +4028,8 @@
         "NTFY_VEHICLE_DETECTED"
       ],
       "name": {
-        "en": "Outdoor Cam",
-        "nl": "Outdoor Cam"
+        "en": "Outdoor Cam / Cam Pro",
+        "nl": "Outdoor Cam / Cam Pro"
       },
       "images": {
         "large": "drivers/driver_OUTDOOR_CAM/assets/images/large.jpg",
@@ -4262,6 +4240,7 @@
       ]
     },
     {
+      "deprecated": true,
       "id": "driver_OUTDOOR_CAM_PRO",
       "platforms": [
         "local"
@@ -4529,8 +4508,6 @@
         "CMD_SET_HUB_ALARM_CLOSE",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
-         "NTFY_CRYING_DETECTED",
-        "NTFY_SOUND_DETECTED",
         "NTFY_PET_DETECTED",
         "NTFY_VEHICLE_DETECTED"
       ],
@@ -4778,8 +4755,6 @@
         "CMD_SET_HUB_ALARM_CLOSE",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
-         "NTFY_CRYING_DETECTED",
-        "NTFY_SOUND_DETECTED",
         "NTFY_PET_DETECTED",
         "NTFY_VEHICLE_DETECTED"
       ],
@@ -5027,8 +5002,6 @@
         "CMD_SET_HUB_ALARM_CLOSE",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
-         "NTFY_CRYING_DETECTED",
-        "NTFY_SOUND_DETECTED",
         "NTFY_PET_DETECTED",
         "NTFY_VEHICLE_DETECTED"
       ],
@@ -5275,8 +5248,6 @@
         "CMD_SET_HUB_ALARM_CLOSE",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
-         "NTFY_CRYING_DETECTED",
-        "NTFY_SOUND_DETECTED",
         "NTFY_PET_DETECTED",
         "NTFY_VEHICLE_DETECTED",
         "NTFY_PRESS_DOORBELL"
@@ -5516,8 +5487,6 @@
         "CMD_BAT_DOORBELL_WDR_SWITCH",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
-         "NTFY_CRYING_DETECTED",
-        "NTFY_SOUND_DETECTED",
         "NTFY_PET_DETECTED",
         "NTFY_VEHICLE_DETECTED",
         "NTFY_PRESS_DOORBELL"
@@ -5723,8 +5692,6 @@
         "CMD_BAT_DOORBELL_WDR_SWITCH",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
-         "NTFY_CRYING_DETECTED",
-        "NTFY_SOUND_DETECTED",
         "NTFY_PET_DETECTED",
         "NTFY_VEHICLE_DETECTED",
         "NTFY_PRESS_DOORBELL"
@@ -5932,8 +5899,6 @@
         "CMD_SET_HUB_ALARM_CLOSE",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
-         "NTFY_CRYING_DETECTED",
-        "NTFY_SOUND_DETECTED",
         "NTFY_PET_DETECTED",
         "NTFY_VEHICLE_DETECTED",
         "NTFY_PRESS_DOORBELL"
@@ -6176,8 +6141,6 @@
         "CMD_BAT_DOORBELL_WDR_SWITCH",
         "NTFY_MOTION_DETECTION",
         "NTFY_FACE_DETECTION",
-        "NTFY_CRYING_DETECTED",
-        "NTFY_SOUND_DETECTED",
         "NTFY_PET_DETECTED",
         "NTFY_VEHICLE_DETECTED",
         "NTFY_PRESS_DOORBELL"

@@ -71,7 +71,11 @@ module.exports = class mainDevice extends Homey.Device {
         this.homey.app.log(`[Device] ${this.getName()} - onSettings - Old/New`, oldSettings, newSettings);
 
         if (changedKeys.includes('alarm_generic_enabled')) {
-            this.resetCapability('alarm_generic');
+            this.check_alarm_generic(newSettings);
+        }
+
+        if (changedKeys.includes('alarm_motion_enabled')) {
+            this.check_alarm_motion(newSettings);
         }
 
         if (changedKeys.includes('alarm_arm_mode')) {
@@ -86,7 +90,8 @@ module.exports = class mainDevice extends Homey.Device {
 
         const deviceObject = this.getData();
         this.HomeyDevice = deviceObject;
-        this.HomeyDevice.isStandAlone = deviceObject.device_sn === deviceObject.station_sn;
+        this.HomeyDevice.isStandAlone = this.HomeyDevice.device_sn === this.HomeyDevice.station_sn;
+
         this._image = null;
 
         await sleep(6500);
@@ -141,7 +146,7 @@ module.exports = class mainDevice extends Homey.Device {
             let deleteCapabilities = ['NTFY_VEHICLE_DETECTED'];
 
             if(!this.HomeyDevice.isStandAlone) {
-                deleteCapabilities = [...deleteCapabilities, 'NTFY_CRYING_DETECTED', 'NTFY_SOUND_DETECTED', 'NTFY_PET_DETECTED', 'NTFY_VEHICLE_DETECTED']
+                deleteCapabilities = [...deleteCapabilities, 'NTFY_PET_DETECTED']
             }
             
             this.homey.app.log(`[Device] ${this.getName()} - checkCapabities - Homebase 3 not found - Removing: `, deleteCapabilities);
@@ -152,6 +157,8 @@ module.exports = class mainDevice extends Homey.Device {
         await this.updateCapabilities(driverCapabilities, deviceCapabilities);
 
         await this.check_alarm_arm_mode(settings);
+        await this.check_alarm_generic(settings);
+        await this.check_alarm_motion(settings);
 
         return;
     }
@@ -546,6 +553,26 @@ module.exports = class mainDevice extends Homey.Device {
         } else if (!!settings.alarm_arm_mode && !this.hasCapability('alarm_arm_mode')) {
             this.homey.app.log(`[Device] ${this.getName()} - check_alarm_arm_mode: adding alarm_arm_mode`);
             this.addCapability('alarm_arm_mode');
+        }
+    }
+
+    async check_alarm_motion(settings) {
+        if('alarm_motion_enabled' in settings && !settings.alarm_motion_enabled && this.hasCapability('alarm_motion')) {
+            this.homey.app.log(`[Device] ${this.getName()} - check_alarm_motion: removing alarm_motion`);
+            this.removeCapability('alarm_motion');
+        } else if('alarm_motion_enabled' in settings && !!settings.alarm_motion_enabled && !this.hasCapability('alarm_motion')) {
+            this.homey.app.log(`[Device] ${this.getName()} - check_alarm_motion: adding alarm_motion`);
+            this.addCapability('alarm_motion');
+        }
+    }
+
+    async check_alarm_generic(settings) {
+        if('alarm_generic_enabled' in settings && !settings.alarm_generic_enabled && this.hasCapability('alarm_generic')) {
+            this.homey.app.log(`[Device] ${this.getName()} - check_alarm_generic: removing alarm_generic`);
+            this.removeCapability('alarm_generic');
+        } else if('alarm_generic_enabled' in settings && !!settings.alarm_generic_enabled && !this.hasCapability('alarm_generic')) {
+            this.homey.app.log(`[Device] ${this.getName()} - check_alarm_generic: adding alarm_generic`);
+            this.addCapability('alarm_generic');
         }
     }
 };
