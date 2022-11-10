@@ -997,5 +997,8 @@
   },
   "3.2.14": {
     "en": "FIX: missing capability"
+  },
+  "3.3.0": {
+    "en": "NEW: support Homebase 3"
   }
 }
