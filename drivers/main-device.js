@@ -533,7 +533,11 @@ module.exports = class mainDevice extends Homey.Device {
             const settings = this.getSettings();
 
             if (settings.alarm_arm_mode && settings.alarm_arm_mode !== 'disabled') {
-                const values = settings.alarm_arm_mode.split('_');
+                const modes = settings.alarm_arm_mode.split('_');
+
+                const values = modes.map(x =>x
+                    .replace('-', '_')
+                );
 
                 this.homey.app.log(`[Device] ${this.getName()} - set_alarm_arm_mode: ${settings.alarm_arm_mode} - value: `, value, values.includes(value));
 
