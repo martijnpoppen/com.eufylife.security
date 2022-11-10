@@ -1000,5 +1000,8 @@
   },
   "3.3.0": {
     "en": "NEW: support Homebase 3"
+  },
+  "3.3.1": {
+    "en": "FIX: re-add alarm arm modes"
   }
 }
