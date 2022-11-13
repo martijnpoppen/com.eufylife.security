@@ -1006,5 +1006,8 @@
   },
   "3.3.2": {
     "en": "FIX: improve error loggin"
+  },
+  "3.3.3": {
+    "en": "FIX: deprecation warning"
   }
 }

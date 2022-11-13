@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "3.3.2",
+  "version": "3.3.3",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "brandColor": "#2a6185",
@@ -3313,6 +3313,7 @@
       ]
     },
     {
+      "deprecated": true,
       "id": "driver_FLOODLIGHT_CAM_PAN_TILT",
       "platforms": [
         "local"
@@ -3880,6 +3881,7 @@
       ]
     },
     {
+      "deprecated": true,
       "id": "driver_INDOOR_CAM_PAN_TILT",
       "platforms": [
         "local"
