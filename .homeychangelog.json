@@ -1012,5 +1012,8 @@
   },
   "3.3.4": {
     "en": "FIX: remove deprecation warning on combined devices"
+  },
+  "3.3.5": {
+    "en": "FIX: battery status not updating"
   }
 }
