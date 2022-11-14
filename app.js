@@ -121,11 +121,11 @@ class App extends Homey.App {
                     await this.updateSettings(this.appSettings);
                 }
 
-                // Temp disable this until the new app version is live.
-                // if ('CREDENTIALS' in this.appSettings) {
-                //     delete this.appSettings.CREDENTIALS;
-                //     await this.updateSettings(this.appSettings);
-                // }
+                if ('CREDENTIALS' in this.appSettings) {
+                    delete this.appSettings.CREDENTIALS;
+                    delete this.appSettings.SET_CREDENTIALS;
+                    await this.updateSettings(this.appSettings);
+                }
 
                 if (!('NOTIFICATIONS' in this.appSettings)) {
                     await this.updateSettings({
@@ -294,7 +294,7 @@ class App extends Homey.App {
                 country: settings.REGION,
                 language: 'EN',
                 persistentDir: path.resolve(__dirname, '/userdata/'),
-                trustedDeviceName: 'Homey',
+                trustedDeviceName: undefined,
                 acceptInvitations: true,
                 pollingIntervalMinutes: 15
             };

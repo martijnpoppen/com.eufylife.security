@@ -48,6 +48,8 @@ module.exports = class mainDevice extends Homey.Device {
                 DEVICE_SN: this.EufyDevice.getSerial(),
                 force_include_thumbnail: true
             });
+
+            await this.EufyStation.getCameraInfo();
         } catch (error) {
             this.setUnavailable(this.homey.__('device.serial_failure'));
             this.homey.app.log(error);
@@ -84,7 +86,7 @@ module.exports = class mainDevice extends Homey.Device {
     }
 
     async setupDevice() {
-        this.homey.app.log('[Device] - init =>', this.getName());
+        this.homey.app.log(`[Device] - init => ${this.driver.id} - name: ${this.getName()}`);
 
         this.unsetWarning();
         this.setUnavailable(`${this.getName()} ${this.homey.__('device.init')}`);

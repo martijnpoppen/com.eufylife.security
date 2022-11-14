@@ -3,7 +3,7 @@ const { sleep } = require('../lib/utils.js');
 
 module.exports = class mainDriver extends Homey.Driver {
     onInit() {
-        this.homey.app.log('[Driver] - init', this.id, this.driverType());
+        this.homey.app.log(`[Driver] - init: ${this.id} - type: ${this.driverType()}`);
 
         this.homey.app.setDevices(this.getDevices());
     }
