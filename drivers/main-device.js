@@ -86,6 +86,7 @@ module.exports = class mainDevice extends Homey.Device {
     async setupDevice() {
         this.homey.app.log('[Device] - init =>', this.getName());
 
+        this.unsetWarning();
         this.setUnavailable(`${this.getName()} ${this.homey.__('device.init')}`);
 
         const deviceObject = this.getData();
@@ -477,12 +478,13 @@ module.exports = class mainDevice extends Homey.Device {
 
     async deviceImage() {
         try {
+            this.unsetWarning();
             if (!this._image) {
                 this._image = await this.homey.images.createImage();
 
                 this.homey.app.log(`[Device] ${this.getName()} - Registering Device image`);
 
-                this.setCameraImage(this.HomeyDevice.station_sn, this.getName(), this._image).catch(this.err);
+                this.setCameraImage(this.HomeyDevice.station_sn, this.getName(), this._image).catch(err => console.log(err));
             }
 
             await this._image.setStream(async (stream) => {

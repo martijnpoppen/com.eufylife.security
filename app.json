@@ -3313,7 +3313,6 @@
       ]
     },
     {
-      "deprecated": true,
       "id": "driver_FLOODLIGHT_CAM_PAN_TILT",
       "platforms": [
         "local"
@@ -3881,7 +3880,6 @@
       ]
     },
     {
-      "deprecated": true,
       "id": "driver_INDOOR_CAM_PAN_TILT",
       "platforms": [
         "local"
