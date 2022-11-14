@@ -1009,5 +1009,8 @@
   },
   "3.3.3": {
     "en": "FIX: deprecation warning"
+  },
+  "3.3.4": {
+    "en": "FIX: remove deprecation warning on combined devices"
   }
 }
