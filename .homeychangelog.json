@@ -997,5 +997,17 @@
   },
   "3.2.14": {
     "en": "FIX: missing capability"
+  },
+  "3.3.0": {
+    "en": "NEW: support Homebase 3"
+  },
+  "3.3.1": {
+    "en": "FIX: re-add alarm arm modes"
+  },
+  "3.3.2": {
+    "en": "FIX: improve error loggin"
+  },
+  "3.3.3": {
+    "en": "FIX: deprecation warning"
   }
 }
