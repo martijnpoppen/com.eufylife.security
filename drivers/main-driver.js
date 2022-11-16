@@ -127,11 +127,6 @@ module.exports = class mainDriver extends Homey.Driver {
             return result;
         });
 
-            session.showView('loading');
-
-            return result;
-        });
-
         session.setHandler('list_devices', async () => {
             try {
                 return this._devices;
