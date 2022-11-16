@@ -1015,5 +1015,8 @@
   },
   "3.3.5": {
     "en": "FIX: battery status not updating"
+  },
+  "3.3.6": {
+    "en": "FIX: Flowcards for Status-Led and Light | FIX: Issue with refresh for Homebase 1"
   }
 }
