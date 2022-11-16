@@ -63,6 +63,7 @@ module.exports = class mainDriver extends Homey.Driver {
             }
 
             if (view === 'loading') {
+                await sleep(3000);
                 this.deviceList = await waitForResults(this);
 
                 this.homey.app.log(`[Driver] ${this.id} - deviceList:`, this.deviceList.length, !!this.deviceList.length);
@@ -121,7 +122,10 @@ module.exports = class mainDriver extends Homey.Driver {
 
             this.deviceError = false;
 
-            await sleep(3000);
+            session.showView('loading');
+
+            return result;
+        });
 
             session.showView('loading');
 

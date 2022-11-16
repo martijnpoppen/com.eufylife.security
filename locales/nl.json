@@ -21,6 +21,7 @@
   "device": {
     "init": "maakt verbinding met Eufy Server...",
     "need_captcha": "Verbinding mislukt (Captcha vereist). Probeer het apparaat te repareren. Apparaat instellingen -> onderhoud -> repareren",
+    "need_2FA": "Verbinding mislukt (2FA vereist). Probeer het apparaat te repareren. Apparaat instellingen -> onderhoud -> repareren",
     "serial_failure": "Verbinding mislukt (Device Serial niet gevonden). Probeer het apparaat te repareren. Apparaat instellingen -> onderhoud -> repareren",
     "serial_failure_station": "Verbinding mislukt (Station Serial niet gevonden). Probeer het apparaat te repareren. Apparaat instellingen -> onderhoud -> repareren"
   }
