@@ -1018,5 +1018,11 @@
   },
   "3.3.6": {
     "en": "FIX: Flowcards for Status-Led and Light | FIX: Issue with refresh for Homebase 1"
+  },
+  "3.3.7": {
+    "en": "FIX: Flowcards for Status-Led and Light | FIX: Issue with refresh for Homebase 1"
+  },
+  "3.3.8": {
+    "en": "FIX: changing security modes can cause a loop"
   }
 }
