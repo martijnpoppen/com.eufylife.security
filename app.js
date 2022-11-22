@@ -6,6 +6,7 @@ const path = require('path');
 const { EventEmitter } = require('events');
 
 const { EufySecurity } = require('./lib/eufy-homey-client');
+const { PhoneModels } = require('./lib/eufy-homey-client/build/http/const');
 
 const { DEVICE_TYPES } = require('./constants/device_types.js');
 
@@ -15,7 +16,7 @@ const flowTriggers = require('./lib/flow/triggers.js');
 const eufyNotificationCheckHelper = require('./lib/helpers/eufy-notification-check.helper');
 const eufyEventsHelper = require('./lib/helpers/eufy-events.helper');
 
-const { sleep } = require('./lib/utils');
+const { sleep, randomNumber } = require('./lib/utils');
 
 const Logger = require('./lib/helpers/eufy-logger.helper');
 const { Log } = require('homey-log');
@@ -134,10 +135,22 @@ class App extends Homey.App {
                     });
                 }
 
+                if (!('TRUSTED_DEVICE_NAME' in this.appSettings)) {
+                    const rnd = randomNumber(0, PhoneModels.length);
+                    const trustedDeviceName = `${PhoneModels[rnd]}-Homey`;
+                    
+                    this.log(`initSettings - Setting Trusted Device Name: ${trustedDeviceName}`)
+
+                    await this.updateSettings({    
+                        ...this.appSettings,
+                        TRUSTED_DEVICE_NAME: `${PhoneModels[rnd]}-Homey`
+                    });
+                }
+
                 return true;
             }
 
-            this.log(`Initializing ${_settingsKey} with defaults`);
+            this.log(`initSettings - Initializing ${_settingsKey} with defaults`);
             this.updateSettings({
                 USERNAME: '',
                 PASSWORD: '',
@@ -288,13 +301,15 @@ class App extends Homey.App {
     async setEufyClient(settings) {
         try {
             const debug = false;
+
             const config = {
                 username: settings.USERNAME,
                 password: settings.PASSWORD,
                 country: settings.REGION,
                 language: 'EN',
                 persistentDir: path.resolve(__dirname, '/userdata/'),
-                trustedDeviceName: undefined,
+                trustedDeviceName: settings.TRUSTED_DEVICE_NAME,
+                fallbackTrustedDeviceName: settings.TRUSTED_DEVICE_NAME,
                 acceptInvitations: true,
                 pollingIntervalMinutes: 15
             };
