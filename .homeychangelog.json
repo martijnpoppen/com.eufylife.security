@@ -1024,5 +1024,8 @@
   },
   "3.3.8": {
     "en": "FIX: changing security modes can cause a loop"
+  },
+  "3.3.9": {
+    "en": "FIX: delay in events | FIX: set security mode on startup"
   }
 }
