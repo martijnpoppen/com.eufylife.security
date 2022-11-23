@@ -25,6 +25,8 @@ module.exports = class mainSensor extends mainDevice {
                 STATION_SN: this.EufyStation.getSerial(), 
                 DEVICE_SN: this.EufyDevice.getSerial() 
             });
+
+            this._started = true;
         } catch (error) {
             this.setUnavailable(this.homey.__('device.serial_failure'));
             this.homey.app.log(error);

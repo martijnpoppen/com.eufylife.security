@@ -25,6 +25,8 @@ module.exports = class mainHub extends mainDevice {
                 STATION_SN: this.EufyStation.getSerial(), 
                 DEVICE_SN: this.EufyStation.getSerial() 
             });
+
+            this._started = true;
         } catch (error) {
             this.setUnavailable(this.homey.__('device.serial_failure_station'));
             this.homey.app.log(error);

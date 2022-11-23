@@ -50,6 +50,8 @@ module.exports = class mainDevice extends Homey.Device {
             });
 
             await this.EufyStation.getCameraInfo();
+
+            this._started = true;
         } catch (error) {
             this.setUnavailable(this.homey.__('device.serial_failure'));
             this.homey.app.log(error);
@@ -96,6 +98,7 @@ module.exports = class mainDevice extends Homey.Device {
         this.HomeyDevice.isStandAlone = this.HomeyDevice.device_sn === this.HomeyDevice.station_sn;
 
         this._image = null;
+        this._started = false;
 
         await sleep(6500);
 
