@@ -1027,5 +1027,8 @@
   },
   "3.3.9": {
     "en": "FIX: delay in events | FIX: set security mode on startup"
+  },
+  "3.4.0": {
+    "en": "NEW: update lib | FIX: snooze mode | FIX homebase 3 alarm card"
   }
 }
