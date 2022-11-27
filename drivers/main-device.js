@@ -341,7 +341,7 @@ module.exports = class mainDevice extends Homey.Device {
             snooze_homebase: !!homebase,
             snooze_motion: !!motion,
             snooze_chime: !!chime,
-            snooze_time: snooze
+            snooze_time: parseInt(snooze)
         };
 
         this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_SET_SNOOZE_MODE - `, payload);
