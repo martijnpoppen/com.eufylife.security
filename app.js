@@ -5,8 +5,8 @@ const path = require('path');
 
 const { EventEmitter } = require('events');
 
-const { EufySecurity } = require('./lib/eufy-homey-client');
-const { PhoneModels } = require('./lib/eufy-homey-client/build/http/const');
+const { EufySecurity } = require('eufy-security-client');
+const { PhoneModels } = require('eufy-security-client/build/http/const');
 
 const { DEVICE_TYPES } = require('./constants/device_types.js');
 
@@ -87,8 +87,6 @@ class App extends Homey.App {
 
         this.needCaptcha = null;
         this.need2FA = null;
-
-        this.homeyLog = new Log({ homey: this.homey });
 
         this.homey.settings.getKeys().forEach((key) => {
             if (key == _settingsKey) {
