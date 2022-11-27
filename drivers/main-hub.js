@@ -10,7 +10,7 @@ module.exports = class mainHub extends mainDevice {
 
             this.setUnavailable(`${this.getName()} ${this.homey.__('device.init')}`);
 
-            const sleepIndex = this.homey.app.deviceList.findIndex(async (d) => this.homeyDevice.id === d.homeyDevice.id);
+            const sleepIndex = this.homey.app.deviceList.findIndex(d => this.HomeyDevice.device_sn === d.HomeyDevice.device_sn);
             await sleep((sleepIndex + 1) * 5000);
 
             this.EufyStation = await this.homey.app.eufyClient.getStation(this.HomeyDevice.station_sn);
