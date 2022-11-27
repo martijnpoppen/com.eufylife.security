@@ -253,24 +253,52 @@ class App extends Homey.App {
         }
     }
 
-    async eufyCaptcha(data) {
+    async eufyCaptcha(captchaCode) {
         try {
             this.log(`eufyCaptcha - Found captcha. Logging in to Eufy`);
 
+            const captchaId = this.needCaptcha.id;
+
+            this.needCaptcha = null;
+
             const loggedIn = await this.checkLogin({
                 captcha: {
-                    captchaCode: data,
-                    captchaId: this.needCaptcha.id
+                    captchaCode,
+                    captchaId
                 }
             });
 
             if (loggedIn) {
                 this.log('eufyCaptcha - Succes');
-                this.needCaptcha = null;
 
                 this.eufyClient.writePersistentData();
             } else {
-                return false;
+                this.log('eufyCaptcha - Failed');
+            }
+
+            return true;
+        } catch (err) {
+            this.error(err);
+            return err;
+        }
+    }
+
+    async eufy2FA(data) {
+        try {
+            this.log(`eufy2FA - Found 2FA. Logging in to Eufy`);
+
+            this.need2FA = null;
+
+            const loggedIn = await this.checkLogin({
+                verifyCode: data
+            });
+
+            if (loggedIn) {
+                this.log('eufy2FA - Succes');
+
+                this.eufyClient.writePersistentData();
+            } else {
+                this.log('eufy2FA - Failed');
             }
 
             return true;
