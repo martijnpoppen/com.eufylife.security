@@ -24,6 +24,9 @@ module.exports = class mainDevice extends Homey.Device {
 
             this.setUnavailable(`${this.getName()} ${this.homey.__('device.init')}`);
 
+            const sleepIndex = this.homey.app.deviceList.findIndex(async (d) => this.homeyDevice.id === d.homeyDevice.id);
+            await sleep((sleepIndex + 1) * 5000);
+
             this.EufyDevice = await this.homey.app.eufyClient.getDevice(this.HomeyDevice.device_sn);
             this.HomeyDevice.station_sn = await this.EufyDevice.getStationSerial();
 
@@ -338,7 +341,7 @@ module.exports = class mainDevice extends Homey.Device {
             snooze_homebase: !!homebase,
             snooze_motion: !!motion,
             snooze_chime: !!chime,
-            snooze_time: 30
+            snooze_time: snooze
         };
 
         this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_SET_SNOOZE_MODE - `, payload);
@@ -502,7 +505,6 @@ module.exports = class mainDevice extends Homey.Device {
 
                     if (!res.ok) {
                         this.homey.app.log(`[Device] ${this.getName()} - Couldnt fetch image - Retry: `, res.url);
-                        console.log(res.status);
                         res = await fetch(res.url);
                     }
 

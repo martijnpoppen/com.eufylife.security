@@ -7,8 +7,7 @@
     "url": "https://github.com/martijnpoppen/com.eufylife.security"
   },
   "dependencies": {
-    "consola": "^2.15.3",
-    "homey-log": "^2.1.0",
+    "eufy-security-client": "^2.3.0",
     "node-fetch": "^2.6.1"
   },
   "scripts": {

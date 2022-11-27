@@ -19,18 +19,16 @@ const eufyEventsHelper = require('./lib/helpers/eufy-events.helper');
 const { sleep, randomNumber } = require('./lib/utils');
 
 const Logger = require('./lib/helpers/eufy-logger.helper');
-const { Log } = require('homey-log');
-const consola = require('consola').withScope('HomeyClient');
 
 const _settingsKey = `${Homey.manifest.id}.settings`;
 
 class App extends Homey.App {
     log() {
-        consola.info.bind(this, '[log]').apply(this, arguments);
+        console.log.bind(this, '[log]').apply(this, arguments);
     }
 
     error() {
-        consola.error.bind(this, '[error]').apply(this, arguments);
+        console.error.bind(this, '[error]').apply(this, arguments);
     }
 
     // -------------------- INIT ----------------------
@@ -59,6 +57,13 @@ class App extends Homey.App {
                 this.initEufyClient();
                 this.sendNotifications();
             });
+
+            this.homey.on('memwarn', data => {
+                this.log('memwarn!', data);
+                this.homey.notifications.createNotification({
+                    excerpt: 'Eufy Security - Memory Leak detected!'
+                });
+            }) 
         } catch (error) {
             this.homey.app.log(error);
         }

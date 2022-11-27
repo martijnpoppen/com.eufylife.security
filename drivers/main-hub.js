@@ -1,6 +1,7 @@
 const mainDevice = require('./main-device');
 const { ARM_TYPES } = require('../constants/capability_types');
 const { PropertyName } = require('../lib/eufy-homey-client');
+const { sleep } = require('../lib/utils.js');
 
 module.exports = class mainHub extends mainDevice {
     async onStartup(initial = false) {
@@ -8,6 +9,9 @@ module.exports = class mainHub extends mainDevice {
             this.homey.app.log(`[Device] ${this.getName()} - starting`);
 
             this.setUnavailable(`${this.getName()} ${this.homey.__('device.init')}`);
+
+            const sleepIndex = this.homey.app.deviceList.findIndex(async (d) => this.homeyDevice.id === d.homeyDevice.id);
+            await sleep((sleepIndex + 1) * 5000);
 
             this.EufyStation = await this.homey.app.eufyClient.getStation(this.HomeyDevice.station_sn);
 
@@ -58,7 +62,7 @@ module.exports = class mainHub extends mainDevice {
     async onCapability_CMD_TRIGGER_RINGTONE_HUB(value) {
         try {
             this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_TRIGGER_RINGTONE_HUB - `, value);
-            await this.EufyStation.setHomebaseChimeRingtoneType(value)
+            await this.EufyStation.chimeHombase(value)
         } catch (e) {
             this.homey.app.error(e);
         }

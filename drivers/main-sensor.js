@@ -1,4 +1,5 @@
 const mainDevice = require('./main-device');
+const { sleep } = require('../lib/utils.js');
 
 module.exports = class mainSensor extends mainDevice {
     async onStartup(initial = false) {
@@ -6,6 +7,9 @@ module.exports = class mainSensor extends mainDevice {
             this.homey.app.log(`[Device] ${this.getName()} - starting`);
 
             this.setUnavailable(`${this.getName()} ${this.homey.__('device.init')}`);
+
+            const sleepIndex = this.homey.app.deviceList.findIndex(async (d) => this.homeyDevice.id === d.homeyDevice.id);
+            await sleep((sleepIndex + 1) * 5000);
 
             this.EufyDevice = await this.homey.app.eufyClient.getDevice(this.HomeyDevice.device_sn);
             this.HomeyDevice.station_sn = await this.EufyDevice.getStationSerial();
