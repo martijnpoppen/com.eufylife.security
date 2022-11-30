@@ -7,7 +7,7 @@
     "url": "https://github.com/martijnpoppen/com.eufylife.security"
   },
   "dependencies": {
-    "eufy-security-client": "^2.3.0",
+    "eufy-security-client": "github:martijnpoppen/eufy-security-client#feature/homey-integration",
     "node-fetch": "^2.6.1"
   },
   "scripts": {
