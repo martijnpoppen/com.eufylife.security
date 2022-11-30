@@ -7,11 +7,11 @@
     "url": "https://github.com/martijnpoppen/com.eufylife.security"
   },
   "dependencies": {
-    "eufy-security-client": "github:martijnpoppen/eufy-security-client#feature/homey-integration",
+    "eufy-security-client": "https://github.com/martijnpoppen/eufy-security-client/tarball/homey-integration",
     "node-fetch": "^2.6.1"
   },
   "scripts": {
-    "prepare": "if [ ! -d \"./lib/eufy-homey-client\" ]; then git clone --branch feature/homey-integration https://github.com/martijnpoppen/eufy-security-client.git ./lib/eufy-homey-client && cd ./lib/eufy-homey-client && npm i --production && rm -rf ./src ./wireshark ./frida ./.vscode ./docs ./.github ./.git && cd ..; fi;",
-    "sync": "rm -rf ./lib/eufy-homey-client && git clone --branch feature/homey-integration https://github.com/martijnpoppen/eufy-security-client.git ./lib/eufy-homey-client && cd ./lib/eufy-homey-client && npm i --production && rm -rf ./src ./wireshark ./frida ./.vscode ./docs ./.github ./.git && cd ..;"
+    "prepare": "if [ ! -d \"./lib/eufy-homey-client\" ]; then git clone --branch homey-integration https://github.com/martijnpoppen/eufy-security-client.git ./lib/eufy-homey-client && cd ./lib/eufy-homey-client && npm i --production && rm -rf ./src ./wireshark ./frida ./.vscode ./docs ./.github ./.git && cd ..; fi;",
+    "sync": "rm -rf ./lib/eufy-homey-client && git clone --branch homey-integration https://github.com/martijnpoppen/eufy-security-client.git ./lib/eufy-homey-client && cd ./lib/eufy-homey-client && npm i --production && rm -rf ./src ./wireshark ./frida ./.vscode ./docs ./.github ./.git && cd ..;"
   }
 }
