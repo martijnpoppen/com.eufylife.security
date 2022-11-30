@@ -1033,5 +1033,8 @@
   },
   "3.4.1": {
     "en": "FIX: Homebase notifications not coming trough"
+  },
+  "3.4.2": {
+    "en": "FIX: Homebase notifications not coming trough"
   }
 }
