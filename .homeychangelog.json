@@ -1030,5 +1030,8 @@
   },
   "3.4.0": {
     "en": "NEW: update lib | FIX: snooze mode | FIX homebase 3 alarm card"
+  },
+  "3.4.1": {
+    "en": "FIX: Homebase notifications not coming trough"
   }
 }
