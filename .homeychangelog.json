@@ -1036,5 +1036,8 @@
   },
   "3.4.2": {
     "en": "FIX: Homebase notifications not coming trough"
+  },
+  "3.4.3": {
+    "en": "FIX: Homebase notifications not coming trough | FIX: eufy stream | FIX: homebase alarm"
   }
 }
