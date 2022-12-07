@@ -1042,5 +1042,8 @@
   },
   "3.4.4": {
     "en": "FIX: Homebase alarm"
+  },
+  "3.4.5": {
+    "en": "FIX: notifcations not working (update will restart the service) | FIX: add logging for quick responses"
   }
 }

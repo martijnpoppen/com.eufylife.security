@@ -260,6 +260,8 @@ module.exports = class mainDevice extends Homey.Device {
             this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_DOORBELL_QUICK_RESPONSE - `, value);
             const voices = this.EufyDevice.getVoices();
 
+            this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_DOORBELL_QUICK_RESPONSE - voices: `, voices);
+
             if (voices && Object.keys(voices).length >= value) {
                 const currentVoice = Object.keys(voices)[value - 1];
 
