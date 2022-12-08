@@ -1045,5 +1045,8 @@
   },
   "3.4.5": {
     "en": "FIX: notifcations not working (update will restart the service) | FIX: add logging for quick responses"
+  },
+  "3.4.6": {
+    "en": "FIX: remove alarm_motion from Door sensor"
   }
 }

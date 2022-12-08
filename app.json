@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "3.4.5",
+  "version": "3.4.6",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "brandColor": "#2a6185",
@@ -6916,18 +6916,6 @@
                 "nl": "Altijd aan"
               },
               "value": false
-            },
-            {
-              "id": "alarm_motion_enabled",
-              "hint": {
-                "en": "This alarm will trigger when a detection happens. (Motion/Person/Sound). This generic alarm also allows zone activity and by enabling this you can use the Eufy motion detections as a sensor in Heimdall"
-              },
-              "type": "checkbox",
-              "label": {
-                "en": "Use generic motion alarm?",
-                "nl": "Gebruik generiek bewegings alarm"
-              },
-              "value": true
             }
           ]
         },
