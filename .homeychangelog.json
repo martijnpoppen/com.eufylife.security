@@ -1048,5 +1048,8 @@
   },
   "3.4.6": {
     "en": "FIX: remove alarm_motion from Door sensor"
+  },
+  "3.4.7": {
+    "en": "FIX: remove alarm_motion from Door sensor"
   }
 }
