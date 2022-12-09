@@ -1054,5 +1054,8 @@
   },
   "3.4.8": {
     "en": "FIX: remove alarm_motion from Door sensor"
+  },
+  "3.4.9": {
+    "en": "FIX: show error page for Eufy Stream (Patched by Eufy :( )"
   }
 }
