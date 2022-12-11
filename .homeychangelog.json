@@ -1060,5 +1060,8 @@
   },
   "3.4.10": {
     "en": "FIX: remove cover_path Image update (Patched by Eufy :( ) "
+  },
+  "3.5.0": {
+    "en": "FIX: add error image for Eufy patch | NEW: add eufy patch notification"
   }
 }
