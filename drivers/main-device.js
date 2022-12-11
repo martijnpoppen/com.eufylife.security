@@ -493,6 +493,7 @@ module.exports = class mainDevice extends Homey.Device {
         try {
             this.unsetWarning();
             if (!this._image) {
+                this._imageSet = false;
                 this._image = await this.homey.images.createImage();
 
                 this.homey.app.log(`[Device] ${this.getName()} - Registering Device image`);
@@ -501,9 +502,22 @@ module.exports = class mainDevice extends Homey.Device {
             }
 
             await this._image.setStream(async (stream) => {
-                const imagePath = this.EufyDevice.getLastCameraImageURL();
+                let imagePath = this.EufyDevice.getLastCameraImageURL();
 
                 this.homey.app.log(`[Device] ${this.getName()} - Setting image - `, imagePath);
+
+                if (!imagePath.startsWith('http://')) {
+                    if(!this._imageSet) {
+                        const localAddress = await this.homey.app.getStreamAddress();
+                        imagePath = `${localAddress}/app/${Homey.manifest.id}/assets/images/patched.jpg`
+
+                        this.homey.app.log(`[Device] ${this.getName()} - Setting image - `, imagePath);
+                        
+                        this._imageSet = true;
+                    } else {
+                        return Promise.resolve(true);
+                    }
+                }
 
                 if (imagePath && imagePath.length) {
                     let res = await fetch(imagePath);
@@ -519,6 +533,8 @@ module.exports = class mainDevice extends Homey.Device {
                     }
 
                     this.homey.app.log(`[Device] ${this.getName()} - fetch image - Succes: `, res.url);
+
+                    this._imageSet = true
 
                     return res.body.pipe(stream);
                 }
