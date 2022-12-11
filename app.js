@@ -57,13 +57,6 @@ class App extends Homey.App {
                 this.initEufyClient();
                 this.sendNotifications();
             });
-
-            this.homey.on('memwarn', data => {
-                this.log('memwarn!', data);
-                this.homey.notifications.createNotification({
-                    excerpt: 'Eufy Security - Memory Leak detected!'
-                });
-            }) 
         } catch (error) {
             this.homey.app.log(error);
         }
@@ -186,29 +179,24 @@ class App extends Homey.App {
 
     async sendNotifications() {
         try {
-            // const ntfy2022101701 = `Eufy Security (1/4) Eufy Security was updated to the new Homey SDK to support Homey Pro 2023`;
-            // const ntfy2022101702 = `Eufy Security (2/4) This update also contains the transfer to a new Eufy library. This will give better support and makes it easier to integrate new devices (Like the Homebase 3 and smart locks)`;
-            // const ntfy2022101703 = `Eufy Security (3/4) If you encounter any issues: Please send a diagnostic report. Add your email to the message of the report so the developer can easily contact you`;
-            // const ntfy2022101704 = `Eufy Security (4/4) For more info go to: https://tinyurl.com/eufy-homey`;
-            // if (!this.appSettings.NOTIFICATIONS.includes('ntfy2022101704')) {
-            //     await this.homey.notifications.createNotification({
-            //         excerpt: ntfy2022101704
-            //     });
-            //     await this.homey.notifications.createNotification({
-            //         excerpt: ntfy2022101703
-            //     });
-            //     await this.homey.notifications.createNotification({
-            //         excerpt: ntfy2022101702
-            //     });
-            //     await this.homey.notifications.createNotification({
-            //         excerpt: ntfy2022101701
-            //     });
+            const ntfy2022121101 = `[Eufy Security] (1/2) - Eufy patched their API. At this moment it's not possible to start video streams or retreive images/thumbnails.`;
+            const ntfy2022121102 = `[Eufy Security] (2/2) For more info go to: https://tinyurl.com/eufy-homey`;
 
-            //     await this.updateSettings({
-            //         ...this.appSettings,
-            //         NOTIFICATIONS: [...this.appSettings.NOTIFICATIONS, 'ntfy2022101701', 'ntfy2022101702', 'ntfy2022101703', 'ntfy2022101704']
-            //     });
-            // }
+            if (!this.appSettings.NOTIFICATIONS.includes('ntfy2022121101')) {
+                await this.homey.notifications.createNotification({
+                    excerpt: ntfy2022121102
+                });
+                
+                await this.homey.notifications.createNotification({
+                    excerpt: ntfy2022121101
+                });
+
+              
+                await this.updateSettings({
+                    ...this.appSettings,
+                    NOTIFICATIONS: [...this.appSettings.NOTIFICATIONS, 'ntfy2022121101', 'ntfy2022121102']
+                });
+            }
         } catch (error) {
             this.log('sendNotifications - error', console.error());
         }
