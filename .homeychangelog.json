@@ -1057,5 +1057,8 @@
   },
   "3.4.9": {
     "en": "FIX: show error page for Eufy Stream (Patched by Eufy :( )"
+  },
+  "3.4.10": {
+    "en": "FIX: remove cover_path Image update (Patched by Eufy :( ) "
   }
 }
