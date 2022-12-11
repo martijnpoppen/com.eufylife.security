@@ -18,7 +18,13 @@ module.exports = class mainHub extends mainDevice {
             await this.resetCapabilities();
 
             if(initial) {
+                const settings = this.getSettings();
+
                 await this.checkCapabilities();
+
+                await this.check_alarm_arm_mode(settings);
+                await this.check_alarm_generic(settings);
+
                 await this.setCapabilitiesListeners();
             }
 

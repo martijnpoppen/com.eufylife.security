@@ -39,7 +39,14 @@ module.exports = class mainDevice extends Homey.Device {
             await this.resetCapabilities();
 
             if (initial) {
+                const settings = this.getSettings();
+
                 await this.checkCapabilities();
+
+                await this.check_alarm_arm_mode(settings);
+                await this.check_alarm_generic(settings);
+                await this.check_alarm_motion(settings);
+
                 await this.setCapabilitiesListeners();
             }
 
@@ -138,7 +145,6 @@ module.exports = class mainDevice extends Homey.Device {
         const driverManifest = this.driver.manifest;
         let driverCapabilities = driverManifest.capabilities;
         const deviceCapabilities = this.getCapabilities();
-        const settings = this.getSettings();
 
         this.homey.app.log(`[Device] ${this.getName()} - checkCapabilities for`, driverManifest.id);
         this.homey.app.log(`[Device] ${this.getName()} - Found capabilities =>`, deviceCapabilities);
@@ -164,10 +170,6 @@ module.exports = class mainDevice extends Homey.Device {
         }
 
         await this.updateCapabilities(driverCapabilities, deviceCapabilities);
-
-        await this.check_alarm_arm_mode(settings);
-        await this.check_alarm_generic(settings);
-        await this.check_alarm_motion(settings);
 
         return;
     }
@@ -265,7 +267,7 @@ module.exports = class mainDevice extends Homey.Device {
             if (voices && Object.keys(voices).length >= value) {
                 const currentVoice = Object.keys(voices)[value - 1];
 
-                this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_DOORBELL_QUICK_RESPONSE - trigger voice`, currentVoice);
+                this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_DOORBELL_QUICK_RESPONSE - trigger voice`, parseInt(currentVoice));
 
                 await this.EufyStation.quickResponse(this.EufyDevice, parseInt(currentVoice));
             } else {
@@ -275,6 +277,7 @@ module.exports = class mainDevice extends Homey.Device {
             return Promise.resolve(true);
         } catch (e) {
             this.homey.app.error(e);
+            return Promise.reject(e)
         }
     }
 
