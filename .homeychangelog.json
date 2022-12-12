@@ -1063,5 +1063,8 @@
   },
   "3.5.0": {
     "en": "FIX: add error image for Eufy patch | NEW: add eufy patch notification"
+  },
+  "3.5.1": {
+    "en": "FIX: set fallback image for Eufy patch"
   }
 }
