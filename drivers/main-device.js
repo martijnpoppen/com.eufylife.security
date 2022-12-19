@@ -506,7 +506,7 @@ module.exports = class mainDevice extends Homey.Device {
 
                 this.homey.app.log(`[Device] ${this.getName()} - Setting image - `, imagePath);
 
-                if (!imagePath.startsWith('http://')) {
+                if (!imagePath.startsWith('https://')) {
                     if(!this._imageSet) {
                         const localAddress = await this.homey.app.getStreamAddress();
                         imagePath = `${localAddress}/app/${Homey.manifest.id}/assets/images/patched.jpg`
@@ -534,6 +534,8 @@ module.exports = class mainDevice extends Homey.Device {
 
                     this.homey.app.log(`[Device] ${this.getName()} - fetch image - Succes: `, res.url);
 
+                    console.log(res.body);
+                    console.log(res.body.buffer); 
                     this._imageSet = true
 
                     return res.body.pipe(stream);
