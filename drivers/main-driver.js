@@ -50,7 +50,7 @@ module.exports = class mainDriver extends Homey.Driver {
             }
 
             if (view === 'login_eufy' && this.homey.app.eufyClient.isConnected() && !this.deviceError && this.type === 'pair') {
-                session.nextView();
+                session.showView('loading');
                 return true;
             }
 
@@ -68,7 +68,17 @@ module.exports = class mainDriver extends Homey.Driver {
 
                 this.homey.app.log(`[Driver] ${this.id} - deviceList:`, this.deviceList.length, !!this.deviceList.length);
 
-                if (!!this.deviceList.length) {
+                if (this.homey.app.needCaptcha) {
+                    this.homey.app.log(`[Driver] ${this.id} - needCaptcha`);
+                    session.showView('login_captcha');
+
+                    return [];
+                } else if (this.homey.app.need2FA) {
+                    this.homey.app.log(`[Driver] ${this.id} - need2FA`);
+                    session.showView('pincode');
+
+                    return [];
+                } else if (!!this.deviceList.length) {
                     this._devices = await this.onDeviceListRequest(this.id);
 
                     this.homey.app.log(`[Driver] ${this.id} - Found new devices:`, this._devices);
@@ -78,7 +88,7 @@ module.exports = class mainDriver extends Homey.Driver {
                         this.homey.app.log(`[Driver] ${this.id} - list_devices: repair mode -> Closing repair`);
                         return session.showView('done');
                     } else if (this._devices && this._devices.length) {
-                        session.nextView();
+                        session.showView('list_devices');
                     } else if (this._devices && !!this._devices.info) {
                         this.deviceError = this._devices.info;
 
@@ -88,11 +98,6 @@ module.exports = class mainDriver extends Homey.Driver {
 
                         session.showView('error');
                     }
-                } else if (this.homey.app.needCaptcha) {
-                    this.homey.app.log(`[Driver] ${this.id} - needCaptcha`);
-                    session.showView('login_captcha');
-
-                    return [];
                 } else {
                     this.deviceError = this.type === 'repair' ? this.homey.__('pair.no_devices_repair') : this.homey.__('pair.no_devices');
                     session.showView('error');
@@ -118,13 +123,19 @@ module.exports = class mainDriver extends Homey.Driver {
         });
 
         session.setHandler('login_captcha', async (data) => {
-            const result = await this.homey.app.eufyCaptcha(data.captcha);
+            this.homey.app.eufyCaptcha(data.captcha);
 
             this.deviceError = false;
 
-            session.showView('loading');
+            return true;
+        });
 
-            return result;
+        session.setHandler('pincode', async (data) => {
+            this.homey.app.eufy2FA(data.join(''));
+
+            this.deviceError = false;
+
+            return true;
         });
 
         session.setHandler('list_devices', async () => {
@@ -141,7 +152,7 @@ module.exports = class mainDriver extends Homey.Driver {
         async function waitForResults(ctx, retry = 10) {
             for (let i = 1; i <= retry; i++) {
                 ctx.homey.app.log(`[Driver] ${ctx.id} - eufyDeviceData - try: ${i}`);
-                await sleep(500);
+                await sleep(1000);
 
                 let eufyDevices = [];
 
@@ -153,7 +164,7 @@ module.exports = class mainDriver extends Homey.Driver {
 
                 if (eufyDevices.length) {
                     return Promise.resolve(eufyDevices);
-                } else if (retry === 9) {
+                } else if (i === 10) {
                     return Promise.resolve([]);
                 }
             }

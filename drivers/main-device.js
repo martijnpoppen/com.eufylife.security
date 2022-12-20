@@ -114,6 +114,8 @@ module.exports = class mainDevice extends Homey.Device {
 
         if (this.homey.app.needCaptcha) {
             this.setUnavailable(`${this.getName()} ${this.homey.__('device.need_captcha')}`);
+        } else if(this.homey.app.need2FA) {
+            this.setUnavailable(`${this.getName()} ${this.homey.__('device.need_2FA')}`);
         }
     }
 
