@@ -2,6 +2,7 @@
 
 const Homey = require('homey');
 const path = require('path');
+const fse = require('fs-extra');
 
 const { EventEmitter } = require('events');
 
@@ -217,10 +218,15 @@ class App extends Homey.App {
 
     // -------------------- EUFY LOGIN ----------------------
 
-    async eufyLogin(data) {
+    async eufyLogin(data, reset = false) {
         try {
             this.log('eufyLogin - New settings:', { ...data, USERNAME: 'LOG', PASSWORD: 'LOG' });
             this.log(`eufyLogin - Found username and password. Logging in to Eufy`);
+
+            if(reset) {
+                await this.removePersistenData();
+            }
+            
 
             const loggedIn = await this.setEufyClient(data);
 
@@ -323,6 +329,16 @@ class App extends Homey.App {
             this.log('resetEufyClient - Resetting EufyClient');
             await this.eufyClient.close();
             this.eufyClient = undefined;
+        }
+    }
+
+    async removePersistenData() {
+        try {
+            fse.unlinkSync(path.resolve(__dirname, '/userdata/persistent.json'));
+          
+            console.log("Delete File successfully.");
+          } catch (error) {
+            console.log(error);
         }
     }
 

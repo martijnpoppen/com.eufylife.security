@@ -534,8 +534,6 @@ module.exports = class mainDevice extends Homey.Device {
 
                     this.homey.app.log(`[Device] ${this.getName()} - fetch image - Succes: `, res.url);
 
-                    console.log(res.body);
-                    console.log(res.body.buffer); 
                     this._imageSet = true
 
                     return res.body.pipe(stream);
