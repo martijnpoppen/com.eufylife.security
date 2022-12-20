@@ -218,15 +218,12 @@ class App extends Homey.App {
 
     // -------------------- EUFY LOGIN ----------------------
 
-    async eufyLogin(data, reset = false) {
+    async eufyLogin(data) {
         try {
             this.log('eufyLogin - New settings:', { ...data, USERNAME: 'LOG', PASSWORD: 'LOG' });
             this.log(`eufyLogin - Found username and password. Logging in to Eufy`);
-
-            if(reset) {
-                await this.removePersistenData();
-            }
             
+            await this.updateSettings(data);
 
             const loggedIn = await this.setEufyClient(data);
 
@@ -235,8 +232,6 @@ class App extends Homey.App {
             } else {
                 return false;
             }
-
-            this.updateSettings(data);
 
             return true;
         } catch (err) {
@@ -248,6 +243,8 @@ class App extends Homey.App {
     async eufyCaptcha(data) {
         try {
             this.log(`eufyCaptcha - Found captcha. Logging in to Eufy`);
+
+            await this.removePersistenData();
 
             const loggedIn = await this.checkLogin({
                 captcha: {
