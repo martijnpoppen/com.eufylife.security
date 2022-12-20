@@ -421,7 +421,7 @@ module.exports = class mainDevice extends Homey.Device {
 
                     const streamKey = streamUrl[1].split('?');
 
-                    internalStreamUrl = `${streamUrl[0]}:1443/hls/${streamKey[0]}.m3u8`;
+                    internalStreamUrl = `${streamUrl[0]}:1443/hls/${streamKey[0]}.m3u8?${streamKey[1]}`;
 
                     if (streamType === 'hls_only') {
                         streamUrl = internalStreamUrl;
