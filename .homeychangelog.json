@@ -1072,5 +1072,8 @@
   },
   "3.6.0": {
     "en": "FIX: Eufy API changes"
+  },
+  "3.6.1": {
+    "en": "FIX: wrong email password login"
   }
 }
