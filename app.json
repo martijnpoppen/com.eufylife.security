@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "3.5.2",
+  "version": "3.6.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "brandColor": "#2a6185",
@@ -1469,28 +1469,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -1539,28 +1539,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -1716,28 +1716,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -1786,28 +1786,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -1964,28 +1964,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -2034,28 +2034,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -2212,28 +2212,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -2282,28 +2282,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -2461,28 +2461,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -2531,28 +2531,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -2708,28 +2708,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -2778,28 +2778,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -2956,28 +2956,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -3026,28 +3026,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -3200,28 +3200,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -3270,28 +3270,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -3444,28 +3444,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -3514,28 +3514,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -3773,28 +3773,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -3843,28 +3843,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -4103,28 +4103,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -4173,28 +4173,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -4433,28 +4433,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -4503,28 +4503,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -4763,28 +4763,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -4833,28 +4833,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -5094,28 +5094,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -5164,28 +5164,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -5428,28 +5428,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -5498,28 +5498,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -5763,28 +5763,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -5833,28 +5833,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -6098,28 +6098,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -6168,28 +6168,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -6428,28 +6428,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -6498,28 +6498,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -6760,28 +6760,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -6830,28 +6830,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -7011,28 +7011,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -7081,28 +7081,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -7259,28 +7259,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -7329,28 +7329,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -7594,28 +7594,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -7664,28 +7664,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -7828,28 +7828,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -7898,28 +7898,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -8062,28 +8062,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -8132,28 +8132,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -8268,28 +8268,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -8338,28 +8338,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -8587,28 +8587,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -8657,28 +8657,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -8906,28 +8906,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -8976,28 +8976,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -9224,28 +9224,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -9294,28 +9294,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -9542,28 +9542,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",
@@ -9612,28 +9612,28 @@
         {
           "id": "login_captcha"
         },
-         {
-            "id": "loading",
-            "template": "loading"
+        {
+          "id": "loading",
+          "template": "loading"
         },
-         {
-            "id": "pincode",
-            "template": "pincode",
-            "options": {
-              "title": {
-                "en": "Enter 2FA Code",
-                "nl": "Voer 2FA Code in:"
-              },
-              "type": "number",
-              "length": 6
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:"
             },
-            "navigation": {
-              "prev": "login_eufy"
-            }
+            "type": "number",
+            "length": 6
           },
-           {
-            "id": "loading",
-            "template": "loading"
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
         },
         {
           "id": "error",

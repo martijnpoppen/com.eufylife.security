@@ -1069,5 +1069,8 @@
   },
   "3.5.2": {
     "en": "FIX: set fallback image for Eufy patch"
+  },
+  "3.6.0": {
+    "en": "FIX: Eufy API changes"
   }
 }
