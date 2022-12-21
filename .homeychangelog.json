@@ -1075,5 +1075,8 @@
   },
   "3.6.1": {
     "en": "FIX: wrong email password login"
+  },
+  "3.6.2": {
+    "en": "FIX: images & readme"
   }
 }
