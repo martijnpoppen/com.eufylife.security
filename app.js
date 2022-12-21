@@ -55,6 +55,10 @@ class App extends Homey.App {
 
                 this.log('onStartup - Loaded settings', { ...this.appSettings, USERNAME: 'LOG', PASSWORD: 'LOG' });
 
+                if (!this.appSettings.NOTIFICATIONS.includes('ntfy2022122101')) {
+                    await this.removePersistenData();
+                }
+
                 this.initEufyClient();
                 this.sendNotifications();
             });
@@ -180,22 +184,27 @@ class App extends Homey.App {
 
     async sendNotifications() {
         try {
-            const ntfy2022121101 = `[Eufy Security] (1/2) - Eufy patched their API. At this moment it's not possible to start video streams or retreive images/thumbnails.`;
-            const ntfy2022121102 = `[Eufy Security] (2/2) For more info go to: https://tinyurl.com/eufy-homey`;
+            const ntfy2022122101 = `[Eufy Security] (1/3) - Eufy made updates their API. At this moment it's no possible to retreive images/thumbnails.`;
+            const ntfy2022122102 = `[Eufy Security] (2/3) - Good news! Cloud streams are fixed again and the Red Triangle errors too`;
+            const ntfy2022122103 = `[Eufy Security] (3/3) For more info go to: https://tinyurl.com/eufy-homey`;
 
-            if (!this.appSettings.NOTIFICATIONS.includes('ntfy2022121101')) {
+            if (!this.appSettings.NOTIFICATIONS.includes('ntfy2022122101')) {
                 await this.homey.notifications.createNotification({
-                    excerpt: ntfy2022121102
+                    excerpt: ntfy2022122103
+                });
+
+                await this.homey.notifications.createNotification({
+                    excerpt: ntfy2022122102
                 });
                 
                 await this.homey.notifications.createNotification({
-                    excerpt: ntfy2022121101
+                    excerpt: ntfy2022122101
                 });
 
               
                 await this.updateSettings({
                     ...this.appSettings,
-                    NOTIFICATIONS: [...this.appSettings.NOTIFICATIONS, 'ntfy2022121101', 'ntfy2022121102']
+                    NOTIFICATIONS: [...this.appSettings.NOTIFICATIONS, 'ntfy2022122101', 'ntfy2022122102', 'ntfy2022122103']
                 });
             }
         } catch (error) {
@@ -224,6 +233,8 @@ class App extends Homey.App {
             this.log(`eufyLogin - Found username and password. Logging in to Eufy`);
             
             await this.updateSettings(data);
+
+            await this.removePersistenData();
 
             const loggedIn = await this.setEufyClient(data);
 
@@ -359,7 +370,7 @@ class App extends Homey.App {
         try {
             fse.unlinkSync(path.resolve(__dirname, '/userdata/persistent.json'));
           
-            console.log("Delete File successfully.");
+            this.log('removePersistenData - Delete File successfully.');
           } catch (error) {
             console.log(error);
         }
