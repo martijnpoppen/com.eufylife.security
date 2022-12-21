@@ -234,8 +234,6 @@ class App extends Homey.App {
             
             await this.updateSettings(data);
 
-            await this.removePersistenData();
-
             const loggedIn = await this.setEufyClient(data);
 
             if (loggedIn) {
@@ -362,13 +360,14 @@ class App extends Homey.App {
         if (this.eufyClient) {
             this.log('resetEufyClient - Resetting EufyClient');
             await this.eufyClient.close();
+         
             this.eufyClient = undefined;
         }
     }
 
     async removePersistenData() {
         try {
-            fse.unlinkSync(path.resolve(__dirname, '/userdata/persistent.json'));
+            await fse.unlinkSync(path.resolve(__dirname, '/userdata/persistent.json'));
           
             this.log('removePersistenData - Delete File successfully.');
           } catch (error) {
