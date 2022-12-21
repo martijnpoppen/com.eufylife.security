@@ -508,18 +508,18 @@ module.exports = class mainDevice extends Homey.Device {
 
                 this.homey.app.log(`[Device] ${this.getName()} - Setting image - `, imagePath);
 
-                if (!imagePath.startsWith('https://')) {
-                    if(!this._imageSet) {
+                // if (!imagePath.startsWith('https://')) {
+                    // if(!this._imageSet) {
                         const localAddress = await this.homey.app.getStreamAddress();
                         imagePath = `${localAddress}/app/${Homey.manifest.id}/assets/images/patched.jpg`
 
                         this.homey.app.log(`[Device] ${this.getName()} - Setting image - `, imagePath);
                         
                         this._imageSet = true;
-                    } else {
-                        return Promise.resolve(true);
-                    }
-                }
+                    // } else {
+                        // return Promise.resolve(true);
+                    // }
+                // }
 
                 if (imagePath && imagePath.length) {
                     let res = await fetch(imagePath);

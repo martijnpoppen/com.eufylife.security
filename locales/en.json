@@ -1,7 +1,7 @@
 {
   "settings": {
     "title": "Eufy Settings Page",
-    "subtitle": "Login settings are removed from this page. To fix the Eufy login go to the device settings of a Eufy Device (e.g. Homebase 2) and click maintenance and then repair.",
+    "subtitle": "Login settings are removed from this page. To fix the Eufy login go to the device settings of a Eufy Device (e.g. Homebase 2) in Homey and click maintenance and then repair.",
     "account": "Account settings"
   },
   "pair": {

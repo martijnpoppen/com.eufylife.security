@@ -1,7 +1,7 @@
 {
   "settings": {
     "title": "Eufy instellingen",
-    "subtitle": "Login instellingen zijn verwijderd van deze pagina. Om de Eufy login aan te passen: Ga naar de apparaat instellingen van een Eufy device (Bijv. Homebase 2). Klik op onderhoud en dan repareren",
+    "subtitle": "Login instellingen zijn verwijderd van deze pagina. Om de Eufy login aan te passen: Ga naar de apparaat instellingen van een Eufy device (Bijv. Homebase 2) in Homey. Klik op onderhoud en dan repareren",
     "account": "Account instellingen"
   },
   "pair": {

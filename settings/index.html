@@ -3,52 +3,18 @@
 <head>
     <!-- The '/homey.js' script must be included in your settings view to work -->
     <script type="text/javascript" src="/homey.js" data-origin="settings"></script>
-    <style>
-        fieldset legend,
-        .hy-fieldset:not(.hy-nostyle) legend {
-            font-size: 14px !important;
-        }
-
-        .radio-toolbar input[type="radio"] {
-            display: none;
-        }
-
-        .radio-toolbar label {
-            display: inline-block;
-            background-color: transparent;
-            border: 3px solid;
-            width: 35%;
-            padding: 4px 11px;
-            font-family: Arial;
-            font-size: 16px;
-            cursor: pointer;
-            text-align: center;
-        }
-
-        .radio-toolbar input[type="radio"]:checked+label {
-            background-color: #00c139;
-            border: 3px solid #00c139;
-        }
-
-        button {
-            background-color: #00c139 !important;
-            width: 100%;
-        }
-
-        button.orange {
-            background-color: orange !important;
-            width: 100%;
-        }
-    </style>
 </head>
 
 <body>
     <h1 data-i18n="settings.title"></h1>
     <p data-i18n="settings.subtitle"></p>
-    <br><br>
-    <p id="error" style="color: red;"></p>
-    <p id="loading" style="color: #0000FF;"></p>
-    <p id="success" style="color: green;"></p>
-    <script src="./settings.js"></script>
+    <script>
+        function onHomeyReady(Homey) {
+        const _settingsKey = `com.eufylife.security.settings`;
+        Homey.ready();
+    }
+    
+    </script>
 </body>
+
 </html>
