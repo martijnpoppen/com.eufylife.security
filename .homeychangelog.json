@@ -1084,5 +1084,8 @@
   },
   "3.6.4": {
     "en": "OPT: add option enable/disabled enforced include thumbnail notifications"
+  },
+  "3.6.5": {
+    "en": "FIX: person detection for T8432"
   }
 }
