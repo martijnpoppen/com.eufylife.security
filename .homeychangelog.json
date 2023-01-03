@@ -1081,5 +1081,8 @@
   },
   "3.6.3": {
     "en": "FIX: fallback image"
+  },
+  "3.6.4": {
+    "en": "OPT: add option enable/disabled enforced include thumbnail notifications"
   }
 }
