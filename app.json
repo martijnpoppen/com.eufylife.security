@@ -1615,6 +1615,19 @@
               },
               "value": false
             },
+                        {
+              "id": "force_include_thumbnail",
+              "type": "checkbox",
+              "hint": {
+                "en": "Only disable if you don't want cloud images!",
+                "nl": "Alleen uitschakelen als je niet gebruik wilt maken van cloud afbeeldingen!"
+              },
+              "label": {
+                "en": "Enforce inlude thumbnail notifications",
+                "nl": "Forceer thumbnail notificaties (alleen uitschakelen"
+              },
+              "value": false
+            },
             {
               "id": "alarm_motion_enabled",
               "hint": {
@@ -1859,6 +1872,19 @@
               "label": {
                 "en": "Always on",
                 "nl": "Altijd aan"
+              },
+              "value": false
+            },
+                        {
+              "id": "force_include_thumbnail",
+              "type": "checkbox",
+              "hint": {
+                "en": "Only disable if you don't want cloud images!",
+                "nl": "Alleen uitschakelen als je niet gebruik wilt maken van cloud afbeeldingen!"
+              },
+              "label": {
+                "en": "Enforce inlude thumbnail notifications",
+                "nl": "Forceer thumbnail notificaties (alleen uitschakelen"
               },
               "value": false
             },
@@ -2110,6 +2136,19 @@
               },
               "value": false
             },
+                        {
+              "id": "force_include_thumbnail",
+              "type": "checkbox",
+              "hint": {
+                "en": "Only disable if you don't want cloud images!",
+                "nl": "Alleen uitschakelen als je niet gebruik wilt maken van cloud afbeeldingen!"
+              },
+              "label": {
+                "en": "Enforce inlude thumbnail notifications",
+                "nl": "Forceer thumbnail notificaties (alleen uitschakelen"
+              },
+              "value": false
+            },
             {
               "id": "alarm_motion_enabled",
               "hint": {
@@ -2355,6 +2394,19 @@
               "label": {
                 "en": "Always on",
                 "nl": "Altijd aan"
+              },
+              "value": false
+            },
+                        {
+              "id": "force_include_thumbnail",
+              "type": "checkbox",
+              "hint": {
+                "en": "Only disable if you don't want cloud images!",
+                "nl": "Alleen uitschakelen als je niet gebruik wilt maken van cloud afbeeldingen!"
+              },
+              "label": {
+                "en": "Enforce inlude thumbnail notifications",
+                "nl": "Forceer thumbnail notificaties (alleen uitschakelen"
               },
               "value": false
             },
@@ -2607,6 +2659,19 @@
               },
               "value": false
             },
+                        {
+              "id": "force_include_thumbnail",
+              "type": "checkbox",
+              "hint": {
+                "en": "Only disable if you don't want cloud images!",
+                "nl": "Alleen uitschakelen als je niet gebruik wilt maken van cloud afbeeldingen!"
+              },
+              "label": {
+                "en": "Enforce inlude thumbnail notifications",
+                "nl": "Forceer thumbnail notificaties (alleen uitschakelen"
+              },
+              "value": false
+            },
             {
               "id": "alarm_motion_enabled",
               "hint": {
@@ -2851,6 +2916,19 @@
               "label": {
                 "en": "Always on",
                 "nl": "Altijd aan"
+              },
+              "value": false
+            },
+                        {
+              "id": "force_include_thumbnail",
+              "type": "checkbox",
+              "hint": {
+                "en": "Only disable if you don't want cloud images!",
+                "nl": "Alleen uitschakelen als je niet gebruik wilt maken van cloud afbeeldingen!"
+              },
+              "label": {
+                "en": "Enforce inlude thumbnail notifications",
+                "nl": "Forceer thumbnail notificaties (alleen uitschakelen"
               },
               "value": false
             },
@@ -3102,6 +3180,19 @@
               },
               "value": false
             },
+                        {
+              "id": "force_include_thumbnail",
+              "type": "checkbox",
+              "hint": {
+                "en": "Only disable if you don't want cloud images!",
+                "nl": "Alleen uitschakelen als je niet gebruik wilt maken van cloud afbeeldingen!"
+              },
+              "label": {
+                "en": "Enforce inlude thumbnail notifications",
+                "nl": "Forceer thumbnail notificaties (alleen uitschakelen"
+              },
+              "value": false
+            },
             {
               "id": "alarm_motion_enabled",
               "hint": {
@@ -3346,6 +3437,19 @@
               },
               "value": false
             },
+                        {
+              "id": "force_include_thumbnail",
+              "type": "checkbox",
+              "hint": {
+                "en": "Only disable if you don't want cloud images!",
+                "nl": "Alleen uitschakelen als je niet gebruik wilt maken van cloud afbeeldingen!"
+              },
+              "label": {
+                "en": "Enforce inlude thumbnail notifications",
+                "nl": "Forceer thumbnail notificaties (alleen uitschakelen"
+              },
+              "value": false
+            },
             {
               "id": "alarm_motion_enabled",
               "hint": {
@@ -3587,6 +3691,19 @@
               "label": {
                 "en": "Always on",
                 "nl": "Altijd aan"
+              },
+              "value": false
+            },
+                        {
+              "id": "force_include_thumbnail",
+              "type": "checkbox",
+              "hint": {
+                "en": "Only disable if you don't want cloud images!",
+                "nl": "Alleen uitschakelen als je niet gebruik wilt maken van cloud afbeeldingen!"
+              },
+              "label": {
+                "en": "Enforce inlude thumbnail notifications",
+                "nl": "Forceer thumbnail notificaties (alleen uitschakelen"
               },
               "value": false
             },
@@ -3916,6 +4033,19 @@
               "label": {
                 "en": "Always on",
                 "nl": "Altijd aan"
+              },
+              "value": false
+            },
+                        {
+              "id": "force_include_thumbnail",
+              "type": "checkbox",
+              "hint": {
+                "en": "Only disable if you don't want cloud images!",
+                "nl": "Alleen uitschakelen als je niet gebruik wilt maken van cloud afbeeldingen!"
+              },
+              "label": {
+                "en": "Enforce inlude thumbnail notifications",
+                "nl": "Forceer thumbnail notificaties (alleen uitschakelen"
               },
               "value": false
             },
@@ -4249,6 +4379,19 @@
               },
               "value": false
             },
+                        {
+              "id": "force_include_thumbnail",
+              "type": "checkbox",
+              "hint": {
+                "en": "Only disable if you don't want cloud images!",
+                "nl": "Alleen uitschakelen als je niet gebruik wilt maken van cloud afbeeldingen!"
+              },
+              "label": {
+                "en": "Enforce inlude thumbnail notifications",
+                "nl": "Forceer thumbnail notificaties (alleen uitschakelen"
+              },
+              "value": false
+            },
             {
               "id": "alarm_motion_enabled",
               "hint": {
@@ -4579,6 +4722,19 @@
               },
               "value": false
             },
+                        {
+              "id": "force_include_thumbnail",
+              "type": "checkbox",
+              "hint": {
+                "en": "Only disable if you don't want cloud images!",
+                "nl": "Alleen uitschakelen als je niet gebruik wilt maken van cloud afbeeldingen!"
+              },
+              "label": {
+                "en": "Enforce inlude thumbnail notifications",
+                "nl": "Forceer thumbnail notificaties (alleen uitschakelen"
+              },
+              "value": false
+            },
             {
               "id": "alarm_motion_enabled",
               "hint": {
@@ -4906,6 +5062,19 @@
               "label": {
                 "en": "Always on",
                 "nl": "Altijd aan"
+              },
+              "value": false
+            },
+                        {
+              "id": "force_include_thumbnail",
+              "type": "checkbox",
+              "hint": {
+                "en": "Only disable if you don't want cloud images!",
+                "nl": "Alleen uitschakelen als je niet gebruik wilt maken van cloud afbeeldingen!"
+              },
+              "label": {
+                "en": "Enforce inlude thumbnail notifications",
+                "nl": "Forceer thumbnail notificaties (alleen uitschakelen"
               },
               "value": false
             },
@@ -5240,6 +5409,19 @@
               },
               "value": false
             },
+                        {
+              "id": "force_include_thumbnail",
+              "type": "checkbox",
+              "hint": {
+                "en": "Only disable if you don't want cloud images!",
+                "nl": "Alleen uitschakelen als je niet gebruik wilt maken van cloud afbeeldingen!"
+              },
+              "label": {
+                "en": "Enforce inlude thumbnail notifications",
+                "nl": "Forceer thumbnail notificaties (alleen uitschakelen"
+              },
+              "value": false
+            },
             {
               "id": "alarm_motion_enabled",
               "hint": {
@@ -5571,6 +5753,19 @@
               "label": {
                 "en": "Always on",
                 "nl": "Altijd aan"
+              },
+              "value": false
+            },
+                        {
+              "id": "force_include_thumbnail",
+              "type": "checkbox",
+              "hint": {
+                "en": "Only disable if you don't want cloud images!",
+                "nl": "Alleen uitschakelen als je niet gebruik wilt maken van cloud afbeeldingen!"
+              },
+              "label": {
+                "en": "Enforce inlude thumbnail notifications",
+                "nl": "Forceer thumbnail notificaties (alleen uitschakelen"
               },
               "value": false
             },
@@ -5909,6 +6104,19 @@
               },
               "value": false
             },
+                        {
+              "id": "force_include_thumbnail",
+              "type": "checkbox",
+              "hint": {
+                "en": "Only disable if you don't want cloud images!",
+                "nl": "Alleen uitschakelen als je niet gebruik wilt maken van cloud afbeeldingen!"
+              },
+              "label": {
+                "en": "Enforce inlude thumbnail notifications",
+                "nl": "Forceer thumbnail notificaties (alleen uitschakelen"
+              },
+              "value": false
+            },
             {
               "id": "alarm_motion_enabled",
               "hint": {
@@ -6244,6 +6452,19 @@
               },
               "value": false
             },
+                        {
+              "id": "force_include_thumbnail",
+              "type": "checkbox",
+              "hint": {
+                "en": "Only disable if you don't want cloud images!",
+                "nl": "Alleen uitschakelen als je niet gebruik wilt maken van cloud afbeeldingen!"
+              },
+              "label": {
+                "en": "Enforce inlude thumbnail notifications",
+                "nl": "Forceer thumbnail notificaties (alleen uitschakelen"
+              },
+              "value": false
+            },
             {
               "id": "alarm_motion_enabled",
               "hint": {
@@ -6571,6 +6792,19 @@
               "label": {
                 "en": "Always on",
                 "nl": "Altijd aan"
+              },
+              "value": false
+            },
+                        {
+              "id": "force_include_thumbnail",
+              "type": "checkbox",
+              "hint": {
+                "en": "Only disable if you don't want cloud images!",
+                "nl": "Alleen uitschakelen als je niet gebruik wilt maken van cloud afbeeldingen!"
+              },
+              "label": {
+                "en": "Enforce inlude thumbnail notifications",
+                "nl": "Forceer thumbnail notificaties (alleen uitschakelen"
               },
               "value": false
             },
@@ -6906,6 +7140,19 @@
               },
               "value": false
             },
+                        {
+              "id": "force_include_thumbnail",
+              "type": "checkbox",
+              "hint": {
+                "en": "Only disable if you don't want cloud images!",
+                "nl": "Alleen uitschakelen als je niet gebruik wilt maken van cloud afbeeldingen!"
+              },
+              "label": {
+                "en": "Enforce inlude thumbnail notifications",
+                "nl": "Forceer thumbnail notificaties (alleen uitschakelen"
+              },
+              "value": false
+            },
             {
               "id": "alarm_motion_enabled",
               "hint": {
@@ -7157,6 +7404,19 @@
               },
               "value": false
             },
+                        {
+              "id": "force_include_thumbnail",
+              "type": "checkbox",
+              "hint": {
+                "en": "Only disable if you don't want cloud images!",
+                "nl": "Alleen uitschakelen als je niet gebruik wilt maken van cloud afbeeldingen!"
+              },
+              "label": {
+                "en": "Enforce inlude thumbnail notifications",
+                "nl": "Forceer thumbnail notificaties (alleen uitschakelen"
+              },
+              "value": false
+            },
             {
               "id": "alarm_motion_enabled",
               "hint": {
@@ -7402,6 +7662,19 @@
               "label": {
                 "en": "Always on",
                 "nl": "Altijd aan"
+              },
+              "value": false
+            },
+                        {
+              "id": "force_include_thumbnail",
+              "type": "checkbox",
+              "hint": {
+                "en": "Only disable if you don't want cloud images!",
+                "nl": "Alleen uitschakelen als je niet gebruik wilt maken van cloud afbeeldingen!"
+              },
+              "label": {
+                "en": "Enforce inlude thumbnail notifications",
+                "nl": "Forceer thumbnail notificaties (alleen uitschakelen"
               },
               "value": false
             },
@@ -7740,6 +8013,19 @@
               },
               "value": false
             },
+                        {
+              "id": "force_include_thumbnail",
+              "type": "checkbox",
+              "hint": {
+                "en": "Only disable if you don't want cloud images!",
+                "nl": "Alleen uitschakelen als je niet gebruik wilt maken van cloud afbeeldingen!"
+              },
+              "label": {
+                "en": "Enforce inlude thumbnail notifications",
+                "nl": "Forceer thumbnail notificaties (alleen uitschakelen"
+              },
+              "value": false
+            },
             {
               "id": "alarm_motion_enabled",
               "hint": {
@@ -7971,6 +8257,19 @@
               "label": {
                 "en": "Always on",
                 "nl": "Altijd aan"
+              },
+              "value": false
+            },
+                        {
+              "id": "force_include_thumbnail",
+              "type": "checkbox",
+              "hint": {
+                "en": "Only disable if you don't want cloud images!",
+                "nl": "Alleen uitschakelen als je niet gebruik wilt maken van cloud afbeeldingen!"
+              },
+              "label": {
+                "en": "Enforce inlude thumbnail notifications",
+                "nl": "Forceer thumbnail notificaties (alleen uitschakelen"
               },
               "value": false
             },
