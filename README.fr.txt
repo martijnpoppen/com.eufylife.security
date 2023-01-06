@@ -1,13 +1,14 @@
-Install instructions (French)
+Instructions d'installation (français)
 
-Because of the way the Eufy Security private API works, an email/password combo cannot
-work with both the Eufy Security mobile app and the Homey app. 
+En raison du fonctionnement de l'API privée d'Eufy Security, un ensemble e-mail/mot de passe ne peut pas
+fonctionner à la fois avec l'application mobile Eufy Security et l'application Homey.
 
-It is recommended to use the mobile Eufy app to create a secondary "admin" account with a separate email address
-and use it with this app.
+Il est recommandé d'utiliser l'application mobile Eufy pour créer un compte "admin" secondaire avec une adresse e-mail distincte
+et de l'utiliser avec cette application.
 
-Usage
-- Install this app on your Homey.
-- Go to `add devices` 
-- Provide your Username and Password. Click Next
-- Available devices show up
+Utilisation :
+- Installez cette application sur votre Homey.
+- Accédez à "Ajouter des appareils"
+- Sélectionner Eufy Security
+- Indiquez votre nom d'utilisateur et votre mot de passe. Cliquez sur Suivant
+- Les appareils disponibles s'affichent
