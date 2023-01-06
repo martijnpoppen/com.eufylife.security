@@ -1,7 +1,7 @@
 # Eufy Security
 
 Add support for Eufy Cam in Homey.
-Link: https://homey.app/nl-nl/app/com.eufylife.security/Eufy-Security/
+Link: https://homey.app/a/com.eufylife.security
 
 # Account Information
 
