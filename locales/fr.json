@@ -17,7 +17,7 @@
     "no_data": "Aucun périphérique trouvé. Essayez une autre région.",
     "no_devices": "Aucun périphérique trouvé. Assurez-vous que vous avez partagé les appareils Eufy avec un compte administrateur",
     "no_devices_repair": "La réparation a échoué. Aucun appareil trouvé dans votre compte. Assurez-vous d'avoir partagé les appareils Eufy avec un compte administrateur. Ou modifiez votre login sur la page précédente",
-    "keypad": "Le clavier est un dispositif physique permettant de définir le mode de sécurité de la Homebase. Par conséquent, cela n'a pas de fonctionnalité propre dans l'application Homey. Pour créer des flux basés sur ou modifier les modes de sécurité, veuillez ajouter le homebase à la place (si ce n'est déjà fait). Vous y trouverez les modes de sécurité et les cartes de flux pour les modes de sécurité."."
+    "keypad": "Le clavier est un dispositif physique permettant de définir le mode de sécurité de la Homebase. Par conséquent, cela n'a pas de fonctionnalité propre dans l'application Homey. Pour créer des flux basés sur ou modifier les modes de sécurité, veuillez ajouter le homebase à la place (si ce n'est déjà fait). Vous y trouverez les modes de sécurité et les cartes de flux pour les modes de sécurité."
   },
   "device": {
     "init": "se connecte au serveur Eufy...",
