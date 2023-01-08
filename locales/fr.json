@@ -1,0 +1,29 @@
+{
+  "settings": {
+    "title": "Eufy Page de Configuration",
+    "subtitle": "Les paramètres de connexion n'apparaissent pas sur cette page. Pour corriger la connexion Eufy, accédez aux paramètres de l'appareil d'un appareil Eufy (par exemple, Homebase 2) dans Homey et cliquez sur maintenance, puis sur réparer.",
+    "account": "Paramètres du compte"
+  },
+  "pair": {
+    "usernameLabel": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire avec 2FA désactivé)",
+    "usernamePlaceholder": "john@doe.com",
+    "passwordLabel": "Mot de passe",
+    "passwordPlaceholder": "Mot de passe",
+    "captchaLabel": "Captcha",
+    "region": "Région",
+    "login": "Utilisateur",
+    "loading": "Chargement",
+    "reset": "Ne réinitialisez pas le service de notification si vous avez des déclencheurs fonctionnels (personne détectée, etc.). <br><br> Cliquer sur ce bouton créera une nouvelle instance et pourrait provoquer un doublon.",
+    "no_data": "Aucun périphérique trouvé. Essayez une autre région.",
+    "no_devices": "Aucun périphérique trouvé. Assurez-vous que vous avez partagé les appareils Eufy avec un compte administrateur",
+    "no_devices_repair": "La réparation a échoué. Aucun appareil trouvé dans votre compte. Assurez-vous d'avoir partagé les appareils Eufy avec un compte administrateur. Ou modifiez votre login sur la page précédente",
+    "keypad": "Le clavier est un dispositif physique permettant de définir le mode de sécurité de la Homebase. Par conséquent, cela n'a pas de fonctionnalité propre dans l'application Homey. Pour créer des flux basés sur ou modifier les modes de sécurité, veuillez ajouter le homebase à la place (si ce n'est déjà fait). Vous y trouverez les modes de sécurité et les cartes de flux pour les modes de sécurité."
+  },
+  "device": {
+    "init": "se connecte au serveur Eufy...",
+    "need_captcha": "Échec de la connexion (captcha nécessaire). Essayez de réparer l'appareil. Paramètres de l'appareil -> maintenance -> réparation",
+    "need_2FA": "Échec de la connexion (2FA nécessaire). Essayez de réparer l'appareil. Paramètres de l'appareil -> maintenance -> réparation",
+    "serial_failure": "Échec de la connexion (numéro de série du périphérique introuvable). Essayez de réparer l'appareil. Paramètres de l'appareil -> maintenance -> réparation",
+    "serial_failure_station": "Échec de la connexion (série de la station introuvable). Essayez de réparer l'appareil. Paramètres de l'appareil -> maintenance -> réparation"
+  }
+}

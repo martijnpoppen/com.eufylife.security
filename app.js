@@ -55,10 +55,6 @@ class App extends Homey.App {
 
                 this.log('onStartup - Loaded settings', { ...this.appSettings, USERNAME: 'LOG', PASSWORD: 'LOG' });
 
-                if (!this.appSettings.NOTIFICATIONS.includes('ntfy2022122101')) {
-                    await this.removePersistenData();
-                }
-
                 this.initEufyClient();
                 this.sendNotifications();
             });
@@ -361,17 +357,7 @@ class App extends Homey.App {
             this.log('resetEufyClient - Resetting EufyClient');
             await this.eufyClient.close();
          
-            this.eufyClient = undefined;
-        }
-    }
-
-    async removePersistenData() {
-        try {
-            await fse.unlinkSync(path.resolve(__dirname, '/userdata/persistent.json'));
-          
-            this.log('removePersistenData - Delete File successfully.');
-          } catch (error) {
-            console.log(error);
+            // this.eufyClient = undefined;
         }
     }
 
