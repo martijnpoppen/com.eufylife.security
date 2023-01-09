@@ -1087,5 +1087,8 @@
   },
   "3.6.5": {
     "en": "FIX: person detection for T8432"
+  },
+  "3.7.0": {
+    "en": "NEW: add French locale"
   }
 }
