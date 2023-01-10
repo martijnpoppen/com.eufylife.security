@@ -10841,7 +10841,7 @@
           "title": {
             "en": "Disarmed",
             "nl": "Uitgeschakeld",
-            "fr": "Désactivee"
+            "fr": "Désactivée"
           }
         },
         {
@@ -10894,7 +10894,7 @@
       "title": {
         "en": "Disarmed",
         "nl": "Uitgeschakeld",
-        "fr": "Désactivee"
+        "fr": "Désactivée"
       },
       "icon": "assets/icons/sound.svg",
       "uiComponent": "sensor",
@@ -11112,7 +11112,7 @@
       "title": {
         "en": "Set Chime snooze mode",
         "nl": "Zet Chime snooze modus",
-        "fr": "Régler le mode snooze du Homebase"
+        "fr": "Régler le mode 'snooze' du Homebase"
       }
     },
     "CMD_SET_FLOODLIGHT_MANUAL_SWITCH": {
@@ -11206,7 +11206,7 @@
       },
       "insightsTitleFalse": {
         "en": "Doorbell Press - off",
-        "nl": "Deurbel Druk Gedetecte,erd - uit",
+        "nl": "Deurbel Druk Gedetecteerd - uit",
         "fr": "Sonnerie de porte - désactivée"
       },
       "title": {
