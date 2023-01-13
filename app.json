@@ -5944,7 +5944,7 @@
                   "label": {
                     "en": "off / disarmed / away",
                     "nl": "uit / uitgeschakeld / afwezig",
-                    "fr": "off / désactivée / à l'exterieur"
+                    "fr": "off / désactivée / à l'extérieur"
                   }
                 },
                 {
@@ -5952,7 +5952,7 @@
                   "label": {
                     "en": "away / custom 1",
                     "nl": "afwezig / custom 1",
-                    "fr": "à l'exterieur / personalisé 1"
+                    "fr": "à l'extérieur / personalisé 1"
                   }
                 },
                 {
@@ -5960,7 +5960,7 @@
                   "label": {
                     "en": "away / custom 2",
                     "nl": "afwezig / custom 2",
-                    "fr": "à l'exterieur / personalisé 2"
+                    "fr": "à l'extérieur / personalisé 2"
                   }
                 },
                 {
@@ -5968,7 +5968,7 @@
                   "label": {
                     "en": "away / custom 3",
                     "nl": "afwezig / custom 3",
-                    "fr": "à l'exterieur / personalisé 3"
+                    "fr": "à l'extérieur / personalisé 3"
                   }
                 },
                 {
@@ -6320,7 +6320,7 @@
                   "label": {
                     "en": "off / disarmed / away",
                     "nl": "uit / uitgeschakeld / afwezig",
-                    "fr": "off / désactivée / à l'exterieur"
+                    "fr": "off / désactivée / à l'extérieur"
                   }
                 },
                 {
@@ -6697,7 +6697,7 @@
                   "label": {
                     "en": "off / disarmed / away",
                     "nl": "uit / uitgeschakeld / afwezig",
-                    "fr": "off / désactivée / à l'exterieur"
+                    "fr": "off / désactivée / à l'extérieur"
                   }
                 },
                 {
@@ -7446,7 +7446,7 @@
                   "label": {
                     "en": "off / disarmed / away",
                     "nl": "uit / uitgeschakeld / afwezig",
-                    "fr": "off / désactivée / à l'exterieur"
+                    "fr": "off / désactivée / à l'extérieur"
                   }
                 },
                 {
@@ -7454,7 +7454,7 @@
                   "label": {
                     "en": "away / custom 1",
                     "nl": "afwezig / custom 1",
-                    "fr": "à l'exterieur / personalisé 1"
+                    "fr": "à l'extérieur / personalisé 1"
                   }
                 },
                 {
@@ -7462,7 +7462,7 @@
                   "label": {
                     "en": "away / custom 2",
                     "nl": "afwezig / custom 2",
-                    "fr": "à l'exterieur / personalisé 2"
+                    "fr": "à l'extérieur / personalisé 2"
                   }
                 },
                 {
@@ -7470,7 +7470,7 @@
                   "label": {
                     "en": "away / custom 3",
                     "nl": "afwezig / custom 3",
-                    "fr": "à l'exterieur / personalisé 3"
+                    "fr": "à l'extérieur / personalisé 3"
                   }
                 },
                 {
@@ -9475,7 +9475,7 @@
                   "label": {
                     "en": "off / disarmed / away",
                     "nl": "uit / uitgeschakeld / afwezig",
-                    "fr": "off / désactivée / à l'exterieur"
+                    "fr": "off / désactivée / à l'extérieur"
                   }
                 },
                 {
@@ -9483,7 +9483,7 @@
                   "label": {
                     "en": "away / custom 1",
                     "nl": "afwezig / custom 1",
-                    "fr": "à l'exterieur / personalisé 1"
+                    "fr": "à l'extérieur / personalisé 1"
                   }
                 },
                 {
@@ -9491,7 +9491,7 @@
                   "label": {
                     "en": "away / custom 2",
                     "nl": "afwezig / custom 2",
-                    "fr": "à l'exterieur / personalisé 2"
+                    "fr": "à l'extérieur / personalisé 2"
                   }
                 },
                 {
@@ -9499,7 +9499,7 @@
                   "label": {
                     "en": "away / custom 3",
                     "nl": "afwezig / custom 3",
-                    "fr": "à l'exterieur / personalisé 3"
+                    "fr": "à l'extérieur / personalisé 3"
                   }
                 },
                 {
@@ -10817,7 +10817,7 @@
           "title": {
             "en": "Away",
             "nl": "Afwezig",
-            "fr": "A l'exterieur"
+            "fr": "A l'extérieur"
           }
         },
         {
