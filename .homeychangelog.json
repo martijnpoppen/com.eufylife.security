@@ -1093,5 +1093,8 @@
   },
   "3.7.1": {
     "en": "NEW: add French locale"
+  },
+  "3.7.2": {
+    "en": "FIX: french locale"
   }
 }
