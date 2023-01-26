@@ -1096,5 +1096,8 @@
   },
   "3.7.2": {
     "en": "FIX: french locale"
+  },
+  "3.7.3": {
+    "en": "FIX: Eufycam 3 light switch"
   }
 }
