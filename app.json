@@ -2995,6 +2995,7 @@
       "capabilities": [
         "onoff",
         "CMD_DEV_LED_SWITCH",
+        "CMD_SET_FLOODLIGHT_MANUAL_SWITCH",
         "alarm_motion",
         "measure_battery",
         "measure_temperature",
