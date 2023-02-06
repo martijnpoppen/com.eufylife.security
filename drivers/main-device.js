@@ -510,8 +510,7 @@ module.exports = class mainDevice extends Homey.Device {
 
                 // if (!imagePath.startsWith('https://')) {
                     // if(!this._imageSet) {
-                        const localAddress = await this.homey.app.getStreamAddress();
-                        imagePath = `${localAddress}/app/${Homey.manifest.id}/assets/images/patched.jpg`
+                        imagePath = `https://raw.githubusercontent.com/martijnpoppen/com.eufylife.security/main/assets/images/patched.jpg`
 
                         this.homey.app.log(`[Device] ${this.getName()} - Setting image - `, imagePath);
                         
