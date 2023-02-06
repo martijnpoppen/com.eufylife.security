@@ -1102,5 +1102,8 @@
   },
   "3.7.4": {
     "en": "FIX: Stream videplayer (chromecast compatible) | FIX: Fallback image not showing on HP2023 | FIX: Homebase ringtone"
+  },
+  "3.7.5": {
+    "en": "FIX: Stream videplayer (chromecast compatible) | FIX: Fallback image not showing on HP2023 | FIX: Homebase ringtone"
   }
 }
