@@ -68,7 +68,7 @@ module.exports = class mainHub extends mainDevice {
     async onCapability_CMD_TRIGGER_RINGTONE_HUB(value) {
         try {
             this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_TRIGGER_RINGTONE_HUB - `, value);
-            await this.EufyStation.chimeHombase(value)
+            await this.EufyStation.chimeHomebase(value)
         } catch (e) {
             this.homey.app.error(e);
         }
