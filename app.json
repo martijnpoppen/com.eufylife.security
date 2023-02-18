@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "3.7.5",
+  "version": "3.7.6",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "brandColor": "#2a6185",
@@ -836,7 +836,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_1080P_POWERED&capabilities=CMD_REBOOT_HUB"
+            "filter": "driver_id=driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_1080P_POWERED|driver_HOMEBASE_1|driver_HOMEBASE|driver_HOMEBASE_3&capabilities=CMD_REBOOT_HUB"
           }
         ]
       },
