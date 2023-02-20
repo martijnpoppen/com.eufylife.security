@@ -1108,5 +1108,8 @@
   },
   "3.7.6": {
     "en": "ADD: Reboot Homebase"
+  },
+  "3.7.7": {
+    "en": "FIX: prevent app crash due to wrong JSON format in notification"
   }
 }
