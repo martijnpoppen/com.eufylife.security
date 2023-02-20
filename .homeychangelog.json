@@ -1111,5 +1111,8 @@
   },
   "3.7.7": {
     "en": "FIX: prevent app crash due to wrong JSON format in notification"
+  },
+  "3.7.8": {
+    "en": "FIX: prevent app crash due to wrong JSON format in notification"
   }
 }
