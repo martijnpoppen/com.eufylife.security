@@ -1117,5 +1117,8 @@
   },
   "3.8.0": {
     "en": "NEW: update library (prevent notification errors / app crashes)"
+  },
+  "3.9.0": {
+    "en": "NEW: add security mode trigger to non-homebase camera's"
   }
 }
