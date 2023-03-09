@@ -1123,5 +1123,8 @@
   },
   "3.9.1": {
     "en": "FIX: person detection error in notification service"
+  },
+  "3.9.2": {
+    "en": "FIX: person detection error in notification service"
   }
 }
