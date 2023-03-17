@@ -1126,5 +1126,8 @@
   },
   "3.9.2": {
     "en": "FIX: person detection error in notification service"
+  },
+  "3.9.3": {
+    "en": "FIX: homebase snooze | FIX: reduce memory"
   }
 }
