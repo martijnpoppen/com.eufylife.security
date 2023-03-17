@@ -1132,5 +1132,8 @@
   },
   "3.9.4": {
     "en": "FIX: homebase snooze | FIX: reduce memory"
+  },
+  "3.9.5": {
+    "en": "FIX: homebase snooze | FIX: reduce memory"
   }
 }
