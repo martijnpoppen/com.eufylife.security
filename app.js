@@ -2,7 +2,6 @@
 
 const Homey = require('homey');
 const path = require('path');
-const fse = require('fs-extra');
 
 const { EventEmitter } = require('events');
 
@@ -39,9 +38,6 @@ class App extends Homey.App {
             this.log(`${this.homey.manifest.id} - ${this.homey.manifest.version} started...`);
 
             await this.initGlobarVars();
-
-            // No await - finish onInit asap to start the drivers
-            this.initApp();
         } catch (error) {
             this.homey.app.log(error);
         }
@@ -49,18 +45,23 @@ class App extends Homey.App {
 
     async initApp() {
         try {
-            this.homeyEvents.once('driversInitialized', async () => {
-                await sleep(2000);
-                await this.initSettings();
+            await sleep(2000);
+            await this.initSettings();
 
-                this.log('onStartup - Loaded settings', { ...this.appSettings, USERNAME: 'LOG', PASSWORD: 'LOG' });
+            this.log('onStartup - Loaded settings', { ...this.appSettings, USERNAME: 'LOG', PASSWORD: 'LOG' });
 
-                this.initEufyClient();
-                this.sendNotifications();
-            });
+            this.initEufyClient();
+            this.sendNotifications();
         } catch (error) {
             this.homey.app.log(error);
         }
+    }
+
+    async initDevices(initial = false) {
+        this.homey.app.deviceList.every(async (device, index) => {
+            await sleep((index + 1) * 5000);
+            device.onStartup(initial);
+        });
     }
 
     // -------------------- SETTINGS ----------------------
@@ -135,10 +136,10 @@ class App extends Homey.App {
                 if (!('TRUSTED_DEVICE_NAME' in this.appSettings)) {
                     const rnd = randomNumber(0, PhoneModels.length);
                     const trustedDeviceName = `${PhoneModels[rnd]}-Homey`;
-                    
-                    this.log(`initSettings - Setting Trusted Device Name: ${trustedDeviceName}`)
 
-                    await this.updateSettings({    
+                    this.log(`initSettings - Setting Trusted Device Name: ${trustedDeviceName}`);
+
+                    await this.updateSettings({
                         ...this.appSettings,
                         TRUSTED_DEVICE_NAME: `${PhoneModels[rnd]}-Homey`
                     });
@@ -192,12 +193,11 @@ class App extends Homey.App {
                 await this.homey.notifications.createNotification({
                     excerpt: ntfy2022122102
                 });
-                
+
                 await this.homey.notifications.createNotification({
                     excerpt: ntfy2022122101
                 });
 
-              
                 await this.updateSettings({
                     ...this.appSettings,
                     NOTIFICATIONS: [...this.appSettings.NOTIFICATIONS, 'ntfy2022122101', 'ntfy2022122102', 'ntfy2022122103']
@@ -227,7 +227,7 @@ class App extends Homey.App {
         try {
             this.log('eufyLogin - New settings:', { ...data, USERNAME: 'LOG', PASSWORD: 'LOG' });
             this.log(`eufyLogin - Found username and password. Logging in to Eufy`);
-            
+
             await this.updateSettings(data);
 
             const loggedIn = await this.setEufyClient(data);
@@ -356,14 +356,14 @@ class App extends Homey.App {
         if (this.eufyClient) {
             this.log('resetEufyClient - Resetting EufyClient');
             await this.eufyClient.close();
-         
+
             // this.eufyClient = undefined;
         }
     }
 
     connectEufyClientHandlers() {
         this.eufyClient.on('tfa request', () => {
-            this.log('Event: tfa request (2FA)')
+            this.log('Event: tfa request (2FA)');
 
             this.need2FA = true;
         });
@@ -409,7 +409,7 @@ class App extends Homey.App {
 
             await sleep(4000);
 
-            this.homeyEvents.emit('eufyClientConnected');
+            await this.initDevices(true);
 
             this.initEvents();
         }
@@ -425,7 +425,7 @@ class App extends Homey.App {
         if (!this.driversInitialized) {
             this.driversInitialized = true;
             await sleep(2000);
-            this.homeyEvents.emit('driversInitialized');
+            this.initApp();
         }
     }
 

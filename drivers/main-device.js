@@ -7,15 +7,6 @@ const { PropertyName } = require('eufy-security-client');
 module.exports = class mainDevice extends Homey.Device {
     async onInit() {
         await this.setupDevice();
-
-        this.homey.app.homeyEvents.once('eufyClientConnected', () => {
-            const initial = true;
-            this.onStartup(initial);
-        });
-
-        this.homey.app.homeyEvents.on('eufyClientConnectedRepair', () => {
-            this.onStartup();
-        });
     }
 
     async onStartup(initial = false) {
@@ -23,9 +14,6 @@ module.exports = class mainDevice extends Homey.Device {
             this.homey.app.log(`[Device] ${this.getName()} - starting`);
 
             this.setUnavailable(`${this.getName()} ${this.homey.__('device.init')}`);
-
-            const sleepIndex = this.homey.app.deviceList.findIndex(d => this.HomeyDevice.device_sn === d.HomeyDevice.device_sn);
-            await sleep((sleepIndex + 1) * 5000);
 
             this.EufyDevice = await this.homey.app.eufyClient.getDevice(this.HomeyDevice.device_sn);
             this.HomeyDevice.station_sn = await this.EufyDevice.getStationSerial();
@@ -70,8 +58,6 @@ module.exports = class mainDevice extends Homey.Device {
 
     async onAdded() {
         this.homey.app.setDevice(this);
-
-        await sleep(7000);
 
         this.onStartup(true);
     }
@@ -345,9 +331,9 @@ module.exports = class mainDevice extends Homey.Device {
 
     async onCapability_CMD_SET_SNOOZE_MODE(homebase = 0, motion = 0, snooze = 0, chime = 0) {
         const payload = {
-            snooze_homebase: !!homebase,
-            snooze_motion: !!motion,
-            snooze_chime: !!chime,
+            snooze_homebase: !!parseInt(homebase),
+            snooze_motion: !!parseInt(motion),
+            snooze_chime: !!parseInt(chime),
             snooze_time: parseInt(snooze)
         };
 
