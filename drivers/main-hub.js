@@ -1,14 +1,18 @@
+"use strict";
+
 const mainDevice = require('./main-device');
 const { ARM_TYPES } = require('../constants/capability_types');
 const { PropertyName } = require('eufy-security-client');
 const { sleep } = require('../lib/utils.js');
 
 module.exports = class mainHub extends mainDevice {
-    async onStartup(initial = false) {
+    async onStartup(initial = false, index) {
         try {
             this.homey.app.log(`[Device] ${this.getName()} - starting`);
 
             this.setUnavailable(`${this.getName()} ${this.homey.__('device.init')}`);
+
+            await sleep((index + 1) * 7000);
 
             this.EufyStation = await this.homey.app.eufyClient.getStation(this.HomeyDevice.station_sn);
 

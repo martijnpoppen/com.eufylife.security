@@ -1,3 +1,5 @@
+"use strict";
+
 const Homey = require('homey');
 const fetch = require('node-fetch');
 const { ARM_TYPES } = require('../constants/capability_types');
@@ -9,11 +11,13 @@ module.exports = class mainDevice extends Homey.Device {
         await this.setupDevice();
     }
 
-    async onStartup(initial = false) {
+    async onStartup(initial = false, index) {
         try {
             this.homey.app.log(`[Device] ${this.getName()} - starting`);
 
             this.setUnavailable(`${this.getName()} ${this.homey.__('device.init')}`);
+
+            await sleep((index + 1) * 7000);
 
             this.EufyDevice = await this.homey.app.eufyClient.getDevice(this.HomeyDevice.device_sn);
             this.HomeyDevice.station_sn = await this.EufyDevice.getStationSerial();
@@ -47,7 +51,7 @@ module.exports = class mainDevice extends Homey.Device {
                 force_include_thumbnail: true
             });
 
-            await this.EufyStation.getCameraInfo();
+            // await this.EufyStation.getCameraInfo();
 
             this._started = true;
         } catch (error) {

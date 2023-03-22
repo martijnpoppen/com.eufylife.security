@@ -3,8 +3,6 @@
 const Homey = require('homey');
 const path = require('path');
 
-const { EventEmitter } = require('events');
-
 const { EufySecurity } = require('eufy-security-client');
 const { PhoneModels } = require('eufy-security-client/build/http/const');
 
@@ -58,9 +56,8 @@ class App extends Homey.App {
     }
 
     async initDevices(initial = false) {
-        this.homey.app.deviceList.every(async (device, index) => {
-            await sleep((index + 1) * 5000);
-            device.onStartup(initial);
+        this.deviceList.every(async (device, index) => {
+            await device.onStartup(initial, index);
         });
     }
 
@@ -88,9 +85,6 @@ class App extends Homey.App {
                 this.settingsInitialized = true;
             }
         });
-
-        this.homeyEvents = new EventEmitter();
-        this.homeyEvents.setMaxListeners(100);
     }
 
     async initSettings() {
@@ -344,7 +338,7 @@ class App extends Homey.App {
             this.libraryLog = Logger.createNew('EufyLibrary', debug);
             this.eufyClient = await EufySecurity.initialize(config, this.libraryLog);
 
-            this.connectEufyClientHandlers();
+            await this.connectEufyClientHandlers();
 
             return await this.checkLogin();
         } catch (err) {
@@ -411,7 +405,7 @@ class App extends Homey.App {
 
             await this.initDevices(true);
 
-            this.initEvents();
+            await this.initEvents();
         }
     }
 
