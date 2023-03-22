@@ -1141,5 +1141,8 @@
   },
   "3.9.7": {
     "en": "FIX: app error"
+  },
+  "3.9.8": {
+    "en": "FIX: memory usage"
   }
 }
