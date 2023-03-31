@@ -16,17 +16,19 @@ module.exports = class mainHub extends mainDevice {
 
             this.EufyStation = await this.homey.app.eufyClient.getStation(this.HomeyDevice.station_sn);
 
-            await this.resetCapabilities();
-
             if(initial) {
                 const settings = this.getSettings();
 
                 await this.checkCapabilities();
 
+                await this.resetCapabilities();
+
                 await this.check_alarm_arm_mode(settings);
                 await this.check_alarm_generic(settings);
 
                 await this.setCapabilitiesListeners();
+            } else {
+                await this.resetCapabilities();
             }
 
             await this.setAvailable();

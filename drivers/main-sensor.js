@@ -15,12 +15,13 @@ module.exports = class mainSensor extends mainDevice {
             this.EufyDevice = await this.homey.app.eufyClient.getDevice(this.HomeyDevice.device_sn);
             this.HomeyDevice.station_sn = await this.EufyDevice.getStationSerial();
             this.EufyStation = await this.homey.app.eufyClient.getStation(this.HomeyDevice.station_sn);
-    
-            await this.resetCapabilities();
 
             if(initial) {
                 await this.checkCapabilities();
+                await this.resetCapabilities();
                 await this.setCapabilitiesListeners();
+            } else {
+                await this.resetCapabilities();
             }
     
             await this.setAvailable();

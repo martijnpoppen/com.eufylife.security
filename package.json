@@ -7,7 +7,7 @@
     "url": "https://github.com/martijnpoppen/com.eufylife.security"
   },
   "dependencies": {
-    "eufy-security-client": "https://github.com/martijnpoppen/eufy-security-client/tarball/homey-integration",
+    "eufy-security-client": "^2.4.2",
     "node-fetch": "^2.6.1"
   }
 }

@@ -28,18 +28,20 @@ module.exports = class mainDevice extends Homey.Device {
 
             await this.deviceImage();
 
-            await this.resetCapabilities();
-
             if (initial) {
                 const settings = this.getSettings();
 
                 await this.checkCapabilities();
+
+                await this.resetCapabilities();
 
                 await this.check_alarm_arm_mode(settings);
                 await this.check_alarm_generic(settings);
                 await this.check_alarm_motion(settings);
 
                 await this.setCapabilitiesListeners();
+            } else {
+                await this.resetCapabilities();
             }
 
             await this.setAvailable();
@@ -413,7 +415,7 @@ module.exports = class mainDevice extends Homey.Device {
 
                     const streamKey = streamUrl[1].split('?');
 
-                    internalStreamUrl = `${streamUrl[0]}:1443/hls/${streamKey[0].replace('==', '')}.m3u8?${streamKey[1]}`;
+                    internalStreamUrl = `${streamUrl[0]}:1443/hls/${streamKey[0]}.m3u8?${streamKey[1]}`;
 
                     if (streamType === 'hls_only') {
                         streamUrl = internalStreamUrl;
