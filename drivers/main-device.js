@@ -151,7 +151,8 @@ module.exports = class mainDevice extends Homey.Device {
             driverCapabilities = driverCapabilities.filter(item => !deleteCapabilities.includes(item))
         }
 
-        if (this.homey.app.deviceTypes.HOMEBASE_3.some((v) => !this.HomeyDevice.station_sn.includes(v))) {
+        // Check if Homebase NOT exists:
+        if (!this.homey.app.deviceTypes.HOMEBASE_3.some((v) => this.HomeyDevice.station_sn.includes(v))) {
             let deleteCapabilities = ['NTFY_VEHICLE_DETECTED'];
 
             if(!this.HomeyDevice.isStandAlone) {
