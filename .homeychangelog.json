@@ -1147,5 +1147,8 @@
   },
   "3.9.9": {
     "en": "FIX: memory"
+  },
+  "3.9.10": {
+    "en": "FIX: Homebase 3 - Pet and Vehicle detection"
   }
 }
