@@ -1153,5 +1153,8 @@
   },
   "3.9.11": {
     "en": "FIX: homebase 3 sensors | FIX Eufycam 3 Light Flowcard | FIX: Show Patched API on streamings page | FIX: get local Homey url for stream page"
+  },
+  "3.9.12": {
+    "en": "FIX: Homebase 3 chime"
   }
 }
