@@ -71,7 +71,17 @@ module.exports = class mainHub extends mainDevice {
     async onCapability_CMD_TRIGGER_RINGTONE_HUB(value) {
         try {
             this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_TRIGGER_RINGTONE_HUB - `, value);
-            await this.EufyStation.chimeHomebase(value)
+
+            const eufyDevices = await this.homey.app.eufyClient.getDevices();
+            this.EufyStationDevice = eufyDevices.find(d => d.getStationSerial() === this.EufyStation.getSerial() && d.isDoorbell());
+
+            if (!this.EufyStationDevice) {
+                this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_TRIGGER_RINGTONE_HUB - standalone`);
+                await this.EufyStation.chimeHomebase(value);
+            } else {
+                this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_TRIGGER_RINGTONE_HUB - with EufyStationDevice`);
+                await this.EufyStation.setHomebaseChimeRingtoneType(this.EufyStationDevice, value);
+            }
         } catch (e) {
             this.homey.app.error(e);
         }
