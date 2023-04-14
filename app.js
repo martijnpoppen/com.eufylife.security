@@ -441,11 +441,10 @@ class App extends Homey.App {
     /// ----------------- Streaming --------------------
     async getStreamAddress() {
         try {
-            let internalIp = (await this.homey.cloud.getLocalAddress()).replace(/:.*/, '');
-            internalIp = internalIp.replace(/\./g, '-');
-            this.log(`getStreamAddress - Set internalIp`, internalIp);
+            let homeyCloudId = await this.homey.cloud.getHomeyId();
+            this.log(`getStreamAddress - Set homeyCloudId`, homeyCloudId);
 
-            return `https://${internalIp}.homey.homeylocal.com`;
+            return `https://${homeyCloudId}.connect.athom.com`;
         } catch (error) {
             this.error(error);
         }
