@@ -5,132 +5,80 @@
     <meta charset='utf-8'>
     <title>HLS/M3U8 HTML5-Player</title>
     <style id='baseCss'>
-        html,
-        body {
+        /* Set height to 100% for body and html to enable the background image to cover the whole page: */
+        body,
+        html {
             height: 100%;
-        }
-
-        body {
-            background-color: #000;
-            text-align: center;
-            line-height: 2.2em;
-            padding-top: 1%;
-            font-family: Arial;
             overflow: hidden;
+            padding: 0;
+            margin: 0;
         }
 
-        .video-js {
-            margin: 0 auto;
+        .bgimg {
+            /* Background image */
+            background: black;
+            /* Full-screen */
+            height: 100%;
+            /* Center the background image */
+            background-position: center;
+            /* Scale and zoom in the image */
+            background-size: cover;
+            /* Add position: relative to enable absolutely positioned elements inside the image (place text) */
+            position: relative;
+            /* Add a white text color to all elements inside the .bgimg container */
+            color: white;
+            /* Add a font */
+            font-family: "Courier New", Courier, monospace;
+            /* Set the font-size to 25 pixels */
+            font-size: 20px;
+        }
+
+        /* Position text in the top-left corner */
+        .topleft {
+            position: absolute;
+            top: 0;
+            left: 16px;
+        }
+
+        /* Position text in the bottom-left corner */
+        .bottomleft {
+            position: absolute;
+            bottom: 0;
+            left: 16px;
+        }
+
+        /* Position text in the middle */
+        .middle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        /* Style the <hr> element */
+        hr {
+            margin: auto;
+            width: 40%;
         }
     </style>
-    <link href="https://unpkg.com/video.js@7.11.4/dist/video-js.css" rel="stylesheet">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 </head>
 
 <body>
-    <video-js id="video-js" class="vjs-default-skin" controls preload="auto">
-    </video-js>
-    <script src="https://unpkg.com/video.js@7.11.4/dist/video.js"></script>
-    <script src="https://unpkg.com/@videojs/http-streaming/dist/videojs-http-streaming.js"></script>
-
-
-    <script>
-        function getQueryParams () {
-            const urlSearchParams = new URLSearchParams(window.location.search);
-            const params = Object.fromEntries(urlSearchParams.entries());
-
-            return params;
-        }
-
-        function setFullscreenStyles () {
-            var css = document.getElementById('baseCss');
-            css.textContent = css.textContent + '#player,.video-js{position:absolute !important;width:100%;height:100%;top:0;left:0;}' +
-                '#header{display:none;}';
-        }
-
-        function createVideoElem (srcUrl) {
-            var playing = false;
-            var player = videojs('video-js', {
-                controls: true,
-                autoplay: true,
-                preload: 'auto',
-                muted: true
-            });
-
-            player.src([{ type: 'application/x-mpegURL', src: srcUrl }, { type: 'application/vnd.apple.mpegurl', src: srcUrl }]);
-
-
-            videojs.hook('error', errHandler, false);
-
-
-            player.ready(function () {
-                setTimeout(() => {
-                    if (player.paused()) {
-                        console.log('paused - auto-starting');
-                        playing = false;
-                        player.options.muted = true;
-                        player.play();
-                    } else {
-                        console.log('playing');
-                        playing = true;
-                    }
-                }, 1000);
-
-            })
-
-            player.reloadSourceOnError({
-                getSource: function(reload) {
-                    // call reload() with a fresh source object
-                    // you can do this step asynchronously if you want (but the error dialog will
-                    // show up while you're waiting)
-                    reload({
-                        src: srcUrl,
-                        type: 'application/x-mpegURL'
-                    });
-                },
-                errorInterval: 5
-            });
-
-            setFullscreenStyles();
-
-            function errHandler (e) {
-                console.log('error', e);
-                // player.createModal('Retrying connection with Eufy Server');
-                // if (player.error().code === 4) {
-                //     this.player.retryLock = setTimeout(() => {
-                //         player.src({
-                //             src: data.url
-                //         });
-                //         player.load();
-                //     }, 5000);
-                // }
-            }
-        };
-
-
-        window.onload = async function () {
-            var queryParams = getQueryParams()
-            let hls = '';
-
-            if (queryParams.device_sn) {
-                var streamurl = `https://${window.location.host}/api/app/com.eufylife.security/streamurl?device_sn=${queryParams.device_sn}`;
-
-                let response = await fetch(streamurl);
-                hls = await response.json();
-            }
-
-            if (queryParams.hls) {
-                hls = queryParams.hls;
-            }
-
-            var videoSource = ('undefined' !== typeof hls) ? encodeURI(hls) : false
-
-            if (!!videoSource && '' !== videoSource) {
-                await createVideoElem(videoSource);
-            }
-        };
-
-    </script>
+    <div class="bgimg">
+        <div class="topleft">
+          
+        </div>
+        <div class="middle">
+          <h1>Oops</h1>
+          <hr>
+          <p>Unfortunately Eufy patched their API. <br>Therefore it's not possible to show a stream.</p><p>A possible fix is being researched</p>
+        </div>
+        <div class="bottomleft">
+          
+        </div>
+      </div> 
 </body>
 
 </html>
