@@ -1156,5 +1156,8 @@
   },
   "3.9.12": {
     "en": "FIX: Homebase 3 chime"
+  },
+  "3.9.13": {
+    "en": "FIX: Homebase chime | FIX: solocams | FIX: indoor cams not responding"
   }
 }
