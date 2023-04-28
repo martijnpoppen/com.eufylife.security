@@ -2,7 +2,7 @@
 
 const mainDevice = require('./main-device');
 const { ARM_TYPES } = require('../constants/capability_types');
-const { PropertyName } = require('eufy-security-client');
+const { PropertyName, CommandType } = require('eufy-security-client');
 const { sleep } = require('../lib/utils.js');
 
 module.exports = class mainHub extends mainDevice {
@@ -72,16 +72,18 @@ module.exports = class mainHub extends mainDevice {
         try {
             this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_TRIGGER_RINGTONE_HUB - `, value);
 
-            const eufyDevices = await this.homey.app.eufyClient.getDevices();
-            this.EufyStationDevice = eufyDevices.find(d => d.getStationSerial() === this.EufyStation.getSerial() && d.isDoorbell());
-
-            if (!this.EufyStationDevice) {
-                this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_TRIGGER_RINGTONE_HUB - standalone`);
-                await this.EufyStation.chimeHomebase(value);
-            } else {
-                this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_TRIGGER_RINGTONE_HUB - with EufyStationDevice`);
-                await this.EufyStation.setHomebaseChimeRingtoneType(this.EufyStationDevice, value);
-            }
+            await this.EufyStation.p2pSession.sendCommandWithStringPayload({
+                commandType: CommandType.CMD_SET_PAYLOAD,
+                value: JSON.stringify({
+                    "account_id": this.EufyStation.rawStation.member.admin_user_id,
+                    "cmd": CommandType.CMD_BAT_DOORBELL_DINGDONG_R,
+                    "mValue3": 0,
+                    "payload": {
+                        "dingdong_ringtone": value,
+                    }
+                }),
+                channel: 0
+            });
         } catch (e) {
             this.homey.app.error(e);
         }
