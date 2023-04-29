@@ -1159,5 +1159,8 @@
   },
   "3.9.13": {
     "en": "FIX: Homebase chime | FIX: solocams | FIX: indoor cams not responding"
+  },
+  "3.9.14": {
+    "en": "FIX: devices not responding / captcha not working"
   }
 }
