@@ -1162,5 +1162,8 @@
   },
   "3.9.14": {
     "en": "FIX: devices not responding / captcha not working"
+  },
+  "3.9.15": {
+    "en": "FIX: (re)-Pairing getting stuck"
   }
 }
