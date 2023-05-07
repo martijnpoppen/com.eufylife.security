@@ -3,7 +3,7 @@
 const Homey = require('homey');
 const fetch = require('node-fetch');
 const { ARM_TYPES } = require('../constants/capability_types');
-const { sleep } = require('../lib/utils.js');
+const { sleep, bufferToStream } = require('../lib/utils.js');
 const { PropertyName } = require('eufy-security-client');
 
 module.exports = class mainDevice extends Homey.Device {
@@ -52,8 +52,6 @@ module.exports = class mainDevice extends Homey.Device {
                 DEVICE_SN: this.EufyDevice.getSerial(),
                 force_include_thumbnail: true
             });
-
-            // await this.EufyStation.getCameraInfo();
 
             this._started = true;
         } catch (error) {
@@ -497,39 +495,21 @@ module.exports = class mainDevice extends Homey.Device {
             }
 
             await this._image.setStream(async (stream) => {
-                let imagePath = this.EufyDevice.getLastCameraImageURL();
+                let image = this.EufyDevice.getPropertyValue(PropertyName.DevicePicture)
 
-                this.homey.app.log(`[Device] ${this.getName()} - Setting image - `, imagePath);
+                this.homey.app.log(`[Device] ${this.getName()} - Setting image - `, image);
 
-                // if (!imagePath.startsWith('https://')) {
-                    // if(!this._imageSet) {
-                        imagePath = `https://raw.githubusercontent.com/martijnpoppen/com.eufylife.security/main/assets/images/patched.jpg`
-
-                        this.homey.app.log(`[Device] ${this.getName()} - Setting image - `, imagePath);
-                        
-                        this._imageSet = true;
-                    // } else {
-                        // return Promise.resolve(true);
-                    // }
-                // }
-
-                if (imagePath && imagePath.length) {
-                    let res = await fetch(imagePath);
-
-                    if (!res.ok) {
-                        this.homey.app.log(`[Device] ${this.getName()} - Couldnt fetch image - Retry: `, res.url);
-                        res = await fetch(res.url);
-                    }
-
-                    if (!res.ok) {
-                        this.homey.app.log(`[Device] ${this.getName()} - Couldnt fetch image - Failed: `, res.url);
-                        throw new Error('Cannot fetch image from Eufy Server');
-                    }
-
-                    this.homey.app.log(`[Device] ${this.getName()} - fetch image - Succes: `, res.url);
-
+                if (image && image.data) {
                     this._imageSet = true
+                    return bufferToStream(image.data).pipe(stream);
+                } else {
+                    const imagePath = `https://raw.githubusercontent.com/martijnpoppen/com.eufylife.security/main/assets/images/large.jpg`
 
+                    this.homey.app.log(`[Device] ${this.getName()} - Setting fallback image - `, imagePath);
+
+                    this._imageSet = true;
+                    
+                    let res = await fetch(imagePath);
                     return res.body.pipe(stream);
                 }
             });

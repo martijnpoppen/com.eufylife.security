@@ -175,26 +175,26 @@ class App extends Homey.App {
 
     async sendNotifications() {
         try {
-            const ntfy2022122101 = `[Eufy Security] (1/3) - Eufy made updates their API. At this moment it's no possible to retreive images/thumbnails.`;
-            const ntfy2022122102 = `[Eufy Security] (2/3) - Good news! Cloud streams are fixed again and the Red Triangle errors too`;
-            const ntfy2022122103 = `[Eufy Security] (3/3) For more info go to: https://tinyurl.com/eufy-homey`;
+            const ntfy2023050701 = `[Eufy Security] (1/3) - Notification Images are fixed again`;
+            const ntfy2023050702 = `[Eufy Security] (2/3) - Unfortunately Cloud streams are patched again by Eufy and ported to WebRTC`;
+            const ntfy2023050703 = `[Eufy Security] (3/3) For more info go to: https://tinyurl.com/eufy-homey`;
 
-            if (!this.appSettings.NOTIFICATIONS.includes('ntfy2022122101')) {
+            if (!this.appSettings.NOTIFICATIONS.includes('ntfy2023050701')) {
                 await this.homey.notifications.createNotification({
-                    excerpt: ntfy2022122103
+                    excerpt: ntfy2023050703
                 });
 
                 await this.homey.notifications.createNotification({
-                    excerpt: ntfy2022122102
+                    excerpt: ntfy2023050702
                 });
 
                 await this.homey.notifications.createNotification({
-                    excerpt: ntfy2022122101
+                    excerpt: ntfy2023050701
                 });
 
                 await this.updateSettings({
                     ...this.appSettings,
-                    NOTIFICATIONS: [...this.appSettings.NOTIFICATIONS, 'ntfy2022122101', 'ntfy2022122102', 'ntfy2022122103']
+                    NOTIFICATIONS: [...this.appSettings.NOTIFICATIONS, 'ntfy2023050701', 'ntfy2023050702', 'ntfy2023050703']
                 });
             }
         } catch (error) {
@@ -338,6 +338,9 @@ class App extends Homey.App {
             this.libraryLog = Logger.createNew('EufyLibrary', debug);
             this.eufyClient = await EufySecurity.initialize(config, this.libraryLog);
 
+            // Prevent Eufclient from getting stuck
+            this.eufyClient.devicesLoaded = true
+
             await this.connectEufyClientHandlers();
 
             return await this.checkLogin();
@@ -358,12 +361,12 @@ class App extends Homey.App {
     connectEufyClientHandlers() {
         this.eufyClient.on('tfa request', () => {
             this.log('Event: tfa request (2FA)');
-
+            console.log('Event: devicesLoaded', this.eufyClient.devicesLoaded);
             this.need2FA = true;
         });
         this.eufyClient.on('captcha request', (id, captcha) => {
             this.log('Event: captcha request', id);
-
+            console.log('Event: devicesLoaded', this.eufyClient.devicesLoaded);
             this.needCaptcha = {
                 captcha,
                 id
