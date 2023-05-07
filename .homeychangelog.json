@@ -1165,5 +1165,8 @@
   },
   "3.9.15": {
     "en": "FIX: (re)-Pairing getting stuck"
+  },
+  "3.10.0": {
+    "en": "NEW: add Image decryption | FIX: Notification Images"
   }
 }
