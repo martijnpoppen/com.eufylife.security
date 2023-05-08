@@ -72,20 +72,19 @@ module.exports = class mainHub extends mainDevice {
         try {
             this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_TRIGGER_RINGTONE_HUB - `, value);
 
-            await this.EufyStation.p2pSession.sendCommandWithStringPayload({
-                commandType: CommandType.CMD_SET_PAYLOAD,
-                value: JSON.stringify({
-                    "account_id": this.EufyStation.rawStation.member.admin_user_id,
-                    "cmd": CommandType.CMD_BAT_DOORBELL_DINGDONG_R,
-                    "mValue3": 0,
-                    "payload": {
-                        "dingdong_ringtone": value,
-                    }
-                }),
-                channel: 0
-            });
+            const eufyDevices = await this.homey.app.eufyClient.getDevices();
+            this.EufyStationDevice = eufyDevices.find(d => d.getStationSerial() === this.EufyStation.getSerial() && d.isDoorbell());
+
+            if (!this.EufyStationDevice) {
+                this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_TRIGGER_RINGTONE_HUB - standalone`);
+                throw new Error('Chime without a connected doorbell is not supported anymore')
+            } else {
+                this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_TRIGGER_RINGTONE_HUB - with EufyStationDevice`);
+                await this.EufyStation.setHomebaseChimeRingtoneType(this.EufyStationDevice, value);
+            }
         } catch (e) {
             this.homey.app.error(e);
+            return Promise.reject(e);
         }
        
     }
