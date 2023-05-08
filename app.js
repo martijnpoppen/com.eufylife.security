@@ -224,7 +224,7 @@ class App extends Homey.App {
 
             await this.updateSettings(data);
 
-            const loggedIn = await this.setEufyClient(data);
+            const loggedIn = await this.setEufyClient(data, true);
 
             if (loggedIn) {
                 this.log('eufyLogin - Succes');
@@ -317,9 +317,9 @@ class App extends Homey.App {
         }
     }
 
-    async setEufyClient(settings) {
+    async setEufyClient(settings, devicesLoaded = false) {
         try {
-            const debug = process.env.DEBUG && process.env.DEBUG === '1' || false;
+            const debug = true;
 
             const config = {
                 username: settings.USERNAME,
@@ -338,8 +338,10 @@ class App extends Homey.App {
             this.libraryLog = Logger.createNew('EufyLibrary', debug);
             this.eufyClient = await EufySecurity.initialize(config, this.libraryLog);
 
-            // Prevent Eufyclient from getting stuck
-            this.eufyClient.devicesLoaded = true
+            if(devicesLoaded) {
+                // Prevent Eufyclient from getting stuck in (re)-pairing
+                this.eufyClient.devicesLoaded = true
+            }
 
             await this.connectEufyClientHandlers();
 
