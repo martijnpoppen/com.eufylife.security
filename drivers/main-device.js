@@ -4,7 +4,7 @@ const Homey = require('homey');
 const fetch = require('node-fetch');
 const { ARM_TYPES } = require('../constants/capability_types');
 const { sleep, bufferToStream } = require('../lib/utils.js');
-const { PropertyName } = require('eufy-security-client');
+const { PropertyName, CommandType } = require('eufy-security-client');
 
 module.exports = class mainDevice extends Homey.Device {
     async onInit() {
@@ -240,6 +240,13 @@ module.exports = class mainDevice extends Homey.Device {
 
             this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_SET_ARMING - `, value, CMD_SET_ARMING);
             await this.homey.app.eufyClient.setStationProperty(this.HomeyDevice.station_sn, PropertyName.StationGuardMode, CMD_SET_ARMING);
+
+            await this.EufyStation.p2pSession.sendCommandWithInt({
+                commandType: CommandType.CMD_SET_ARMING,
+                value: CMD_SET_ARMING,
+                strValue: this.EufyStation.rawStation.member.admin_user_id,
+                channel: 255
+            });
 
             await this.set_alarm_arm_mode(value);
 
