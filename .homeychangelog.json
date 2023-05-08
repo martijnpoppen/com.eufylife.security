@@ -1171,5 +1171,8 @@
   },
   "3.10.1": {
     "en": "FIX: added debugging for HB3 notifications |  FIX: added debugging for Chime HB2 & HB3 |  FIX: added debugging for SoloCams security mode"
+  },
+  "3.10.2": {
+    "en": "FIX: added debugging for HB3 notifications |  FIX: added debugging for Chime HB2 & HB3 |  FIX: added debugging for SoloCams security mode"
   }
 }
