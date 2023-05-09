@@ -1183,5 +1183,8 @@
   },
   "3.10.5": {
     "en": "NEW: add Image decryption | FIX: Notification Images | FIX: HB3 notifications | FIX: solocams security mode | FIX: HB2/3 Chime warning when doorbell is not connected."
+  },
+  "3.10.6": {
+    "en": "FIX: solocam security mode"
   }
 }
