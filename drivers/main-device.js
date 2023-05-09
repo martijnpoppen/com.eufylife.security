@@ -245,7 +245,7 @@ module.exports = class mainDevice extends Homey.Device {
                 commandType: CommandType.CMD_SET_ARMING,
                 value: CMD_SET_ARMING,
                 strValue: this.EufyStation.rawStation.member.admin_user_id,
-                channel: 255
+                channel: 1000
             });
 
             await this.set_alarm_arm_mode(value);
