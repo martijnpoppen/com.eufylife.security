@@ -25,6 +25,7 @@ module.exports = class mainDevice extends Homey.Device {
             this.EufyStation = await this.homey.app.eufyClient.getStation(this.HomeyDevice.station_sn);
 
             this.EufyStation.rawStation.member.nick_name = 'Homey';
+            this.EufyStation.p2pSession.energySavingDevice = false;
 
             await this.deviceImage();
 
@@ -237,16 +238,10 @@ module.exports = class mainDevice extends Homey.Device {
             }
 
             this.EufyStation.rawStation.member.nick_name = 'Homey';
+            this.EufyStation.p2pSession.energySavingDevice = false;
 
             this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_SET_ARMING - `, value, CMD_SET_ARMING);
             await this.homey.app.eufyClient.setStationProperty(this.HomeyDevice.station_sn, PropertyName.StationGuardMode, CMD_SET_ARMING);
-
-            await this.EufyStation.p2pSession.sendCommandWithInt({
-                commandType: CommandType.CMD_SET_ARMING,
-                value: CMD_SET_ARMING,
-                strValue: this.EufyStation.rawStation.member.admin_user_id,
-                channel: 1000
-            });
 
             await this.set_alarm_arm_mode(value);
 
@@ -509,7 +504,7 @@ module.exports = class mainDevice extends Homey.Device {
                 if (image && image.data) {
                     this._imageSet = true
                     return bufferToStream(image.data).pipe(stream);
-                } else {
+                } else if(!this._imageSet) {
                     const imagePath = `https://raw.githubusercontent.com/martijnpoppen/com.eufylife.security/main/assets/images/large.jpg`
 
                     this.homey.app.log(`[Device] ${this.getName()} - Setting fallback image - `, imagePath);
