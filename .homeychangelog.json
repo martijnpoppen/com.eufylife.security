@@ -1186,5 +1186,8 @@
   },
   "3.10.6": {
     "en": "FIX: solocam security mode"
+  },
+  "3.10.7": {
+    "en": "FIX: only set Fallback image on app start | FIX: SoloCams commands"
   }
 }
