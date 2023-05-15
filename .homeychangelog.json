@@ -1189,5 +1189,8 @@
   },
   "3.10.7": {
     "en": "FIX: only set Fallback image on app start | FIX: SoloCams commands"
+  },
+  "3.10.8": {
+    "en": "FIX: HB3 doorbell push | FIX: show cover images on app start | FIX: doorbell push image "
   }
 }
