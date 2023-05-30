@@ -116,7 +116,8 @@ module.exports = class mainDriver extends Homey.Driver {
             const password = data.password;
 
             const settings = this.homey.app.appSettings;
-            const result = await this.homey.app.eufyLogin({ ...settings, USERNAME: username, PASSWORD: password, REGION: data.region }, true);
+            const result = await this.homey.app.eufyLogin({ ...settings, USERNAME: username, PASSWORD: password, REGION: data.region });
+
             if (result === false) {
                 this.deviceError = this.homey.__('pair.no_data');
             }

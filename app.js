@@ -210,8 +210,8 @@ class App extends Homey.App {
             flowConditions.init(this.homey);
             flowTriggers.init(this.homey);
 
-            new eufyNotificationCheckHelper(this.homey);
-            new eufyEventsHelper(this.homey);
+            this.eufyNotificationCheckHelper = new eufyNotificationCheckHelper(this.homey);
+            this.eufyEventsHelper = new eufyEventsHelper(this.homey);
         }
     }
 
@@ -228,11 +228,10 @@ class App extends Homey.App {
 
             if (loggedIn) {
                 this.log('eufyLogin - Succes');
-            } else {
-                return false;
+                return true;
             }
-
-            return true;
+            
+            return false;
         } catch (err) {
             this.error(err);
             return err;
@@ -354,9 +353,9 @@ class App extends Homey.App {
     async resetEufyClient() {
         if (this.eufyClient) {
             this.log('resetEufyClient - Resetting EufyClient');
-            await this.eufyClient.close();
-
-            // this.eufyClient = undefined;
+            this.eufyClient.close();
+            this.eufyClient = null;
+            this.eufyClient = {};
         }
     }
 
@@ -416,6 +415,9 @@ class App extends Homey.App {
 
     async setDevice(device) {
         this.deviceList = [...this.deviceList, device];
+
+        await this.eufyNotificationCheckHelper.setDevices(this.deviceList);
+        await this.eufyEventsHelper.setDevices(this.deviceList);
     }
 
     async setDevices(devices) {
