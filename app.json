@@ -5285,7 +5285,7 @@
             },
             {
               "id": "LOCAL_STATION_IP",
-              "type": "text",
+              "type": "label",
               "label": {
                 "en": "Station IP",
                 "nl": "Station IP",
