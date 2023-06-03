@@ -139,6 +139,13 @@ class App extends Homey.App {
                     });
                 }
 
+                if (!('STATION_IPS' in this.appSettings)) {
+                    await this.updateSettings({
+                        ...this.appSettings,
+                        STATION_IPS: {}
+                    });
+                }
+
                 return true;
             }
 
@@ -147,7 +154,8 @@ class App extends Homey.App {
                 USERNAME: '',
                 PASSWORD: '',
                 REGION: 'US',
-                NOTIFICATIONS: []
+                NOTIFICATIONS: [],
+                STATION_IPS: {}
             });
 
             return true;
@@ -328,6 +336,7 @@ class App extends Homey.App {
                 persistentDir: path.resolve(__dirname, '/userdata/'),
                 trustedDeviceName: settings.TRUSTED_DEVICE_NAME,
                 fallbackTrustedDeviceName: settings.TRUSTED_DEVICE_NAME,
+                stationIPAddresses: Object.keys(settings.STATION_IPS).length ? settings.STATION_IPS : undefined,
                 acceptInvitations: true,
                 pollingIntervalMinutes: 15
             };
@@ -356,6 +365,12 @@ class App extends Homey.App {
             this.eufyClient.close();
             this.eufyClient = null;
             this.eufyClient = {};
+        }
+
+        if(this.deviceList) {
+            this.deviceList.forEach(device => {
+                device.setUnavailable(`${device.getName()} ${this.homey.__('device.init')}`);
+            });
         }
     }
 

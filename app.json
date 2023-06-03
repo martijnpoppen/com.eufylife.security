@@ -5285,7 +5285,7 @@
             },
             {
               "id": "LOCAL_STATION_IP",
-              "type": "label",
+              "type": "text",
               "label": {
                 "en": "Station IP",
                 "nl": "Station IP",
@@ -6386,7 +6386,7 @@
           "children": [
             {
               "id": "STATION_SN",
-              "type": "label",
+              "type": "text",
               "label": {
                 "en": "Station S/N",
                 "nl": "Station S/N",
@@ -6783,7 +6783,7 @@
             },
             {
               "id": "LOCAL_STATION_IP",
-              "type": "label",
+              "type": "text",
               "label": {
                 "en": "Station IP",
                 "nl": "Station IP",
@@ -7160,7 +7160,7 @@
             },
             {
               "id": "LOCAL_STATION_IP",
-              "type": "label",
+              "type": "text",
               "label": {
                 "en": "Station IP",
                 "nl": "Station IP",

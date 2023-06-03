@@ -47,8 +47,10 @@ module.exports = class mainDevice extends Homey.Device {
 
             await this.setAvailable();
 
+            const appSettings = this.homey.app.appSettings;
+            const ipAddress = appSettings.STATION_IPS[this.HomeyDevice.station_sn] ? appSettings.STATION_IPS[this.HomeyDevice.station_sn] : this.EufyStation.getLANIPAddress()
             await this.setSettings({
-                LOCAL_STATION_IP: this.EufyStation.getLANIPAddress(),
+                LOCAL_STATION_IP: ipAddress,
                 STATION_SN: this.EufyStation.getSerial(),
                 DEVICE_SN: this.EufyDevice.getSerial(),
                 force_include_thumbnail: true
@@ -85,6 +87,20 @@ module.exports = class mainDevice extends Homey.Device {
 
         if (changedKeys.includes('alarm_arm_mode')) {
             this.check_alarm_arm_mode(newSettings);
+        }
+
+        if(changedKeys.includes('LOCAL_STATION_IP')) {
+            let appSettings = this.homey.app.appSettings;
+            appSettings.STATION_IPS[this.HomeyDevice.station_sn] = newSettings.LOCAL_STATION_IP;
+
+            if(newSettings.LOCAL_STATION_IP === '') {
+                delete appSettings.STATION_IPS[this.HomeyDevice.station_sn];
+            }
+
+            await this.homey.app.updateSettings(appSettings)
+
+            this.homey.app.setEufyClient(this.homey.app.appSettings);
+            return true;
         }
     }
 
