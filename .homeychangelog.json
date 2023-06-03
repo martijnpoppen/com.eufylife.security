@@ -1198,5 +1198,8 @@
   },
   "3.11.1": {
     "en": "FIX: HB3 Dual Doorbell notification | FIX: door sensor ghost events"
+  },
+  "3.12.0": {
+    "en": "NEW: add option for manual IP address for Solocams E/S/L series"
   }
 }
