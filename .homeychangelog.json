@@ -1195,5 +1195,8 @@
   },
   "3.11.0": {
     "en": "NEW: library image decryption | FIX: HB3 Dual Doorbell notification | FIX: memory leak after re-pairing | FIX: notification service not started after pairing new devices"
+  },
+  "3.11.1": {
+    "en": "FIX: HB3 Dual Doorbell notification | FIX: door sensor ghost events"
   }
 }
