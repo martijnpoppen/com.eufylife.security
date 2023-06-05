@@ -382,7 +382,6 @@ class App extends Homey.App {
         });
         this.eufyClient.on('captcha request', (id, captcha) => {
             this.log('Event: captcha request', id);
-            console.log('Event: devicesLoaded', this.eufyClient.devicesLoaded);
             this.needCaptcha = {
                 captcha,
                 id
@@ -415,7 +414,7 @@ class App extends Homey.App {
 
             await sleep(200);
 
-            this.setEufyClient(this.appSettings);
+            this.setEufyClient(this.appSettings, true);
         } else {
             this.eufyRegionSwitchAllowed = false;
             this.eufyClientConnected = true;

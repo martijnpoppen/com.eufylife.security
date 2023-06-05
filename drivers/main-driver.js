@@ -66,6 +66,8 @@ module.exports = class mainDriver extends Homey.Driver {
 
             if (view === 'loading') {
                 await sleep(3000);
+                this.homey.app.eufyClient.devicesLoaded = true;
+
                 this.deviceList = await waitForResults(this);
 
                 this.homey.app.log(`[Driver] ${this.id} - deviceList:`, this.deviceList.length, !!this.deviceList.length);
