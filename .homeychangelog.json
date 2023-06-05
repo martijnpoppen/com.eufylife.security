@@ -1201,5 +1201,8 @@
   },
   "3.12.0": {
     "en": "NEW: add option for manual IP address for Solocams E/S/L series"
+  },
+  "3.12.1": {
+    "en": "FIX: pairing captcha not working"
   }
 }
