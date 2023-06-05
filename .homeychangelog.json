@@ -1204,5 +1204,8 @@
   },
   "3.12.1": {
     "en": "FIX: pairing captcha not working"
+  },
+  "3.12.2": {
+    "en": "OPT; add notifiaction  debugging"
   }
 }
