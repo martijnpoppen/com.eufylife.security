@@ -1207,5 +1207,8 @@
   },
   "3.12.2": {
     "en": "OPT; add notifiaction  debugging"
+  },
+  "3.12.3": {
+    "en": "FIX: dual doorbell person"
   }
 }
