@@ -68,21 +68,25 @@ module.exports = class mainDriver extends Homey.Driver {
                 await sleep(3000);
                 this.homey.app.eufyClient.devicesLoaded = true;
 
-                this.deviceList = await waitForResults(this);
-
-                this.homey.app.log(`[Driver] ${this.id} - deviceList:`, this.deviceList.length, !!this.deviceList.length);
-
                 if (this.homey.app.needCaptcha) {
                     this.homey.app.log(`[Driver] ${this.id} - needCaptcha`);
                     session.showView('login_captcha');
 
                     return [];
-                } else if (this.homey.app.need2FA) {
+                } 
+                
+                if (this.homey.app.need2FA) {
                     this.homey.app.log(`[Driver] ${this.id} - need2FA`);
                     session.showView('pincode');
 
                     return [];
-                } else if (!!this.deviceList.length) {
+                } 
+                
+                this.deviceList = await waitForResults(this);
+
+                this.homey.app.log(`[Driver] ${this.id} - deviceList:`, this.deviceList.length, !!this.deviceList.length);
+                
+                if (!!this.deviceList.length) {
                     this._devices = await this.onDeviceListRequest(this.id);
 
                     this.homey.app.log(`[Driver] ${this.id} - Found new devices:`, this._devices);

@@ -326,7 +326,7 @@ class App extends Homey.App {
 
     async setEufyClient(settings, devicesLoaded = false) {
         try {
-            const debug = true;
+            const debug = false;
 
             const config = {
                 username: settings.USERNAME,
