@@ -1210,5 +1210,8 @@
   },
   "3.12.3": {
     "en": "FIX: dual doorbell person"
+  },
+  "3.12.4": {
+    "en": "FIX: eufy login captcha"
   }
 }
