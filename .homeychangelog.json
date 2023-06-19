@@ -1213,5 +1213,14 @@
   },
   "3.12.4": {
     "en": "FIX: eufy login captcha"
+  },
+  "3.12.5": {
+    "en": "FIX: event helper error"
+  },
+  "3.12.6": {
+    "en": " FIX: event helper error"
+  },
+  "3.12.7": {
+    "en": "FIX: Solocam E series - IP override option"
   }
 }

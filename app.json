@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "3.12.4",
+  "version": "3.12.7",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "brandColor": "#2a6185",
@@ -6386,7 +6386,7 @@
           "children": [
             {
               "id": "STATION_SN",
-              "type": "text",
+              "type": "label",
               "label": {
                 "en": "Station S/N",
                 "nl": "Station S/N",
@@ -6406,7 +6406,7 @@
             },
             {
               "id": "LOCAL_STATION_IP",
-              "type": "label",
+              "type": "text",
               "label": {
                 "en": "Station IP",
                 "nl": "Station IP",
