@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "3.12.8",
+  "version": "3.13.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "brandColor": "#2a6185",
@@ -6831,9 +6831,9 @@
         ]
       },
       "name": {
-        "en": "SoloCam (Solar) S40",
-        "nl": "SoloCam (Solar) S40",
-        "fr": "SoloCam (Solar) S40"
+        "en": "SoloCam (Solar) S220 / S40",
+        "nl": "SoloCam (Solar) S220 / S40",
+        "fr": "SoloCam (Solar) S220 / S40"
       },
       "images": {
         "large": "drivers/driver_SOLOCAM_S2040/assets/images/large.jpg",
