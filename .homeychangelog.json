@@ -1222,5 +1222,8 @@
   },
   "3.12.7": {
     "en": "FIX: Solocam E series - IP override option"
+  },
+  "3.12.8": {
+    "en": "FIX: arming change without interaction"
   }
 }
