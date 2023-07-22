@@ -1228,5 +1228,8 @@
   },
   "3.13.0": {
     "en": "NEW: ADD S220 Solocam"
+  },
+  "3.14.0": {
+    "en": "NEW: ADD wall light S100 & S120"
   }
 }
