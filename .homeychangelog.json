@@ -1231,5 +1231,8 @@
   },
   "3.14.0": {
     "en": "NEW: ADD wall light S100 & S120"
+  },
+  "3.15.0": {
+    "en": "FIX: try fetch battery on init | OPT: update library | NEW: S220 support"
   }
 }
