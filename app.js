@@ -421,9 +421,9 @@ class App extends Homey.App {
 
             await sleep(4000);
 
-            await this.initDevices(true);
-
             await this.initEvents();
+
+            await this.initDevices(true);
         }
     }
 

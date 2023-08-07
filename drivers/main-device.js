@@ -3,8 +3,8 @@
 const Homey = require('homey');
 const fetch = require('node-fetch');
 const { ARM_TYPES } = require('../constants/capability_types');
-const { sleep, bufferToStream } = require('../lib/utils.js');
-const { PropertyName, CommandType } = require('eufy-security-client');
+const { sleep, bufferToStream, getParamData } = require('../lib/utils.js');
+const { PropertyName } = require('eufy-security-client');
 
 module.exports = class mainDevice extends Homey.Device {
     async onInit() {
@@ -28,6 +28,7 @@ module.exports = class mainDevice extends Homey.Device {
             this.EufyStation.p2pSession.energySavingDevice = false;
 
             await this.deviceImage();
+            await this.deviceParams();
 
             if (initial) {
                 const settings = this.getSettings();
@@ -536,6 +537,16 @@ module.exports = class mainDevice extends Homey.Device {
         } catch (e) {
             this.homey.app.error(e);
             return Promise.reject(e);
+        }
+    }
+
+    async deviceParams() {
+        if(this.hasCapability('measure_battery') && this.hasCapability('measure_temperature')) {
+            const measure_battery = getParamData(this.EufyDevice.rawDevice.params, "CMD_GET_BATTERY");
+            const measure_temperature = getParamData(this.EufyDevice.rawDevice.params, "CMD_GET_BATTERY_TEMP");
+    
+            await this.setParamStatus('measure_battery', measure_battery);
+            await this.setParamStatus('measure_temperature', measure_temperature);
         }
     }
 
