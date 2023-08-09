@@ -1240,5 +1240,8 @@
   },
   "3.15.2": {
     "en": "FIX: library update"
+  },
+  "3.15.5": {
+    "en": "FIX: library update"
   }
 }
