@@ -1225,5 +1225,8 @@
   },
   "3.12.8": {
     "en": "FIX: arming change without interaction"
+  },
+  "3.12.9": {
+    "en": "FIX: arming change without interaction"
   }
 }
