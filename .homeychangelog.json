@@ -1243,5 +1243,11 @@
   },
   "3.15.5": {
     "en": "FIX: library update"
+  },
+  "3.16.0": {
+    "en": "FIX: library update"
+  },
+  "3.16.1": {
+    "en": "Non-parsable parameter value received from eufy cloud."
   }
 }
