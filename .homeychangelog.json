@@ -1255,5 +1255,8 @@
   },
   "3.16.3": {
     "en": "NEW: add alarm motion sensor text"
+  },
+  "3.16.4": {
+    "en": "FIX: S220"
   }
 }
