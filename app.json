@@ -1601,13 +1601,26 @@
   "drivers": [
     {
       "id": "driver_EUFYCAM",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local"],
+      "connectivity": ["cloud"],
       "class": "camera",
+      "capabilitiesOptions": {
+        "alarm_motion": {
+          "title": {
+            "en": "Any event (motion / person / etc.)",
+            "nl": "Elk event (beweging / persoon / etc.)",
+            "de": "Jedes Ereignis (Bewegung / Person / etc.)",
+            "fr": "Tout événement (mouvement / personne / etc.)",
+            "it": "Qualsiasi evento (movimento / persona / ecc.)",
+            "sv": "Vilket evenemang (rörelse / person / etc.)",
+            "no": "Enhver hendelse (bevegelse / person / osv.)",
+            "es": "Cualquier evento (movimiento / persona / etc.)",
+            "da": "Enhver begivenhed (bevægelse / person / osv.)",
+            "ru": "Любое событие (движение / человек / и т.д.)",
+            "pl": "Dowolne wydarzenie (ruch / osoba / itp.)"
+          }
+        }
+      },
       "capabilities": [
         "onoff",
         "CMD_DEV_LED_SWITCH",
@@ -1625,9 +1638,7 @@
         "NTFY_VEHICLE_DETECTED"
       ],
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "name": {
         "en": "eufyCam 1",
@@ -1878,13 +1889,26 @@
     },
     {
       "id": "driver_EUFYCAM_2",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local"],
+      "connectivity": ["cloud"],
       "class": "camera",
+      "capabilitiesOptions": {
+        "alarm_motion": {
+          "title": {
+            "en": "Any event (motion / person / etc.)",
+            "nl": "Elk event (beweging / persoon / etc.)",
+            "de": "Jedes Ereignis (Bewegung / Person / etc.)",
+            "fr": "Tout événement (mouvement / personne / etc.)",
+            "it": "Qualsiasi evento (movimento / persona / ecc.)",
+            "sv": "Vilket evenemang (rörelse / person / etc.)",
+            "no": "Enhver hendelse (bevegelse / person / osv.)",
+            "es": "Cualquier evento (movimiento / persona / etc.)",
+            "da": "Enhver begivenhed (bevægelse / person / osv.)",
+            "ru": "Любое событие (движение / человек / и т.д.)",
+            "pl": "Dowolne wydarzenie (ruch / osoba / itp.)"
+          }
+        }
+      },
       "capabilities": [
         "onoff",
         "CMD_DEV_LED_SWITCH",
@@ -1902,9 +1926,7 @@
         "NTFY_VEHICLE_DETECTED"
       ],
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "name": {
         "en": "eufyCam 2 / 2 Pro",
@@ -2156,13 +2178,26 @@
     {
       "deprecated": true,
       "id": "driver_EUFYCAM_2_PRO",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local"],
+      "connectivity": ["cloud"],
       "class": "camera",
+      "capabilitiesOptions": {
+        "alarm_motion": {
+          "title": {
+            "en": "Any event (motion / person / etc.)",
+            "nl": "Elk event (beweging / persoon / etc.)",
+            "de": "Jedes Ereignis (Bewegung / Person / etc.)",
+            "fr": "Tout événement (mouvement / personne / etc.)",
+            "it": "Qualsiasi evento (movimento / persona / ecc.)",
+            "sv": "Vilket evenemang (rörelse / person / etc.)",
+            "no": "Enhver hendelse (bevegelse / person / osv.)",
+            "es": "Cualquier evento (movimiento / persona / etc.)",
+            "da": "Enhver begivenhed (bevægelse / person / osv.)",
+            "ru": "Любое событие (движение / человек / и т.д.)",
+            "pl": "Dowolne wydarzenie (ruch / osoba / itp.)"
+          }
+        }
+      },
       "capabilities": [
         "onoff",
         "CMD_DEV_LED_SWITCH",
@@ -2180,9 +2215,7 @@
         "NTFY_VEHICLE_DETECTED"
       ],
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "name": {
         "en": "eufyCam 2 Pro",
@@ -2433,13 +2466,26 @@
     },
     {
       "id": "driver_EUFYCAM_2C",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local"],
+      "connectivity": ["cloud"],
       "class": "camera",
+      "capabilitiesOptions": {
+        "alarm_motion": {
+          "title": {
+            "en": "Any event (motion / person / etc.)",
+            "nl": "Elk event (beweging / persoon / etc.)",
+            "de": "Jedes Ereignis (Bewegung / Person / etc.)",
+            "fr": "Tout événement (mouvement / personne / etc.)",
+            "it": "Qualsiasi evento (movimento / persona / ecc.)",
+            "sv": "Vilket evenemang (rörelse / person / etc.)",
+            "no": "Enhver hendelse (bevegelse / person / osv.)",
+            "es": "Cualquier evento (movimiento / persona / etc.)",
+            "da": "Enhver begivenhed (bevægelse / person / osv.)",
+            "ru": "Любое событие (движение / человек / и т.д.)",
+            "pl": "Dowolne wydarzenie (ruch / osoba / itp.)"
+          }
+        }
+      },
       "capabilities": [
         "onoff",
         "CMD_DEV_LED_SWITCH",
@@ -2458,9 +2504,7 @@
         "NTFY_VEHICLE_DETECTED"
       ],
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "name": {
         "en": "eufyCam 2C / 2C Pro",
@@ -2710,13 +2754,26 @@
     {
       "deprecated": true,
       "id": "driver_EUFYCAM_2C_PRO",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local"],
+      "connectivity": ["cloud"],
       "class": "camera",
+      "capabilitiesOptions": {
+        "alarm_motion": {
+          "title": {
+            "en": "Any event (motion / person / etc.)",
+            "nl": "Elk event (beweging / persoon / etc.)",
+            "de": "Jedes Ereignis (Bewegung / Person / etc.)",
+            "fr": "Tout événement (mouvement / personne / etc.)",
+            "it": "Qualsiasi evento (movimento / persona / ecc.)",
+            "sv": "Vilket evenemang (rörelse / person / etc.)",
+            "no": "Enhver hendelse (bevegelse / person / osv.)",
+            "es": "Cualquier evento (movimiento / persona / etc.)",
+            "da": "Enhver begivenhed (bevægelse / person / osv.)",
+            "ru": "Любое событие (движение / человек / и т.д.)",
+            "pl": "Dowolne wydarzenie (ruch / osoba / itp.)"
+          }
+        }
+      },
       "capabilities": [
         "onoff",
         "CMD_DEV_LED_SWITCH",
@@ -2735,9 +2792,7 @@
         "NTFY_VEHICLE_DETECTED"
       ],
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "name": {
         "en": "eufyCam 2C Pro",
@@ -2985,13 +3040,26 @@
     },
     {
       "id": "driver_EUFYCAM_3",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local"],
+      "connectivity": ["cloud"],
       "class": "camera",
+      "capabilitiesOptions": {
+        "alarm_motion": {
+          "title": {
+            "en": "Any event (motion / person / etc.)",
+            "nl": "Elk event (beweging / persoon / etc.)",
+            "de": "Jedes Ereignis (Bewegung / Person / etc.)",
+            "fr": "Tout événement (mouvement / personne / etc.)",
+            "it": "Qualsiasi evento (movimento / persona / ecc.)",
+            "sv": "Vilket evenemang (rörelse / person / etc.)",
+            "no": "Enhver hendelse (bevegelse / person / osv.)",
+            "es": "Cualquier evento (movimiento / persona / etc.)",
+            "da": "Enhver begivenhed (bevægelse / person / osv.)",
+            "ru": "Любое событие (движение / человек / и т.д.)",
+            "pl": "Dowolne wydarzenie (ruch / osoba / itp.)"
+          }
+        }
+      },
       "capabilities": [
         "onoff",
         "CMD_DEV_LED_SWITCH",
@@ -3010,9 +3078,7 @@
         "NTFY_VEHICLE_DETECTED"
       ],
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "name": {
         "en": "eufyCam 3",
@@ -3263,13 +3329,26 @@
     },
     {
       "id": "driver_EUFYCAM_3C",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local"],
+      "connectivity": ["cloud"],
       "class": "camera",
+      "capabilitiesOptions": {
+        "alarm_motion": {
+          "title": {
+            "en": "Any event (motion / person / etc.)",
+            "nl": "Elk event (beweging / persoon / etc.)",
+            "de": "Jedes Ereignis (Bewegung / Person / etc.)",
+            "fr": "Tout événement (mouvement / personne / etc.)",
+            "it": "Qualsiasi evento (movimento / persona / ecc.)",
+            "sv": "Vilket evenemang (rörelse / person / etc.)",
+            "no": "Enhver hendelse (bevegelse / person / osv.)",
+            "es": "Cualquier evento (movimiento / persona / etc.)",
+            "da": "Enhver begivenhed (bevægelse / person / osv.)",
+            "ru": "Любое событие (движение / человек / и т.д.)",
+            "pl": "Dowolne wydarzenie (ruch / osoba / itp.)"
+          }
+        }
+      },
       "capabilities": [
         "onoff",
         "CMD_DEV_LED_SWITCH",
@@ -3288,9 +3367,7 @@
         "NTFY_VEHICLE_DETECTED"
       ],
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "name": {
         "en": "eufyCam 3C",
@@ -3541,13 +3618,26 @@
     },
     {
       "id": "driver_EUFYCAM_E",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local"],
+      "connectivity": ["cloud"],
       "class": "camera",
+      "capabilitiesOptions": {
+        "alarm_motion": {
+          "title": {
+            "en": "Any event (motion / person / etc.)",
+            "nl": "Elk event (beweging / persoon / etc.)",
+            "de": "Jedes Ereignis (Bewegung / Person / etc.)",
+            "fr": "Tout événement (mouvement / personne / etc.)",
+            "it": "Qualsiasi evento (movimento / persona / ecc.)",
+            "sv": "Vilket evenemang (rörelse / person / etc.)",
+            "no": "Enhver hendelse (bevegelse / person / osv.)",
+            "es": "Cualquier evento (movimiento / persona / etc.)",
+            "da": "Enhver begivenhed (bevægelse / person / osv.)",
+            "ru": "Любое событие (движение / человек / и т.д.)",
+            "pl": "Dowolne wydarzenie (ruch / osoba / itp.)"
+          }
+        }
+      },
       "capabilities": [
         "onoff",
         "CMD_DEV_LED_SWITCH",
@@ -3562,9 +3652,7 @@
         "NTFY_MOTION_DETECTION"
       ],
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "name": {
         "en": "eufyCam E",
@@ -3815,13 +3903,26 @@
     },
     {
       "id": "driver_FLOODLIGHT_CAMERA",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local"],
+      "connectivity": ["cloud"],
       "class": "camera",
+      "capabilitiesOptions": {
+        "alarm_motion": {
+          "title": {
+            "en": "Any event (motion / person / etc.)",
+            "nl": "Elk event (beweging / persoon / etc.)",
+            "de": "Jedes Ereignis (Bewegung / Person / etc.)",
+            "fr": "Tout événement (mouvement / personne / etc.)",
+            "it": "Qualsiasi evento (movimento / persona / ecc.)",
+            "sv": "Vilket evenemang (rörelse / person / etc.)",
+            "no": "Enhver hendelse (bevegelse / person / osv.)",
+            "es": "Cualquier evento (movimiento / persona / etc.)",
+            "da": "Enhver begivenhed (bevægelse / person / osv.)",
+            "ru": "Любое событие (движение / человек / и т.д.)",
+            "pl": "Dowolne wydarzenie (ruch / osoba / itp.)"
+          }
+        }
+      },
       "capabilities": [
         "onoff",
         "CMD_DEV_LED_SWITCH",
@@ -4184,13 +4285,26 @@
     },
     {
       "id": "driver_FLOODLIGHT_CAM_PAN_TILT",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local"],
+      "connectivity": ["cloud"],
       "class": "camera",
+      "capabilitiesOptions": {
+        "alarm_motion": {
+          "title": {
+            "en": "Any event (motion / person / etc.)",
+            "nl": "Elk event (beweging / persoon / etc.)",
+            "de": "Jedes Ereignis (Bewegung / Person / etc.)",
+            "fr": "Tout événement (mouvement / personne / etc.)",
+            "it": "Qualsiasi evento (movimento / persona / ecc.)",
+            "sv": "Vilket evenemang (rörelse / person / etc.)",
+            "no": "Enhver hendelse (bevegelse / person / osv.)",
+            "es": "Cualquier evento (movimiento / persona / etc.)",
+            "da": "Enhver begivenhed (bevægelse / person / osv.)",
+            "ru": "Любое событие (движение / человек / и т.д.)",
+            "pl": "Dowolne wydarzenie (ruch / osoba / itp.)"
+          }
+        }
+      },
       "capabilities": [
         "onoff",
         "CMD_DEV_LED_SWITCH",
@@ -4555,13 +4669,26 @@
     },
     {
       "id": "driver_INDOOR_CAM",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local"],
+      "connectivity": ["cloud"],
       "class": "camera",
+      "capabilitiesOptions": {
+        "alarm_motion": {
+          "title": {
+            "en": "Any event (motion / person / etc.)",
+            "nl": "Elk event (beweging / persoon / etc.)",
+            "de": "Jedes Ereignis (Bewegung / Person / etc.)",
+            "fr": "Tout événement (mouvement / personne / etc.)",
+            "it": "Qualsiasi evento (movimento / persona / ecc.)",
+            "sv": "Vilket evenemang (rörelse / person / etc.)",
+            "no": "Enhver hendelse (bevegelse / person / osv.)",
+            "es": "Cualquier evento (movimiento / persona / etc.)",
+            "da": "Enhver begivenhed (bevægelse / person / osv.)",
+            "ru": "Любое событие (движение / человек / и т.д.)",
+            "pl": "Dowolne wydarzenie (ruch / osoba / itp.)"
+          }
+        }
+      },
       "capabilities": [
         "onoff",
         "CMD_DEV_LED_SWITCH",
@@ -4927,13 +5054,26 @@
     },
     {
       "id": "driver_INDOOR_CAM_PAN_TILT",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local"],
+      "connectivity": ["cloud"],
       "class": "camera",
+      "capabilitiesOptions": {
+        "alarm_motion": {
+          "title": {
+            "en": "Any event (motion / person / etc.)",
+            "nl": "Elk event (beweging / persoon / etc.)",
+            "de": "Jedes Ereignis (Bewegung / Person / etc.)",
+            "fr": "Tout événement (mouvement / personne / etc.)",
+            "it": "Qualsiasi evento (movimento / persona / ecc.)",
+            "sv": "Vilket evenemang (rörelse / person / etc.)",
+            "no": "Enhver hendelse (bevegelse / person / osv.)",
+            "es": "Cualquier evento (movimiento / persona / etc.)",
+            "da": "Enhver begivenhed (bevægelse / person / osv.)",
+            "ru": "Любое событие (движение / человек / и т.д.)",
+            "pl": "Dowolne wydarzenie (ruch / osoba / itp.)"
+          }
+        }
+      },
       "capabilities": [
         "onoff",
         "CMD_DEV_LED_SWITCH",
@@ -5299,13 +5439,26 @@
     },
     {
       "id": "driver_OUTDOOR_CAM",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local"],
+      "connectivity": ["cloud"],
       "class": "camera",
+      "capabilitiesOptions": {
+        "alarm_motion": {
+          "title": {
+            "en": "Any event (motion / person / etc.)",
+            "nl": "Elk event (beweging / persoon / etc.)",
+            "de": "Jedes Ereignis (Bewegung / Person / etc.)",
+            "fr": "Tout événement (mouvement / personne / etc.)",
+            "it": "Qualsiasi evento (movimento / persona / ecc.)",
+            "sv": "Vilket evenemang (rörelse / person / etc.)",
+            "no": "Enhver hendelse (bevegelse / person / osv.)",
+            "es": "Cualquier evento (movimiento / persona / etc.)",
+            "da": "Enhver begivenhed (bevægelse / person / osv.)",
+            "ru": "Любое событие (движение / человек / и т.д.)",
+            "pl": "Dowolne wydarzenie (ruch / osoba / itp.)"
+          }
+        }
+      },
       "capabilities": [
         "onoff",
         "CMD_DEV_LED_SWITCH",
@@ -5672,13 +5825,26 @@
     {
       "deprecated": true,
       "id": "driver_OUTDOOR_CAM_PRO",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local"],
+      "connectivity": ["cloud"],
       "class": "camera",
+      "capabilitiesOptions": {
+        "alarm_motion": {
+          "title": {
+            "en": "Any event (motion / person / etc.)",
+            "nl": "Elk event (beweging / persoon / etc.)",
+            "de": "Jedes Ereignis (Bewegung / Person / etc.)",
+            "fr": "Tout événement (mouvement / personne / etc.)",
+            "it": "Qualsiasi evento (movimento / persona / ecc.)",
+            "sv": "Vilket evenemang (rörelse / person / etc.)",
+            "no": "Enhver hendelse (bevegelse / person / osv.)",
+            "es": "Cualquier evento (movimiento / persona / etc.)",
+            "da": "Enhver begivenhed (bevægelse / person / osv.)",
+            "ru": "Любое событие (движение / человек / и т.д.)",
+            "pl": "Dowolne wydarzenie (ruch / osoba / itp.)"
+          }
+        }
+      },
       "capabilities": [
         "onoff",
         "CMD_DEV_LED_SWITCH",
@@ -6044,13 +6210,26 @@
     },
     {
       "id": "driver_SOLOCAM_E2040",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local"],
+      "connectivity": ["cloud"],
       "class": "camera",
+      "capabilitiesOptions": {
+        "alarm_motion": {
+          "title": {
+            "en": "Any event (motion / person / etc.)",
+            "nl": "Elk event (beweging / persoon / etc.)",
+            "de": "Jedes Ereignis (Bewegung / Person / etc.)",
+            "fr": "Tout événement (mouvement / personne / etc.)",
+            "it": "Qualsiasi evento (movimento / persona / ecc.)",
+            "sv": "Vilket evenemang (rörelse / person / etc.)",
+            "no": "Enhver hendelse (bevegelse / person / osv.)",
+            "es": "Cualquier evento (movimiento / persona / etc.)",
+            "da": "Enhver begivenhed (bevægelse / person / osv.)",
+            "ru": "Любое событие (движение / человек / и т.д.)",
+            "pl": "Dowolne wydarzenie (ruch / osoba / itp.)"
+          }
+        }
+      },
       "capabilities": [
         "onoff",
         "CMD_DEV_LED_SWITCH",
@@ -6072,9 +6251,7 @@
         "NTFY_VEHICLE_DETECTED"
       ],
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "name": {
         "en": "SoloCam E20 / E40",
@@ -6420,13 +6597,26 @@
     },
     {
       "id": "driver_SOLOCAM_L2040",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local"],
+      "connectivity": ["cloud"],
       "class": "camera",
+      "capabilitiesOptions": {
+        "alarm_motion": {
+          "title": {
+            "en": "Any event (motion / person / etc.)",
+            "nl": "Elk event (beweging / persoon / etc.)",
+            "de": "Jedes Ereignis (Bewegung / Person / etc.)",
+            "fr": "Tout événement (mouvement / personne / etc.)",
+            "it": "Qualsiasi evento (movimento / persona / ecc.)",
+            "sv": "Vilket evenemang (rörelse / person / etc.)",
+            "no": "Enhver hendelse (bevegelse / person / osv.)",
+            "es": "Cualquier evento (movimiento / persona / etc.)",
+            "da": "Enhver begivenhed (bevægelse / person / osv.)",
+            "ru": "Любое событие (движение / человек / и т.д.)",
+            "pl": "Dowolne wydarzenie (ruch / osoba / itp.)"
+          }
+        }
+      },
       "capabilities": [
         "onoff",
         "CMD_DEV_LED_SWITCH",
@@ -6449,9 +6639,7 @@
         "NTFY_VEHICLE_DETECTED"
       ],
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "name": {
         "en": "SoloCam L20 / L40",
@@ -6797,13 +6985,26 @@
     },
     {
       "id": "driver_SOLOCAM_S2040",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local"],
+      "connectivity": ["cloud"],
       "class": "camera",
+      "capabilitiesOptions": {
+        "alarm_motion": {
+          "title": {
+            "en": "Any event (motion / person / etc.)",
+            "nl": "Elk event (beweging / persoon / etc.)",
+            "de": "Jedes Ereignis (Bewegung / Person / etc.)",
+            "fr": "Tout événement (mouvement / personne / etc.)",
+            "it": "Qualsiasi evento (movimento / persona / ecc.)",
+            "sv": "Vilket evenemang (rörelse / person / etc.)",
+            "no": "Enhver hendelse (bevegelse / person / osv.)",
+            "es": "Cualquier evento (movimiento / persona / etc.)",
+            "da": "Enhver begivenhed (bevægelse / person / osv.)",
+            "ru": "Любое событие (движение / человек / и т.д.)",
+            "pl": "Dowolne wydarzenie (ruch / osoba / itp.)"
+          }
+        }
+      },
       "capabilities": [
         "onoff",
         "CMD_DEV_LED_SWITCH",
@@ -6826,9 +7027,7 @@
         "NTFY_VEHICLE_DETECTED"
       ],
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "name": {
         "en": "SoloCam (Solar) S220 / S40",
@@ -7174,13 +7373,26 @@
     },
     {
       "id": "driver_WALLLIGHT_CAM_S",
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
+      "platforms": ["local"],
+      "connectivity": ["cloud"],
       "class": "camera",
+      "capabilitiesOptions": {
+        "alarm_motion": {
+          "title": {
+            "en": "Any event (motion / person / etc.)",
+            "nl": "Elk event (beweging / persoon / etc.)",
+            "de": "Jedes Ereignis (Bewegung / Person / etc.)",
+            "fr": "Tout événement (mouvement / personne / etc.)",
+            "it": "Qualsiasi evento (movimento / persona / ecc.)",
+            "sv": "Vilket evenemang (rörelse / person / etc.)",
+            "no": "Enhver hendelse (bevegelse / person / osv.)",
+            "es": "Cualquier evento (movimiento / persona / etc.)",
+            "da": "Enhver begivenhed (bevægelse / person / osv.)",
+            "ru": "Любое событие (движение / человек / и т.д.)",
+            "pl": "Dowolne wydarzenie (ruch / osoba / itp.)"
+          }
+        }
+      },
       "capabilities": [
         "onoff",
         "CMD_DEV_LED_SWITCH",
@@ -7202,9 +7414,7 @@
         "NTFY_VEHICLE_DETECTED"
       ],
       "energy": {
-        "batteries": [
-          "INTERNAL"
-        ]
+        "batteries": ["INTERNAL"]
       },
       "name": {
         "en": "Wall Light Cam S100 / S120",
