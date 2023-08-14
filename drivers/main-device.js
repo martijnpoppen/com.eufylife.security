@@ -365,9 +365,9 @@ module.exports = class mainDevice extends Homey.Device {
         await this.EufyStation.snooze(this.EufyDevice, payload);
     }
 
-    async onCapability_CMD_TRIGGER_ALARM(seconds) {
+    async onCapability_CMD_TRIGGER_ALARM(time) {
         try {
-            this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_TRIGGER_ALARM - `, seconds);
+            this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_TRIGGER_ALARM - `, time);
 
             await this.EufyStation.triggerDeviceAlarmSound(this.EufyDevice, time + 2);
             // time + 2 so we can disable alarm manually.
