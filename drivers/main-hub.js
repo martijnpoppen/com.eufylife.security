@@ -89,6 +89,35 @@ module.exports = class mainHub extends mainDevice {
        
     }
 
+    async onCapability_CMD_TRIGGER_ALARM(seconds) {
+        try {
+            this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_TRIGGER_ALARM - `, seconds);
+
+            await this.EufyStation.triggerStationAlarmSound(seconds + 2);
+            // time + 2 so we can disable alarm manually.
+
+            // wait for alarm to be finished. turn off to have a off notification. So the alarm_generic will notify
+            await sleep(seconds * 1000);
+
+            await this.EufyStation.triggerStationAlarmSound(0);
+
+            return Promise.resolve(true);
+        } catch (e) {
+            this.homey.app.error(e);
+        }
+    }
+
+    async onCapability_CMD_SET_HUB_ALARM_CLOSE() {
+        try {
+            this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_TRIGGER_ALARM - `, 0);
+            await this.EufyStation.resetStationAlarmSound();
+
+            return Promise.resolve(true);
+        } catch (e) {
+            this.homey.app.error(e);
+        }
+    }
+
     async onCapability_NTFY_TRIGGER(message, value) {
         try {
             this.homey.app.log(`[Device] ${this.getName()} - onCapability_NTFY_TRIGGER => `, message, value);
