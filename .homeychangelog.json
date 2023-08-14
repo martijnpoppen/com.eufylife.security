@@ -1252,5 +1252,8 @@
   },
   "3.16.2": {
     "en": "Non-parsable parameter value received from eufy cloud."
+  },
+  "3.16.3": {
+    "en": "NEW: add alarm motion sensor text"
   }
 }
