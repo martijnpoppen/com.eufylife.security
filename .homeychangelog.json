@@ -1267,5 +1267,8 @@
   },
   "3.16.7": {
     "en": "FIX: security mode selected without interaction (was caused by a check in background)"
+  },
+  "3.16.8": {
+    "en": "FIX: s220"
   }
 }
