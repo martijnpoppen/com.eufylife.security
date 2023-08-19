@@ -1270,5 +1270,8 @@
   },
   "3.16.8": {
     "en": "FIX: s220"
+  },
+  "3.16.9": {
+    "en": "FIX: non parsable param - Eufy cam dual"
   }
 }
