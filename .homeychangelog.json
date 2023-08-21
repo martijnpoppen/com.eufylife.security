@@ -1273,5 +1273,11 @@
   },
   "3.16.9": {
     "en": "FIX: non parsable param - Eufy cam dual"
+  },
+  "3.16.10": {
+    "en": "FIX: trigger when security mode changed"
+  },
+  "3.17.0": {
+    "en": "NEW: p2p data encryption for firmware 3.3.0.1"
   }
 }
