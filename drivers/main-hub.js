@@ -55,6 +55,15 @@ module.exports = class mainHub extends mainDevice {
                 return Promise.resolve(true);
             }
 
+            const hasKeypad = this.homey.app.deviceList.some(d => {
+                const settings = d.getSettings();
+                return settings.DEVICE_SN.startsWith(this.homey.app.deviceTypes.KEYPAD[0]);
+            });
+
+            if (CMD_SET_ARMING == '6' && !hasKeypad) {
+                throw new Error('Not available without keypad');
+            }
+
             this.EufyStation.rawStation.member.nick_name = 'Homey';
 
             this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_SET_ARMING - `, value, CMD_SET_ARMING);
@@ -65,6 +74,7 @@ module.exports = class mainHub extends mainDevice {
             return Promise.resolve(true);
         } catch (e) {
             this.homey.app.error(e);
+            return Promise.reject(e);
         }
     }
 
