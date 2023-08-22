@@ -1288,5 +1288,8 @@
   },
   "3.17.3": {
     "en": "FIX: Security modes: prevent OFF mode when no keypad connected"
+  },
+  "3.17.4": {
+    "en": "NEW: add extra logs to figure out ghost changes in security modes"
   }
 }
