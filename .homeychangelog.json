@@ -1291,5 +1291,8 @@
   },
   "3.17.4": {
     "en": "NEW: add extra logs to figure out ghost changes in security modes"
+  },
+  "3.17.5": {
+    "en": "FIX: update Eufy library"
   }
 }
