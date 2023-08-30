@@ -1294,5 +1294,8 @@
   },
   "3.17.5": {
     "en": "FIX: update Eufy library"
+  },
+  "3.18.0": {
+    "en": "NEW: improve handling of battery and temperature | NEW: add debug logs for doorsensors"
   }
 }
