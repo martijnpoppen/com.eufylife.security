@@ -1833,7 +1833,7 @@
                 "nl": "Forceer thumbnail notificaties (alleen uitschakelen",
                 "fr": "Renforcer l'intégration des notifications de vignettes"
               },
-              "value": false
+              "value": true
             },
             {
               "id": "alarm_motion_enabled",
@@ -2127,7 +2127,7 @@
                 "nl": "Forceer thumbnail notificaties (alleen uitschakelen",
                 "fr": "Renforcer l'intégration des notifications de vignettes"
               },
-              "value": false
+              "value": true
             },
             {
               "id": "alarm_motion_enabled",
@@ -2422,7 +2422,7 @@
                 "nl": "Forceer thumbnail notificaties (alleen uitschakelen",
                 "fr": "Renforcer l'intégration des notifications de vignettes"
               },
-              "value": false
+              "value": true
             },
             {
               "id": "alarm_motion_enabled",
@@ -2715,7 +2715,7 @@
                 "nl": "Forceer thumbnail notificaties (alleen uitschakelen",
                 "fr": "Renforcer l'intégration des notifications de vignettes"
               },
-              "value": false
+              "value": true
             },
             {
               "id": "alarm_motion_enabled",
@@ -3009,7 +3009,7 @@
                 "nl": "Forceer thumbnail notificaties (alleen uitschakelen",
                 "fr": "Renforcer l'intégration des notifications de vignettes"
               },
-              "value": false
+              "value": true
             },
             {
               "id": "alarm_motion_enabled",
@@ -3303,7 +3303,7 @@
                 "nl": "Forceer thumbnail notificaties (alleen uitschakelen",
                 "fr": "Renforcer l'intégration des notifications de vignettes"
               },
-              "value": false
+              "value": true
             },
             {
               "id": "alarm_motion_enabled",
@@ -3598,7 +3598,7 @@
                 "nl": "Forceer thumbnail notificaties (alleen uitschakelen",
                 "fr": "Renforcer l'intégration des notifications de vignettes"
               },
-              "value": false
+              "value": true
             },
             {
               "id": "alarm_motion_enabled",
@@ -3889,7 +3889,7 @@
                 "nl": "Forceer thumbnail notificaties (alleen uitschakelen",
                 "fr": "Renforcer l'intégration des notifications de vignettes"
               },
-              "value": false
+              "value": true
             },
             {
               "id": "alarm_motion_enabled",
@@ -4180,7 +4180,7 @@
                 "nl": "Forceer thumbnail notificaties (alleen uitschakelen",
                 "fr": "Renforcer l'intégration des notifications de vignettes"
               },
-              "value": false
+              "value": true
             },
             {
               "id": "alarm_motion_enabled",
@@ -4568,7 +4568,7 @@
                 "nl": "Forceer thumbnail notificaties (alleen uitschakelen",
                 "fr": "Renforcer l'intégration des notifications de vignettes"
               },
-              "value": false
+              "value": true
             },
             {
               "id": "alarm_motion_enabled",
@@ -4957,7 +4957,7 @@
                 "nl": "Forceer thumbnail notificaties (alleen uitschakelen",
                 "fr": "Renforcer l'intégration des notifications de vignettes"
               },
-              "value": false
+              "value": true
             },
             {
               "id": "alarm_motion_enabled",
@@ -5735,7 +5735,7 @@
                 "nl": "Forceer thumbnail notificaties (alleen uitschakelen",
                 "fr": "Renforcer l'intégration des notifications de vignettes"
               },
-              "value": false
+              "value": true
             },
             {
               "id": "alarm_motion_enabled",
@@ -6125,7 +6125,7 @@
                 "nl": "Forceer thumbnail notificaties (alleen uitschakelen",
                 "fr": "Renforcer l'intégration des notifications de vignettes"
               },
-              "value": false
+              "value": true
             },
             {
               "id": "alarm_motion_enabled",
@@ -6518,7 +6518,7 @@
                 "nl": "Forceer thumbnail notificaties (alleen uitschakelen",
                 "fr": "Renforcer l'intégration des notifications de vignettes"
               },
-              "value": false
+              "value": true
             },
             {
               "id": "alarm_motion_enabled",
@@ -7306,7 +7306,7 @@
                 "nl": "Forceer thumbnail notificaties (alleen uitschakelen",
                 "fr": "Renforcer l'intégration des notifications de vignettes"
               },
-              "value": false
+              "value": true
             },
             {
               "id": "alarm_motion_enabled",
@@ -7699,7 +7699,7 @@
                 "nl": "Forceer thumbnail notificaties (alleen uitschakelen",
                 "fr": "Renforcer l'intégration des notifications de vignettes"
               },
-              "value": false
+              "value": true
             },
             {
               "id": "alarm_motion_enabled",
@@ -8071,7 +8071,7 @@
                 "nl": "Forceer thumbnail notificaties (alleen uitschakelen",
                 "fr": "Renforcer l'intégration des notifications de vignettes"
               },
-              "value": false
+              "value": true
             },
             {
               "id": "alarm_motion_enabled",
@@ -8445,7 +8445,7 @@
                 "nl": "Forceer thumbnail notificaties (alleen uitschakelen",
                 "fr": "Renforcer l'intégration des notifications de vignettes"
               },
-              "value": false
+              "value": true
             },
             {
               "id": "alarm_motion_enabled",
@@ -8725,7 +8725,7 @@
                 "nl": "Forceer thumbnail notificaties (alleen uitschakelen",
                 "fr": "Renforcer l'intégration des notifications de vignettes"
               },
-              "value": false
+              "value": true
             },
             {
               "id": "alarm_motion_enabled",
@@ -9003,7 +9003,7 @@
                 "nl": "Forceer thumbnail notificaties (alleen uitschakelen",
                 "fr": "Renforcer l'intégration des notifications de vignettes"
               },
-              "value": false
+              "value": true
             },
             {
               "id": "alarm_motion_enabled",
@@ -9380,7 +9380,7 @@
                 "nl": "Forceer thumbnail notificaties (alleen uitschakelen",
                 "fr": "Renforcer l'intégration des notifications de vignettes"
               },
-              "value": false
+              "value": true
             },
             {
               "id": "alarm_motion_enabled",
@@ -9644,7 +9644,7 @@
                 "nl": "Forceer thumbnail notificaties (alleen uitschakelen",
                 "fr": "Renforcer l'intégration des notifications de vignettes"
               },
-              "value": false
+              "value": true
             },
             {
               "id": "alarm_motion_enabled",

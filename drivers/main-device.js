@@ -3,7 +3,7 @@
 const Homey = require('homey');
 const fetch = require('node-fetch');
 const { ARM_TYPES } = require('../constants/capability_types');
-const { sleep, bufferToStream, getParamData } = require('../lib/utils.js');
+const { sleep, bufferToStream } = require('../lib/utils.js');
 const { PropertyName } = require('eufy-security-client');
 
 module.exports = class mainDevice extends Homey.Device {
@@ -28,7 +28,7 @@ module.exports = class mainDevice extends Homey.Device {
             this.EufyStation.p2pSession.energySavingDevice = false;
 
             await this.deviceImage();
-            await this.deviceParams();
+            await this.deviceParams(this);
 
             if (initial) {
                 const settings = this.getSettings();
@@ -53,11 +53,14 @@ module.exports = class mainDevice extends Homey.Device {
             await this.setSettings({
                 LOCAL_STATION_IP: ipAddress,
                 STATION_SN: this.EufyStation.getSerial(),
-                DEVICE_SN: this.EufyDevice.getSerial(),
-                force_include_thumbnail: true
+                DEVICE_SN: this.EufyDevice.getSerial()
             });
 
             this._started = true;
+
+            if(this.hasCapability('measure_battery')) {
+                console.log('battery', await this.EufyDevice.getPropertiesMetadata(PropertyName.DeviceBattery));
+            }
         } catch (error) {
             this.setUnavailable(this.homey.__('device.serial_failure'));
             this.homey.app.log(error);
@@ -246,7 +249,7 @@ module.exports = class mainDevice extends Homey.Device {
         }
     }
 
-    async onCapability_CMD_SET_ARMING(value) {
+    async onCapability_CMD_SET_ARMING(value, triggerByFlow = false) {
         try {
             let CMD_SET_ARMING = ARM_TYPES[value];
 
@@ -257,6 +260,7 @@ module.exports = class mainDevice extends Homey.Device {
             this.EufyStation.rawStation.member.nick_name = 'Homey';
             this.EufyStation.p2pSession.energySavingDevice = false;
 
+            this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_SET_ARMING - triggerByFlow`, triggerByFlow);
             this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_SET_ARMING - `, value, CMD_SET_ARMING);
             await this.homey.app.eufyClient.setStationProperty(this.HomeyDevice.station_sn, PropertyName.StationGuardMode, CMD_SET_ARMING);
 
@@ -542,14 +546,38 @@ module.exports = class mainDevice extends Homey.Device {
         }
     }
 
-    async deviceParams() {
-        if(this.hasCapability('measure_battery') && this.hasCapability('measure_temperature')) {
-            const measure_battery = getParamData(this.EufyDevice.rawDevice.params, "CMD_GET_BATTERY");
-            const measure_temperature = getParamData(this.EufyDevice.rawDevice.params, "CMD_GET_BATTERY_TEMP");
+    async deviceParams(ctx) {
+        try {
+            // will be called from event helper
+            const settings = ctx.getSettings();
+
+            if (ctx.EufyDevice && ctx.hasCapability('measure_battery')) {
+                ctx.homey.app.log(`[Device] ${ctx.getName()} - deviceParams - measure_battery`);
+                const value = ctx.EufyDevice.getPropertyValue(PropertyName.DeviceBattery);
+                ctx.setParamStatus('measure_battery', value);
+            }
     
-            await this.setParamStatus('measure_battery', measure_battery);
-            await this.setParamStatus('measure_temperature', measure_temperature);
-        }
+            if (ctx.EufyDevice && ctx.hasCapability('measure_temperature')) {
+                ctx.homey.app.log(`[Device] ${ctx.getName()} - deviceParams - measure_temperature`);
+                const value = ctx.EufyDevice.getPropertyValue(PropertyName.DeviceBatteryTemp);
+                ctx.setParamStatus('measure_temperature', value);
+            }
+    
+            if (ctx.EufyDevice && ctx.hasCapability('onoff')) {
+                ctx.homey.app.log(`[Device] ${ctx.getName()} - deviceParams - onoff`);
+                const value = ctx.EufyDevice.getPropertyValue(PropertyName.DeviceEnabled);
+                ctx.setParamStatus('onoff', value);
+            }
+    
+            if (settings.force_include_thumbnail && ctx.EufyDevice && ctx.EufyDevice.hasProperty(PropertyName.DeviceNotificationType)) {
+                ctx.homey.app.log(`[Device] ${ctx.getName()} - enforceSettings - DeviceNotificationType`);
+            
+                await ctx.homey.app.eufyClient.setDeviceProperty(settings.DEVICE_SN, PropertyName.DeviceNotificationType, 2).catch(e => ctx.log(e));
+                
+            }
+        } catch (e) {
+            ctx.homey.app.error(e);
+        }       
     }
 
     async setParamStatus(capability, value) {

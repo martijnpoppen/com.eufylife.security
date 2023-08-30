@@ -16,7 +16,9 @@ module.exports = class mainHub extends mainDevice {
 
             this.EufyStation = await this.homey.app.eufyClient.getStation(this.HomeyDevice.station_sn);
 
-            if(initial) {
+            await this.deviceParams(this);
+
+            if (initial) {
                 const settings = this.getSettings();
 
                 await this.checkCapabilities();
@@ -33,20 +35,24 @@ module.exports = class mainHub extends mainDevice {
 
             await this.setAvailable();
 
-            await this.setSettings({ 
-                LOCAL_STATION_IP: this.EufyStation.getLANIPAddress(), 
-                STATION_SN: this.EufyStation.getSerial(), 
-                DEVICE_SN: this.EufyStation.getSerial() 
+            await this.setSettings({
+                LOCAL_STATION_IP: this.EufyStation.getLANIPAddress(),
+                STATION_SN: this.EufyStation.getSerial(),
+                DEVICE_SN: this.EufyStation.getSerial()
             });
 
             this._started = true;
+
+            await sleep(20000);
+            this.homey.app.log(`[Device] ${this.getName()} - CMD_SET_ARMING => CMD_SET_ARMING`);
+            await this.setCapabilityValue('CMD_SET_ARMING', 'disarmed');
         } catch (error) {
             this.setUnavailable(this.homey.__('device.serial_failure_station'));
             this.homey.app.log(error);
         }
     }
 
-    async onCapability_CMD_SET_ARMING(value) {
+    async onCapability_CMD_SET_ARMING(value, triggerByFlow = false) {
         try {
             let CMD_SET_ARMING = ARM_TYPES[value];
 
@@ -55,17 +61,9 @@ module.exports = class mainHub extends mainDevice {
                 return Promise.resolve(true);
             }
 
-            const hasKeypad = this.homey.app.deviceList.some(d => {
-                const settings = d.getSettings();
-                return settings.DEVICE_SN.startsWith(this.homey.app.deviceTypes.KEYPAD[0]);
-            });
-
-            if (CMD_SET_ARMING == '6' && !hasKeypad) {
-                throw new Error('Not available without keypad');
-            }
-
             this.EufyStation.rawStation.member.nick_name = 'Homey';
 
+            this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_SET_ARMING - triggerByFlow`, triggerByFlow);
             this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_SET_ARMING - `, value, CMD_SET_ARMING);
             await this.homey.app.eufyClient.setStationProperty(this.HomeyDevice.station_sn, PropertyName.StationGuardMode, CMD_SET_ARMING);
 
@@ -83,11 +81,11 @@ module.exports = class mainHub extends mainDevice {
             this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_TRIGGER_RINGTONE_HUB - `, value);
 
             const eufyDevices = await this.homey.app.eufyClient.getDevices();
-            this.EufyStationDevice = eufyDevices.find(d => d.getStationSerial() === this.EufyStation.getSerial() && d.isDoorbell());
+            this.EufyStationDevice = eufyDevices.find((d) => d.getStationSerial() === this.EufyStation.getSerial() && d.isDoorbell());
 
             if (!this.EufyStationDevice) {
                 this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_TRIGGER_RINGTONE_HUB - standalone`);
-                throw new Error('Chime without a connected doorbell is not supported anymore')
+                throw new Error('Chime without a connected doorbell is not supported anymore');
             } else {
                 this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_TRIGGER_RINGTONE_HUB - with EufyStationDevice`);
                 await this.EufyStation.setHomebaseChimeRingtoneType(this.EufyStationDevice, value);
@@ -96,7 +94,6 @@ module.exports = class mainHub extends mainDevice {
             this.homey.app.error(e);
             return Promise.reject(e);
         }
-       
     }
 
     async onCapability_CMD_TRIGGER_ALARM(seconds) {
@@ -142,13 +139,28 @@ module.exports = class mainHub extends mainDevice {
                 }
 
                 if (message === 'CMD_SET_ARMING') {
-                   this.set_alarm_arm_mode(value);
+                    this.set_alarm_arm_mode(value);
                 }
             }
 
             return Promise.resolve(true);
         } catch (e) {
             this.homey.app.error(e);
+        }
+    }
+
+    async deviceParams(ctx) {
+        try {
+            // will be called from event helper
+            const settings = ctx.getSettings();
+
+            if (settings.force_switch_mode_notifications && ctx.EufyStation) {
+                ctx.homey.app.log(`[Device] ${ctx.getName()} - enforceSettings - StationNotificationSwitchModeApp`, ctx.EufyStation.getSoftwareVersion());
+
+                await ctx.homey.app.eufyClient.setStationProperty(settings.STATION_SN, PropertyName.StationNotificationSwitchModeApp, true).catch((e) => ctx.log(e));
+            }
+        } catch (e) {
+            ctx.homey.app.error(e);
         }
     }
 };
