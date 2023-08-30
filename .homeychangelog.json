@@ -1297,5 +1297,8 @@
   },
   "3.18.0": {
     "en": "NEW: improve handling of battery and temperature | NEW: add debug logs for doorsensors"
+  },
+  "3.18.1": {
+    "en": "FIX: force thumbnail on restart bug"
   }
 }
