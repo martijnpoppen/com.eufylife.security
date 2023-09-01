@@ -1303,5 +1303,8 @@
   },
   "3.18.2": {
     "en": "FIX: deviceparams"
+  },
+  "3.18.3": {
+    "en": "FIX: battery handling"
   }
 }
