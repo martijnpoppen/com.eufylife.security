@@ -2,6 +2,7 @@
 
 const Homey = require('homey');
 const path = require('path');
+const fs = require('fs');
 
 const { EufySecurity } = require('eufy-security-client');
 const { PhoneModels } = require('eufy-security-client/build/http/const');
@@ -19,6 +20,8 @@ const { sleep, randomNumber } = require('./lib/utils');
 const Logger = require('./lib/helpers/eufy-logger.helper');
 
 const _settingsKey = `${Homey.manifest.id}.settings`;
+
+const log_file = fs.createWriteStream(__dirname + '/userdata/debug.log', {flags : 'w'});
 
 class App extends Homey.App {
     log() {
@@ -326,7 +329,7 @@ class App extends Homey.App {
 
     async setEufyClient(settings, devicesLoaded = false) {
         try {
-            const debug = true;
+            const debug = false;
 
             const config = {
                 username: settings.USERNAME,
@@ -338,12 +341,14 @@ class App extends Homey.App {
                 fallbackTrustedDeviceName: settings.TRUSTED_DEVICE_NAME,
                 stationIPAddresses: Object.keys(settings.STATION_IPS).length ? settings.STATION_IPS : undefined,
                 acceptInvitations: true,
-                pollingIntervalMinutes: 15
+                pollingIntervalMinutes: 10,
+                eventDurationSeconds: 15,
+                p2pConnectionSetup: 'quickest',
             };
 
             await this.resetEufyClient();
 
-            this.libraryLog = Logger.createNew('EufyLibrary', debug);
+            this.libraryLog = Logger.createNew('EufyLibrary', debug, log_file);
             this.eufyClient = await EufySecurity.initialize(config, this.libraryLog);
 
             if(devicesLoaded) {

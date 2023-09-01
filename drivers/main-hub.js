@@ -16,7 +16,7 @@ module.exports = class mainHub extends mainDevice {
 
             this.EufyStation = await this.homey.app.eufyClient.getStation(this.HomeyDevice.station_sn);
 
-            await this.deviceParams(this);
+            await this.deviceParams(this, true);
 
             if (initial) {
                 const settings = this.getSettings();
@@ -149,7 +149,7 @@ module.exports = class mainHub extends mainDevice {
         }
     }
 
-    async deviceParams(ctx) {
+    async deviceParams(ctx, initial = false) {
         try {
             // will be called from event helper
             const settings = ctx.getSettings();

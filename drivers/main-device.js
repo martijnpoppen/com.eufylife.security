@@ -28,7 +28,7 @@ module.exports = class mainDevice extends Homey.Device {
             this.EufyStation.p2pSession.energySavingDevice = false;
 
             await this.deviceImage();
-            await this.deviceParams(this);
+            await this.deviceParams(this, true);
 
             if (initial) {
                 const settings = this.getSettings();
@@ -57,10 +57,6 @@ module.exports = class mainDevice extends Homey.Device {
             });
 
             this._started = true;
-
-            if(this.hasCapability('measure_battery')) {
-                console.log('battery', await this.EufyDevice.getPropertiesMetadata(PropertyName.DeviceBattery));
-            }
         } catch (error) {
             this.setUnavailable(this.homey.__('device.serial_failure'));
             this.homey.app.log(error);
@@ -546,24 +542,24 @@ module.exports = class mainDevice extends Homey.Device {
         }
     }
 
-    async deviceParams(ctx) {
+    async deviceParams(ctx, initial = false) {
         try {
             // will be called from event helper
             const settings = ctx.getSettings();
 
-            if (ctx.EufyDevice && ctx.hasCapability('measure_battery')) {
+            if (initial && ctx.EufyDevice && ctx.hasCapability('measure_battery')) {
                 ctx.homey.app.log(`[Device] ${ctx.getName()} - deviceParams - measure_battery`);
                 const value = ctx.EufyDevice.getPropertyValue(PropertyName.DeviceBattery);
                 ctx.setParamStatus('measure_battery', value);
             }
     
-            if (ctx.EufyDevice && ctx.hasCapability('measure_temperature')) {
+            if (initial && ctx.EufyDevice && ctx.hasCapability('measure_temperature')) {
                 ctx.homey.app.log(`[Device] ${ctx.getName()} - deviceParams - measure_temperature`);
                 const value = ctx.EufyDevice.getPropertyValue(PropertyName.DeviceBatteryTemp);
                 ctx.setParamStatus('measure_temperature', value);
             }
     
-            if (ctx.EufyDevice && ctx.hasCapability('onoff')) {
+            if (initial && ctx.EufyDevice && ctx.hasCapability('onoff')) {
                 ctx.homey.app.log(`[Device] ${ctx.getName()} - deviceParams - onoff`);
                 const value = ctx.EufyDevice.getPropertyValue(PropertyName.DeviceEnabled);
                 ctx.setParamStatus('onoff', value);
