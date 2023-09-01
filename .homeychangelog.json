@@ -1306,5 +1306,8 @@
   },
   "3.18.3": {
     "en": "FIX: battery handling"
+  },
+  "3.18.4": {
+    "en": "FIX: battery handling"
   }
 }
