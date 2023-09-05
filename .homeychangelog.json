@@ -1312,5 +1312,8 @@
   },
   "3.18.5": {
     "en": "FIX: door sensors"
+  },
+  "3.18.6": {
+    "en": "FIX: ghost changes arming mode"
   }
 }
