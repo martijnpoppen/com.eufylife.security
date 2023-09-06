@@ -21,7 +21,7 @@ const Logger = require('./lib/helpers/eufy-logger.helper');
 
 const _settingsKey = `${Homey.manifest.id}.settings`;
 
-const log_file = fs.createWriteStream(__dirname + '/userdata/debug.log', {flags : 'w'});
+const log_file = fs.createWriteStream(`${path.resolve(__dirname, '/userdata/')}/debug.log`, {flags : 'w'});
 
 class App extends Homey.App {
     log() {

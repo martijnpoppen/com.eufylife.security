@@ -475,31 +475,35 @@ module.exports = class mainDevice extends Homey.Device {
 
             if (this.hasCapability(message)) {
                 if (isNormalEvent) {
-                    this.setCapabilityValue(message, true);
+                    await this.setCapabilityValue(message, true);
 
                     if (setMotionAlarm) {
-                        this.setCapabilityValue('alarm_motion', true);
+                        await this.setCapabilityValue('alarm_motion', true);
                     }
                 } else {
-                    this.setCapabilityValue(message, value);
+                    await this.setCapabilityValue(message, value);
                     await this.set_alarm_arm_mode(value);
                 }
 
-                await sleep(5000);
-
-                if (isNormalEvent) {
-                    this.setCapabilityValue(message, false);
-
-                    if (setMotionAlarm) {
-                        await sleep(5000);
-                        this.setCapabilityValue('alarm_motion', false);
-                    }
-                }
+                startTimeout(message, isNormalEvent, setMotionAlarm);
             }
 
             return Promise.resolve(true);
         } catch (e) {
             this.homey.app.error(e);
+        }
+    }
+
+    async startTimeout(message, isNormalEvent, setMotionAlarm) {
+        await sleep(5000);
+
+        if (isNormalEvent) {
+            this.setCapabilityValue(message, false);
+
+            if (setMotionAlarm) {
+                await sleep(5000);
+                this.setCapabilityValue('alarm_motion', false);
+            }
         }
     }
 
@@ -542,7 +546,7 @@ module.exports = class mainDevice extends Homey.Device {
         }
     }
 
-    async deviceParams(ctx, initial = false) {
+    async deviceParams(ctx, initial = true) {
         try {
             // will be called from event helper
             const settings = ctx.getSettings();

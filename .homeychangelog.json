@@ -1324,5 +1324,8 @@
   },
   "3.18.9": {
     "en": "FIX: door sensor for all HB2 firmware"
+  },
+  "3.18.10": {
+    "en": "FIX: door sensor for all HB2 firmware"
   }
 }

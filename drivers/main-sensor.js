@@ -46,13 +46,17 @@ module.exports = class mainSensor extends mainDevice {
         try {
             if (this.hasCapability(message)) {
                 this.setCapabilityValue(message, true);
-                await sleep(10000);
-                this.setCapabilityValue(message, false);
+                this.startTimeout(message);
             }
             return Promise.resolve(true);
         } catch (e) {
             this.homey.app.error(e);
             return Promise.reject(e);
         }
+    }
+
+    async startTimeout(message) {
+        await sleep(10000);
+        this.setCapabilityValue(message, false);
     }
 };

@@ -131,15 +131,17 @@ module.exports = class mainHub extends mainDevice {
             const settings = this.getSettings();
 
             if (this.hasCapability(message)) {
-                if (message !== 'alarm_generic') this.setCapabilityValue(message, value);
+                if (message !== 'alarm_generic') {
+                    await this.setCapabilityValue(message, value);
 
-                if (message === 'alarm_generic' && !!settings.alarm_generic_enabled) {
-                    this.setCapabilityValue(message, value);
-                    this.homey.app.log(`[Device] ${this.getName()} - onCapability_NTFY_TRIGGER => setMotionAlarm`, value);
+                    if (message === 'CMD_SET_ARMING') {
+                        await this.set_alarm_arm_mode(value);
+                    }
                 }
 
-                if (message === 'CMD_SET_ARMING') {
-                    this.set_alarm_arm_mode(value);
+                if (message === 'alarm_generic' && !!settings.alarm_generic_enabled) {
+                    await this.setCapabilityValue(message, value);
+                    this.homey.app.log(`[Device] ${this.getName()} - onCapability_NTFY_TRIGGER => setMotionAlarm`, value);
                 }
             }
 
