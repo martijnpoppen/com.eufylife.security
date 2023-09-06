@@ -1318,5 +1318,11 @@
   },
   "3.18.7": {
     "en": "FIX: battery reporting"
+  },
+  "3.18.8": {
+    "en": "FIX: battery"
+  },
+  "3.18.9": {
+    "en": "FIX: door sensor for all HB2 firmware"
   }
 }
