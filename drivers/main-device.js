@@ -485,7 +485,7 @@ module.exports = class mainDevice extends Homey.Device {
                     await this.set_alarm_arm_mode(value);
                 }
 
-                startTimeout(message, isNormalEvent, setMotionAlarm);
+                this.startTimeout(message, isNormalEvent, setMotionAlarm);
             }
 
             return Promise.resolve(true);
@@ -546,7 +546,7 @@ module.exports = class mainDevice extends Homey.Device {
         }
     }
 
-    async deviceParams(ctx, initial = true) {
+    async deviceParams(ctx, initial = false) {
         try {
             // will be called from event helper
             const settings = ctx.getSettings();

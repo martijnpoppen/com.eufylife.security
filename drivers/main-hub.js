@@ -157,9 +157,9 @@ module.exports = class mainHub extends mainDevice {
             const settings = ctx.getSettings();
 
             if (settings.force_switch_mode_notifications && ctx.EufyStation) {
-                ctx.homey.app.log(`[Device] ${ctx.getName()} - enforceSettings - StationNotificationSwitchModeApp`, ctx.EufyStation.getSoftwareVersion());
+                // ctx.homey.app.log(`[Device] ${ctx.getName()} - enforceSettings - StationNotificationSwitchModeApp`, ctx.EufyStation.getSoftwareVersion());
 
-                await ctx.homey.app.eufyClient.setStationProperty(settings.STATION_SN, PropertyName.StationNotificationSwitchModeApp, true).catch((e) => ctx.log(e));
+                // await ctx.homey.app.eufyClient.setStationProperty(settings.STATION_SN, PropertyName.StationNotificationSwitchModeApp, true).catch((e) => ctx.log(e));
             }
         } catch (e) {
             ctx.homey.app.error(e);
