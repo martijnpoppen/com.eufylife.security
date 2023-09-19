@@ -1330,5 +1330,8 @@
   },
   "3.18.11": {
     "en": "FIX: sensor status"
+  },
+  "3.18.12": {
+    "en": "FIX: property name error"
   }
 }

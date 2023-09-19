@@ -1,6 +1,6 @@
 {
   "id": "com.eufylife.security",
-  "version": "3.18.11",
+  "version": "3.18.12",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "brandColor": "#2a6185",
@@ -7491,8 +7491,6 @@
         "onoff",
         "CMD_DEV_LED_SWITCH",
         "alarm_motion",
-        "measure_battery",
-        "measure_temperature",
         "CMD_IRCUT_SWITCH",
         "alarm_arm_mode",
         "CMD_SET_ARMING",
