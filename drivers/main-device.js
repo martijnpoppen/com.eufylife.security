@@ -3,7 +3,7 @@
 const Homey = require('homey');
 const fetch = require('node-fetch');
 const { ARM_TYPES } = require('../constants/capability_types');
-const { sleep, bufferToStream } = require('../lib/utils.js');
+const { sleep, bufferToStream, isNil } = require('../lib/utils.js');
 const { PropertyName } = require('eufy-security-client');
 
 module.exports = class mainDevice extends Homey.Device {
@@ -177,6 +177,13 @@ module.exports = class mainDevice extends Homey.Device {
             this.homey.app.log(`[Device] ${this.getName()} - checkCapabities - Homebase 3 not found - Removing: `, deleteCapabilities);
             
             driverCapabilities = driverCapabilities.filter(item => !deleteCapabilities.includes(item));
+        }
+
+        // Check if devices has a battery
+        if(this.EufyDevice.hasBattery()) {
+            driverCapabilities = [...driverCapabilities, 'measure_battery', 'measure_temperature'];
+
+            this.homey.app.log(`[Device] ${this.getName()} - checkCapabities - Battery found - Adding: `, ['measure_battery', 'measure_temperature']);
         }
 
         await this.updateCapabilities(driverCapabilities, deviceCapabilities);
@@ -554,19 +561,19 @@ module.exports = class mainDevice extends Homey.Device {
             if (initial && ctx.EufyDevice && ctx.hasCapability('measure_battery')) {
                 ctx.homey.app.log(`[Device] ${ctx.getName()} - deviceParams - measure_battery`);
                 const value = ctx.EufyDevice.getPropertyValue(PropertyName.DeviceBattery);
-                ctx.setParamStatus('measure_battery', value);
+                if(!isNil(value)) ctx.setParamStatus('measure_battery', value);
             }
     
             if (initial && ctx.EufyDevice && ctx.hasCapability('measure_temperature')) {
                 ctx.homey.app.log(`[Device] ${ctx.getName()} - deviceParams - measure_temperature`);
                 const value = ctx.EufyDevice.getPropertyValue(PropertyName.DeviceBatteryTemp);
-                ctx.setParamStatus('measure_temperature', value);
+                if(!isNil(value)) ctx.setParamStatus('measure_temperature', value);
             }
     
             if (initial && ctx.EufyDevice && ctx.hasCapability('onoff')) {
                 ctx.homey.app.log(`[Device] ${ctx.getName()} - deviceParams - onoff`);
                 const value = ctx.EufyDevice.getPropertyValue(PropertyName.DeviceEnabled);
-                ctx.setParamStatus('onoff', value);
+                if(!isNil(value)) ctx.setParamStatus('onoff', value);
             }
     
             if (settings.force_include_thumbnail && ctx.EufyDevice && ctx.EufyDevice.hasProperty(PropertyName.DeviceNotificationType)) {
