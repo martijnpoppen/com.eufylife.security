@@ -161,7 +161,7 @@ module.exports = class mainDevice extends Homey.Device {
         if (!this.HomeyDevice.isStandAlone && this.hasCapability('CMD_SET_ARMING')) {
             const deleteCapabilities = ['CMD_SET_ARMING'];
             
-            this.homey.app.log(`[Device] ${this.getName()} - checkCapabities - StandAlone device part of Homebase 3 - Removing: `, deleteCapabilities);
+            this.homey.app.log(`[Device] ${this.getName()} - checkCapabities - StandAlone device part of Homebase 3 (or 2 or Minibase Chime) - Removing: `, deleteCapabilities);
             
             driverCapabilities = driverCapabilities.filter(item => !deleteCapabilities.includes(item))
         }
@@ -184,6 +184,13 @@ module.exports = class mainDevice extends Homey.Device {
             driverCapabilities = [...driverCapabilities, 'measure_battery', 'measure_temperature'];
 
             this.homey.app.log(`[Device] ${this.getName()} - checkCapabities - Battery found - Adding: `, ['measure_battery', 'measure_temperature']);
+        }
+
+        if(!!this.EufyDevice && this.EufyDevice.hasProperty(PropertyName.DeviceLight)) {
+            let deleteCapabilities = ['CMD_SET_FLOODLIGHT_MANUAL_SWITCH'];
+
+            driverCapabilities = driverCapabilities.filter(item => !deleteCapabilities.includes(item));
+            this.homey.app.log(`[Device] ${this.getName()} - checkCapabities - No floodlight - Removing: `, deleteCapabilities);
         }
 
         await this.updateCapabilities(driverCapabilities, deviceCapabilities);

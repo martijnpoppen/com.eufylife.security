@@ -8518,6 +8518,8 @@
         "alarm_motion",
         "measure_battery",
         "measure_temperature",
+        "CMD_SET_FLOODLIGHT_MANUAL_SWITCH",
+        "CMD_SET_ARMING",
         "CMD_DOORBELL_QUICK_RESPONSE",
         "CMD_START_STREAM",
         "CMD_TRIGGER_ALARM",
