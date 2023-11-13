@@ -180,7 +180,7 @@ module.exports = class mainDevice extends Homey.Device {
         }
 
         // Check if devices has a battery
-        if(this.EufyDevice.hasBattery()) {
+        if(!!this.EufyDevice && this.EufyDevice.hasBattery()) {
             driverCapabilities = [...driverCapabilities, 'measure_battery', 'measure_temperature'];
 
             this.homey.app.log(`[Device] ${this.getName()} - checkCapabities - Battery found - Adding: `, ['measure_battery', 'measure_temperature']);

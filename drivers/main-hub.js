@@ -80,6 +80,8 @@ module.exports = class mainHub extends mainDevice {
         try {
             this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_TRIGGER_RINGTONE_HUB - `, value);
 
+            this.EufyStation.rawStation.member.nick_name = 'Homey';
+
             const eufyDevices = await this.homey.app.eufyClient.getDevices();
             this.EufyStationDevice = eufyDevices.find((d) => d.getStationSerial() === this.EufyStation.getSerial() && d.isDoorbell());
 
@@ -100,6 +102,8 @@ module.exports = class mainHub extends mainDevice {
         try {
             this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_TRIGGER_ALARM - `, seconds);
 
+            this.EufyStation.rawStation.member.nick_name = 'Homey';
+
             await this.EufyStation.triggerStationAlarmSound(seconds + 2);
             // time + 2 so we can disable alarm manually.
 
@@ -117,6 +121,9 @@ module.exports = class mainHub extends mainDevice {
     async onCapability_CMD_SET_HUB_ALARM_CLOSE() {
         try {
             this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_TRIGGER_ALARM - `, 0);
+
+            this.EufyStation.rawStation.member.nick_name = 'Homey';
+            
             await this.EufyStation.resetStationAlarmSound();
 
             return Promise.resolve(true);
