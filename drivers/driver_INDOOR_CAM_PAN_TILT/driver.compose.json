@@ -1,8 +1,8 @@
 {
   "name": {
-    "en": "Indoor Cam Pan & Tilt Dual",
-    "nl": "Indoor Cam Pan & Tilt Dual",
-    "fr": "Indoor Cam Pan & Tilt Dual"
+    "en": "Indoor Cam Pan & Tilt (1080P/2K)",
+    "nl": "Indoor Cam Pan & Tilt (1080P/2K)",
+    "fr": "Indoor Cam Pan & Tilt (1080P/2K)"
   },
   "class": "camera",
   "capabilities": [

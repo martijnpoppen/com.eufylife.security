@@ -1,8 +1,8 @@
 {
   "name": {
-    "en": "Homebase Chime / Minibase Chime",
-    "nl": "Homebase Chime / Minibase Chime",
-    "fr": "Carillon Homebase / Carillon Minibase"
+    "en": "(Minibase) Chime",
+    "nl": "(Minibase) Chime",
+    "fr": "Carillon (Minibase)"
   },
   "class": "homealarm",
   "capabilities": [
