@@ -21,6 +21,9 @@ module.exports = class mainDevice extends Homey.Device {
 
             this.EufyDevice = await this.homey.app.eufyClient.getDevice(this.HomeyDevice.device_sn);
             this.HomeyDevice.station_sn = await this.EufyDevice.getStationSerial();
+            this.HomeyDevice.isStandAlone = this.HomeyDevice.device_sn === this.HomeyDevice.station_sn;
+
+            this.homey.app.log(`[Device] ${this.getName()} - starting - isStandAlone: ${this.HomeyDevice.isStandAlone} - station_sn: ${this.HomeyDevice.station_sn} - device_sn: ${this.HomeyDevice.device_sn}`);
 
             this.EufyStation = await this.homey.app.eufyClient.getStation(this.HomeyDevice.station_sn);
 
@@ -113,6 +116,7 @@ module.exports = class mainDevice extends Homey.Device {
         const deviceObject = this.getData();
         this.HomeyDevice = deviceObject;
         this.HomeyDevice.isStandAlone = this.HomeyDevice.device_sn === this.HomeyDevice.station_sn;
+        // inital set of isStandAlone. Override in onStartup for cameras that can be used with Homebase's
 
         this._image = null;
         this._started = false;
@@ -158,7 +162,7 @@ module.exports = class mainDevice extends Homey.Device {
         this.homey.app.log(`[Device] ${this.getName()} - checkCapabilities for`, driverManifest.id);
         this.homey.app.log(`[Device] ${this.getName()} - Found capabilities =>`, deviceCapabilities);
 
-        if (!this.HomeyDevice.isStandAlone && this.hasCapability('CMD_SET_ARMING')) {
+        if (!this.HomeyDevice.isStandAlone && (this.hasCapability('CMD_SET_ARMING') || driverCapabilities.includes('CMD_SET_ARMING'))) {
             const deleteCapabilities = ['CMD_SET_ARMING'];
             
             this.homey.app.log(`[Device] ${this.getName()} - checkCapabities - StandAlone device part of Homebase 3 (or 2 or Minibase Chime) - Removing: `, deleteCapabilities);
@@ -186,7 +190,7 @@ module.exports = class mainDevice extends Homey.Device {
             this.homey.app.log(`[Device] ${this.getName()} - checkCapabities - Battery found - Adding: `, ['measure_battery', 'measure_temperature']);
         }
 
-        if(!!this.EufyDevice && this.EufyDevice.hasProperty(PropertyName.DeviceLight)) {
+        if(!!this.EufyDevice && !this.EufyDevice.hasProperty(PropertyName.DeviceLight)) {
             let deleteCapabilities = ['CMD_SET_FLOODLIGHT_MANUAL_SWITCH'];
 
             driverCapabilities = driverCapabilities.filter(item => !deleteCapabilities.includes(item));

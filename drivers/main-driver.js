@@ -51,7 +51,7 @@ module.exports = class mainDriver extends Homey.Driver {
                 }
             }
 
-            if (view === 'login_eufy' && this.homey.app.eufyClient.isConnected() && !this.deviceError && this.type === 'pair') {
+            if (view === 'login_eufy' && this.type === 'pair' && !this.deviceError && this.homey.app.eufyClient && this.homey.app.eufyClient.isConnected()) {
                 session.showView('loading');
                 return true;
             }
@@ -126,9 +126,10 @@ module.exports = class mainDriver extends Homey.Driver {
 
             if (result === false) {
                 this.deviceError = this.homey.__('pair.no_data');
+                return false;
             }
 
-            return result;
+            return true;
         });
 
         session.setHandler('login_captcha', async (data) => {
