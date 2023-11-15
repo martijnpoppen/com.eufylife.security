@@ -1,0 +1,27 @@
+{
+  "id": "NTFY_MOTION_DETECTION",
+  "type": "boolean",
+  "uiComponent": "sensor",
+  "getable": true,
+  "setable": true,
+  "icon": "assets/icons/wind-solid.svg",
+  "options": {
+    "zoneActivity": true
+  },
+  "insights": true,
+  "insightsTitleTrue": {
+    "en": "Motion Detected - on",
+    "nl": "Beweging Gedetecteerd - aan",
+    "fr": "Détection de mouvement - activée"
+  },
+  "insightsTitleFalse": {
+    "en": "Motion Detected - off",
+    "nl": "Beweging Gedetecteerd - uit",
+    "fr": "Détection de mouvement - désactivée"
+  },
+  "title": {
+    "en": "Motion Detected",
+    "nl": "Beweging Gedetecteerd",
+    "fr": "Mouvement détecté"
+  }
+}

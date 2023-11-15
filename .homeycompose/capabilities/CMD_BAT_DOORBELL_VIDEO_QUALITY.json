@@ -1,0 +1,12 @@
+{
+  "id": "CMD_BAT_DOORBELL_VIDEO_QUALITY",
+  "type": "string",
+  "uiComponent": null,
+  "getable": false,
+  "setable": false,
+  "title": {
+    "en": "Toggle HDR",
+    "nl": "Zet HDR aan/uit",
+    "fr": "Basculer en HDR"
+  }
+}

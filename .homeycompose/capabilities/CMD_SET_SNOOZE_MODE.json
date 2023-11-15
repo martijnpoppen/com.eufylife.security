@@ -1,0 +1,12 @@
+{
+  "id": "CMD_SET_SNOOZE_MODE",
+  "type": "string",
+  "uiComponent": null,
+  "getable": false,
+  "setable": false,
+  "title": {
+    "en": "Set snooze mode",
+    "nl": "Zet snooze modus",
+    "fr": "Activer le mode 'snooze'"
+  }
+}

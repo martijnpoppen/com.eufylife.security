@@ -1,0 +1,12 @@
+{
+  "id": "CMD_DEV_LED_SWITCH",
+  "type": "boolean",
+  "uiComponent": null,
+  "getable": false,
+  "setable": false,
+  "title": {
+    "en": "Status LED",
+    "nl": "Status LED",
+    "fr": "Statut LED"
+  }
+}

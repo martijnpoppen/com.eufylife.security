@@ -1,0 +1,12 @@
+{
+  "id": "CMD_TRIGGER_ALARM",
+  "type": "string",
+  "uiComponent": null,
+  "getable": false,
+  "setable": false,
+  "title": {
+    "en": "Turn generic alarm on",
+    "nl": "Zet algemeen alarm aan",
+    "fr": "Activer l'alarme générique"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": {
+    "en": "eufyCam E",
+    "nl": "eufyCam E",
+    "fr": "eufyCam E"
+  },
+  "class": "camera",
+  "capabilities": [
+    "onoff",
+    "CMD_DEV_LED_SWITCH",
+    "alarm_motion",
+    "measure_battery",
+    "measure_temperature",
+    "CMD_IRCUT_SWITCH",
+    "CMD_START_STREAM",
+    "CMD_TRIGGER_ALARM",
+    "CMD_SET_HUB_ALARM_CLOSE",
+    "CMD_SET_SNOOZE_MODE_HOMEBASE",
+    "NTFY_MOTION_DETECTION"
+  ],
+  "energy": {
+    "batteries": ["INTERNAL"]
+  },
+  "$extends": ["device", "pair", "repair", "settings-default"]
+}

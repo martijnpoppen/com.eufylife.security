@@ -1,0 +1,12 @@
+{
+  "id": "CMD_REBOOT_HUB",
+  "type": "string",
+  "uiComponent": null,
+  "getable": false,
+  "setable": false,
+  "title": {
+    "en": "Reboot",
+    "nl": "Opnieuw opstarten",
+    "fr": "Redémarrer"
+  }
+}

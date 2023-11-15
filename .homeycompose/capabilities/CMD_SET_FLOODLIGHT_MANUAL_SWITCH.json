@@ -1,0 +1,12 @@
+{
+  "id": "CMD_SET_FLOODLIGHT_MANUAL_SWITCH",
+  "type": "boolean",
+  "uiComponent": "button",
+  "getable": true,
+  "setable": true,
+  "title": {
+    "en": "Light",
+    "nl": "Lamp",
+    "fr": "Lumière"
+  }
+}

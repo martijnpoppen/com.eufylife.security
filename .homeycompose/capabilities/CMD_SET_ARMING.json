@@ -1,0 +1,86 @@
+{
+  "id": "CMD_SET_ARMING",
+  "type": "enum",
+  "title": {
+    "en": "Arm Mode",
+    "nl": "Beveiligingsmodus",
+    "fr": "Mode d'armement"
+  },
+  "uiComponent": "picker",
+  "getable": true,
+  "setable": true,
+  "values": [
+    {
+      "id": "home",
+      "title": {
+        "en": "Home",
+        "nl": "Thuis",
+        "fr": "A la maison"
+      }
+    },
+    {
+      "id": "away",
+      "title": {
+        "en": "Away",
+        "nl": "Afwezig",
+        "fr": "A l'extérieur"
+      }
+    },
+    {
+      "id": "schedule",
+      "title": {
+        "en": "Schedule",
+        "nl": "Schema",
+        "fr": "Programmé"
+      }
+    },
+    {
+      "id": "geo",
+      "title": {
+        "en": "Geo",
+        "nl": "Geo",
+        "fr": "Géo"
+      }
+    },
+    {
+      "id": "disarmed",
+      "title": {
+        "en": "Disarmed",
+        "nl": "Uitgeschakeld",
+        "fr": "Désactivée"
+      }
+    },
+    {
+      "id": "off",
+      "title": {
+        "en": "Off",
+        "nl": "Uit",
+        "fr": "Off"
+      }
+    },
+    {
+      "id": "custom_1",
+      "title": {
+        "en": "Custom 1",
+        "nl": "Custom 1",
+        "fr": "Personnalisé 1"
+      }
+    },
+    {
+      "id": "custom_2",
+      "title": {
+        "en": "Custom 2",
+        "nl": "Custom 2",
+        "fr": "Personnalisé 2"
+      }
+    },
+    {
+      "id": "custom_3",
+      "title": {
+        "en": "Custom 3",
+        "nl": "Custom 3",
+        "fr": "Personnalisé 3"
+      }
+    }
+  ]
+}

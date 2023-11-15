@@ -1,0 +1,76 @@
+{
+  "id": "action_CMD_INDOOR_PAN_TURN_PTZ",
+  "title": {
+    "en": "Turn lens",
+    "nl": "Draai lens",
+    "fr": "Tourner l'objectif"
+  },
+  "titleFormatted": {
+    "en": "Turn lens to [[action_CMD_INDOOR_PAN_TURN_PTZ_TYPE]],  repeat this [[repeat]] times",
+    "nl": "Draai lens naar [[action_CMD_INDOOR_PAN_TURN_PTZ_TYPE]], herhaal dit [[repeat]] keer",
+    "fr": "Tourner l'objectif en [[action_CMD_INDOOR_PAN_TURN_PTZ_TYPE]], répétez [[repeat]] fois"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT&capabilities=CMD_INDOOR_PAN_TURN"
+    },
+    {
+      "name": "action_CMD_INDOOR_PAN_TURN_PTZ_TYPE",
+      "type": "dropdown",
+      "placeholder": {
+        "en": "direction",
+        "nl": "richting",
+        "fr": "direction"
+      },
+      "values": [
+        {
+          "id": "left",
+          "label": {
+            "en": "Left",
+            "nl": "Links",
+            "fr": "Gauche"
+          }
+        },
+        {
+          "id": "right",
+          "label": {
+            "en": "Right",
+            "nl": "Rechts",
+            "fr": "Droite"
+          }
+        },
+        {
+          "id": "up",
+          "label": {
+            "en": "Up",
+            "nl": "Boven",
+            "fr": "Haut"
+          }
+        },
+        {
+          "id": "down",
+          "label": {
+            "en": "Down",
+            "nl": "Beneden",
+            "fr": "Bas"
+          }
+        }
+      ]
+    },
+    {
+      "name": "repeat",
+      "type": "number",
+      "min": 1,
+      "max": 90,
+      "step": 1,
+      "value": 1,
+      "placeholder": {
+        "en": "amount",
+        "nl": "aantal",
+        "fr": "montant"
+      }
+    }
+  ]
+}

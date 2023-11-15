@@ -1,0 +1,12 @@
+{
+  "id": "CMD_IRCUT_SWITCH",
+  "type": "string",
+  "uiComponent": null,
+  "getable": false,
+  "setable": false,
+  "title": {
+    "en": "Toggle IR",
+    "nl": "Zet Infrarood aan/uit",
+    "fr": "Basculer en IR"
+  }
+}

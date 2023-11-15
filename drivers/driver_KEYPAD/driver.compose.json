@@ -1,0 +1,10 @@
+{
+  "name": {
+    "en": "Keypad",
+    "nl": "Keypad",
+    "fr": "Clavier"
+  },
+  "class": "homealarm",
+  "capabilities": ["measure_battery", "measure_temperature"],
+  "$extends": ["device", "pair", "repair", "settings-hub"]
+}

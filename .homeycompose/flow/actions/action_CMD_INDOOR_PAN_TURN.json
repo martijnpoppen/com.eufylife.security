@@ -1,0 +1,20 @@
+{
+  "id": "action_CMD_INDOOR_PAN_TURN",
+  "title": {
+    "en": "Turn 360 (Room scan)",
+    "nl": "Draai 360 (Kamer scan)",
+    "fr": "Tourner à 360° (balayage de la pièce)"
+  },
+  "titleFormatted": {
+    "en": "Turn 360 (Room scan)",
+    "nl": "Draai 360 (Kamer scan)",
+    "fr": "Tourner à 360° (balayage de la pièce)"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT&capabilities=CMD_INDOOR_PAN_TURN"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "CMD_REVERSE_DEVS_SWITCH",
+  "type": "boolean",
+  "uiComponent": null,
+  "getable": false,
+  "setable": false,
+  "title": {
+    "en": "CMD_REVERSE_DEVS_SWITCH",
+    "nl": "CMD_REVERSE_DEVS_SWITCH",
+    "fr": "CMD_REVERSE_DEVS_SWITCH"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "alarm_arm_mode",
+  "type": "boolean",
+  "title": {
+    "en": "Disarmed",
+    "nl": "Uitgeschakeld",
+    "fr": "Désactivée"
+  },
+  "icon": "assets/icons/sound.svg",
+  "uiComponent": "sensor",
+  "getable": true,
+  "setable": true
+}

@@ -1,0 +1,31 @@
+{
+    "deprecated": true,
+  "name": {
+    "en": "Battery Doorbell (1080P/2K)",
+    "nl": "Batterij Deurbel (1080P/2K)",
+    "fr": "Sonnette sans fils (1080P/2K)"
+  },
+  "class": "doorbell",
+  "capabilities": [
+    "onoff",
+        "CMD_DEV_LED_SWITCH",
+        "alarm_motion",
+        "measure_battery",
+        "measure_temperature",
+        "CMD_DOORBELL_QUICK_RESPONSE",
+        "CMD_START_STREAM",
+        "CMD_SET_SNOOZE_MODE_HOMEBASE",
+        "CMD_IRCUT_SWITCH",
+        "CMD_BAT_DOORBELL_VIDEO_QUALITY",
+        "CMD_BAT_DOORBELL_WDR_SWITCH",
+        "NTFY_MOTION_DETECTION",
+        "NTFY_FACE_DETECTION",
+        "NTFY_PET_DETECTED",
+        "NTFY_VEHICLE_DETECTED",
+        "NTFY_PRESS_DOORBELL"
+  ],
+  "energy": {
+    "batteries": ["INTERNAL"]
+  },
+  "$extends": ["device", "pair", "repair", "settings-default"]
+}

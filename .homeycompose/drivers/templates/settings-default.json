@@ -1,0 +1,93 @@
+{
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "General settings",
+        "nl": "Algemene instellingen",
+        "fr": "Paramètres généraux"
+      },
+      "children": [
+        {
+          "id": "override_onoff",
+          "type": "checkbox",
+          "label": {
+            "en": "Always on",
+            "nl": "Altijd aan",
+            "fr": "Toujours allumé"
+          },
+          "value": false
+        },
+        {
+          "id": "force_include_thumbnail",
+          "type": "checkbox",
+          "hint": {
+            "en": "Only disable if you don't want cloud images!",
+            "nl": "Alleen uitschakelen als je niet gebruik wilt maken van cloud afbeeldingen!",
+            "fr": "A ne désactiver que si vous ne voulez pas d'images dans le cloud !"
+          },
+          "label": {
+            "en": "Enforce inlude thumbnail notifications",
+            "nl": "Forceer thumbnail notificaties (alleen uitschakelen",
+            "fr": "Renforcer l'intégration des notifications de vignettes"
+          },
+          "value": true
+        },
+        {
+          "id": "alarm_motion_enabled",
+          "hint": {
+            "en": "This alarm will trigger when a detection happens. (Motion/Person/Sound). This generic alarm also allows zone activity and by enabling this you can use the Eufy motion detections as a sensor in Heimdall",
+            "fr": "Cette alarme se déclenche lorsqu'une détection se produit (Mouvement/Personne/Son). Cette alarme générique permet également d'activitée une zone d'activité et en l'activant, vous pouvez utiliser les détecteurs de mouvement Eufy comme capteur dans Heimdall."
+          },
+          "type": "checkbox",
+          "label": {
+            "en": "Use generic motion alarm?",
+            "nl": "Gebruik generiek bewegings alarm",
+            "fr": "Utiliser une alarme de mouvement générique ?"
+          },
+          "value": false
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Hub settings",
+        "nl": "Hub instellingen",
+        "fr": "Paramètres du Hub"
+      },
+      "children": [
+        {
+          "id": "STATION_SN",
+          "type": "label",
+          "label": {
+            "en": "Station S/N",
+            "nl": "Station S/N",
+            "fr": "Numéro de série de la station"
+          },
+          "value": ""
+        },
+        {
+          "id": "DEVICE_SN",
+          "type": "label",
+          "label": {
+            "en": "Device S/N",
+            "nl": "Apparaat S/N",
+            "fr": "Numéro de série du dispositif"
+          },
+          "value": ""
+        },
+        {
+          "id": "LOCAL_STATION_IP",
+          "type": "label",
+          "label": {
+            "en": "Station IP",
+            "nl": "Station IP",
+            "fr": "Adresse IP de la station"
+          },
+          "value": ""
+        }
+      ]
+    }
+  ]
+}

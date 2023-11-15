@@ -1,0 +1,27 @@
+{
+  "id": "NTFY_CRYING_DETECTED",
+  "type": "boolean",
+  "uiComponent": "sensor",
+  "getable": true,
+  "setable": true,
+  "icon": "assets/icons/baby-solid.svg",
+  "options": {
+    "zoneActivity": true
+  },
+  "insights": true,
+  "insightsTitleTrue": {
+    "en": "Crying Detected - on",
+    "nl": "Huilen Gedetecteerd - aan",
+    "fr": "Détection de pleur - activée"
+  },
+  "insightsTitleFalse": {
+    "en": "Crying Detected - off",
+    "nl": "Huilen Gedetecteerd - uit",
+    "fr": "Détection de pleur - désactivée"
+  },
+  "title": {
+    "en": "Crying Detected",
+    "nl": "Huilen Gedetecteerd",
+    "fr": "Pleurs détectés"
+  }
+}

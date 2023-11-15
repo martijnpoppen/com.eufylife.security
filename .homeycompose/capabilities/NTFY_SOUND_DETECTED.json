@@ -1,0 +1,27 @@
+{
+  "id": "NTFY_SOUND_DETECTED",
+  "type": "boolean",
+  "uiComponent": "sensor",
+  "getable": true,
+  "setable": true,
+  "icon": "assets/icons/volume-up-fill.svg",
+  "options": {
+    "zoneActivity": true
+  },
+  "insights": true,
+  "insightsTitleTrue": {
+    "en": "Sound Detected - on",
+    "nl": "Geluid Gedetecteerd - aan",
+    "fr": "Détection de bruit - activée"
+  },
+  "insightsTitleFalse": {
+    "en": "Sound Detected - off",
+    "nl": "Geluid Gedetecteerd - uit",
+    "fr": "Détection de bruit - désactivée"
+  },
+  "title": {
+    "en": "Sound Detected",
+    "nl": "Geluid Gedetecteerd",
+    "fr": "Bruit détecté"
+  }
+}

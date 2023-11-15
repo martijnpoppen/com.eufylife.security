@@ -1,0 +1,29 @@
+{
+  "name": {
+    "en": "eufyCam 2C / 2C Pro",
+    "nl": "eufyCam 2C / 2C Pro",
+    "fr": "eufyCam 2C / 2C Pro"
+  },
+  "class": "camera",
+  "capabilities": [
+    "onoff",
+    "CMD_DEV_LED_SWITCH",
+    "alarm_motion",
+    "measure_battery",
+    "measure_temperature",
+    "CMD_IRCUT_SWITCH",
+    "CMD_START_STREAM",
+    "CMD_TRIGGER_ALARM",
+    "CMD_SET_HUB_ALARM_CLOSE",
+    "CMD_SET_SNOOZE_MODE_HOMEBASE",
+    "CMD_SET_FLOODLIGHT_MANUAL_SWITCH",
+    "NTFY_MOTION_DETECTION",
+    "NTFY_FACE_DETECTION",
+    "NTFY_PET_DETECTED",
+    "NTFY_VEHICLE_DETECTED"
+  ],
+  "energy": {
+    "batteries": ["INTERNAL"]
+  },
+  "$extends": ["device", "pair", "repair", "settings-default"]
+}

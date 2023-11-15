@@ -1,0 +1,12 @@
+{
+  "id": "CMD_DOORBELL_QUICK_RESPONSE_POWERED",
+  "type": "boolean",
+  "uiComponent": null,
+  "getable": false,
+  "setable": false,
+  "title": {
+    "en": "CMD_DOORBELL_QUICK_RESPONSE_POWERED",
+    "nl": "CMD_DOORBELL_QUICK_RESPONSE_POWERED",
+    "fr": "CMD_DOORBELL_QUICK_RESPONSE_POWERED"
+  }
+}

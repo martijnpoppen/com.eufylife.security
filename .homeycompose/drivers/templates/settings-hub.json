@@ -1,0 +1,173 @@
+{
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "General settings",
+        "nl": "Algemene instellingen",
+        "fr": "Paramètres généraux"
+      },
+      "children": [
+        {
+          "id": "alarm_generic_enabled",
+          "type": "checkbox",
+          "hint": {
+            "en": "This alarm will trigger when the Homebase alarm turns on",
+            "fr": "Cette alarme se déclenche lorsque l'alarme Homebase se déclanche."
+          },
+          "label": {
+            "en": "Use generic alarm?",
+            "nl": "Gebruik algemeen alarm?",
+            "fr": "Utiliser une alarme générique ?"
+          },
+          "value": true
+        },
+        {
+          "id": "force_switch_mode_notifications",
+          "type": "checkbox",
+          "label": {
+            "en": "Force switch mode notifications (prevent turning off by Eufy)",
+            "nl": "Forceer Homebase notificatie (voorkom uitschakelen door Eufy)",
+            "fr": "Forcer le changement de mode de notification (empêcher la désactivation par Eufy)"
+          },
+          "value": true
+        },
+        {
+          "id": "alarm_arm_mode",
+          "type": "dropdown",
+          "value": "disabled",
+          "hint": {
+            "en": "This alarm will trigger when the device becomes armed/disarmed",
+            "fr": "Cette alarme sera déclenchée lorsque le dispositif est activée/désactivée"
+          },
+          "label": {
+            "en": "Alarm Disarmed",
+            "fr": "Alarme désactivée"
+          },
+          "values": [
+            {
+              "id": "disabled",
+              "label": {
+                "en": "No alarm",
+                "nl": "Geen alarm",
+                "fr": "Pas d'alarme"
+              }
+            },
+            {
+              "id": "off_disarmed",
+              "label": {
+                "en": "off / disarmed",
+                "nl": "uit / uitgeschakeld",
+                "fr": "off / désactivée"
+              }
+            },
+            {
+              "id": "off_disarmed_home",
+              "label": {
+                "en": "off / disarmed / home",
+                "nl": "uit / uitgeschakeld / thuis",
+                "fr": "off / désactivée / à la maison"
+              }
+            },
+            {
+              "id": "off_disarmed_away",
+              "label": {
+                "en": "off / disarmed / away",
+                "nl": "uit / uitgeschakeld / afwezig",
+                "fr": "off / désactivée / à l'extérieur"
+              }
+            },
+            {
+              "id": "away_custom-1",
+              "label": {
+                "en": "away / custom 1",
+                "nl": "afwezig / custom 1",
+                "fr": "à l'extérieur / personnalisé 1"
+              }
+            },
+            {
+              "id": "away_custom-2",
+              "label": {
+                "en": "away / custom 2",
+                "nl": "afwezig / custom 2",
+                "fr": "à l'extérieur / personnalisé 2"
+              }
+            },
+            {
+              "id": "away_custom-3",
+              "label": {
+                "en": "away / custom 3",
+                "nl": "afwezig / custom 3",
+                "fr": "à l'extérieur / personnalisé 3"
+              }
+            },
+            {
+              "id": "off_disarmed_custom-1",
+              "label": {
+                "en": "off / disarmed / custom 1",
+                "nl": "uit / uitgeschakeld / custom 1",
+                "fr": "off / désactivée / personnalisé 1"
+              }
+            },
+            {
+              "id": "off_disarmed_custom-2",
+              "label": {
+                "en": "off / disarmed / custom 2",
+                "nl": "uit / uitgeschakeld / custom 2",
+                "fr": "off / désactivée / personnalisé 2"
+              }
+            },
+            {
+              "id": "off_disarmed_custom-3",
+              "label": {
+                "en": "off / disarmed / custom 3",
+                "nl": "uit / uitgeschakeld / custom 3",
+                "fr": "off / désactivée / personnalisé 3"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Hub settings",
+        "nl": "Hub instellingen",
+        "fr": "Pa du hub"
+      },
+      "children": [
+        {
+          "id": "STATION_SN",
+          "type": "label",
+          "label": {
+            "en": "Station S/N",
+            "nl": "Station S/N",
+            "fr": "Numéro de série de la station"
+          },
+          "value": ""
+        },
+        {
+          "id": "DEVICE_SN",
+          "type": "label",
+          "label": {
+            "en": "Device S/N",
+            "nl": "Apparaat S/N",
+            "fr": "Numéro de série de l'appareil"
+          },
+          "value": ""
+        },
+        {
+          "id": "LOCAL_STATION_IP",
+          "type": "label",
+          "label": {
+            "en": "Station IP",
+            "nl": "Station IP",
+            "fr": "Adresse IP de la station"
+          },
+          "value": ""
+        }
+      ]
+    }
+  ]
+}

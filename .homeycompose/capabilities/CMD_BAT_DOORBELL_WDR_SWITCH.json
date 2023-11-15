@@ -1,0 +1,12 @@
+{
+  "id": "CMD_BAT_DOORBELL_WDR_SWITCH",
+  "type": "string",
+  "uiComponent": null,
+  "getable": false,
+  "setable": false,
+  "title": {
+    "en": "Toggle WDR switch",
+    "nl": "Zet WDR aan/uit",
+    "fr": "Basculer l'intérupteur WDR"
+  }
+}

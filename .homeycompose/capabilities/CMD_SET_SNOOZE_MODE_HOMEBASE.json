@@ -1,0 +1,11 @@
+{
+  "id": "CMD_SET_SNOOZE_MODE_HOMEBASE",
+  "type": "string",
+  "uiComponent": null,
+  "getable": false,
+  "setable": false,
+  "title": {
+    "en": "Set Homebase snooze mode",
+    "nl": "Zet Homebase snooze modus"
+  }
+}

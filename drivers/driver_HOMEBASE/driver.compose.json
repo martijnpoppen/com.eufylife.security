@@ -1,0 +1,19 @@
+{
+  "name": {
+    "en": "Homebase 2",
+    "nl": "Homebase 2",
+    "fr": "Homebase 2"
+  },
+  "class": "homealarm",
+  "capabilities": [
+    "alarm_arm_mode",
+    "CMD_SET_ARMING",
+    "CMD_SET_ARMING_HUB",
+    "CMD_TRIGGER_ALARM",
+    "CMD_SET_HUB_ALARM_CLOSE",
+    "CMD_TRIGGER_RINGTONE_HUB",
+    "CMD_REBOOT_HUB",
+    "alarm_generic"
+  ],
+  "$extends": ["device", "pair", "repair", "settings-hub"]
+}

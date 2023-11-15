@@ -1,0 +1,27 @@
+{
+  "id": "NTFY_PRESS_DOORBELL",
+  "type": "boolean",
+  "uiComponent": "sensor",
+  "getable": true,
+  "setable": true,
+  "icon": "assets/icons/doorbell.svg",
+  "options": {
+    "zoneActivity": true
+  },
+  "insights": true,
+  "insightsTitleTrue": {
+    "en": "Doorbell Press - on",
+    "nl": "Deurbel Druk Gedetecteerd - aan",
+    "fr": "Sonnerie de porte - activée"
+  },
+  "insightsTitleFalse": {
+    "en": "Doorbell Press - off",
+    "nl": "Deurbel Druk Gedetecteerd - uit",
+    "fr": "Sonnerie de porte - désactivée"
+  },
+  "title": {
+    "en": "Doorbell Press Detected",
+    "nl": "Deurbel Druk Gedetecteerd",
+    "fr": "Détection d'un appui sur la sonnette"
+  }
+}

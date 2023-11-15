@@ -1,0 +1,34 @@
+{
+  "name": {
+    "en": "Battery Dual Doorbell (S330 / E340)",
+    "nl": "Batterij Dual Deurbel (S330 / E340)",
+    "fr": "Sonnette Video Doorbell Dual (S330 / E340)"
+  },
+  "class": "doorbell",
+  "capabilities": [
+    "onoff",
+    "CMD_DEV_LED_SWITCH",
+    "alarm_motion",
+    "measure_battery",
+    "measure_temperature",
+    "CMD_SET_FLOODLIGHT_MANUAL_SWITCH",
+    "CMD_SET_ARMING",
+    "CMD_DOORBELL_QUICK_RESPONSE",
+    "CMD_START_STREAM",
+    "CMD_TRIGGER_ALARM",
+    "CMD_SET_HUB_ALARM_CLOSE",
+    "CMD_SET_SNOOZE_MODE_HOMEBASE",
+    "CMD_IRCUT_SWITCH",
+    "CMD_BAT_DOORBELL_VIDEO_QUALITY",
+    "CMD_BAT_DOORBELL_WDR_SWITCH",
+    "NTFY_MOTION_DETECTION",
+    "NTFY_FACE_DETECTION",
+    "NTFY_PET_DETECTED",
+    "NTFY_VEHICLE_DETECTED",
+    "NTFY_PRESS_DOORBELL"
+  ],
+  "energy": {
+    "batteries": ["INTERNAL"]
+  },
+  "$extends": ["device", "pair", "repair", "settings-default"]
+}

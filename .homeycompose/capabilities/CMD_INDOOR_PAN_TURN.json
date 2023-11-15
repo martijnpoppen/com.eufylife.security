@@ -1,0 +1,12 @@
+{
+  "id": "CMD_INDOOR_PAN_TURN",
+  "type": "boolean",
+  "uiComponent": null,
+  "getable": false,
+  "setable": false,
+  "title": {
+    "en": "CMD_INDOOR_PAN_TURN",
+    "nl": "CMD_INDOOR_PAN_TURN",
+    "fr": "CMD_INDOOR_PAN_TURN"
+  }
+}

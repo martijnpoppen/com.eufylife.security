@@ -1,0 +1,75 @@
+{
+  "pair": [
+    {
+      "id": "login_eufy"
+    },
+    {
+      "id": "loading",
+      "template": "loading"
+    },
+    {
+      "id": "login_captcha"
+    },
+    {
+      "id": "loading",
+      "template": "loading"
+    },
+    {
+      "id": "pincode",
+      "template": "pincode",
+      "options": {
+        "title": {
+          "en": "Enter 2FA Code",
+          "nl": "Voer 2FA Code in:",
+          "fr": "Entrez votre code 2FA"
+        },
+        "type": "number",
+        "length": 6
+      },
+      "navigation": {
+        "prev": "login_eufy"
+      }
+    },
+    {
+      "id": "loading",
+      "template": "loading"
+    },
+    {
+      "id": "error",
+      "navigation": {
+        "prev": "login_eufy"
+      },
+      "options": {
+        "title": {
+          "en": "Error",
+          "nl": "Error",
+          "fr": "Erreur"
+        },
+        "text": {
+          "en": "<hr><br><br>To change the login click 'previous'.<hr><br><br>",
+          "nl": "<hr><br><br>Om opnieuw in te loggen, klik 'vorige'.<hr><br><br>",
+          "fr": "<hr><br><br>Pour changer le login, cliquez sur 'précédent'.<hr><br><br>"
+        }
+      }
+    },
+    {
+      "id": "done",
+      "template": "done"
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    },
+    {
+      "id": "done",
+      "template": "done"
+    }
+  ]
+}

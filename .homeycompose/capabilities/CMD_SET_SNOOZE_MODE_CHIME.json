@@ -1,0 +1,12 @@
+{
+  "id": "CMD_SET_SNOOZE_MODE_CHIME",
+  "type": "string",
+  "uiComponent": null,
+  "getable": false,
+  "setable": false,
+  "title": {
+    "en": "Set Chime snooze mode",
+    "nl": "Zet Chime snooze modus",
+    "fr": "Régler le mode 'snooze' du Homebase"
+  }
+}

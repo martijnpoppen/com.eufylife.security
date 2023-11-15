@@ -1,0 +1,12 @@
+{
+  "id": "CMD_START_STREAM",
+  "type": "string",
+  "uiComponent": null,
+  "getable": true,
+  "setable": false,
+  "title": {
+    "en": "Stream url",
+    "nl": "Stream url",
+    "fr": "url du flux"
+  }
+}

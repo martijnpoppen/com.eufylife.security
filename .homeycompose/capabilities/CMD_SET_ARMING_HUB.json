@@ -1,0 +1,12 @@
+{
+  "id": "CMD_SET_ARMING_HUB",
+  "type": "boolean",
+  "uiComponent": null,
+  "getable": false,
+  "setable": false,
+  "title": {
+    "en": "CMD_SET_ARMING_HUB",
+    "nl": "CMD_SET_ARMING_HUB",
+    "fr": "CMD_SET_ARMING_HUB"
+  }
+}

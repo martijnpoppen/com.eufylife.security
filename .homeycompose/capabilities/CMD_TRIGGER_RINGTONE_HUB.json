@@ -1,0 +1,12 @@
+{
+  "id": "CMD_TRIGGER_RINGTONE_HUB",
+  "type": "string",
+  "uiComponent": null,
+  "getable": false,
+  "setable": false,
+  "title": {
+    "en": "Trigger chime",
+    "nl": "Activeer chime",
+    "fr": "Déclenchement du carillon"
+  }
+}

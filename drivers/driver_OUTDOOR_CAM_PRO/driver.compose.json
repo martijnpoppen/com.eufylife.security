@@ -1,0 +1,34 @@
+{
+  "deprecated": true,
+  "name": {
+    "en": "Outdoor Cam / Cam Pro",
+    "nl": "Outdoor Cam / Cam Pro",
+    "fr": "Outdoor Cam / Cam Pro"
+  },
+  "class": "camera",
+  "capabilities": [
+    "onoff",
+    "CMD_DEV_LED_SWITCH",
+    "alarm_motion",
+    "alarm_arm_mode",
+    "CMD_SET_ARMING",
+    "CMD_REBOOT_HUB",
+    "CMD_REVERSE_DEVS_SWITCH",
+    "CMD_SET_FLOODLIGHT_MANUAL_SWITCH",
+    "CMD_IRCUT_SWITCH",
+    "CMD_START_STREAM",
+    "CMD_SET_SNOOZE_MODE",
+    "CMD_TRIGGER_ALARM",
+    "CMD_SET_HUB_ALARM_CLOSE",
+    "NTFY_MOTION_DETECTION",
+    "NTFY_FACE_DETECTION",
+    "NTFY_CRYING_DETECTED",
+    "NTFY_SOUND_DETECTED",
+    "NTFY_PET_DETECTED",
+    "NTFY_VEHICLE_DETECTED"
+  ],
+  "energy": {
+    "batteries": ["INTERNAL"]
+  },
+  "$extends": ["device", "pair", "repair", "settings-standalone"]
+}

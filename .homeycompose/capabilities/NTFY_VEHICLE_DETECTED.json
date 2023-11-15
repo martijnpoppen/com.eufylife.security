@@ -1,0 +1,27 @@
+{
+  "id": "NTFY_VEHICLE_DETECTED",
+  "type": "boolean",
+  "uiComponent": "sensor",
+  "getable": true,
+  "setable": true,
+  "icon": "assets/icons/car-front-fill.svg",
+  "options": {
+    "zoneActivity": true
+  },
+  "insights": true,
+  "insightsTitleTrue": {
+    "en": "Vehicle Detected - on",
+    "nl": "Voertuig Gedetecteerd - aan",
+    "fr": "Détection de véhicule - activée"
+  },
+  "insightsTitleFalse": {
+    "en": "Vehicle Detected - off",
+    "nl": "Voertuig Gedetecteerd - uit",
+    "fr": "Détection de véhicule - désactivée"
+  },
+  "title": {
+    "en": "Vehicle Detected",
+    "nl": "Voertuig Gedetecteerd",
+    "fr": "Véhicule détecté"
+  }
+}

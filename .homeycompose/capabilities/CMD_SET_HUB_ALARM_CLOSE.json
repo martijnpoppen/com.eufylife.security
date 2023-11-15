@@ -1,0 +1,12 @@
+{
+  "id": "CMD_SET_HUB_ALARM_CLOSE",
+  "type": "string",
+  "uiComponent": null,
+  "getable": false,
+  "setable": false,
+  "title": {
+    "en": "Turn generic alarm off",
+    "nl": "Zet algemeen alarm uit",
+    "fr": "Désactiver l'alarme générique"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "id": "action_CMD_DOORBELL_QUICK_RESPONSE",
+  "title": {
+    "en": "Send Quick Response",
+    "nl": "Stuur Spraakbericht",
+    "fr": "Envoyer une réponse rapide"
+  },
+  "titleFormatted": {
+    "en": "Send Quick Response [[action_CMD_SET_QUICK_RESPONSE_TYPE]]",
+    "nl": "Stuur Spraakbericht [[action_CMD_SET_QUICK_RESPONSE_TYPE]]",
+    "fr": "Envoyer une réponse rapide [[action_CMD_SET_QUICK_RESPONSE_TYPE]]"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_1080P_BATTERY&capabilities=CMD_DOORBELL_QUICK_RESPONSE"
+    },
+    {
+      "name": "action_CMD_SET_QUICK_RESPONSE_TYPE",
+      "type": "dropdown",
+      "values": [
+        {
+          "id": "1",
+          "label": {
+            "en": "Default response 1",
+            "nl": "Standaard bericht 1",
+            "fr": "Réponse par défaut 1"
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "Default response 2",
+            "nl": "Standaard bericht 2",
+            "fr": "Réponse par défaut 2"
+          }
+        },
+        {
+          "id": "3",
+          "label": {
+            "en": "Default response 3",
+            "nl": "Standaard bericht 3",
+            "fr": "Réponse par défaut 3"
+          }
+        },
+        {
+          "id": "4",
+          "label": {
+            "en": "Custom response 1",
+            "nl": "Eigen bericht 1",
+            "fr": "Réponse personnalisée 1"
+          }
+        },
+        {
+          "id": "5",
+          "label": {
+            "en": "Custom response 2",
+            "nl": "Eigen bericht 2",
+            "fr": "Réponse personnalisée 2"
+          }
+        },
+        {
+          "id": "6",
+          "label": {
+            "en": "Custom response 3",
+            "nl": "Eigen bericht 3",
+            "fr": "Réponse personnalisée 3"
+          }
+        }
+      ]
+    }
+  ]
+}

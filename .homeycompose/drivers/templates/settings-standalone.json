@@ -1,0 +1,188 @@
+{
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "General settings",
+        "nl": "Algemene instellingen",
+        "fr": "Paramètres généraux"
+      },
+      "children": [
+        {
+          "id": "override_onoff",
+          "type": "checkbox",
+          "label": {
+            "en": "Always on",
+            "nl": "Altijd aan",
+            "fr": "Toujours allumé"
+          },
+          "value": false
+        },
+        {
+          "id": "force_include_thumbnail",
+          "type": "checkbox",
+          "hint": {
+            "en": "Only disable if you don't want cloud images!",
+            "nl": "Alleen uitschakelen als je niet gebruik wilt maken van cloud afbeeldingen!",
+            "fr": "A ne désactiver que si vous ne voulez pas d'images dans le Cloud !"
+          },
+          "label": {
+            "en": "Enforce inlude thumbnail notifications",
+            "nl": "Forceer thumbnail notificaties (alleen uitschakelen",
+            "fr": "Renforcer l'intégration des notifications de vignettes"
+          },
+          "value": true
+        },
+        {
+          "id": "alarm_motion_enabled",
+          "hint": {
+            "en": "This alarm will trigger when a detection happens. (Motion/Person/Sound). This generic alarm also allows zone activity and by enabling this you can use the Eufy motion detections as a sensor in Heimdall",
+            "fr": "Cette alarme se déclenche lorsqu'une détection se produit (Mouvement/Personne/Son). Cette alarme générique permet également d'activitée une zone d'activité et en l'activant, vous pouvez utiliser les détecteurs de mouvement Eufy comme capteur dans Heimdall."
+          },
+          "type": "checkbox",
+          "label": {
+            "en": "Use generic motion alarm?",
+            "nl": "Gebruik generiek bewegings alarm",
+            "fr": "Utiliser une alarme de mouvement générique ?"
+          },
+          "value": false
+        },
+        {
+          "id": "alarm_arm_mode",
+          "type": "dropdown",
+          "value": "disabled",
+          "hint": {
+            "en": "This alarm will trigger when the device becomes armed/disarmed",
+            "fr": "Cette alarme sera déclenchée lorsque le dispositif est activée/désactivée"
+          },
+          "label": {
+            "en": "Alarm Disarmed",
+            "fr": "Alarme désativée"
+          },
+          "values": [
+            {
+              "id": "disabled",
+              "label": {
+                "en": "No alarm",
+                "nl": "Geen alarm",
+                "fr": "Pas d'alarme"
+              }
+            },
+            {
+              "id": "off_disarmed",
+              "label": {
+                "en": "off / disarmed",
+                "nl": "uit / uitgeschakeld",
+                "fr": "off / désactivée"
+              }
+            },
+            {
+              "id": "off_disarmed_home",
+              "label": {
+                "en": "off / disarmed / home",
+                "nl": "uit / uitgeschakeld / thuis",
+                "fr": "off / désactivée / à la maison"
+              }
+            },
+            {
+              "id": "off_disarmed_away",
+              "label": {
+                "en": "off / disarmed / away",
+                "nl": "uit / uitgeschakeld / afwezig",
+                "fr": "off / désactivée / à l'extérieur"
+              }
+            },
+            {
+              "id": "away_custom-1",
+              "label": {
+                "en": "away / custom 1",
+                "nl": "afwezig / custom 1",
+                "fr": "à l'extérieur / personalisé 1"
+              }
+            },
+            {
+              "id": "away_custom-2",
+              "label": {
+                "en": "away / custom 2",
+                "nl": "afwezig / custom 2",
+                "fr": "à l'extérieur / personalisé 2"
+              }
+            },
+            {
+              "id": "away_custom-3",
+              "label": {
+                "en": "away / custom 3",
+                "nl": "afwezig / custom 3",
+                "fr": "à l'extérieur / personalisé 3"
+              }
+            },
+            {
+              "id": "off_disarmed_custom-1",
+              "label": {
+                "en": "off / disarmed / custom 1",
+                "nl": "uit / uitgeschakeld / custom 1",
+                "fr": "off / désactivée / personalisé 1"
+              }
+            },
+            {
+              "id": "off_disarmed_custom-2",
+              "label": {
+                "en": "off / disarmed / custom 2",
+                "nl": "uit / uitgeschakeld / custom 2",
+                "fr": "off / désactivée / personalisé 2"
+              }
+            },
+            {
+              "id": "off_disarmed_custom-3",
+              "label": {
+                "en": "off / disarmed / custom 3",
+                "nl": "uit / uitgeschakeld / custom 3",
+                "fr": "off / désactivée / personalisé 3"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Hub settings",
+        "nl": "Hub instellingen",
+        "fr": "Paramètres du hub"
+      },
+      "children": [
+        {
+          "id": "STATION_SN",
+          "type": "label",
+          "label": {
+            "en": "Station S/N",
+            "nl": "Station S/N",
+            "fr": "Numéro de série de la station"
+          },
+          "value": ""
+        },
+        {
+          "id": "DEVICE_SN",
+          "type": "label",
+          "label": {
+            "en": "Device S/N",
+            "nl": "Apparaat S/N",
+            "fr": "Numéro de série de l'appareil"
+          },
+          "value": ""
+        },
+        {
+          "id": "LOCAL_STATION_IP",
+          "type": "text",
+          "label": {
+            "en": "Station IP",
+            "nl": "Station IP",
+            "fr": "Adresse IP de la station"
+          },
+          "value": ""
+        }
+      ]
+    }
+  ]
+}

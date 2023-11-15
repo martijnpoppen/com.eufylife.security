@@ -1,0 +1,27 @@
+{
+  "id": "NTFY_PET_DETECTED",
+  "type": "boolean",
+  "uiComponent": "sensor",
+  "getable": true,
+  "setable": true,
+  "icon": "assets/icons/dog-solid.svg",
+  "options": {
+    "zoneActivity": true
+  },
+  "insights": true,
+  "insightsTitleTrue": {
+    "en": "Pet Detected - on",
+    "nl": "Huisdier Gedetecteerd - aan",
+    "fr": "Détection d'animaux - activée"
+  },
+  "insightsTitleFalse": {
+    "en": "Pet Detected - off",
+    "nl": "Huisdier Gedetecteerd - uit",
+    "fr": "Détection d'animaux - désactivée"
+  },
+  "title": {
+    "en": "Pet Detected",
+    "nl": "Huisdier Gedetecteerd",
+    "fr": "Animal détecté"
+  }
+}
