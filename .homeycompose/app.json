@@ -1,125 +1,125 @@
 {
-    "id": "com.eufylife.security",
-    "version": "3.18.13",
-    "compatibility": ">=5.0.0",
-    "sdk": 3,
-    "brandColor": "#2a6185",
-    "platforms": [
-      "local"
+  "id": "com.eufylife.security",
+  "version": "3.19.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "brandColor": "#2a6185",
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Eufy Security",
+    "nl": "Eufy Security",
+    "fr": "Eufy Security"
+  },
+  "description": {
+    "en": "Smart Home Simplified",
+    "nl": "Smart Home Simplified",
+    "fr": "Smart Home Simplified"
+  },
+  "tags": {
+    "en": [
+      "Video doorbell",
+      "eufy",
+      "security",
+      "camera",
+      "p2p",
+      "eufyCam",
+      "Baby camera",
+      "Motion dectection",
+      "Heimdall",
+      "Doorbell",
+      "outdoor camera",
+      "indoor camera",
+      "homebase"
     ],
-    "name": {
-      "en": "Eufy Security",
-      "nl": "Eufy Security",
-      "fr": "Eufy Security"
-    },
-    "description": {
-      "en": "Smart Home Simplified",
-      "nl": "Smart Home Simplified",
-      "fr": "Smart Home Simplified"
-    },
-    "tags": {
-      "en": [
-        "Video doorbell",
-        "eufy",
-        "security",
-        "camera",
-        "p2p",
-        "eufyCam",
-        "Baby camera",
-        "Motion dectection",
-        "Heimdall",
-        "Doorbell",
-        "outdoor camera",
-        "indoor camera",
-        "homebase"
-      ],
-      "nl": [
-        "Video doorbell",
-        "eufy",
-        "security",
-        "camera",
-        "p2p",
-        "eufyCam",
-        "Baby camera",
-        "Motion dectection",
-        "Heimdall",
-        "Doorbell",
-        "outdoor camera",
-        "indoor camera",
-        "deurbel"
-      ],
-      "fr": [
-        "Sonnette vidéo",
-        "eufy",
-        "security",
-        "caméra",
-        "p2p",
-        "eufyCam",
-        "Caméra enfant",
-        "Détection de mouvement",
-        "Heimdall",
-        "Sonnette",
-        "caméra extérieure",
-        "caméra intérieure",
-        "deurbel"
-      ]
-    },
-    "category": [
-      "security"
+    "nl": [
+      "Video doorbell",
+      "eufy",
+      "security",
+      "camera",
+      "p2p",
+      "eufyCam",
+      "Baby camera",
+      "Motion dectection",
+      "Heimdall",
+      "Doorbell",
+      "outdoor camera",
+      "indoor camera",
+      "deurbel"
     ],
-    "permissions": [],
-    "images": {
-      "large": "/assets/images/large.jpg",
-      "small": "/assets/images/small.jpg"
-    },
-    "author": {
-      "name": "Martijn Poppen",
-      "email": "eufy@martijnpoppen.nl"
-    },
-    "contributors": {
-      "developers": [
-        {
-          "name": "Martijn Poppen",
-          "email": "eufy@martijnpoppen.nl"
-        },
-        {
-          "name": "Robbert Vis (Camera icons)",
-          "email": "eufy@martijnpoppen.nl"
-        }
-      ],
-      "translators": [
-        {
-          "name": "🇬🇧 Martijn Poppen"
-        },
-        {
-          "name": "🇳🇱 Martijn Poppen"
-        },
-        {
-          "name": "🇫🇷 Matthieu Moreau"
-        }
-      ]
-    },
-    "contributing": {
-      "donate": {
-        "paypal": {
-          "username": "martijnpoppen"
-        },
-        "bunq": {
-          "username": "martijnpoppen"
-        }
+    "fr": [
+      "Sonnette vidéo",
+      "eufy",
+      "security",
+      "caméra",
+      "p2p",
+      "eufyCam",
+      "Caméra enfant",
+      "Détection de mouvement",
+      "Heimdall",
+      "Sonnette",
+      "caméra extérieure",
+      "caméra intérieure",
+      "deurbel"
+    ]
+  },
+  "category": [
+    "security"
+  ],
+  "permissions": [],
+  "images": {
+    "large": "/assets/images/large.jpg",
+    "small": "/assets/images/small.jpg"
+  },
+  "author": {
+    "name": "Martijn Poppen",
+    "email": "eufy@martijnpoppen.nl"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Martijn Poppen",
+        "email": "eufy@martijnpoppen.nl"
+      },
+      {
+        "name": "Robbert Vis (Camera icons)",
+        "email": "eufy@martijnpoppen.nl"
       }
-    },
-    "bugs": {
-      "url": "https://community.athom.com/t/app-eufy-security/44921"
-    },
-    "source": "https://github.com/martijnpoppen/com.eufylife.security",
-    "homeyCommunityTopicId": 44921,
-    "support": "https://community.athom.com/t/app-eufy-security/44921",
-    "api": {
-      "streamUrl": {
-        "method": "get",
-        "path": "/streamurl/",
-        "public": true
+    ],
+    "translators": [
+      {
+        "name": "🇬🇧 Martijn Poppen"
+      },
+      {
+        "name": "🇳🇱 Martijn Poppen"
+      },
+      {
+        "name": "🇫🇷 Matthieu Moreau"
+      }
+    ]
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "martijnpoppen"
+      },
+      "bunq": {
+        "username": "martijnpoppen"
       }
     }
+  },
+  "bugs": {
+    "url": "https://community.athom.com/t/app-eufy-security/44921"
+  },
+  "source": "https://github.com/martijnpoppen/com.eufylife.security",
+  "homeyCommunityTopicId": 44921,
+  "support": "https://community.athom.com/t/app-eufy-security/44921",
+  "api": {
+    "streamUrl": {
+      "method": "get",
+      "path": "/streamurl/",
+      "public": true
+    }
+  }
 }
