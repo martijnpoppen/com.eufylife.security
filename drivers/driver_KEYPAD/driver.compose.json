@@ -5,6 +5,9 @@
     "fr": "Clavier"
   },
   "class": "homealarm",
+  "energy": {
+    "batteries": ["INTERNAL"]
+  },
   "capabilities": ["measure_battery", "measure_temperature"],
   "$extends": ["device", "pair", "repair", "settings-hub"]
 }

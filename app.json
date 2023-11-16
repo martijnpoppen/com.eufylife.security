@@ -1603,8 +1603,8 @@
     {
       "icon": "/drivers/driver_DOORSENSOR/assets/icon.svg",
       "images": {
-        "large": "/drivers/driver_DOORSENSOR/assets/images/large.png",
-        "small": "/drivers/driver_DOORSENSOR/assets/images/small.png"
+        "large": "/drivers/driver_DOORSENSOR/assets/images/large.jpg",
+        "small": "/drivers/driver_DOORSENSOR/assets/images/small.jpg"
       },
       "connectivity": [
         "cloud"
@@ -1860,8 +1860,8 @@
     {
       "icon": "/drivers/driver_EUFYCAM/assets/icon.svg",
       "images": {
-        "large": "/drivers/driver_EUFYCAM/assets/images/large.png",
-        "small": "/drivers/driver_EUFYCAM/assets/images/small.png"
+        "large": "/drivers/driver_EUFYCAM/assets/images/large.jpg",
+        "small": "/drivers/driver_EUFYCAM/assets/images/small.jpg"
       },
       "connectivity": [
         "cloud"
@@ -2155,8 +2155,8 @@
     {
       "icon": "/drivers/driver_EUFYCAM_2/assets/icon.svg",
       "images": {
-        "large": "/drivers/driver_EUFYCAM_2/assets/images/large.png",
-        "small": "/drivers/driver_EUFYCAM_2/assets/images/small.png"
+        "large": "/drivers/driver_EUFYCAM_2/assets/images/large.jpg",
+        "small": "/drivers/driver_EUFYCAM_2/assets/images/small.jpg"
       },
       "connectivity": [
         "cloud"
@@ -2450,8 +2450,8 @@
     {
       "icon": "/drivers/driver_EUFYCAM_2C/assets/icon.svg",
       "images": {
-        "large": "/drivers/driver_EUFYCAM_2C/assets/images/large.png",
-        "small": "/drivers/driver_EUFYCAM_2C/assets/images/small.png"
+        "large": "/drivers/driver_EUFYCAM_2C/assets/images/large.jpg",
+        "small": "/drivers/driver_EUFYCAM_2C/assets/images/small.jpg"
       },
       "connectivity": [
         "cloud"
@@ -2746,8 +2746,8 @@
     {
       "icon": "/drivers/driver_EUFYCAM_2C_PRO/assets/icon.svg",
       "images": {
-        "large": "/drivers/driver_EUFYCAM_2C_PRO/assets/images/large.png",
-        "small": "/drivers/driver_EUFYCAM_2C_PRO/assets/images/small.png"
+        "large": "/drivers/driver_EUFYCAM_2C_PRO/assets/images/large.jpg",
+        "small": "/drivers/driver_EUFYCAM_2C_PRO/assets/images/small.jpg"
       },
       "connectivity": [
         "cloud"
@@ -3043,8 +3043,8 @@
     {
       "icon": "/drivers/driver_EUFYCAM_2_PRO/assets/icon.svg",
       "images": {
-        "large": "/drivers/driver_EUFYCAM_2_PRO/assets/images/large.png",
-        "small": "/drivers/driver_EUFYCAM_2_PRO/assets/images/small.png"
+        "large": "/drivers/driver_EUFYCAM_2_PRO/assets/images/large.jpg",
+        "small": "/drivers/driver_EUFYCAM_2_PRO/assets/images/small.jpg"
       },
       "connectivity": [
         "cloud"
@@ -3339,8 +3339,8 @@
     {
       "icon": "/drivers/driver_EUFYCAM_3/assets/icon.svg",
       "images": {
-        "large": "/drivers/driver_EUFYCAM_3/assets/images/large.png",
-        "small": "/drivers/driver_EUFYCAM_3/assets/images/small.png"
+        "large": "/drivers/driver_EUFYCAM_3/assets/images/large.jpg",
+        "small": "/drivers/driver_EUFYCAM_3/assets/images/small.jpg"
       },
       "connectivity": [
         "cloud"
@@ -3635,8 +3635,8 @@
     {
       "icon": "/drivers/driver_EUFYCAM_3C/assets/icon.svg",
       "images": {
-        "large": "/drivers/driver_EUFYCAM_3C/assets/images/large.png",
-        "small": "/drivers/driver_EUFYCAM_3C/assets/images/small.png"
+        "large": "/drivers/driver_EUFYCAM_3C/assets/images/large.jpg",
+        "small": "/drivers/driver_EUFYCAM_3C/assets/images/small.jpg"
       },
       "connectivity": [
         "cloud"
@@ -3931,8 +3931,8 @@
     {
       "icon": "/drivers/driver_EUFYCAM_E/assets/icon.svg",
       "images": {
-        "large": "/drivers/driver_EUFYCAM_E/assets/images/large.png",
-        "small": "/drivers/driver_EUFYCAM_E/assets/images/small.png"
+        "large": "/drivers/driver_EUFYCAM_E/assets/images/large.jpg",
+        "small": "/drivers/driver_EUFYCAM_E/assets/images/small.jpg"
       },
       "connectivity": [
         "cloud"
@@ -4223,8 +4223,8 @@
     {
       "icon": "/drivers/driver_FLOODLIGHT_CAMERA/assets/icon.svg",
       "images": {
-        "large": "/drivers/driver_FLOODLIGHT_CAMERA/assets/images/large.png",
-        "small": "/drivers/driver_FLOODLIGHT_CAMERA/assets/images/small.png"
+        "large": "/drivers/driver_FLOODLIGHT_CAMERA/assets/images/large.jpg",
+        "small": "/drivers/driver_FLOODLIGHT_CAMERA/assets/images/small.jpg"
       },
       "connectivity": [
         "cloud"
@@ -4615,8 +4615,8 @@
     {
       "icon": "/drivers/driver_FLOODLIGHT_CAM_PAN_TILT/assets/icon.svg",
       "images": {
-        "large": "/drivers/driver_FLOODLIGHT_CAM_PAN_TILT/assets/images/large.png",
-        "small": "/drivers/driver_FLOODLIGHT_CAM_PAN_TILT/assets/images/small.png"
+        "large": "/drivers/driver_FLOODLIGHT_CAM_PAN_TILT/assets/images/large.jpg",
+        "small": "/drivers/driver_FLOODLIGHT_CAM_PAN_TILT/assets/images/small.jpg"
       },
       "connectivity": [
         "cloud"
@@ -5009,8 +5009,8 @@
     {
       "icon": "/drivers/driver_HOMEBASE/assets/icon.svg",
       "images": {
-        "large": "/drivers/driver_HOMEBASE/assets/images/large.png",
-        "small": "/drivers/driver_HOMEBASE/assets/images/small.png"
+        "large": "/drivers/driver_HOMEBASE/assets/images/large.jpg",
+        "small": "/drivers/driver_HOMEBASE/assets/images/small.jpg"
       },
       "connectivity": [
         "cloud"
@@ -5373,8 +5373,8 @@
     {
       "icon": "/drivers/driver_HOMEBASE_1/assets/icon.svg",
       "images": {
-        "large": "/drivers/driver_HOMEBASE_1/assets/images/large.png",
-        "small": "/drivers/driver_HOMEBASE_1/assets/images/small.png"
+        "large": "/drivers/driver_HOMEBASE_1/assets/images/large.jpg",
+        "small": "/drivers/driver_HOMEBASE_1/assets/images/small.jpg"
       },
       "connectivity": [
         "cloud"
@@ -5737,8 +5737,8 @@
     {
       "icon": "/drivers/driver_HOMEBASE_3/assets/icon.svg",
       "images": {
-        "large": "/drivers/driver_HOMEBASE_3/assets/images/large.png",
-        "small": "/drivers/driver_HOMEBASE_3/assets/images/small.png"
+        "large": "/drivers/driver_HOMEBASE_3/assets/images/large.jpg",
+        "small": "/drivers/driver_HOMEBASE_3/assets/images/small.jpg"
       },
       "connectivity": [
         "cloud"
@@ -6101,8 +6101,8 @@
     {
       "icon": "/drivers/driver_HOMEBASE_CHIME/assets/icon.svg",
       "images": {
-        "large": "/drivers/driver_HOMEBASE_CHIME/assets/images/large.png",
-        "small": "/drivers/driver_HOMEBASE_CHIME/assets/images/small.png"
+        "large": "/drivers/driver_HOMEBASE_CHIME/assets/images/large.jpg",
+        "small": "/drivers/driver_HOMEBASE_CHIME/assets/images/small.jpg"
       },
       "connectivity": [
         "cloud"
@@ -6464,8 +6464,8 @@
     {
       "icon": "/drivers/driver_INDOOR_CAM/assets/icon.svg",
       "images": {
-        "large": "/drivers/driver_INDOOR_CAM/assets/images/large.png",
-        "small": "/drivers/driver_INDOOR_CAM/assets/images/small.png"
+        "large": "/drivers/driver_INDOOR_CAM/assets/images/large.jpg",
+        "small": "/drivers/driver_INDOOR_CAM/assets/images/small.jpg"
       },
       "connectivity": [
         "cloud"
@@ -6859,8 +6859,8 @@
     {
       "icon": "/drivers/driver_INDOOR_CAM_PAN_TILT/assets/icon.svg",
       "images": {
-        "large": "/drivers/driver_INDOOR_CAM_PAN_TILT/assets/images/large.png",
-        "small": "/drivers/driver_INDOOR_CAM_PAN_TILT/assets/images/small.png"
+        "large": "/drivers/driver_INDOOR_CAM_PAN_TILT/assets/images/large.jpg",
+        "small": "/drivers/driver_INDOOR_CAM_PAN_TILT/assets/images/small.jpg"
       },
       "connectivity": [
         "cloud"
@@ -7254,8 +7254,8 @@
     {
       "icon": "/drivers/driver_INDOOR_CAM_PAN_TILT_DUAL/assets/icon.svg",
       "images": {
-        "large": "/drivers/driver_INDOOR_CAM_PAN_TILT_DUAL/assets/images/large.png",
-        "small": "/drivers/driver_INDOOR_CAM_PAN_TILT_DUAL/assets/images/small.png"
+        "large": "/drivers/driver_INDOOR_CAM_PAN_TILT_DUAL/assets/images/large.jpg",
+        "small": "/drivers/driver_INDOOR_CAM_PAN_TILT_DUAL/assets/images/small.jpg"
       },
       "connectivity": [
         "cloud"
@@ -7650,8 +7650,8 @@
     {
       "icon": "/drivers/driver_KEYPAD/assets/icon.svg",
       "images": {
-        "large": "/drivers/driver_KEYPAD/assets/images/large.png",
-        "small": "/drivers/driver_KEYPAD/assets/images/small.png"
+        "large": "/drivers/driver_KEYPAD/assets/images/large.jpg",
+        "small": "/drivers/driver_KEYPAD/assets/images/small.jpg"
       },
       "connectivity": [
         "cloud"
@@ -7999,6 +7999,11 @@
         "fr": "Clavier"
       },
       "class": "homealarm",
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      },
       "capabilities": [
         "measure_battery",
         "measure_temperature"
@@ -8008,8 +8013,8 @@
     {
       "icon": "/drivers/driver_MOTIONSENSOR/assets/icon.svg",
       "images": {
-        "large": "/drivers/driver_MOTIONSENSOR/assets/images/large.png",
-        "small": "/drivers/driver_MOTIONSENSOR/assets/images/small.png"
+        "large": "/drivers/driver_MOTIONSENSOR/assets/images/large.jpg",
+        "small": "/drivers/driver_MOTIONSENSOR/assets/images/small.jpg"
       },
       "connectivity": [
         "cloud"
@@ -8265,8 +8270,8 @@
     {
       "icon": "/drivers/driver_OUTDOOR_CAM/assets/icon.svg",
       "images": {
-        "large": "/drivers/driver_OUTDOOR_CAM/assets/images/large.png",
-        "small": "/drivers/driver_OUTDOOR_CAM/assets/images/small.png"
+        "large": "/drivers/driver_OUTDOOR_CAM/assets/images/large.jpg",
+        "small": "/drivers/driver_OUTDOOR_CAM/assets/images/small.jpg"
       },
       "connectivity": [
         "cloud"
@@ -8660,8 +8665,8 @@
     {
       "icon": "/drivers/driver_OUTDOOR_CAM_PRO/assets/icon.svg",
       "images": {
-        "large": "/drivers/driver_OUTDOOR_CAM_PRO/assets/images/large.png",
-        "small": "/drivers/driver_OUTDOOR_CAM_PRO/assets/images/small.png"
+        "large": "/drivers/driver_OUTDOOR_CAM_PRO/assets/images/large.jpg",
+        "small": "/drivers/driver_OUTDOOR_CAM_PRO/assets/images/small.jpg"
       },
       "connectivity": [
         "cloud"
@@ -9056,8 +9061,8 @@
     {
       "icon": "/drivers/driver_SOLOCAM_E2040/assets/icon.svg",
       "images": {
-        "large": "/drivers/driver_SOLOCAM_E2040/assets/images/large.png",
-        "small": "/drivers/driver_SOLOCAM_E2040/assets/images/small.png"
+        "large": "/drivers/driver_SOLOCAM_E2040/assets/images/large.jpg",
+        "small": "/drivers/driver_SOLOCAM_E2040/assets/images/small.jpg"
       },
       "connectivity": [
         "cloud"
@@ -9450,8 +9455,8 @@
     {
       "icon": "/drivers/driver_SOLOCAM_L2040/assets/icon.svg",
       "images": {
-        "large": "/drivers/driver_SOLOCAM_L2040/assets/images/large.png",
-        "small": "/drivers/driver_SOLOCAM_L2040/assets/images/small.png"
+        "large": "/drivers/driver_SOLOCAM_L2040/assets/images/large.jpg",
+        "small": "/drivers/driver_SOLOCAM_L2040/assets/images/small.jpg"
       },
       "connectivity": [
         "cloud"
@@ -9845,8 +9850,8 @@
     {
       "icon": "/drivers/driver_SOLOCAM_S2040/assets/icon.svg",
       "images": {
-        "large": "/drivers/driver_SOLOCAM_S2040/assets/images/large.png",
-        "small": "/drivers/driver_SOLOCAM_S2040/assets/images/small.png"
+        "large": "/drivers/driver_SOLOCAM_S2040/assets/images/large.jpg",
+        "small": "/drivers/driver_SOLOCAM_S2040/assets/images/small.jpg"
       },
       "connectivity": [
         "cloud"
@@ -10240,8 +10245,8 @@
     {
       "icon": "/drivers/driver_VIDEO_DOORBELL_1080P_BATTERY/assets/icon.svg",
       "images": {
-        "large": "/drivers/driver_VIDEO_DOORBELL_1080P_BATTERY/assets/images/large.png",
-        "small": "/drivers/driver_VIDEO_DOORBELL_1080P_BATTERY/assets/images/small.png"
+        "large": "/drivers/driver_VIDEO_DOORBELL_1080P_BATTERY/assets/images/large.jpg",
+        "small": "/drivers/driver_VIDEO_DOORBELL_1080P_BATTERY/assets/images/small.jpg"
       },
       "connectivity": [
         "cloud"
@@ -10538,8 +10543,8 @@
     {
       "icon": "/drivers/driver_VIDEO_DOORBELL_1080P_POWERED/assets/icon.svg",
       "images": {
-        "large": "/drivers/driver_VIDEO_DOORBELL_1080P_POWERED/assets/images/large.png",
-        "small": "/drivers/driver_VIDEO_DOORBELL_1080P_POWERED/assets/images/small.png"
+        "large": "/drivers/driver_VIDEO_DOORBELL_1080P_POWERED/assets/images/large.jpg",
+        "small": "/drivers/driver_VIDEO_DOORBELL_1080P_POWERED/assets/images/small.jpg"
       },
       "connectivity": [
         "cloud"
@@ -10934,8 +10939,8 @@
     {
       "icon": "/drivers/driver_VIDEO_DOORBELL_2K_BATTERY/assets/icon.svg",
       "images": {
-        "large": "/drivers/driver_VIDEO_DOORBELL_2K_BATTERY/assets/images/large.png",
-        "small": "/drivers/driver_VIDEO_DOORBELL_2K_BATTERY/assets/images/small.png"
+        "large": "/drivers/driver_VIDEO_DOORBELL_2K_BATTERY/assets/images/large.jpg",
+        "small": "/drivers/driver_VIDEO_DOORBELL_2K_BATTERY/assets/images/small.jpg"
       },
       "connectivity": [
         "cloud"
@@ -11231,8 +11236,8 @@
     {
       "icon": "/drivers/driver_VIDEO_DOORBELL_2K_POWERED/assets/icon.svg",
       "images": {
-        "large": "/drivers/driver_VIDEO_DOORBELL_2K_POWERED/assets/images/large.png",
-        "small": "/drivers/driver_VIDEO_DOORBELL_2K_POWERED/assets/images/small.png"
+        "large": "/drivers/driver_VIDEO_DOORBELL_2K_POWERED/assets/images/large.jpg",
+        "small": "/drivers/driver_VIDEO_DOORBELL_2K_POWERED/assets/images/small.jpg"
       },
       "connectivity": [
         "cloud"
@@ -11626,8 +11631,8 @@
     {
       "icon": "/drivers/driver_VIDEO_DOORBELL_DUAL_BATTERY/assets/icon.svg",
       "images": {
-        "large": "/drivers/driver_VIDEO_DOORBELL_DUAL_BATTERY/assets/images/large.png",
-        "small": "/drivers/driver_VIDEO_DOORBELL_DUAL_BATTERY/assets/images/small.png"
+        "large": "/drivers/driver_VIDEO_DOORBELL_DUAL_BATTERY/assets/images/large.jpg",
+        "small": "/drivers/driver_VIDEO_DOORBELL_DUAL_BATTERY/assets/images/small.jpg"
       },
       "connectivity": [
         "cloud"
@@ -11927,8 +11932,8 @@
     {
       "icon": "/drivers/driver_WALLLIGHT_CAM_S/assets/icon.svg",
       "images": {
-        "large": "/drivers/driver_WALLLIGHT_CAM_S/assets/images/large.png",
-        "small": "/drivers/driver_WALLLIGHT_CAM_S/assets/images/small.png"
+        "large": "/drivers/driver_WALLLIGHT_CAM_S/assets/images/large.jpg",
+        "small": "/drivers/driver_WALLLIGHT_CAM_S/assets/images/small.jpg"
       },
       "connectivity": [
         "cloud"
