@@ -6445,9 +6445,9 @@
         }
       ],
       "name": {
-        "en": "Homebase Chime / Minibase Chime",
-        "nl": "Homebase Chime / Minibase Chime",
-        "fr": "Carillon Homebase / Carillon Minibase"
+        "en": "(Minibase) Chime",
+        "nl": "(Minibase) Chime",
+        "fr": "Carillon (Minibase)"
       },
       "class": "homealarm",
       "capabilities": [
@@ -7218,9 +7218,9 @@
         }
       ],
       "name": {
-        "en": "Indoor Cam Pan & Tilt Dual",
-        "nl": "Indoor Cam Pan & Tilt Dual",
-        "fr": "Indoor Cam Pan & Tilt Dual"
+        "en": "Indoor Cam Pan & Tilt (1080P/2K)",
+        "nl": "Indoor Cam Pan & Tilt (1080P/2K)",
+        "fr": "Indoor Cam Pan & Tilt (1080P/2K)"
       },
       "class": "camera",
       "capabilities": [
@@ -7612,10 +7612,11 @@
           ]
         }
       ],
+      "deprecated": true,
       "name": {
-        "en": "Indoor Cam Pan & Tilt (1080P/2K)",
-        "nl": "Indoor Cam Pan & Tilt (1080P/2K)",
-        "fr": "Indoor Cam Pan & Tilt (1080P/2K)"
+        "en": "Indoor Cam Pan & Tilt Dual",
+        "nl": "Indoor Cam Pan & Tilt Dual",
+        "fr": "Indoor Cam Pan & Tilt Dual"
       },
       "class": "camera",
       "capabilities": [
