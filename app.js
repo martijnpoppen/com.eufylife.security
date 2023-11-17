@@ -97,11 +97,11 @@ class App extends Homey.App {
                 this.appSettings = this.homey.settings.get(_settingsKey);
 
                 if ('REGION' in this.appSettings && this.appSettings['REGION'] === 'EU') {
-                    this.log('initSettings - Set REGION to NL');
+                    this.log('initSettings - Set REGION to EU');
 
                     await this.updateSettings({
                         ...this.appSettings,
-                        REGION: 'NL'
+                        REGION: 'EU'
                     });
                 }
 
@@ -406,7 +406,7 @@ class App extends Homey.App {
         this.log('switchRegions', { region: this.appSettings.REGION, eufyRegionSwitchAllowed: this.eufyRegionSwitchAllowed, deviceList: this.deviceList.length, eufyDevices: eufyDevices.length });
 
         if (this.eufyRegionSwitchAllowed && this.deviceList.length && !eufyDevices.length) {
-            const REGION = this.appSettings.REGION === 'US' ? 'NL' : 'US';
+            const REGION = this.appSettings.REGION === 'US' ? 'EU' : 'US';
 
             this.eufyRegionSwitchAllowed = false;
 
