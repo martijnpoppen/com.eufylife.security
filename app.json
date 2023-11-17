@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.eufylife.security",
-  "version": "3.19.0",
+  "version": "3.20.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "brandColor": "#2a6185",
@@ -4219,6 +4219,295 @@
         ]
       },
       "id": "driver_EUFYCAM_E"
+    },
+    {
+      "icon": "/drivers/driver_EUFYCAM_E330/assets/icon.svg",
+      "images": {
+        "large": "/drivers/driver_EUFYCAM_E330/assets/images/large.jpg",
+        "small": "/drivers/driver_EUFYCAM_E330/assets/images/small.jpg"
+      },
+      "connectivity": [
+        "cloud"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "capabilitiesOptions": {
+        "alarm_motion": {
+          "title": {
+            "en": "Any event (motion / person / etc.)",
+            "nl": "Elk event (beweging / persoon / etc.)",
+            "de": "Jedes Ereignis (Bewegung / Person / etc.)",
+            "fr": "Tout événement (mouvement / personne / etc.)",
+            "it": "Qualsiasi evento (movimento / persona / ecc.)",
+            "sv": "Vilket evenemang (rörelse / person / etc.)",
+            "no": "Enhver hendelse (bevegelse / person / osv.)",
+            "es": "Cualquier evento (movimiento / persona / etc.)",
+            "da": "Enhver begivenhed (bevægelse / person / osv.)",
+            "ru": "Любое событие (движение / человек / и т.д.)",
+            "pl": "Dowolne wydarzenie (ruch / osoba / itp.)"
+          }
+        }
+      },
+      "pair": [
+        {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:",
+              "fr": "Entrez votre code 2FA"
+            },
+            "type": "number",
+            "length": 6
+          },
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error",
+              "fr": "Erreur"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click 'previous'.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik 'vorige'.<hr><br><br>",
+              "fr": "<hr><br><br>Pour changer le login, cliquez sur 'précédent'.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_eufy"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "login_captcha"
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:",
+              "fr": "Entrez votre code 2FA"
+            },
+            "type": "number",
+            "length": 6
+          },
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error",
+              "fr": "Erreur"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click 'previous'.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik 'vorige'.<hr><br><br>",
+              "fr": "<hr><br><br>Pour changer le login, cliquez sur 'précédent'.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General settings",
+            "nl": "Algemene instellingen",
+            "fr": "Paramètres généraux"
+          },
+          "children": [
+            {
+              "id": "override_onoff",
+              "type": "checkbox",
+              "label": {
+                "en": "Always on",
+                "nl": "Altijd aan",
+                "fr": "Toujours allumé"
+              },
+              "value": false
+            },
+            {
+              "id": "force_include_thumbnail",
+              "type": "checkbox",
+              "hint": {
+                "en": "Only disable if you don't want cloud images!",
+                "nl": "Alleen uitschakelen als je niet gebruik wilt maken van cloud afbeeldingen!",
+                "fr": "A ne désactiver que si vous ne voulez pas d'images dans le cloud !"
+              },
+              "label": {
+                "en": "Enforce inlude thumbnail notifications",
+                "nl": "Forceer thumbnail notificaties (alleen uitschakelen",
+                "fr": "Renforcer l'intégration des notifications de vignettes"
+              },
+              "value": true
+            },
+            {
+              "id": "alarm_motion_enabled",
+              "hint": {
+                "en": "This alarm will trigger when a detection happens. (Motion/Person/Sound). This generic alarm also allows zone activity and by enabling this you can use the Eufy motion detections as a sensor in Heimdall",
+                "fr": "Cette alarme se déclenche lorsqu'une détection se produit (Mouvement/Personne/Son). Cette alarme générique permet également d'activitée une zone d'activité et en l'activant, vous pouvez utiliser les détecteurs de mouvement Eufy comme capteur dans Heimdall."
+              },
+              "type": "checkbox",
+              "label": {
+                "en": "Use generic motion alarm?",
+                "nl": "Gebruik generiek bewegings alarm",
+                "fr": "Utiliser une alarme de mouvement générique ?"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Hub settings",
+            "nl": "Hub instellingen",
+            "fr": "Paramètres du Hub"
+          },
+          "children": [
+            {
+              "id": "STATION_SN",
+              "type": "label",
+              "label": {
+                "en": "Station S/N",
+                "nl": "Station S/N",
+                "fr": "Numéro de série de la station"
+              },
+              "value": ""
+            },
+            {
+              "id": "DEVICE_SN",
+              "type": "label",
+              "label": {
+                "en": "Device S/N",
+                "nl": "Apparaat S/N",
+                "fr": "Numéro de série du dispositif"
+              },
+              "value": ""
+            },
+            {
+              "id": "LOCAL_STATION_IP",
+              "type": "label",
+              "label": {
+                "en": "Station IP",
+                "nl": "Station IP",
+                "fr": "Adresse IP de la station"
+              },
+              "value": ""
+            }
+          ]
+        }
+      ],
+      "name": {
+        "en": "eufyCam E330 (Professional)",
+        "nl": "eufyCam E330 (Professional)",
+        "fr": "eufyCam E330 (Professional)"
+      },
+      "class": "camera",
+      "capabilities": [
+        "onoff",
+        "CMD_DEV_LED_SWITCH",
+        "alarm_motion",
+        "CMD_IRCUT_SWITCH",
+        "CMD_START_STREAM",
+        "CMD_TRIGGER_ALARM",
+        "CMD_SET_HUB_ALARM_CLOSE",
+        "CMD_SET_SNOOZE_MODE_HOMEBASE",
+        "CMD_SET_FLOODLIGHT_MANUAL_SWITCH",
+        "NTFY_MOTION_DETECTION",
+        "NTFY_FACE_DETECTION",
+        "NTFY_PET_DETECTED",
+        "NTFY_VEHICLE_DETECTED"
+      ],
+      "id": "driver_EUFYCAM_E330"
     },
     {
       "icon": "/drivers/driver_FLOODLIGHT_CAMERA/assets/icon.svg",
