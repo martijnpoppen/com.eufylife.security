@@ -1339,5 +1339,8 @@
   },
   "3.19.0": {
     "en": "NEW: add MiniBase Chime (T8023) | NEW: Add Doorbell E340 (T8214) | NEW: Add basis for Indoor cam dual S350 (T8416) (requires hardware access) | NEW: Add support for device which can be stand-alone and connected to Homebases | NEW: Migrate app to HomeyCompose | FIX: Repair not working for some devices"
+  },
+  "3.20.0": {
+    "en": "NEW: Add eufyCam E330 Professional (T8600)"
   }
 }
