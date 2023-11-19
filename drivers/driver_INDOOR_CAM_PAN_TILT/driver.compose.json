@@ -26,8 +26,5 @@
     "NTFY_PET_DETECTED",
     "NTFY_VEHICLE_DETECTED"
   ],
-  "energy": {
-    "batteries": ["INTERNAL"]
-  },
   "$extends": ["device", "pair", "repair", "settings-standalone"]
 }

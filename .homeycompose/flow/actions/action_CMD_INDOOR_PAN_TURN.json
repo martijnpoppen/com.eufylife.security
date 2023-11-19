@@ -14,7 +14,7 @@
     {
       "name": "device",
       "type": "device",
-      "filter": "driver_id=driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT&capabilities=CMD_INDOOR_PAN_TURN"
+      "filter": "driver_id=driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM_PAN_TILT&capabilities=CMD_INDOOR_PAN_TURN"
     }
   ]
 }

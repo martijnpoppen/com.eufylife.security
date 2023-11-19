@@ -1,9 +1,9 @@
 {
-    "name": {
-        "en": "Floodlight Cam 2 Pro",
-        "nl": "Floodlight Cam 2 Pro",
-        "fr": "Floodlight Cam 2 Pro"
-      },
+  "name": {
+    "en": "Floodlight Cam 2 Pro",
+    "nl": "Floodlight Cam 2 Pro",
+    "fr": "Floodlight Cam 2 Pro"
+  },
   "class": "camera",
   "capabilities": [
     "onoff",
@@ -25,8 +25,5 @@
     "NTFY_PET_DETECTED",
     "NTFY_VEHICLE_DETECTED"
   ],
-  "energy": {
-    "batteries": ["INTERNAL"]
-  },
   "$extends": ["device", "pair", "repair", "settings-standalone"]
 }

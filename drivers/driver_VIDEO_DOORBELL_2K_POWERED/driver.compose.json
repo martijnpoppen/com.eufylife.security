@@ -26,8 +26,5 @@
     "NTFY_VEHICLE_DETECTED",
     "NTFY_PRESS_DOORBELL"
   ],
-  "energy": {
-    "batteries": ["INTERNAL"]
-  },
   "$extends": ["device", "pair", "repair", "settings-standalone"]
 }

@@ -23,8 +23,5 @@
     "NTFY_FACE_DETECTION",
     "NTFY_VEHICLE_DETECTED"
   ],
-  "energy": {
-    "batteries": ["INTERNAL"]
-  },
   "$extends": ["device", "pair", "repair", "settings-standalone"]
 }

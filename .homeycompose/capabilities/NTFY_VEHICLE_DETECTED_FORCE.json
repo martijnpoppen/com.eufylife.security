@@ -1,0 +1,12 @@
+{
+  "id": "NTFY_VEHICLE_DETECTED_FORCE",
+  "type": "boolean",
+  "uiComponent": null,
+  "getable": true,
+  "setable": true,
+  "title": {
+    "en": "Vehicle Detected",
+    "nl": "Voertuig Gedetecteerd",
+    "fr": "Véhicule détecté"
+  }
+}

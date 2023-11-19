@@ -172,7 +172,7 @@ module.exports = class mainDevice extends Homey.Device {
 
         // Check if Homebase NOT exists:
         if (!this.homey.app.deviceTypes.HOMEBASE_3.some((v) => this.HomeyDevice.station_sn.includes(v))) {
-            let deleteCapabilities = ['NTFY_VEHICLE_DETECTED'];
+            let deleteCapabilities = this.hasCapability('NTFY_VEHICLE_DETECTED_FORCE') ? [] : ['NTFY_VEHICLE_DETECTED'];
 
             if(!this.HomeyDevice.isStandAlone) {
                 deleteCapabilities = [...deleteCapabilities, 'NTFY_PET_DETECTED']

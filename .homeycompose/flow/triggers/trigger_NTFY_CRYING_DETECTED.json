@@ -14,7 +14,7 @@
     {
       "name": "device",
       "type": "device",
-      "filter": "driver_id=driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PRO&capabilities=NTFY_CRYING_DETECTED"
+      "filter": "driver_id=driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PRO&capabilities=NTFY_CRYING_DETECTED"
     }
   ]
 }
