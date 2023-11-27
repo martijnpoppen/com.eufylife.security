@@ -45,7 +45,7 @@ module.exports = class mainHub extends mainDevice {
 
             await sleep(20000);
             this.homey.app.log(`[Device] ${this.getName()} - CMD_SET_ARMING => CMD_SET_ARMING`);
-            await this.setCapabilityValue('CMD_SET_ARMING', 'disarmed');
+            await this.setCapabilityValue('CMD_SET_ARMING', 'disarmed').catch(this.error);;
         } catch (error) {
             this.setUnavailable(this.homey.__('device.serial_failure_station'));
             this.homey.app.log(error);
@@ -139,7 +139,7 @@ module.exports = class mainHub extends mainDevice {
 
             if (this.hasCapability(message)) {
                 if (message !== 'alarm_generic') {
-                    await this.setCapabilityValue(message, value);
+                    await this.setCapabilityValue(message, value).catch(this.error);;
 
                     if (message === 'CMD_SET_ARMING') {
                         await this.set_alarm_arm_mode(value);
@@ -147,7 +147,7 @@ module.exports = class mainHub extends mainDevice {
                 }
 
                 if (message === 'alarm_generic' && !!settings.alarm_generic_enabled) {
-                    await this.setCapabilityValue(message, value);
+                    await this.setCapabilityValue(message, value).catch(this.error);;
                     this.homey.app.log(`[Device] ${this.getName()} - onCapability_NTFY_TRIGGER => setMotionAlarm`, value);
                 }
             }

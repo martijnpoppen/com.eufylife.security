@@ -150,7 +150,7 @@ module.exports = class mainDevice extends Homey.Device {
 
     async resetCapability(name, value = false) {
         if (this.hasCapability(name)) {
-            this.setCapabilityValue(name, value);
+            this.setCapabilityValue(name, value).catch(this.error);;
         }
     }
 
@@ -480,12 +480,12 @@ module.exports = class mainDevice extends Homey.Device {
 
                 this.homey.app.log(`[Device] ${this.getName()} - streamType - ${streamType}`, streamUrl);
 
-                await this.setCapabilityValue('CMD_START_STREAM', streamUrl);
+                await this.setCapabilityValue('CMD_START_STREAM', streamUrl).catch(this.error);;
                 await this.setSettings({ CLOUD_STREAM_URL: internalStreamUrl });
 
                 this.homey.app[`trigger_STREAM_STARTED`].trigger(this, { url: streamUrl }).catch(this.error).then(this.homey.app.log(`[NTFY] - Triggered trigger_STREAM_STARTED`));
             } else {
-                await this.setCapabilityValue('CMD_START_STREAM', 'No stream found');
+                await this.setCapabilityValue('CMD_START_STREAM', 'No stream found').catch(this.error);;
                 await this.EufyDevice.stopStream();
             }
 
@@ -509,13 +509,13 @@ module.exports = class mainDevice extends Homey.Device {
 
             if (this.hasCapability(message)) {
                 if (isNormalEvent) {
-                    await this.setCapabilityValue(message, true);
+                    await this.setCapabilityValue(message, true).catch(this.error);;
 
                     if (setMotionAlarm) {
-                        await this.setCapabilityValue('alarm_motion', true);
+                        await this.setCapabilityValue('alarm_motion', true).catch(this.error);;
                     }
                 } else {
-                    await this.setCapabilityValue(message, value);
+                    await this.setCapabilityValue(message, value).catch(this.error);;
                     await this.set_alarm_arm_mode(value);
                 }
 
@@ -532,11 +532,11 @@ module.exports = class mainDevice extends Homey.Device {
         await sleep(5000);
 
         if (isNormalEvent) {
-            this.setCapabilityValue(message, false);
+            this.setCapabilityValue(message, false).catch(this.error);;
 
             if (setMotionAlarm) {
                 await sleep(5000);
-                this.setCapabilityValue('alarm_motion', false);
+                this.setCapabilityValue('alarm_motion', false).catch(this.error);;
             }
         }
     }
@@ -616,7 +616,7 @@ module.exports = class mainDevice extends Homey.Device {
 
     async setParamStatus(capability, value) {
         try {
-            await this.setCapabilityValue(capability, value);
+            await this.setCapabilityValue(capability, value).catch(this.error);;
             this.homey.app.log(`[Device] ${this.getName()} - setParamStatus ${capability} - to: `, value);
 
             return Promise.resolve(true);
@@ -638,11 +638,11 @@ module.exports = class mainDevice extends Homey.Device {
 
                 this.homey.app.log(`[Device] ${this.getName()} - set_alarm_arm_mode: ${settings.alarm_arm_mode} - value: `, value, values.includes(value));
 
-                await this.setCapabilityValue('alarm_arm_mode', values.includes(value));
+                await this.setCapabilityValue('alarm_arm_mode', values.includes(value)).catch(this.error);;
             } else {
                 this.homey.app.log(`[Device] ${this.getName()} - set_alarm_arm_mode: ${settings.alarm_arm_mode}`, false);
 
-                await this.setCapabilityValue('alarm_arm_mode', false);
+                await this.setCapabilityValue('alarm_arm_mode', false).catch(this.error);;
             }
         }
     }

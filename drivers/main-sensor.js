@@ -45,7 +45,7 @@ module.exports = class mainSensor extends mainDevice {
     async onCapability_NTFY_TRIGGER(message, value) {
         try {
             if (this.hasCapability(message)) {
-                this.setCapabilityValue(message, true);
+                this.setCapabilityValue(message, true).catch(this.error);;
                 this.startTimeout(message);
             }
             return Promise.resolve(true);
@@ -57,6 +57,6 @@ module.exports = class mainSensor extends mainDevice {
 
     async startTimeout(message) {
         await sleep(10000);
-        this.setCapabilityValue(message, false);
+        this.setCapabilityValue(message, false).catch(this.error);;
     }
 };
