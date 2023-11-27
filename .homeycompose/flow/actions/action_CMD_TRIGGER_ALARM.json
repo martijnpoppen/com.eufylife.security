@@ -1,5 +1,6 @@
 {
   "id": "action_CMD_TRIGGER_ALARM",
+  "platforms": ["local"],
   "title": {
     "en": "Turn generic alarm on",
     "nl": "Zet algemeen alarm aan",
@@ -19,6 +20,7 @@
     {
       "name": "action_CMD_TRIGGER_ALARM_TIME",
       "type": "number",
+      "platforms": ["local"],
       "title": {
         "en": "Duration",
         "nl": "Duur",

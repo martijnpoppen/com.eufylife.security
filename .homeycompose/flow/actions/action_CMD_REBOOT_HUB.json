@@ -1,5 +1,6 @@
 {
   "id": "action_CMD_REBOOT_HUB",
+  "platforms": ["local"],
   "title": {
     "en": "Reboot",
     "nl": "Opnieuw opstarten",

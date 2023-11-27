@@ -1,5 +1,6 @@
 {
   "id": "action_CMD_BAT_DOORBELL_WDR_SWITCH",
+  "platforms": ["local"],
   "title": {
     "en": "Toggle WDR switch",
     "nl": "Zet WDR aan/uit",
@@ -19,6 +20,11 @@
     {
       "name": "action_CMD_BAT_DOORBELL_WDR_SWITCH_TYPE",
       "type": "dropdown",
+      "title": {
+        "en": "WDR switch",
+        "nl": "WDR",
+        "fr": "Commutateur WDR"
+      },
       "values": [
         {
           "id": "1",

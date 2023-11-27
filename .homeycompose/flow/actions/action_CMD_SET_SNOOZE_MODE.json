@@ -1,5 +1,6 @@
 {
   "id": "action_CMD_SET_SNOOZE_MODE",
+  "platforms": ["local"],
   "title": {
     "en": "Set snooze mode",
     "nl": "Zet snooze modus",
@@ -18,6 +19,7 @@
     },
     {
       "name": "snooze",
+      "platforms": ["local"],
       "title": {
         "en": "Duration",
         "nl": "Tijdsduur",

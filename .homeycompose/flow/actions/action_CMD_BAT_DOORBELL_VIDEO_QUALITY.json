@@ -1,5 +1,6 @@
 {
   "id": "action_CMD_BAT_DOORBELL_VIDEO_QUALITY",
+  "platforms": ["local"],
   "title": {
     "en": "Set Video quality",
     "nl": "Stel Video kwaliteit in",
@@ -19,6 +20,11 @@
     {
       "name": "action_CMD_BAT_DOORBELL_VIDEO_QUALITY_TYPE",
       "type": "dropdown",
+      "title": {
+        "en": "Video quality",
+        "nl": "Video kwaliteit",
+        "fr": "Qualité vidéo"
+      },
       "values": [
         {
           "id": "0",

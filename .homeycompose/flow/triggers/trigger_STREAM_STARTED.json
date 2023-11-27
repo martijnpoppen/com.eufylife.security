@@ -1,5 +1,7 @@
 {
   "id": "trigger_STREAM_STARTED",
+  "deprecated": true,
+  "platforms": ["local"],
   "title": {
     "en": "Live stream started",
     "nl": "Livestream is gestart",
@@ -19,6 +21,7 @@
     {
       "name": "url",
       "type": "string",
+      "platforms": ["local"],
       "title": {
         "en": "Stream url",
         "nl": "Stream url",

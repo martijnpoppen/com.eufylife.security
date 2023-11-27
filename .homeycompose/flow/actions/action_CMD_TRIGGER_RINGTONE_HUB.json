@@ -1,5 +1,6 @@
 {
   "id": "action_CMD_TRIGGER_RINGTONE_HUB",
+  "platforms": ["local"],
   "title": {
     "en": "Trigger chime",
     "nl": "Activeer chime",
@@ -19,6 +20,11 @@
     {
       "name": "action_CMD_TRIGGER_RINGTONE_HUB_TYPE",
       "type": "dropdown",
+      "title": {
+        "en": "Chime type",
+        "nl": "Chime type",
+        "fr": "Type de carillon"
+      },
       "values": [
         {
           "id": "0",

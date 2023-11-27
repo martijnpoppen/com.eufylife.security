@@ -1,6 +1,7 @@
 {
   "id": "action_CMD_START_STREAM",
   "deprecated": true,
+  "platforms": ["local"],
   "title": {
     "en": "Start stream (Deprecated)",
     "nl": "Start Stream (Verouderd)",

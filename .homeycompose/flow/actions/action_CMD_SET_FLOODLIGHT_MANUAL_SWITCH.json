@@ -1,5 +1,6 @@
 {
   "id": "action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH",
+  "platforms": ["local"],
   "title": {
     "en": "Toggle Light",
     "nl": "Zet lamp aan/uit",
@@ -19,6 +20,11 @@
     {
       "name": "action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE",
       "type": "dropdown",
+      "title": {
+        "en": "Toggle Light",
+        "nl": "Zet lamp aan/uit",
+        "fr": "Activer la lumière"
+      },
       "values": [
         {
           "id": "1",

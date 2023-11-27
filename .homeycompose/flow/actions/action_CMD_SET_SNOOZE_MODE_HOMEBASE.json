@@ -1,5 +1,6 @@
 {
   "id": "action_CMD_SET_SNOOZE_MODE_HOMEBASE",
+  "platforms": ["local"],
   "title": {
     "en": "Set snooze mode",
     "nl": "Zet snooze modus",
@@ -18,6 +19,7 @@
     },
     {
       "name": "homebase",
+      "platforms": ["local"],
       "title": {
         "en": "Homebase Snooze",
         "nl": "Homebase Snooze",
@@ -45,6 +47,7 @@
     },
     {
       "name": "motion",
+      "platforms": ["local"],
       "title": {
         "en": "Motion Snooze",
         "nl": "Motion Snooze",
@@ -72,6 +75,7 @@
     },
     {
       "name": "snooze",
+      "platforms": ["local"],
       "title": {
         "en": "Duration",
         "nl": "Tijdsduur",

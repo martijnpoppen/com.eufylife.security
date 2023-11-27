@@ -1,5 +1,6 @@
 {
   "id": "trigger_CMD_SET_ARMING",
+  "platforms": ["local"],
   "title": {
     "en": "Arm Mode changed",
     "nl": "Beveiligingsmodus gewijzigd",
@@ -14,7 +15,8 @@
     {
       "name": "user",
       "type": "string",
-      "title": {
+      "platforms": ["local"],
+  "title": {
         "en": "User",
         "nl": "Gebruiker",
         "fr": "Utilisateur"

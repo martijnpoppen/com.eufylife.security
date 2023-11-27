@@ -1,5 +1,6 @@
 {
   "id": "action_CMD_DOORBELL_QUICK_RESPONSE",
+  "platforms": ["local"],
   "title": {
     "en": "Send Quick Response",
     "nl": "Stuur Spraakbericht",
@@ -19,6 +20,11 @@
     {
       "name": "action_CMD_SET_QUICK_RESPONSE_TYPE",
       "type": "dropdown",
+      "title": {
+        "en": "Quick Response",
+        "nl": "Spraakbericht",
+        "fr": "Réponse rapide"
+      },
       "values": [
         {
           "id": "1",

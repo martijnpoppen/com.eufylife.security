@@ -1,5 +1,6 @@
 {
   "id": "trigger_NTFY_SOUND_DETECTED",
+  "platforms": ["local"],
   "title": {
     "en": "Sound Detected",
     "nl": "Geluid Gedetecteerd",

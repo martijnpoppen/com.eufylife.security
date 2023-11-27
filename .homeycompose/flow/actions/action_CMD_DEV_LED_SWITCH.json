@@ -1,5 +1,6 @@
 {
   "id": "action_CMD_DEV_LED_SWITCH",
+  "platforms": ["local"],
   "title": {
     "en": "Toggle Light",
     "nl": "Zet lamp aan/uit",
@@ -19,6 +20,11 @@
     {
       "name": "action_CMD_DEV_LED_SWITCH_TYPE",
       "type": "dropdown",
+      "title": {
+        "en": "Toggle status LED",
+        "nl": "Zet status LED",
+        "fr": "Activer la lumière LED"
+      },
       "values": [
         {
           "id": "1",

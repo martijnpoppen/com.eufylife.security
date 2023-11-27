@@ -1,5 +1,6 @@
 {
   "id": "trigger_NTFY_PRESS_DOORBELL",
+  "platforms": ["local"],
   "title": {
     "en": "Doorbell Press",
     "nl": "Deurbel Ingedrukt",

@@ -1,5 +1,6 @@
 {
   "id": "trigger_NTFY_FACE_DETECTION",
+  "platforms": ["local"],
   "title": {
     "en": "Person Detected",
     "nl": "Persoon Gedetecteerd",
@@ -19,7 +20,8 @@
     {
       "name": "user",
       "type": "string",
-      "title": {
+      "platforms": ["local"],
+  "title": {
         "en": "Person",
         "nl": "Persoon",
         "fr": "Personne"

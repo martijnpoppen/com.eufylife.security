@@ -1,5 +1,6 @@
 {
   "id": "action_CMD_SET_ARMING",
+  "platforms": ["local"],
   "title": {
     "en": "Set Security Mode",
     "nl": "Zet Beveiligingsmodus",
@@ -19,6 +20,11 @@
     {
       "name": "action_CMD_SET_ARM_TYPE",
       "type": "dropdown",
+      "title": {
+        "en": "Security Mode",
+        "nl": "Beveiligingsmodus",
+        "fr": "Mode de protection"
+      },
       "values": [
         {
           "id": "home",

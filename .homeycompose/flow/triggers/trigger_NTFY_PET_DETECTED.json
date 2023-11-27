@@ -1,5 +1,6 @@
 {
   "id": "trigger_NTFY_PET_DETECTED",
+  "platforms": ["local"],
   "title": {
     "en": "Pet Detected",
     "nl": "Huisdier Gedetecteerd",

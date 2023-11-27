@@ -1,5 +1,6 @@
 {
   "id": "trigger_NTFY_MOTION_DETECTION",
+  "platforms": ["local"],
   "title": {
     "en": "Motion Detected",
     "nl": "Beweging Gedetecteerd",

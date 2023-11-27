@@ -1,5 +1,6 @@
 {
   "id": "action_CMD_INDOOR_PAN_TURN_PTZ",
+  "platforms": ["local"],
   "title": {
     "en": "Turn lens",
     "nl": "Draai lens",
@@ -19,6 +20,11 @@
     {
       "name": "action_CMD_INDOOR_PAN_TURN_PTZ_TYPE",
       "type": "dropdown",
+      "title": {
+        "en": "direction",
+        "nl": "richting",
+        "fr": "direction"
+      },
       "placeholder": {
         "en": "direction",
         "nl": "richting",
@@ -61,6 +67,11 @@
     },
     {
       "name": "repeat",
+      "title": {
+        "en": "amount",
+        "nl": "aantal",
+        "fr": "montant"
+      },
       "type": "number",
       "min": 1,
       "max": 90,

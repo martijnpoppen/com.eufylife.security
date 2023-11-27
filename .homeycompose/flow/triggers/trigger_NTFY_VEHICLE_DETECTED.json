@@ -1,5 +1,6 @@
 {
   "id": "trigger_NTFY_VEHICLE_DETECTED",
+  "platforms": ["local"],
   "title": {
     "en": "Vehicle Detected",
     "nl": "Voertuig Gedetecteerd",

@@ -1,5 +1,6 @@
 {
   "id": "condition_CHECK_ARMING",
+  "platforms": ["local"],
   "title": {
     "en": "Arm Mode !{{is|isn't}} ",
     "nl": "Beveiligingsmodus !{{is|is niet}} ",
@@ -19,6 +20,11 @@
     {
       "name": "condition_CHECK_ARM_TYPE",
       "type": "dropdown",
+      "title": {
+        "en": "Arm Mode",
+        "nl": "Beveiligingsmodus",
+        "fr": "Le mode de protection"
+      },
       "values": [
         {
           "id": "home",

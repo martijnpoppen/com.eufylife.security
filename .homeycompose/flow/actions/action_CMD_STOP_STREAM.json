@@ -1,5 +1,7 @@
 {
   "id": "action_CMD_STOP_STREAM",
+  "deprecated": true,
+  "platforms": ["local"],
   "title": {
     "en": "Stop stream",
     "nl": "Stop Stream",

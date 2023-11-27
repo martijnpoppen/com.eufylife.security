@@ -1,5 +1,6 @@
 {
   "id": "trigger_NTFY_CRYING_DETECTED",
+  "platforms": ["local"],
   "title": {
     "en": "Crying Detected",
     "nl": "Huilen Gedetecteerd",

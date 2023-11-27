@@ -1,5 +1,6 @@
 {
   "id": "action_CMD_INDOOR_PAN_TURN",
+  "platforms": ["local"],
   "title": {
     "en": "Turn 360 (Room scan)",
     "nl": "Draai 360 (Kamer scan)",

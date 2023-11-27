@@ -1,5 +1,7 @@
 {
   "id": "action_CMD_START_STREAM_HLS_RTMP",
+  "deprecated": true,
+  "platforms": ["local"],
   "title": {
     "en": "Start stream",
     "nl": "Start Stream",
@@ -14,6 +16,11 @@
     {
       "name": "action_CMD_START_STREAM_TYPE",
       "type": "dropdown",
+      "title": {
+        "en": "Stream type",
+        "nl": "Stream type",
+        "fr": "Type de flux vidéo"
+      },
       "values": [
         {
           "id": "hls",

@@ -1,5 +1,6 @@
 {
   "id": "action_CMD_IRCUT_SWITCH",
+  "platforms": ["local"],
   "title": {
     "en": "Toggle Nightvision",
     "nl": "Zet Nachtvisie aan/uit",
@@ -19,6 +20,11 @@
     {
       "name": "action_CMD_IRCUT_SWITCH_TYPE",
       "type": "dropdown",
+      "title": {
+        "en": "Nightvision",
+        "nl": "Nachtvisie",
+        "fr": "vision noturne"
+      },
       "values": [
         {
           "id": "1",

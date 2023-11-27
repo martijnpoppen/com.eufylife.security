@@ -1,5 +1,6 @@
 {
   "id": "action_CMD_SET_HUB_ALARM_CLOSE",
+  "platforms": ["local"],
   "title": {
     "en": "Turn generic alarm off",
     "nl": "Zet algemeen alarm uit",
