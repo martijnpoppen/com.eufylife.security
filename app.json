@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.eufylife.security",
-  "version": "3.20.3",
+  "version": "3.21.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "brandColor": "#2a6185",
@@ -127,6 +127,9 @@
     "triggers": [
       {
         "id": "trigger_CMD_SET_ARMING",
+        "platforms": [
+          "local"
+        ],
         "title": {
           "en": "Arm Mode changed",
           "nl": "Beveiligingsmodus gewijzigd",
@@ -141,6 +144,9 @@
           {
             "name": "user",
             "type": "string",
+            "platforms": [
+              "local"
+            ],
             "title": {
               "en": "User",
               "nl": "Gebruiker",
@@ -159,6 +165,9 @@
       },
       {
         "id": "trigger_NTFY_CRYING_DETECTED",
+        "platforms": [
+          "local"
+        ],
         "title": {
           "en": "Crying Detected",
           "nl": "Huilen Gedetecteerd",
@@ -179,6 +188,9 @@
       },
       {
         "id": "trigger_NTFY_FACE_DETECTION",
+        "platforms": [
+          "local"
+        ],
         "title": {
           "en": "Person Detected",
           "nl": "Persoon Gedetecteerd",
@@ -198,6 +210,9 @@
           {
             "name": "user",
             "type": "string",
+            "platforms": [
+              "local"
+            ],
             "title": {
               "en": "Person",
               "nl": "Persoon",
@@ -216,6 +231,9 @@
       },
       {
         "id": "trigger_NTFY_MOTION_DETECTION",
+        "platforms": [
+          "local"
+        ],
         "title": {
           "en": "Motion Detected",
           "nl": "Beweging Gedetecteerd",
@@ -236,6 +254,9 @@
       },
       {
         "id": "trigger_NTFY_PET_DETECTED",
+        "platforms": [
+          "local"
+        ],
         "title": {
           "en": "Pet Detected",
           "nl": "Huisdier Gedetecteerd",
@@ -261,6 +282,9 @@
       },
       {
         "id": "trigger_NTFY_PRESS_DOORBELL",
+        "platforms": [
+          "local"
+        ],
         "title": {
           "en": "Doorbell Press",
           "nl": "Deurbel Ingedrukt",
@@ -281,6 +305,9 @@
       },
       {
         "id": "trigger_NTFY_SOUND_DETECTED",
+        "platforms": [
+          "local"
+        ],
         "title": {
           "en": "Sound Detected",
           "nl": "Geluid Gedetecteerd",
@@ -301,6 +328,9 @@
       },
       {
         "id": "trigger_NTFY_VEHICLE_DETECTED",
+        "platforms": [
+          "local"
+        ],
         "title": {
           "en": "Vehicle Detected",
           "nl": "Voertuig Gedetecteerd",
@@ -326,6 +356,10 @@
       },
       {
         "id": "trigger_STREAM_STARTED",
+        "deprecated": true,
+        "platforms": [
+          "local"
+        ],
         "title": {
           "en": "Live stream started",
           "nl": "Livestream is gestart",
@@ -345,6 +379,9 @@
           {
             "name": "url",
             "type": "string",
+            "platforms": [
+              "local"
+            ],
             "title": {
               "en": "Stream url",
               "nl": "Stream url",
@@ -364,6 +401,9 @@
     "conditions": [
       {
         "id": "condition_CHECK_ARMING",
+        "platforms": [
+          "local"
+        ],
         "title": {
           "en": "Arm Mode !{{is|isn't}} ",
           "nl": "Beveiligingsmodus !{{is|is niet}} ",
@@ -383,6 +423,11 @@
           {
             "name": "condition_CHECK_ARM_TYPE",
             "type": "dropdown",
+            "title": {
+              "en": "Arm Mode",
+              "nl": "Beveiligingsmodus",
+              "fr": "Le mode de protection"
+            },
             "values": [
               {
                 "id": "home",
@@ -464,6 +509,9 @@
     "actions": [
       {
         "id": "action_CMD_BAT_DOORBELL_VIDEO_QUALITY",
+        "platforms": [
+          "local"
+        ],
         "title": {
           "en": "Set Video quality",
           "nl": "Stel Video kwaliteit in",
@@ -483,6 +531,11 @@
           {
             "name": "action_CMD_BAT_DOORBELL_VIDEO_QUALITY_TYPE",
             "type": "dropdown",
+            "title": {
+              "en": "Video quality",
+              "nl": "Video kwaliteit",
+              "fr": "Qualité vidéo"
+            },
             "values": [
               {
                 "id": "0",
@@ -554,6 +607,9 @@
       },
       {
         "id": "action_CMD_BAT_DOORBELL_WDR_SWITCH",
+        "platforms": [
+          "local"
+        ],
         "title": {
           "en": "Toggle WDR switch",
           "nl": "Zet WDR aan/uit",
@@ -573,6 +629,11 @@
           {
             "name": "action_CMD_BAT_DOORBELL_WDR_SWITCH_TYPE",
             "type": "dropdown",
+            "title": {
+              "en": "WDR switch",
+              "nl": "WDR",
+              "fr": "Commutateur WDR"
+            },
             "values": [
               {
                 "id": "1",
@@ -596,6 +657,9 @@
       },
       {
         "id": "action_CMD_DEV_LED_SWITCH",
+        "platforms": [
+          "local"
+        ],
         "title": {
           "en": "Toggle Light",
           "nl": "Zet lamp aan/uit",
@@ -615,6 +679,11 @@
           {
             "name": "action_CMD_DEV_LED_SWITCH_TYPE",
             "type": "dropdown",
+            "title": {
+              "en": "Toggle status LED",
+              "nl": "Zet status LED",
+              "fr": "Activer la lumière LED"
+            },
             "values": [
               {
                 "id": "1",
@@ -638,6 +707,9 @@
       },
       {
         "id": "action_CMD_DOORBELL_QUICK_RESPONSE",
+        "platforms": [
+          "local"
+        ],
         "title": {
           "en": "Send Quick Response",
           "nl": "Stuur Spraakbericht",
@@ -657,6 +729,11 @@
           {
             "name": "action_CMD_SET_QUICK_RESPONSE_TYPE",
             "type": "dropdown",
+            "title": {
+              "en": "Quick Response",
+              "nl": "Spraakbericht",
+              "fr": "Réponse rapide"
+            },
             "values": [
               {
                 "id": "1",
@@ -712,6 +789,9 @@
       },
       {
         "id": "action_CMD_INDOOR_PAN_TURN",
+        "platforms": [
+          "local"
+        ],
         "title": {
           "en": "Turn 360 (Room scan)",
           "nl": "Draai 360 (Kamer scan)",
@@ -732,6 +812,9 @@
       },
       {
         "id": "action_CMD_INDOOR_PAN_TURN_PTZ",
+        "platforms": [
+          "local"
+        ],
         "title": {
           "en": "Turn lens",
           "nl": "Draai lens",
@@ -751,6 +834,11 @@
           {
             "name": "action_CMD_INDOOR_PAN_TURN_PTZ_TYPE",
             "type": "dropdown",
+            "title": {
+              "en": "direction",
+              "nl": "richting",
+              "fr": "direction"
+            },
             "placeholder": {
               "en": "direction",
               "nl": "richting",
@@ -793,6 +881,11 @@
           },
           {
             "name": "repeat",
+            "title": {
+              "en": "amount",
+              "nl": "aantal",
+              "fr": "montant"
+            },
             "type": "number",
             "min": 1,
             "max": 90,
@@ -808,6 +901,9 @@
       },
       {
         "id": "action_CMD_IRCUT_SWITCH",
+        "platforms": [
+          "local"
+        ],
         "title": {
           "en": "Toggle Nightvision",
           "nl": "Zet Nachtvisie aan/uit",
@@ -827,6 +923,11 @@
           {
             "name": "action_CMD_IRCUT_SWITCH_TYPE",
             "type": "dropdown",
+            "title": {
+              "en": "Nightvision",
+              "nl": "Nachtvisie",
+              "fr": "vision noturne"
+            },
             "values": [
               {
                 "id": "1",
@@ -850,6 +951,9 @@
       },
       {
         "id": "action_CMD_REBOOT_HUB",
+        "platforms": [
+          "local"
+        ],
         "title": {
           "en": "Reboot",
           "nl": "Opnieuw opstarten",
@@ -870,6 +974,9 @@
       },
       {
         "id": "action_CMD_SET_ARMING",
+        "platforms": [
+          "local"
+        ],
         "title": {
           "en": "Set Security Mode",
           "nl": "Zet Beveiligingsmodus",
@@ -889,6 +996,11 @@
           {
             "name": "action_CMD_SET_ARM_TYPE",
             "type": "dropdown",
+            "title": {
+              "en": "Security Mode",
+              "nl": "Beveiligingsmodus",
+              "fr": "Mode de protection"
+            },
             "values": [
               {
                 "id": "home",
@@ -968,6 +1080,9 @@
       },
       {
         "id": "action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH",
+        "platforms": [
+          "local"
+        ],
         "title": {
           "en": "Toggle Light",
           "nl": "Zet lamp aan/uit",
@@ -987,6 +1102,11 @@
           {
             "name": "action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE",
             "type": "dropdown",
+            "title": {
+              "en": "Toggle Light",
+              "nl": "Zet lamp aan/uit",
+              "fr": "Activer la lumière"
+            },
             "values": [
               {
                 "id": "1",
@@ -1010,6 +1130,9 @@
       },
       {
         "id": "action_CMD_SET_HUB_ALARM_CLOSE",
+        "platforms": [
+          "local"
+        ],
         "title": {
           "en": "Turn generic alarm off",
           "nl": "Zet algemeen alarm uit",
@@ -1030,6 +1153,9 @@
       },
       {
         "id": "action_CMD_SET_SNOOZE_MODE",
+        "platforms": [
+          "local"
+        ],
         "title": {
           "en": "Set snooze mode",
           "nl": "Zet snooze modus",
@@ -1048,6 +1174,9 @@
           },
           {
             "name": "snooze",
+            "platforms": [
+              "local"
+            ],
             "title": {
               "en": "Duration",
               "nl": "Tijdsduur",
@@ -1109,6 +1238,9 @@
       },
       {
         "id": "action_CMD_SET_SNOOZE_MODE_CHIME",
+        "platforms": [
+          "local"
+        ],
         "title": {
           "en": "Set snooze mode",
           "nl": "Zet snooze modus",
@@ -1127,6 +1259,9 @@
           },
           {
             "name": "chime",
+            "platforms": [
+              "local"
+            ],
             "title": {
               "en": "Chime Snooze",
               "nl": "Chime Snooze",
@@ -1154,6 +1289,9 @@
           },
           {
             "name": "motion",
+            "platforms": [
+              "local"
+            ],
             "title": {
               "en": "Motion Snooze",
               "nl": "Motion Snooze",
@@ -1181,6 +1319,9 @@
           },
           {
             "name": "snooze",
+            "platforms": [
+              "local"
+            ],
             "title": {
               "en": "Duration",
               "nl": "Tijdsduur",
@@ -1242,6 +1383,9 @@
       },
       {
         "id": "action_CMD_SET_SNOOZE_MODE_HOMEBASE",
+        "platforms": [
+          "local"
+        ],
         "title": {
           "en": "Set snooze mode",
           "nl": "Zet snooze modus",
@@ -1260,6 +1404,9 @@
           },
           {
             "name": "homebase",
+            "platforms": [
+              "local"
+            ],
             "title": {
               "en": "Homebase Snooze",
               "nl": "Homebase Snooze",
@@ -1287,6 +1434,9 @@
           },
           {
             "name": "motion",
+            "platforms": [
+              "local"
+            ],
             "title": {
               "en": "Motion Snooze",
               "nl": "Motion Snooze",
@@ -1314,6 +1464,9 @@
           },
           {
             "name": "snooze",
+            "platforms": [
+              "local"
+            ],
             "title": {
               "en": "Duration",
               "nl": "Tijdsduur",
@@ -1376,6 +1529,9 @@
       {
         "id": "action_CMD_START_STREAM",
         "deprecated": true,
+        "platforms": [
+          "local"
+        ],
         "title": {
           "en": "Start stream (Deprecated)",
           "nl": "Start Stream (Verouderd)",
@@ -1396,6 +1552,10 @@
       },
       {
         "id": "action_CMD_START_STREAM_HLS_RTMP",
+        "deprecated": true,
+        "platforms": [
+          "local"
+        ],
         "title": {
           "en": "Start stream",
           "nl": "Start Stream",
@@ -1410,6 +1570,11 @@
           {
             "name": "action_CMD_START_STREAM_TYPE",
             "type": "dropdown",
+            "title": {
+              "en": "Stream type",
+              "nl": "Stream type",
+              "fr": "Type de flux vidéo"
+            },
             "values": [
               {
                 "id": "hls",
@@ -1446,6 +1611,10 @@
       },
       {
         "id": "action_CMD_STOP_STREAM",
+        "deprecated": true,
+        "platforms": [
+          "local"
+        ],
         "title": {
           "en": "Stop stream",
           "nl": "Stop Stream",
@@ -1466,6 +1635,9 @@
       },
       {
         "id": "action_CMD_TRIGGER_ALARM",
+        "platforms": [
+          "local"
+        ],
         "title": {
           "en": "Turn generic alarm on",
           "nl": "Zet algemeen alarm aan",
@@ -1485,6 +1657,9 @@
           {
             "name": "action_CMD_TRIGGER_ALARM_TIME",
             "type": "number",
+            "platforms": [
+              "local"
+            ],
             "title": {
               "en": "Duration",
               "nl": "Duur",
@@ -1503,6 +1678,9 @@
       },
       {
         "id": "action_CMD_TRIGGER_RINGTONE_HUB",
+        "platforms": [
+          "local"
+        ],
         "title": {
           "en": "Trigger chime",
           "nl": "Activeer chime",
@@ -1522,6 +1700,11 @@
           {
             "name": "action_CMD_TRIGGER_RINGTONE_HUB_TYPE",
             "type": "dropdown",
+            "title": {
+              "en": "Chime type",
+              "nl": "Chime type",
+              "fr": "Type de carillon"
+            },
             "values": [
               {
                 "id": "0",

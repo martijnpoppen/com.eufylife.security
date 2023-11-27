@@ -1351,5 +1351,8 @@
   },
   "3.20.3": {
     "en": "OPT: update library"
+  },
+  "3.21.0": {
+    "en": "NEW: prepare for Homey cloud | FIX: energy saving for battery cameras | FIX: security mode on startup | FIX: deprecate stream cards"
   }
 }
