@@ -21,8 +21,6 @@ const Logger = require('./lib/helpers/eufy-logger.helper');
 
 const _settingsKey = `${Homey.manifest.id}.settings`;
 
-const log_file = fs.createWriteStream(`${path.resolve(__dirname, '/userdata/')}/debug.log`, {flags : 'w'});
-
 class App extends Homey.App {
     log() {
         console.log.bind(this, '[log]').apply(this, arguments);
@@ -96,12 +94,10 @@ class App extends Homey.App {
                 this.log('initSettings - Found settings key', _settingsKey);
                 this.appSettings = this.homey.settings.get(_settingsKey);
 
-                if ('REGION' in this.appSettings && this.appSettings['REGION'] === 'EU') {
-                    this.log('initSettings - Set REGION to EU');
-
+                if (!('PERSISTENT_DATA' in this.appSettings)) {
                     await this.updateSettings({
                         ...this.appSettings,
-                        REGION: 'EU'
+                        PERSISTENT_DATA: JSON.stringify({})
                     });
                 }
 
@@ -158,7 +154,8 @@ class App extends Homey.App {
                 PASSWORD: '',
                 REGION: 'US',
                 NOTIFICATIONS: [],
-                STATION_IPS: {}
+                STATION_IPS: {},
+                PERSISTENT_DATA: JSON.stringify({})
             });
 
             return true;
@@ -241,7 +238,7 @@ class App extends Homey.App {
                 this.log('eufyLogin - Succes');
                 return true;
             }
-            
+
             return false;
         } catch (err) {
             this.error(err);
@@ -330,30 +327,59 @@ class App extends Homey.App {
     async setEufyClient(settings, devicesLoaded = false) {
         try {
             const debug = false;
+            const persistentFile = false;
+
+            if (this.homey.platform === 'local') {
+                const log_file = fs.createWriteStream(`${path.resolve(__dirname, '/userdata/')}/debug.log`, { flags: 'w' });
+                this.libraryLog = Logger.createNew('EufyLibrary', debug, log_file);
+
+                const persistentDir = path.resolve(__dirname, '/userdata/');
+                fs.readdirSync(persistentDir).forEach((file) => {
+                    this.log('setEufyClient - Found file', file);
+                    if (file === 'persistent.json') {
+                        persistentFile = true;
+                    }
+                });
+            } else {
+                this.libraryLog = Logger.createNew('EufyLibrary', debug);
+            }
+
+            if (persistentFile) {
+                this.log('setEufyClient - Found persistent file', persistentFile);
+                const fileContent = fs.readFileSync(path.join(persistentDir, 'persistent.json'), { encoding: 'utf8' });
+
+                await this.updateSettings({
+                    ...this.appSettings,
+                    PERSISTENT_DATA: fileContent
+                });
+
+                settings.PERSISTENT_DATA = fileContent;
+
+                fs.unlinkSync(persistentFile);
+            }
 
             const config = {
                 username: settings.USERNAME,
                 password: settings.PASSWORD,
                 country: settings.REGION,
                 language: 'EN',
-                persistentDir: path.resolve(__dirname, '/userdata/'),
+                persistentData: settings.PERSISTENT_DATA,
                 trustedDeviceName: settings.TRUSTED_DEVICE_NAME,
                 fallbackTrustedDeviceName: settings.TRUSTED_DEVICE_NAME,
                 stationIPAddresses: Object.keys(settings.STATION_IPS).length ? settings.STATION_IPS : undefined,
                 acceptInvitations: true,
                 pollingIntervalMinutes: 10,
                 eventDurationSeconds: 15,
-                p2pConnectionSetup: 'quickest',
+                p2pConnectionSetup: 'quickest'
             };
 
             await this.resetEufyClient();
 
-            this.libraryLog = Logger.createNew('EufyLibrary', debug, log_file);
             this.eufyClient = await EufySecurity.initialize(config, this.libraryLog);
 
-            if(devicesLoaded) {
+            if (devicesLoaded) {
                 // Prevent Eufyclient from getting stuck in (re)-pairing
-                this.eufyClient.devicesLoaded = true
+                this.eufyClient.devicesLoaded = true;
             }
 
             await this.connectEufyClientHandlers();
@@ -372,8 +398,8 @@ class App extends Homey.App {
             this.eufyClient = {};
         }
 
-        if(this.deviceList) {
-            this.deviceList.forEach(device => {
+        if (this.deviceList) {
+            this.deviceList.forEach((device) => {
                 device.setUnavailable(`${device.getName()} ${this.homey.__('device.init')}`);
             });
         }
@@ -391,6 +417,14 @@ class App extends Homey.App {
                 captcha,
                 id
             };
+        });
+        this.eufyClient.on('persitent data', async (data) => {
+            this.log('Event: persitent data');
+
+            await this.updateSettings({
+                ...this.appSettings,
+                PERSISTENT_DATA: data
+            });
         });
         this.eufyClient.on('connect', async () => {
             this.log('Event: connected');
