@@ -2,8 +2,8 @@
 
 const mainDevice = require('./main-device');
 const { ARM_TYPES } = require('../constants/capability_types');
-const { PropertyName, CommandType } = require('eufy-security-client');
-const { sleep } = require('../lib/utils.js');
+const { PropertyName } = require('eufy-security-client');
+const { sleep, isNil, keyByValue } = require('../lib/utils.js');
 
 module.exports = class mainHub extends mainDevice {
     async onStartup(initial = false, index) {
@@ -161,12 +161,12 @@ module.exports = class mainHub extends mainDevice {
     async deviceParams(ctx, initial = false) {
         try {
             // will be called from event helper
-            const settings = ctx.getSettings();
 
-            if (settings.force_switch_mode_notifications && ctx.EufyStation) {
-                // ctx.homey.app.log(`[Device] ${ctx.getName()} - enforceSettings - StationNotificationSwitchModeApp`, ctx.EufyStation.getSoftwareVersion());
-
-                // await ctx.homey.app.eufyClient.setStationProperty(settings.STATION_SN, PropertyName.StationNotificationSwitchModeApp, true).catch((e) => ctx.log(e));
+            if (initial && ctx.EufyStation && ctx.hasCapability('CMD_SET_ARMING')) {
+                const value = ctx.EufyStation.getPropertyValue(PropertyName.StationGuardMode);
+                ctx.homey.app.log(`[Device] ${ctx.getName()} - deviceParams - StationGuardMode`, value);
+                let CMD_SET_ARMING = keyByValue(ARM_TYPES, parseInt(value));
+                if(!isNil(CMD_SET_ARMING)) ctx.setParamStatus('CMD_SET_ARMING', CMD_SET_ARMING);
             }
         } catch (e) {
             ctx.homey.app.error(e);

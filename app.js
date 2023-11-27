@@ -47,7 +47,7 @@ class App extends Homey.App {
             await sleep(2000);
             await this.initSettings();
 
-            this.log('onStartup - Loaded settings', { ...this.appSettings, USERNAME: 'LOG', PASSWORD: 'LOG' });
+            this.log('onStartup - Loaded settings', { ...this.appSettings, USERNAME: 'LOG', PASSWORD: 'LOG', PERSISTENT_DATA: 'LOG' });
 
             this.initEufyClient();
             this.sendNotifications();
@@ -165,7 +165,7 @@ class App extends Homey.App {
     }
 
     updateSettings(settings) {
-        this.log('updateSettings - New settings:', { ...settings, USERNAME: 'LOG', PASSWORD: 'LOG' });
+        this.log('updateSettings - New settings:', { ...settings, USERNAME: 'LOG', PASSWORD: 'LOG', PERSISTENT_DATA: 'LOG' });
 
         this.appSettings = settings;
         this.saveSettings();
@@ -227,7 +227,7 @@ class App extends Homey.App {
 
     async eufyLogin(data) {
         try {
-            this.log('eufyLogin - New settings:', { ...data, USERNAME: 'LOG', PASSWORD: 'LOG' });
+            this.log('eufyLogin - New settings:', { ...data, USERNAME: 'LOG', PASSWORD: 'LOG', PERSISTENT_DATA: 'LOG' });
             this.log(`eufyLogin - Found username and password. Logging in to Eufy`);
 
             await this.updateSettings(data);
@@ -418,8 +418,8 @@ class App extends Homey.App {
                 id
             };
         });
-        this.eufyClient.on('persitent data', async (data) => {
-            this.log('Event: persitent data');
+        this.eufyClient.on('persistent data', async (data) => {
+            this.log('Event: persistent data');
 
             await this.updateSettings({
                 ...this.appSettings,

@@ -3,7 +3,7 @@
 const Homey = require('homey');
 const fetch = require('node-fetch');
 const { ARM_TYPES } = require('../constants/capability_types');
-const { sleep, bufferToStream, isNil } = require('../lib/utils.js');
+const { sleep, bufferToStream, isNil, keyByValue } = require('../lib/utils.js');
 const { PropertyName } = require('eufy-security-client');
 
 module.exports = class mainDevice extends Homey.Device {
@@ -28,7 +28,6 @@ module.exports = class mainDevice extends Homey.Device {
             this.EufyStation = await this.homey.app.eufyClient.getStation(this.HomeyDevice.station_sn);
 
             this.EufyStation.rawStation.member.nick_name = 'Homey';
-            this.EufyStation.p2pSession.energySavingDevice = false;
 
             await this.deviceImage();
             await this.deviceParams(this, true);
@@ -121,7 +120,7 @@ module.exports = class mainDevice extends Homey.Device {
         this._image = null;
         this._started = false;
 
-        await sleep(6500);
+        await sleep(9000);
 
         if (this.homey.app.needCaptcha) {
             this.setUnavailable(`${this.getName()} ${this.homey.__('device.need_captcha')}`);
@@ -272,7 +271,6 @@ module.exports = class mainDevice extends Homey.Device {
             }
 
             this.EufyStation.rawStation.member.nick_name = 'Homey';
-            this.EufyStation.p2pSession.energySavingDevice = false;
 
             this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_SET_ARMING - triggerByFlow`, triggerByFlow);
             this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_SET_ARMING - `, value, CMD_SET_ARMING);
@@ -601,6 +599,13 @@ module.exports = class mainDevice extends Homey.Device {
                 ctx.homey.app.log(`[Device] ${ctx.getName()} - deviceParams - onoff`);
                 const value = ctx.EufyDevice.getPropertyValue(PropertyName.DeviceEnabled);
                 if(!isNil(value)) ctx.setParamStatus('onoff', value);
+            }
+
+            if (initial && ctx.EufyStation && ctx.hasCapability('CMD_SET_ARMING')) {
+                const value = ctx.EufyStation.getPropertyValue(PropertyName.StationGuardMode);
+                ctx.homey.app.log(`[Device] ${ctx.getName()} - deviceParams - StationGuardMode`, value);
+                let CMD_SET_ARMING = keyByValue(ARM_TYPES, parseInt(value));
+                if(!isNil(CMD_SET_ARMING)) ctx.setParamStatus('CMD_SET_ARMING', CMD_SET_ARMING);
             }
     
             if (settings.force_include_thumbnail && ctx.EufyDevice && ctx.EufyDevice.hasProperty(PropertyName.DeviceNotificationType)) {
