@@ -1360,5 +1360,8 @@
   },
   "3.21.2": {
     "en": "FIX: app error"
+  },
+  "3.21.3": {
+    "en": "FIX: persistent data on app start"
   }
 }
