@@ -1363,5 +1363,8 @@
   },
   "3.21.3": {
     "en": "FIX: persistent data on app start"
+  },
+  "3.21.4": {
+    "en": "FIX: persistent data call on load"
   }
 }
