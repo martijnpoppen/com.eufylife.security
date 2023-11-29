@@ -232,7 +232,7 @@ class App extends Homey.App {
 
             await this.updateSettings(data);
 
-            const loggedIn = await this.setEufyClient(data, true);
+            const loggedIn = await this.setEufyClient(true);
 
             if (loggedIn) {
                 this.log('eufyLogin - Succes');
@@ -320,20 +320,21 @@ class App extends Homey.App {
         if ('USERNAME' in this.appSettings && this.appSettings.USERNAME.length) {
             this.eufyRegionSwitchAllowed = true;
 
-            await this.setEufyClient(this.appSettings);
+            await this.setEufyClient();
         }
     }
 
-    async setEufyClient(settings, devicesLoaded = false) {
+    async setEufyClient(devicesLoaded = false) {
         try {
             const debug = false;
-            const persistentFile = false;
+            let persistentFile = false;
+
+            const persistentDir = path.resolve(__dirname, '/userdata/');
 
             if (this.homey.platform === 'local') {
                 const log_file = fs.createWriteStream(`${path.resolve(__dirname, '/userdata/')}/debug.log`, { flags: 'w' });
                 this.libraryLog = Logger.createNew('EufyLibrary', debug, log_file);
 
-                const persistentDir = path.resolve(__dirname, '/userdata/');
                 fs.readdirSync(persistentDir).forEach((file) => {
                     this.log('setEufyClient - Found file', file);
                     if (file === 'persistent.json') {
@@ -353,20 +354,18 @@ class App extends Homey.App {
                     PERSISTENT_DATA: fileContent
                 });
 
-                settings.PERSISTENT_DATA = fileContent;
-
-                fs.unlinkSync(persistentFile);
+                fs.unlinkSync(path.join(persistentDir, 'persistent.json'));
             }
 
             const config = {
-                username: settings.USERNAME,
-                password: settings.PASSWORD,
-                country: settings.REGION,
+                username: this.appSettings.USERNAME,
+                password: this.appSettings.PASSWORD,
+                country: this.appSettings.REGION,
                 language: 'EN',
-                persistentData: settings.PERSISTENT_DATA,
-                trustedDeviceName: settings.TRUSTED_DEVICE_NAME,
-                fallbackTrustedDeviceName: settings.TRUSTED_DEVICE_NAME,
-                stationIPAddresses: Object.keys(settings.STATION_IPS).length ? settings.STATION_IPS : undefined,
+                persistentData: this.appSettings.PERSISTENT_DATA,
+                trustedDeviceName: this.appSettings.TRUSTED_DEVICE_NAME,
+                fallbackTrustedDeviceName: this.appSettings.TRUSTED_DEVICE_NAME,
+                stationIPAddresses: Object.keys(this.appSettings.STATION_IPS).length ? this.appSettings.STATION_IPS : undefined,
                 acceptInvitations: true,
                 pollingIntervalMinutes: 10,
                 eventDurationSeconds: 15,
@@ -453,7 +452,7 @@ class App extends Homey.App {
 
             await sleep(200);
 
-            this.setEufyClient(this.appSettings, true);
+            this.setEufyClient(true);
         } else {
             this.eufyRegionSwitchAllowed = false;
             this.eufyClientConnected = true;
