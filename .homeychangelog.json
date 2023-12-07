@@ -1369,5 +1369,11 @@
   },
   "3.21.5": {
     "en": "FIX: images not showing up"
+  },
+  "3.21.6": {
+    "en": "FIX: update library"
+  },
+  "3.21.7": {
+    "en": "FIX: update library"
   }
 }
