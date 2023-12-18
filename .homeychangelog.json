@@ -1375,5 +1375,8 @@
   },
   "3.21.7": {
     "en": "FIX: update library"
+  },
+  "3.21.8": {
+    "en": "NEW: add MiniBase Chime (T8023) | NEW: Add Doorbell E340 (T8214) | NEW: Add support for device which can be stand-alone and connected to Homebases | NEW: Migrate app to HomeyCompose | FIX: Repair not working for some devices | FIX: persistent data on app start | NEW: prepare for Homey cloud | FIX: energy saving for battery cameras | FIX: security mode on startup | FIX: deprecate stream cards"
   }
 }
