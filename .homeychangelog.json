@@ -1384,5 +1384,8 @@
   },
   "3.21.10": {
     "en": "FIX: notification service didn't start properly"
+  },
+  "3.21.11": {
+    "en": "FIX: increase polling interval (save battery) | FIX: prevent status indicator change | FIX: prevent double login (regression from library)"
   }
 }
