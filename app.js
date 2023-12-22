@@ -44,13 +44,16 @@ class App extends Homey.App {
 
     async initApp() {
         try {
-            await sleep(2000);
             await this.initSettings();
+            await this.sendNotifications();
 
             this.log('onStartup - Loaded settings', { ...this.appSettings, USERNAME: 'LOG', PASSWORD: 'LOG', PERSISTENT_DATA: 'LOG' });
 
-            this.initEufyClient();
-            this.sendNotifications();
+            if ('USERNAME' in this.appSettings && this.appSettings.USERNAME.length) {
+                this.eufyRegionSwitchAllowed = true;
+    
+                await this.setEufyClient();
+            }
         } catch (error) {
             this.homey.app.log(error);
         }
@@ -315,15 +318,6 @@ class App extends Homey.App {
     }
 
     // ---------------------------- eufyClient ----------------------------------
-
-    async initEufyClient() {
-        if ('USERNAME' in this.appSettings && this.appSettings.USERNAME.length) {
-            this.eufyRegionSwitchAllowed = true;
-
-            await this.setEufyClient();
-        }
-    }
-
     async setEufyClient(devicesLoaded = false) {
         try {
             const debug = false;
@@ -367,7 +361,7 @@ class App extends Homey.App {
                 fallbackTrustedDeviceName: this.appSettings.TRUSTED_DEVICE_NAME,
                 stationIPAddresses: Object.keys(this.appSettings.STATION_IPS).length ? this.appSettings.STATION_IPS : undefined,
                 acceptInvitations: true,
-                pollingIntervalMinutes: 10,
+                pollingIntervalMinutes: 30,
                 eventDurationSeconds: 15,
                 p2pConnectionSetup: 'quickest'
             };
@@ -410,6 +404,7 @@ class App extends Homey.App {
             console.log('Event: devicesLoaded', this.eufyClient.devicesLoaded);
             this.need2FA = true;
         });
+
         this.eufyClient.on('captcha request', (id, captcha) => {
             this.log('Event: captcha request', id);
             this.needCaptcha = {
@@ -417,6 +412,7 @@ class App extends Homey.App {
                 id
             };
         });
+
         this.eufyClient.on('persistent data', async (data) => {
             this.log('Event: persistent data');
 
@@ -425,7 +421,8 @@ class App extends Homey.App {
                 PERSISTENT_DATA: data
             });
         });
-        this.eufyClient.on('connect', async () => {
+
+        this.eufyClient.once('connect', async () => {
             this.log('Event: connected');
 
             this.switchRegions();
@@ -453,7 +450,7 @@ class App extends Homey.App {
             await sleep(200);
 
             this.setEufyClient(true);
-        } else {
+        } else if(!this.eufyClientConnected) {
             this.eufyRegionSwitchAllowed = false;
             this.eufyClientConnected = true;
 
@@ -492,37 +489,6 @@ class App extends Homey.App {
             });
 
             this.deviceList = filteredList;
-        } catch (error) {
-            this.error(error);
-        }
-    }
-
-    /// ----------------- Streaming --------------------
-    async getStreamAddress() {
-        try {
-            let homeyCloudId = await this.homey.cloud.getHomeyId();
-            this.log(`getStreamAddress - Set homeyCloudId`, homeyCloudId);
-
-            return `https://${homeyCloudId}.connect.athom.com`;
-        } catch (error) {
-            this.error(error);
-        }
-    }
-
-    async getStreamUrl(device_sn) {
-        try {
-            const pairedDevices = this.homey.app.deviceList;
-            const device = pairedDevices.find((d) => {
-                const data = d.getData();
-                this.log(`getStreamUrl - device_sn`, device_sn);
-                this.log(`getStreamUrl - data`, data);
-
-                return data.device_sn === device_sn;
-            });
-
-            const settings = device.getSettings();
-            this.log(`getStreamUrl - settings`, settings);
-            return settings.CLOUD_STREAM_URL ? settings.CLOUD_STREAM_URL : null;
         } catch (error) {
             this.error(error);
         }

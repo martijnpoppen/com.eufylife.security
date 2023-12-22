@@ -66,6 +66,7 @@ module.exports = class mainDevice extends Homey.Device {
     }
 
     async onAdded() {
+        this.homey.app.log(`[Device] ${this.getName()} - onAdded`);
         this.homey.app.setDevice(this);
 
         this.onStartup(true);
@@ -450,49 +451,12 @@ module.exports = class mainDevice extends Homey.Device {
         }
     }
 
-    async onCapability_CMD_START_STOP_STREAM(streamType) {
+    async onCapability_CMD_START_STOP_STREAM() {
         try {
-            this.homey.app.log(`[Device] ${this.getName()} - streamType - `, streamType);
-
-            if (streamType || streamType === '') {
-                let streamUrl = await this.EufyDevice.startStream();
-                const localAddress = await this.homey.app.getStreamAddress();
-                let internalStreamUrl = '';
-
-                if (streamUrl && streamType.includes('hls')) {
-                    this.homey.app.log(`[Device] ${this.getName()} - streamType - ${streamType}`, streamUrl);
-
-                    streamUrl = streamUrl.replace('rtmp', 'https');
-                    streamUrl = streamUrl.split('/hls/');
-
-                    const streamKey = streamUrl[1].split('?');
-
-                    internalStreamUrl = `${streamUrl[0]}:1443/hls/${streamKey[0]}.m3u8?${streamKey[1]}`;
-
-                    if (streamType === 'hls_only') {
-                        streamUrl = internalStreamUrl;
-                    } else {
-                        streamUrl = `${localAddress}/app/${Homey.manifest.id}/settings/stream?device_sn=${this.HomeyDevice.device_sn}`;
-                    }
-                }
-
-                this.homey.app.log(`[Device] ${this.getName()} - streamType - ${streamType}`, streamUrl);
-
-                await this.setCapabilityValue('CMD_START_STREAM', streamUrl).catch(this.error);;
-                await this.setSettings({ CLOUD_STREAM_URL: internalStreamUrl });
-
-                this.homey.app[`trigger_STREAM_STARTED`].trigger(this, { url: streamUrl }).catch(this.error).then(this.homey.app.log(`[NTFY] - Triggered trigger_STREAM_STARTED`));
-            } else {
-                await this.setCapabilityValue('CMD_START_STREAM', 'No stream found').catch(this.error);;
-                await this.EufyDevice.stopStream();
-            }
-
-            return Promise.resolve(true);
+            throw new Error('Not supported anymore');
         } catch (e) {
             this.homey.app.error(e);
-            if (typeof e === 'object') {
-                return Promise.reject(JSON.stringify(e));
-            }
+            return Promise.reject(e);
         }
     }
 
