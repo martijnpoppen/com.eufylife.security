@@ -1381,5 +1381,8 @@
   },
   "3.21.9": {
     "en": "FIX: remove battery and temperature from E330"
+  },
+  "3.21.10": {
+    "en": "FIX: notification service didn't start properly"
   }
 }
