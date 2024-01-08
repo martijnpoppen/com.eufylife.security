@@ -1390,5 +1390,11 @@
   },
   "3.21.12": {
     "en": "FIX: status indicator on startup"
+  },
+  "3.21.13": {
+    "en": "FIX: small fix to reduce log size"
+  },
+  "3.21.14": {
+    "en": "FIX: small fix to reduce log size"
   }
 }
