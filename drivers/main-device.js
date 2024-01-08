@@ -30,7 +30,6 @@ module.exports = class mainDevice extends Homey.Device {
             this.EufyStation.rawStation.member.nick_name = 'Homey';
 
             await this.deviceImage();
-            await this.deviceParams(this, true);
 
             if (initial) {
                 const settings = this.getSettings();
@@ -48,6 +47,7 @@ module.exports = class mainDevice extends Homey.Device {
                 await this.resetCapabilities();
             }
 
+            await this.deviceParams(this, true);
             await this.setAvailable();
 
             const appSettings = this.homey.app.appSettings;

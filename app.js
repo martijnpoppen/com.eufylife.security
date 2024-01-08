@@ -326,18 +326,20 @@ class App extends Homey.App {
             const persistentDir = path.resolve(__dirname, '/userdata/');
 
             if (this.homey.platform === 'local') {
-                const log_file = fs.createWriteStream(`${path.resolve(__dirname, '/userdata/')}/debug.log`, { flags: 'w' });
-                this.libraryLog = Logger.createNew('EufyLibrary', debug, log_file);
-
                 fs.readdirSync(persistentDir).forEach((file) => {
                     this.log('setEufyClient - Found file', file);
                     if (file === 'persistent.json') {
                         persistentFile = true;
                     }
+
+                    if ( file === 'debug.log') {
+                        fs.unlinkSync(path.join(persistentDir, 'debug.log'));
+                    }
                 });
-            } else {
-                this.libraryLog = Logger.createNew('EufyLibrary', debug);
             }
+            
+            this.libraryLog = Logger.createNew('EufyLibrary', debug);
+            
 
             if (persistentFile) {
                 this.log('setEufyClient - Found persistent file', persistentFile);

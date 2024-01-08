@@ -16,7 +16,6 @@ module.exports = class mainHub extends mainDevice {
 
             this.EufyStation = await this.homey.app.eufyClient.getStation(this.HomeyDevice.station_sn);
 
-            await this.deviceParams(this, true);
 
             if (initial) {
                 const settings = this.getSettings();
@@ -33,6 +32,7 @@ module.exports = class mainHub extends mainDevice {
                 await this.resetCapabilities();
             }
 
+            await this.deviceParams(this, true);
             await this.setAvailable();
 
             await this.setSettings({
