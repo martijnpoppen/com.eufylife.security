@@ -1396,5 +1396,8 @@
   },
   "3.21.14": {
     "en": "FIX: small fix to reduce log size"
+  },
+  "3.21.15": {
+    "en": "FIX: set alarm for standalone camera"
   }
 }
