@@ -1399,5 +1399,8 @@
   },
   "3.21.15": {
     "en": "FIX: set alarm for standalone camera"
+  },
+  "3.22.0": {
+    "en": "NEW: timeline notifications when 2FA or Captcha are required"
   }
 }
