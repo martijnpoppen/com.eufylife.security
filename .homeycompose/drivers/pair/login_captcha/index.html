@@ -1,0 +1,152 @@
+<style>
+    @import '/css/deprecated-login-credentials.css';
+
+    .__private__homey-login-credentials {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .__private__homey-login-credentials__form {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .__private__homey-login-credentials__center {
+        width: 100%;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .__private__homey-login-credentials__footer {
+        width: 100%;
+    }
+
+    .__private__homey-login-credentials__button {
+        white-space: nowrap;
+        /* Safari fix for strange bug which makes button extra high */
+    }
+
+    .__private__homey-login-credentials__logo.is-visible {
+        display: block;
+        position: relative;
+        width: 66%;
+        height: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: var(--homey-su-4);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .custom-radio-grid {
+        display: grid !important;
+        grid-column-gap: 8px !important;
+        grid-template-columns: 0.15fr 0.25fr !important;
+    }
+</style>
+
+<div class="__private__homey-login-credentials" id="$HY_TMPL_ID">
+    <form id="login-credentials-form" class="__private__homey-login-credentials__form homey-form" action="/"
+        method="post">
+        <div class="__private__homey-login-credentials__center">
+            <div id="login-credentials-logo" class="__private__homey-login-credentials__logo"></div>
+            <h1 id="login-credentials-title" class="homey-title homey-text-align-center"></h1>
+            <div class="homey-form-group-large">
+                <label class="homey-form-label" for="captcha" data-i18n="__tmpl.login_credentials.captcha"></label>
+                <input class="homey-form-input-large" id="captcha" name="captcha" type="text" value=""
+                    data-i18n-placeholder="__tmpl.login_credentials.captcha" />
+            </div>
+        </div>
+        <div class="__private__homey-login-credentials__footer">
+            <button tabindex="0" class="homey-button-primary-shadow-full __private__homey-login-credentials__button"
+                type="submit" data-i18n="__tmpl.login_credentials.login"></button>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+    (function () {
+        const $tmpl = document.getElementById('$HY_TMPL_ID');
+        const $form = $tmpl.querySelector('#login-credentials-form');
+        const $logo = $tmpl.querySelector('#login-credentials-logo');
+        const $title = $tmpl.querySelector('#login-credentials-title');
+        const $button = $tmpl.querySelector('button');
+        const $captcha = $tmpl.querySelector('input[name="captcha"]');
+        const $captchaLabel = $tmpl.querySelector('label[for="captcha"]');
+        let working = false;
+
+        // Hide default title bar
+        Homey.setTitle(null);
+
+        // Show custom title
+        $title.textContent = Homey.__('__tmpl.login_credentials.title');
+
+        Homey.getOptions(function (err, options) {
+            if (err) return Homey.error(err);
+
+            if (options.title) {
+                $title.textContent = Homey.__(options.title);
+            }
+
+            if (options.captchaLabel) {
+                $captchaLabel.textContent = Homey.__(options.captchaLabel);
+            }
+
+            if (options.captchaPlaceholder) {
+                $captcha.placeholder = Homey.__(options.captchaPlaceholder);
+            }
+
+            if (options.buttonText) {
+                $button.textContent = Homey.__(options.buttonText);
+            }
+        });
+
+        Homey.on("set_captcha", function (message) {
+            $logo.style.backgroundImage = 'url(' + message + ')';
+            $logo.classList.add('is-visible');
+
+            return true
+        });
+
+        $form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            if (working) {
+                return;
+            }
+
+            working = true;
+            Homey.showLoadingOverlay(Homey.__('pair.loading'));
+
+            const $captcha = $tmpl.querySelector('input[name="captcha"]');
+
+            const captcha = $captcha.value;
+
+            Homey.emit(
+                'login_captcha',
+                {
+                    captcha: captcha,
+                },
+                function (error, valid) {
+                    if (error) {
+                        Homey.error(error);
+                    } else if (valid) {
+                        Homey.nextView();
+                    }
+
+                    working = false;
+                    Homey.hideLoadingOverlay();
+                },
+            );
+
+            return false;
+        });
+    })();
+</script>

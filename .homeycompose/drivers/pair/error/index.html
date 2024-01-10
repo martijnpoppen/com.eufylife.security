@@ -1,0 +1,33 @@
+<style>
+    p > strong {
+        font-weight: bold;
+    }
+</style>
+<div class="hy-tmpl-login_credentials" id="instructions"></div>
+<div class="error"></div>
+<div class="text"></div>
+</div>
+<script>
+    (function () {
+        var $text = document.querySelector('.text');
+        var $next = document.querySelector('#hy-nav-next');
+        var $prev = document.querySelector('#hy-nav-prev');
+
+        Homey.on("deviceError", function(message) {
+            var $error = document.querySelector('.error');
+            $error.innerHTML = `<p>${message}</p>`;
+            return true
+        });
+
+        Homey.getOptions(function (err, options) {
+            if (err) return Homey.error(err);
+
+            setTimeout(function () {
+                if (options.title) Homey.setTitle(Homey.__(options.title));
+                if (options.text) $text.innerHTML = Homey.__(options.text);
+
+                $prev.classList += ' homey-button-primary';
+            }, 0);
+        });
+    })();
+</script>

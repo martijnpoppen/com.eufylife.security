@@ -5,16 +5,10 @@
     "account": "Account instellingen"
   },
   "pair": {
-    "usernameLabel": "E-mail adres (Gebruik een extra Eufy admin account - 2FA Uitgeschakeld)",
-    "usernamePlaceholder": "john@doe.com",
-    "passwordLabel": "Wachtwoord",
-    "passwordPlaceholder": "Password",
     "captchaLabel": "Captcha",
-    "region": "Regio",
-    "login": "Inloggen",
     "loading": "Laden",
     "no_data": "Geen apparaten gevonden. Probeer een andere regio",
-    "no_devices": "Geen apparaten gevonden. Zorg ervoor dat je de apparaten gedeeld hebt met je extra account.",
+    "no_devices": "Geen apparaten gevonden. Zorg ervoor dat je de apparaten gedeeld hebt met je extra account. OF Probeer een andere regio",
     "no_devices_repair": "Reparen niet gelukt. Er zijn geen apparaten gevonden in je account. Zorg ervoor dat je de apparaten gedeeld hebt met je extra account. Of pas je login aan op de vorige pagina",
     "keypad": "Het toetsenbord is een fysiek apparaat om de beveiligingsmodus voor de Homebase in te stellen. Daarom heeft dit geen eigen functionaliteit in de Homey app. Om flows te maken op basis van of het wijzigen van beveiligingsmodi voegt u in plaats daarvan de homebase toe (als dat nog niet is gebeurd). Daar vindt u de beveiligingsmodi en stroomkaarten voor beveiligingsmodi."
   },

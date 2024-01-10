@@ -1,14 +1,74 @@
 {
   "repair": [
     {
-      "id": "login_eufy"
+      "id": "login_eufy",
+      "$template": "login_eufy",
+      "options": {
+        "logo": "../../../assets/icon.svg",
+        "title": {
+          "en": "Login with your Eufy account"
+        },
+        "usernameLabel": {
+          "en": "E-mail address",
+          "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+          "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+        },
+        "usernamePlaceholder": {
+          "en": "john@doe.com",
+          "nl": "john@doe.com",
+          "fr": "john@doe.com"
+        },
+        "passwordLabel": {
+          "en": "Password",
+          "nl": "Wachtwoord",
+          "fr": "Mot de passe"
+        },
+        "passwordPlaceholder": {
+          "en": "Password",
+          "nl": "Wachtwoord",
+          "fr": "Mot de passe"
+        },
+        "buttonText": {
+          "en": "Login",
+          "nl": "Inloggen",
+          "fr": "Utilisateur"
+        },
+        "radioGroup": {
+          "en": "Region",
+          "nl": "Regio",
+          "fr": "Région"
+        }
+      }
     },
     {
       "id": "loading",
       "template": "loading"
     },
     {
-      "id": "login_captcha"
+      "id": "login_captcha",
+      "$template": "login_captcha",
+      "options": {
+        "title": {
+          "en": "Captcha required",
+          "nl": "Captcha vereist",
+          "fr": "Captcha nécessaire"
+        },
+        "captchaLabel": {
+          "en": "Captcha",
+          "nl": "Captcha",
+          "fr": "Captcha"
+        },
+        "captchaPlaceholder": {
+          "en": "A7cF",
+          "nl": "A7cF",
+          "fr": "A7cF"
+        },
+        "buttonText": {
+          "en": "Login",
+          "nl": "Inloggen",
+          "fr": "Utilisateur"
+        }
+      }
     },
     {
       "id": "loading",
@@ -36,6 +96,7 @@
     },
     {
       "id": "error",
+      "$template": "error",
       "navigation": {
         "prev": "login_eufy"
       },

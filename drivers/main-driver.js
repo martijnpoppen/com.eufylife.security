@@ -48,6 +48,7 @@ module.exports = class mainDriver extends Homey.Driver {
                 if (this.appSettings && this.appSettings.USERNAME && this.appSettings.PASSWORD) {
                     session.emit('set_user', this.appSettings.USERNAME);
                     session.emit('set_password', this.appSettings.PASSWORD);
+                    session.emit('set_region', this.appSettings.REGION);
                 }
             }
 
@@ -126,7 +127,7 @@ module.exports = class mainDriver extends Homey.Driver {
 
             if (result === false) {
                 this.deviceError = this.homey.__('pair.no_data');
-                return false;
+                return true;
             }
 
             return true;

@@ -1814,14 +1814,72 @@
       },
       "pair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -1887,14 +1945,72 @@
       ],
       "repair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -2071,14 +2187,72 @@
       },
       "pair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -2144,14 +2318,72 @@
       ],
       "repair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -2366,14 +2598,72 @@
       },
       "pair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -2439,14 +2729,72 @@
       ],
       "repair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -2661,14 +3009,72 @@
       },
       "pair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -2734,14 +3140,72 @@
       ],
       "repair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -2957,14 +3421,72 @@
       },
       "pair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -3030,14 +3552,72 @@
       ],
       "repair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -3254,14 +3834,72 @@
       },
       "pair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -3327,14 +3965,72 @@
       ],
       "repair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -3550,14 +4246,72 @@
       },
       "pair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -3623,14 +4377,72 @@
       ],
       "repair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -3846,14 +4658,72 @@
       },
       "pair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -3919,14 +4789,72 @@
       ],
       "repair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -4142,14 +5070,72 @@
       },
       "pair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -4215,14 +5201,72 @@
       ],
       "repair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -4434,14 +5478,72 @@
       },
       "pair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -4507,14 +5609,72 @@
       ],
       "repair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -4723,14 +5883,72 @@
       },
       "pair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -4796,14 +6014,72 @@
       ],
       "repair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -5110,14 +6386,72 @@
       },
       "pair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -5183,14 +6517,72 @@
       ],
       "repair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -5499,14 +6891,72 @@
       },
       "pair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -5572,14 +7022,72 @@
       ],
       "repair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -5863,14 +7371,72 @@
       },
       "pair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -5936,14 +7502,72 @@
       ],
       "repair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -6227,14 +7851,72 @@
       },
       "pair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -6300,14 +7982,72 @@
       ],
       "repair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -6591,14 +8331,72 @@
       },
       "pair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -6664,14 +8462,72 @@
       ],
       "repair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -6954,14 +8810,72 @@
       },
       "pair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -7027,14 +8941,72 @@
       ],
       "repair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -7344,14 +9316,72 @@
       },
       "pair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -7417,14 +9447,72 @@
       ],
       "repair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -7734,14 +9822,72 @@
       },
       "pair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -7807,14 +9953,72 @@
       ],
       "repair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -8064,11 +10268,10 @@
           ]
         }
       ],
-      "deprecated": true,
       "name": {
-        "en": "Indoor Cam Pan & Tilt Dual",
-        "nl": "Indoor Cam Pan & Tilt Dual",
-        "fr": "Indoor Cam Pan & Tilt Dual"
+        "en": "Indoor Cam Pan & Tilt Dual (S350)",
+        "nl": "Indoor Cam Pan & Tilt Dual (S350)",
+        "fr": "Indoor Cam Pan & Tilt Dual (S350)"
       },
       "class": "camera",
       "capabilities": [
@@ -8130,14 +10333,72 @@
       },
       "pair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -8203,14 +10464,72 @@
       ],
       "repair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -8493,14 +10812,72 @@
       },
       "pair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -8566,14 +10943,72 @@
       ],
       "repair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -8750,14 +11185,72 @@
       },
       "pair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -8823,14 +11316,72 @@
       ],
       "repair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -9145,14 +11696,72 @@
       },
       "pair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -9218,14 +11827,72 @@
       ],
       "repair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -9540,14 +12207,72 @@
       },
       "pair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -9613,14 +12338,72 @@
       ],
       "repair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -9906,10 +12689,10 @@
       "id": "driver_OUTDOOR_CAM_PRO"
     },
     {
-      "icon": "/drivers/driver_SOLOCAM_E2040/assets/icon.svg",
+      "icon": "/drivers/driver_SOLOCAM_C/assets/icon.svg",
       "images": {
-        "large": "/drivers/driver_SOLOCAM_E2040/assets/images/large.jpg",
-        "small": "/drivers/driver_SOLOCAM_E2040/assets/images/small.jpg"
+        "large": "/drivers/driver_SOLOCAM_C/assets/images/large.jpg",
+        "small": "/drivers/driver_SOLOCAM_C/assets/images/small.jpg"
       },
       "connectivity": [
         "cloud"
@@ -9936,14 +12719,72 @@
       },
       "pair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -10009,14 +12850,582 @@
       ],
       "repair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:",
+              "fr": "Entrez votre code 2FA"
+            },
+            "type": "number",
+            "length": 6
+          },
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error",
+              "fr": "Erreur"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click 'previous'.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik 'vorige'.<hr><br><br>",
+              "fr": "<hr><br><br>Pour changer le login, cliquez sur 'précédent'.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General settings",
+            "nl": "Algemene instellingen",
+            "fr": "Paramètres généraux"
+          },
+          "children": [
+            {
+              "id": "override_onoff",
+              "type": "checkbox",
+              "label": {
+                "en": "Always on",
+                "nl": "Altijd aan",
+                "fr": "Toujours allumé"
+              },
+              "value": false
+            },
+            {
+              "id": "force_include_thumbnail",
+              "type": "checkbox",
+              "hint": {
+                "en": "Only disable if you don't want cloud images!",
+                "nl": "Alleen uitschakelen als je niet gebruik wilt maken van cloud afbeeldingen!",
+                "fr": "A ne désactiver que si vous ne voulez pas d'images dans le Cloud !"
+              },
+              "label": {
+                "en": "Enforce inlude thumbnail notifications",
+                "nl": "Forceer thumbnail notificaties (alleen uitschakelen",
+                "fr": "Renforcer l'intégration des notifications de vignettes"
+              },
+              "value": true
+            },
+            {
+              "id": "alarm_motion_enabled",
+              "hint": {
+                "en": "This alarm will trigger when a detection happens. (Motion/Person/Sound). This generic alarm also allows zone activity and by enabling this you can use the Eufy motion detections as a sensor in Heimdall",
+                "fr": "Cette alarme se déclenche lorsqu'une détection se produit (Mouvement/Personne/Son). Cette alarme générique permet également d'activitée une zone d'activité et en l'activant, vous pouvez utiliser les détecteurs de mouvement Eufy comme capteur dans Heimdall."
+              },
+              "type": "checkbox",
+              "label": {
+                "en": "Use generic motion alarm?",
+                "nl": "Gebruik generiek bewegings alarm",
+                "fr": "Utiliser une alarme de mouvement générique ?"
+              },
+              "value": false
+            },
+            {
+              "id": "alarm_arm_mode",
+              "type": "dropdown",
+              "value": "disabled",
+              "hint": {
+                "en": "This alarm will trigger when the device becomes armed/disarmed",
+                "fr": "Cette alarme sera déclenchée lorsque le dispositif est activée/désactivée"
+              },
+              "label": {
+                "en": "Alarm Disarmed",
+                "fr": "Alarme désativée"
+              },
+              "values": [
+                {
+                  "id": "disabled",
+                  "label": {
+                    "en": "No alarm",
+                    "nl": "Geen alarm",
+                    "fr": "Pas d'alarme"
+                  }
+                },
+                {
+                  "id": "off_disarmed",
+                  "label": {
+                    "en": "off / disarmed",
+                    "nl": "uit / uitgeschakeld",
+                    "fr": "off / désactivée"
+                  }
+                },
+                {
+                  "id": "off_disarmed_home",
+                  "label": {
+                    "en": "off / disarmed / home",
+                    "nl": "uit / uitgeschakeld / thuis",
+                    "fr": "off / désactivée / à la maison"
+                  }
+                },
+                {
+                  "id": "off_disarmed_away",
+                  "label": {
+                    "en": "off / disarmed / away",
+                    "nl": "uit / uitgeschakeld / afwezig",
+                    "fr": "off / désactivée / à l'extérieur"
+                  }
+                },
+                {
+                  "id": "away_custom-1",
+                  "label": {
+                    "en": "away / custom 1",
+                    "nl": "afwezig / custom 1",
+                    "fr": "à l'extérieur / personalisé 1"
+                  }
+                },
+                {
+                  "id": "away_custom-2",
+                  "label": {
+                    "en": "away / custom 2",
+                    "nl": "afwezig / custom 2",
+                    "fr": "à l'extérieur / personalisé 2"
+                  }
+                },
+                {
+                  "id": "away_custom-3",
+                  "label": {
+                    "en": "away / custom 3",
+                    "nl": "afwezig / custom 3",
+                    "fr": "à l'extérieur / personalisé 3"
+                  }
+                },
+                {
+                  "id": "off_disarmed_custom-1",
+                  "label": {
+                    "en": "off / disarmed / custom 1",
+                    "nl": "uit / uitgeschakeld / custom 1",
+                    "fr": "off / désactivée / personalisé 1"
+                  }
+                },
+                {
+                  "id": "off_disarmed_custom-2",
+                  "label": {
+                    "en": "off / disarmed / custom 2",
+                    "nl": "uit / uitgeschakeld / custom 2",
+                    "fr": "off / désactivée / personalisé 2"
+                  }
+                },
+                {
+                  "id": "off_disarmed_custom-3",
+                  "label": {
+                    "en": "off / disarmed / custom 3",
+                    "nl": "uit / uitgeschakeld / custom 3",
+                    "fr": "off / désactivée / personalisé 3"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Hub settings",
+            "nl": "Hub instellingen",
+            "fr": "Paramètres du hub"
+          },
+          "children": [
+            {
+              "id": "STATION_SN",
+              "type": "label",
+              "label": {
+                "en": "Station S/N",
+                "nl": "Station S/N",
+                "fr": "Numéro de série de la station"
+              },
+              "value": ""
+            },
+            {
+              "id": "DEVICE_SN",
+              "type": "label",
+              "label": {
+                "en": "Device S/N",
+                "nl": "Apparaat S/N",
+                "fr": "Numéro de série de l'appareil"
+              },
+              "value": ""
+            },
+            {
+              "id": "LOCAL_STATION_IP",
+              "type": "text",
+              "label": {
+                "en": "Station IP",
+                "nl": "Station IP",
+                "fr": "Adresse IP de la station"
+              },
+              "value": ""
+            }
+          ]
+        }
+      ],
+      "name": {
+        "en": "SoloCam C210",
+        "nl": "SoloCam C210",
+        "fr": "SoloCam C210"
+      },
+      "class": "camera",
+      "capabilities": [
+        "onoff",
+        "CMD_DEV_LED_SWITCH",
+        "alarm_motion",
+        "measure_battery",
+        "measure_temperature",
+        "CMD_IRCUT_SWITCH",
+        "alarm_arm_mode",
+        "CMD_SET_ARMING",
+        "CMD_REBOOT_HUB",
+        "CMD_REVERSE_DEVS_SWITCH",
+        "CMD_START_STREAM",
+        "CMD_SET_SNOOZE_MODE",
+        "CMD_TRIGGER_ALARM",
+        "CMD_SET_HUB_ALARM_CLOSE",
+        "NTFY_MOTION_DETECTION",
+        "NTFY_FACE_DETECTION",
+        "NTFY_PET_DETECTED",
+        "NTFY_VEHICLE_DETECTED"
+      ],
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      },
+      "id": "driver_SOLOCAM_C"
+    },
+    {
+      "icon": "/drivers/driver_SOLOCAM_E2040/assets/icon.svg",
+      "images": {
+        "large": "/drivers/driver_SOLOCAM_E2040/assets/images/large.jpg",
+        "small": "/drivers/driver_SOLOCAM_E2040/assets/images/small.jpg"
+      },
+      "connectivity": [
+        "cloud"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "capabilitiesOptions": {
+        "alarm_motion": {
+          "title": {
+            "en": "Any event (motion / person / etc.)",
+            "nl": "Elk event (beweging / persoon / etc.)",
+            "de": "Jedes Ereignis (Bewegung / Person / etc.)",
+            "fr": "Tout événement (mouvement / personne / etc.)",
+            "it": "Qualsiasi evento (movimento / persona / ecc.)",
+            "sv": "Vilket evenemang (rörelse / person / etc.)",
+            "no": "Enhver hendelse (bevegelse / person / osv.)",
+            "es": "Cualquier evento (movimiento / persona / etc.)",
+            "da": "Enhver begivenhed (bevægelse / person / osv.)",
+            "ru": "Любое событие (движение / человек / и т.д.)",
+            "pl": "Dowolne wydarzenie (ruch / osoba / itp.)"
+          }
+        }
+      },
+      "pair": [
+        {
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter 2FA Code",
+              "nl": "Voer 2FA Code in:",
+              "fr": "Entrez votre code 2FA"
+            },
+            "type": "number",
+            "length": 6
+          },
+          "navigation": {
+            "prev": "login_eufy"
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "error",
+          "navigation": {
+            "prev": "login_eufy"
+          },
+          "options": {
+            "title": {
+              "en": "Error",
+              "nl": "Error",
+              "fr": "Erreur"
+            },
+            "text": {
+              "en": "<hr><br><br>To change the login click 'previous'.<hr><br><br>",
+              "nl": "<hr><br><br>Om opnieuw in te loggen, klik 'vorige'.<hr><br><br>",
+              "fr": "<hr><br><br>Pour changer le login, cliquez sur 'précédent'.<hr><br><br>"
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
+        },
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -10330,14 +13739,72 @@
       },
       "pair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -10403,14 +13870,72 @@
       ],
       "repair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -10725,14 +14250,72 @@
       },
       "pair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -10798,14 +14381,72 @@
       ],
       "repair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -11120,14 +14761,72 @@
       },
       "pair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -11193,14 +14892,72 @@
       ],
       "repair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -11418,14 +15175,72 @@
       },
       "pair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -11491,14 +15306,72 @@
       ],
       "repair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -11814,14 +15687,72 @@
       },
       "pair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -11887,14 +15818,72 @@
       ],
       "repair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -12111,14 +16100,72 @@
       },
       "pair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -12184,14 +16231,72 @@
       ],
       "repair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -12501,14 +16606,72 @@
       },
       "pair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -12574,14 +16737,72 @@
       ],
       "repair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -12802,14 +17023,72 @@
       },
       "pair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",
@@ -12875,14 +17154,72 @@
       ],
       "repair": [
         {
-          "id": "login_eufy"
+          "id": "login_eufy",
+          "options": {
+            "logo": "../../../assets/icon.svg",
+            "title": {
+              "en": "Login with your Eufy account"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres (Gebruik een extra Eufy admin account)",
+              "fr": "Adresse Email - (Utiliser un compte administrateur Eufy supplémentaire)"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "nl": "john@doe.com",
+              "fr": "john@doe.com"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "fr": "Mot de passe"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            },
+            "radioGroup": {
+              "en": "Region",
+              "nl": "Regio",
+              "fr": "Région"
+            }
+          }
         },
         {
           "id": "loading",
           "template": "loading"
         },
         {
-          "id": "login_captcha"
+          "id": "login_captcha",
+          "options": {
+            "title": {
+              "en": "Captcha required",
+              "nl": "Captcha vereist",
+              "fr": "Captcha nécessaire"
+            },
+            "captchaLabel": {
+              "en": "Captcha",
+              "nl": "Captcha",
+              "fr": "Captcha"
+            },
+            "captchaPlaceholder": {
+              "en": "A7cF",
+              "nl": "A7cF",
+              "fr": "A7cF"
+            },
+            "buttonText": {
+              "en": "Login",
+              "nl": "Inloggen",
+              "fr": "Utilisateur"
+            }
+          }
         },
         {
           "id": "loading",

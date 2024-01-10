@@ -51,7 +51,7 @@ class App extends Homey.App {
 
             if ('USERNAME' in this.appSettings && this.appSettings.USERNAME.length) {
                 this.eufyRegionSwitchAllowed = true;
-    
+
                 await this.setEufyClient();
             }
         } catch (error) {
@@ -332,14 +332,13 @@ class App extends Homey.App {
                         persistentFile = true;
                     }
 
-                    if ( file === 'debug.log') {
+                    if (file === 'debug.log') {
                         fs.unlinkSync(path.join(persistentDir, 'debug.log'));
                     }
                 });
             }
-            
+
             this.libraryLog = Logger.createNew('EufyLibrary', debug);
-            
 
             if (persistentFile) {
                 this.log('setEufyClient - Found persistent file', persistentFile);
@@ -404,15 +403,29 @@ class App extends Homey.App {
         this.eufyClient.on('tfa request', () => {
             this.log('Event: tfa request (2FA)');
             console.log('Event: devicesLoaded', this.eufyClient.devicesLoaded);
+            const notification = !this.need2FA;
             this.need2FA = true;
+
+            if (notification) {
+                this.homey.notifications.createNotification({
+                    excerpt: 'Eufy Security - 2FA required'
+                });
+            }
         });
 
         this.eufyClient.on('captcha request', (id, captcha) => {
             this.log('Event: captcha request', id);
+            const notification = !this.needCaptcha;
             this.needCaptcha = {
                 captcha,
                 id
             };
+
+            if (notification) {
+                this.homey.notifications.createNotification({
+                    excerpt: 'Eufy Security - Captcha required'
+                });
+            }
         });
 
         this.eufyClient.on('persistent data', async (data) => {
@@ -452,7 +465,7 @@ class App extends Homey.App {
             await sleep(200);
 
             this.setEufyClient(true);
-        } else if(!this.eufyClientConnected) {
+        } else if (!this.eufyClientConnected) {
             this.eufyRegionSwitchAllowed = false;
             this.eufyClientConnected = true;
 

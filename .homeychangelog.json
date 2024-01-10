@@ -1402,5 +1402,8 @@
   },
   "3.22.0": {
     "en": "NEW: timeline notifications when 2FA or Captcha are required"
+  },
+  "3.23.0": {
+    "en": "NEW: Indoor cam S350 | NEW: Enhance Minibase chime support T8023 | NEW: Floodlight Cam E340 | NEW: SoloCam C210 | NEW: enhanced login page | FIX: battery life"
   }
 }

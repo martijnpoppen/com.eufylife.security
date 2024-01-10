@@ -391,7 +391,7 @@ module.exports = class mainDevice extends Homey.Device {
                 // time + 2 so we can disable alarm manually.
     
                 // wait for alarm to be finished. turn off to have a off notification. So the alarm_generic will notify
-                await sleep(seconds * 1000);
+                await sleep(time * 1000);
     
                 await this.EufyStation.triggerStationAlarmSound(0);
             } else {

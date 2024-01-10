@@ -1,0 +1,212 @@
+<style>
+    @import '/css/deprecated-login-credentials.css';
+
+    .__private__homey-login-credentials {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .__private__homey-login-credentials__form {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .__private__homey-login-credentials__center {
+        width: 100%;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .__private__homey-login-credentials__footer {
+        width: 100%;
+    }
+
+    .__private__homey-login-credentials__button {
+        white-space: nowrap;
+        /* Safari fix for strange bug which makes button extra high */
+    }
+
+    .__private__homey-login-credentials__logo.is-visible {
+        display: block;
+        position: relative;
+        width: 66%;
+        height: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: var(--homey-su-4);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .custom-radio-grid {
+        display: grid !important;
+        grid-column-gap: 8px !important;
+        grid-template-columns: 0.15fr 0.25fr !important;
+    }
+</style>
+
+<div class="__private__homey-login-credentials" id="$HY_TMPL_ID">
+    <form id="login-credentials-form" class="__private__homey-login-credentials__form homey-form" action="/"
+        method="post">
+        <div class="__private__homey-login-credentials__center">
+            <div id="login-credentials-logo" class="__private__homey-login-credentials__logo"></div>
+            <h1 id="login-credentials-title" class="homey-title homey-text-align-center"></h1>
+            <div class="homey-form-group-large">
+                <label class="homey-form-label" for="username" data-i18n="__tmpl.login_credentials.username"></label>
+                <input class="homey-form-input-large" id="username" name="username" type="text" value=""
+                    data-i18n-placeholder="__tmpl.login_credentials.username" />
+            </div>
+            <div class="homey-form-group-large">
+                <label class="homey-form-label" for="password" data-i18n="__tmpl.login_credentials.password"></label>
+                <input class="homey-form-input-large" id="password" name="password" type="password" value=""
+                    data-i18n-placeholder="__tmpl.login_credentials.password" />
+            </div>
+            <div class="homey-form-group-large">
+                <fieldset class="homey-form-radio-set custom-radio-grid">
+                    <legend class="homey-form-radio-set-title" id="radioGroup"></legend>
+
+                    <label class="homey-form-radio">
+                        <input class="homey-form-radio-input" type="radio" value="EU" name="region" checked />
+                        <span class="homey-form-radio-checkmark"></span>
+                        <span class="homey-form-radio-text">EU</span>
+                    </label>
+
+                    <label class="homey-form-radio">
+                        <input class="homey-form-radio-input" type="radio" value="US" name="region" />
+                        <span class="homey-form-radio-checkmark"></span>
+                        <span class="homey-form-radio-text">US</span>
+                    </label>
+                </fieldset>
+            </div>
+        </div>
+        <div class="__private__homey-login-credentials__footer">
+            <button tabindex="0" class="homey-button-primary-shadow-full __private__homey-login-credentials__button"
+                type="submit" data-i18n="__tmpl.login_credentials.login"></button>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+    (function () {
+        const $tmpl = document.getElementById('$HY_TMPL_ID');
+        const $form = $tmpl.querySelector('#login-credentials-form');
+        const $logo = $tmpl.querySelector('#login-credentials-logo');
+        const $title = $tmpl.querySelector('#login-credentials-title');
+        const $button = $tmpl.querySelector('button');
+        const $username = $tmpl.querySelector('input[name="username"]');
+        const $usernameLabel = $tmpl.querySelector('label[for="username"]');
+        const $password = $tmpl.querySelector('input[name="password"]');
+        const $passwordLabel = $tmpl.querySelector('label[for="password"]');
+        const $radioGroup = $tmpl.querySelector('#radioGroup');
+        let working = false;
+
+        // Hide default title bar
+        Homey.setTitle(null);
+
+        // Show custom title
+        $title.textContent = Homey.__('__tmpl.login_credentials.title');
+
+        Homey.getOptions(function (err, options) {
+            if (err) return Homey.error(err);
+
+            if (options.title) {
+                $title.textContent = Homey.__(options.title);
+            }
+
+            if (options.logo) {
+                $logo.style.backgroundImage = 'url(' + options.logo + ')';
+                $logo.classList.add('is-visible');
+            }
+
+            if (options.usernameLabel) {
+                $usernameLabel.textContent = Homey.__(options.usernameLabel);
+            }
+
+            if (options.usernamePlaceholder) {
+                $username.placeholder = Homey.__(options.usernamePlaceholder);
+            }
+
+            if (options.passwordLabel) {
+                $passwordLabel.textContent = Homey.__(options.passwordLabel);
+            }
+
+            if (options.passwordPlaceholder) {
+                $password.placeholder = Homey.__(options.passwordPlaceholder);
+            }
+
+            if (options.buttonText) {
+                $button.textContent = Homey.__(options.buttonText);
+            }
+
+            if (options.radioGroup) {
+                $radioGroup.textContent = Homey.__(options.radioGroup);
+            }
+        });
+
+        Homey.on('set_user', function (user) {
+                console.log('user', user);
+                $username.value = user;
+        });
+
+        Homey.on('set_password', function (password) {
+            console.log('password', password);
+            $password.value = password;
+        });
+
+        Homey.on('set_region', function (region) {
+            console.log('region', region);
+
+            $tmpl.querySelector('input[name="region"]:checked').checked = false;
+            $tmpl.querySelector('input[name="region"][value="' + region + '"]').checked = true;
+        });
+
+        $form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            if (working) {
+                return;
+            }
+
+            working = true;
+            Homey.showLoadingOverlay(Homey.__('pair.loading'));
+
+            const $username = $tmpl.querySelector('input[name="username"]');
+            const $password = $tmpl.querySelector('input[name="password"]');
+            const $region = $tmpl.querySelector('input[name="region"]:checked');
+
+            const username = $username.value;
+            const password = $password.value;
+            const region = $region.value;
+
+            Homey.emit(
+                'login',
+                {
+                    username: username,
+                    password: password,
+                    region: region
+                },
+                function (error, valid) {
+                    if (error) {
+                        Homey.error(error);
+                    } else if (!valid) {
+                        Homey.error(Homey.__('pair.no_data'));
+                    } else if (valid) {
+                        Homey.nextView();
+                    }
+
+                    working = false;
+                    Homey.hideLoadingOverlay();
+                },
+            );
+
+            return false;
+        });
+    })();
+</script>
