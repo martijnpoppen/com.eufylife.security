@@ -1405,5 +1405,8 @@
   },
   "3.23.0": {
     "en": "NEW: Indoor cam S350 | NEW: Enhance Minibase chime support T8023 | NEW: Floodlight Cam E340 | NEW: SoloCam C210 | NEW: enhanced login page | FIX: battery life"
+  },
+  "3.23.1": {
+    "en": "FIX: discovery of S350"
   }
 }
