@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.eufylife.security",
-  "version": "3.22.0",
+  "version": "3.23.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "brandColor": "#2a6185",
@@ -1816,7 +1816,7 @@
         {
           "id": "login_eufy",
           "options": {
-            "logo": "../../assets/icon.svg",
+            "logo": "../../../assets/icon.svg",
             "title": {
               "en": "Login with your Eufy account"
             },
@@ -2189,7 +2189,7 @@
         {
           "id": "login_eufy",
           "options": {
-            "logo": "../../assets/icon.svg",
+            "logo": "../../../assets/icon.svg",
             "title": {
               "en": "Login with your Eufy account"
             },
@@ -2600,7 +2600,7 @@
         {
           "id": "login_eufy",
           "options": {
-            "logo": "../../assets/icon.svg",
+            "logo": "../../../assets/icon.svg",
             "title": {
               "en": "Login with your Eufy account"
             },
@@ -3011,7 +3011,7 @@
         {
           "id": "login_eufy",
           "options": {
-            "logo": "../../assets/icon.svg",
+            "logo": "../../../assets/icon.svg",
             "title": {
               "en": "Login with your Eufy account"
             },
@@ -3423,7 +3423,7 @@
         {
           "id": "login_eufy",
           "options": {
-            "logo": "../../assets/icon.svg",
+            "logo": "../../../assets/icon.svg",
             "title": {
               "en": "Login with your Eufy account"
             },
@@ -3836,7 +3836,7 @@
         {
           "id": "login_eufy",
           "options": {
-            "logo": "../../assets/icon.svg",
+            "logo": "../../../assets/icon.svg",
             "title": {
               "en": "Login with your Eufy account"
             },
@@ -4248,7 +4248,7 @@
         {
           "id": "login_eufy",
           "options": {
-            "logo": "../../assets/icon.svg",
+            "logo": "../../../assets/icon.svg",
             "title": {
               "en": "Login with your Eufy account"
             },
@@ -4660,7 +4660,7 @@
         {
           "id": "login_eufy",
           "options": {
-            "logo": "../../assets/icon.svg",
+            "logo": "../../../assets/icon.svg",
             "title": {
               "en": "Login with your Eufy account"
             },
@@ -5072,7 +5072,7 @@
         {
           "id": "login_eufy",
           "options": {
-            "logo": "../../assets/icon.svg",
+            "logo": "../../../assets/icon.svg",
             "title": {
               "en": "Login with your Eufy account"
             },
@@ -5480,7 +5480,7 @@
         {
           "id": "login_eufy",
           "options": {
-            "logo": "../../assets/icon.svg",
+            "logo": "../../../assets/icon.svg",
             "title": {
               "en": "Login with your Eufy account"
             },
@@ -5885,7 +5885,7 @@
         {
           "id": "login_eufy",
           "options": {
-            "logo": "../../assets/icon.svg",
+            "logo": "../../../assets/icon.svg",
             "title": {
               "en": "Login with your Eufy account"
             },
@@ -6388,7 +6388,7 @@
         {
           "id": "login_eufy",
           "options": {
-            "logo": "../../assets/icon.svg",
+            "logo": "../../../assets/icon.svg",
             "title": {
               "en": "Login with your Eufy account"
             },
@@ -6893,7 +6893,7 @@
         {
           "id": "login_eufy",
           "options": {
-            "logo": "../../assets/icon.svg",
+            "logo": "../../../assets/icon.svg",
             "title": {
               "en": "Login with your Eufy account"
             },
@@ -7373,7 +7373,7 @@
         {
           "id": "login_eufy",
           "options": {
-            "logo": "../../assets/icon.svg",
+            "logo": "../../../assets/icon.svg",
             "title": {
               "en": "Login with your Eufy account"
             },
@@ -7853,7 +7853,7 @@
         {
           "id": "login_eufy",
           "options": {
-            "logo": "../../assets/icon.svg",
+            "logo": "../../../assets/icon.svg",
             "title": {
               "en": "Login with your Eufy account"
             },
@@ -8333,7 +8333,7 @@
         {
           "id": "login_eufy",
           "options": {
-            "logo": "../../assets/icon.svg",
+            "logo": "../../../assets/icon.svg",
             "title": {
               "en": "Login with your Eufy account"
             },
@@ -8812,7 +8812,7 @@
         {
           "id": "login_eufy",
           "options": {
-            "logo": "../../assets/icon.svg",
+            "logo": "../../../assets/icon.svg",
             "title": {
               "en": "Login with your Eufy account"
             },
@@ -9318,7 +9318,7 @@
         {
           "id": "login_eufy",
           "options": {
-            "logo": "../../assets/icon.svg",
+            "logo": "../../../assets/icon.svg",
             "title": {
               "en": "Login with your Eufy account"
             },
@@ -9824,7 +9824,7 @@
         {
           "id": "login_eufy",
           "options": {
-            "logo": "../../assets/icon.svg",
+            "logo": "../../../assets/icon.svg",
             "title": {
               "en": "Login with your Eufy account"
             },
@@ -10335,7 +10335,7 @@
         {
           "id": "login_eufy",
           "options": {
-            "logo": "../../assets/icon.svg",
+            "logo": "../../../assets/icon.svg",
             "title": {
               "en": "Login with your Eufy account"
             },
@@ -10814,7 +10814,7 @@
         {
           "id": "login_eufy",
           "options": {
-            "logo": "../../assets/icon.svg",
+            "logo": "../../../assets/icon.svg",
             "title": {
               "en": "Login with your Eufy account"
             },
@@ -11187,7 +11187,7 @@
         {
           "id": "login_eufy",
           "options": {
-            "logo": "../../assets/icon.svg",
+            "logo": "../../../assets/icon.svg",
             "title": {
               "en": "Login with your Eufy account"
             },
@@ -11698,7 +11698,7 @@
         {
           "id": "login_eufy",
           "options": {
-            "logo": "../../assets/icon.svg",
+            "logo": "../../../assets/icon.svg",
             "title": {
               "en": "Login with your Eufy account"
             },
@@ -12209,7 +12209,7 @@
         {
           "id": "login_eufy",
           "options": {
-            "logo": "../../assets/icon.svg",
+            "logo": "../../../assets/icon.svg",
             "title": {
               "en": "Login with your Eufy account"
             },
@@ -12721,7 +12721,7 @@
         {
           "id": "login_eufy",
           "options": {
-            "logo": "../../assets/icon.svg",
+            "logo": "../../../assets/icon.svg",
             "title": {
               "en": "Login with your Eufy account"
             },
@@ -13231,7 +13231,7 @@
         {
           "id": "login_eufy",
           "options": {
-            "logo": "../../assets/icon.svg",
+            "logo": "../../../assets/icon.svg",
             "title": {
               "en": "Login with your Eufy account"
             },
@@ -13741,7 +13741,7 @@
         {
           "id": "login_eufy",
           "options": {
-            "logo": "../../assets/icon.svg",
+            "logo": "../../../assets/icon.svg",
             "title": {
               "en": "Login with your Eufy account"
             },
@@ -14252,7 +14252,7 @@
         {
           "id": "login_eufy",
           "options": {
-            "logo": "../../assets/icon.svg",
+            "logo": "../../../assets/icon.svg",
             "title": {
               "en": "Login with your Eufy account"
             },
@@ -14763,7 +14763,7 @@
         {
           "id": "login_eufy",
           "options": {
-            "logo": "../../assets/icon.svg",
+            "logo": "../../../assets/icon.svg",
             "title": {
               "en": "Login with your Eufy account"
             },
@@ -15177,7 +15177,7 @@
         {
           "id": "login_eufy",
           "options": {
-            "logo": "../../assets/icon.svg",
+            "logo": "../../../assets/icon.svg",
             "title": {
               "en": "Login with your Eufy account"
             },
@@ -15689,7 +15689,7 @@
         {
           "id": "login_eufy",
           "options": {
-            "logo": "../../assets/icon.svg",
+            "logo": "../../../assets/icon.svg",
             "title": {
               "en": "Login with your Eufy account"
             },
@@ -16102,7 +16102,7 @@
         {
           "id": "login_eufy",
           "options": {
-            "logo": "../../assets/icon.svg",
+            "logo": "../../../assets/icon.svg",
             "title": {
               "en": "Login with your Eufy account"
             },
@@ -16608,7 +16608,7 @@
         {
           "id": "login_eufy",
           "options": {
-            "logo": "../../assets/icon.svg",
+            "logo": "../../../assets/icon.svg",
             "title": {
               "en": "Login with your Eufy account"
             },
@@ -17025,7 +17025,7 @@
         {
           "id": "login_eufy",
           "options": {
-            "logo": "../../assets/icon.svg",
+            "logo": "../../../assets/icon.svg",
             "title": {
               "en": "Login with your Eufy account"
             },
