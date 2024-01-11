@@ -1411,5 +1411,8 @@
   },
   "3.23.2": {
     "en": "FIX: Eufy e330 remove battery"
+  },
+  "3.23.3": {
+    "en": "FIX: c210 flowcards"
   }
 }
