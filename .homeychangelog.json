@@ -1408,5 +1408,8 @@
   },
   "3.23.1": {
     "en": "FIX: discovery of S350"
+  },
+  "3.23.2": {
+    "en": "FIX: Eufy e330 remove battery"
   }
 }
