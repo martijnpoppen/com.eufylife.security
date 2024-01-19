@@ -12,7 +12,7 @@ module.exports = class mainHub extends mainDevice {
 
             this.setUnavailable(`${this.getName()} ${this.homey.__('device.init')}`);
 
-            await sleep((index + 1) * 7000);
+            await sleep((index + 1) * 1000);
 
             this.EufyStation = await this.homey.app.eufyClient.getStation(this.HomeyDevice.station_sn);
 

@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "eufy-security-client": "https://github.com/martijnpoppen/eufy-security-client/tarball/homey-integration",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.1",
+    "pubsub-ws": "^1.0.3"
   }
 }
