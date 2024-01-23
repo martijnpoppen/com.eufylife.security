@@ -1417,5 +1417,8 @@
   },
   "3.23.4": {
     "en": "FIX: app store message"
+  },
+  "3.24.0": {
+    "en": "NEW: Snapshots"
   }
 }
