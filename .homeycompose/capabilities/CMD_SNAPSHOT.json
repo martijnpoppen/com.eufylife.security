@@ -1,0 +1,10 @@
+{
+  "id": "CMD_SNAPSHOT",
+  "type": "string",
+  "uiComponent": null,
+  "getable": true,
+  "setable": false,
+  "title": {
+    "en": "Snapshot"
+  }
+}

@@ -12,7 +12,9 @@ module.exports = class mainDevice extends Homey.Device {
     }
 
     async onStartup(initial = false, index) {
-        try {
+        try {            
+            const settings = this.getSettings();
+
             this.homey.app.log(`[Device] ${this.getName()} - starting`);
 
             this.setUnavailable(`${this.getName()} ${this.homey.__('device.init')}`);
@@ -21,28 +23,29 @@ module.exports = class mainDevice extends Homey.Device {
 
             this.EufyDevice = await this.homey.app.eufyClient.getDevice(this.HomeyDevice.device_sn);
             this.HomeyDevice.station_sn = await this.EufyDevice.getStationSerial();
+            this.EufyStation = await this.homey.app.eufyClient.getStation(this.HomeyDevice.station_sn);
+
             this.HomeyDevice.isStandAlone = this.HomeyDevice.device_sn === this.HomeyDevice.station_sn;
+            this.EufyStation.rawStation.member.nick_name = 'Homey';
 
             this.homey.app.log(
                 `[Device] ${this.getName()} - starting - isStandAlone: ${this.HomeyDevice.isStandAlone} - station_sn: ${this.HomeyDevice.station_sn} - device_sn: ${this.HomeyDevice.device_sn}`
             );
 
-            this.EufyStation = await this.homey.app.eufyClient.getStation(this.HomeyDevice.station_sn);
+            if ('snapshot_enabled' in settings && !!settings.snapshot_enabled) {
+                await this.setImage('snapshot');
+            }
 
-            this.EufyStation.rawStation.member.nick_name = 'Homey';
-
-            await this.deviceImage();
+            await this.setImage('event');
 
             if (initial) {
-                const settings = this.getSettings();
-
                 await this.checkCapabilities();
-
                 await this.resetCapabilities();
 
                 await this.check_alarm_arm_mode(settings);
                 await this.check_alarm_generic(settings);
                 await this.check_alarm_motion(settings);
+                await this.check_CMD_SNAPSHOT(settings);
 
                 await this.setCapabilitiesListeners();
             } else {
@@ -94,6 +97,10 @@ module.exports = class mainDevice extends Homey.Device {
             this.check_alarm_arm_mode(newSettings);
         }
 
+        if (changedKeys.includes('snapshot_enabled')) {
+            this.check_CMD_SNAPSHOT(newSettings);
+        }
+
         if (changedKeys.includes('LOCAL_STATION_IP')) {
             let appSettings = this.homey.app.appSettings;
             appSettings.STATION_IPS[this.HomeyDevice.station_sn] = newSettings.LOCAL_STATION_IP;
@@ -120,7 +127,10 @@ module.exports = class mainDevice extends Homey.Device {
         this.HomeyDevice.isStandAlone = this.HomeyDevice.device_sn === this.HomeyDevice.station_sn;
         // inital set of isStandAlone. Override in onStartup for cameras that can be used with Homebase's
 
-        this._image = null;
+        this._image = {
+            snapshot: null,
+            event: null
+        };
         this._started = false;
 
         await sleep(9000);
@@ -461,6 +471,20 @@ module.exports = class mainDevice extends Homey.Device {
         }
     }
 
+    async onCapability_CMD_SNAPSHOT(time) {
+        try {
+            if (time > 0) {
+                await this.homey.app.eufyClient.setCameraMaxLivestreamDuration(time);
+            }
+
+            await this.homey.app.eufyClient.startStationLivestream(this.HomeyDevice.device_sn);
+            await sleep((time + 1) * 1000);
+        } catch (e) {
+            this.homey.app.error(e);
+            return Promise.reject(e);
+        }
+    }
+
     async onCapability_NTFY_TRIGGER(message, value) {
         try {
             this.homey.app.log(`[Device] ${this.getName()} - onCapability_NTFY_TRIGGER => `, message, value);
@@ -504,32 +528,41 @@ module.exports = class mainDevice extends Homey.Device {
         }
     }
 
-    async deviceImage() {
+    async setImage(imageType) {
         try {
             this.unsetWarning();
-            if (!this._image) {
-                this._imageSet = false;
-                this._image = await this.homey.images.createImage();
+            if (!this._image[imageType]) {
+                this._image[imageType] = await this.homey.images.createImage();
 
-                this.homey.app.log(`[Device] ${this.getName()} - Registering Device image`);
+                this.homey.app.log(`[Device] ${this.getName()} - Registering ${imageType} image`);
+                
+                const imageName = imageType === 'event' ? 'Event' : 'Snapshot'
+                const imageID = imageType === 'event' ? this.HomeyDevice.station_sn : `${this.HomeyDevice.device_sn}-Snapshot`;
 
-                this.setCameraImage(this.HomeyDevice.station_sn, this.getName(), this._image).catch(err => console.log(err));
+                this.setCameraImage(imageID, `${this.getName()} - ${imageName}`, this._image[imageType]).catch(err => console.log(err));
             }
 
-            await this._image.setStream(async (stream) => {
-                let image = this.EufyDevice.getPropertyValue(PropertyName.DevicePicture)
+            await this._image[imageType].setStream(async (stream) => {
+                let imageSource = null;
 
-                this.homey.app.log(`[Device] ${this.getName()} - Setting image - `, image);
+                if(imageType === 'event') {
+                    this.homey.app.log(`[Device] ${this.getName()} - Setting image source ${imageType}`);
+                    const devicePicture = this.EufyDevice.getPropertyValue(PropertyName.DevicePicture)
+                    imageSource = devicePicture ? devicePicture.data : null;
+                } else if(imageType === 'snapshot') {
+                    this.homey.app.log(`[Device] ${this.getName()} - Setting image source ${imageType}`);
+                    imageSource = this.homey.app.snapshots[this.HomeyDevice.device_sn]
 
-                if (image && image.data) {
-                    this._imageSet = true
-                    return bufferToStream(image.data).pipe(stream);
-                } else if(!this._imageSet) {
+                }
+
+                this.homey.app.log(`[Device] ${this.getName()} - Setting image ${imageType} - `, imageSource);
+
+                if (imageSource) {
+                    return bufferToStream(imageSource).pipe(stream);
+                } else {
                     const imagePath = `https://raw.githubusercontent.com/martijnpoppen/com.eufylife.security/main/assets/images/large.jpg`
 
                     this.homey.app.log(`[Device] ${this.getName()} - Setting fallback image - `, imagePath);
-
-                    this._imageSet = true;
 
                     let res = await fetch(imagePath);
                     return res.body.pipe(stream);
@@ -641,6 +674,24 @@ module.exports = class mainDevice extends Homey.Device {
         } else if ('alarm_generic_enabled' in settings && !!settings.alarm_generic_enabled && !this.hasCapability('alarm_generic')) {
             this.homey.app.log(`[Device] ${this.getName()} - check_alarm_generic: adding alarm_generic`);
             this.addCapability('alarm_generic');
+        }
+    }
+
+    async check_CMD_SNAPSHOT(settings) {
+        if ('snapshot_enabled' in settings && !settings.snapshot_enabled && this.hasCapability('CMD_SNAPSHOT')) {
+            this.homey.app.log(`[Device] ${this.getName()} - check_CMD_SNAPSHOT: removing CMD_SNAPSHOT`);
+
+            this.removeCapability('CMD_SNAPSHOT');
+
+            if(this._image['snapshot']) {
+                await this.homey.images.unregisterImage(this._image['snapshot']);
+            }
+        } else if ('snapshot_enabled' in settings && !!settings.snapshot_enabled) {
+            this.homey.app.log(`[Device] ${this.getName()} - check_CMD_SNAPSHOT: adding CMD_SNAPSHOT`);
+            
+            this.addCapability('CMD_SNAPSHOT').catch(e => this.homey.app.log(e));
+
+            await this.setImage('snapshot');
         }
     }
 };

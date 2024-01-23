@@ -84,6 +84,8 @@ class App extends Homey.App {
         this.needCaptcha = null;
         this.need2FA = null;
 
+        this.snapshots = {};
+
         this.homey.settings.getKeys().forEach((key) => {
             if (key == _settingsKey) {
                 this.settingsInitialized = true;
@@ -479,6 +481,17 @@ class App extends Homey.App {
 
     async setDevice(device) {
         this.deviceList = [...this.deviceList, device];
+
+        await this.eufyNotificationCheckHelper.setDevices(this.deviceList);
+        await this.eufyEventsHelper.setDevices(this.deviceList);
+    }
+
+    async replaceDevice(device) {
+        const filteredDeviceList = this.deviceList.filter((dl) => {
+            const data = dl.getData();
+            return data.device_sn !== device.getData().device_sn;
+        });
+        this.deviceList = [...filteredDeviceList, device];
 
         await this.eufyNotificationCheckHelper.setDevices(this.deviceList);
         await this.eufyEventsHelper.setDevices(this.deviceList);
