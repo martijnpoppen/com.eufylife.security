@@ -1423,5 +1423,8 @@
   },
   "3.24.1": {
     "en": "NEW: Snapshots"
+  },
+  "3.24.2": {
+    "en": "FIX: HB3 increase snapshot time"
   }
 }
