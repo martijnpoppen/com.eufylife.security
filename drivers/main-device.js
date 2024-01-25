@@ -12,7 +12,7 @@ module.exports = class mainDevice extends Homey.Device {
     }
 
     async onStartup(initial = false, index) {
-        try {            
+        try {
             const settings = this.getSettings();
 
             this.homey.app.log(`[Device] ${this.getName()} - starting`);
@@ -471,12 +471,21 @@ module.exports = class mainDevice extends Homey.Device {
         }
     }
 
-    async onCapability_CMD_SNAPSHOT(time) {
+    async onCapability_CMD_SNAPSHOT(type = 'snapshot') {
         try {
-            if (time > 0) {
-                await this.homey.app.eufyClient.setCameraMaxLivestreamDuration(time);
+            if (this.EufyStation.isLiveStreaming(this.EufyDevice)) {
+                throw new Error('Already livestreaming / Taking snapshot');
             }
 
+            let time = 3;
+
+            if (type === 'snapshot' && this.homey.app.deviceTypes.HOMEBASE_3.some((v) => this.HomeyDevice.station_sn.includes(v))) {
+                time = 5;
+            } else if (type === 'gif') {
+                time = 11;
+            }
+
+            await this.homey.app.eufyClient.setCameraMaxLivestreamDuration(time);
             await this.homey.app.eufyClient.startStationLivestream(this.HomeyDevice.device_sn);
             await sleep((time + 1) * 1000);
         } catch (e) {
@@ -535,24 +544,23 @@ module.exports = class mainDevice extends Homey.Device {
                 this._image[imageType] = await this.homey.images.createImage();
 
                 this.homey.app.log(`[Device] ${this.getName()} - Registering ${imageType} image`);
-                
-                const imageName = imageType === 'event' ? 'Event' : 'Snapshot'
+
+                const imageName = imageType === 'event' ? 'Event' : 'Snapshot';
                 const imageID = imageType === 'event' ? this.HomeyDevice.station_sn : `${this.HomeyDevice.device_sn}-Snapshot`;
 
-                this.setCameraImage(imageID, `${this.getName()} - ${imageName}`, this._image[imageType]).catch(err => console.log(err));
+                this.setCameraImage(imageID, `${this.getName()} - ${imageName}`, this._image[imageType]).catch((err) => console.log(err));
             }
 
             await this._image[imageType].setStream(async (stream) => {
                 let imageSource = null;
 
-                if(imageType === 'event') {
+                if (imageType === 'event') {
                     this.homey.app.log(`[Device] ${this.getName()} - Setting image source ${imageType}`);
-                    const devicePicture = this.EufyDevice.getPropertyValue(PropertyName.DevicePicture)
+                    const devicePicture = this.EufyDevice.getPropertyValue(PropertyName.DevicePicture);
                     imageSource = devicePicture ? devicePicture.data : null;
-                } else if(imageType === 'snapshot') {
+                } else if (imageType === 'snapshot') {
                     this.homey.app.log(`[Device] ${this.getName()} - Setting image source ${imageType}`);
-                    imageSource = this.homey.app.snapshots[this.HomeyDevice.device_sn]
-
+                    imageSource = this.homey.app.snapshots[this.HomeyDevice.device_sn];
                 }
 
                 this.homey.app.log(`[Device] ${this.getName()} - Setting image ${imageType} - `, imageSource);
@@ -560,7 +568,7 @@ module.exports = class mainDevice extends Homey.Device {
                 if (imageSource) {
                     return bufferToStream(imageSource).pipe(stream);
                 } else {
-                    const imagePath = `https://raw.githubusercontent.com/martijnpoppen/com.eufylife.security/main/assets/images/large.jpg`
+                    const imagePath = `https://raw.githubusercontent.com/martijnpoppen/com.eufylife.security/main/assets/images/large.jpg`;
 
                     this.homey.app.log(`[Device] ${this.getName()} - Setting fallback image - `, imagePath);
 
@@ -683,13 +691,13 @@ module.exports = class mainDevice extends Homey.Device {
 
             this.removeCapability('CMD_SNAPSHOT');
 
-            if(this._image['snapshot']) {
+            if (this._image['snapshot']) {
                 await this.homey.images.unregisterImage(this._image['snapshot']);
             }
         } else if ('snapshot_enabled' in settings && !!settings.snapshot_enabled) {
             this.homey.app.log(`[Device] ${this.getName()} - check_CMD_SNAPSHOT: adding CMD_SNAPSHOT`);
-            
-            this.addCapability('CMD_SNAPSHOT').catch(e => this.homey.app.log(e));
+
+            this.addCapability('CMD_SNAPSHOT').catch((e) => this.homey.app.log(e));
 
             await this.setImage('snapshot');
         }
