@@ -1426,5 +1426,8 @@
   },
   "3.24.2": {
     "en": "FIX: HB3 increase snapshot time"
+  },
+  "3.24.3": {
+    "en": "FIX: s340 vehicle detection | FIX: distorted snapshot images HB3 | FIX: rate limit on snapshot server"
   }
 }
