@@ -473,14 +473,15 @@ module.exports = class mainDevice extends Homey.Device {
 
     async onCapability_CMD_SNAPSHOT(type = 'snapshot') {
         try {
-            if (this.EufyStation.isLiveStreaming(this.EufyDevice)) {
-                throw new Error('Already livestreaming / Taking snapshot');
-            }
+            // if (this.EufyStation.isLiveStreaming(this.EufyDevice)) {
+            //     throw new Error('Already livestreaming / Taking snapshot');
+            // }
 
             let time = 3;
 
             if (type === 'snapshot' && this.homey.app.deviceTypes.HOMEBASE_3.some((v) => this.HomeyDevice.station_sn.includes(v))) {
-                time = 5;
+                // different timing for HB 3 devices
+                time = 3;
             } else if (type === 'gif') {
                 time = 11;
             }
@@ -561,6 +562,10 @@ module.exports = class mainDevice extends Homey.Device {
                 } else if (imageType === 'snapshot') {
                     this.homey.app.log(`[Device] ${this.getName()} - Setting image source ${imageType}`);
                     imageSource = this.homey.app.snapshots[this.HomeyDevice.device_sn];
+
+                    if(typeof imageSource === 'string') {
+                        imageSource = null;
+                    }
                 }
 
                 this.homey.app.log(`[Device] ${this.getName()} - Setting image ${imageType} - `, imageSource);
