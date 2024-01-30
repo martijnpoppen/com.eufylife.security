@@ -188,22 +188,17 @@ class App extends Homey.App {
 
     async sendNotifications() {
         try {
-            const ntfy2024013001 = `[Eufy Security] (1/2) - New: Snapshot flowcard added! Enable snapshots in the device settings.`;
-            const ntfy2024013002 = `[Eufy Security] (2/2) - NOTE: The snapshot card will use a external service which runs FFMPEG to generate the snapshot. This service is hosted by the developer of this app and is free to use. The service will only be used when the snapshot setting is enabled. All data is send encrypted and will not be stored on the server.`;
+            const ntfy2024013003 = `[Eufy Security] (1/1) - NEW: Snapshot flowcard added! Enable snapshots in the device settings. (see info icon in settings before usage)`;
             
 
-            if (!this.appSettings.NOTIFICATIONS.includes('ntfy2024013002')) {
+            if (!this.appSettings.NOTIFICATIONS.includes('ntfy2024013003')) {
                 await this.homey.notifications.createNotification({
-                    excerpt: ntfy2024013001
-                });
-
-                await this.homey.notifications.createNotification({
-                    excerpt: ntfy2024013002
+                    excerpt: ntfy2024013003
                 });
 
                 await this.updateSettings({
                     ...this.appSettings,
-                    NOTIFICATIONS: [...this.appSettings.NOTIFICATIONS, 'ntfy2024013001', 'ntfy2024013002']
+                    NOTIFICATIONS: [...this.appSettings.NOTIFICATIONS, 'ntfy2024013003']
                 });
             }
         } catch (error) {

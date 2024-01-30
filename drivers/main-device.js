@@ -486,7 +486,7 @@ module.exports = class mainDevice extends Homey.Device {
         try {
             const settings = this.getSettings();
             if (!settings.snapshot_enabled) {
-                throw new Error('Please enable snapshot in device settings to consent with external service. This is required to use this feature');
+                throw new Error('Please enable snapshots in the device settings. (see info icon in settings before usage)');
             }
 
             let time = 3;
