@@ -1429,5 +1429,11 @@
   },
   "3.24.3": {
     "en": "FIX: s340 vehicle detection | FIX: distorted snapshot images HB3 | FIX: rate limit on snapshot server"
+  },
+  "3.24.4": {
+    "en": "FIX: crash report fix"
+  },
+  "3.24.5": {
+    "en": "NEW: Snapshots!"
   }
 }
