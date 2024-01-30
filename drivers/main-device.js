@@ -224,7 +224,7 @@ module.exports = class mainDevice extends Homey.Device {
 
             oldC.forEach((c) => {
                 this.homey.app.log(`[Device] ${this.getName()} - updateCapabilities => Remove `, c);
-                this.removeCapability(c);
+                this.removeCapability(c).catch(e => this.homey.app.log(e));
             });
             await sleep(2000);
             newC.forEach((c) => {
@@ -663,30 +663,30 @@ module.exports = class mainDevice extends Homey.Device {
     async check_alarm_arm_mode(settings) {
         if (settings.alarm_arm_mode === 'disabled' && this.hasCapability('alarm_arm_mode')) {
             this.homey.app.log(`[Device] ${this.getName()} - check_alarm_arm_mode: removing alarm_arm_mode`);
-            this.removeCapability('alarm_arm_mode');
+            this.removeCapability('alarm_arm_mode').catch(e => this.homey.app.log(e));
         } else if (!!settings.alarm_arm_mode && !this.hasCapability('alarm_arm_mode')) {
             this.homey.app.log(`[Device] ${this.getName()} - check_alarm_arm_mode: adding alarm_arm_mode`);
-            this.addCapability('alarm_arm_mode');
+            this.addCapability('alarm_arm_mode').catch(e => this.homey.app.log(e));
         }
     }
 
     async check_alarm_motion(settings) {
         if ('alarm_motion_enabled' in settings && !settings.alarm_motion_enabled && this.hasCapability('alarm_motion')) {
             this.homey.app.log(`[Device] ${this.getName()} - check_alarm_motion: removing alarm_motion`);
-            this.removeCapability('alarm_motion');
+            this.removeCapability('alarm_motion').catch(e => this.homey.app.log(e));
         } else if ('alarm_motion_enabled' in settings && !!settings.alarm_motion_enabled && !this.hasCapability('alarm_motion')) {
             this.homey.app.log(`[Device] ${this.getName()} - check_alarm_motion: adding alarm_motion`);
-            this.addCapability('alarm_motion');
+            this.addCapability('alarm_motion').catch(e => this.homey.app.log(e));
         }
     }
 
     async check_alarm_generic(settings) {
         if ('alarm_generic_enabled' in settings && !settings.alarm_generic_enabled && this.hasCapability('alarm_generic')) {
             this.homey.app.log(`[Device] ${this.getName()} - check_alarm_generic: removing alarm_generic`);
-            this.removeCapability('alarm_generic');
+            this.removeCapability('alarm_generic').catch(e => this.homey.app.log(e));
         } else if ('alarm_generic_enabled' in settings && !!settings.alarm_generic_enabled && !this.hasCapability('alarm_generic')) {
             this.homey.app.log(`[Device] ${this.getName()} - check_alarm_generic: adding alarm_generic`);
-            this.addCapability('alarm_generic');
+            this.addCapability('alarm_generic').catch(e => this.homey.app.log(e));
         }
     }
 
@@ -694,7 +694,7 @@ module.exports = class mainDevice extends Homey.Device {
         if ('snapshot_enabled' in settings && !settings.snapshot_enabled && this.hasCapability('CMD_SNAPSHOT')) {
             this.homey.app.log(`[Device] ${this.getName()} - check_CMD_SNAPSHOT: removing CMD_SNAPSHOT`);
 
-            this.removeCapability('CMD_SNAPSHOT');
+            this.removeCapability('CMD_SNAPSHOT').catch(e => this.homey.app.log(e));
 
             if (this._image['snapshot']) {
                 await this.homey.images.unregisterImage(this._image['snapshot']);

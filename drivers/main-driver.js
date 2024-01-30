@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const Homey = require('homey');
 const { sleep } = require('../lib/utils.js');
@@ -33,88 +33,92 @@ module.exports = class mainDriver extends Homey.Driver {
         this._devices = [];
 
         session.setHandler('showView', async (view) => {
-            this.homey.app.log(`[Driver] ${this.id} - currentView:`, { view, type: this.type, deviceError: this.deviceError });
+            try {
+                this.homey.app.log(`[Driver] ${this.id} - currentView:`, { view, type: this.type, deviceError: this.deviceError });
 
-            if (view === 'login_eufy' && this.id.includes('KEYPAD')) {
-                this.deviceError = this.homey.__('pair.keypad');
+                if (view === 'login_eufy' && this.id.includes('KEYPAD')) {
+                    this.deviceError = this.homey.__('pair.keypad');
 
-                session.showView('error');
-                return true;
-            }
-
-            if (view === 'login_eufy') {
-                this.appSettings = this.homey.app.appSettings;
-
-                if (this.appSettings && this.appSettings.USERNAME && this.appSettings.PASSWORD) {
-                    session.emit('set_user', this.appSettings.USERNAME);
-                    session.emit('set_password', this.appSettings.PASSWORD);
-                    session.emit('set_region', this.appSettings.REGION);
-                }
-            }
-
-            if (view === 'login_eufy' && this.type === 'pair' && !this.deviceError && this.homey.app.eufyClient && this.homey.app.eufyClient.isConnected()) {
-                session.showView('loading');
-                return true;
-            }
-
-            if (view === 'login_captcha' && this.homey.app.needCaptcha) {
-                await session.emit('set_captcha', this.homey.app.needCaptcha.captcha);
-            }
-
-            if (view === 'error' && this.deviceError) {
-                await session.emit('deviceError', this.deviceError);
-            }
-
-            if (view === 'loading') {
-                await sleep(3000);
-                this.homey.app.eufyClient.devicesLoaded = true;
-
-                if (this.homey.app.needCaptcha) {
-                    this.homey.app.log(`[Driver] ${this.id} - needCaptcha`);
-                    session.showView('login_captcha');
-
-                    return [];
-                } 
-                
-                if (this.homey.app.need2FA) {
-                    this.homey.app.log(`[Driver] ${this.id} - need2FA`);
-                    session.showView('pincode');
-
-                    return [];
-                } 
-                
-                this.deviceList = await waitForResults(this);
-
-                this.homey.app.log(`[Driver] ${this.id} - deviceList:`, this.deviceList.length, !!this.deviceList.length);
-                
-                if (!!this.deviceList.length) {
-                    this._devices = await this.onDeviceListRequest(this.id);
-
-                    this.homey.app.log(`[Driver] ${this.id} - Found new devices:`, this._devices);
-
-                    if (this.type === 'repair') {
-                        this.homey.app.initDevices();
-                        this.homey.app.log(`[Driver] ${this.id} - list_devices: repair mode -> Closing repair`);
-                        return session.showView('done');
-                    } else if (this._devices && this._devices.length) {
-                        session.showView('list_devices');
-                    } else if (this._devices && !!this._devices.info) {
-                        this.deviceError = this._devices.info;
-
-                        session.showView('error');
-                    } else {
-                        this.deviceError = this.homey.__('pair.no_devices');
-
-                        session.showView('error');
-                    }
-                } else {
-                    this.deviceError = this.type === 'repair' ? this.homey.__('pair.no_devices_repair') : this.homey.__('pair.no_devices');
                     session.showView('error');
-
-                    return [];
+                    return true;
                 }
 
-                return true;
+                if (view === 'login_eufy') {
+                    this.appSettings = this.homey.app.appSettings;
+
+                    if (this.appSettings && this.appSettings.USERNAME && this.appSettings.PASSWORD) {
+                        session.emit('set_user', this.appSettings.USERNAME);
+                        session.emit('set_password', this.appSettings.PASSWORD);
+                        session.emit('set_region', this.appSettings.REGION);
+                    }
+                }
+
+                if (view === 'login_eufy' && this.type === 'pair' && !this.deviceError && this.homey.app.eufyClient && this.homey.app.eufyClient.isConnected()) {
+                    session.showView('loading');
+                    return true;
+                }
+
+                if (view === 'login_captcha' && this.homey.app.needCaptcha) {
+                    await session.emit('set_captcha', this.homey.app.needCaptcha.captcha);
+                }
+
+                if (view === 'error' && this.deviceError) {
+                    await session.emit('deviceError', this.deviceError);
+                }
+
+                if (view === 'loading') {
+                    await sleep(3000);
+                    this.homey.app.eufyClient.devicesLoaded = true;
+
+                    if (this.homey.app.needCaptcha) {
+                        this.homey.app.log(`[Driver] ${this.id} - needCaptcha`);
+                        session.showView('login_captcha');
+
+                        return [];
+                    }
+
+                    if (this.homey.app.need2FA) {
+                        this.homey.app.log(`[Driver] ${this.id} - need2FA`);
+                        session.showView('pincode');
+
+                        return [];
+                    }
+
+                    this.deviceList = await waitForResults(this);
+
+                    this.homey.app.log(`[Driver] ${this.id} - deviceList:`, this.deviceList.length, !!this.deviceList.length);
+
+                    if (!!this.deviceList.length) {
+                        this._devices = await this.onDeviceListRequest(this.id);
+
+                        this.homey.app.log(`[Driver] ${this.id} - Found new devices:`, this._devices);
+
+                        if (this.type === 'repair') {
+                            this.homey.app.initDevices();
+                            this.homey.app.log(`[Driver] ${this.id} - list_devices: repair mode -> Closing repair`);
+                            return session.showView('done');
+                        } else if (this._devices && this._devices.length) {
+                            session.showView('list_devices');
+                        } else if (this._devices && !!this._devices.info) {
+                            this.deviceError = this._devices.info;
+
+                            session.showView('error');
+                        } else {
+                            this.deviceError = this.homey.__('pair.no_devices');
+
+                            session.showView('error');
+                        }
+                    } else {
+                        this.deviceError = this.type === 'repair' ? this.homey.__('pair.no_devices_repair') : this.homey.__('pair.no_devices');
+                        session.showView('error');
+
+                        return [];
+                    }
+
+                    return true;
+                }
+            } catch (error) {
+                this.homey.app.log(`[Driver] ${this.id} - Error:`, error);
             }
         });
 
