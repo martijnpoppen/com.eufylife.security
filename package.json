@@ -6,6 +6,9 @@
     "type": "git",
     "url": "https://github.com/martijnpoppen/com.eufylife.security"
   },
+  "scripts": {
+    "pretty": "prettier --write \"./drivers/**/*.json\"" 
+  },
   "dependencies": {
     "eufy-security-client": "https://github.com/martijnpoppen/eufy-security-client/tarball/homey-integration",
     "form-data": "^4.0.0",

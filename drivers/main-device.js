@@ -32,7 +32,7 @@ module.exports = class mainDevice extends Homey.Device {
                 `[Device] ${this.getName()} - starting - isStandAlone: ${this.HomeyDevice.isStandAlone} - station_sn: ${this.HomeyDevice.station_sn} - device_sn: ${this.HomeyDevice.device_sn}`
             );
 
-            if ('snapshot_enabled' in settings && !!settings.snapshot_enabled) {
+            if (settings.snapshot_enabled) {
                 await this.setImage('snapshot');
             }
 
@@ -45,7 +45,6 @@ module.exports = class mainDevice extends Homey.Device {
                 await this.check_alarm_arm_mode(settings);
                 await this.check_alarm_generic(settings);
                 await this.check_alarm_motion(settings);
-                await this.check_CMD_SNAPSHOT(settings);
 
                 await this.setCapabilitiesListeners();
             } else {
@@ -98,7 +97,19 @@ module.exports = class mainDevice extends Homey.Device {
         }
 
         if (changedKeys.includes('snapshot_enabled')) {
-            this.check_CMD_SNAPSHOT(newSettings);
+            if (settings.snapshot_enabled) {
+                this.homey.app.log(`[Device] ${this.getName()} - check_CMD_SNAPSHOT: adding CMD_SNAPSHOT`);
+    
+                if (!this._image['snapshot']) {
+                    await this.setImage('snapshot');
+                }
+            } else {
+                this.homey.app.log(`[Device] ${this.getName()} - check_CMD_SNAPSHOT: removing CMD_SNAPSHOT`);
+    
+                if (this._image['snapshot']) {
+                    await this.homey.images.unregisterImage(this._image['snapshot']);
+                }
+            }
         }
 
         if (changedKeys.includes('LOCAL_STATION_IP')) {
@@ -473,9 +484,10 @@ module.exports = class mainDevice extends Homey.Device {
 
     async onCapability_CMD_SNAPSHOT(type = 'snapshot') {
         try {
-            // if (this.EufyStation.isLiveStreaming(this.EufyDevice)) {
-            //     throw new Error('Already livestreaming / Taking snapshot');
-            // }
+            const settings = this.getSettings();
+            if (!settings.snapshot_enabled) {
+                throw new Error('Please enable snapshot in device settings to consent with external service. This is required to use this feature');
+            }
 
             let time = 3;
 
@@ -687,24 +699,6 @@ module.exports = class mainDevice extends Homey.Device {
         } else if ('alarm_generic_enabled' in settings && !!settings.alarm_generic_enabled && !this.hasCapability('alarm_generic')) {
             this.homey.app.log(`[Device] ${this.getName()} - check_alarm_generic: adding alarm_generic`);
             this.addCapability('alarm_generic').catch(e => this.homey.app.log(e));
-        }
-    }
-
-    async check_CMD_SNAPSHOT(settings) {
-        if ('snapshot_enabled' in settings && !settings.snapshot_enabled && this.hasCapability('CMD_SNAPSHOT')) {
-            this.homey.app.log(`[Device] ${this.getName()} - check_CMD_SNAPSHOT: removing CMD_SNAPSHOT`);
-
-            this.removeCapability('CMD_SNAPSHOT').catch(e => this.homey.app.log(e));
-
-            if (this._image['snapshot']) {
-                await this.homey.images.unregisterImage(this._image['snapshot']);
-            }
-        } else if ('snapshot_enabled' in settings && !!settings.snapshot_enabled) {
-            this.homey.app.log(`[Device] ${this.getName()} - check_CMD_SNAPSHOT: adding CMD_SNAPSHOT`);
-
-            this.addCapability('CMD_SNAPSHOT').catch((e) => this.homey.app.log(e));
-
-            await this.setImage('snapshot');
         }
     }
 };

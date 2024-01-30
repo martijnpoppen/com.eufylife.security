@@ -1,9 +1,9 @@
 {
-    "name": {
-        "en": "Indoor Cam (1080P/2K)",
-        "nl": "Indoor Cam (1080P/2K)",
-        "fr": "Indoor Cam (1080P/2K)"
-      },
+  "name": {
+    "en": "Indoor Cam (1080P/2K)",
+    "nl": "Indoor Cam (1080P/2K)",
+    "fr": "Indoor Cam (1080P/2K)"
+  },
   "class": "camera",
   "capabilities": [
     "onoff",
@@ -16,6 +16,7 @@
     "CMD_REVERSE_DEVS_SWITCH",
     "CMD_SET_FLOODLIGHT_MANUAL_SWITCH",
     "CMD_START_STREAM",
+    "CMD_SNAPSHOT",
     "CMD_SET_SNOOZE_MODE",
     "CMD_TRIGGER_ALARM",
     "CMD_SET_HUB_ALARM_CLOSE",

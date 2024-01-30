@@ -1,18 +1,13 @@
 {
-    "name": {
-        "en": "Doorsensor",
-        "nl": "Deursensor",
-        "fr": "Capteur de porte"
-    },
-    "class": "sensor",
-    "capabilities": [
-        "alarm_contact"
-      ],
-    "energy": {
-      "batteries": [
-        "INTERNAL"
-      ]
-    },
-    "$extends": ["device", "pair", "repair", "settings-sensor"]
-  }
-  
+  "name": {
+    "en": "Doorsensor",
+    "nl": "Deursensor",
+    "fr": "Capteur de porte"
+  },
+  "class": "sensor",
+  "capabilities": ["alarm_contact"],
+  "energy": {
+    "batteries": ["INTERNAL"]
+  },
+  "$extends": ["device", "pair", "repair", "settings-sensor"]
+}

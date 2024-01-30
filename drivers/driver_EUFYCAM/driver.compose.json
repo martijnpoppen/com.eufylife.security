@@ -13,6 +13,7 @@
     "measure_temperature",
     "CMD_IRCUT_SWITCH",
     "CMD_START_STREAM",
+    "CMD_SNAPSHOT",
     "CMD_TRIGGER_ALARM",
     "CMD_SET_HUB_ALARM_CLOSE",
     "CMD_SET_SNOOZE_MODE_HOMEBASE",
@@ -22,9 +23,7 @@
     "NTFY_VEHICLE_DETECTED"
   ],
   "energy": {
-    "batteries": [
-      "INTERNAL"
-    ]
+    "batteries": ["INTERNAL"]
   },
   "$extends": ["device", "pair", "repair", "settings-default"]
 }

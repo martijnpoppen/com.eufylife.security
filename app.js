@@ -188,26 +188,22 @@ class App extends Homey.App {
 
     async sendNotifications() {
         try {
-            const ntfy2023050701 = `[Eufy Security] (1/3) - Notification Images are fixed again`;
-            const ntfy2023050702 = `[Eufy Security] (2/3) - Unfortunately Cloud streams are patched again by Eufy and ported to WebRTC`;
-            const ntfy2023050703 = `[Eufy Security] (3/3) For more info go to: https://tinyurl.com/eufy-homey`;
+            const ntfy2024013001 = `[Eufy Security] (1/2) - New: Snapshot flowcard added! Enable snapshots in the device settings.`;
+            const ntfy2024013002 = `[Eufy Security] (2/2) - NOTE: The snapshot card will use a external service which runs FFMPEG to generate the snapshot. This service is hosted by the developer of this app and is free to use. The service will only be used when the snapshot setting is enabled. All data is send encrypted and will not be stored on the server.`;
+            
 
-            if (!this.appSettings.NOTIFICATIONS.includes('ntfy2023050701')) {
+            if (!this.appSettings.NOTIFICATIONS.includes('ntfy2024013002')) {
                 await this.homey.notifications.createNotification({
-                    excerpt: ntfy2023050703
+                    excerpt: ntfy2024013001
                 });
 
                 await this.homey.notifications.createNotification({
-                    excerpt: ntfy2023050702
-                });
-
-                await this.homey.notifications.createNotification({
-                    excerpt: ntfy2023050701
+                    excerpt: ntfy2024013002
                 });
 
                 await this.updateSettings({
                     ...this.appSettings,
-                    NOTIFICATIONS: [...this.appSettings.NOTIFICATIONS, 'ntfy2023050701', 'ntfy2023050702', 'ntfy2023050703']
+                    NOTIFICATIONS: [...this.appSettings.NOTIFICATIONS, 'ntfy2024013001', 'ntfy2024013002']
                 });
             }
         } catch (error) {

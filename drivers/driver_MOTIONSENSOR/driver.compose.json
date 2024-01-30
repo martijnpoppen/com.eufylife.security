@@ -1,18 +1,13 @@
 {
-    "name": {
-        "en": "Motionsensor",
-        "nl": "Bewegingssensor",
-        "fr": "Détecteur de mouvement"
-    },
-    "class": "sensor",
-    "capabilities": [
-        "alarm_motion"
-      ],
-    "energy": {
-      "batteries": [
-        "INTERNAL"
-      ]
-    },
-    "$extends": ["device", "pair", "repair", "settings-sensor"]
-  }
-  
+  "name": {
+    "en": "Motionsensor",
+    "nl": "Bewegingssensor",
+    "fr": "Détecteur de mouvement"
+  },
+  "class": "sensor",
+  "capabilities": ["alarm_motion"],
+  "energy": {
+    "batteries": ["INTERNAL"]
+  },
+  "$extends": ["device", "pair", "repair", "settings-sensor"]
+}

@@ -50,13 +50,13 @@
         {
           "id": "snapshot_enabled",
           "hint": {
-            "en": "NOTE: The snapshot card will use a external service which runs FFMPEG to generate the snapshot. This service is hosted by the developer of this app and is free to use. The service will only be used when the snapshot card is enabled. The service will not be used when the snapshot card is disabled. All data is send encrypted and will not be stored on the server."
+            "en": "NOTE: The snapshot card will use a external service which runs FFMPEG to generate the snapshot. This service is hosted by the developer of this app and is free to use. The service will only be used when the snapshot setting is enabled. All data is send encrypted and will not be stored on the server."
           },
           "type": "checkbox",
           "label": {
-            "en": "Enable Take snapshot card",
-            "nl": "Activeer Neem snapshot kaart",
-            "fr": "Activer la carte Prendre une photo"
+            "en": "Enable snapshots",
+            "nl": "Activeer snapshots",
+            "fr": "Activer les instantanés"
           },
           "value": false
         }
