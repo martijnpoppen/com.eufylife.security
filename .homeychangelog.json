@@ -1435,5 +1435,8 @@
   },
   "3.24.5": {
     "en": "NEW: Snapshots!"
+  },
+  "3.24.6": {
+    "en": "FIX: settings error when enabling snapshots"
   }
 }
