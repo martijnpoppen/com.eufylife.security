@@ -1,21 +1,27 @@
 {
-  "id": "action_CMD_SNAPSHOT",
+  "id": "action_CMD_SNAPSHOT_CUSTOM",
   "platforms": ["local"],
   "title": {
-    "en": "Take snapshot",
-    "nl": "Maak Snapshot",
-    "fr": "Prendre une capture d'écran"
+    "en": "Take snapshot (use self-hosted service)",
+    "nl": "Maak Snapshot (gebruik een zelf-gehoste service)",
+    "fr": "Prendre une capture d'écran (utiliser un service auto-hébergé)"
   },
   "titleFormatted": {
-    "en": "Take snapshot",
-    "nl": "Maak Snapshot",
-    "fr": "Prendre une capture d'écran"
+    "en": "Take snapshot (use self-hosted service: [[url]])",
+    "nl": "Maak Snapshot (gebruik een  zelf-gehoste  service: [[url]])",
+    "fr": "Prendre une capture d'écran (utiliser un service auto-hébergé: [[url]])"
   },
   "hint": {
-    "en": "Enable the snapshot feature in the device settings. (max allowed snapshots per day: 30)"
-      
+    "en": "Enable the snapshot feature in the device settings. Instead of using the cloud service for taking Snapshots you can use a selfhosted service. Go to https://tinyurl.com/eufy-homey Q13 for more information." 
   },
   "args": [
+    {
+        "name": "url",
+        "type": "text",
+        "label": {
+            "en": "URL"
+        }
+    },
     {
       "name": "device",
       "type": "device",

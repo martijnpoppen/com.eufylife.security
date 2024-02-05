@@ -97,7 +97,7 @@ module.exports = class mainDevice extends Homey.Device {
         }
 
         if (changedKeys.includes('snapshot_enabled')) {
-            if (settings.snapshot_enabled) {
+            if (newSettings.snapshot_enabled) {
                 this.homey.app.log(`[Device] ${this.getName()} - check_CMD_SNAPSHOT: adding CMD_SNAPSHOT`);
     
                 if (!this._image['snapshot']) {
@@ -143,6 +143,7 @@ module.exports = class mainDevice extends Homey.Device {
             event: null
         };
         this._started = false;
+        this._snapshot_url = null;
 
         await sleep(9000);
 
@@ -482,7 +483,7 @@ module.exports = class mainDevice extends Homey.Device {
         }
     }
 
-    async onCapability_CMD_SNAPSHOT(type = 'snapshot') {
+    async onCapability_CMD_SNAPSHOT(type = 'snapshot', url = null) {
         try {
             const settings = this.getSettings();
             if (!settings.snapshot_enabled) {
@@ -498,9 +499,19 @@ module.exports = class mainDevice extends Homey.Device {
                 time = 11;
             }
 
+            this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_SNAPSHOT => Set Time`, time);
+
+            if(url) {
+                this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_SNAPSHOT => Got custom url`, url);
+                this._snapshot_url = `${url}/snapshot?device_sn=`;
+            }
+
             await this.homey.app.eufyClient.setCameraMaxLivestreamDuration(time);
             await this.homey.app.eufyClient.startStationLivestream(this.HomeyDevice.device_sn);
             await sleep((time + 1) * 1000);
+            this._snapshot_url = null;
+
+            this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_SNAPSHOT => Done`, );
         } catch (e) {
             this.homey.app.error(e);
             return Promise.reject(e);
