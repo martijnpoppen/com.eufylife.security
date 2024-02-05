@@ -1438,5 +1438,8 @@
   },
   "3.24.6": {
     "en": "FIX: settings error when enabling snapshots"
+  },
+  "3.25.0": {
+    "en": "NEW: add self-hosted snapshot option"
   }
 }
