@@ -144,6 +144,7 @@ module.exports = class mainDevice extends Homey.Device {
         };
         this._started = false;
         this._snapshot_url = null;
+        this._snapshot_custom = false;
 
         await sleep(9000);
 
@@ -503,13 +504,19 @@ module.exports = class mainDevice extends Homey.Device {
 
             if(url) {
                 this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_SNAPSHOT => Got custom url`, url);
-                this._snapshot_url = `${url}/snapshot?device_sn=`;
+                this._snapshot_url = time > 3 ? `${url}/gif?device_sn=` : `${url}/snapshot?device_sn=`;
+                this._snapshot_custom = true;
+            } else {
+                this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_SNAPSHOT => Got default url`);
+                this._snapshot_url = time > 3 ? Homey.env.GIF_URL : Homey.env.SNAPSHOT_URL;
             }
 
             await this.homey.app.eufyClient.setCameraMaxLivestreamDuration(time);
             await this.homey.app.eufyClient.startStationLivestream(this.HomeyDevice.device_sn);
             await sleep((time + 1) * 1000);
+
             this._snapshot_url = null;
+            this._snapshot_custom = false;
 
             this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_SNAPSHOT => Done`, );
         } catch (e) {
@@ -569,8 +576,16 @@ module.exports = class mainDevice extends Homey.Device {
 
                 this.homey.app.log(`[Device] ${this.getName()} - Registering ${imageType} image`);
 
-                const imageName = imageType === 'event' ? 'Event' : 'Snapshot';
-                const imageID = imageType === 'event' ? this.HomeyDevice.station_sn : `${this.HomeyDevice.device_sn}-Snapshot`;
+                let imageName = 'Event';
+                let imageID = this.HomeyDevice.station_sn;
+
+                if(imageType === 'snapshot') {
+                    imageName = 'Snapshot';
+                    imageID = `${this.HomeyDevice.device_sn}-Snapshot`;
+                } else if(imageType === 'gif') {
+                    imageName = 'Recording';
+                    imageID = `${this.HomeyDevice.device_sn}-Recording`;
+                }
 
                 this.setCameraImage(imageID, `${this.getName()} - ${imageName}`, this._image[imageType]).catch((err) => console.log(err));
             }
