@@ -1441,5 +1441,8 @@
   },
   "3.25.0": {
     "en": "NEW: add self-hosted snapshot option"
+  },
+  "3.25.1": {
+    "en": "Library/API update"
   }
 }
