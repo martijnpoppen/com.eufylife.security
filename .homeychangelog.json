@@ -1444,5 +1444,8 @@
   },
   "3.25.1": {
     "en": "Library/API update"
+  },
+  "3.25.2": {
+    "en": "FIX: issue with wrong security mode on startup (Homebases)"
   }
 }
