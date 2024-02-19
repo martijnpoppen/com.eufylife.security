@@ -1447,5 +1447,8 @@
   },
   "3.25.2": {
     "en": "FIX: issue with wrong security mode on startup (Homebases)"
+  },
+  "3.25.3": {
+    "en": "FIX: alarm arm mode on restart"
   }
 }
