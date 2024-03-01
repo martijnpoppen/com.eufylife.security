@@ -491,7 +491,7 @@ module.exports = class mainDevice extends Homey.Device {
                 throw new Error('Please enable snapshots in the device settings. (see info icon in settings before usage)');
             }
 
-            let time = 3;
+            let time = 4;
 
             if (type === 'snapshot' && this.homey.app.deviceTypes.HOMEBASE_3.some((v) => this.HomeyDevice.station_sn.includes(v))) {
                 // different timing for HB 3 devices
