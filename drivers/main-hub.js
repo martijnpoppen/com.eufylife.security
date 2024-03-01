@@ -42,10 +42,6 @@ module.exports = class mainHub extends mainDevice {
             });
 
             this._started = true;
-
-            await sleep(20000);
-            this.homey.app.log(`[Device] ${this.getName()} - CMD_SET_ARMING => CMD_SET_ARMING`);
-            await this.setCapabilityValue('CMD_SET_ARMING', 'disarmed').catch(this.error);;
         } catch (error) {
             this.setUnavailable(this.homey.__('device.serial_failure_station'));
             this.homey.app.log(error);
@@ -166,7 +162,10 @@ module.exports = class mainHub extends mainDevice {
                 const value = ctx.EufyStation.getPropertyValue(PropertyName.StationGuardMode);
                 ctx.homey.app.log(`[Device] ${ctx.getName()} - deviceParams - StationGuardMode`, value);
                 let CMD_SET_ARMING = keyByValue(ARM_TYPES, parseInt(value));
-                if(!isNil(CMD_SET_ARMING)) ctx.setParamStatus('CMD_SET_ARMING', CMD_SET_ARMING);
+                if(!isNil(CMD_SET_ARMING)) { 
+                    ctx.setParamStatus('CMD_SET_ARMING', CMD_SET_ARMING);
+                    this.set_alarm_arm_mode(CMD_SET_ARMING);
+                }
             }
         } catch (e) {
             ctx.homey.app.error(e);

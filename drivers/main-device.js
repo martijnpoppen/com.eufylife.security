@@ -411,7 +411,7 @@ module.exports = class mainDevice extends Homey.Device {
         try {
             this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_TRIGGER_ALARM - `, time);
 
-            if (this.HomeyDevice.isStandAlone) {
+            if (!this.HomeyDevice.isStandAlone) {
                 await this.EufyStation.triggerStationAlarmSound(time + 2);
                 // time + 2 so we can disable alarm manually.
 
@@ -654,7 +654,10 @@ module.exports = class mainDevice extends Homey.Device {
                 const value = ctx.EufyStation.getPropertyValue(PropertyName.StationGuardMode);
                 ctx.homey.app.log(`[Device] ${ctx.getName()} - deviceParams - StationGuardMode`, value);
                 let CMD_SET_ARMING = keyByValue(ARM_TYPES, parseInt(value));
-                if (!isNil(CMD_SET_ARMING)) ctx.setParamStatus('CMD_SET_ARMING', CMD_SET_ARMING);
+                if (!isNil(CMD_SET_ARMING)) {
+                    ctx.setParamStatus('CMD_SET_ARMING', CMD_SET_ARMING);
+                    this.set_alarm_arm_mode(CMD_SET_ARMING);
+                }
             }
 
             if (settings.force_include_thumbnail && ctx.EufyDevice && ctx.EufyDevice.hasProperty(PropertyName.DeviceNotificationType)) {
