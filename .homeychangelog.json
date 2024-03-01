@@ -1450,5 +1450,8 @@
   },
   "3.25.3": {
     "en": "FIX: alarm arm mode on restart"
+  },
+  "3.25.4": {
+    "en": "FIX: FIX: lib update | FIX: improve notification images | FIX: snapshots"
   }
 }
