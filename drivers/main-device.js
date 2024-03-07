@@ -495,7 +495,7 @@ module.exports = class mainDevice extends Homey.Device {
 
             if (type === 'snapshot' && this.homey.app.deviceTypes.HOMEBASE_3.some((v) => this.HomeyDevice.station_sn.includes(v))) {
                 // different timing for HB 3 devices
-                time = 3;
+                // time = 3;
             } else if (type === 'gif') {
                 time = 11;
             }

@@ -4,7 +4,7 @@ const Homey = require('homey');
 const path = require('path');
 const fs = require('fs');
 
-const { EufySecurity } = require('eufy-security-client');
+const { EufySecurity, LogLevel } = require('eufy-security-client');
 const { PhoneModels } = require('eufy-security-client/build/http/const');
 
 const { DEVICE_TYPES } = require('./constants/device_types.js');
@@ -357,7 +357,10 @@ class App extends Homey.App {
                 acceptInvitations: true,
                 pollingIntervalMinutes: 30,
                 eventDurationSeconds: 15,
-                p2pConnectionSetup: 'quickest'
+                p2pConnectionSetup: 'quickest',
+                logging: {
+                    level: LogLevel.Info
+                }
             };
 
             await this.resetEufyClient();
