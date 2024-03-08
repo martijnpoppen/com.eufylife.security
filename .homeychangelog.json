@@ -1462,5 +1462,8 @@
   },
   "3.25.7": {
     "en": "FIX: snapshots not properly working for some devices"
+  },
+  "3.25.8": {
+    "en": "FIX: Nodejs patch for RSA_PKCS1_PADDING"
   }
 }
