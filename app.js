@@ -35,10 +35,44 @@ class App extends Homey.App {
     async onInit() {
         try {
             this.log(`${this.homey.manifest.id} - ${this.homey.manifest.version} started...`);
-
+            
+            await this.checkNodeProcessVars();
             await this.initGlobarVars();
         } catch (error) {
             this.homey.app.log(error);
+        }
+    }
+
+    async checkNodeProcessVars() {
+        this.log(`checkNodeProcessVars - running on node: ${process.version}`);
+
+        const nodeVersion = process.version.replace('v', '');
+        const nodeBaseVersion = nodeVersion.split('.')[0];
+        let nodeVersionResult = -1;
+
+        switch (parseInt(nodeBaseVersion)) {
+            case 18:
+                nodeVersionResult = nodeVersion.localeCompare('18.19.1', undefined, { numeric: true, sensitivity: 'base' });
+                break;
+            case 20:
+                nodeVersionResult = nodeVersion.localeCompare('20.11.1', undefined, { numeric: true, sensitivity: 'base' });
+                break;
+            case 21:
+                nodeVersionResult = nodeVersion.localeCompare('21.6.2', undefined, { numeric: true, sensitivity: 'base' });
+
+                break;
+            default:
+                nodeVersionResult = -1
+                break;
+        }
+
+        this.log('checkNodeProcessVars - nodeVersionInfo', { nodeVersion, nodeBaseVersion, nodeVersionResult });
+
+        if (nodeVersionResult === 1 || nodeVersionResult === 0) {
+            this.log(`checkNodeProcessVars - Setting REVERT_CVE_2023_46809`);
+            process['REVERT_CVE_2023_46809'] = true;
+        } else {
+            this.log(`checkNodeProcessVars - SKIPPING REVERT_CVE_2023_46809`);
         }
     }
 
@@ -189,7 +223,6 @@ class App extends Homey.App {
     async sendNotifications() {
         try {
             const ntfy2024013003 = `[Eufy Security] (1/1) - NEW: Snapshot flowcard added! Enable snapshots in the device settings. (see info icon in settings before usage)`;
-            
 
             if (!this.appSettings.NOTIFICATIONS.includes('ntfy2024013003')) {
                 await this.homey.notifications.createNotification({
