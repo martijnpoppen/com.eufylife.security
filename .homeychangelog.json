@@ -1468,5 +1468,8 @@
   },
   "3.25.9": {
     "en": "FIX: Nodejs patch for RSA_PKCS1_PADDING"
+  },
+  "3.25.10": {
+    "en": "FIX: Nodejs patch for RSA_PKCS1_PADDING"
   }
 }
