@@ -508,7 +508,7 @@ module.exports = class mainDevice extends Homey.Device {
                 this._snapshot_custom = true;
             } else {
                 this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_SNAPSHOT => Got default url`);
-                this._snapshot_url = time > 3 ? Homey.env.GIF_URL : Homey.env.SNAPSHOT_URL;
+                this._snapshot_url = time > 10 ? Homey.env.GIF_URL : Homey.env.SNAPSHOT_URL;
             }
 
             await this.homey.app.eufyClient.setCameraMaxLivestreamDuration(time);
