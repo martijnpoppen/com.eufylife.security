@@ -69,8 +69,9 @@ class App extends Homey.App {
         this.log('checkNodeProcessVars - nodeVersionInfo', { nodeVersion, nodeBaseVersion, nodeVersionResult });
 
         if (nodeVersionResult === 1 || nodeVersionResult === 0) {
-            this.log(`checkNodeProcessVars - Setting REVERT_CVE_2023_46809`);
-            process['REVERT_CVE_2023_46809'] = true;
+            this.log(`checkNodeProcessVars - Needs REVERT_CVE_2023_46809`);
+            // process['REVERT_CVE_2023_46809'] = true;
+            // process.execArgv.push('--security-revert=CVE-2023-46809')
         } else {
             this.log(`checkNodeProcessVars - SKIPPING REVERT_CVE_2023_46809`);
         }
@@ -392,7 +393,7 @@ class App extends Homey.App {
                 eventDurationSeconds: 15,
                 p2pConnectionSetup: 'quickest',
                 logging: {
-                    level: LogLevel.Info
+                    level: 1
                 }
             };
 
