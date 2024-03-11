@@ -1477,5 +1477,8 @@
   },
   "3.25.12": {
     "en": "FIX: Nodejs patch for RSA_PKCS1_PADDING"
+  },
+  "3.25.13": {
+    "en": "FIX: snapshot"
   }
 }
