@@ -1,21 +1,23 @@
 {
-  "id": "trigger_NTFY_PRESS_DOORBELL",
-  "platforms": ["local"],
-  "title": {
-    "en": "Doorbell Press",
-    "nl": "Deurbel Ingedrukt",
-    "fr": "Appuie sur sonnette"
-  },
-  "titleFormatted": {
-    "en": "Doorbell Pressed",
-    "nl": "Deurbel Ingedrukt",
-    "fr": "Appuie sur sonnette"
-  },
-  "args": [
-    {
-      "name": "device",
-      "type": "device",
-      "filter": "driver_id=driver_VIDEO_DOORBELL_1080P_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY&capabilities=NTFY_PRESS_DOORBELL"
-    }
-  ]
+    "id": "trigger_NTFY_PRESS_DOORBELL",
+    "platforms": [
+        "local"
+    ],
+    "title": {
+        "en": "Doorbell Press",
+        "nl": "Deurbel Ingedrukt",
+        "fr": "Appuie sur sonnette"
+    },
+    "titleFormatted": {
+        "en": "Doorbell Pressed",
+        "nl": "Deurbel Ingedrukt",
+        "fr": "Appuie sur sonnette"
+    },
+    "args": [
+        {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=driver_VIDEO_DOORBELL_1080P_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED&capabilities=NTFY_PRESS_DOORBELL"
+        }
+    ]
 }

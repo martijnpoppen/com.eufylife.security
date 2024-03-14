@@ -1,96 +1,98 @@
 {
-  "id": "action_CMD_BAT_DOORBELL_VIDEO_QUALITY",
-  "platforms": ["local"],
-  "title": {
-    "en": "Set Video quality",
-    "nl": "Stel Video kwaliteit in",
-    "fr": "Changer la qualité vidéo en"
-  },
-  "titleFormatted": {
-    "en": "Set Video quality to [[action_CMD_BAT_DOORBELL_VIDEO_QUALITY_TYPE]]",
-    "nl": "Stel Video kwaliteit in aan [[action_CMD_BAT_DOORBELL_VIDEO_QUALITY_TYPE]]",
-    "fr": "Changer la qualité vidéo en [[action_CMD_BAT_DOORBELL_VIDEO_QUALITY_TYPE]]"
-  },
-  "args": [
-    {
-      "name": "device",
-      "type": "device",
-      "filter": "driver_id=driver_VIDEO_DOORBELL_1080P_BATTERY|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_DUAL_BATTERY&capabilities=CMD_BAT_DOORBELL_VIDEO_QUALITY"
+    "id": "action_CMD_BAT_DOORBELL_VIDEO_QUALITY",
+    "platforms": [
+        "local"
+    ],
+    "title": {
+        "en": "Set Video quality",
+        "nl": "Stel Video kwaliteit in",
+        "fr": "Changer la qualité vidéo en"
     },
-    {
-      "name": "action_CMD_BAT_DOORBELL_VIDEO_QUALITY_TYPE",
-      "type": "dropdown",
-      "title": {
-        "en": "Video quality",
-        "nl": "Video kwaliteit",
-        "fr": "Qualité vidéo"
-      },
-      "values": [
+    "titleFormatted": {
+        "en": "Set Video quality to [[action_CMD_BAT_DOORBELL_VIDEO_QUALITY_TYPE]]",
+        "nl": "Stel Video kwaliteit in aan [[action_CMD_BAT_DOORBELL_VIDEO_QUALITY_TYPE]]",
+        "fr": "Changer la qualité vidéo en [[action_CMD_BAT_DOORBELL_VIDEO_QUALITY_TYPE]]"
+    },
+    "args": [
         {
-          "id": "0",
-          "label": {
-            "en": "Auto / Low Encoding",
-            "nl": "Auto / Lage Encoding",
-            "fr": "Auto / Faible compréssion"
-          }
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=driver_VIDEO_DOORBELL_1080P_BATTERY|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_DUAL_BATTERY&capabilities=CMD_BAT_DOORBELL_VIDEO_QUALITY"
         },
         {
-          "id": "1",
-          "label": {
-            "en": "Low / Low Encoding",
-            "nl": "Laag / Lage Encoding",
-            "fr": "Faible / Faible compréssion"
-          }
-        },
-        {
-          "id": "2",
-          "label": {
-            "en": "Medium / Low Encoding",
-            "nl": "Middel / Lage Encoding",
-            "fr": "Moyen / Faible compréssion"
-          }
-        },
-        {
-          "id": "3",
-          "label": {
-            "en": "High / Low Encoding",
-            "nl": "Hoog / Lage Encoding",
-            "fr": "Élevé / Faible compréssion"
-          }
-        },
-        {
-          "id": "5",
-          "label": {
-            "en": "Auto / High Encoding",
-            "nl": "Auto / Hoge Encoding",
-            "fr": "Auto / Haute compréssion"
-          }
-        },
-        {
-          "id": "6",
-          "label": {
-            "en": "Low / High Encoding",
-            "nl": "Laag / Hoge Encoding",
-            "fr": "Faible / Haute compréssion"
-          }
-        },
-        {
-          "id": "7",
-          "label": {
-            "en": "Medium / High Encoding",
-            "nl": "Middel / Hoge Encoding",
-            "fr": "Moyen / Haute compréssion"
-          }
-        },
-        {
-          "id": "8",
-          "label": {
-            "en": "High / High Encoding",
-            "nl": "Hoog / Hoge Encoding",
-            "fr": "Élevé / Haute compréssion"
-          }
+            "name": "action_CMD_BAT_DOORBELL_VIDEO_QUALITY_TYPE",
+            "type": "dropdown",
+            "title": {
+                "en": "Video quality",
+                "nl": "Video kwaliteit",
+                "fr": "Qualité vidéo"
+            },
+            "values": [
+                {
+                    "id": "0",
+                    "label": {
+                        "en": "Auto / Low Encoding",
+                        "nl": "Auto / Lage Encoding",
+                        "fr": "Auto / Faible compréssion"
+                    }
+                },
+                {
+                    "id": "1",
+                    "label": {
+                        "en": "Low / Low Encoding",
+                        "nl": "Laag / Lage Encoding",
+                        "fr": "Faible / Faible compréssion"
+                    }
+                },
+                {
+                    "id": "2",
+                    "label": {
+                        "en": "Medium / Low Encoding",
+                        "nl": "Middel / Lage Encoding",
+                        "fr": "Moyen / Faible compréssion"
+                    }
+                },
+                {
+                    "id": "3",
+                    "label": {
+                        "en": "High / Low Encoding",
+                        "nl": "Hoog / Lage Encoding",
+                        "fr": "Élevé / Faible compréssion"
+                    }
+                },
+                {
+                    "id": "5",
+                    "label": {
+                        "en": "Auto / High Encoding",
+                        "nl": "Auto / Hoge Encoding",
+                        "fr": "Auto / Haute compréssion"
+                    }
+                },
+                {
+                    "id": "6",
+                    "label": {
+                        "en": "Low / High Encoding",
+                        "nl": "Laag / Hoge Encoding",
+                        "fr": "Faible / Haute compréssion"
+                    }
+                },
+                {
+                    "id": "7",
+                    "label": {
+                        "en": "Medium / High Encoding",
+                        "nl": "Middel / Hoge Encoding",
+                        "fr": "Moyen / Haute compréssion"
+                    }
+                },
+                {
+                    "id": "8",
+                    "label": {
+                        "en": "High / High Encoding",
+                        "nl": "Hoog / Hoge Encoding",
+                        "fr": "Élevé / Haute compréssion"
+                    }
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }

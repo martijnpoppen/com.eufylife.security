@@ -1,39 +1,43 @@
 {
-  "id": "trigger_NTFY_FACE_DETECTION",
-  "platforms": ["local"],
-  "title": {
-    "en": "Person Detected",
-    "nl": "Persoon Gedetecteerd",
-    "fr": "Personne détectée"
-  },
-  "titleFormatted": {
-    "en": "Person Detected",
-    "nl": "Persoon Gedetecteerd",
-    "fr": "Personne détectée"
-  },
-  "hint": {
-    "en": "This flowcard will contain a known person token (Dual doorbell / Homebase 3 only)",
-    "nl": "Deze flowkaart bevat een bekend persoon token (Alleen voor Dual deurbel en Homebase 3)",
-    "fr": "Cette carte de flux contiendra un jeton de personne connue (sonnette double / Homebase 3 uniquement)"
-  },
-  "tokens": [
-    {
-      "name": "user",
-      "type": "string",
-      "platforms": ["local"],
-  "title": {
-        "en": "Person",
-        "nl": "Persoon",
-        "fr": "Personne"
-      },
-      "example": "John Doe"
-    }
-  ],
-  "args": [
-    {
-      "name": "device",
-      "type": "device",
-      "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_2_PRO|driver_EUFYCAM_3|driver_EUFYCAM_3C|driver_EUFYCAM_E330|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_C|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_1080P_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_WALLLIGHT_CAM_S&capabilities=NTFY_FACE_DETECTION"
-    }
-  ]
+    "id": "trigger_NTFY_FACE_DETECTION",
+    "platforms": [
+        "local"
+    ],
+    "title": {
+        "en": "Person Detected",
+        "nl": "Persoon Gedetecteerd",
+        "fr": "Personne détectée"
+    },
+    "titleFormatted": {
+        "en": "Person Detected",
+        "nl": "Persoon Gedetecteerd",
+        "fr": "Personne détectée"
+    },
+    "hint": {
+        "en": "This flowcard will contain a known person token (Dual doorbell / Homebase 3 only)",
+        "nl": "Deze flowkaart bevat een bekend persoon token (Alleen voor Dual deurbel en Homebase 3)",
+        "fr": "Cette carte de flux contiendra un jeton de personne connue (sonnette double / Homebase 3 uniquement)"
+    },
+    "tokens": [
+        {
+            "name": "user",
+            "type": "string",
+            "platforms": [
+                "local"
+            ],
+            "title": {
+                "en": "Person",
+                "nl": "Persoon",
+                "fr": "Personne"
+            },
+            "example": "John Doe"
+        }
+    ],
+    "args": [
+        {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_2_PRO|driver_EUFYCAM_3|driver_EUFYCAM_3C|driver_EUFYCAM_E330|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_C|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_1080P_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED|driver_WALLLIGHT_CAM_S&capabilities=NTFY_FACE_DETECTION"
+        }
+    ]
 }

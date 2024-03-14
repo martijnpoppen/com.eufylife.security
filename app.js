@@ -72,8 +72,10 @@ class App extends Homey.App {
             this.log(`checkNodeProcessVars - Needs REVERT_CVE_2023_46809`);
             // process['REVERT_CVE_2023_46809'] = true;
             // process.execArgv.push('--security-revert=CVE-2023-46809')
+            process.env['REVERT_CVE_2023_46809'] = true;
         } else {
             this.log(`checkNodeProcessVars - SKIPPING REVERT_CVE_2023_46809`);
+            process.env['REVERT_CVE_2023_46809'] = false;
         }
     }
 

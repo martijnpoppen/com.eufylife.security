@@ -1,102 +1,104 @@
 {
-  "id": "action_CMD_TRIGGER_RINGTONE_HUB",
-  "platforms": ["local"],
-  "title": {
-    "en": "Trigger chime",
-    "nl": "Activeer chime",
-    "fr": "Déclencher le carillon"
-  },
-  "titleFormatted": {
-    "en": "Trigger chime [[action_CMD_TRIGGER_RINGTONE_HUB_TYPE]]",
-    "nl": "Activeer chime [[action_CMD_TRIGGER_RINGTONE_HUB_TYPE]]",
-    "fr": "Déclencher le carillon [[action_CMD_TRIGGER_RINGTONE_HUB_TYPE]]"
-  },
-  "args": [
-    {
-      "name": "device",
-      "type": "device",
-      "filter": "driver_id=driver_HOMEBASE|driver_HOMEBASE_1|driver_HOMEBASE_3|driver_HOMEBASE_CHIME&capabilities=CMD_TRIGGER_RINGTONE_HUB"
+    "id": "action_CMD_TRIGGER_RINGTONE_HUB",
+    "platforms": [
+        "local"
+    ],
+    "title": {
+        "en": "Trigger chime",
+        "nl": "Activeer chime",
+        "fr": "Déclencher le carillon"
     },
-    {
-      "name": "action_CMD_TRIGGER_RINGTONE_HUB_TYPE",
-      "type": "dropdown",
-      "title": {
-        "en": "Chime type",
-        "nl": "Chime type",
-        "fr": "Type de carillon"
-      },
-      "values": [
+    "titleFormatted": {
+        "en": "Trigger chime [[action_CMD_TRIGGER_RINGTONE_HUB_TYPE]]",
+        "nl": "Activeer chime [[action_CMD_TRIGGER_RINGTONE_HUB_TYPE]]",
+        "fr": "Déclencher le carillon [[action_CMD_TRIGGER_RINGTONE_HUB_TYPE]]"
+    },
+    "args": [
         {
-          "id": "0",
-          "label": {
-            "en": "Default",
-            "fr": "Défaut"
-          }
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=driver_HOMEBASE|driver_HOMEBASE_1|driver_HOMEBASE_3|driver_HOMEBASE_CHIME&capabilities=CMD_TRIGGER_RINGTONE_HUB"
         },
         {
-          "id": "1",
-          "label": {
-            "en": "Silent",
-            "fr": "Silencieux"
-          }
-        },
-        {
-          "id": "2",
-          "label": {
-            "en": "Beacon",
-            "fr": "Phare"
-          }
-        },
-        {
-          "id": "3",
-          "label": {
-            "en": "Chord",
-            "fr": "Accord"
-          }
-        },
-        {
-          "id": "4",
-          "label": {
-            "en": "Christmas",
-            "fr": "Noël"
-          }
-        },
-        {
-          "id": "5",
-          "label": {
-            "en": "Circuit",
-            "fr": "Circuit"
-          }
-        },
-        {
-          "id": "6",
-          "label": {
-            "en": "Clock",
-            "fr": "Horloge"
-          }
-        },
-        {
-          "id": "7",
-          "label": {
-            "en": "Ding",
-            "fr": "Ding"
-          }
-        },
-        {
-          "id": "8",
-          "label": {
-            "en": "Hillside",
-            "fr": "Couteau"
-          }
-        },
-        {
-          "id": "9",
-          "label": {
-            "en": "Presto",
-            "fr": "Presto"
-          }
+            "name": "action_CMD_TRIGGER_RINGTONE_HUB_TYPE",
+            "type": "dropdown",
+            "title": {
+                "en": "Chime type",
+                "nl": "Chime type",
+                "fr": "Type de carillon"
+            },
+            "values": [
+                {
+                    "id": "0",
+                    "label": {
+                        "en": "Default",
+                        "fr": "Défaut"
+                    }
+                },
+                {
+                    "id": "1",
+                    "label": {
+                        "en": "Silent",
+                        "fr": "Silencieux"
+                    }
+                },
+                {
+                    "id": "2",
+                    "label": {
+                        "en": "Beacon",
+                        "fr": "Phare"
+                    }
+                },
+                {
+                    "id": "3",
+                    "label": {
+                        "en": "Chord",
+                        "fr": "Accord"
+                    }
+                },
+                {
+                    "id": "4",
+                    "label": {
+                        "en": "Christmas",
+                        "fr": "Noël"
+                    }
+                },
+                {
+                    "id": "5",
+                    "label": {
+                        "en": "Circuit",
+                        "fr": "Circuit"
+                    }
+                },
+                {
+                    "id": "6",
+                    "label": {
+                        "en": "Clock",
+                        "fr": "Horloge"
+                    }
+                },
+                {
+                    "id": "7",
+                    "label": {
+                        "en": "Ding",
+                        "fr": "Ding"
+                    }
+                },
+                {
+                    "id": "8",
+                    "label": {
+                        "en": "Hillside",
+                        "fr": "Couteau"
+                    }
+                },
+                {
+                    "id": "9",
+                    "label": {
+                        "en": "Presto",
+                        "fr": "Presto"
+                    }
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }

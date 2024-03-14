@@ -1,81 +1,85 @@
 {
-  "id": "action_CMD_SET_SNOOZE_MODE",
-  "platforms": ["local"],
-  "title": {
-    "en": "Set snooze mode",
-    "nl": "Zet snooze modus",
-    "fr": "Définir le mode 'snooze'"
-  },
-  "titleFormatted": {
-    "en": "Set snooze mode for [[snooze]]",
-    "nl": "Zet snooze modus voor [[snooze]]",
-    "fr": "Définir le mode 'snooze' pour [[snooze]]"
-  },
-  "args": [
-    {
-      "name": "device",
-      "type": "device",
-      "filter": "driver_id=driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_C|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_WALLLIGHT_CAM_S&capabilities=CMD_SET_SNOOZE_MODE"
+    "id": "action_CMD_SET_SNOOZE_MODE",
+    "platforms": [
+        "local"
+    ],
+    "title": {
+        "en": "Set snooze mode",
+        "nl": "Zet snooze modus",
+        "fr": "Définir le mode 'snooze'"
     },
-    {
-      "name": "snooze",
-      "platforms": ["local"],
-      "title": {
-        "en": "Duration",
-        "nl": "Tijdsduur",
-        "fr": "Durée"
-      },
-      "type": "dropdown",
-      "values": [
+    "titleFormatted": {
+        "en": "Set snooze mode for [[snooze]]",
+        "nl": "Zet snooze modus voor [[snooze]]",
+        "fr": "Définir le mode 'snooze' pour [[snooze]]"
+    },
+    "args": [
         {
-          "id": "0",
-          "label": {
-            "en": "0 minutes",
-            "nl": "0 minuten",
-            "fr": "0 minute"
-          }
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_C|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_WALLLIGHT_CAM_S&capabilities=CMD_SET_SNOOZE_MODE"
         },
         {
-          "id": "1800",
-          "label": {
-            "en": "30 minutes",
-            "nl": "30 minuten",
-            "fr": "30 minutes"
-          }
-        },
-        {
-          "id": "3600",
-          "label": {
-            "en": "1 hour",
-            "nl": "1 uur",
-            "fr": "1 heure"
-          }
-        },
-        {
-          "id": "7200",
-          "label": {
-            "en": "2 hours",
-            "nl": "2 uur",
-            "fr": "2 heures"
-          }
-        },
-        {
-          "id": "21600",
-          "label": {
-            "en": "6 hours",
-            "nl": "6 uur",
-            "fr": "6heures"
-          }
-        },
-        {
-          "id": "43200",
-          "label": {
-            "en": "12 hours",
-            "nl": "12 uur",
-            "fr": "12 heures"
-          }
+            "name": "snooze",
+            "platforms": [
+                "local"
+            ],
+            "title": {
+                "en": "Duration",
+                "nl": "Tijdsduur",
+                "fr": "Durée"
+            },
+            "type": "dropdown",
+            "values": [
+                {
+                    "id": "0",
+                    "label": {
+                        "en": "0 minutes",
+                        "nl": "0 minuten",
+                        "fr": "0 minute"
+                    }
+                },
+                {
+                    "id": "1800",
+                    "label": {
+                        "en": "30 minutes",
+                        "nl": "30 minuten",
+                        "fr": "30 minutes"
+                    }
+                },
+                {
+                    "id": "3600",
+                    "label": {
+                        "en": "1 hour",
+                        "nl": "1 uur",
+                        "fr": "1 heure"
+                    }
+                },
+                {
+                    "id": "7200",
+                    "label": {
+                        "en": "2 hours",
+                        "nl": "2 uur",
+                        "fr": "2 heures"
+                    }
+                },
+                {
+                    "id": "21600",
+                    "label": {
+                        "en": "6 hours",
+                        "nl": "6 uur",
+                        "fr": "6heures"
+                    }
+                },
+                {
+                    "id": "43200",
+                    "label": {
+                        "en": "12 hours",
+                        "nl": "12 uur",
+                        "fr": "12 heures"
+                    }
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }

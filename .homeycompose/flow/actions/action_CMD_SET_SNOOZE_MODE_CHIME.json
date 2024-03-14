@@ -1,137 +1,145 @@
 {
-  "id": "action_CMD_SET_SNOOZE_MODE_CHIME",
-  "platforms": ["local"],
-  "title": {
-    "en": "Set snooze mode",
-    "nl": "Zet snooze modus",
-    "fr": "Définir le mode 'snooze'"
-  },
-  "titleFormatted": {
-    "en": "Set snooze mode [[chime]] [[motion]] for [[snooze]]",
-    "nl": "Zet snooze modus [[chime]] [[motion]] voor [[snooze]]",
-    "fr": "Définir le mode 'snooze' [[chime]] [[motion]] pour [[snooze]]"
-  },
-  "args": [
-    {
-      "name": "device",
-      "type": "device",
-      "filter": "driver_id=driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_POWERED&capabilities=CMD_SET_SNOOZE_MODE_CHIME"
+    "id": "action_CMD_SET_SNOOZE_MODE_CHIME",
+    "platforms": [
+        "local"
+    ],
+    "title": {
+        "en": "Set snooze mode",
+        "nl": "Zet snooze modus",
+        "fr": "Définir le mode 'snooze'"
     },
-    {
-      "name": "chime",
-      "platforms": ["local"],
-      "title": {
-        "en": "Chime Snooze",
-        "nl": "Chime Snooze",
-        "fr": "Chime Snooze"
-      },
-      "type": "dropdown",
-      "values": [
-        {
-          "id": "1",
-          "label": {
-            "en": "On",
-            "nl": "Aan",
-            "fr": "On"
-          }
-        },
-        {
-          "id": "0",
-          "label": {
-            "en": "Off",
-            "nl": "Uit",
-            "fr": "Off"
-          }
-        }
-      ]
+    "titleFormatted": {
+        "en": "Set snooze mode [[chime]] [[motion]] for [[snooze]]",
+        "nl": "Zet snooze modus [[chime]] [[motion]] voor [[snooze]]",
+        "fr": "Définir le mode 'snooze' [[chime]] [[motion]] pour [[snooze]]"
     },
-    {
-      "name": "motion",
-      "platforms": ["local"],
-      "title": {
-        "en": "Motion Snooze",
-        "nl": "Motion Snooze",
-        "fr": "Pause détection de mouvement"
-      },
-      "type": "dropdown",
-      "values": [
+    "args": [
         {
-          "id": "1",
-          "label": {
-            "en": "On",
-            "nl": "Aan",
-            "fr": "On"
-          }
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_POWERED&capabilities=CMD_SET_SNOOZE_MODE_CHIME"
         },
         {
-          "id": "0",
-          "label": {
-            "en": "Off",
-            "nl": "Uit",
-            "fr": "Off"
-          }
+            "name": "chime",
+            "platforms": [
+                "local"
+            ],
+            "title": {
+                "en": "Chime Snooze",
+                "nl": "Chime Snooze",
+                "fr": "Chime Snooze"
+            },
+            "type": "dropdown",
+            "values": [
+                {
+                    "id": "1",
+                    "label": {
+                        "en": "On",
+                        "nl": "Aan",
+                        "fr": "On"
+                    }
+                },
+                {
+                    "id": "0",
+                    "label": {
+                        "en": "Off",
+                        "nl": "Uit",
+                        "fr": "Off"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "motion",
+            "platforms": [
+                "local"
+            ],
+            "title": {
+                "en": "Motion Snooze",
+                "nl": "Motion Snooze",
+                "fr": "Pause détection de mouvement"
+            },
+            "type": "dropdown",
+            "values": [
+                {
+                    "id": "1",
+                    "label": {
+                        "en": "On",
+                        "nl": "Aan",
+                        "fr": "On"
+                    }
+                },
+                {
+                    "id": "0",
+                    "label": {
+                        "en": "Off",
+                        "nl": "Uit",
+                        "fr": "Off"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "snooze",
+            "platforms": [
+                "local"
+            ],
+            "title": {
+                "en": "Duration",
+                "nl": "Tijdsduur",
+                "fr": "Durée"
+            },
+            "type": "dropdown",
+            "values": [
+                {
+                    "id": "0",
+                    "label": {
+                        "en": "0 minutes",
+                        "nl": "0 minuten",
+                        "fr": "0 minute"
+                    }
+                },
+                {
+                    "id": "1800",
+                    "label": {
+                        "en": "30 minutes",
+                        "nl": "30 minuten",
+                        "fr": "30 minutes"
+                    }
+                },
+                {
+                    "id": "3600",
+                    "label": {
+                        "en": "1 hour",
+                        "nl": "1 uur",
+                        "fr": "1 heure"
+                    }
+                },
+                {
+                    "id": "7200",
+                    "label": {
+                        "en": "2 hours",
+                        "nl": "2 uur",
+                        "fr": "2 heures"
+                    }
+                },
+                {
+                    "id": "21600",
+                    "label": {
+                        "en": "6 hours",
+                        "nl": "6 uur",
+                        "fr": "6 heures"
+                    }
+                },
+                {
+                    "id": "43200",
+                    "label": {
+                        "en": "12 hours",
+                        "nl": "12 uur",
+                        "fr": "12 heures"
+                    }
+                }
+            ]
         }
-      ]
-    },
-    {
-      "name": "snooze",
-      "platforms": ["local"],
-      "title": {
-        "en": "Duration",
-        "nl": "Tijdsduur",
-        "fr": "Durée"
-      },
-      "type": "dropdown",
-      "values": [
-        {
-          "id": "0",
-          "label": {
-            "en": "0 minutes",
-            "nl": "0 minuten",
-            "fr": "0 minute"
-          }
-        },
-        {
-          "id": "1800",
-          "label": {
-            "en": "30 minutes",
-            "nl": "30 minuten",
-            "fr": "30 minutes"
-          }
-        },
-        {
-          "id": "3600",
-          "label": {
-            "en": "1 hour",
-            "nl": "1 uur",
-            "fr": "1 heure"
-          }
-        },
-        {
-          "id": "7200",
-          "label": {
-            "en": "2 hours",
-            "nl": "2 uur",
-            "fr": "2 heures"
-          }
-        },
-        {
-          "id": "21600",
-          "label": {
-            "en": "6 hours",
-            "nl": "6 uur",
-            "fr": "6 heures"
-          }
-        },
-        {
-          "id": "43200",
-          "label": {
-            "en": "12 hours",
-            "nl": "12 uur",
-            "fr": "12 heures"
-          }
-        }
-      ]
-    }
-  ]
+    ]
 }

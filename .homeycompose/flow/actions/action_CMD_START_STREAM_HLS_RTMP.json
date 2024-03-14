@@ -1,57 +1,59 @@
 {
-  "id": "action_CMD_START_STREAM_HLS_RTMP",
-  "deprecated": true,
-  "platforms": ["local"],
-  "title": {
-    "en": "Start stream",
-    "nl": "Start Stream",
-    "fr": "Démarrer le flux vidéo"
-  },
-  "titleFormatted": {
-    "en": "Start stream - [[action_CMD_START_STREAM_TYPE]]",
-    "nl": "Start Stream - [[action_CMD_START_STREAM_TYPE]]",
-    "fr": "Démarrer le flux vidéo - [[action_CMD_START_STREAM_TYPE]]"
-  },
-  "args": [
-    {
-      "name": "action_CMD_START_STREAM_TYPE",
-      "type": "dropdown",
-      "title": {
-        "en": "Stream type",
-        "nl": "Stream type",
-        "fr": "Type de flux vidéo"
-      },
-      "values": [
-        {
-          "id": "hls",
-          "label": {
-            "en": "HLS (Chromecast compatible)",
-            "nl": "HLS (Chromecast compatible)",
-            "fr": "HLS (Compatible Chromecast)"
-          }
-        },
-        {
-          "id": "hls_only",
-          "label": {
-            "en": "HLS",
-            "nl": "HLS",
-            "fr": "HLS"
-          }
-        },
-        {
-          "id": "rtmp",
-          "label": {
-            "en": "RTMP",
-            "nl": "RTMP",
-            "fr": "RTMP"
-          }
-        }
-      ]
+    "id": "action_CMD_START_STREAM_HLS_RTMP",
+    "deprecated": true,
+    "platforms": [
+        "local"
+    ],
+    "title": {
+        "en": "Start stream",
+        "nl": "Start Stream",
+        "fr": "Démarrer le flux vidéo"
     },
-    {
-      "name": "device",
-      "type": "device",
-      "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_2_PRO|driver_EUFYCAM_3|driver_EUFYCAM_3C|driver_EUFYCAM_E|driver_EUFYCAM_E330|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_C|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_1080P_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_WALLLIGHT_CAM_S&capabilities=CMD_START_STREAM"
-    }
-  ]
+    "titleFormatted": {
+        "en": "Start stream - [[action_CMD_START_STREAM_TYPE]]",
+        "nl": "Start Stream - [[action_CMD_START_STREAM_TYPE]]",
+        "fr": "Démarrer le flux vidéo - [[action_CMD_START_STREAM_TYPE]]"
+    },
+    "args": [
+        {
+            "name": "action_CMD_START_STREAM_TYPE",
+            "type": "dropdown",
+            "title": {
+                "en": "Stream type",
+                "nl": "Stream type",
+                "fr": "Type de flux vidéo"
+            },
+            "values": [
+                {
+                    "id": "hls",
+                    "label": {
+                        "en": "HLS (Chromecast compatible)",
+                        "nl": "HLS (Chromecast compatible)",
+                        "fr": "HLS (Compatible Chromecast)"
+                    }
+                },
+                {
+                    "id": "hls_only",
+                    "label": {
+                        "en": "HLS",
+                        "nl": "HLS",
+                        "fr": "HLS"
+                    }
+                },
+                {
+                    "id": "rtmp",
+                    "label": {
+                        "en": "RTMP",
+                        "nl": "RTMP",
+                        "fr": "RTMP"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_2_PRO|driver_EUFYCAM_3|driver_EUFYCAM_3C|driver_EUFYCAM_E|driver_EUFYCAM_E330|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_C|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_1080P_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED|driver_WALLLIGHT_CAM_S&capabilities=CMD_START_STREAM"
+        }
+    ]
 }

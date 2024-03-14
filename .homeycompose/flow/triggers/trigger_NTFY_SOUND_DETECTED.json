@@ -1,21 +1,23 @@
 {
-  "id": "trigger_NTFY_SOUND_DETECTED",
-  "platforms": ["local"],
-  "title": {
-    "en": "Sound Detected",
-    "nl": "Geluid Gedetecteerd",
-    "fr": "Son détecté"
-  },
-  "titleFormatted": {
-    "en": "Sound Detected",
-    "nl": "Geluid Gedetecteerd",
-    "fr": "Son détecté"
-  },
-  "args": [
-    {
-      "name": "device",
-      "type": "device",
-      "filter": "driver_id=driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PRO&capabilities=NTFY_SOUND_DETECTED"
-    }
-  ]
+    "id": "trigger_NTFY_SOUND_DETECTED",
+    "platforms": [
+        "local"
+    ],
+    "title": {
+        "en": "Sound Detected",
+        "nl": "Geluid Gedetecteerd",
+        "fr": "Son détecté"
+    },
+    "titleFormatted": {
+        "en": "Sound Detected",
+        "nl": "Geluid Gedetecteerd",
+        "fr": "Son détecté"
+    },
+    "args": [
+        {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PRO&capabilities=NTFY_SOUND_DETECTED"
+        }
+    ]
 }
