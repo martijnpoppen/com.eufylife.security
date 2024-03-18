@@ -396,6 +396,9 @@ class App extends Homey.App {
                 p2pConnectionSetup: 'quickest',
                 logging: {
                     level: 1
+                },
+                deviceConfig: {
+                    simultaneousDetections: false
                 }
             };
 
