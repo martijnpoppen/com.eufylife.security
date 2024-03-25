@@ -1498,5 +1498,8 @@
   },
   "3.26.4": {
     "en": "FIX: double detections"
+  },
+  "3.26.5": {
+    "en": "FIX: HB3 known person | FIX: better logging"
   }
 }
