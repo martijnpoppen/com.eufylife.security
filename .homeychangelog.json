@@ -1501,5 +1501,8 @@
   },
   "3.26.5": {
     "en": "FIX: HB3 known person | FIX: better logging"
+  },
+  "3.26.6": {
+    "en": "FIX: sensor events"
   }
 }
