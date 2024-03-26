@@ -1504,5 +1504,8 @@
   },
   "3.26.6": {
     "en": "FIX: sensor events"
+  },
+  "3.26.7": {
+    "en": "FIX: double detections"
   }
 }
