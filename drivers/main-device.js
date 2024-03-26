@@ -15,7 +15,7 @@ module.exports = class mainDevice extends Homey.Device {
         try {
             const settings = this.getSettings();
 
-            this.homey.app.log(`[Device] ${this.getName()} - starting`);
+            this.homey.app.debug(`[Device] ${this.getName()} - starting`);
 
             this.setUnavailable(`${this.getName()} ${this.homey.__('device.init')}`);
 
@@ -65,7 +65,7 @@ module.exports = class mainDevice extends Homey.Device {
             this._started = true;
         } catch (error) {
             this.setUnavailable(this.homey.__('device.serial_failure'));
-            this.homey.app.log(error);
+            this.homey.app.error(error);
         }
     }
 
@@ -128,7 +128,7 @@ module.exports = class mainDevice extends Homey.Device {
     }
 
     async setupDevice() {
-        this.homey.app.log(`[Device] - init => ${this.driver.id} - name: ${this.getName()}`);
+        this.homey.app.debug(`[Device] - init => ${this.driver.id} - name: ${this.getName()}`);
 
         this.unsetWarning();
         this.setUnavailable(`${this.getName()} ${this.homey.__('device.init')}`);
@@ -169,7 +169,7 @@ module.exports = class mainDevice extends Homey.Device {
             await this.resetCapability('NTFY_VEHICLE_DETECTED');
             await this.resetCapability('NTFY_PRESS_DOORBELL');
         } catch (error) {
-            this.homey.app.log(error);
+            this.homey.app.error(error);
         }
     }
 
@@ -184,8 +184,8 @@ module.exports = class mainDevice extends Homey.Device {
         let driverCapabilities = driverManifest.capabilities;
         const deviceCapabilities = this.getCapabilities();
 
-        this.homey.app.log(`[Device] ${this.getName()} - checkCapabilities for`, driverManifest.id);
-        this.homey.app.log(`[Device] ${this.getName()} - Found capabilities =>`, deviceCapabilities);
+        this.homey.app.debug(`[Device] ${this.getName()} - checkCapabilities for`, driverManifest.id);
+        this.homey.app.debug(`[Device] ${this.getName()} - Found capabilities =>`, deviceCapabilities);
 
         if (!this.HomeyDevice.isStandAlone && (this.hasCapability('CMD_SET_ARMING') || driverCapabilities.includes('CMD_SET_ARMING'))) {
             const deleteCapabilities = ['CMD_SET_ARMING'];
@@ -232,8 +232,8 @@ module.exports = class mainDevice extends Homey.Device {
             const newC = driverCapabilities.filter((d) => !deviceCapabilities.includes(d));
             const oldC = deviceCapabilities.filter((d) => !driverCapabilities.includes(d));
 
-            this.homey.app.log(`[Device] ${this.getName()} - Got old capabilities =>`, oldC);
-            this.homey.app.log(`[Device] ${this.getName()} - Got new capabilities =>`, newC);
+            this.homey.app.debug(`[Device] ${this.getName()} - Got old capabilities =>`, oldC);
+            this.homey.app.debug(`[Device] ${this.getName()} - Got new capabilities =>`, newC);
 
             oldC.forEach((c) => {
                 this.homey.app.log(`[Device] ${this.getName()} - updateCapabilities => Remove `, c);
@@ -246,7 +246,7 @@ module.exports = class mainDevice extends Homey.Device {
             });
             await sleep(2000);
         } catch (error) {
-            this.homey.app.log(error);
+            this.homey.app.error(error);
         }
     }
 
@@ -266,7 +266,7 @@ module.exports = class mainDevice extends Homey.Device {
                 this.registerCapabilityListener('CMD_SET_FLOODLIGHT_MANUAL_SWITCH', this.onCapability_CMD_SET_FLOODLIGHT_MANUAL_SWITCH.bind(this));
             }
         } catch (error) {
-            this.homey.app.log(error);
+            this.homey.app.error(error);
         }
     }
 
@@ -574,7 +574,7 @@ module.exports = class mainDevice extends Homey.Device {
             if (!this._image[imageType]) {
                 this._image[imageType] = await this.homey.images.createImage();
 
-                this.homey.app.log(`[Device] ${this.getName()} - Registering ${imageType} image`);
+                this.homey.app.debug(`[Device] ${this.getName()} - Registering ${imageType} image`);
 
                 let imageName = 'Event';
                 let imageID = this.HomeyDevice.station_sn;
@@ -633,26 +633,26 @@ module.exports = class mainDevice extends Homey.Device {
             const settings = ctx.getSettings();
 
             if (initial && ctx.EufyDevice && ctx.hasCapability('measure_battery')) {
-                ctx.homey.app.log(`[Device] ${ctx.getName()} - deviceParams - measure_battery`);
+                ctx.homey.app.debug(`[Device] ${ctx.getName()} - deviceParams - measure_battery`);
                 const value = ctx.EufyDevice.getPropertyValue(PropertyName.DeviceBattery);
                 if (!isNil(value)) ctx.setParamStatus('measure_battery', value);
             }
 
             if (initial && ctx.EufyDevice && ctx.hasCapability('measure_temperature')) {
-                ctx.homey.app.log(`[Device] ${ctx.getName()} - deviceParams - measure_temperature`);
+                ctx.homey.app.debug(`[Device] ${ctx.getName()} - deviceParams - measure_temperature`);
                 const value = ctx.EufyDevice.getPropertyValue(PropertyName.DeviceBatteryTemp);
                 if (!isNil(value)) ctx.setParamStatus('measure_temperature', value);
             }
 
             if (initial && ctx.EufyDevice && ctx.hasCapability('onoff')) {
-                ctx.homey.app.log(`[Device] ${ctx.getName()} - deviceParams - onoff`);
+                ctx.homey.app.debug(`[Device] ${ctx.getName()} - deviceParams - onoff`);
                 const value = ctx.EufyDevice.getPropertyValue(PropertyName.DeviceEnabled);
                 if (!isNil(value)) ctx.setParamStatus('onoff', value);
             }
 
             if (initial && ctx.EufyStation && ctx.hasCapability('CMD_SET_ARMING')) {
                 const value = ctx.EufyStation.getPropertyValue(PropertyName.StationGuardMode);
-                ctx.homey.app.log(`[Device] ${ctx.getName()} - deviceParams - StationGuardMode`, value);
+                ctx.homey.app.debug(`[Device] ${ctx.getName()} - deviceParams - StationGuardMode`, value);
                 let CMD_SET_ARMING = keyByValue(ARM_TYPES, parseInt(value));
                 if (!isNil(CMD_SET_ARMING)) {
                     ctx.setParamStatus('CMD_SET_ARMING', CMD_SET_ARMING);
@@ -661,7 +661,7 @@ module.exports = class mainDevice extends Homey.Device {
             }
 
             if (settings.force_include_thumbnail && ctx.EufyDevice && ctx.EufyDevice.hasProperty(PropertyName.DeviceNotificationType)) {
-                ctx.homey.app.log(`[Device] ${ctx.getName()} - enforceSettings - DeviceNotificationType`);
+                ctx.homey.app.debug(`[Device] ${ctx.getName()} - enforceSettings - DeviceNotificationType`);
 
                 await ctx.homey.app.eufyClient.setDeviceProperty(settings.DEVICE_SN, PropertyName.DeviceNotificationType, 2).catch((e) => ctx.log(e));
             }
@@ -673,7 +673,7 @@ module.exports = class mainDevice extends Homey.Device {
     async setParamStatus(capability, value) {
         try {
             await this.setCapabilityValue(capability, value).catch(this.error);
-            this.homey.app.log(`[Device] ${this.getName()} - setParamStatus ${capability} - to: `, value);
+            this.homey.app.debug(`[Device] ${this.getName()} - setParamStatus ${capability} - to: `, value);
 
             return Promise.resolve(true);
         } catch (e) {
@@ -690,11 +690,11 @@ module.exports = class mainDevice extends Homey.Device {
 
                 const values = modes.map((x) => x.replace('-', '_'));
 
-                this.homey.app.log(`[Device] ${this.getName()} - set_alarm_arm_mode: ${settings.alarm_arm_mode} - value: `, value, values.includes(value));
+                this.homey.app.debug(`[Device] ${this.getName()} - set_alarm_arm_mode: ${settings.alarm_arm_mode} - value: `, value, values.includes(value));
 
                 await this.setCapabilityValue('alarm_arm_mode', values.includes(value)).catch(this.error);
             } else {
-                this.homey.app.log(`[Device] ${this.getName()} - set_alarm_arm_mode: ${settings.alarm_arm_mode}`, false);
+                this.homey.app.debug(`[Device] ${this.getName()} - set_alarm_arm_mode: ${settings.alarm_arm_mode}`, false);
 
                 await this.setCapabilityValue('alarm_arm_mode', false).catch(this.error);
             }
@@ -703,30 +703,30 @@ module.exports = class mainDevice extends Homey.Device {
 
     async check_alarm_arm_mode(settings) {
         if (settings.alarm_arm_mode === 'disabled' && this.hasCapability('alarm_arm_mode')) {
-            this.homey.app.log(`[Device] ${this.getName()} - check_alarm_arm_mode: removing alarm_arm_mode`);
+            this.homey.app.debug(`[Device] ${this.getName()} - check_alarm_arm_mode: removing alarm_arm_mode`);
             this.removeCapability('alarm_arm_mode').catch(e => this.homey.app.log(e));
         } else if (!!settings.alarm_arm_mode && !this.hasCapability('alarm_arm_mode')) {
-            this.homey.app.log(`[Device] ${this.getName()} - check_alarm_arm_mode: adding alarm_arm_mode`);
+            this.homey.app.debug(`[Device] ${this.getName()} - check_alarm_arm_mode: adding alarm_arm_mode`);
             this.addCapability('alarm_arm_mode').catch(e => this.homey.app.log(e));
         }
     }
 
     async check_alarm_motion(settings) {
         if ('alarm_motion_enabled' in settings && !settings.alarm_motion_enabled && this.hasCapability('alarm_motion')) {
-            this.homey.app.log(`[Device] ${this.getName()} - check_alarm_motion: removing alarm_motion`);
+            this.homey.app.debug(`[Device] ${this.getName()} - check_alarm_motion: removing alarm_motion`);
             this.removeCapability('alarm_motion').catch(e => this.homey.app.log(e));
         } else if ('alarm_motion_enabled' in settings && !!settings.alarm_motion_enabled && !this.hasCapability('alarm_motion')) {
-            this.homey.app.log(`[Device] ${this.getName()} - check_alarm_motion: adding alarm_motion`);
+            this.homey.app.debug(`[Device] ${this.getName()} - check_alarm_motion: adding alarm_motion`);
             this.addCapability('alarm_motion').catch(e => this.homey.app.log(e));
         }
     }
 
     async check_alarm_generic(settings) {
         if ('alarm_generic_enabled' in settings && !settings.alarm_generic_enabled && this.hasCapability('alarm_generic')) {
-            this.homey.app.log(`[Device] ${this.getName()} - check_alarm_generic: removing alarm_generic`);
+            this.homey.app.debug(`[Device] ${this.getName()} - check_alarm_generic: removing alarm_generic`);
             this.removeCapability('alarm_generic').catch(e => this.homey.app.log(e));
         } else if ('alarm_generic_enabled' in settings && !!settings.alarm_generic_enabled && !this.hasCapability('alarm_generic')) {
-            this.homey.app.log(`[Device] ${this.getName()} - check_alarm_generic: adding alarm_generic`);
+            this.homey.app.debug(`[Device] ${this.getName()} - check_alarm_generic: adding alarm_generic`);
             this.addCapability('alarm_generic').catch(e => this.homey.app.log(e));
         }
     }

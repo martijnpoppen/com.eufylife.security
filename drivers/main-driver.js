@@ -5,7 +5,7 @@ const { sleep } = require('../lib/utils.js');
 
 module.exports = class mainDriver extends Homey.Driver {
     onInit() {
-        this.homey.app.log(`[Driver] - init: ${this.id} - type: ${this.driverType()}`);
+        this.homey.app.debug(`[Driver] - init: ${this.id} - type: ${this.driverType()}`);
 
         this.homey.app.setDevices(this.getDevices());
     }
@@ -118,7 +118,7 @@ module.exports = class mainDriver extends Homey.Driver {
                     return true;
                 }
             } catch (error) {
-                this.homey.app.log(`[Driver] ${this.id} - Error:`, error);
+                this.homey.app.error(`[Driver] ${this.id} - Error:`, error);
             }
         });
 
@@ -157,7 +157,7 @@ module.exports = class mainDriver extends Homey.Driver {
             try {
                 return this._devices;
             } catch (error) {
-                this.homey.app.log(`[Driver] ${this.id} - Error:`, error);
+                this.homey.app.error(`[Driver] ${this.id} - Error:`, error);
                 this.deviceError = error;
 
                 session.showView('error');
@@ -236,7 +236,7 @@ module.exports = class mainDriver extends Homey.Driver {
 
             return Promise.resolve(results);
         } catch (e) {
-            this.homey.app.log('Error when trying to connect new device', e);
+            this.homey.app.error('Error when trying to connect new device', e);
 
             if (typeof e === 'object') {
                 return Promise.reject(JSON.stringify(e));

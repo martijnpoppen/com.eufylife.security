@@ -4,6 +4,8 @@ const Homey = require('homey');
 const path = require('path');
 const fs = require('fs');
 
+const HomeyLog = require('homey-betterstack');
+
 const { EufySecurity, LogLevel } = require('eufy-security-client');
 const { PhoneModels } = require('eufy-security-client/build/http/const');
 
@@ -17,24 +19,12 @@ const eufyEventsHelper = require('./lib/helpers/eufy-events.helper');
 
 const { sleep, randomNumber } = require('./lib/utils');
 
-const Logger = require('./lib/helpers/eufy-logger.helper');
-
 const _settingsKey = `${Homey.manifest.id}.settings`;
 
-class App extends Homey.App {
-    log() {
-        console.log.bind(this, '[log]').apply(this, arguments);
-    }
-
-    error() {
-        console.error.bind(this, '[error]').apply(this, arguments);
-    }
-
-    // -------------------- INIT ----------------------
-
+class App extends HomeyLog {
     async onInit() {
-        try {
-            this.log(`${this.homey.manifest.id} - ${this.homey.manifest.version} started...`);
+        try {       
+            this.debug(`${Homey.manifest.id} - ${Homey.manifest.version} started...`);
             
             await this.checkNodeProcessVars();
             await this.initGlobarVars();
@@ -66,15 +56,15 @@ class App extends Homey.App {
                 break;
         }
 
-        this.log('checkNodeProcessVars - nodeVersionInfo', { nodeVersion, nodeBaseVersion, nodeVersionResult });
+        this.debug('checkNodeProcessVars - nodeVersionInfo', { nodeVersion, nodeBaseVersion, nodeVersionResult });
 
         if (nodeVersionResult === 1 || nodeVersionResult === 0) {
-            this.log(`checkNodeProcessVars - Needs REVERT_CVE_2023_46809`);
+            this.warn(`checkNodeProcessVars - Needs REVERT_CVE_2023_46809`);
             // process['REVERT_CVE_2023_46809'] = true;
             // process.execArgv.push('--security-revert=CVE-2023-46809')
             process.env['REVERT_CVE_2023_46809'] = true;
         } else {
-            this.log(`checkNodeProcessVars - SKIPPING REVERT_CVE_2023_46809`);
+            this.warn(`checkNodeProcessVars - SKIPPING REVERT_CVE_2023_46809`);
             // process.env['REVERT_CVE_2023_46809'] = false;
         }
     }
@@ -207,7 +197,7 @@ class App extends Homey.App {
     }
 
     updateSettings(settings) {
-        this.log('updateSettings - New settings:', { ...settings, USERNAME: 'LOG', PASSWORD: 'LOG', PERSISTENT_DATA: 'LOG' });
+        this.debug('updateSettings - New settings:', { ...settings, USERNAME: 'LOG', PASSWORD: 'LOG', PERSISTENT_DATA: 'LOG' });
 
         this.appSettings = settings;
         this.saveSettings();
@@ -349,7 +339,6 @@ class App extends Homey.App {
     // ---------------------------- eufyClient ----------------------------------
     async setEufyClient(devicesLoaded = false) {
         try {
-            const debug = false;
             let persistentFile = false;
 
             const persistentDir = path.resolve(__dirname, '/userdata/');
@@ -360,17 +349,11 @@ class App extends Homey.App {
                     if (file === 'persistent.json') {
                         persistentFile = true;
                     }
-
-                    if (file === 'debug.log') {
-                        fs.unlinkSync(path.join(persistentDir, 'debug.log'));
-                    }
                 });
             }
 
-            this.libraryLog = Logger.createNew('EufyLibrary', debug);
-
             if (persistentFile) {
-                this.log('setEufyClient - Found persistent file', persistentFile);
+                this.debug('setEufyClient - Found persistent file', persistentFile);
                 const fileContent = fs.readFileSync(path.join(persistentDir, 'persistent.json'), { encoding: 'utf8' });
 
                 await this.updateSettings({
@@ -395,7 +378,7 @@ class App extends Homey.App {
                 eventDurationSeconds: 15,
                 p2pConnectionSetup: 'quickest',
                 logging: {
-                    level: 1
+                    level: LogLevel.Info
                 },
                 deviceConfig: {
                     simultaneousDetections: false
@@ -404,7 +387,9 @@ class App extends Homey.App {
 
             await this.resetEufyClient();
 
-            this.eufyClient = await EufySecurity.initialize(config, this.libraryLog);
+            const eufyLogger = await this.addHomeyLogChild('eufy-security-client');
+
+            this.eufyClient = await EufySecurity.initialize(config, eufyLogger);
 
             if (devicesLoaded) {
                 // Prevent Eufyclient from getting stuck in (re)-pairing
@@ -421,7 +406,7 @@ class App extends Homey.App {
 
     async resetEufyClient() {
         if (this.eufyClient) {
-            this.log('resetEufyClient - Resetting EufyClient');
+            this.warn('resetEufyClient - Resetting EufyClient');
             this.eufyClient.close();
             this.eufyClient = null;
             this.eufyClient = {};
@@ -436,8 +421,8 @@ class App extends Homey.App {
 
     connectEufyClientHandlers() {
         this.eufyClient.on('tfa request', () => {
-            this.log('Event: tfa request (2FA)');
-            console.log('Event: devicesLoaded', this.eufyClient.devicesLoaded);
+            this.warn('Event: tfa request (2FA)');
+
             const notification = !this.need2FA;
             this.need2FA = true;
 
@@ -449,7 +434,7 @@ class App extends Homey.App {
         });
 
         this.eufyClient.on('captcha request', (id, captcha) => {
-            this.log('Event: captcha request', id);
+            this.warn('Event: captcha request', id);
             const notification = !this.needCaptcha;
             this.needCaptcha = {
                 captcha,
@@ -464,7 +449,7 @@ class App extends Homey.App {
         });
 
         this.eufyClient.on('persistent data', async (data) => {
-            this.log('Event: persistent data');
+            this.warn('Event: persistent data');
 
             await this.updateSettings({
                 ...this.appSettings,
@@ -473,7 +458,7 @@ class App extends Homey.App {
         });
 
         this.eufyClient.once('connect', async () => {
-            this.log('Event: connected');
+            this.warn('Event: connected');
 
             this.switchRegions();
         });
@@ -483,7 +468,7 @@ class App extends Homey.App {
         await sleep(4000);
         const eufyDevices = await this.eufyClient.getDevices();
 
-        this.log('switchRegions', { region: this.appSettings.REGION, eufyRegionSwitchAllowed: this.eufyRegionSwitchAllowed, deviceList: this.deviceList.length, eufyDevices: eufyDevices.length });
+        this.debug('switchRegions', { region: this.appSettings.REGION, eufyRegionSwitchAllowed: this.eufyRegionSwitchAllowed, deviceList: this.deviceList.length, eufyDevices: eufyDevices.length });
 
         if (this.eufyRegionSwitchAllowed && this.deviceList.length && !eufyDevices.length) {
             const REGION = this.appSettings.REGION === 'US' ? 'EU' : 'US';
@@ -542,7 +527,7 @@ class App extends Homey.App {
 
     async removeDevice(device_sn) {
         try {
-            this.homey.app.log('removeDevice', device_sn);
+            this.homey.app.debug('removeDevice', device_sn);
 
             const filteredList = this.deviceList.filter((dl) => {
                 const data = dl.getData();

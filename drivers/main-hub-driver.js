@@ -42,7 +42,7 @@ module.exports = class mainHubDriver extends mainDriver {
 
             return Promise.resolve(results);
         } catch (e) {
-            this.homey.app.log('Error when trying to connect new device', e);
+            this.homey.app.error('Error when trying to connect new device', e);
 
             if (typeof e === 'object') {
                 return Promise.reject(JSON.stringify(e));

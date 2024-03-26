@@ -44,7 +44,7 @@ module.exports = class mainHub extends mainDevice {
             this._started = true;
         } catch (error) {
             this.setUnavailable(this.homey.__('device.serial_failure_station'));
-            this.homey.app.log(error);
+            this.homey.app.error(error);
         }
     }
 
@@ -160,7 +160,7 @@ module.exports = class mainHub extends mainDevice {
 
             if (initial && ctx.EufyStation && ctx.hasCapability('CMD_SET_ARMING')) {
                 const value = ctx.EufyStation.getPropertyValue(PropertyName.StationGuardMode);
-                ctx.homey.app.log(`[Device] ${ctx.getName()} - deviceParams - StationGuardMode`, value);
+                ctx.homey.app.debug(`[Device] ${ctx.getName()} - deviceParams - StationGuardMode`, value);
                 let CMD_SET_ARMING = keyByValue(ARM_TYPES, parseInt(value));
                 if(!isNil(CMD_SET_ARMING)) { 
                     ctx.setParamStatus('CMD_SET_ARMING', CMD_SET_ARMING);
