@@ -1507,5 +1507,8 @@
   },
   "3.26.7": {
     "en": "FIX: double detections"
+  },
+  "3.26.8": {
+    "en": "FIX: HB3 doorbell press after face recognition fix"
   }
 }
