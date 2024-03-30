@@ -395,6 +395,17 @@ module.exports = class mainDevice extends Homey.Device {
         }
     }
 
+    async onCapability_CMD_MOTION_TRACKING(value) {
+        try {
+            this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_MOTION_TRACKING - `, value);
+            await this.homey.app.eufyClient.setDeviceProperty(this.HomeyDevice.device_sn, PropertyName.DeviceMotionTracking, value);
+
+            return Promise.resolve(true);
+        } catch (e) {
+            this.homey.app.error(e);
+        }
+    }
+
     async onCapability_CMD_SET_SNOOZE_MODE(homebase = 0, motion = 0, snooze = 0, chime = 0) {
         const payload = {
             snooze_homebase: !!parseInt(homebase),
@@ -456,6 +467,7 @@ module.exports = class mainDevice extends Homey.Device {
     async onCapability_CMD_SET_FLOODLIGHT_MANUAL_SWITCH(value) {
         try {
             this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_SET_FLOODLIGHT_MANUAL_SWITCH - `, value);
+            await this.setCapabilityValue('CMD_SET_FLOODLIGHT_MANUAL_SWITCH', value);
             await this.homey.app.eufyClient.setDeviceProperty(this.HomeyDevice.device_sn, PropertyName.DeviceLight, value);
 
             return Promise.resolve(true);
@@ -587,7 +599,7 @@ module.exports = class mainDevice extends Homey.Device {
                     imageID = `${this.HomeyDevice.device_sn}-Recording`;
                 }
 
-                this.setCameraImage(imageID, `${this.getName()} - ${imageName}`, this._image[imageType]).catch((err) => console.log(err));
+                this.setCameraImage(imageID, `${this.getName()} - ${imageName}`, this._image[imageType]).catch((err) => this.homey.app.error(err));
             }
 
             await this._image[imageType].setStream(async (stream) => {

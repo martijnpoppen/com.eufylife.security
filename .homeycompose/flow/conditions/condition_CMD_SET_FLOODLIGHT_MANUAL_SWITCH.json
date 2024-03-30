@@ -1,0 +1,50 @@
+{
+    "id": "condition_CMD_SET_FLOODLIGHT_MANUAL_SWITCH",
+    "platforms": [
+        "local"
+    ],
+    "title": {
+        "en": "Light !{{is|isn't}} on",
+        "nl": "Lamp !{{is|is niet}} aan",
+        "fr": "lumière !{{est|n'est pas}}"
+    },
+    "titleFormatted": {
+        "en": "Light !{{is|isn't}} [[condition_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE]]",
+        "nl": "Lamp !{{is|is niet}} [[condition_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE]]",
+        "fr": "lumière !{{est|n'est pas}} [[condition_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE]]"
+    },
+    "args": [
+        {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_3|driver_EUFYCAM_3C|driver_EUFYCAM_E330|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED|driver_WALLLIGHT_CAM_S&capabilities=CMD_SET_FLOODLIGHT_MANUAL_SWITCH"
+        },
+        {
+            "name": "condition_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE",
+            "type": "dropdown",
+            "title": {
+                "en": "Light",
+                "nl": "Lamp",
+                "fr": "lumière"
+            },
+            "values": [
+                {
+                    "id": "1",
+                    "label": {
+                        "en": "On",
+                        "nl": "Aan",
+                        "fr": "On"
+                    }
+                },
+                {
+                    "id": "0",
+                    "label": {
+                        "en": "Off",
+                        "nl": "Uit",
+                        "fr": "Off"
+                    }
+                }
+            ]
+        }
+    ]
+}

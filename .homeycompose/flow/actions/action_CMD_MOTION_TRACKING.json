@@ -1,0 +1,50 @@
+{
+    "id": "action_CMD_MOTION_TRACKING",
+    "platforms": [
+        "local"
+    ],
+    "title": {
+        "en": "Toggle Motion Tracking",
+        "nl": "Schakel Bewegingstracering in/uit",
+        "fr": "Activer/Désactiver le Suivi des Mouvements"
+    },
+    "titleFormatted": {
+        "en": "Toggle Motion Tracking [[action_CMD_MOTION_TRACKING_TYPE]]",
+        "nl": "Zet Bewegingstracering [[action_CMD_MOTION_TRACKING_TYPE]]",
+        "fr": "Activer le Suivi des Mouvements [[action_CMD_MOTION_TRACKING_TYPE]]"
+    },
+    "args": [
+        {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM_PAN_TILT&capabilities=CMD_INDOOR_PAN_TURN"
+        },
+        {
+            "name": "action_CMD_MOTION_TRACKING_TYPE",
+            "type": "dropdown",
+            "title": {
+                "en": "Nightvision",
+                "nl": "Bewegingstracering",
+                "fr": "le Suivi des Mouvements"
+            },
+            "values": [
+                {
+                    "id": "1",
+                    "label": {
+                        "en": "On",
+                        "nl": "Aan",
+                        "fr": "On"
+                    }
+                },
+                {
+                    "id": "0",
+                    "label": {
+                        "en": "Off",
+                        "nl": "Uit",
+                        "fr": "Off"
+                    }
+                }
+            ]
+        }
+    ]
+}
