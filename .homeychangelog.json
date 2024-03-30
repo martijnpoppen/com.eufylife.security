@@ -1510,5 +1510,8 @@
   },
   "3.26.8": {
     "en": "FIX: HB3 doorbell press after face recognition fix"
+  },
+  "3.27.0": {
+    "en": "NEW: add Flodlight flowcard | NEW: add motion tracking flowcard"
   }
 }
