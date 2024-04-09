@@ -86,8 +86,6 @@ module.exports = class mainDriver extends Homey.Driver {
 
                     this.deviceList = await waitForResults(this);
 
-                    this.homey.app.log(`[Driver] ${this.id} - deviceList:`, this.deviceList.length, !!this.deviceList.length);
-
                     if (!!this.deviceList.length) {
                         this._devices = await this.onDeviceListRequest(this.id);
 
@@ -192,30 +190,15 @@ module.exports = class mainDriver extends Homey.Driver {
     async onDeviceListRequest(driverId) {
         try {
             const deviceType = this.deviceType();
-            const driverManifest = this.manifest;
-            const driverCapabilities = driverManifest.capabilities;
 
             const deviceList = await this.homey.app.deviceList;
-            const pairedDevicesArray = [];
-            let homebasePaired = false;
-
-            deviceList.forEach((device) => {
+            const pairedDevicesArray = deviceList.map((device) => {
                 const data = device.getData();
-                const driver = device.driver;
 
-                pairedDevicesArray.push(data.device_sn);
-
-                if (driver.id.includes('HOMEBASE')) {
-                    homebasePaired = true;
-                }
+                return data.device_sn;
             });
 
             this.homey.app.log(`[Driver] [onDeviceListRequest] ${driverId} - pairedDevicesArray`, pairedDevicesArray);
-            this.homey.app.log(`[Driver] [onDeviceListRequest] ${driverId} - homebasePaired`, homebasePaired);
-
-            // if (!driverCapabilities.includes('CMD_SET_ARMING') && !this.id.includes('HOMEBASE') && !homebasePaired) {
-            //     return { info: 'Please add a Homebase before adding this device' };
-            // }
 
             const results = this.deviceList
                 .filter((device) => !pairedDevicesArray.includes(device.rawDevice.device_sn))
