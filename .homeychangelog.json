@@ -1516,5 +1516,8 @@
   },
   "3.27.1": {
     "en": "NEW: add Flodlight flowcard | NEW: add motion tracking flowcard"
+  },
+  "3.27.2": {
+    "en": "FIX: remove mandatory Homebase from pairing"
   }
 }
