@@ -213,9 +213,9 @@ module.exports = class mainDriver extends Homey.Driver {
             this.homey.app.log(`[Driver] [onDeviceListRequest] ${driverId} - pairedDevicesArray`, pairedDevicesArray);
             this.homey.app.log(`[Driver] [onDeviceListRequest] ${driverId} - homebasePaired`, homebasePaired);
 
-            if (!driverCapabilities.includes('CMD_SET_ARMING') && !this.id.includes('HOMEBASE') && !homebasePaired) {
-                return { info: 'Please add a Homebase before adding this device' };
-            }
+            // if (!driverCapabilities.includes('CMD_SET_ARMING') && !this.id.includes('HOMEBASE') && !homebasePaired) {
+            //     return { info: 'Please add a Homebase before adding this device' };
+            // }
 
             const results = this.deviceList
                 .filter((device) => !pairedDevicesArray.includes(device.rawDevice.device_sn))

@@ -9,7 +9,7 @@
         "fr": "Activer/Désactiver le Suivi des Mouvements"
     },
     "titleFormatted": {
-        "en": "Toggle Motion Tracking [[action_CMD_MOTION_TRACKING_TYPE]]",
+        "en": "Set Motion Tracking [[action_CMD_MOTION_TRACKING_TYPE]]",
         "nl": "Zet Bewegingstracering [[action_CMD_MOTION_TRACKING_TYPE]]",
         "fr": "Activer le Suivi des Mouvements [[action_CMD_MOTION_TRACKING_TYPE]]"
     },
@@ -23,7 +23,7 @@
             "name": "action_CMD_MOTION_TRACKING_TYPE",
             "type": "dropdown",
             "title": {
-                "en": "Nightvision",
+                "en": "Motion Tracking",
                 "nl": "Bewegingstracering",
                 "fr": "le Suivi des Mouvements"
             },
