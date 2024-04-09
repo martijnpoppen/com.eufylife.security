@@ -1519,5 +1519,11 @@
   },
   "3.27.2": {
     "en": "FIX: remove mandatory Homebase from pairing"
+  },
+  "3.27.3": {
+    "en": "FIX: remove mandatory Homebase from pairing"
+  },
+  "3.27.4": {
+    "en": "FIX: remove mandatory Homebase from pairing"
   }
 }
