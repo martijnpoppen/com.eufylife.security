@@ -12,7 +12,6 @@
   "dependencies": {
     "eufy-security-client": "https://github.com/martijnpoppen/eufy-security-client/tarball/homey-integration",
     "form-data": "^4.0.0",
-    "homey-betterstack": "^0.2.5",
     "node-fetch": "^2.6.1"
   }
 }

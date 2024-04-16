@@ -4,8 +4,6 @@ const Homey = require('homey');
 const path = require('path');
 const fs = require('fs');
 
-const HomeyLog = require('homey-betterstack');
-
 const { EufySecurity, LogLevel } = require('eufy-security-client');
 const { PhoneModels } = require('eufy-security-client/build/http/const');
 
@@ -19,13 +17,45 @@ const eufyEventsHelper = require('./lib/helpers/eufy-events.helper');
 
 const { sleep, randomNumber } = require('./lib/utils');
 
+const Logger = require('./lib/helpers/eufy-logger.helper');
+
 const _settingsKey = `${Homey.manifest.id}.settings`;
 
-class App extends HomeyLog {
+class App extends Homey.App {
+    trace() {
+        console.trace.bind(this, '[log]').apply(this, arguments);
+    }
+
+    debug() {
+        console.debug.bind(this, '[debug]').apply(this, arguments);
+    }
+
+    info() {
+        console.log.bind(this, '[info]').apply(this, arguments);
+    }
+
+    log() {
+        console.log.bind(this, '[log]').apply(this, arguments);
+    }
+
+    warn() {
+        console.warn.bind(this, '[warn]').apply(this, arguments);
+    }
+
+    error() {
+        console.error.bind(this, '[error]').apply(this, arguments);
+    }
+
+    fatal() {
+        console.error.bind(this, '[fatal]').apply(this, arguments);
+    }
+
+    // -------------------- INIT ----------------------
+
     async onInit() {
-        try {       
+        try {
             this.debug(`${Homey.manifest.id} - ${Homey.manifest.version} started...`);
-            
+
             await this.checkNodeProcessVars();
             await this.initGlobarVars();
         } catch (error) {
@@ -52,7 +82,7 @@ class App extends HomeyLog {
 
                 break;
             default:
-                nodeVersionResult = -1
+                nodeVersionResult = -1;
                 break;
         }
 
@@ -387,9 +417,8 @@ class App extends HomeyLog {
 
             await this.resetEufyClient();
 
-            const eufyLogger = await this.addHomeyLogChild('eufy-security-client');
 
-            this.eufyClient = await EufySecurity.initialize(config, eufyLogger);
+            this.eufyClient = await EufySecurity.initialize(config, Logger.createNew('EufyLibrary', true));
 
             if (devicesLoaded) {
                 // Prevent Eufyclient from getting stuck in (re)-pairing
