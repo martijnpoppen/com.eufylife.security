@@ -1525,5 +1525,8 @@
   },
   "3.27.4": {
     "en": "FIX: remove mandatory Homebase from pairing"
+  },
+  "3.27.5": {
+    "en": "FIX: logs caused memory issue in Test version"
   }
 }
