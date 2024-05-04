@@ -503,24 +503,23 @@ module.exports = class mainDevice extends Homey.Device {
                 throw new Error('Please enable snapshots in the device settings. (see info icon in settings before usage)');
             }
 
-            let time = 4;
+            const defaultTime = 4;
+            const gifTime = 11;
+            let time = defaultTime;
 
-            if (type === 'snapshot' && this.homey.app.deviceTypes.HOMEBASE_3.some((v) => this.HomeyDevice.station_sn.includes(v))) {
-                // different timing for HB 3 devices
-                // time = 3;
-            } else if (type === 'gif') {
-                time = 11;
+            if (type === 'gif') {
+                time = gifTime;
             }
 
             this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_SNAPSHOT => Set Time`, time);
 
             if(url) {
                 this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_SNAPSHOT => Got custom url`, url);
-                this._snapshot_url = time > 3 ? `${url}/gif?device_sn=` : `${url}/snapshot?device_sn=`;
+                this._snapshot_url = time === gifTime ? `${url}/gif?device_sn=` : `${url}/snapshot?device_sn=`;
                 this._snapshot_custom = true;
             } else {
                 this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_SNAPSHOT => Got default url`);
-                this._snapshot_url = time > 10 ? Homey.env.GIF_URL : Homey.env.SNAPSHOT_URL;
+                this._snapshot_url = time === gifTime ? Homey.env.GIF_URL : Homey.env.SNAPSHOT_URL;
             }
 
             await this.homey.app.eufyClient.setCameraMaxLivestreamDuration(time);
