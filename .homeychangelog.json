@@ -1528,5 +1528,8 @@
   },
   "3.27.5": {
     "en": "FIX: logs caused memory issue in Test version"
+  },
+  "3.27.6": {
+    "en": "FIX: self hosted snapshot service, timings issue"
   }
 }
