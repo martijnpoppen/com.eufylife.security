@@ -1531,5 +1531,8 @@
   },
   "3.27.6": {
     "en": "FIX: self hosted snapshot service, timings issue"
+  },
+  "3.27.7": {
+    "en": "FIX: S340 missing Pet Detection"
   }
 }
