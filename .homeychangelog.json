@@ -1534,5 +1534,8 @@
   },
   "3.27.7": {
     "en": "FIX: S340 missing Pet Detection"
+  },
+  "3.27.8": {
+    "en": "FIX: pet detection S340"
   }
 }
