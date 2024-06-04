@@ -1537,5 +1537,8 @@
   },
   "3.27.8": {
     "en": "FIX: pet detection S340"
+  },
+  "3.27.9": {
+    "en": "FIX: vehicle detection Floodlight E340"
   }
 }
