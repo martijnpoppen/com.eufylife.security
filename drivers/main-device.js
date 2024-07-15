@@ -168,6 +168,7 @@ module.exports = class mainDevice extends Homey.Device {
             await this.resetCapability('NTFY_PET_DETECTED');
             await this.resetCapability('NTFY_VEHICLE_DETECTED');
             await this.resetCapability('NTFY_PRESS_DOORBELL');
+            await this.resetCapability('NTFY_LOITERING_DETECTION');
         } catch (error) {
             this.homey.app.error(error);
         }
@@ -213,6 +214,13 @@ module.exports = class mainDevice extends Homey.Device {
             driverCapabilities = [...driverCapabilities, 'measure_battery', 'measure_temperature'];
 
             this.homey.app.log(`[Device] ${this.getName()} - checkCapabities - Battery found - Adding: `, ['measure_battery', 'measure_temperature']);
+        }
+
+        if (!!this.EufyDevice && this.hasCapability('NTFY_LOITERING_DETECTION') && !this.EufyDevice.hasProperty(PropertyName.DeviceLoiteringDetection)) {
+            let deleteCapabilities = ['NTFY_LOITERING_DETECTION'];
+
+            driverCapabilities = driverCapabilities.filter((item) => !deleteCapabilities.includes(item));
+            this.homey.app.log(`[Device] ${this.getName()} - checkCapabities - No loitering - Removing: `, deleteCapabilities);
         }
 
         if (!!this.EufyDevice && !this.EufyDevice.hasProperty(PropertyName.DeviceLight)) {
