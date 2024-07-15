@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.eufylife.security",
-  "version": "3.27.10",
+  "version": "3.28.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "brandColor": "#2a6185",
@@ -219,6 +219,29 @@
             "name": "device",
             "type": "device",
             "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_2_PRO|driver_EUFYCAM_3|driver_EUFYCAM_3C|driver_EUFYCAM_E330|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_C|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_1080P_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED|driver_WALLLIGHT_CAM_S&capabilities=NTFY_FACE_DETECTION"
+          }
+        ]
+      },
+      {
+        "id": "trigger_NTFY_LOITERING_DETECTION",
+        "platforms": [
+          "local"
+        ],
+        "title": {
+          "en": "Someone is loitering",
+          "nl": "Iemand hangt 4ond",
+          "fr": "Quelqu'un rôde"
+        },
+        "titleFormatted": {
+          "en": "Someone is loitering",
+          "nl": "Iemand hangt 4ond",
+          "fr": "Quelqu'un rôde"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_2_PRO|driver_EUFYCAM_3|driver_EUFYCAM_3C|driver_EUFYCAM_E|driver_EUFYCAM_E330|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_C|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_1080P_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED|driver_WALLLIGHT_CAM_S&capabilities=NTFY_LOITERING_DETECTION"
           }
         ]
       },
@@ -17522,6 +17545,7 @@
         "CMD_BAT_DOORBELL_VIDEO_QUALITY",
         "CMD_BAT_DOORBELL_WDR_SWITCH",
         "NTFY_MOTION_DETECTION",
+        "NTFY_LOITERING_DETECTION",
         "NTFY_FACE_DETECTION",
         "NTFY_PET_DETECTED",
         "NTFY_VEHICLE_DETECTED",
@@ -18047,6 +18071,7 @@
         "CMD_SET_HUB_ALARM_CLOSE",
         "CMD_IRCUT_SWITCH",
         "NTFY_MOTION_DETECTION",
+        "NTFY_LOITERING_DETECTION",
         "NTFY_FACE_DETECTION",
         "NTFY_PET_DETECTED",
         "NTFY_VEHICLE_DETECTED",
@@ -19004,6 +19029,33 @@
         "en": "Person Detected",
         "nl": "Persoon Gedetecteerd",
         "fr": "Personne détectée"
+      }
+    },
+    "NTFY_LOITERING_DETECTION": {
+      "id": "NTFY_LOITERING_DETECTION",
+      "type": "boolean",
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": true,
+      "icon": "assets/icons/person-walking.svg",
+      "options": {
+        "zoneActivity": true
+      },
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Loitering - on",
+        "nl": "Rondhangen - aan",
+        "fr": "Rôder - activé"
+      },
+      "insightsTitleFalse": {
+        "en": "Loitering - off",
+        "nl": "Rondhangen - uit",
+        "fr": "Rôder - désactivé"
+      },
+      "title": {
+        "en": "Loitering",
+        "nl": "Rondhangen",
+        "fr": "Rôder"
       }
     },
     "NTFY_MOTION_DETECTION": {
