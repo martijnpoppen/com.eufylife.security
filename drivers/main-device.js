@@ -422,7 +422,7 @@ module.exports = class mainDevice extends Homey.Device {
         try {
             this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_TRIGGER_ALARM - `, time);
 
-            if (!this.HomeyDevice.isStandAlone) {
+            if (this.HomeyDevice.isStandAlone) {
                 await this.EufyStation.triggerStationAlarmSound(time + 2);
                 // time + 2 so we can disable alarm manually.
 

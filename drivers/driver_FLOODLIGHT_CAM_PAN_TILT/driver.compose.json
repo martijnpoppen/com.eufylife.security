@@ -24,7 +24,8 @@
     "NTFY_MOTION_DETECTION",
     "NTFY_FACE_DETECTION",
     "NTFY_PET_DETECTED",
-    "NTFY_VEHICLE_DETECTED"
+    "NTFY_VEHICLE_DETECTED",
+    "NTFY_VEHICLE_DETECTED_FORCE"
   ],
   "$extends": ["device", "pair", "repair", "settings-standalone"]
 }
