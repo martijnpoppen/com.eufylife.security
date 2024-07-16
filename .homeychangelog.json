@@ -1549,5 +1549,8 @@
   },
   "3.28.1": {
     "en": "NEW: Add loitering detection (only for supported models -> S330)"
+  },
+  "3.28.2": {
+    "en": "NEW: Add loitering detection (only for supported models -> S330)"
   }
 }
