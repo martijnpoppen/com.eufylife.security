@@ -1552,5 +1552,8 @@
   },
   "3.28.2": {
     "en": "NEW: Add loitering detection (only for supported models -> S330)"
+  },
+  "3.28.3": {
+    "en": "FIX: typo in flowcard translation "
   }
 }
