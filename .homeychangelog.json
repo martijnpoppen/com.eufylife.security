@@ -1555,5 +1555,8 @@
   },
   "3.28.3": {
     "en": "FIX: typo in flowcard translation "
+  },
+  "3.28.4": {
+    "en": "FIX: Standalone Battery device snapshot feature"
   }
 }
