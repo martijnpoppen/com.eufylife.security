@@ -27,9 +27,10 @@ module.exports = class mainDevice extends Homey.Device {
 
             this.HomeyDevice.isStandAlone = this.HomeyDevice.device_sn === this.HomeyDevice.station_sn;
             this.EufyStation.rawStation.member.nick_name = 'Homey';
+            this.HomeyDevice.isStandAloneBattery = this.HomeyDevice.isStandAlone && !!this.EufyDevice && this.EufyDevice.hasBattery();
 
             this.homey.app.log(
-                `[Device] ${this.getName()} - starting - isStandAlone: ${this.HomeyDevice.isStandAlone} - station_sn: ${this.HomeyDevice.station_sn} - device_sn: ${this.HomeyDevice.device_sn}`
+                `[Device] ${this.getName()} - starting - isStandAlone: ${this.HomeyDevice.isStandAlone} - isStandAloneBattery: ${this.HomeyDevice.isStandAloneBattery} - station_sn: ${this.HomeyDevice.station_sn} - device_sn: ${this.HomeyDevice.device_sn}`
             );
 
             if (settings.snapshot_enabled) {
@@ -136,6 +137,7 @@ module.exports = class mainDevice extends Homey.Device {
         const deviceObject = this.getData();
         this.HomeyDevice = deviceObject;
         this.HomeyDevice.isStandAlone = this.HomeyDevice.device_sn === this.HomeyDevice.station_sn;
+        this.HomeyDevice.isStandAloneBattery = false;
         // inital set of isStandAlone. Override in onStartup for cameras that can be used with Homebase's
 
         this._image = {
@@ -208,7 +210,7 @@ module.exports = class mainDevice extends Homey.Device {
 
             driverCapabilities = driverCapabilities.filter((item) => !deleteCapabilities.includes(item));
         }
-
+        
         // Check if devices has a battery
         if (!!this.EufyDevice && this.EufyDevice.hasBattery()) {
             driverCapabilities = [...driverCapabilities, 'measure_battery', 'measure_temperature'];
@@ -511,7 +513,7 @@ module.exports = class mainDevice extends Homey.Device {
                 throw new Error('Please enable snapshots in the device settings. (see info icon in settings before usage)');
             }
 
-            const defaultTime = 4;
+            const defaultTime = this.HomeyDevice.isStandAloneBattery ? 6 : 4;
             const gifTime = 11;
             let time = defaultTime;
 
