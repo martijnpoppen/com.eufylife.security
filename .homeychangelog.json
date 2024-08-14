@@ -1558,5 +1558,8 @@
   },
   "3.28.4": {
     "en": "FIX: Standalone Battery device snapshot feature"
+  },
+  "3.29.0": {
+    "en": "NEW: add Translations - Thanks to Emile Nijssen"
   }
 }
