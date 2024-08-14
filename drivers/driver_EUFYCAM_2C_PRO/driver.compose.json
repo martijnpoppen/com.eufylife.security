@@ -3,7 +3,16 @@
   "name": {
     "en": "eufyCam 2C / 2C Pro",
     "nl": "eufyCam 2C / 2C Pro",
-    "fr": "eufyCam 2C / 2C Pro"
+    "fr": "eufyCam 2C / 2C Pro",
+    "da": "eufyCam 2C / 2C Pro",
+    "de": "eufyCam 2C / 2C Pro",
+    "es": "eufyCam 2C / 2C Pro",
+    "it": "eufyCam 2C / 2C Pro",
+    "no": "eufyCam 2C / 2C Pro",
+    "sv": "eufyCam 2C / 2C Pro",
+    "pl": "eufyCam 2C / 2C Pro",
+    "ru": "eufyCam 2C / 2C Pro",
+    "ko": "eufyCam 2C / 2C Pro"
   },
   "class": "camera",
   "capabilities": [
@@ -25,7 +34,14 @@
     "NTFY_VEHICLE_DETECTED"
   ],
   "energy": {
-    "batteries": ["INTERNAL"]
+    "batteries": [
+      "INTERNAL"
+    ]
   },
-  "$extends": ["device", "pair", "repair", "settings-default"]
+  "$extends": [
+    "device",
+    "pair",
+    "repair",
+    "settings-default"
+  ]
 }

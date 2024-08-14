@@ -2,7 +2,16 @@
   "name": {
     "en": "eufyCam 1",
     "nl": "eufyCam 1",
-    "fr": "eufyCam 1"
+    "fr": "eufyCam 1",
+    "da": "eufyCam 1",
+    "de": "eufyCam 1",
+    "es": "eufyCam 1",
+    "it": "eufyCam 1",
+    "no": "eufyCam 1",
+    "sv": "eufyCam 1",
+    "pl": "eufyCam 1",
+    "ru": "eufyCam 1",
+    "ko": "eufyCam 1"
   },
   "class": "camera",
   "capabilities": [
@@ -23,7 +32,14 @@
     "NTFY_VEHICLE_DETECTED"
   ],
   "energy": {
-    "batteries": ["INTERNAL"]
+    "batteries": [
+      "INTERNAL"
+    ]
   },
-  "$extends": ["device", "pair", "repair", "settings-default"]
+  "$extends": [
+    "device",
+    "pair",
+    "repair",
+    "settings-default"
+  ]
 }

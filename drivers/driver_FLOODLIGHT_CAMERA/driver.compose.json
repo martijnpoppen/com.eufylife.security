@@ -2,7 +2,16 @@
   "name": {
     "en": "Floodlight Camera",
     "nl": "Floodlight Camera",
-    "fr": "Floodlight Camera"
+    "fr": "Floodlight Camera",
+    "da": "Projektørkamera",
+    "de": "Flutlichtkamera",
+    "es": "Cámara de foco",
+    "it": "Telecamera a riflettore",
+    "no": "Flomlyskamera",
+    "sv": "Strålkastarkamera",
+    "pl": "Kamera z reflektorem",
+    "ru": "Камера с прожектором",
+    "ko": "조명 카메라"
   },
   "class": "camera",
   "capabilities": [
@@ -24,5 +33,10 @@
     "NTFY_PET_DETECTED",
     "NTFY_VEHICLE_DETECTED"
   ],
-  "$extends": ["device", "pair", "repair", "settings-standalone"]
+  "$extends": [
+    "device",
+    "pair",
+    "repair",
+    "settings-standalone"
+  ]
 }

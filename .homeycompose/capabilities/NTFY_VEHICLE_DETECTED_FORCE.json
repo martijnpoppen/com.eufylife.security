@@ -7,6 +7,15 @@
   "title": {
     "en": "Vehicle Detected",
     "nl": "Voertuig Gedetecteerd",
-    "fr": "Véhicule détecté"
+    "fr": "Véhicule détecté",
+    "da": "Køretøj Opdaget",
+    "de": "Fahrzeug Erkannt",
+    "es": "Vehículo Detectado",
+    "it": "Veicolo Rilevato",
+    "no": "Kjøretøy Oppdaget",
+    "sv": "Fordon Upptäckt",
+    "pl": "Pojazd Wykryty",
+    "ru": "Обнаружен Транспорт",
+    "ko": "차량 감지됨"
   }
 }

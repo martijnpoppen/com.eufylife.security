@@ -1,0 +1,22 @@
+{
+  "settings": {
+    "title": "Configuración de Eufy",
+    "subtitle": "Los ajustes de inicio de sesión se han eliminado de esta página. Para corregir el inicio de sesión de Eufy, ve a la configuración del dispositivo de un dispositivo Eufy (por ejemplo, Homebase 2) en Homey y haz clic en mantenimiento y luego reparar.",
+    "account": "Configuración de la cuenta"
+  },
+  "pair": {
+    "captchaLabel": "Captcha",
+    "loading": "Cargando",
+    "no_data": "No se encontraron dispositivos. Intenta con una región diferente.",
+    "no_devices": "No se encontraron dispositivos. Asegúrate de que has compartido los dispositivos Eufy con tu cuenta extra de administrador (intenta con una región diferente).",
+    "no_devices_repair": "Reparación fallida. No se encontraron dispositivos en tu cuenta. Asegúrate de que has compartido los dispositivos Eufy con tu cuenta extra de administrador. O edita tu inicio de sesión en la página anterior.",
+    "keypad": "El teclado es un dispositivo físico para establecer el modo de seguridad para Homebase. Por lo tanto, esto no tiene una funcionalidad propia en la aplicación de Homey. Para crear flujos basados en o cambiar modos de seguridad, agrega la homebase en su lugar (si aún no lo has hecho). Allí puedes encontrar los modos de seguridad y las tarjetas de flujo para modos de seguridad."
+  },
+  "device": {
+    "init": "se está conectando al servidor de Eufy...",
+    "need_captcha": "Conexión fallida (se necesita Captcha). Intenta reparar el dispositivo. Configuración del dispositivo -> mantenimiento -> reparar",
+    "need_2FA": "Conexión fallida (se necesita 2FA). Intenta reparar el dispositivo. Configuración del dispositivo -> mantenimiento -> reparar",
+    "serial_failure": "Conexión fallida (número de serie del dispositivo no encontrado). Intenta reparar el dispositivo. Configuración del dispositivo -> mantenimiento -> reparar",
+    "serial_failure_station": "Conexión fallida (número de serie de la estación no encontrado). Intenta reparar el dispositivo. Configuración del dispositivo -> mantenimiento -> reparar"
+  }
+}

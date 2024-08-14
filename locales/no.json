@@ -1,0 +1,22 @@
+{
+  "settings": {
+    "title": "Eufy Innstillinger",
+    "subtitle": "Logginnstillinger er fjernet fra denne siden. For å fikse Eufy-innloggingen, gå til enhetens innstillinger for en Eufy-enhet (f.eks. Homebase 2) i Homey og klikk vedlikehold og deretter reparer.",
+    "account": "Kontoinnstillinger"
+  },
+  "pair": {
+    "captchaLabel": "Captcha",
+    "loading": "Laster",
+    "no_data": "Ingen enheter funnet. Prøv en annen region.",
+    "no_devices": "Ingen enheter funnet. Sørg for at du har delt Eufy-enhetene med din administratortilleggskonto (Prøv en annen region)",
+    "no_devices_repair": "Reparasjon mislyktes. Ingen enheter funnet i kontoen din. Sørg for at du har delt Eufy-enhetene med din administratortilleggskonto. Eller rediger innloggingen din på forrige side",
+    "keypad": "Tastaturet er en fysisk enhet for å sette sikkerhetsmodusen for Homebase. Derfor har den ingen egen funksjonalitet i Homey-appen. For å lage strømmer basert på eller endre sikkerhetsmoduser, legg i stedet til Homebase (hvis ikke allerede gjort). Der finner du sikkerhetsmoduser og flytkort for sikkerhetsmoduser."
+  },
+  "device": {
+    "init": "kobler til Eufy Server...",
+    "need_captcha": "Tilkobling mislyktes (Captcha nødvendig). Prøv å reparere enheten. Enhetsinnstillinger -> vedlikehold -> reparer",
+    "need_2FA": "Tilkobling mislyktes (2FA nødvendig). Prøv å reparere enheten. Enhetsinnstillinger -> vedlikehold -> reparer",
+    "serial_failure": "Tilkobling mislyktes (Enhetsserienummer ikke funnet). Prøv å reparere enheten. Enhetsinnstillinger -> vedlikehold -> reparer",
+    "serial_failure_station": "Tilkobling mislyktes (Stationsserienummer ikke funnet). Prøv å reparere enheten. Enhetsinnstillinger -> vedlikehold -> reparer"
+  }
+}

@@ -7,6 +7,15 @@
   "title": {
     "en": "CMD_SET_ARMING_HUB",
     "nl": "CMD_SET_ARMING_HUB",
-    "fr": "CMD_SET_ARMING_HUB"
+    "fr": "CMD_SET_ARMING_HUB",
+    "da": "CMD_SET_ARMING_HUB",
+    "de": "CMD_SET_ARMING_HUB",
+    "es": "CMD_SET_ARMING_HUB",
+    "it": "CMD_SET_ARMING_HUB",
+    "no": "CMD_SET_ARMING_HUB",
+    "sv": "CMD_SET_ARMING_HUB",
+    "pl": "CMD_SET_ARMING_HUB",
+    "ru": "CMD_SET_ARMING_HUB",
+    "ko": "CMD_SET_ARMING_HUB"
   }
 }

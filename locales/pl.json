@@ -1,0 +1,22 @@
+{
+  "settings": {
+    "title": "Ustawienia Eufy",
+    "subtitle": "Ustawienia logowania zostały usunięte z tej strony. Aby naprawić logowanie do Eufy, przejdź do ustawień urządzenia Eufy (np. Homebase 2) w Homey, kliknij konserwacja, a następnie naprawa.",
+    "account": "Ustawienia konta"
+  },
+  "pair": {
+    "captchaLabel": "Captcha",
+    "loading": "Ładowanie",
+    "no_data": "Nie znaleziono urządzeń. Spróbuj inny region.",
+    "no_devices": "Nie znaleziono urządzeń. Upewnij się, że udostępniłeś urządzenia Eufy na swoim dodatkowym koncie administratora (Spróbuj inny region).",
+    "no_devices_repair": "Naprawa nie powiodła się. Nie znaleziono urządzeń na twoim koncie. Upewnij się, że udostępniłeś urządzenia Eufy na swoim dodatkowym koncie administratora. Lub edytuj swoje logowanie na poprzedniej stronie.",
+    "keypad": "Klawiatura jest fizycznym urządzeniem do ustawiania trybu bezpieczeństwa dla Homebase. Dlatego nie ma ona własnej funkcji w aplikacji Homey. Aby tworzyć przepływy lub zmieniać tryby bezpieczeństwa, dodaj zamiast tego Homebase (jeśli nie zostało to już zrobione). Tam można znaleźć tryby bezpieczeństwa i karty przepływów dla trybów bezpieczeństwa."
+  },
+  "device": {
+    "init": "łączy się z serwerem Eufy...",
+    "need_captcha": "Połączenie nie powiodło się (wymagana Captcha). Spróbuj naprawić urządzenie. Ustawienia urządzenia -> konserwacja -> naprawa",
+    "need_2FA": "Połączenie nie powiodło się (wymagana weryfikacja dwuetapowa). Spróbuj naprawić urządzenie. Ustawienia urządzenia -> konserwacja -> naprawa",
+    "serial_failure": "Połączenie nie powiodło się (nie znaleziono numeru seryjnego urządzenia). Spróbuj naprawić urządzenie. Ustawienia urządzenia -> konserwacja -> naprawa",
+    "serial_failure_station": "Połączenie nie powiodło się (nie znaleziono numeru seryjnego stacji). Spróbuj naprawić urządzenie. Ustawienia urządzenia -> konserwacja -> naprawa"
+  }
+}

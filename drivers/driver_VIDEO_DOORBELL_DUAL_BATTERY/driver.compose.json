@@ -2,7 +2,16 @@
   "name": {
     "en": "Dual Doorbell - Battery (S330 / E340)",
     "nl": "Dual Deurbel - Batterij (S330 / E340)",
-    "fr": "Sonnette double - Batterie (S330 / E340)"
+    "fr": "Sonnette double - Batterie (S330 / E340)",
+    "da": "Dobbelt-Dørklokke - Batteri (S330 / E340)",
+    "de": "Doppelte Türklingel - Batterie (S330 / E340)",
+    "es": "Timbre Dual - Batería (S330 / E340)",
+    "it": "Campanello Doppio - Batteria (S330 / E340)",
+    "no": "Dobbel Dørklokke - Batteri (S330 / E340)",
+    "sv": "Dubbel Dörrklocka - Batteri (S330 / E340)",
+    "pl": "Podwójny Dzwonek - Bateria (S330 / E340)",
+    "ru": "Двойной дверной звонок - Батарея (S330 / E340)",
+    "ko": "이중 도어벨 - 배터리 (S330 / E340)"
   },
   "class": "doorbell",
   "capabilities": [
@@ -30,7 +39,14 @@
     "NTFY_PRESS_DOORBELL"
   ],
   "energy": {
-    "batteries": ["INTERNAL"]
+    "batteries": [
+      "INTERNAL"
+    ]
   },
-  "$extends": ["device", "pair", "repair", "settings-default"]
+  "$extends": [
+    "device",
+    "pair",
+    "repair",
+    "settings-default"
+  ]
 }

@@ -2,7 +2,16 @@
   "name": {
     "en": "eufyCam E",
     "nl": "eufyCam E",
-    "fr": "eufyCam E"
+    "fr": "eufyCam E",
+    "da": "eufyCam E",
+    "de": "eufyCam E",
+    "es": "eufyCam E",
+    "it": "eufyCam E",
+    "no": "eufyCam E",
+    "sv": "eufyCam E",
+    "pl": "eufyCam E",
+    "ru": "eufyCam E",
+    "ko": "eufyCam E"
   },
   "class": "camera",
   "capabilities": [
@@ -20,7 +29,14 @@
     "NTFY_MOTION_DETECTION"
   ],
   "energy": {
-    "batteries": ["INTERNAL"]
+    "batteries": [
+      "INTERNAL"
+    ]
   },
-  "$extends": ["device", "pair", "repair", "settings-default"]
+  "$extends": [
+    "device",
+    "pair",
+    "repair",
+    "settings-default"
+  ]
 }

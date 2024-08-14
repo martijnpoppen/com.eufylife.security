@@ -7,6 +7,15 @@
   "title": {
     "en": "Reboot",
     "nl": "Opnieuw opstarten",
-    "fr": "Redémarrer"
+    "fr": "Redémarrer",
+    "da": "Genstart",
+    "de": "Neustart",
+    "es": "Reiniciar",
+    "it": "Riavvia",
+    "no": "Omstart",
+    "sv": "Starta om",
+    "pl": "Uruchom ponownie",
+    "ru": "Перезагрузка",
+    "ko": "다시 시작"
   }
 }

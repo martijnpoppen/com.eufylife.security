@@ -1,28 +1,55 @@
 {
-    "id": "trigger_NTFY_VEHICLE_DETECTED",
-    "platforms": [
-        "local"
-    ],
-    "title": {
-        "en": "Vehicle Detected",
-        "nl": "Voertuig Gedetecteerd",
-        "fr": "Véhicule détecté"
-    },
-    "titleFormatted": {
-        "en": "Vehicle Detected",
-        "nl": "Voertuig Gedetecteerd",
-        "fr": "Véhicule détecté"
-    },
-    "hint": {
-        "en": "This flowcard will only work for Homebase 3 connected cameras",
-        "nl": "Deze flowkaart werkt alleen voor Homebase 3 verbonden cameras",
-        "fr": "Cette carte de flux ne fonctionnera que pour les caméras connectées Homebase 3"
-    },
-    "args": [
-        {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_2_PRO|driver_EUFYCAM_3|driver_EUFYCAM_3C|driver_EUFYCAM_E330|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_C|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_1080P_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED|driver_WALLLIGHT_CAM_S&capabilities=NTFY_VEHICLE_DETECTED"
-        }
-    ]
+  "id": "trigger_NTFY_VEHICLE_DETECTED",
+  "platforms": [
+    "local"
+  ],
+  "title": {
+    "en": "Vehicle Detected",
+    "nl": "Voertuig Gedetecteerd",
+    "fr": "Véhicule détecté",
+    "da": "Køretøj opdaget",
+    "de": "Fahrzeug erkannt",
+    "es": "Vehículo detectado",
+    "it": "Veicolo rilevato",
+    "no": "Kjøretøy oppdaget",
+    "sv": "Fordon upptäckt",
+    "pl": "Wykryto pojazd",
+    "ru": "Обнаружено транспортное средство",
+    "ko": "차량 감지됨"
+  },
+  "titleFormatted": {
+    "en": "Vehicle Detected",
+    "nl": "Voertuig Gedetecteerd",
+    "fr": "Véhicule détecté",
+    "da": "Køretøj opdaget",
+    "de": "Fahrzeug erkannt",
+    "es": "Vehículo detectado",
+    "it": "Veicolo rilevato",
+    "no": "Kjøretøy oppdaget",
+    "sv": "Fordon upptäckt",
+    "pl": "Wykryto pojazd",
+    "ru": "Обнаружено транспортное средство",
+    "ko": "차량 감지됨"
+  },
+  "hint": {
+    "en": "This flowcard will only work for Homebase 3 connected cameras",
+    "nl": "Deze flowkaart werkt alleen voor Homebase 3 verbonden cameras",
+    "fr": "Cette carte de flux ne fonctionnera que pour les caméras connectées Homebase 3",
+    "da": "Dette flowkort virker kun for Homebase 3 tilsluttede kameraer",
+    "de": "Diese Flowkarte funktioniert nur mit Homebase 3 verbundenen Kameras",
+    "es": "Esta tarjeta de flujo solo funcionará para cámaras conectadas a Homebase 3",
+    "it": "Questa scheda di flusso funzionerà solo per telecamere collegate a Homebase 3",
+    "no": "Dette flytkortet vil bare fungere for Homebase 3 tilkoblede kameraer",
+    "sv": "Detta flödeskort fungerar endast för Homebase 3-anslutna kameror",
+    "pl": "Ta karta przepływu działa tylko z kamerami podłączonymi do Homebase 3",
+    "ru": "Эта карта потока работает только с камерами, подключенными к Homebase 3",
+    "ko": "이 플로우 카드는 Homebase 3에 연결된 카메라에서만 작동합니다"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_2_PRO|driver_EUFYCAM_3|driver_EUFYCAM_3C|driver_EUFYCAM_E330|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_C|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_1080P_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED|driver_WALLLIGHT_CAM_S&capabilities=NTFY_VEHICLE_DETECTED"
+    }
+  ]
 }

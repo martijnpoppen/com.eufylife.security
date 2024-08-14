@@ -7,6 +7,15 @@
   "title": {
     "en": "Status LED",
     "nl": "Status LED",
-    "fr": "Statut LED"
+    "fr": "Statut LED",
+    "da": "Status LED",
+    "de": "Status-LED",
+    "es": "LED de estado",
+    "it": "LED di stato",
+    "no": "Status LED",
+    "sv": "Status-LED",
+    "pl": "Dioda stanu",
+    "ru": "Светодиод состояния",
+    "ko": "상태 LED"
   }
 }

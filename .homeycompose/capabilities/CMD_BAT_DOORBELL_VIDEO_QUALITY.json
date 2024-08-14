@@ -7,6 +7,15 @@
   "title": {
     "en": "Toggle HDR",
     "nl": "Zet HDR aan/uit",
-    "fr": "Basculer en HDR"
+    "fr": "Basculer en HDR",
+    "da": "Skift HDR",
+    "de": "HDR umschalten",
+    "es": "Alternar HDR",
+    "it": "Attiva/disattiva HDR",
+    "no": "Veksle HDR",
+    "sv": "Växla HDR",
+    "pl": "Przełącz HDR",
+    "ru": "Переключить HDR",
+    "ko": "HDR 전환"
   }
 }

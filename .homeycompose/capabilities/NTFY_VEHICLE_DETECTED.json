@@ -12,16 +12,43 @@
   "insightsTitleTrue": {
     "en": "Vehicle Detected - on",
     "nl": "Voertuig Gedetecteerd - aan",
-    "fr": "Détection de véhicule - activée"
+    "fr": "Détection de véhicule - activée",
+    "da": "Køretøj registreret - til",
+    "de": "Fahrzeug erkannt - an",
+    "es": "Vehículo detectado - activado",
+    "it": "Veicolo rilevato - acceso",
+    "no": "Kjøretøy oppdaget - på",
+    "sv": "Fordon upptäckt - på",
+    "pl": "Wykryto pojazd - włączony",
+    "ru": "Автомобиль обнаружен - включено",
+    "ko": "차량 감지 - 켜짐"
   },
   "insightsTitleFalse": {
     "en": "Vehicle Detected - off",
     "nl": "Voertuig Gedetecteerd - uit",
-    "fr": "Détection de véhicule - désactivée"
+    "fr": "Détection de véhicule - désactivée",
+    "da": "Køretøj registreret - fra",
+    "de": "Fahrzeug erkannt - aus",
+    "es": "Vehículo detectado - desactivado",
+    "it": "Veicolo rilevato - spento",
+    "no": "Kjøretøy oppdaget - av",
+    "sv": "Fordon upptäckt - av",
+    "pl": "Wykryto pojazd - wyłączony",
+    "ru": "Автомобиль обнаружен - выключено",
+    "ko": "차량 감지 - 꺼짐"
   },
   "title": {
     "en": "Vehicle Detected",
     "nl": "Voertuig Gedetecteerd",
-    "fr": "Véhicule détecté"
+    "fr": "Véhicule détecté",
+    "da": "Køretøj registreret",
+    "de": "Fahrzeug erkannt",
+    "es": "Vehículo detectado",
+    "it": "Veicolo rilevato",
+    "no": "Kjøretøy oppdaget",
+    "sv": "Fordon upptäckt",
+    "pl": "Wykryto pojazd",
+    "ru": "Автомобиль обнаружен",
+    "ko": "차량 감지됨"
   }
 }

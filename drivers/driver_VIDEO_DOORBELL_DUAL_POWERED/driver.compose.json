@@ -2,7 +2,16 @@
   "name": {
     "en": "Dual Doorbell - Wired (S330)",
     "nl": "Dual Deurbel - Bedraad (S330)",
-    "fr": "Sonnette double - Filaire (S330)"
+    "fr": "Sonnette double - Filaire (S330)",
+    "da": "Dobbelt dørklokke - Kablet (S330)",
+    "de": "Doppeltürklingel - Kabelgebunden (S330)",
+    "es": "Timbre dual - Con cable (S330)",
+    "it": "Campanello doppio - Cablaggio (S330)",
+    "no": "Dobbel ringeklokke - Kablet (S330)",
+    "sv": "Dubbel dörrklocka - Trådbunden (S330)",
+    "pl": "Podwójny dzwonek do drzwi - Przewodowy (S330)",
+    "ru": "Двойной дверной звонок - Проводной (S330)",
+    "ko": "이중 도어벨 - 유선 (S330)"
   },
   "class": "doorbell",
   "capabilities": [
@@ -29,7 +38,14 @@
     "NTFY_PRESS_DOORBELL"
   ],
   "energy": {
-    "batteries": ["INTERNAL"]
+    "batteries": [
+      "INTERNAL"
+    ]
   },
-  "$extends": ["device", "pair", "repair", "settings-standalone"]
+  "$extends": [
+    "device",
+    "pair",
+    "repair",
+    "settings-standalone"
+  ]
 }

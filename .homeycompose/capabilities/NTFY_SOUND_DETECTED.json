@@ -12,16 +12,43 @@
   "insightsTitleTrue": {
     "en": "Sound Detected - on",
     "nl": "Geluid Gedetecteerd - aan",
-    "fr": "Détection de bruit - activée"
+    "fr": "Détection de bruit - activée",
+    "da": "Lyd registreret - til",
+    "de": "Geräusch erkannt - ein",
+    "es": "Sonido Detectado - encendido",
+    "it": "Suono Rilevato - acceso",
+    "no": "Lyd oppdaget - på",
+    "sv": "Ljud upptäckt - på",
+    "pl": "Wykryto dźwięk - włączony",
+    "ru": "Обнаружен звук - включено",
+    "ko": "소리 감지됨 - 켜짐"
   },
   "insightsTitleFalse": {
     "en": "Sound Detected - off",
     "nl": "Geluid Gedetecteerd - uit",
-    "fr": "Détection de bruit - désactivée"
+    "fr": "Détection de bruit - désactivée",
+    "da": "Lyd registreret - fra",
+    "de": "Geräusch erkannt - aus",
+    "es": "Sonido Detectado - apagado",
+    "it": "Suono Rilevato - spento",
+    "no": "Lyd oppdaget - av",
+    "sv": "Ljud upptäckt - av",
+    "pl": "Wykryto dźwięk - wyłączony",
+    "ru": "Обнаружен звук - выключено",
+    "ko": "소리 감지됨 - 꺼짐"
   },
   "title": {
     "en": "Sound Detected",
     "nl": "Geluid Gedetecteerd",
-    "fr": "Bruit détecté"
+    "fr": "Bruit détecté",
+    "da": "Lyd registreret",
+    "de": "Geräusch erkannt",
+    "es": "Sonido Detectado",
+    "it": "Suono Rilevato",
+    "no": "Lyd oppdaget",
+    "sv": "Ljud upptäckt",
+    "pl": "Wykryto dźwięk",
+    "ru": "Обнаружен звук",
+    "ko": "소리 감지됨"
   }
 }

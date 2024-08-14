@@ -7,6 +7,15 @@
   "title": {
     "en": "Set snooze mode",
     "nl": "Zet snooze modus",
-    "fr": "Activer le mode 'snooze'"
+    "fr": "Activer le mode 'snooze'",
+    "da": "Indstil snooze-tilstand",
+    "de": "Schlummermodus einstellen",
+    "es": "Activar modo de repetición",
+    "it": "Imposta la modalità sonnellino",
+    "no": "Sett slumremodus",
+    "sv": "Sätt snooze-läge",
+    "pl": "Ustaw tryb drzemki",
+    "ru": "Установить режим повтора",
+    "ko": "스누즈 모드 설정"
   }
 }

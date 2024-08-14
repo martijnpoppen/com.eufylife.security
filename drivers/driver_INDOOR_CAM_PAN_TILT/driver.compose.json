@@ -2,7 +2,16 @@
   "name": {
     "en": "Indoor Cam Pan & Tilt (1080P/2K)",
     "nl": "Indoor Cam Pan & Tilt (1080P/2K)",
-    "fr": "Indoor Cam Pan & Tilt (1080P/2K)"
+    "fr": "Indoor Cam Pan & Tilt (1080P/2K)",
+    "da": "Indoor Cam Pan & Tilt (1080P/2K)",
+    "de": "Indoor Cam Pan & Tilt (1080P/2K)",
+    "es": "Indoor Cam Pan y Tilt (1080P/2K)",
+    "it": "Indoor Cam Pan & Tilt (1080P/2K)",
+    "no": "Indoor Cam Pan & Tilt (1080P/2K)",
+    "sv": "Indoor Cam Pan & Tilt (1080P/2K)",
+    "pl": "Indoor Cam Pan & Tilt (1080P/2K)",
+    "ru": "Внутренняя камера Pan & Tilt (1080P/2K)",
+    "ko": "실내 카메라 팬 & 틸트 (1080P/2K)"
   },
   "class": "camera",
   "capabilities": [
@@ -27,5 +36,10 @@
     "NTFY_PET_DETECTED",
     "NTFY_VEHICLE_DETECTED"
   ],
-  "$extends": ["device", "pair", "repair", "settings-standalone"]
+  "$extends": [
+    "device",
+    "pair",
+    "repair",
+    "settings-standalone"
+  ]
 }

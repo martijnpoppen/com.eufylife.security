@@ -2,7 +2,16 @@
   "name": {
     "en": "Wall Light Cam S100 / S120",
     "nl": "Wall Light Cam S100 / S120",
-    "fr": "Wall Light Cam S100 / S120"
+    "fr": "Wall Light Cam S100 / S120",
+    "da": "Væglampe Kamera S100 / S120",
+    "de": "Wandlichtkamera S100 / S120",
+    "es": "Cámara de Luz de Pared S100 / S120",
+    "it": "Telecamera da Parete S100 / S120",
+    "no": "Vegglampe Kamera S100 / S120",
+    "sv": "Vägglampa Kamera S100 / S120",
+    "pl": "Kamera Ścienna S100 / S120",
+    "ru": "Настенная Камера S100 / S120",
+    "ko": "벽 램프 카메라 S100 / S120"
   },
   "class": "camera",
   "capabilities": [
@@ -24,5 +33,10 @@
     "NTFY_FACE_DETECTION",
     "NTFY_VEHICLE_DETECTED"
   ],
-  "$extends": ["device", "pair", "repair", "settings-standalone"]
+  "$extends": [
+    "device",
+    "pair",
+    "repair",
+    "settings-standalone"
+  ]
 }

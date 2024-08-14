@@ -7,6 +7,15 @@
   "title": {
     "en": "Light",
     "nl": "Lamp",
-    "fr": "Lumière"
+    "fr": "Lumière",
+    "da": "Lys",
+    "de": "Licht",
+    "es": "Luz",
+    "it": "Luce",
+    "no": "Lys",
+    "sv": "Ljus",
+    "pl": "Światło",
+    "ru": "Свет",
+    "ko": "빛"
   }
 }

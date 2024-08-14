@@ -4,7 +4,16 @@
   "title": {
     "en": "Arm Mode",
     "nl": "Beveiligingsmodus",
-    "fr": "Mode d'armement"
+    "fr": "Mode d'armement",
+    "da": "Aktiveringsmodus",
+    "de": "Scharfschaltmodus",
+    "es": "Modo de armado",
+    "it": "Modalità armamento",
+    "no": "Armeringsmodus",
+    "sv": "Aktiveringsläge",
+    "pl": "Tryb uzbrojenia",
+    "ru": "Режим арминга",
+    "ko": "작동 모드"
   },
   "uiComponent": "picker",
   "getable": true,
@@ -15,7 +24,16 @@
       "title": {
         "en": "Home",
         "nl": "Thuis",
-        "fr": "A la maison"
+        "fr": "A la maison",
+        "da": "Hjemme",
+        "de": "Zuhause",
+        "es": "En casa",
+        "it": "Casa",
+        "no": "Hjemme",
+        "sv": "Hemma",
+        "pl": "Dom",
+        "ru": "Дом",
+        "ko": "집"
       }
     },
     {
@@ -23,7 +41,16 @@
       "title": {
         "en": "Away",
         "nl": "Afwezig",
-        "fr": "A l'extérieur"
+        "fr": "A l'extérieur",
+        "da": "Væk",
+        "de": "Abwesend",
+        "es": "Fuera",
+        "it": "Fuori",
+        "no": "Borte",
+        "sv": "Borta",
+        "pl": "Poza domem",
+        "ru": "Вне дома",
+        "ko": "외출"
       }
     },
     {
@@ -31,7 +58,16 @@
       "title": {
         "en": "Schedule",
         "nl": "Schema",
-        "fr": "Programmé"
+        "fr": "Programmé",
+        "da": "Planlæg",
+        "de": "Zeitplan",
+        "es": "Horario",
+        "it": "Programma",
+        "no": "Planlegg",
+        "sv": "Schema",
+        "pl": "Harmonogram",
+        "ru": "Расписание",
+        "ko": "일정"
       }
     },
     {
@@ -39,7 +75,16 @@
       "title": {
         "en": "Geo",
         "nl": "Geo",
-        "fr": "Géo"
+        "fr": "Géo",
+        "da": "Geo",
+        "de": "Geo",
+        "es": "Geo",
+        "it": "Geo",
+        "no": "Geo",
+        "sv": "Geo",
+        "pl": "Geo",
+        "ru": "Гео",
+        "ko": "지오"
       }
     },
     {
@@ -47,7 +92,16 @@
       "title": {
         "en": "Disarmed",
         "nl": "Uitgeschakeld",
-        "fr": "Désactivée"
+        "fr": "Désactivée",
+        "da": "Afvæbnet",
+        "de": "Entschärft",
+        "es": "Desarmado",
+        "it": "Disattivato",
+        "no": "Avvæpnet",
+        "sv": "Avväpnad",
+        "pl": "Rozbrojony",
+        "ru": "Разоружен",
+        "ko": "비활성화됨"
       }
     },
     {
@@ -55,7 +109,16 @@
       "title": {
         "en": "Off",
         "nl": "Uit",
-        "fr": "Off"
+        "fr": "Off",
+        "da": "Slukket",
+        "de": "Aus",
+        "es": "Apagado",
+        "it": "Spento",
+        "no": "Av",
+        "sv": "Av",
+        "pl": "Wył.",
+        "ru": "Выкл.",
+        "ko": "끄기"
       }
     },
     {
@@ -63,7 +126,16 @@
       "title": {
         "en": "Custom 1",
         "nl": "Custom 1",
-        "fr": "Personnalisé 1"
+        "fr": "Personnalisé 1",
+        "da": "Brugertilpas 1",
+        "de": "Benutzerdefiniert 1",
+        "es": "Personalizado 1",
+        "it": "Personalizzato 1",
+        "no": "Tilpasset 1",
+        "sv": "Anpassad 1",
+        "pl": "Niestandardowy 1",
+        "ru": "Пользовательский 1",
+        "ko": "사용자 정의 1"
       }
     },
     {
@@ -71,7 +143,16 @@
       "title": {
         "en": "Custom 2",
         "nl": "Custom 2",
-        "fr": "Personnalisé 2"
+        "fr": "Personnalisé 2",
+        "da": "Brugertilpas 2",
+        "de": "Benutzerdefiniert 2",
+        "es": "Personalizado 2",
+        "it": "Personalizzato 2",
+        "no": "Tilpasset 2",
+        "sv": "Anpassad 2",
+        "pl": "Niestandardowy 2",
+        "ru": "Пользовательский 2",
+        "ko": "사용자 정의 2"
       }
     },
     {
@@ -79,7 +160,16 @@
       "title": {
         "en": "Custom 3",
         "nl": "Custom 3",
-        "fr": "Personnalisé 3"
+        "fr": "Personnalisé 3",
+        "da": "Brugertilpas 3",
+        "de": "Benutzerdefiniert 3",
+        "es": "Personalizado 3",
+        "it": "Personalizzato 3",
+        "no": "Tilpasset 3",
+        "sv": "Anpassad 3",
+        "pl": "Niestandardowy 3",
+        "ru": "Пользовательский 3",
+        "ko": "사용자 정의 3"
       }
     }
   ]

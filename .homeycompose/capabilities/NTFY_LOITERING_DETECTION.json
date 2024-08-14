@@ -12,16 +12,43 @@
   "insightsTitleTrue": {
     "en": "Loitering - on",
     "nl": "Rondhangen - aan",
-    "fr": "Rôder - activé"
+    "fr": "Rôder - activé",
+    "da": "Svæven - til",
+    "de": "Herumhängen - an",
+    "es": "Merodeo - encendido",
+    "it": "Bighellonaggio - acceso",
+    "no": "Loitering - på",
+    "sv": "Loitering - på",
+    "pl": "Wałęsanie się - włączone",
+    "ru": "Слоняние - включено",
+    "ko": "배회 - 켜짐"
   },
   "insightsTitleFalse": {
     "en": "Loitering - off",
     "nl": "Rondhangen - uit",
-    "fr": "Rôder - désactivé"
+    "fr": "Rôder - désactivé",
+    "da": "Svæven - fra",
+    "de": "Herumhängen - aus",
+    "es": "Merodeo - apagado",
+    "it": "Bighellonaggio - spento",
+    "no": "Loitering - av",
+    "sv": "Loitering - av",
+    "pl": "Wałęsanie się - wyłączone",
+    "ru": "Слоняние - выключено",
+    "ko": "배회 - 꺼짐"
   },
   "title": {
     "en": "Loitering",
     "nl": "Rondhangen",
-    "fr": "Rôder"
+    "fr": "Rôder",
+    "da": "Svæven",
+    "de": "Herumhängen",
+    "es": "Merodeo",
+    "it": "Bighellonaggio",
+    "no": "Loitering",
+    "sv": "Loitering",
+    "pl": "Wałęsanie się",
+    "ru": "Слоняние",
+    "ko": "배회"
   }
 }

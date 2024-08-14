@@ -2,12 +2,31 @@
   "name": {
     "en": "Keypad",
     "nl": "Keypad",
-    "fr": "Clavier"
+    "fr": "Clavier",
+    "da": "Tastatur",
+    "de": "Tastatur",
+    "es": "Teclado",
+    "it": "Tastiera",
+    "no": "Tastatur",
+    "sv": "Tangentbord",
+    "pl": "Klawiatura",
+    "ru": "Клавиатура",
+    "ko": "키패드"
   },
   "class": "homealarm",
   "energy": {
-    "batteries": ["INTERNAL"]
+    "batteries": [
+      "INTERNAL"
+    ]
   },
-  "capabilities": ["measure_battery", "measure_temperature"],
-  "$extends": ["device", "pair", "repair", "settings-hub"]
+  "capabilities": [
+    "measure_battery",
+    "measure_temperature"
+  ],
+  "$extends": [
+    "device",
+    "pair",
+    "repair",
+    "settings-hub"
+  ]
 }

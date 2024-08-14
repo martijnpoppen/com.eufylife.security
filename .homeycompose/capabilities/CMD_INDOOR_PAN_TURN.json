@@ -7,6 +7,15 @@
   "title": {
     "en": "CMD_INDOOR_PAN_TURN",
     "nl": "CMD_INDOOR_PAN_TURN",
-    "fr": "CMD_INDOOR_PAN_TURN"
+    "fr": "CMD_INDOOR_PAN_TURN",
+    "da": "CMD_INDOOR_PAN_TURN",
+    "de": "CMD_INDOOR_PAN_TURN",
+    "es": "CMD_INDOOR_PAN_TURN",
+    "it": "CMD_INDOOR_PAN_TURN",
+    "no": "CMD_INDOOR_PAN_TURN",
+    "sv": "CMD_INDOOR_PAN_TURN",
+    "pl": "CMD_INDOOR_PAN_TURN",
+    "ru": "CMD_INDOOR_PAN_TURN",
+    "ko": "CMD_INDOOR_PAN_TURN"
   }
 }

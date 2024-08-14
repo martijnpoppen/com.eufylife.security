@@ -6,6 +6,16 @@
   "setable": false,
   "title": {
     "en": "Set Homebase snooze mode",
-    "nl": "Zet Homebase snooze modus"
+    "nl": "Zet Homebase snooze modus",
+    "da": "Indstil Homebase snooze-tilstand",
+    "de": "Homebase-Schlummermodus einstellen",
+    "es": "Establecer el modo de suspensión de Homebase",
+    "fr": "Définir le mode de réveil de Homebase",
+    "it": "Imposta la modalità snooze di Homebase",
+    "no": "Sett Homebase snooze-modus",
+    "sv": "Ställ in Homebase snooze-läge",
+    "pl": "Ustaw tryb drzemki Homebase",
+    "ru": "Установить режим сна для Homebase",
+    "ko": "Homebase 휴면 모드 설정"
   }
 }

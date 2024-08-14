@@ -4,8 +4,12 @@
     "large": "{{driverAssetsPath}}/images/large.jpg",
     "small": "{{driverAssetsPath}}/images/small.jpg"
   },
-  "connectivity": ["cloud"],
-  "platforms": ["local"],
+  "connectivity": [
+    "cloud"
+  ],
+  "platforms": [
+    "local"
+  ],
   "capabilitiesOptions": {
     "alarm_motion": {
       "title": {

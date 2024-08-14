@@ -1,38 +1,65 @@
 {
-    "id": "trigger_CMD_SET_ARMING",
-    "platforms": [
+  "id": "trigger_CMD_SET_ARMING",
+  "platforms": [
+    "local"
+  ],
+  "title": {
+    "en": "Arm Mode changed",
+    "nl": "Beveiligingsmodus gewijzigd",
+    "fr": "Mode de protection modifié",
+    "da": "Armtilstand ændret",
+    "de": "Arm-Modus geändert",
+    "es": "Modo armado cambiado",
+    "it": "Modalità armamento modificata",
+    "no": "Arm-modus endret",
+    "sv": "Läget för armering ändrat",
+    "pl": "Zmiana trybu uzbrojenia",
+    "ru": "Режим охраны изменён",
+    "ko": "무장 모드가 변경되었습니다"
+  },
+  "titleFormatted": {
+    "en": "Arm Mode changed",
+    "nl": "Beveiligingsmodus gewijzigd",
+    "fr": "Mode de protection modifié",
+    "da": "Armtilstand ændret",
+    "de": "Arm-Modus geändert",
+    "es": "Modo armado cambiado",
+    "it": "Modalità armamento modificata",
+    "no": "Arm-modus endret",
+    "sv": "Läget för armering ändrat",
+    "pl": "Zmiana trybu uzbrojenia",
+    "ru": "Режим охраны изменён",
+    "ko": "무장 모드가 변경되었습니다"
+  },
+  "tokens": [
+    {
+      "name": "user",
+      "type": "string",
+      "platforms": [
         "local"
-    ],
-    "title": {
-        "en": "Arm Mode changed",
-        "nl": "Beveiligingsmodus gewijzigd",
-        "fr": "Mode de protection modifié"
-    },
-    "titleFormatted": {
-        "en": "Arm Mode changed",
-        "nl": "Beveiligingsmodus gewijzigd",
-        "fr": "Mode de protection modifié"
-    },
-    "tokens": [
-        {
-            "name": "user",
-            "type": "string",
-            "platforms": [
-                "local"
-            ],
-            "title": {
-                "en": "User",
-                "nl": "Gebruiker",
-                "fr": "Utilisateur"
-            },
-            "example": "John Doe"
-        }
-    ],
-    "args": [
-        {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_HOMEBASE|driver_HOMEBASE_1|driver_HOMEBASE_3|driver_HOMEBASE_CHIME|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_C|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED|driver_WALLLIGHT_CAM_S&capabilities=CMD_SET_ARMING"
-        }
-    ]
+      ],
+      "title": {
+        "en": "User",
+        "nl": "Gebruiker",
+        "fr": "Utilisateur",
+        "da": "Bruger",
+        "de": "Benutzer",
+        "es": "Usuario",
+        "it": "Utente",
+        "no": "Bruker",
+        "sv": "Användare",
+        "pl": "Użytkownik",
+        "ru": "Пользователь",
+        "ko": "사용자"
+      },
+      "example": "John Doe"
+    }
+  ],
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_HOMEBASE|driver_HOMEBASE_1|driver_HOMEBASE_3|driver_HOMEBASE_CHIME|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_C|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED|driver_WALLLIGHT_CAM_S&capabilities=CMD_SET_ARMING"
+    }
+  ]
 }

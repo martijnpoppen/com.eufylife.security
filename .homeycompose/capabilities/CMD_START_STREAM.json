@@ -7,6 +7,15 @@
   "title": {
     "en": "Stream url",
     "nl": "Stream url",
-    "fr": "url du flux"
+    "fr": "url du flux",
+    "da": "Stream-url",
+    "de": "Stream-URL",
+    "es": "URL de transmisión",
+    "it": "URL dello stream",
+    "no": "Stream-URL",
+    "sv": "Stream-url",
+    "pl": "URL przesyłania strumieniowego",
+    "ru": "URL потока",
+    "ko": "스트림 URL"
   }
 }

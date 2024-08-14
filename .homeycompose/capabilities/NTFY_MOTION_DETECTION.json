@@ -12,16 +12,43 @@
   "insightsTitleTrue": {
     "en": "Motion Detected - on",
     "nl": "Beweging Gedetecteerd - aan",
-    "fr": "Détection de mouvement - activée"
+    "fr": "Détection de mouvement - activée",
+    "da": "Bevægelse registreret - til",
+    "de": "Bewegung erkannt - an",
+    "es": "Movimiento detectado - encendido",
+    "it": "Rilevamento del movimento - attivo",
+    "no": "Bevegelse oppdaget - på",
+    "sv": "Rörelse upptäckt - på",
+    "pl": "Wykryto ruch - włączone",
+    "ru": "Обнаружено движение - включено",
+    "ko": "동작 감지 - 켜짐"
   },
   "insightsTitleFalse": {
     "en": "Motion Detected - off",
     "nl": "Beweging Gedetecteerd - uit",
-    "fr": "Détection de mouvement - désactivée"
+    "fr": "Détection de mouvement - désactivée",
+    "da": "Bevægelse registreret - fra",
+    "de": "Bewegung erkannt - aus",
+    "es": "Movimiento detectado - apagado",
+    "it": "Rilevamento del movimento - disattivo",
+    "no": "Bevegelse oppdaget - av",
+    "sv": "Rörelse upptäckt - av",
+    "pl": "Wykryto ruch - wyłączone",
+    "ru": "Обнаружено движение - выключено",
+    "ko": "동작 감지 - 꺼짐"
   },
   "title": {
     "en": "Motion Detected",
     "nl": "Beweging Gedetecteerd",
-    "fr": "Mouvement détecté"
+    "fr": "Mouvement détecté",
+    "da": "Bevægelse opdaget",
+    "de": "Bewegung erkannt",
+    "es": "Movimiento detectado",
+    "it": "Movimento rilevato",
+    "no": "Bevegelse oppdaget",
+    "sv": "Rörelse upptäckt",
+    "pl": "Wykryto ruch",
+    "ru": "Обнаружено движение",
+    "ko": "동작 감지됨"
   }
 }

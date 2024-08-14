@@ -7,6 +7,15 @@
   "title": {
     "en": "Turn generic alarm on",
     "nl": "Zet algemeen alarm aan",
-    "fr": "Activer l'alarme générique"
+    "fr": "Activer l'alarme générique",
+    "da": "Tænd generisk alarm",
+    "de": "Allgemeinen Alarm einschalten",
+    "es": "Activar alarma genérica",
+    "it": "Accendi l'allarme generico",
+    "no": "Slå på generell alarm",
+    "sv": "Slå på generell larm",
+    "pl": "Włącz alarm ogólny",
+    "ru": "Включить общий будильник",
+    "ko": "일반 알람 켜기"
   }
 }

@@ -2,7 +2,16 @@
   "name": {
     "en": "(Minibase) Chime",
     "nl": "(Minibase) Chime",
-    "fr": "Carillon (Minibase)"
+    "fr": "Carillon (Minibase)",
+    "da": "(Minibase) Klokkeslæt",
+    "de": "(Minibase) Glockenspiel",
+    "es": "(Minibase) Campanilla",
+    "it": "(Minibase) Campanello",
+    "no": "(Minibase) Ringetone",
+    "sv": "(Minibase) Klockspel",
+    "pl": "(Minibase) Dzwonek",
+    "ru": "(Minibase) Колокольчик",
+    "ko": "(Minibase) 초인종"
   },
   "class": "homealarm",
   "capabilities": [
@@ -14,5 +23,10 @@
     "CMD_TRIGGER_RINGTONE_HUB",
     "alarm_generic"
   ],
-  "$extends": ["device", "pair", "repair", "settings-hub"]
+  "$extends": [
+    "device",
+    "pair",
+    "repair",
+    "settings-hub"
+  ]
 }

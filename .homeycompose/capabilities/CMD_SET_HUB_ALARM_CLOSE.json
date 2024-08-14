@@ -7,6 +7,15 @@
   "title": {
     "en": "Turn generic alarm off",
     "nl": "Zet algemeen alarm uit",
-    "fr": "Désactiver l'alarme générique"
+    "fr": "Désactiver l'alarme générique",
+    "da": "Slå generisk alarm fra",
+    "de": "Generischen Alarm ausschalten",
+    "es": "Apagar alarma genérica",
+    "it": "Disattiva allarme generico",
+    "no": "Slå av generell alarm",
+    "sv": "Stäng av generisk larm",
+    "pl": "Wyłącz ogólny alarm",
+    "ru": "Выключить общий сигнал тревоги",
+    "ko": "일반 경보 끄기"
   }
 }

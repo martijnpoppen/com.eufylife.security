@@ -7,6 +7,15 @@
   "title": {
     "en": "Toggle IR",
     "nl": "Zet Infrarood aan/uit",
-    "fr": "Basculer en IR"
+    "fr": "Basculer en IR",
+    "da": "Skift IR",
+    "de": "IR umschalten",
+    "es": "Cambiar IR",
+    "it": "Attiva/disattiva IR",
+    "no": "Bytt IR",
+    "sv": "Växla IR",
+    "pl": "Przełącz IR",
+    "ru": "Переключить ИК",
+    "ko": "IR 전환"
   }
 }

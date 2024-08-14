@@ -5,6 +5,17 @@
   "getable": true,
   "setable": false,
   "title": {
-    "en": "Snapshot"
+    "en": "Snapshot",
+    "nl": "Momentopname",
+    "da": "Snapshot",
+    "de": "Schnappschuss",
+    "es": "Instantánea",
+    "fr": "Instantané",
+    "it": "Istante",
+    "no": "Øyeblikk",
+    "sv": "Ögonblicksbild",
+    "pl": "Migawka",
+    "ru": "Снимок",
+    "ko": "스냅샷"
   }
 }

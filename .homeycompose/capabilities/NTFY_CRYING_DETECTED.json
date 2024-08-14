@@ -12,16 +12,43 @@
   "insightsTitleTrue": {
     "en": "Crying Detected - on",
     "nl": "Huilen Gedetecteerd - aan",
-    "fr": "Détection de pleur - activée"
+    "fr": "Détection de pleur - activée",
+    "da": "Gråd registreret - tændt",
+    "de": "Weinen erkannt - an",
+    "es": "Lloros detectados - activado",
+    "it": "Pianto rilevato - acceso",
+    "no": "Gråt oppdaget - på",
+    "sv": "Gråt upptäckt - på",
+    "pl": "Wykryto płacz - włączony",
+    "ru": "Обнаружен плач - включено",
+    "ko": "울음 감지됨 - 켜짐"
   },
   "insightsTitleFalse": {
     "en": "Crying Detected - off",
     "nl": "Huilen Gedetecteerd - uit",
-    "fr": "Détection de pleur - désactivée"
+    "fr": "Détection de pleur - désactivée",
+    "da": "Gråd registreret - slukket",
+    "de": "Weinen erkannt - aus",
+    "es": "Lloros detectados - desactivado",
+    "it": "Pianto rilevato - spento",
+    "no": "Gråt oppdaget - av",
+    "sv": "Gråt upptäckt - av",
+    "pl": "Wykryto płacz - wyłączony",
+    "ru": "Обнаружен плач - выключено",
+    "ko": "울음 감지됨 - 꺼짐"
   },
   "title": {
     "en": "Crying Detected",
     "nl": "Huilen Gedetecteerd",
-    "fr": "Pleurs détectés"
+    "fr": "Pleurs détectés",
+    "da": "Gråd registreret",
+    "de": "Weinen erkannt",
+    "es": "Lloros detectados",
+    "it": "Pianto rilevato",
+    "no": "Gråt oppdaget",
+    "sv": "Gråt upptäckt",
+    "pl": "Wykryto płacz",
+    "ru": "Обнаружен плач",
+    "ko": "울음 감지됨"
   }
 }

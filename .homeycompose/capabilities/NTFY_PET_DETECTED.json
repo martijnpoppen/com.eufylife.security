@@ -12,16 +12,43 @@
   "insightsTitleTrue": {
     "en": "Pet Detected - on",
     "nl": "Huisdier Gedetecteerd - aan",
-    "fr": "Détection d'animaux - activée"
+    "fr": "Détection d'animaux - activée",
+    "da": "Kæledyr registreret - tændt",
+    "de": "Haustier erkannt - an",
+    "es": "Mascota detectada - encendido",
+    "it": "Animale domestico rilevato - acceso",
+    "no": "Kjæledyr oppdaget - på",
+    "sv": "Husdjur upptäckt - på",
+    "pl": "Wykryto zwierzę - włączone",
+    "ru": "Обнаружено животное - включено",
+    "ko": "애완동물 감지됨 - 켜짐"
   },
   "insightsTitleFalse": {
     "en": "Pet Detected - off",
     "nl": "Huisdier Gedetecteerd - uit",
-    "fr": "Détection d'animaux - désactivée"
+    "fr": "Détection d'animaux - désactivée",
+    "da": "Kæledyr registreret - slukket",
+    "de": "Haustier erkannt - aus",
+    "es": "Mascota detectada - apagado",
+    "it": "Animale domestico rilevato - spento",
+    "no": "Kjæledyr oppdaget - av",
+    "sv": "Husdjur upptäckt - av",
+    "pl": "Wykryto zwierzę - wyłączone",
+    "ru": "Обнаружено животное - выключено",
+    "ko": "애완동물 감지됨 - 꺼짐"
   },
   "title": {
     "en": "Pet Detected",
     "nl": "Huisdier Gedetecteerd",
-    "fr": "Animal détecté"
+    "fr": "Animal détecté",
+    "da": "Kæledyr opdaget",
+    "de": "Haustier erkannt",
+    "es": "Mascota detectada",
+    "it": "Animale domestico rilevato",
+    "no": "Kjæledyr oppdaget",
+    "sv": "Husdjur upptäckt",
+    "pl": "Wykryto zwierzę",
+    "ru": "Обнаружено животное",
+    "ko": "애완동물 감지됨"
   }
 }

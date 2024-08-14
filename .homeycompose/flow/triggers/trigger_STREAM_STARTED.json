@@ -1,43 +1,79 @@
 {
-    "id": "trigger_STREAM_STARTED",
-    "deprecated": true,
-    "platforms": [
+  "id": "trigger_STREAM_STARTED",
+  "deprecated": true,
+  "platforms": [
+    "local"
+  ],
+  "title": {
+    "en": "Live stream started",
+    "nl": "Livestream is gestart",
+    "fr": "La diffusion en direct a commencé",
+    "da": "Livestream startet",
+    "de": "Livestream gestartet",
+    "es": "Transmisión en vivo iniciada",
+    "it": "Trasmissione in diretta avviata",
+    "no": "Livestream startet",
+    "sv": "Livestream startad",
+    "pl": "Rozpoczęto transmisję na żywo",
+    "ru": "Началась прямая трансляция",
+    "ko": "라이브 스트림 시작됨"
+  },
+  "titleFormatted": {
+    "en": "Live stream started",
+    "nl": "Livestream is gestart",
+    "fr": "La diffusion en direct a commencé",
+    "da": "Livestream startet",
+    "de": "Livestream gestartet",
+    "es": "Transmisión en vivo iniciada",
+    "it": "Trasmissione in diretta avviata",
+    "no": "Livestream startet",
+    "sv": "Livestream startad",
+    "pl": "Rozpoczęto transmisję na żywo",
+    "ru": "Началась прямая трансляция",
+    "ko": "라이브 스트림 시작됨"
+  },
+  "hint": {
+    "en": "This flowcard will trigger after the 'Start stream' flowcard was used",
+    "nl": "Deze flowkaart zal afvuren nadat de 'Start stream' flowkaart gebruikt is",
+    "fr": "Cette carte de flux se déclenchera après l'utilisation de la carte de flux 'Démarrer le flux'",
+    "da": "Dette flowkort vil udløse efter 'Start stream' flowkortet blev brugt",
+    "de": "Diese Flow-Karte wird ausgelöst, nachdem die 'Start stream'-Flow-Karte verwendet wurde",
+    "es": "Esta tarjeta de flujo se activará después de usar la tarjeta de flujo 'Iniciar transmisión'",
+    "it": "Questa scheda di flusso si attiverà dopo che la scheda di flusso 'Avvia trasmissione' è stata usata",
+    "no": "Dette flytkortet vil utløses etter at 'Start stream' flytkortet ble brukt",
+    "sv": "Detta flödeskort kommer utlösa efter att 'Starta stream' flödeskort användes",
+    "pl": "Ta karta przepływu zostanie uruchomiona po użyciu karty przepływu 'Start stream'",
+    "ru": "Эта карта потока сработает после использования карты потока 'Начать трансляцию'",
+    "ko": "'스트림 시작' 흐름 카드를 사용한 후 이 흐름 카드가 트리거됩니다"
+  },
+  "tokens": [
+    {
+      "name": "url",
+      "type": "string",
+      "platforms": [
         "local"
-    ],
-    "title": {
-        "en": "Live stream started",
-        "nl": "Livestream is gestart",
-        "fr": "La diffusion en direct a commencé"
-    },
-    "titleFormatted": {
-        "en": "Live stream started",
-        "nl": "Livestream is gestart",
-        "fr": "La diffusion en direct a commencé"
-    },
-    "hint": {
-        "en": "This flowcard will trigger after the 'Start stream' flowcard was used",
-        "nl": "Deze flowkaart zal afvuren nadat de 'Start stream' flowkaart gebruikt is",
-        "fr": "Cette carte de flux se déclenchera après l'utilisation de la carte de flux 'Démarrer le flux'"
-    },
-    "tokens": [
-        {
-            "name": "url",
-            "type": "string",
-            "platforms": [
-                "local"
-            ],
-            "title": {
-                "en": "Stream url",
-                "nl": "Stream url",
-                "fr": "URL de diffusion"
-            }
-        }
-    ],
-    "args": [
-        {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_2_PRO|driver_EUFYCAM_3|driver_EUFYCAM_3C|driver_EUFYCAM_E|driver_EUFYCAM_E330|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_C|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_1080P_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED|driver_WALLLIGHT_CAM_S&capabilities=CMD_START_STREAM"
-        }
-    ]
+      ],
+      "title": {
+        "en": "Stream url",
+        "nl": "Stream url",
+        "fr": "URL de diffusion",
+        "da": "Stream URL",
+        "de": "Stream-URL",
+        "es": "URL de transmisión",
+        "it": "URL di trasmissione",
+        "no": "Strøm URL",
+        "sv": "Stream-URL",
+        "pl": "URL strumienia",
+        "ru": "URL потока",
+        "ko": "스트림 URL"
+      }
+    }
+  ],
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_2_PRO|driver_EUFYCAM_3|driver_EUFYCAM_3C|driver_EUFYCAM_E|driver_EUFYCAM_E330|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_C|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_1080P_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED|driver_WALLLIGHT_CAM_S&capabilities=CMD_START_STREAM"
+    }
+  ]
 }

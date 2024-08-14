@@ -2,7 +2,16 @@
   "name": {
     "en": "Outdoor Cam Pan & Tilt (S340)",
     "nl": "Outdoor Cam Pan & Tilt (S340)",
-    "fr": "Outdoor Cam Pan & Tilt (S340)"
+    "fr": "Outdoor Cam Pan & Tilt (S340)",
+    "da": "Udendørs Cam Pan & Tilt (S340)",
+    "de": "Outdoor-Kamera Pan & Tilt (S340)",
+    "es": "Cámara exterior Pan & Tilt (S340)",
+    "it": "Cam esterna Pan & Tilt (S340)",
+    "no": "Utendørs Kamera Pan & Tilt (S340)",
+    "sv": "Utomhuskamera Pan & Tilt (S340)",
+    "pl": "Kamera zewnętrzna Pan & Tilt (S340)",
+    "ru": "Уличная камера Pan & Tilt (S340)",
+    "ko": "실외 카메라 팬 및 틸트 (S340)"
   },
   "class": "camera",
   "capabilities": [
@@ -29,7 +38,14 @@
     "NTFY_VEHICLE_DETECTED_FORCE"
   ],
   "energy": {
-    "batteries": ["INTERNAL"]
+    "batteries": [
+      "INTERNAL"
+    ]
   },
-  "$extends": ["device", "pair", "repair", "settings-standalone"]
+  "$extends": [
+    "device",
+    "pair",
+    "repair",
+    "settings-standalone"
+  ]
 }

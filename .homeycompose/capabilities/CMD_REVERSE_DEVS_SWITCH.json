@@ -7,6 +7,15 @@
   "title": {
     "en": "CMD_REVERSE_DEVS_SWITCH",
     "nl": "CMD_REVERSE_DEVS_SWITCH",
-    "fr": "CMD_REVERSE_DEVS_SWITCH"
+    "fr": "CMD_REVERSE_DEVS_SWITCH",
+    "da": "CMD_REVERSE_DEVS_SWITCH",
+    "de": "CMD_REVERSE_DEVS_SWITCH",
+    "es": "CMD_REVERSE_DEVS_SWITCH",
+    "it": "CMD_REVERSE_DEVS_SWITCH",
+    "no": "CMD_REVERSE_DEVS_SWITCH",
+    "sv": "CMD_REVERSE_DEVS_SWITCH",
+    "pl": "CMD_REVERSE_DEVS_SWITCH",
+    "ru": "CMD_REVERSE_DEVS_SWITCH",
+    "ko": "CMD_REVERSE_DEVS_SWITCH"
   }
 }
