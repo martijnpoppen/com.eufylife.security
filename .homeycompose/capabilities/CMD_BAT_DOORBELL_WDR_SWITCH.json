@@ -7,6 +7,15 @@
   "title": {
     "en": "Toggle WDR switch",
     "nl": "Zet WDR aan/uit",
-    "fr": "Basculer l'intérupteur WDR"
+    "fr": "Basculer l'intérupteur WDR",
+    "da": "Skift WDR-knap",
+    "de": "WDR-Schalter umschalten",
+    "es": "Alternar interruptor WDR",
+    "it": "Attiva/disattiva interruttore WDR",
+    "no": "Slå WDR-bryter av/på",
+    "sv": "Växla WDR-brytare",
+    "pl": "Przełącznik WDR",
+    "ru": "Переключатель WDR",
+    "ko": "WDR 스위치 전환"
   }
 }

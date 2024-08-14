@@ -1,0 +1,22 @@
+{
+  "settings": {
+    "title": "Eufy Inställningssida",
+    "subtitle": "Inloggningsinställningar har tagits bort från denna sida. För att fixa Eufy-inloggningen, gå till enhetens inställningar för en Eufy-enhet (t.ex. Homebase 2) i Homey och klicka på underhåll och sedan reparera.",
+    "account": "Kontoinställningar"
+  },
+  "pair": {
+    "captchaLabel": "Captcha",
+    "loading": "Laddar",
+    "no_data": "Inga enheter hittades. Försök med en annan region.",
+    "no_devices": "Inga enheter hittades. Se till att du har delat Eufy-enheterna med ditt extra administratörskonto (försök med en annan region)",
+    "no_devices_repair": "Reparation misslyckades. Inga enheter hittades i ditt konto. Se till att du har delat Eufy-enheterna med ditt extra administratörskonto. Eller ändra din inloggning på föregående sida",
+    "keypad": "Keypaden är en fysisk enhet för att ställa in säkerhetsläget för Homebase. Därför har den ingen egen funktionalitet i Homey-appen. För att skapa flöden baserade på eller ändra säkerhetslägen, lägg gärna till homebase istället (om inte redan gjort). Där kan du hitta säkerhetslägen och flödeskort för säkerhetslägen."
+  },
+  "device": {
+    "init": "ansluter till Eufy Server...",
+    "need_captcha": "Anslutning misslyckades (Captcha behövs). Försök att reparera enheten. Enhetsinställningar -> underhåll -> reparera",
+    "need_2FA": "Anslutning misslyckades (2FA behövs). Försök att reparera enheten. Enhetsinställningar -> underhåll -> reparera",
+    "serial_failure": "Anslutning misslyckades (Enhetsseriell hittades inte). Försök att reparera enheten. Enhetsinställningar -> underhåll -> reparera",
+    "serial_failure_station": "Anslutning misslyckades (Stationsseriell hittades inte). Försök att reparera enheten. Enhetsinställningar -> underhåll -> reparera"
+  }
+}

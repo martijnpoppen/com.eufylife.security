@@ -1,98 +1,197 @@
 {
-    "id": "action_CMD_BAT_DOORBELL_VIDEO_QUALITY",
-    "platforms": [
-        "local"
-    ],
-    "title": {
-        "en": "Set Video quality",
-        "nl": "Stel Video kwaliteit in",
-        "fr": "Changer la qualité vidéo en"
+  "id": "action_CMD_BAT_DOORBELL_VIDEO_QUALITY",
+  "platforms": [
+    "local"
+  ],
+  "title": {
+    "en": "Set Video quality",
+    "nl": "Stel Video kwaliteit in",
+    "fr": "Changer la qualité vidéo en",
+    "da": "Indstil videokvalitet",
+    "de": "Videoqualität einstellen",
+    "es": "Establecer calidad de vídeo",
+    "it": "Imposta qualità video",
+    "no": "Sett videokvalitet",
+    "sv": "Ange videokvalitet",
+    "pl": "Ustaw jakość wideo",
+    "ru": "Установить качество видео",
+    "ko": "비디오 품질 설정"
+  },
+  "titleFormatted": {
+    "en": "Set Video quality to [[action_CMD_BAT_DOORBELL_VIDEO_QUALITY_TYPE]]",
+    "nl": "Stel Video kwaliteit in aan [[action_CMD_BAT_DOORBELL_VIDEO_QUALITY_TYPE]]",
+    "fr": "Changer la qualité vidéo en [[action_CMD_BAT_DOORBELL_VIDEO_QUALITY_TYPE]]",
+    "da": "Indstil videokvalitet til [[action_CMD_BAT_DOORBELL_VIDEO_QUALITY_TYPE]]",
+    "de": "Videoqualität einstellen auf [[action_CMD_BAT_DOORBELL_VIDEO_QUALITY_TYPE]]",
+    "es": "Establecer calidad de vídeo a [[action_CMD_BAT_DOORBELL_VIDEO_QUALITY_TYPE]]",
+    "it": "Imposta qualità video su [[action_CMD_BAT_DOORBELL_VIDEO_QUALITY_TYPE]]",
+    "no": "Sett videokvalitet til [[action_CMD_BAT_DOORBELL_VIDEO_QUALITY_TYPE]]",
+    "sv": "Ange videokvalitet till [[action_CMD_BAT_DOORBELL_VIDEO_QUALITY_TYPE]]",
+    "pl": "Ustaw jakość wideo na [[action_CMD_BAT_DOORBELL_VIDEO_QUALITY_TYPE]]",
+    "ru": "Установить качество видео на [[action_CMD_BAT_DOORBELL_VIDEO_QUALITY_TYPE]]",
+    "ko": "비디오 품질을 [[action_CMD_BAT_DOORBELL_VIDEO_QUALITY_TYPE]]로 설정합니다"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=driver_VIDEO_DOORBELL_1080P_BATTERY|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_DUAL_BATTERY&capabilities=CMD_BAT_DOORBELL_VIDEO_QUALITY"
     },
-    "titleFormatted": {
-        "en": "Set Video quality to [[action_CMD_BAT_DOORBELL_VIDEO_QUALITY_TYPE]]",
-        "nl": "Stel Video kwaliteit in aan [[action_CMD_BAT_DOORBELL_VIDEO_QUALITY_TYPE]]",
-        "fr": "Changer la qualité vidéo en [[action_CMD_BAT_DOORBELL_VIDEO_QUALITY_TYPE]]"
-    },
-    "args": [
+    {
+      "name": "action_CMD_BAT_DOORBELL_VIDEO_QUALITY_TYPE",
+      "type": "dropdown",
+      "title": {
+        "en": "Video quality",
+        "nl": "Video kwaliteit",
+        "fr": "Qualité vidéo",
+        "da": "Videokvalitet",
+        "de": "Videoqualität",
+        "es": "Calidad de vídeo",
+        "it": "Qualità video",
+        "no": "Videokvalitet",
+        "sv": "Videokvalitet",
+        "pl": "Jakość wideo",
+        "ru": "Качество видео",
+        "ko": "비디오 품질"
+      },
+      "values": [
         {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=driver_VIDEO_DOORBELL_1080P_BATTERY|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_DUAL_BATTERY&capabilities=CMD_BAT_DOORBELL_VIDEO_QUALITY"
+          "id": "0",
+          "label": {
+            "en": "Auto / Low Encoding",
+            "nl": "Auto / Lage Encoding",
+            "fr": "Auto / Faible compréssion",
+            "da": "Auto / Lav kodning",
+            "de": "Auto / Niedrige Codierung",
+            "es": "Auto / Baja codificación",
+            "it": "Auto / Bassa codifica",
+            "no": "Auto / Lav koding",
+            "sv": "Auto / Låg kodning",
+            "pl": "Auto / Niskie kodowanie",
+            "ru": "Авто / Низкое кодирование",
+            "ko": "자동 / 낮은 인코딩"
+          }
         },
         {
-            "name": "action_CMD_BAT_DOORBELL_VIDEO_QUALITY_TYPE",
-            "type": "dropdown",
-            "title": {
-                "en": "Video quality",
-                "nl": "Video kwaliteit",
-                "fr": "Qualité vidéo"
-            },
-            "values": [
-                {
-                    "id": "0",
-                    "label": {
-                        "en": "Auto / Low Encoding",
-                        "nl": "Auto / Lage Encoding",
-                        "fr": "Auto / Faible compréssion"
-                    }
-                },
-                {
-                    "id": "1",
-                    "label": {
-                        "en": "Low / Low Encoding",
-                        "nl": "Laag / Lage Encoding",
-                        "fr": "Faible / Faible compréssion"
-                    }
-                },
-                {
-                    "id": "2",
-                    "label": {
-                        "en": "Medium / Low Encoding",
-                        "nl": "Middel / Lage Encoding",
-                        "fr": "Moyen / Faible compréssion"
-                    }
-                },
-                {
-                    "id": "3",
-                    "label": {
-                        "en": "High / Low Encoding",
-                        "nl": "Hoog / Lage Encoding",
-                        "fr": "Élevé / Faible compréssion"
-                    }
-                },
-                {
-                    "id": "5",
-                    "label": {
-                        "en": "Auto / High Encoding",
-                        "nl": "Auto / Hoge Encoding",
-                        "fr": "Auto / Haute compréssion"
-                    }
-                },
-                {
-                    "id": "6",
-                    "label": {
-                        "en": "Low / High Encoding",
-                        "nl": "Laag / Hoge Encoding",
-                        "fr": "Faible / Haute compréssion"
-                    }
-                },
-                {
-                    "id": "7",
-                    "label": {
-                        "en": "Medium / High Encoding",
-                        "nl": "Middel / Hoge Encoding",
-                        "fr": "Moyen / Haute compréssion"
-                    }
-                },
-                {
-                    "id": "8",
-                    "label": {
-                        "en": "High / High Encoding",
-                        "nl": "Hoog / Hoge Encoding",
-                        "fr": "Élevé / Haute compréssion"
-                    }
-                }
-            ]
+          "id": "1",
+          "label": {
+            "en": "Low / Low Encoding",
+            "nl": "Laag / Lage Encoding",
+            "fr": "Faible / Faible compréssion",
+            "da": "Lav / Lav kodning",
+            "de": "Niedrig / Niedrige Codierung",
+            "es": "Bajo / Baja codificación",
+            "it": "Bassa / Bassa codifica",
+            "no": "Lav / Lav koding",
+            "sv": "Låg / Låg kodning",
+            "pl": "Niskie / Niskie kodowanie",
+            "ru": "Низкое / Низкое кодирование",
+            "ko": "낮음 / 낮은 인코딩"
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "Medium / Low Encoding",
+            "nl": "Middel / Lage Encoding",
+            "fr": "Moyen / Faible compréssion",
+            "da": "Mellem / Lav kodning",
+            "de": "Mittel / Niedrige Codierung",
+            "es": "Medio / Baja codificación",
+            "it": "Media / Bassa codifica",
+            "no": "Middels / Lav koding",
+            "sv": "Mellan / Låg kodning",
+            "pl": "Średnie / Niskie kodowanie",
+            "ru": "Среднее / Низкое кодирование",
+            "ko": "보통 / 낮은 인코딩"
+          }
+        },
+        {
+          "id": "3",
+          "label": {
+            "en": "High / Low Encoding",
+            "nl": "Hoog / Lage Encoding",
+            "fr": "Élevé / Faible compréssion",
+            "da": "Høj / Lav kodning",
+            "de": "Hoch / Niedrige Codierung",
+            "es": "Alta / Baja codificación",
+            "it": "Alta / Bassa codifica",
+            "no": "Høy / Lav koding",
+            "sv": "Hög / Låg kodning",
+            "pl": "Wysokie / Niskie kodowanie",
+            "ru": "Высокое / Низкое кодирование",
+            "ko": "높음 / 낮은 인코딩"
+          }
+        },
+        {
+          "id": "5",
+          "label": {
+            "en": "Auto / High Encoding",
+            "nl": "Auto / Hoge Encoding",
+            "fr": "Auto / Haute compréssion",
+            "da": "Auto / Høj kodning",
+            "de": "Auto / Hohe Codierung",
+            "es": "Auto / Alta codificación",
+            "it": "Auto / Alta codifica",
+            "no": "Auto / Høy koding",
+            "sv": "Auto / Hög kodning",
+            "pl": "Auto / Wysokie kodowanie",
+            "ru": "Авто / Высокое кодирование",
+            "ko": "자동 / 높은 인코딩"
+          }
+        },
+        {
+          "id": "6",
+          "label": {
+            "en": "Low / High Encoding",
+            "nl": "Laag / Hoge Encoding",
+            "fr": "Faible / Haute compréssion",
+            "da": "Lav / Høj kodning",
+            "de": "Niedrig / Hohe Codierung",
+            "es": "Baja / Alta codificación",
+            "it": "Bassa / Alta codifica",
+            "no": "Lav / Høy koding",
+            "sv": "Låg / Hög kodning",
+            "pl": "Niskie / Wysokie kodowanie",
+            "ru": "Низкое / Высокое кодирование",
+            "ko": "낮음 / 높은 인코딩"
+          }
+        },
+        {
+          "id": "7",
+          "label": {
+            "en": "Medium / High Encoding",
+            "nl": "Middel / Hoge Encoding",
+            "fr": "Moyen / Haute compréssion",
+            "da": "Mellem / Høj kodning",
+            "de": "Mittel / Hohe Codierung",
+            "es": "Medio / Alta codificación",
+            "it": "Media / Alta codifica",
+            "no": "Middels / Høy koding",
+            "sv": "Mellan / Hög kodning",
+            "pl": "Średnie / Wysokie kodowanie",
+            "ru": "Среднее / Высокое кодирование",
+            "ko": "보통 / 높은 인코딩"
+          }
+        },
+        {
+          "id": "8",
+          "label": {
+            "en": "High / High Encoding",
+            "nl": "Hoog / Hoge Encoding",
+            "fr": "Élevé / Haute compréssion",
+            "da": "Høj / Høj kodning",
+            "de": "Hoch / Hohe Codierung",
+            "es": "Alta / Alta codificación",
+            "it": "Alta / Alta codifica",
+            "no": "Høy / Høy koding",
+            "sv": "Hög / Hög kodning",
+            "pl": "Wysokie / Wysokie kodowanie",
+            "ru": "Высокое / Высокое кодирование",
+            "ko": "높음 / 높은 인코딩"
+          }
         }
-    ]
+      ]
+    }
+  ]
 }

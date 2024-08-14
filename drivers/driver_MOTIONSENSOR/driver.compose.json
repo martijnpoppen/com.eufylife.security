@@ -2,12 +2,30 @@
   "name": {
     "en": "Motionsensor",
     "nl": "Bewegingssensor",
-    "fr": "Détecteur de mouvement"
+    "fr": "Détecteur de mouvement",
+    "da": "Bevægelsessensor",
+    "de": "Bewegungssensor",
+    "es": "Sensor de movimiento",
+    "it": "Sensore di movimento",
+    "no": "Bevegelsessensor",
+    "sv": "Rörelsesensor",
+    "pl": "Czujnik ruchu",
+    "ru": "Датчик движения",
+    "ko": "모션 센서"
   },
   "class": "sensor",
-  "capabilities": ["alarm_motion"],
+  "capabilities": [
+    "alarm_motion"
+  ],
   "energy": {
-    "batteries": ["INTERNAL"]
+    "batteries": [
+      "INTERNAL"
+    ]
   },
-  "$extends": ["device", "pair", "repair", "settings-sensor"]
+  "$extends": [
+    "device",
+    "pair",
+    "repair",
+    "settings-sensor"
+  ]
 }

@@ -1,23 +1,41 @@
 {
-    "id": "action_CMD_INDOOR_PAN_TURN",
-    "platforms": [
-        "local"
-    ],
-    "title": {
-        "en": "Turn 360 (Room scan)",
-        "nl": "Draai 360 (Kamer scan)",
-        "fr": "Tourner à 360° (balayage de la pièce)"
-    },
-    "titleFormatted": {
-        "en": "Turn 360 (Room scan)",
-        "nl": "Draai 360 (Kamer scan)",
-        "fr": "Tourner à 360° (balayage de la pièce)"
-    },
-    "args": [
-        {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM_PAN_TILT&capabilities=CMD_INDOOR_PAN_TURN"
-        }
-    ]
+  "id": "action_CMD_INDOOR_PAN_TURN",
+  "platforms": [
+    "local"
+  ],
+  "title": {
+    "en": "Turn 360 (Room scan)",
+    "nl": "Draai 360 (Kamer scan)",
+    "fr": "Tourner à 360° (balayage de la pièce)",
+    "da": "Drej 360 (rummetscan)",
+    "de": "Dreh 360 (Raum scannen)",
+    "es": "Gira 360 (escaneo de habitación)",
+    "it": "Ruota 360 (scansione della stanza)",
+    "no": "Drei 360 (romskanning)",
+    "sv": "Vrid 360 (rumsökning)",
+    "pl": "Obróć 360 (skanowanie pokoju)",
+    "ru": "Повернуть на 360 (сканирование комнаты)",
+    "ko": "360도 회전 (방 스캔)"
+  },
+  "titleFormatted": {
+    "en": "Turn 360 (Room scan)",
+    "nl": "Draai 360 (Kamer scan)",
+    "fr": "Tourner à 360° (balayage de la pièce)",
+    "da": "Drej 360 (rummetscan)",
+    "de": "Dreh 360 (Raum scannen)",
+    "es": "Gira 360 (escaneo de habitación)",
+    "it": "Ruota 360 (scansione della stanza)",
+    "no": "Drei 360 (romskanning)",
+    "sv": "Vrid 360 (rumsökning)",
+    "pl": "Obróć 360 (skanowanie pokoju)",
+    "ru": "Повернуть на 360 (сканирование комнаты)",
+    "ko": "360도 회전 (방 스캔)"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM_PAN_TILT&capabilities=CMD_INDOOR_PAN_TURN"
+    }
+  ]
 }

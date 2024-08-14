@@ -4,7 +4,16 @@
   "title": {
     "en": "Disarmed",
     "nl": "Uitgeschakeld",
-    "fr": "Désactivée"
+    "fr": "Désactivée",
+    "da": "Deaktiveret",
+    "de": "Deaktiviert",
+    "es": "Desarmado",
+    "it": "Disarmato",
+    "no": "Deaktivert",
+    "sv": "Avaktiverad",
+    "pl": "Rozbrojony",
+    "ru": "Разоружённый",
+    "ko": "비무장"
   },
   "icon": "assets/icons/sound.svg",
   "uiComponent": "sensor",

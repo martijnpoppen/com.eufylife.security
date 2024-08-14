@@ -2,7 +2,16 @@
   "name": {
     "en": "Indoor Cam Pan & Tilt Dual (S350)",
     "nl": "Indoor Cam Pan & Tilt Dual (S350)",
-    "fr": "Indoor Cam Pan & Tilt Dual (S350)"
+    "fr": "Indoor Cam Pan & Tilt Dual (S350)",
+    "da": "Indendørs Kamera Panorering & Tilt Dual (S350)",
+    "de": "Indoor Cam Schwenk- & Neige-Dual (S350)",
+    "es": "Cámara Interior Panorámica y de Inclinación Doble (S350)",
+    "it": "Telecamera Interna Panoramica & Inclinazione Dual (S350)",
+    "no": "Innendørs Kamera Pan & Tilt Dual (S350)",
+    "sv": "Inomhuskamera Pan & Tilt Dual (S350)",
+    "pl": "Kamera Wewnętrzna Obrotowa & Pochylana Dual (S350)",
+    "ru": "Внутренняя камера с панорамированием и наклоном (S350)",
+    "ko": "실내 카메라 팬 앤 틸트 듀얼 (S350)"
   },
   "class": "camera",
   "capabilities": [
@@ -28,7 +37,14 @@
     "NTFY_VEHICLE_DETECTED"
   ],
   "energy": {
-    "batteries": ["INTERNAL"]
+    "batteries": [
+      "INTERNAL"
+    ]
   },
-  "$extends": ["device", "pair", "repair", "settings-standalone"]
+  "$extends": [
+    "device",
+    "pair",
+    "repair",
+    "settings-standalone"
+  ]
 }

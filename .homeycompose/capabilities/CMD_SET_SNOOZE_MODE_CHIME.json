@@ -7,6 +7,15 @@
   "title": {
     "en": "Set Chime snooze mode",
     "nl": "Zet Chime snooze modus",
-    "fr": "Régler le mode 'snooze' du Homebase"
+    "fr": "Régler le mode 'snooze' du Homebase",
+    "da": "Indstil Chime snooze-tilstand",
+    "de": "Chime-Schlummermodus einstellen",
+    "es": "Configurar modo de repetición del timbre",
+    "it": "Imposta modalità sonnellino di Chime",
+    "no": "Sett Chime dvalemodus",
+    "sv": "Ställ in Chime snooze-läge",
+    "pl": "Ustaw tryb drzemki Chime",
+    "ru": "Установить режим повтора сигнала",
+    "ko": "차임 스누즈 모드 설정"
   }
 }

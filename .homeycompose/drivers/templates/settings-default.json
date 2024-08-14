@@ -5,7 +5,16 @@
       "label": {
         "en": "General settings",
         "nl": "Algemene instellingen",
-        "fr": "Paramètres généraux"
+        "fr": "Paramètres généraux",
+        "da": "Generelle indstillinger",
+        "de": "Allgemeine Einstellungen",
+        "es": "Configuraciones generales",
+        "it": "Impostazioni generali",
+        "no": "Generelle innstillinger",
+        "sv": "Allmänna inställningar",
+        "pl": "Ustawienia ogólne",
+        "ru": "Общие настройки",
+        "ko": "일반 설정"
       },
       "children": [
         {
@@ -14,7 +23,16 @@
           "label": {
             "en": "Always on",
             "nl": "Altijd aan",
-            "fr": "Toujours allumé"
+            "fr": "Toujours allumé",
+            "da": "Altid tændt",
+            "de": "Immer an",
+            "es": "Siempre encendido",
+            "it": "Sempre acceso",
+            "no": "Alltid på",
+            "sv": "Alltid på",
+            "pl": "Zawsze włączone",
+            "ru": "Всегда включено",
+            "ko": "항상 켜짐"
           },
           "value": false
         },
@@ -24,12 +42,30 @@
           "hint": {
             "en": "Only disable if you don't want cloud images!",
             "nl": "Alleen uitschakelen als je niet gebruik wilt maken van cloud afbeeldingen!",
-            "fr": "A ne désactiver que si vous ne voulez pas d'images dans le cloud !"
+            "fr": "A ne désactiver que si vous ne voulez pas d'images dans le cloud !",
+            "da": "Deaktiver kun, hvis du ikke ønsker cloud-billeder!",
+            "de": "Nur deaktivieren, wenn Sie keine Cloud-Bilder möchten!",
+            "es": "¡Desactiva solo si no quieres imágenes en la nube!",
+            "it": "Disabilita solo se non vuoi immagini cloud!",
+            "no": "Deaktiver kun hvis du ikke ønsker skybilder!",
+            "sv": "Inaktivera endast om du inte vill ha molnbilder!",
+            "pl": "Wyłącz tylko wtedy, gdy nie chcesz korzystać z obrazów w chmurze!",
+            "ru": "Отключите только если не хотите использовать облачные изображения!",
+            "ko": "클라우드 이미지를 원하지 않는다면 비활성화하세요!"
           },
           "label": {
             "en": "Enforce inlude thumbnail notifications",
             "nl": "Forceer thumbnail notificaties (alleen uitschakelen",
-            "fr": "Renforcer l'intégration des notifications de vignettes"
+            "fr": "Renforcer l'intégration des notifications de vignettes",
+            "da": "Håndhæv inklusion af miniaturebeskeder",
+            "de": "Erzwingen Sie die Einbindung von Miniaturbenachrichtigungen",
+            "es": "Obligar a incluir notificaciones de miniaturas",
+            "it": "Forza l'inclusione delle notifiche delle miniature",
+            "no": "Håndhev inkludering av miniatyrvarsler",
+            "sv": "Tvinga att inkludera miniatyraviseringar",
+            "pl": "Wymuś dołączanie powiadomień miniatur",
+            "ru": "Принудительное включение уведомлений миниатюр",
+            "ko": "썸네일 알림 강제 포함"
           },
           "value": true
         },
@@ -43,7 +79,16 @@
           "label": {
             "en": "Use generic motion alarm?",
             "nl": "Gebruik generiek bewegings alarm",
-            "fr": "Utiliser une alarme de mouvement générique ?"
+            "fr": "Utiliser une alarme de mouvement générique ?",
+            "da": "Brug generisk bevægelsesalarm?",
+            "de": "Generischen Bewegungsalarm verwenden?",
+            "es": "¿Usar alarma de movimiento genérica?",
+            "it": "Usare allarme di movimento generico?",
+            "no": "Bruk generell bevegelsesalarm?",
+            "sv": "Använd generisk rörelselarm?",
+            "pl": "Użyj ogólnego alarmu ruchu?",
+            "ru": "Использовать общий датчик движения?",
+            "ko": "일반 모션 알람 사용?"
           },
           "value": false
         },
@@ -56,7 +101,16 @@
           "label": {
             "en": "Enable snapshots",
             "nl": "Activeer snapshots",
-            "fr": "Activer les instantanés"
+            "fr": "Activer les instantanés",
+            "da": "Aktiver snapshots",
+            "de": "Schnappschüsse aktivieren",
+            "es": "Habilitar instantáneas",
+            "it": "Abilita istantanee",
+            "no": "Aktiver øyeblikksbilder",
+            "sv": "Aktivera ögonblicksbilder",
+            "pl": "Włącz zdjęcia",
+            "ru": "Включить снимки",
+            "ko": "스냅샷 활성화"
           },
           "value": false
         }
@@ -67,7 +121,16 @@
       "label": {
         "en": "Hub settings",
         "nl": "Hub instellingen",
-        "fr": "Paramètres du Hub"
+        "fr": "Paramètres du Hub",
+        "da": "Hub indstillinger",
+        "de": "Hub-Einstellungen",
+        "es": "Configuraciones del Hub",
+        "it": "Impostazioni dell'hub",
+        "no": "Hub-innstillinger",
+        "sv": "Hub-inställningar",
+        "pl": "Ustawienia koncentratora",
+        "ru": "Настройки хаба",
+        "ko": "허브 설정"
       },
       "children": [
         {
@@ -76,7 +139,16 @@
           "label": {
             "en": "Station S/N",
             "nl": "Station S/N",
-            "fr": "Numéro de série de la station"
+            "fr": "Numéro de série de la station",
+            "da": "Stations S/N",
+            "de": "Stations S/N",
+            "es": "S/N de la estación",
+            "it": "S/N della stazione",
+            "no": "Stasjon S/N",
+            "sv": "Station S/N",
+            "pl": "Stacja S/N",
+            "ru": "Станция S/N",
+            "ko": "상태 S/N"
           },
           "value": ""
         },
@@ -86,7 +158,16 @@
           "label": {
             "en": "Device S/N",
             "nl": "Apparaat S/N",
-            "fr": "Numéro de série du dispositif"
+            "fr": "Numéro de série du dispositif",
+            "da": "Enhed S/N",
+            "de": "Gerät S/N",
+            "es": "S/N del dispositivo",
+            "it": "S/N del dispositivo",
+            "no": "Enhet S/N",
+            "sv": "Enhet S/N",
+            "pl": "Urządzenie S/N",
+            "ru": "Устройство S/N",
+            "ko": "장치 S/N"
           },
           "value": ""
         },
@@ -96,7 +177,16 @@
           "label": {
             "en": "Station IP",
             "nl": "Station IP",
-            "fr": "Adresse IP de la station"
+            "fr": "Adresse IP de la station",
+            "da": "Stations IP",
+            "de": "Stations IP",
+            "es": "IP de la estación",
+            "it": "IP della stazione",
+            "no": "Stasjonens IP",
+            "sv": "Stationens IP",
+            "pl": "Stacja IP",
+            "ru": "Станция IP",
+            "ko": "상태 IP"
           },
           "value": ""
         }

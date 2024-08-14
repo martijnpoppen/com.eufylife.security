@@ -2,7 +2,16 @@
   "name": {
     "en": "Homebase 3",
     "nl": "Homebase 3",
-    "fr": "Homebase 3"
+    "fr": "Homebase 3",
+    "da": "Homebase 3",
+    "de": "Homebase 3",
+    "es": "Homebase 3",
+    "it": "Homebase 3",
+    "no": "Homebase 3",
+    "sv": "Homebase 3",
+    "pl": "Homebase 3",
+    "ru": "Homebase 3",
+    "ko": "Homebase 3"
   },
   "class": "homealarm",
   "capabilities": [
@@ -15,5 +24,10 @@
     "CMD_REBOOT_HUB",
     "alarm_generic"
   ],
-  "$extends": ["device", "pair", "repair", "settings-hub"]
+  "$extends": [
+    "device",
+    "pair",
+    "repair",
+    "settings-hub"
+  ]
 }

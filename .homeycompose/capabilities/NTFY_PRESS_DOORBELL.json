@@ -12,16 +12,43 @@
   "insightsTitleTrue": {
     "en": "Doorbell Press - on",
     "nl": "Deurbel Druk Gedetecteerd - aan",
-    "fr": "Sonnerie de porte - activée"
+    "fr": "Sonnerie de porte - activée",
+    "da": "Dørklok Tryk - tændt",
+    "de": "Türklingel - an",
+    "es": "Timbre Pulsado - activado",
+    "it": "Campanello Premuto - acceso",
+    "no": "Dørklokke Trykk - på",
+    "sv": "Dörrklocka Tryck - på",
+    "pl": "Dzwonek - włączony",
+    "ru": "Звонок - включен",
+    "ko": "초인종 눌림 - 켜짐"
   },
   "insightsTitleFalse": {
     "en": "Doorbell Press - off",
     "nl": "Deurbel Druk Gedetecteerd - uit",
-    "fr": "Sonnerie de porte - désactivée"
+    "fr": "Sonnerie de porte - désactivée",
+    "da": "Dørklok Tryk - slukket",
+    "de": "Türklingel - aus",
+    "es": "Timbre Pulsado - desactivado",
+    "it": "Campanello Premuto - spento",
+    "no": "Dørklokke Trykk - av",
+    "sv": "Dörrklocka Tryck - av",
+    "pl": "Dzwonek - wyłączony",
+    "ru": "Звонок - выключен",
+    "ko": "초인종 눌림 - 꺼짐"
   },
   "title": {
     "en": "Doorbell Press Detected",
     "nl": "Deurbel Druk Gedetecteerd",
-    "fr": "Détection d'un appui sur la sonnette"
+    "fr": "Détection d'un appui sur la sonnette",
+    "da": "Dørklokketryk Registreret",
+    "de": "Türklingeldrücken Erkannt",
+    "es": "Pulsación de Timbre Detectada",
+    "it": "Campanello Premuto Rilevato",
+    "no": "Dørklokketrykk Registrert",
+    "sv": "Dörrklocketryck Upptäckt",
+    "pl": "Wykryto Naciśnięcie Dzwonka",
+    "ru": "Обнаружено Нажатие на Звонок",
+    "ko": "초인종 눌림 감지됨"
   }
 }

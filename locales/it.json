@@ -1,0 +1,22 @@
+{
+  "settings": {
+    "title": "Pagina delle impostazioni Eufy",
+    "subtitle": "Le impostazioni di login sono state rimosse da questa pagina. Per risolvere il problema di accesso a Eufy, vai alle impostazioni del dispositivo di un dispositivo Eufy (ad es. Homebase 2) in Homey e clicca su manutenzione e poi riparare.",
+    "account": "Impostazioni account"
+  },
+  "pair": {
+    "captchaLabel": "Captcha",
+    "loading": "Caricamento",
+    "no_data": "Nessun dispositivo trovato. Prova una regione diversa.",
+    "no_devices": "Nessun dispositivo trovato. Assicurati di aver condiviso i dispositivi Eufy con il tuo account amministratore extra (Prova una regione diversa)",
+    "no_devices_repair": "Riparazione fallita. Nessun dispositivo trovato nel tuo account. Assicurati di aver condiviso i dispositivi Eufy con il tuo account amministratore extra. Oppure modifica il tuo login nella pagina precedente",
+    "keypad": "La tastiera è un dispositivo fisico per impostare la modalità di sicurezza di Homebase. Pertanto non ha una propria funzionalità nell'app Homey. Per creare flussi basati o cambiare modalità di sicurezza, aggiungi invece la homebase (se non già fatto). Lì puoi trovare le modalità di sicurezza e le carte di flusso per le modalità di sicurezza."
+  },
+  "device": {
+    "init": "si sta connettendo al server Eufy...",
+    "need_captcha": "Connessione fallita (Captcha necessario). Prova a riparare il dispositivo. Impostazioni dispositivo -> manutenzione -> riparare",
+    "need_2FA": "Connessione fallita (2FA necessario). Prova a riparare il dispositivo. Impostazioni dispositivo -> manutenzione -> riparare",
+    "serial_failure": "Connessione fallita (Seriale dispositivo non trovato). Prova a riparare il dispositivo. Impostazioni dispositivo -> manutenzione -> riparare",
+    "serial_failure_station": "Connessione fallita (Seriale stazione non trovato). Prova a riparare il dispositivo. Impostazioni dispositivo -> manutenzione -> riparare"
+  }
+}

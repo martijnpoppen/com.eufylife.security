@@ -1,59 +1,113 @@
 {
-    "id": "action_CMD_START_STREAM_HLS_RTMP",
-    "deprecated": true,
-    "platforms": [
-        "local"
-    ],
-    "title": {
-        "en": "Start stream",
-        "nl": "Start Stream",
-        "fr": "Démarrer le flux vidéo"
-    },
-    "titleFormatted": {
-        "en": "Start stream - [[action_CMD_START_STREAM_TYPE]]",
-        "nl": "Start Stream - [[action_CMD_START_STREAM_TYPE]]",
-        "fr": "Démarrer le flux vidéo - [[action_CMD_START_STREAM_TYPE]]"
-    },
-    "args": [
+  "id": "action_CMD_START_STREAM_HLS_RTMP",
+  "deprecated": true,
+  "platforms": [
+    "local"
+  ],
+  "title": {
+    "en": "Start stream",
+    "nl": "Start Stream",
+    "fr": "Démarrer le flux vidéo",
+    "da": "Start stream",
+    "de": "Stream starten",
+    "es": "Iniciar transmisión",
+    "it": "Inizia streaming",
+    "no": "Start stream",
+    "sv": "Starta stream",
+    "pl": "Rozpocznij stream",
+    "ru": "Начать трансляцию",
+    "ko": "스트리밍 시작"
+  },
+  "titleFormatted": {
+    "en": "Start stream - [[action_CMD_START_STREAM_TYPE]]",
+    "nl": "Start Stream - [[action_CMD_START_STREAM_TYPE]]",
+    "fr": "Démarrer le flux vidéo - [[action_CMD_START_STREAM_TYPE]]",
+    "da": "Start stream - [[action_CMD_START_STREAM_TYPE]]",
+    "de": "Stream starten - [[action_CMD_START_STREAM_TYPE]]",
+    "es": "Iniciar transmisión - [[action_CMD_START_STREAM_TYPE]]",
+    "it": "Inizia streaming - [[action_CMD_START_STREAM_TYPE]]",
+    "no": "Start stream - [[action_CMD_START_STREAM_TYPE]]",
+    "sv": "Starta stream - [[action_CMD_START_STREAM_TYPE]]",
+    "pl": "Rozpocznij stream - [[action_CMD_START_STREAM_TYPE]]",
+    "ru": "Начать трансляцию - [[action_CMD_START_STREAM_TYPE]]",
+    "ko": "스트리밍 시작 - [[action_CMD_START_STREAM_TYPE]]"
+  },
+  "args": [
+    {
+      "name": "action_CMD_START_STREAM_TYPE",
+      "type": "dropdown",
+      "title": {
+        "en": "Stream type",
+        "nl": "Stream type",
+        "fr": "Type de flux vidéo",
+        "da": "Streamtype",
+        "de": "Streamtyp",
+        "es": "Tipo de transmisión",
+        "it": "Tipo di streaming",
+        "no": "Strømtype",
+        "sv": "Strömningstyp",
+        "pl": "Typ streamu",
+        "ru": "Тип трансляции",
+        "ko": "스트림 유형"
+      },
+      "values": [
         {
-            "name": "action_CMD_START_STREAM_TYPE",
-            "type": "dropdown",
-            "title": {
-                "en": "Stream type",
-                "nl": "Stream type",
-                "fr": "Type de flux vidéo"
-            },
-            "values": [
-                {
-                    "id": "hls",
-                    "label": {
-                        "en": "HLS (Chromecast compatible)",
-                        "nl": "HLS (Chromecast compatible)",
-                        "fr": "HLS (Compatible Chromecast)"
-                    }
-                },
-                {
-                    "id": "hls_only",
-                    "label": {
-                        "en": "HLS",
-                        "nl": "HLS",
-                        "fr": "HLS"
-                    }
-                },
-                {
-                    "id": "rtmp",
-                    "label": {
-                        "en": "RTMP",
-                        "nl": "RTMP",
-                        "fr": "RTMP"
-                    }
-                }
-            ]
+          "id": "hls",
+          "label": {
+            "en": "HLS (Chromecast compatible)",
+            "nl": "HLS (Chromecast compatible)",
+            "fr": "HLS (Compatible Chromecast)",
+            "da": "HLS (Chromecast kompatibel)",
+            "de": "HLS (Chromecast kompatibel)",
+            "es": "HLS (Compatible con Chromecast)",
+            "it": "HLS (Compatibile con Chromecast)",
+            "no": "HLS (Chromecast kompatibel)",
+            "sv": "HLS (Chromecast kompatibel)",
+            "pl": "HLS (zgodny z Chromecastem)",
+            "ru": "HLS (совместим с Chromecast)",
+            "ko": "HLS (Chromecast 호환)"
+          }
         },
         {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_2_PRO|driver_EUFYCAM_3|driver_EUFYCAM_3C|driver_EUFYCAM_E|driver_EUFYCAM_E330|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_C|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_1080P_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED|driver_WALLLIGHT_CAM_S&capabilities=CMD_START_STREAM"
+          "id": "hls_only",
+          "label": {
+            "en": "HLS",
+            "nl": "HLS",
+            "fr": "HLS",
+            "da": "HLS",
+            "de": "HLS",
+            "es": "HLS",
+            "it": "HLS",
+            "no": "HLS",
+            "sv": "HLS",
+            "pl": "HLS",
+            "ru": "HLS",
+            "ko": "HLS"
+          }
+        },
+        {
+          "id": "rtmp",
+          "label": {
+            "en": "RTMP",
+            "nl": "RTMP",
+            "fr": "RTMP",
+            "da": "RTMP",
+            "de": "RTMP",
+            "es": "RTMP",
+            "it": "RTMP",
+            "no": "RTMP",
+            "sv": "RTMP",
+            "pl": "RTMP",
+            "ru": "RTMP",
+            "ko": "RTMP"
+          }
         }
-    ]
+      ]
+    },
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_2_PRO|driver_EUFYCAM_3|driver_EUFYCAM_3C|driver_EUFYCAM_E|driver_EUFYCAM_E330|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_C|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_1080P_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED|driver_WALLLIGHT_CAM_S&capabilities=CMD_START_STREAM"
+    }
+  ]
 }

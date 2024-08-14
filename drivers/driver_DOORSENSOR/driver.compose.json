@@ -2,12 +2,30 @@
   "name": {
     "en": "Doorsensor",
     "nl": "Deursensor",
-    "fr": "Capteur de porte"
+    "fr": "Capteur de porte",
+    "da": "Dørsensor",
+    "de": "Türsensor",
+    "es": "Sensor de puerta",
+    "it": "Sensore della porta",
+    "no": "Dørsensor",
+    "sv": "Dörrsensor",
+    "pl": "Czujnik drzwi",
+    "ru": "Датчик двери",
+    "ko": "도어 센서"
   },
   "class": "sensor",
-  "capabilities": ["alarm_contact"],
+  "capabilities": [
+    "alarm_contact"
+  ],
   "energy": {
-    "batteries": ["INTERNAL"]
+    "batteries": [
+      "INTERNAL"
+    ]
   },
-  "$extends": ["device", "pair", "repair", "settings-sensor"]
+  "$extends": [
+    "device",
+    "pair",
+    "repair",
+    "settings-sensor"
+  ]
 }

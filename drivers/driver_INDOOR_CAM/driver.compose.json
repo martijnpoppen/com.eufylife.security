@@ -2,7 +2,16 @@
   "name": {
     "en": "Indoor Cam (1080P/2K)",
     "nl": "Indoor Cam (1080P/2K)",
-    "fr": "Indoor Cam (1080P/2K)"
+    "fr": "Indoor Cam (1080P/2K)",
+    "da": "Indendørs Kamera (1080P/2K)",
+    "de": "Innenkamera (1080P/2K)",
+    "es": "Cámara Interior (1080P/2K)",
+    "it": "Telecamera Interna (1080P/2K)",
+    "no": "Innendørs Kamera (1080P/2K)",
+    "sv": "Inomhuskamera (1080P/2K)",
+    "pl": "Kamera Wewnętrzna (1080P/2K)",
+    "ru": "Внутренняя Камера (1080P/2K)",
+    "ko": "실내 카메라 (1080P/2K)"
   },
   "class": "camera",
   "capabilities": [
@@ -27,5 +36,10 @@
     "NTFY_PET_DETECTED",
     "NTFY_VEHICLE_DETECTED"
   ],
-  "$extends": ["device", "pair", "repair", "settings-standalone"]
+  "$extends": [
+    "device",
+    "pair",
+    "repair",
+    "settings-standalone"
+  ]
 }

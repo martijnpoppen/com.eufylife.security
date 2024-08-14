@@ -2,7 +2,16 @@
   "name": {
     "en": "Outdoor Cam / Cam Pro",
     "nl": "Outdoor Cam / Cam Pro",
-    "fr": "Outdoor Cam / Cam Pro"
+    "fr": "Outdoor Cam / Cam Pro",
+    "da": "Udendørs Cam / Cam Pro",
+    "de": "Outdoor Cam / Cam Pro",
+    "es": "Cámara exterior / Cam Pro",
+    "it": "Cam esterna / Cam Pro",
+    "no": "Utendørs Cam / Cam Pro",
+    "sv": "Utomhus Cam / Cam Pro",
+    "pl": "Kamera zewnętrzna / Cam Pro",
+    "ru": "Уличная Камера / Кам Про",
+    "ko": "야외 카메라 / Cam Pro"
   },
   "class": "camera",
   "capabilities": [
@@ -28,7 +37,14 @@
     "NTFY_VEHICLE_DETECTED"
   ],
   "energy": {
-    "batteries": ["INTERNAL"]
+    "batteries": [
+      "INTERNAL"
+    ]
   },
-  "$extends": ["device", "pair", "repair", "settings-standalone"]
+  "$extends": [
+    "device",
+    "pair",
+    "repair",
+    "settings-standalone"
+  ]
 }

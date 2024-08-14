@@ -1,68 +1,131 @@
 {
-    "settings": [
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "General settings",
+        "nl": "Algemene instellingen",
+        "fr": "Paramètres généraux",
+        "da": "Generelle indstillinger",
+        "de": "Allgemeine Einstellungen",
+        "es": "Configuraciones generales",
+        "it": "Impostazioni generali",
+        "no": "Generelle innstillinger",
+        "sv": "Allmänna inställningar",
+        "pl": "Ustawienia ogólne",
+        "ru": "Основные настройки",
+        "ko": "일반 설정"
+      },
+      "children": [
         {
-          "type": "group",
-          "label": {
-            "en": "General settings",
-            "nl": "Algemene instellingen",
-            "fr": "Paramètres généraux"
+          "id": "alarm_motion_enabled",
+          "hint": {
+            "en": "This alarm will trigger when a detection happens. (Motion/Person/Sound). This generic alarm also allows zone activity and by enabling this you can use the Eufy motion detections as a sensor in Heimdall",
+            "fr": "Cette alarme se déclenche lorsqu'une détection se produit (Mouvement/Personne/Son). Cette alarme générique permet également d'activitée une zone d'activité et en l'activant, vous pouvez utiliser les détecteurs de mouvement Eufy comme capteur dans Heimdall.",
+            "da": "Denne alarm udløses, når der sker en registrering. (Bevægelse/Person/Lyd). Denne generiske alarm tillader også zoneaktivitet, og ved at aktivere dette kan du bruge Eufy-bevægelsesdetektioner som en sensor i Heimdall",
+            "de": "Dieser Alarm wird ausgelöst, wenn eine Erkennung stattfindet (Bewegung/Person/Geräusch). Dieser generische Alarm erlaubt auch Zonenaktivität und durch Aktivierung können Sie die Eufy-Bewegungserkennungen als Sensor in Heimdall verwenden",
+            "es": "Esta alarma se activará cuando ocurra una detección. (Movimiento/Persona/Sonido). Esta alarma genérica también permite la actividad de zonas y al habilitarla puedes usar las detecciones de movimiento de Eufy como un sensor en Heimdall",
+            "it": "Questo allarme si attiverà quando viene rilevato un evento. (Movimento/Persona/Suono). Questo allarme generico consente anche l'attività di zona e abilitandolo puoi utilizzare i rilevamenti di movimento Eufy come sensore in Heimdall",
+            "no": "Denne alarmen utløses når en deteksjon skjer (Bevegelse/Person/Lyd). Denne generiske alarmen tillater også soneaktivitet, og ved å aktivere dette kan du bruke Eufys bevegelsesdeteksjoner som en sensor i Heimdall",
+            "sv": "Detta larm utlöses när en detektion sker. (Rörelse/Person/Ljud). Detta generiska larm tillåter också zonaktivitet och genom att aktivera detta kan du använda Eufys rörelsedetektioner som en sensor i Heimdall",
+            "pl": "Ten alarm uruchomi się, gdy nastąpi wykrycie. (Ruch/Osoba/Dźwięk). Ten ogólny alarm pozwala również na aktywność strefy, a po włączeniu można wykorzystać wykrycia ruchu Eufy jako czujnik w Heimdall",
+            "ru": "Этот сигнал тревоги сработает, когда произойдет обнаружение (движение/человек/звук). Этот общий сигнал тревоги также позволяет использовать зону активности и, активировав его, вы можете использовать датчики движения Eufy в качестве сенсора в Heimdall",
+            "ko": "탐지가 발생하면 이 경보가 울립니다. (움직임/사람/소리). 이 일반 경보는 영역 활동을 허용하며 이를 활성화하면 Eufy 움직임 감지 기능을 Heimdall의 센서로 사용할 수 있습니다."
           },
-          "children": [
-            {
-              "id": "alarm_motion_enabled",
-              "hint": {
-                "en": "This alarm will trigger when a detection happens. (Motion/Person/Sound). This generic alarm also allows zone activity and by enabling this you can use the Eufy motion detections as a sensor in Heimdall",
-                "fr": "Cette alarme se déclenche lorsqu'une détection se produit (Mouvement/Personne/Son). Cette alarme générique permet également d'activitée une zone d'activité et en l'activant, vous pouvez utiliser les détecteurs de mouvement Eufy comme capteur dans Heimdall."
-              },
-              "type": "checkbox",
-              "label": {
-                "en": "Use generic motion alarm?",
-                "nl": "Gebruik generiek bewegings alarm",
-                "fr": "Utiliser une alarme de mouvement générique ?"
-              },
-              "value": true
-            }
-          ]
-        },
-        {
-          "type": "group",
+          "type": "checkbox",
           "label": {
-            "en": "Hub settings",
-            "nl": "Hub instellingen",
-            "fr": "Paramètres du hub"
+            "en": "Use generic motion alarm?",
+            "nl": "Gebruik generiek bewegings alarm",
+            "fr": "Utiliser une alarme de mouvement générique ?",
+            "da": "Brug generisk bevægelsesalarm?",
+            "de": "Generischen Bewegungsalarm verwenden?",
+            "es": "¿Usar alarma de movimiento genérica?",
+            "it": "Utilizzare un allarme di movimento generico?",
+            "no": "Bruk generisk bevegelsesalarm?",
+            "sv": "Använd generisk rörelselarm?",
+            "pl": "Użyć ogólnego alarmu ruchu?",
+            "ru": "Использовать общий сигнал тревоги при движении?",
+            "ko": "일반 움직임 경보를 사용하시겠습니까?"
           },
-          "children": [
-            {
-              "id": "STATION_SN",
-              "type": "label",
-              "label": {
-                "en": "Station S/N",
-                "nl": "Station S/N",
-                "fr": "Numéro de série de la station"
-              },
-              "value": ""
-            },
-            {
-              "id": "DEVICE_SN",
-              "type": "label",
-              "label": {
-                "en": "Device S/N",
-                "nl": "Apparaat S/N",
-                "fr": "Numéro de série de l'appareil"
-              },
-              "value": ""
-            },
-            {
-              "id": "LOCAL_STATION_IP",
-              "type": "label",
-              "label": {
-                "en": "Station IP",
-                "nl": "Station IP",
-                "fr": "Adresse IP de la station"
-              },
-              "value": ""
-            }
-          ]
+          "value": true
         }
       ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Hub settings",
+        "nl": "Hub instellingen",
+        "fr": "Paramètres du hub",
+        "da": "Hub-indstillinger",
+        "de": "Hub-Einstellungen",
+        "es": "Configuraciones del hub",
+        "it": "Impostazioni dell'hub",
+        "no": "Hub-innstillinger",
+        "sv": "Hub-inställningar",
+        "pl": "Ustawienia huba",
+        "ru": "Настройки хаба",
+        "ko": "허브 설정"
+      },
+      "children": [
+        {
+          "id": "STATION_SN",
+          "type": "label",
+          "label": {
+            "en": "Station S/N",
+            "nl": "Station S/N",
+            "fr": "Numéro de série de la station",
+            "da": "Station S/N",
+            "de": "Stations-S/N",
+            "es": "Estación S/N",
+            "it": "Stazione S/N",
+            "no": "Stasjon S/N",
+            "sv": "Stationens S/N",
+            "pl": "Stacja S/N",
+            "ru": "Станция S/N",
+            "ko": "스테이션 S/N"
+          },
+          "value": ""
+        },
+        {
+          "id": "DEVICE_SN",
+          "type": "label",
+          "label": {
+            "en": "Device S/N",
+            "nl": "Apparaat S/N",
+            "fr": "Numéro de série de l'appareil",
+            "da": "Enhed S/N",
+            "de": "Gerät-S/N",
+            "es": "Dispositivo S/N",
+            "it": "Dispositivo S/N",
+            "no": "Enhet S/N",
+            "sv": "Enhetens S/N",
+            "pl": "Urządzenie S/N",
+            "ru": "Устройство S/N",
+            "ko": "디바이스 S/N"
+          },
+          "value": ""
+        },
+        {
+          "id": "LOCAL_STATION_IP",
+          "type": "label",
+          "label": {
+            "en": "Station IP",
+            "nl": "Station IP",
+            "fr": "Adresse IP de la station",
+            "da": "Station IP",
+            "de": "Stations-IP",
+            "es": "Estación IP",
+            "it": "Stazione IP",
+            "no": "Stasjon IP",
+            "sv": "Stationens IP",
+            "pl": "Stacja IP",
+            "ru": "Станция IP",
+            "ko": "스테이션 IP"
+          },
+          "value": ""
+        }
+      ]
+    }
+  ]
 }

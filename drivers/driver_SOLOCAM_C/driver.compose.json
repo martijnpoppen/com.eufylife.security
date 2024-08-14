@@ -2,7 +2,16 @@
   "name": {
     "en": "SoloCam C210",
     "nl": "SoloCam C210",
-    "fr": "SoloCam C210"
+    "fr": "SoloCam C210",
+    "da": "SoloCam C210",
+    "de": "SoloCam C210",
+    "es": "SoloCam C210",
+    "it": "SoloCam C210",
+    "no": "SoloCam C210",
+    "sv": "SoloCam C210",
+    "pl": "SoloCam C210",
+    "ru": "SoloCam C210",
+    "ko": "SoloCam C210"
   },
   "class": "camera",
   "capabilities": [
@@ -27,7 +36,14 @@
     "NTFY_VEHICLE_DETECTED"
   ],
   "energy": {
-    "batteries": ["INTERNAL"]
+    "batteries": [
+      "INTERNAL"
+    ]
   },
-  "$extends": ["device", "pair", "repair", "settings-standalone"]
+  "$extends": [
+    "device",
+    "pair",
+    "repair",
+    "settings-standalone"
+  ]
 }

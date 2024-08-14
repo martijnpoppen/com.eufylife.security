@@ -2,7 +2,16 @@
   "name": {
     "en": "Floodlight Cam S330 / E340",
     "nl": "Floodlight Cam S330 / E340",
-    "fr": "Floodlight Cam S330 / E340"
+    "fr": "Floodlight Cam S330 / E340",
+    "da": "Projektørkamera S330 / E340",
+    "de": "Flutlichtkamera S330 / E340",
+    "es": "Cámara con foco S330 / E340",
+    "it": "Telecamera con faretto S330 / E340",
+    "no": "Flomlys Kamera S330 / E340",
+    "sv": "Strålkastarkamera S330 / E340",
+    "pl": "Kamera z reflektorem S330 / E340",
+    "ru": "Прожекторная камера S330 / E340",
+    "ko": "플러드라이트 캠 S330 / E340"
   },
   "class": "camera",
   "capabilities": [
@@ -27,5 +36,10 @@
     "NTFY_VEHICLE_DETECTED",
     "NTFY_VEHICLE_DETECTED_FORCE"
   ],
-  "$extends": ["device", "pair", "repair", "settings-standalone"]
+  "$extends": [
+    "device",
+    "pair",
+    "repair",
+    "settings-standalone"
+  ]
 }

@@ -2,7 +2,16 @@
   "name": {
     "en": "eufyCam E330 (Professional)",
     "nl": "eufyCam E330 (Professional)",
-    "fr": "eufyCam E330 (Professional)"
+    "fr": "eufyCam E330 (Professional)",
+    "da": "eufyCam E330 (Professional)",
+    "de": "eufyCam E330 (Professional)",
+    "es": "eufyCam E330 (Professional)",
+    "it": "eufyCam E330 (Professional)",
+    "no": "eufyCam E330 (Professional)",
+    "sv": "eufyCam E330 (Professional)",
+    "pl": "eufyCam E330 (Professional)",
+    "ru": "eufyCam E330 (Professional)",
+    "ko": "eufyCam E330 (Professional)"
   },
   "class": "camera",
   "capabilities": [
@@ -21,5 +30,10 @@
     "NTFY_PET_DETECTED",
     "NTFY_VEHICLE_DETECTED"
   ],
-  "$extends": ["device", "pair", "repair", "settings-default"]
+  "$extends": [
+    "device",
+    "pair",
+    "repair",
+    "settings-default"
+  ]
 }

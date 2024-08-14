@@ -1,0 +1,22 @@
+{
+  "settings": {
+    "title": "Eufy Einstellungen",
+    "subtitle": "Die Anmeldeeinstellungen wurden von dieser Seite entfernt. Um die Eufy-Anmeldung zu beheben, gehe zu den Geräteeinstellungen eines Eufy-Geräts (z.B. Homebase 2) in Homey, klicke auf Wartung und dann auf Reparieren.",
+    "account": "Kontoeinstellungen"
+  },
+  "pair": {
+    "captchaLabel": "Captcha",
+    "loading": "Laden",
+    "no_data": "Keine Geräte gefunden. Versuche eine andere Region.",
+    "no_devices": "Keine Geräte gefunden. Stelle sicher, dass du die Eufy-Geräte mit deinem zusätzlichen Admin-Konto geteilt hast (Versuche eine andere Region).",
+    "no_devices_repair": "Reparatur fehlgeschlagen. Keine Geräte in deinem Konto gefunden. Stelle sicher, dass du die Eufy-Geräte mit deinem zusätzlichen Admin-Konto geteilt hast. Oder bearbeite deine Anmeldung auf der vorherigen Seite.",
+    "keypad": "Das Tastenfeld ist ein physisches Gerät, um den Sicherheitsmodus für die Homebase einzustellen. Daher hat es keine eigene Funktionalität in der Homey-App. Um Flows zu erstellen oder Sicherheitsmodi zu ändern, füge stattdessen die Homebase hinzu (falls nicht bereits geschehen). Dort findest du die Sicherheitsmodi und Flow-Karten für Sicherheitsmodi."
+  },
+  "device": {
+    "init": "Verbindet zum Eufy-Server...",
+    "need_captcha": "Verbindung fehlgeschlagen (Captcha benötigt). Versuche das Gerät zu reparieren. Geräteeinstellungen -> Wartung -> Reparieren.",
+    "need_2FA": "Verbindung fehlgeschlagen (2FA benötigt). Versuche das Gerät zu reparieren. Geräteeinstellungen -> Wartung -> Reparieren.",
+    "serial_failure": "Verbindung fehlgeschlagen (Geräteseriennummer nicht gefunden). Versuche das Gerät zu reparieren. Geräteeinstellungen -> Wartung -> Reparieren.",
+    "serial_failure_station": "Verbindung fehlgeschlagen (Stationsseriennummer nicht gefunden). Versuche das Gerät zu reparieren. Geräteeinstellungen -> Wartung -> Reparieren."
+  }
+}

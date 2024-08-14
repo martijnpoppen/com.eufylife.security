@@ -2,7 +2,16 @@
   "name": {
     "en": "eufyCam 3C",
     "nl": "eufyCam 3C",
-    "fr": "eufyCam 3C"
+    "fr": "eufyCam 3C",
+    "da": "eufyCam 3C",
+    "de": "eufyCam 3C",
+    "es": "eufyCam 3C",
+    "it": "eufyCam 3C",
+    "no": "eufyCam 3C",
+    "sv": "eufyCam 3C",
+    "pl": "eufyCam 3C",
+    "ru": "eufyCam 3C",
+    "ko": "eufyCam 3C"
   },
   "class": "camera",
   "capabilities": [
@@ -24,7 +33,14 @@
     "NTFY_VEHICLE_DETECTED"
   ],
   "energy": {
-    "batteries": ["INTERNAL"]
+    "batteries": [
+      "INTERNAL"
+    ]
   },
-  "$extends": ["device", "pair", "repair", "settings-default"]
+  "$extends": [
+    "device",
+    "pair",
+    "repair",
+    "settings-default"
+  ]
 }

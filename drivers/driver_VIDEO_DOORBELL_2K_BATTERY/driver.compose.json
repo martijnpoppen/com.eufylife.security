@@ -2,7 +2,16 @@
   "name": {
     "en": "Doorbell Battery (1080P/2K)",
     "nl": "Deurbel Batterij (1080P/2K)",
-    "fr": "Sonnette Batterie (1080P/2K)"
+    "fr": "Sonnette Batterie (1080P/2K)",
+    "da": "Dørklokke Batteri (1080P/2K)",
+    "de": "Türklingel Batterie (1080P/2K)",
+    "es": "Timbre de Batería (1080P/2K)",
+    "it": "Campanello Batteria (1080P/2K)",
+    "no": "Dørklokke Batteri (1080P/2K)",
+    "sv": "Dörrklocka Batteri (1080P/2K)",
+    "pl": "Dzwonek na Baterie (1080P/2K)",
+    "ru": "Дверной звонок на батарее (1080P/2K)",
+    "ko": "초인종 배터리 (1080P/2K)"
   },
   "class": "doorbell",
   "capabilities": [
@@ -25,7 +34,14 @@
     "NTFY_PRESS_DOORBELL"
   ],
   "energy": {
-    "batteries": ["INTERNAL"]
+    "batteries": [
+      "INTERNAL"
+    ]
   },
-  "$extends": ["device", "pair", "repair", "settings-default"]
+  "$extends": [
+    "device",
+    "pair",
+    "repair",
+    "settings-default"
+  ]
 }

@@ -4,7 +4,16 @@
   "title": {
     "en": "Send Quick Response",
     "nl": "Stuur Spraakbericht",
-    "fr": "Envoyer une réponse rapide"
+    "fr": "Envoyer une réponse rapide",
+    "da": "Send hurtig svar",
+    "de": "Schnelle Antwort senden",
+    "es": "Enviar respuesta rápida",
+    "it": "Invia risposta rapida",
+    "no": "Send raskt svar",
+    "sv": "Skicka snabbt svar",
+    "pl": "Wyślij szybką odpowiedź",
+    "ru": "Отправьте быстрый ответ",
+    "ko": "빠른 응답 보내기"
   },
   "uiComponent": "picker",
   "getable": true,
@@ -15,7 +24,16 @@
       "title": {
         "en": "Default response 1",
         "nl": "Standaard bericht 1",
-        "fr": "Réponse par défaut 1"
+        "fr": "Réponse par défaut 1",
+        "da": "Standardsvar 1",
+        "de": "Standardantwort 1",
+        "es": "Respuesta predeterminada 1",
+        "it": "Risposta predefinita 1",
+        "no": "Standardsvar 1",
+        "sv": "Standardsvar 1",
+        "pl": "Domyślna odpowiedź 1",
+        "ru": "Ответ по умолчанию 1",
+        "ko": "기본 응답 1"
       }
     },
     {
@@ -23,7 +41,16 @@
       "title": {
         "en": "Default response 2",
         "nl": "Standaard bericht 2",
-        "fr": "Réponse par défaut 2"
+        "fr": "Réponse par défaut 2",
+        "da": "Standardsvar 2",
+        "de": "Standardantwort 2",
+        "es": "Respuesta predeterminada 2",
+        "it": "Risposta predefinita 2",
+        "no": "Standardsvar 2",
+        "sv": "Standardsvar 2",
+        "pl": "Domyślna odpowiedź 2",
+        "ru": "Ответ по умолчанию 2",
+        "ko": "기본 응답 2"
       }
     },
     {
@@ -31,7 +58,16 @@
       "title": {
         "en": "Default response 3",
         "nl": "Standaard bericht 3",
-        "fr": "Réponse par défaut 3"
+        "fr": "Réponse par défaut 3",
+        "da": "Standardsvar 3",
+        "de": "Standardantwort 3",
+        "es": "Respuesta predeterminada 3",
+        "it": "Risposta predefinita 3",
+        "no": "Standardsvar 3",
+        "sv": "Standardsvar 3",
+        "pl": "Domyślna odpowiedź 3",
+        "ru": "Ответ по умолчанию 3",
+        "ko": "기본 응답 3"
       }
     },
     {
@@ -39,7 +75,16 @@
       "title": {
         "en": "Custom response 1",
         "nl": "Eigen bericht 1",
-        "fr": "Réponse personnalisée 1"
+        "fr": "Réponse personnalisée 1",
+        "da": "Brugerdefineret svar 1",
+        "de": "Benutzerdefinierte Antwort 1",
+        "es": "Respuesta personalizada 1",
+        "it": "Risposta personalizzata 1",
+        "no": "Egendefinert svar 1",
+        "sv": "Anpassat svar 1",
+        "pl": "Niestandardowa odpowiedź 1",
+        "ru": "Пользовательский ответ 1",
+        "ko": "사용자 정의 응답 1"
       }
     },
     {
@@ -47,7 +92,16 @@
       "title": {
         "en": "Custom response 2",
         "nl": "Eigen bericht 2",
-        "fr": "Réponse personnalisée 2"
+        "fr": "Réponse personnalisée 2",
+        "da": "Brugerdefineret svar 2",
+        "de": "Benutzerdefinierte Antwort 2",
+        "es": "Respuesta personalizada 2",
+        "it": "Risposta personalizzata 2",
+        "no": "Egendefinert svar 2",
+        "sv": "Anpassat svar 2",
+        "pl": "Niestandardowa odpowiedź 2",
+        "ru": "Пользовательский ответ 2",
+        "ko": "사용자 정의 응답 2"
       }
     },
     {
@@ -55,7 +109,16 @@
       "title": {
         "en": "Custom response 3",
         "nl": "Eigen bericht 3",
-        "fr": "Réponse personnalisée 3"
+        "fr": "Réponse personnalisée 3",
+        "da": "Brugerdefineret svar 3",
+        "de": "Benutzerdefinierte Antwort 3",
+        "es": "Respuesta personalizada 3",
+        "it": "Risposta personalizzata 3",
+        "no": "Egendefinert svar 3",
+        "sv": "Anpassat svar 3",
+        "pl": "Niestandardowa odpowiedź 3",
+        "ru": "Пользовательский ответ 3",
+        "ko": "사용자 정의 응답 3"
       }
     }
   ]

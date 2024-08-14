@@ -12,16 +12,43 @@
   "insightsTitleTrue": {
     "en": "Person Detected - on",
     "nl": "Persoon Gedetecteerd - aan",
-    "fr": "Détection de personne - activée"
+    "fr": "Détection de personne - activée",
+    "da": "Person registreret - tændt",
+    "de": "Person erkannt - ein",
+    "es": "Persona detectada - encendido",
+    "it": "Persona rilevata - acceso",
+    "no": "Person oppdaget - på",
+    "sv": "Person upptäckt - på",
+    "pl": "Osoba wykryta - włączone",
+    "ru": "Обнаружено лицо - включено",
+    "ko": "사람 감지 - 켬"
   },
   "insightsTitleFalse": {
     "en": "Person Detected - off",
     "nl": "Persoon Gedetecteerd - uit",
-    "fr": "Détection de personne - désactivée"
+    "fr": "Détection de personne - désactivée",
+    "da": "Person registreret - slukket",
+    "de": "Person erkannt - aus",
+    "es": "Persona detectada - apagado",
+    "it": "Persona rilevata - spento",
+    "no": "Person oppdaget - av",
+    "sv": "Person upptäckt - av",
+    "pl": "Osoba wykryta - wyłączone",
+    "ru": "Обнаружено лицо - выключено",
+    "ko": "사람 감지 - 끔"
   },
   "title": {
     "en": "Person Detected",
     "nl": "Persoon Gedetecteerd",
-    "fr": "Personne détectée"
+    "fr": "Personne détectée",
+    "da": "Person registreret",
+    "de": "Person erkannt",
+    "es": "Persona detectada",
+    "it": "Persona rilevata",
+    "no": "Person oppdaget",
+    "sv": "Person upptäckt",
+    "pl": "Osoba wykryta",
+    "ru": "Обнаружено лицо",
+    "ko": "사람 감지됨"
   }
 }

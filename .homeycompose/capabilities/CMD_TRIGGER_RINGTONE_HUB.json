@@ -7,6 +7,15 @@
   "title": {
     "en": "Trigger chime",
     "nl": "Activeer chime",
-    "fr": "Déclenchement du carillon"
+    "fr": "Déclenchement du carillon",
+    "da": "Udløs klokke",
+    "de": "Gong auslösen",
+    "es": "Activar el timbre",
+    "it": "Attiva suoneria",
+    "no": "Utlys klokke",
+    "sv": "Utlös klocka",
+    "pl": "Uruchom dzwonek",
+    "ru": "Запустить звонок",
+    "ko": "차임 울리기"
   }
 }

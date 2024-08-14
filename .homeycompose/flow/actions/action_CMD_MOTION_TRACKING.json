@@ -1,50 +1,95 @@
 {
-    "id": "action_CMD_MOTION_TRACKING",
-    "platforms": [
-        "local"
-    ],
-    "title": {
-        "en": "Toggle Motion Tracking",
-        "nl": "Schakel Bewegingstracering in/uit",
-        "fr": "Activer/Désactiver le Suivi des Mouvements"
+  "id": "action_CMD_MOTION_TRACKING",
+  "platforms": [
+    "local"
+  ],
+  "title": {
+    "en": "Toggle Motion Tracking",
+    "nl": "Schakel Bewegingstracering in/uit",
+    "fr": "Activer/Désactiver le Suivi des Mouvements",
+    "da": "Slå bevægelsessporing til/fra",
+    "de": "Bewegungsverfolgung ein/aus schalten",
+    "es": "Activar/Desactivar el Seguimiento de Movimiento",
+    "it": "Attiva/Disattiva il Tracciamento dei Movimenti",
+    "no": "Slå bevegelsessporing av/på",
+    "sv": "Aktivera/Inaktivera rörelsespårning",
+    "pl": "Włącz/Wyłącz śledzenie ruchu",
+    "ru": "Включить/Выключить отслеживание движений",
+    "ko": "모션 트래킹 켜기/끄기"
+  },
+  "titleFormatted": {
+    "en": "Set Motion Tracking [[action_CMD_MOTION_TRACKING_TYPE]]",
+    "nl": "Zet Bewegingstracering [[action_CMD_MOTION_TRACKING_TYPE]]",
+    "fr": "Activer le Suivi des Mouvements [[action_CMD_MOTION_TRACKING_TYPE]]",
+    "da": "Indstil bevægelsessporing [[action_CMD_MOTION_TRACKING_TYPE]]",
+    "de": "Bewegungsverfolgung [[action_CMD_MOTION_TRACKING_TYPE]] einstellen",
+    "es": "Configurar el Seguimiento de Movimiento [[action_CMD_MOTION_TRACKING_TYPE]]",
+    "it": "Imposta il Tracciamento dei Movimenti [[action_CMD_MOTION_TRACKING_TYPE]]",
+    "no": "Sett bevegelsessporing [[action_CMD_MOTION_TRACKING_TYPE]]",
+    "sv": "Ställ in rörelsespårning [[action_CMD_MOTION_TRACKING_TYPE]]",
+    "pl": "Ustaw śledzenie ruchu [[action_CMD_MOTION_TRACKING_TYPE]]",
+    "ru": "Настроить отслеживание движений [[action_CMD_MOTION_TRACKING_TYPE]]",
+    "ko": "모션 트래킹 설정 [[action_CMD_MOTION_TRACKING_TYPE]]"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM_PAN_TILT&capabilities=CMD_INDOOR_PAN_TURN"
     },
-    "titleFormatted": {
-        "en": "Set Motion Tracking [[action_CMD_MOTION_TRACKING_TYPE]]",
-        "nl": "Zet Bewegingstracering [[action_CMD_MOTION_TRACKING_TYPE]]",
-        "fr": "Activer le Suivi des Mouvements [[action_CMD_MOTION_TRACKING_TYPE]]"
-    },
-    "args": [
+    {
+      "name": "action_CMD_MOTION_TRACKING_TYPE",
+      "type": "dropdown",
+      "title": {
+        "en": "Motion Tracking",
+        "nl": "Bewegingstracering",
+        "fr": "le Suivi des Mouvements",
+        "da": "Bevægelsessporing",
+        "de": "Bewegungsverfolgung",
+        "es": "Seguimiento de Movimiento",
+        "it": "Tracciamento dei Movimenti",
+        "no": "Bevegelsessporing",
+        "sv": "Rörelsespårning",
+        "pl": "Śledzenie ruchu",
+        "ru": "Отслеживание движений",
+        "ko": "모션 트래킹"
+      },
+      "values": [
         {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM_PAN_TILT&capabilities=CMD_INDOOR_PAN_TURN"
+          "id": "1",
+          "label": {
+            "en": "On",
+            "nl": "Aan",
+            "fr": "On",
+            "da": "Til",
+            "de": "An",
+            "es": "Encendido",
+            "it": "Acceso",
+            "no": "På",
+            "sv": "På",
+            "pl": "Włącz",
+            "ru": "Включено",
+            "ko": "켜기"
+          }
         },
         {
-            "name": "action_CMD_MOTION_TRACKING_TYPE",
-            "type": "dropdown",
-            "title": {
-                "en": "Motion Tracking",
-                "nl": "Bewegingstracering",
-                "fr": "le Suivi des Mouvements"
-            },
-            "values": [
-                {
-                    "id": "1",
-                    "label": {
-                        "en": "On",
-                        "nl": "Aan",
-                        "fr": "On"
-                    }
-                },
-                {
-                    "id": "0",
-                    "label": {
-                        "en": "Off",
-                        "nl": "Uit",
-                        "fr": "Off"
-                    }
-                }
-            ]
+          "id": "0",
+          "label": {
+            "en": "Off",
+            "nl": "Uit",
+            "fr": "Off",
+            "da": "Fra",
+            "de": "Aus",
+            "es": "Apagado",
+            "it": "Spento",
+            "no": "Av",
+            "sv": "Av",
+            "pl": "Wyłącz",
+            "ru": "Выключено",
+            "ko": "끄기"
+          }
         }
-    ]
+      ]
+    }
+  ]
 }

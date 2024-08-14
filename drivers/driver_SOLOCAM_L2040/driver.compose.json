@@ -2,7 +2,16 @@
   "name": {
     "en": "SoloCam L20 / L40",
     "nl": "SoloCam L20 / L40",
-    "fr": "SoloCam L20 / L40"
+    "fr": "SoloCam L20 / L40",
+    "da": "SoloCam L20 / L40",
+    "de": "SoloCam L20 / L40",
+    "es": "SoloCam L20 / L40",
+    "it": "SoloCam L20 / L40",
+    "no": "SoloCam L20 / L40",
+    "sv": "SoloCam L20 / L40",
+    "pl": "SoloCam L20 / L40",
+    "ru": "SoloCam L20 / L40",
+    "ko": "SoloCam L20 / L40"
   },
   "class": "camera",
   "capabilities": [
@@ -28,7 +37,14 @@
     "NTFY_VEHICLE_DETECTED"
   ],
   "energy": {
-    "batteries": ["INTERNAL"]
+    "batteries": [
+      "INTERNAL"
+    ]
   },
-  "$extends": ["device", "pair", "repair", "settings-standalone"]
+  "$extends": [
+    "device",
+    "pair",
+    "repair",
+    "settings-standalone"
+  ]
 }

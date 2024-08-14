@@ -5,7 +5,16 @@
       "label": {
         "en": "General settings",
         "nl": "Algemene instellingen",
-        "fr": "Paramètres généraux"
+        "fr": "Paramètres généraux",
+        "da": "Generelle indstillinger",
+        "de": "Allgemeine Einstellungen",
+        "es": "Configuraciones generales",
+        "it": "Impostazioni generali",
+        "no": "Generelle innstillinger",
+        "sv": "Allmänna inställningar",
+        "pl": "Ustawienia ogólne",
+        "ru": "Общие настройки",
+        "ko": "일반 설정"
       },
       "children": [
         {
@@ -13,12 +22,30 @@
           "type": "checkbox",
           "hint": {
             "en": "This alarm will trigger when the Homebase alarm turns on",
-            "fr": "Cette alarme se déclenche lorsque l'alarme Homebase se déclanche."
+            "fr": "Cette alarme se déclenche lorsque l'alarme Homebase se déclanche.",
+            "da": "Denne alarm udløses, når Homebase-alarmen aktiveres",
+            "de": "Dieser Alarm wird ausgelöst, wenn der Homebase-Alarm angeht",
+            "es": "Esta alarma se activará cuando se active la alarma de Homebase",
+            "it": "Questo allarme si attiva quando l'allarme Homebase si accende",
+            "no": "Denne alarmen utløses når Homebase-alarmen utløses",
+            "sv": "Denna alarm utlöses när Homebase-larmet aktiveras",
+            "pl": "Ten alarm uruchomi się, gdy włączy się alarm Homebase",
+            "ru": "Сигнализация сработает, когда включится сигнализация Homebase",
+            "ko": "이 알람은 Homebase 알람이 켜질 때 작동합니다"
           },
           "label": {
             "en": "Use generic alarm?",
             "nl": "Gebruik algemeen alarm?",
-            "fr": "Utiliser une alarme générique ?"
+            "fr": "Utiliser une alarme générique ?",
+            "da": "Brug generel alarm?",
+            "de": "Allgemeinen Alarm verwenden?",
+            "es": "¿Usar una alarma genérica?",
+            "it": "Usare un allarme generico?",
+            "no": "Bruke generisk alarm?",
+            "sv": "Använd generiskt larm?",
+            "pl": "Użyj ogólnego alarmu?",
+            "ru": "Использовать общий сигнал?",
+            "ko": "일반 알람 사용?"
           },
           "value": true
         },
@@ -28,7 +55,16 @@
           "label": {
             "en": "Force switch mode notifications (prevent turning off by Eufy)",
             "nl": "Forceer Homebase notificatie (voorkom uitschakelen door Eufy)",
-            "fr": "Forcer le changement de mode de notification (empêcher la désactivation par Eufy)"
+            "fr": "Forcer le changement de mode de notification (empêcher la désactivation par Eufy)",
+            "da": "Tving switch-tilstand notifikationer (forhindrer slukning af Eufy)",
+            "de": "Wechselmodus-Benachrichtigungen erzwingen (Verhindern, dass Eufy ausgeschaltet wird)",
+            "es": "Forzar notificaciones de modo alterno (prevenir que Eufy se apague)",
+            "it": "Forza le notifiche di cambio modalità (evita lo spegnimento di Eufy)",
+            "no": "Tving switch-modus-varslinger (forhindre at Eufy slår seg av)",
+            "sv": "Tvinga switch-lägenotifikationer (förhindra avstängning av Eufy)",
+            "pl": "Wymuś powiadomienia trybu przełączania (zapobiega wyłączaniu przez Eufy)",
+            "ru": "Принудительные уведомления режима переключения (предотвращение отключения Eufy)",
+            "ko": "스위치 모드 알림 강제(이유피가 꺼지지 않도록 방지)"
           },
           "value": true
         },
@@ -38,11 +74,29 @@
           "value": "disabled",
           "hint": {
             "en": "This alarm will trigger when the device becomes armed/disarmed",
-            "fr": "Cette alarme sera déclenchée lorsque le dispositif est activée/désactivée"
+            "fr": "Cette alarme sera déclenchée lorsque le dispositif est activée/désactivée",
+            "da": "Denne alarm udløses, når enheden bliver til- eller frakoblet",
+            "de": "Dieser Alarm wird ausgelöst, wenn das Gerät scharf/unscharf geschaltet wird",
+            "es": "Esta alarma se activará cuando el dispositivo esté armado/desarmado",
+            "it": "Questo allarme si attiva quando il dispositivo viene armato/disarmato",
+            "no": "Denne alarmen utløses når enheten blir bevæpnet/avvæpnet",
+            "sv": "Denna alarm utlöses när enheten blir beväpnad/avväpnad",
+            "pl": "Ten alarm uruchomi się, gdy urządzenie zostanie uzbrojone/rozbrojone",
+            "ru": "Эта сигнализация сработает, когда устройство будет активировано/деактивировано",
+            "ko": "이 알람은 장치가 활성화/비활성화될 때 작동합니다"
           },
           "label": {
             "en": "Alarm Disarmed",
-            "fr": "Alarme désactivée"
+            "fr": "Alarme désactivée",
+            "da": "Alarm deaktiveret",
+            "de": "Alarm deaktiviert",
+            "es": "Alarma desactivada",
+            "it": "Allarme disattivato",
+            "no": "Alarm deaktivert",
+            "sv": "Larm avaktiverad",
+            "pl": "Alarm rozbrojony",
+            "ru": "Сигнализация отключена",
+            "ko": "알람 비활성화됨"
           },
           "values": [
             {
@@ -50,7 +104,16 @@
               "label": {
                 "en": "No alarm",
                 "nl": "Geen alarm",
-                "fr": "Pas d'alarme"
+                "fr": "Pas d'alarme",
+                "da": "Ingen alarm",
+                "de": "Kein Alarm",
+                "es": "Sin alarma",
+                "it": "Nessun allarme",
+                "no": "Ingen alarm",
+                "sv": "Ingen larm",
+                "pl": "Brak alarmu",
+                "ru": "Без сигнала",
+                "ko": "알람 없음"
               }
             },
             {
@@ -58,7 +121,16 @@
               "label": {
                 "en": "off / disarmed",
                 "nl": "uit / uitgeschakeld",
-                "fr": "off / désactivée"
+                "fr": "off / désactivée",
+                "da": "slukket / deaktiveret",
+                "de": "aus / deaktiviert",
+                "es": "apagado / desactivado",
+                "it": "spento / disattivato",
+                "no": "av / deaktivert",
+                "sv": "av / avaktiverad",
+                "pl": "wyłączony / rozbrojony",
+                "ru": "выключен / отключен",
+                "ko": "꺼짐 / 비활성화됨"
               }
             },
             {
@@ -66,7 +138,16 @@
               "label": {
                 "en": "off / disarmed / home",
                 "nl": "uit / uitgeschakeld / thuis",
-                "fr": "off / désactivée / à la maison"
+                "fr": "off / désactivée / à la maison",
+                "da": "slukket / deaktiveret / hjemme",
+                "de": "aus / deaktiviert / zuhause",
+                "es": "apagado / desactivado / en casa",
+                "it": "spento / disattivato / a casa",
+                "no": "av / deaktivert / hjemme",
+                "sv": "av / avaktiverad / hemma",
+                "pl": "wyłączony / rozbrojony / w domu",
+                "ru": "выключен / отключен / дома",
+                "ko": "꺼짐 / 비활성화됨 / 집"
               }
             },
             {
@@ -74,7 +155,16 @@
               "label": {
                 "en": "off / disarmed / away",
                 "nl": "uit / uitgeschakeld / afwezig",
-                "fr": "off / désactivée / à l'extérieur"
+                "fr": "off / désactivée / à l'extérieur",
+                "da": "slukket / deaktiveret / væk",
+                "de": "aus / deaktiviert / weg",
+                "es": "apagado / desactivado / fuera",
+                "it": "spento / disattivato / fuori",
+                "no": "av / deaktivert / borte",
+                "sv": "av / avaktiverad / borta",
+                "pl": "wyłączony / rozbrojony / poza domem",
+                "ru": "выключен / отключен / вне дома",
+                "ko": "꺼짐 / 비활성화됨 / 집 외"
               }
             },
             {
@@ -82,7 +172,16 @@
               "label": {
                 "en": "away / custom 1",
                 "nl": "afwezig / custom 1",
-                "fr": "à l'extérieur / personnalisé 1"
+                "fr": "à l'extérieur / personnalisé 1",
+                "da": "væk / tilpasset 1",
+                "de": "weg / benutzerdefiniert 1",
+                "es": "fuera / personalizado 1",
+                "it": "fuori / personalizzato 1",
+                "no": "borte / tilpasset 1",
+                "sv": "borta / anpassad 1",
+                "pl": "poza domem / niestandardowe 1",
+                "ru": "вне дома / пользовательский 1",
+                "ko": "집 외 / 사용자 정의 1"
               }
             },
             {
@@ -90,7 +189,16 @@
               "label": {
                 "en": "away / custom 2",
                 "nl": "afwezig / custom 2",
-                "fr": "à l'extérieur / personnalisé 2"
+                "fr": "à l'extérieur / personnalisé 2",
+                "da": "væk / tilpasset 2",
+                "de": "weg / benutzerdefiniert 2",
+                "es": "fuera / personalizado 2",
+                "it": "fuori / personalizzato 2",
+                "no": "borte / tilpasset 2",
+                "sv": "borta / anpassad 2",
+                "pl": "poza domem / niestandardowe 2",
+                "ru": "вне дома / пользовательский 2",
+                "ko": "집 외 / 사용자 정의 2"
               }
             },
             {
@@ -98,7 +206,16 @@
               "label": {
                 "en": "away / custom 3",
                 "nl": "afwezig / custom 3",
-                "fr": "à l'extérieur / personnalisé 3"
+                "fr": "à l'extérieur / personnalisé 3",
+                "da": "væk / tilpasset 3",
+                "de": "weg / benutzerdefiniert 3",
+                "es": "fuera / personalizado 3",
+                "it": "fuori / personalizzato 3",
+                "no": "borte / tilpasset 3",
+                "sv": "borta / anpassad 3",
+                "pl": "poza domem / niestandardowe 3",
+                "ru": "вне дома / пользовательский 3",
+                "ko": "집 외 / 사용자 정의 3"
               }
             },
             {
@@ -106,7 +223,16 @@
               "label": {
                 "en": "off / disarmed / custom 1",
                 "nl": "uit / uitgeschakeld / custom 1",
-                "fr": "off / désactivée / personnalisé 1"
+                "fr": "off / désactivée / personnalisé 1",
+                "da": "slukket / deaktiveret / tilpasset 1",
+                "de": "aus / deaktiviert / benutzerdefiniert 1",
+                "es": "apagado / desactivado / personalizado 1",
+                "it": "spento / disattivato / personalizzato 1",
+                "no": "av / deaktivert / tilpasset 1",
+                "sv": "av / avaktiverad / anpassad 1",
+                "pl": "wyłączony / rozbrojony / niestandardowe 1",
+                "ru": "выключен / отключен / пользовательский 1",
+                "ko": "꺼짐 / 비활성화됨 / 사용자 정의 1"
               }
             },
             {
@@ -114,7 +240,16 @@
               "label": {
                 "en": "off / disarmed / custom 2",
                 "nl": "uit / uitgeschakeld / custom 2",
-                "fr": "off / désactivée / personnalisé 2"
+                "fr": "off / désactivée / personnalisé 2",
+                "da": "slukket / deaktiveret / tilpasset 2",
+                "de": "aus / deaktiviert / benutzerdefiniert 2",
+                "es": "apagado / desactivado / personalizado 2",
+                "it": "spento / disattivato / personalizzato 2",
+                "no": "av / deaktivert / tilpasset 2",
+                "sv": "av / avaktiverad / anpassad 2",
+                "pl": "wyłączony / rozbrojony / niestandardowe 2",
+                "ru": "выключен / отключен / пользовательский 2",
+                "ko": "꺼짐 / 비활성화됨 / 사용자 정의 2"
               }
             },
             {
@@ -122,7 +257,16 @@
               "label": {
                 "en": "off / disarmed / custom 3",
                 "nl": "uit / uitgeschakeld / custom 3",
-                "fr": "off / désactivée / personnalisé 3"
+                "fr": "off / désactivée / personnalisé 3",
+                "da": "slukket / deaktiveret / tilpasset 3",
+                "de": "aus / deaktiviert / benutzerdefiniert 3",
+                "es": "apagado / desactivado / personalizado 3",
+                "it": "spento / disattivato / personalizzato 3",
+                "no": "av / deaktivert / tilpasset 3",
+                "sv": "av / avaktiverad / anpassad 3",
+                "pl": "wyłączony / rozbrojony / niestandardowe 3",
+                "ru": "выключен / отключен / пользовательский 3",
+                "ko": "꺼짐 / 비활성화됨 / 사용자 정의 3"
               }
             }
           ]
@@ -134,7 +278,16 @@
       "label": {
         "en": "Hub settings",
         "nl": "Hub instellingen",
-        "fr": "Pa du hub"
+        "fr": "Pa du hub",
+        "da": "Hub-indstillinger",
+        "de": "Hub-Einstellungen",
+        "es": "Configuraciones de Hub",
+        "it": "Impostazioni Hub",
+        "no": "Hub-innstillinger",
+        "sv": "Hub-inställningar",
+        "pl": "Ustawienia koncentratora",
+        "ru": "Настройки концентратора",
+        "ko": "허브 설정"
       },
       "children": [
         {
@@ -143,7 +296,16 @@
           "label": {
             "en": "Station S/N",
             "nl": "Station S/N",
-            "fr": "Numéro de série de la station"
+            "fr": "Numéro de série de la station",
+            "da": "Stations S/N",
+            "de": "Station S/N",
+            "es": "Estación S/N",
+            "it": "S/N della stazione",
+            "no": "Stasjon S/N",
+            "sv": "Station S/N",
+            "pl": "S/N stacji",
+            "ru": "Серийный номер станции",
+            "ko": "기지국 S/N"
           },
           "value": ""
         },
@@ -153,7 +315,16 @@
           "label": {
             "en": "Device S/N",
             "nl": "Apparaat S/N",
-            "fr": "Numéro de série de l'appareil"
+            "fr": "Numéro de série de l'appareil",
+            "da": "Enheds S/N",
+            "de": "Gerät S/N",
+            "es": "Dispositivo S/N",
+            "it": "S/N del dispositivo",
+            "no": "Enhet S/N",
+            "sv": "Enhet S/N",
+            "pl": "S/N urządzenia",
+            "ru": "Серийный номер устройства",
+            "ko": "장치 S/N"
           },
           "value": ""
         },
@@ -163,7 +334,16 @@
           "label": {
             "en": "Station IP",
             "nl": "Station IP",
-            "fr": "Adresse IP de la station"
+            "fr": "Adresse IP de la station",
+            "da": "Stations IP",
+            "de": "Station IP",
+            "es": "IP de la estación",
+            "it": "IP della stazione",
+            "no": "Stasjon IP",
+            "sv": "Station IP",
+            "pl": "IP stacji",
+            "ru": "IP адрес станции",
+            "ko": "기지국 IP"
           },
           "value": ""
         }

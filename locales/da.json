@@ -1,0 +1,22 @@
+{
+  "settings": {
+    "title": "Eufy Indstillingsside",
+    "subtitle": "Loginindstillinger er fjernet fra denne side. For at løse Eufy login, gå til en Eufy enhedsindstillinger (fx Homebase 2) i Homey og klik på vedligeholdelse og derefter reparation.",
+    "account": "Kontoindstillinger"
+  },
+  "pair": {
+    "captchaLabel": "Captcha",
+    "loading": "Indlæser",
+    "no_data": "Ingen enheder fundet. Prøv en anden region.",
+    "no_devices": "Ingen enheder fundet. Sørg for, at du har delt Eufy enhederne med din admin ekstra konto (Prøv en anden region)",
+    "no_devices_repair": "Reparation mislykkedes. Ingen enheder fundet i din konto. Sørg for, at du har delt Eufy enhederne med din admin ekstra konto. Eller rediger din login på den forrige side",
+    "keypad": "Keypad er en fysisk enhed til at indstille sikkerhedstilstanden for Homebase. Derfor har dette ingen egen funktionalitet i Homey appen. For at lave flows baseret på eller ændre sikkerhedstilstande, tilføj venligst Homebase i stedet (hvis ikke allerede gjort). Der kan du finde sikkerhedstilstande og flowkort for sikkerhedstilstande."
+  },
+  "device": {
+    "init": "forbinder til Eufy Server...",
+    "need_captcha": "Forbindelse mislykkedes (Captcha kræves). Prøv at reparere enheden. Enhedsindstillinger -> vedligeholdelse -> reparation",
+    "need_2FA": "Forbindelse mislykkedes (2FA kræves). Prøv at reparere enheden. Enhedsindstillinger -> vedligeholdelse -> reparation",
+    "serial_failure": "Forbindelse mislykkedes (Enhedsserienummer ikke fundet). Prøv at reparere enheden. Enhedsindstillinger -> vedligeholdelse -> reparation",
+    "serial_failure_station": "Forbindelse mislykkedes (Stationsserienummer ikke fundet). Prøv at reparere enheden. Enhedsindstillinger -> vedligeholdelse -> reparation"
+  }
+}

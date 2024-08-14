@@ -3,7 +3,16 @@
   "name": {
     "en": "Wired Doorbell (1080P/2K)",
     "nl": "Bedrade Deurbel (1080P/2K)",
-    "fr": "Sonnette filaire (1080P/2K)"
+    "fr": "Sonnette filaire (1080P/2K)",
+    "da": "Kablet dørklokke (1080P/2K)",
+    "de": "Verdrahtete Türklingel (1080P/2K)",
+    "es": "Timbre con cable (1080P/2K)",
+    "it": "Campanello cablato (1080P/2K)",
+    "no": "Kablet ringeklokke (1080P/2K)",
+    "sv": "Trådbunden dörrklocka (1080P/2K)",
+    "pl": "Przewodowy dzwonek do drzwi (1080P/2K)",
+    "ru": "Проводной дверной звонок (1080P/2K)",
+    "ko": "유선 초인종 (1080P/2K)"
   },
   "class": "doorbell",
   "capabilities": [
@@ -29,7 +38,14 @@
     "NTFY_PRESS_DOORBELL"
   ],
   "energy": {
-    "batteries": ["INTERNAL"]
+    "batteries": [
+      "INTERNAL"
+    ]
   },
-  "$extends": ["device", "pair", "repair", "settings-standalone"]
+  "$extends": [
+    "device",
+    "pair",
+    "repair",
+    "settings-standalone"
+  ]
 }
