@@ -9,32 +9,10 @@
     "local"
   ],
   "name": {
-    "en": "Eufy Security",
-    "nl": "Eufy Security",
-    "fr": "Eufy Security",
-    "da": "Eufy Sikkerhed",
-    "de": "Eufy Sicherheit",
-    "es": "Eufy Seguridad",
-    "it": "Eufy Sicurezza",
-    "no": "Eufy Sikkerhet",
-    "sv": "Eufy Säkerhet",
-    "pl": "Eufy Zabezpieczenia",
-    "ru": "Eufy Безопасность",
-    "ko": "Eufy 보안"
+    "en": "Eufy Security"
   },
   "description": {
-    "en": "Smart Home Simplified",
-    "nl": "Smart Home Simplified",
-    "fr": "Smart Home Simplified",
-    "da": "Forenklet smart hjem",
-    "de": "Smart Home vereinfacht",
-    "es": "Hogar inteligente simplificado",
-    "it": "Casa intelligente semplificata",
-    "no": "Forenklet smart hjem",
-    "sv": "Förenklat smart hem",
-    "pl": "Inteligentny dom uproszczony",
-    "ru": "Упрощенный умный дом",
-    "ko": "간편한 스마트 홈"
+    "en": "Smart Home Simplified"
   },
   "tags": {
     "en": [
