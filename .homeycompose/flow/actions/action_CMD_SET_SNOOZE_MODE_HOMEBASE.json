@@ -1,5 +1,5 @@
 {
-  "id": "action_CMD_SETS_NOOZE_MODE_HOMEBASE",
+  "id": "action_CMD_SET_SNOOZE_MODE_HOMEBASE",
   "platforms": [
     "local"
   ],
