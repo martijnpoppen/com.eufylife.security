@@ -1,8 +1,6 @@
 'use strict';
 
 const Homey = require('homey');
-const path = require('path');
-const fs = require('fs');
 
 const { EufySecurity, LogLevel } = require('eufy-security-client');
 const { PhoneModels } = require('eufy-security-client/build/http/const');
@@ -56,15 +54,14 @@ class App extends Homey.App {
         try {
             this.debug(`${Homey.manifest.id} - ${Homey.manifest.version} started...`);
 
-            await this.checkNodeProcessVars();
             await this.initGlobarVars();
         } catch (error) {
             this.homey.app.log(error);
         }
     }
 
-    async checkNodeProcessVars() {
-        this.log(`checkNodeProcessVars - running on node: ${process.version}`);
+    enableEmbeddedPKCS1Support() {
+        this.log(`enableEmbeddedPKCS1Support - running on node: ${process.version}`);
 
         const nodeVersion = process.version.replace('v', '');
         const nodeBaseVersion = nodeVersion.split('.')[0];
@@ -86,17 +83,14 @@ class App extends Homey.App {
                 break;
         }
 
-        this.debug('checkNodeProcessVars - nodeVersionInfo', { nodeVersion, nodeBaseVersion, nodeVersionResult });
+        this.debug('enableEmbeddedPKCS1Support - nodeVersionInfo', { nodeVersion, nodeBaseVersion, nodeVersionResult });
 
         if (nodeVersionResult === 1 || nodeVersionResult === 0) {
-            this.warn(`checkNodeProcessVars - Needs REVERT_CVE_2023_46809`);
-            // process['REVERT_CVE_2023_46809'] = true;
-            // process.execArgv.push('--security-revert=CVE-2023-46809')
-            process.env['REVERT_CVE_2023_46809'] = true;
-        } else {
-            this.warn(`checkNodeProcessVars - SKIPPING REVERT_CVE_2023_46809`);
-            // process.env['REVERT_CVE_2023_46809'] = false;
+            this.warn(`enableEmbeddedPKCS1Support - Needs REVERT_CVE_2023_46809`);
+            return true;
         }
+
+        return false;
     }
 
     async initApp() {
@@ -369,30 +363,7 @@ class App extends Homey.App {
     // ---------------------------- eufyClient ----------------------------------
     async setEufyClient(devicesLoaded = false) {
         try {
-            let persistentFile = false;
-
-            const persistentDir = path.resolve(__dirname, '/userdata/');
-
-            if (this.homey.platform === 'local') {
-                fs.readdirSync(persistentDir).forEach((file) => {
-                    this.log('setEufyClient - Found file', file);
-                    if (file === 'persistent.json') {
-                        persistentFile = true;
-                    }
-                });
-            }
-
-            if (persistentFile) {
-                this.debug('setEufyClient - Found persistent file', persistentFile);
-                const fileContent = fs.readFileSync(path.join(persistentDir, 'persistent.json'), { encoding: 'utf8' });
-
-                await this.updateSettings({
-                    ...this.appSettings,
-                    PERSISTENT_DATA: fileContent
-                });
-
-                fs.unlinkSync(path.join(persistentDir, 'persistent.json'));
-            }
+            // const enableEmbeddedPKCS1Support = this.enableEmbeddedPKCS1Support();
 
             const config = {
                 username: this.appSettings.USERNAME,
