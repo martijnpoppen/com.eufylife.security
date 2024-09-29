@@ -76,7 +76,6 @@ class App extends Homey.App {
                 break;
             case 21:
                 nodeVersionResult = nodeVersion.localeCompare('21.6.2', undefined, { numeric: true, sensitivity: 'base' });
-
                 break;
             default:
                 nodeVersionResult = -1;
@@ -363,7 +362,7 @@ class App extends Homey.App {
     // ---------------------------- eufyClient ----------------------------------
     async setEufyClient(devicesLoaded = false) {
         try {
-            // const enableEmbeddedPKCS1Support = this.enableEmbeddedPKCS1Support();
+            const enableEmbeddedPKCS1Support = this.enableEmbeddedPKCS1Support();
 
             const config = {
                 username: this.appSettings.USERNAME,
@@ -378,6 +377,7 @@ class App extends Homey.App {
                 pollingIntervalMinutes: 30,
                 eventDurationSeconds: 15,
                 p2pConnectionSetup: 'quickest',
+                enableEmbeddedPKCS1Support,
                 logging: {
                     level: LogLevel.Info
                 },
