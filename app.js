@@ -89,6 +89,8 @@ class App extends Homey.App {
             return true;
         }
 
+        this.warn(`enableEmbeddedPKCS1Support - Not needed REVERT_CVE_2023_46809`);
+
         return false;
     }
 
@@ -388,7 +390,6 @@ class App extends Homey.App {
 
             await this.resetEufyClient();
 
-
             this.eufyClient = await EufySecurity.initialize(config, Logger.createNew('EufyLibrary', true));
 
             if (devicesLoaded) {
@@ -492,7 +493,6 @@ class App extends Homey.App {
             await sleep(4000);
 
             await this.initEvents();
-
             await this.initDevices(true);
         }
     }
