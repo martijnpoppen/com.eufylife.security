@@ -1573,5 +1573,8 @@
   },
   "3.29.4": {
     "en": "HOTFIX: broken flowcard due to AI translation"
+  },
+  "3.30.0": {
+    "en": "NEW: update SDK to 3.1.1 https://github.com/bropat/eufy-security-client"
   }
 }
