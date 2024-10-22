@@ -1579,5 +1579,8 @@
   },
   "3.30.1": {
     "en": "FIX: error in snapshot"
+  },
+  "3.30.3": {
+    "en": "FIX: small timeout for image update (prevent old images | FIX: CPU warning fix. (make sure to disable snapshots on all devices for this!)"
   }
 }
