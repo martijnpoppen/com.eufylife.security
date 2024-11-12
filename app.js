@@ -365,6 +365,9 @@ class App extends Homey.App {
     async setEufyClient(devicesLoaded = false) {
         try {
             const enableEmbeddedPKCS1Support = this.enableEmbeddedPKCS1Support();
+            const snapshotEnabled = this.deviceList.some((device) => device.getSettings().snapshot_enabled);
+
+            this.log('setEufyClient - enableEmbeddedPKCS1Support & snapshotEnabled: ', enableEmbeddedPKCS1Support && snapshotEnabled);
 
             const config = {
                 username: this.appSettings.USERNAME,
@@ -379,7 +382,7 @@ class App extends Homey.App {
                 pollingIntervalMinutes: 30,
                 eventDurationSeconds: 15,
                 p2pConnectionSetup: 'quickest',
-                enableEmbeddedPKCS1Support,
+                enableEmbeddedPKCS1Support: enableEmbeddedPKCS1Support && snapshotEnabled,
                 logging: {
                     level: LogLevel.Info
                 },
