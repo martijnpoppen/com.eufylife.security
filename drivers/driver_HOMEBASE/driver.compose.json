@@ -21,6 +21,7 @@
     "CMD_TRIGGER_ALARM",
     "CMD_SET_HUB_ALARM_CLOSE",
     "CMD_TRIGGER_RINGTONE_HUB",
+    "CMD_SET_HUB_ALARM_VOLUME",
     "CMD_REBOOT_HUB",
     "alarm_generic"
   ],

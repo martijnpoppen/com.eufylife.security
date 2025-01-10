@@ -2494,6 +2494,71 @@
         ]
       },
       {
+        "id": "action_CMD_SET_HUB_ALARM_VOLUME",
+        "platforms": [
+          "local"
+        ],
+        "title": {
+          "en": "Set alarm volume",
+          "nl": "Stel het volume van het alarm in",
+          "fr": "Régler le volume de l'alarme",
+          "da": "Indstil alarmvolumen",
+          "de": "Alarmton einstellen",
+          "es": "Ajustar el volumen de la alarma",
+          "it": "Imposta il volume dell'allarme",
+          "no": "Sett alarmvolum",
+          "sv": "Ställ in larmvolymen",
+          "pl": "Ustaw głośność alarmu",
+          "ru": "Установить громкость сигнала",
+          "ko": "알람 볼륨 설정"
+        },
+        "titleFormatted": {
+          "en": "Set alarm volume to [[action_CMD_SET_HUB_ALARM_VOLUME]]",
+          "nl": "Stel het alarmvolume in op [[action_CMD_SET_HUB_ALARM_VOLUME]]",
+          "fr": "Régler le volume de l'alarme sur [[action_CMD_SET_HUB_ALARM_VOLUME]]",
+          "da": "Indstil alarmvolumen til [[action_CMD_SET_HUB_ALARM_VOLUME]]",
+          "de": "Alarmton auf [[action_CMD_SET_HUB_ALARM_VOLUME]] einstellen",
+          "es": "Ajustar el volumen de la alarma a [[action_CMD_SET_HUB_ALARM_VOLUME]]",
+          "it": "Imposta il volume dell'allarme su [[action_CMD_SET_HUB_ALARM_VOLUME]]",
+          "no": "Sett alarmvolum til [[action_CMD_SET_HUB_ALARM_VOLUME]]",
+          "sv": "Ställ in larmvolymen till [[action_CMD_SET_HUB_ALARM_VOLUME]]",
+          "pl": "Ustaw głośność alarmu na [[action_CMD_SET_HUB_ALARM_VOLUME]]",
+          "ru": "Установить громкость сигнала на [[action_CMD_SET_HUB_ALARM_VOLUME]]",
+          "ko": "알람 볼륨을 [[action_CMD_SET_HUB_ALARM_VOLUME]](으)로 설정"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=driver_HOMEBASE|driver_HOMEBASE_1|driver_HOMEBASE_3|driver_HOMEBASE_CHIME&capabilities=CMD_SET_HUB_ALARM_VOLUME"
+          },
+          {
+            "name": "action_CMD_SET_HUB_ALARM_VOLUME",
+            "type": "number",
+            "platforms": [
+              "local"
+            ],
+            "title": {
+              "en": "Volume",
+              "nl": "Volume",
+              "fr": "Volume",
+              "da": "Volumen",
+              "de": "Lautstärke",
+              "es": "Volumen",
+              "it": "Volume",
+              "no": "Volum",
+              "sv": "Volym",
+              "pl": "Głośność",
+              "ru": "Громкость",
+              "ko": "볼륨"
+            },
+            "min": 0,
+            "max": 100,
+            "step": 1
+          }
+        ]
+      },
+      {
         "id": "action_CMD_SET_SNOOZE_MODE",
         "platforms": [
           "local"
@@ -13659,6 +13724,7 @@
         "CMD_TRIGGER_ALARM",
         "CMD_SET_HUB_ALARM_CLOSE",
         "CMD_TRIGGER_RINGTONE_HUB",
+        "CMD_SET_HUB_ALARM_VOLUME",
         "CMD_REBOOT_HUB",
         "alarm_generic"
       ],
@@ -14554,6 +14620,7 @@
         "CMD_TRIGGER_ALARM",
         "CMD_SET_HUB_ALARM_CLOSE",
         "CMD_TRIGGER_RINGTONE_HUB",
+        "CMD_SET_HUB_ALARM_VOLUME",
         "CMD_REBOOT_HUB",
         "alarm_generic"
       ],
@@ -15449,6 +15516,7 @@
         "CMD_TRIGGER_ALARM",
         "CMD_SET_HUB_ALARM_CLOSE",
         "CMD_TRIGGER_RINGTONE_HUB",
+        "CMD_SET_HUB_ALARM_VOLUME",
         "CMD_REBOOT_HUB",
         "alarm_generic"
       ],
@@ -16344,6 +16412,7 @@
         "CMD_TRIGGER_ALARM",
         "CMD_SET_HUB_ALARM_CLOSE",
         "CMD_TRIGGER_RINGTONE_HUB",
+        "CMD_SET_HUB_ALARM_VOLUME",
         "alarm_generic"
       ],
       "id": "driver_HOMEBASE_CHIME"
@@ -31348,6 +31417,27 @@
         "pl": "Wyłącz ogólny alarm",
         "ru": "Выключить общий сигнал тревоги",
         "ko": "일반 경보 끄기"
+      }
+    },
+    "CMD_SET_HUB_ALARM_VOLUME": {
+      "id": "CMD_SET_HUB_ALARM_VOLUME",
+      "type": "string",
+      "uiComponent": null,
+      "getable": false,
+      "setable": false,
+      "title": {
+        "en": "Set alarm volume",
+        "nl": "Stel het volume van het alarm in",
+        "fr": "Régler le volume de l'alarme",
+        "da": "Indstil alarmvolumen",
+        "de": "Alarmton einstellen",
+        "es": "Ajustar el volumen de la alarma",
+        "it": "Imposta il volume dell'allarme",
+        "no": "Sett alarmvolum",
+        "sv": "Ställ in larmvolymen",
+        "pl": "Ustaw głośność alarmu",
+        "ru": "Установить громкость сигнала",
+        "ko": "알람 볼륨 설정"
       }
     },
     "CMD_SET_SNOOZE_MODE": {

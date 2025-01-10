@@ -1,0 +1,21 @@
+{
+  "id": "CMD_SET_HUB_ALARM_VOLUME",
+  "type": "string",
+  "uiComponent": null,
+  "getable": false,
+  "setable": false,
+  "title": {
+    "en": "Set alarm volume",
+    "nl": "Stel het volume van het alarm in",
+    "fr": "Régler le volume de l'alarme",
+    "da": "Indstil alarmvolumen",
+    "de": "Alarmton einstellen",
+    "es": "Ajustar el volumen de la alarma",
+    "it": "Imposta il volume dell'allarme",
+    "no": "Sett alarmvolum",
+    "sv": "Ställ in larmvolymen",
+    "pl": "Ustaw głośność alarmu",
+    "ru": "Установить громкость сигнала",
+    "ko": "알람 볼륨 설정"
+  }
+}

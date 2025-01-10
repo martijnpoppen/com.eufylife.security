@@ -114,6 +114,7 @@ module.exports = class mainHub extends mainDevice {
         }
     }
 
+
     async onCapability_CMD_SET_HUB_ALARM_CLOSE() {
         try {
             this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_TRIGGER_ALARM - `, 0);
@@ -121,6 +122,31 @@ module.exports = class mainHub extends mainDevice {
             this.EufyStation.rawStation.member.nick_name = 'Homey';
             
             await this.EufyStation.resetStationAlarmSound();
+
+            return Promise.resolve(true);
+        } catch (e) {
+            this.homey.app.error(e);
+        }
+    }
+
+    async onCapability_CMD_SET_HUB_ALARM_VOLUME(volume = 10) {
+        try {
+            this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_SET_HUB_ALARM_VOLUME - `, volume);
+
+            if (volume < 0 || volume > 100) {
+                throw new RangeError("volume must be between 0 and 100");
+            }
+
+            const min = 1;
+            const max = 26;
+            
+            const volumeInRange = min + (volume / 100) * (max - min);
+
+            this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_SET_HUB_ALARM_VOLUME - volumeInRange`, volumeInRange);
+
+            this.EufyStation.rawStation.member.nick_name = 'Homey';
+
+            await this.EufyStation.setStationAlarmRingtoneVolume(volumeInRange);
 
             return Promise.resolve(true);
         } catch (e) {
