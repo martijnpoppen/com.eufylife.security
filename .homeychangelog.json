@@ -1582,5 +1582,8 @@
   },
   "3.30.3": {
     "en": "FIX: small timeout for image update (prevent old images | FIX: CPU warning fix. (make sure to disable snapshots on all devices for this!)"
+  },
+  "3.30.4": {
+    "en": "NEW: add alarm volume card for Homebase"
   }
 }
