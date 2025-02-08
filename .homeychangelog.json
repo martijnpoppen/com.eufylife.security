@@ -1588,5 +1588,8 @@
   },
   "3.31.0": {
     "en": "NEW: add support for Indoor Cam C210 (T8419) && NEW: add support for Indoor Cam C220 (T8W11C) && NEW: add support for Eufycam S3 Pro - T8162 && NEW: add support for SoloCam E30 - T8171 && NEW: add support for FloodLight E30 - T8426"
+  },
+  "3.31.1": {
+    "en": "NEW: add new icons for new cameras | NEW: Homebase 3 improved icon"
   }
 }
