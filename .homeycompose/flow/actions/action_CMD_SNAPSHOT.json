@@ -1,54 +1,54 @@
 {
-  "id": "action_CMD_SNAPSHOT",
-  "platforms": [
-    "local"
-  ],
-  "title": {
-    "en": "Take snapshot",
-    "nl": "Maak Snapshot",
-    "fr": "Prendre une capture d'écran",
-    "da": "Tag øjebliksbillede",
-    "de": "Schnappschuss machen",
-    "es": "Tomar foto",
-    "it": "Scatta istantanea",
-    "no": "Ta bilde",
-    "sv": "Ta ögonblicksbild",
-    "pl": "Zrób zdjęcie",
-    "ru": "Сделать снимок",
-    "ko": "스냅샷 찍기"
-  },
-  "titleFormatted": {
-    "en": "Take snapshot",
-    "nl": "Maak Snapshot",
-    "fr": "Prendre une capture d'écran",
-    "da": "Tag øjebliksbillede",
-    "de": "Schnappschuss machen",
-    "es": "Tomar foto",
-    "it": "Scatta istantanea",
-    "no": "Ta bilde",
-    "sv": "Ta ögonblicksbild",
-    "pl": "Zrób zdjęcie",
-    "ru": "Сделать снимок",
-    "ko": "스냅샷 찍기"
-  },
-  "hint": {
-    "en": "Enable the snapshot feature in the device settings. (max allowed snapshots per day: 30)",
-    "da": "Aktiver snapshot-funktionen i enhedens indstillinger. (maks tilladte snapshots pr. dag: 30)",
-    "de": "Aktiviere die Schnappschuss-Funktion in den Geräteeinstellungen. (max. erlaubte Schnappschüsse pro Tag: 30)",
-    "es": "Habilita la función de instantáneas en la configuración del dispositivo. (máx. instantáneas permitidas por día: 30)",
-    "fr": "Activez la fonction de capture d'écran dans les paramètres de l'appareil. (captures d'écran max autorisées par jour : 30)",
-    "it": "Abilita la funzione snapshot nelle impostazioni del dispositivo. (max istantanee consentite al giorno: 30)",
-    "no": "Aktiver øyeblikksbilde-funksjonen i enhetens innstillinger. (maks tillatte bilder per dag: 30)",
-    "sv": "Aktivera ögonblicksbildsfunktionen i enhetens inställningar. (max tillåtna ögonblicksbilder per dag: 30)",
-    "pl": "Włącz funkcję robienia zdjęć w ustawieniach urządzenia. (maksymalna liczba dozwolonych zdjęć na dzień: 30)",
-    "ru": "Включите функцию снимков в настройках устройства. (макс. допустимое количество снимков в день: 30)",
-    "ko": "기기 설정에서 스냅샷 기능을 활성화하세요. (하루 최대 허용 스냅샷 수: 30)"
-  },
-  "args": [
-    {
-      "name": "device",
-      "type": "device",
-      "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_2_PRO|driver_EUFYCAM_3|driver_EUFYCAM_3C|driver_EUFYCAM_E|driver_EUFYCAM_E330|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_C|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_1080P_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED|driver_WALLLIGHT_CAM_S&capabilities=CMD_SNAPSHOT"
-    }
-  ]
+    "id": "action_CMD_SNAPSHOT",
+    "platforms": [
+        "local"
+    ],
+    "title": {
+        "en": "Take snapshot",
+        "nl": "Maak Snapshot",
+        "fr": "Prendre une capture d'écran",
+        "da": "Tag øjebliksbillede",
+        "de": "Schnappschuss machen",
+        "es": "Tomar foto",
+        "it": "Scatta istantanea",
+        "no": "Ta bilde",
+        "sv": "Ta ögonblicksbild",
+        "pl": "Zrób zdjęcie",
+        "ru": "Сделать снимок",
+        "ko": "스냅샷 찍기"
+    },
+    "titleFormatted": {
+        "en": "Take snapshot",
+        "nl": "Maak Snapshot",
+        "fr": "Prendre une capture d'écran",
+        "da": "Tag øjebliksbillede",
+        "de": "Schnappschuss machen",
+        "es": "Tomar foto",
+        "it": "Scatta istantanea",
+        "no": "Ta bilde",
+        "sv": "Ta ögonblicksbild",
+        "pl": "Zrób zdjęcie",
+        "ru": "Сделать снимок",
+        "ko": "스냅샷 찍기"
+    },
+    "hint": {
+        "en": "Enable the snapshot feature in the device settings. (max allowed snapshots per day: 30)",
+        "da": "Aktiver snapshot-funktionen i enhedens indstillinger. (maks tilladte snapshots pr. dag: 30)",
+        "de": "Aktiviere die Schnappschuss-Funktion in den Geräteeinstellungen. (max. erlaubte Schnappschüsse pro Tag: 30)",
+        "es": "Habilita la función de instantáneas en la configuración del dispositivo. (máx. instantáneas permitidas por día: 30)",
+        "fr": "Activez la fonction de capture d'écran dans les paramètres de l'appareil. (captures d'écran max autorisées par jour : 30)",
+        "it": "Abilita la funzione snapshot nelle impostazioni del dispositivo. (max istantanee consentite al giorno: 30)",
+        "no": "Aktiver øyeblikksbilde-funksjonen i enhetens innstillinger. (maks tillatte bilder per dag: 30)",
+        "sv": "Aktivera ögonblicksbildsfunktionen i enhetens inställningar. (max tillåtna ögonblicksbilder per dag: 30)",
+        "pl": "Włącz funkcję robienia zdjęć w ustawieniach urządzenia. (maksymalna liczba dozwolonych zdjęć na dzień: 30)",
+        "ru": "Включите функцию снимков в настройках устройства. (макс. допустимое количество снимков в день: 30)",
+        "ko": "기기 설정에서 스냅샷 기능을 활성화하세요. (하루 최대 허용 스냅샷 수: 30)"
+    },
+    "args": [
+        {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_2_PRO|driver_EUFYCAM_3|driver_EUFYCAM_3C|driver_EUFYCAM_E|driver_EUFYCAM_E330|driver_EUFYCAM_S3_PRO|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_C210_C220|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_C|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_1080P_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED|driver_WALLLIGHT_CAM_S&capabilities=CMD_SNAPSHOT"
+        }
+    ]
 }

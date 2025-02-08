@@ -19,6 +19,9 @@ const Logger = require('./lib/helpers/eufy-logger.helper');
 
 const _settingsKey = `${Homey.manifest.id}.settings`;
 
+const fs = require('fs');
+const path = require('path');
+
 class App extends Homey.App {
     trace() {
         console.trace.bind(this, '[log]').apply(this, arguments);
@@ -60,6 +63,19 @@ class App extends Homey.App {
         }
     }
 
+    async copyUserdataFile(file) {
+        const persistentDir = path.resolve(__dirname, '/userdata/');
+        const localDir = path.resolve('./userdata/');
+
+        this.log('copyUserdataFile', file);
+
+        try {
+            await fs.promises.copyFile(path.resolve(localDir, file), path.resolve(persistentDir, file));
+        } catch (error) {
+            this.error('copyUserdataFile - error', error);
+        }
+    }
+
     enableEmbeddedPKCS1Support() {
         this.log(`enableEmbeddedPKCS1Support - running on node: ${process.version}`);
 
@@ -98,6 +114,7 @@ class App extends Homey.App {
         try {
             await this.initSettings();
             await this.sendNotifications();
+            await this.copyUserdataFile('ding-dong.mp3');
 
             this.log('onStartup - Loaded settings', { ...this.appSettings, USERNAME: 'LOG', PASSWORD: 'LOG', PERSISTENT_DATA: 'LOG' });
 

@@ -1,214 +1,214 @@
 {
-  "id": "condition_CHECK_ARMING",
-  "platforms": [
-    "local"
-  ],
-  "title": {
-    "en": "Arm Mode !{{is|isn't}} ",
-    "nl": "Beveiligingsmodus !{{is|is niet}} ",
-    "fr": "Le mode de protection !{{est|n'est pas}}",
-    "da": "Arm-tilstand !{{er|er ikke}} ",
-    "de": "Scharfschaltungsmodus !{{ist|ist nicht}} ",
-    "es": "Modo de armado !{{está|no está}} ",
-    "it": "Modalità di armamento !{{è|non è}} ",
-    "no": "Armeringsmodus !{{er|er ikke}} ",
-    "sv": "Säkerhetsläge !{{är|är inte}} ",
-    "pl": "Tryb uzbrojenia !{{jest|nie jest}} ",
-    "ru": "Режим охраны !{{есть|нет}} ",
-    "ko": "설정 모드 !{{이다|아니다}} "
-  },
-  "titleFormatted": {
-    "en": "Arm Mode !{{is|isn't}} [[condition_CHECK_ARM_TYPE]]",
-    "nl": "Beveiligingsmodus !{{is|is niet}} [[condition_CHECK_ARM_TYPE]]",
-    "fr": "Le mode de protection !{{est|n'est pas}} [[condition_CHECK_ARM_TYPE]]",
-    "da": "Arm-tilstand !{{er|er ikke}} [[condition_CHECK_ARM_TYPE]]",
-    "de": "Scharfschaltungsmodus !{{ist|ist nicht}} [[condition_CHECK_ARM_TYPE]]",
-    "es": "Modo de armado !{{está|no está}} [[condition_CHECK_ARM_TYPE]]",
-    "it": "Modalità di armamento !{{è|non è}} [[condition_CHECK_ARM_TYPE]]",
-    "no": "Armeringsmodus !{{er|er ikke}} [[condition_CHECK_ARM_TYPE]]",
-    "sv": "Säkerhetsläge !{{är|är inte}} [[condition_CHECK_ARM_TYPE]]",
-    "pl": "Tryb uzbrojenia !{{jest|nie jest}} [[condition_CHECK_ARM_TYPE]]",
-    "ru": "Режим охраны !{{есть|нет}} [[condition_CHECK_ARM_TYPE]]",
-    "ko": "설정 모드 !{{이다|아니다}} [[condition_CHECK_ARM_TYPE]]"
-  },
-  "args": [
-    {
-      "name": "device",
-      "type": "device",
-      "filter": "driver_id=driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_HOMEBASE|driver_HOMEBASE_1|driver_HOMEBASE_3|driver_HOMEBASE_CHIME|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_C|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED|driver_WALLLIGHT_CAM_S&capabilities=CMD_SET_ARMING"
+    "id": "condition_CHECK_ARMING",
+    "platforms": [
+        "local"
+    ],
+    "title": {
+        "en": "Arm Mode !{{is|isn't}} ",
+        "nl": "Beveiligingsmodus !{{is|is niet}} ",
+        "fr": "Le mode de protection !{{est|n'est pas}}",
+        "da": "Arm-tilstand !{{er|er ikke}} ",
+        "de": "Scharfschaltungsmodus !{{ist|ist nicht}} ",
+        "es": "Modo de armado !{{está|no está}} ",
+        "it": "Modalità di armamento !{{è|non è}} ",
+        "no": "Armeringsmodus !{{er|er ikke}} ",
+        "sv": "Säkerhetsläge !{{är|är inte}} ",
+        "pl": "Tryb uzbrojenia !{{jest|nie jest}} ",
+        "ru": "Режим охраны !{{есть|нет}} ",
+        "ko": "설정 모드 !{{이다|아니다}} "
     },
-    {
-      "name": "condition_CHECK_ARM_TYPE",
-      "type": "dropdown",
-      "title": {
-        "en": "Arm Mode",
-        "nl": "Beveiligingsmodus",
-        "fr": "Le mode de protection",
-        "da": "Arm-tilstand",
-        "de": "Scharfschaltungsmodus",
-        "es": "Modo de armado",
-        "it": "Modalità di armamento",
-        "no": "Armeringsmodus",
-        "sv": "Säkerhetsläge",
-        "pl": "Tryb uzbrojenia",
-        "ru": "Режим охраны",
-        "ko": "설정 모드"
-      },
-      "values": [
+    "titleFormatted": {
+        "en": "Arm Mode !{{is|isn't}} [[condition_CHECK_ARM_TYPE]]",
+        "nl": "Beveiligingsmodus !{{is|is niet}} [[condition_CHECK_ARM_TYPE]]",
+        "fr": "Le mode de protection !{{est|n'est pas}} [[condition_CHECK_ARM_TYPE]]",
+        "da": "Arm-tilstand !{{er|er ikke}} [[condition_CHECK_ARM_TYPE]]",
+        "de": "Scharfschaltungsmodus !{{ist|ist nicht}} [[condition_CHECK_ARM_TYPE]]",
+        "es": "Modo de armado !{{está|no está}} [[condition_CHECK_ARM_TYPE]]",
+        "it": "Modalità di armamento !{{è|non è}} [[condition_CHECK_ARM_TYPE]]",
+        "no": "Armeringsmodus !{{er|er ikke}} [[condition_CHECK_ARM_TYPE]]",
+        "sv": "Säkerhetsläge !{{är|är inte}} [[condition_CHECK_ARM_TYPE]]",
+        "pl": "Tryb uzbrojenia !{{jest|nie jest}} [[condition_CHECK_ARM_TYPE]]",
+        "ru": "Режим охраны !{{есть|нет}} [[condition_CHECK_ARM_TYPE]]",
+        "ko": "설정 모드 !{{이다|아니다}} [[condition_CHECK_ARM_TYPE]]"
+    },
+    "args": [
         {
-          "id": "home",
-          "label": {
-            "en": "Home",
-            "nl": "Thuis",
-            "fr": "A la maison",
-            "da": "Hjemme",
-            "de": "Zuhause",
-            "es": "En casa",
-            "it": "Casa",
-            "no": "Hjemme",
-            "sv": "Hemma",
-            "pl": "Dom",
-            "ru": "Дома",
-            "ko": "집"
-          }
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_HOMEBASE|driver_HOMEBASE_1|driver_HOMEBASE_3|driver_HOMEBASE_CHIME|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_C210_C220|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_C|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED|driver_WALLLIGHT_CAM_S&capabilities=CMD_SET_ARMING"
         },
         {
-          "id": "away",
-          "label": {
-            "en": "Away",
-            "nl": "Afwezig",
-            "fr": "Absent",
-            "da": "Væk",
-            "de": "Abwesend",
-            "es": "Lejos",
-            "it": "Fuori",
-            "no": "Borte",
-            "sv": "Borta",
-            "pl": "Poza domem",
-            "ru": "Отсутствует",
-            "ko": "외출"
-          }
-        },
-        {
-          "id": "schedule",
-          "label": {
-            "en": "Schedule",
-            "nl": "Schema",
-            "fr": "Programmé",
-            "da": "Planlæg",
-            "de": "Zeitplan",
-            "es": "Horario",
-            "it": "Programma",
-            "no": "Tidsplan",
-            "sv": "Schema",
-            "pl": "Harmonogram",
-            "ru": "Расписание",
-            "ko": "일정"
-          }
-        },
-        {
-          "id": "geo",
-          "label": {
-            "en": "Geo",
-            "nl": "Geo",
-            "fr": "Géo",
-            "da": "Geo",
-            "de": "Geo",
-            "es": "Geo",
-            "it": "Geo",
-            "no": "Geo",
-            "sv": "Geo",
-            "pl": "Geo",
-            "ru": "Гео",
-            "ko": "지오"
-          }
-        },
-        {
-          "id": "disarmed",
-          "label": {
-            "en": "Disarmed",
-            "nl": "Uitgeschakeld",
-            "fr": "Désarmé",
-            "da": "Afvæbnet",
-            "de": "Entwaffnet",
-            "es": "Desarmado",
-            "it": "Disattivato",
-            "no": "Desarmert",
-            "sv": "Avaktiverad",
-            "pl": "Rozbrojony",
-            "ru": "Разоружен",
-            "ko": "해제"
-          }
-        },
-        {
-          "id": "off",
-          "label": {
-            "en": "Off",
-            "nl": "Uit",
-            "fr": "Eteint",
-            "da": "Slukket",
-            "de": "Aus",
-            "es": "Apagado",
-            "it": "Spento",
-            "no": "Av",
-            "sv": "Av",
-            "pl": "Wyłączony",
-            "ru": "Выкл",
-            "ko": "끔"
-          }
-        },
-        {
-          "id": "custom_1",
-          "label": {
-            "en": "Custom 1",
-            "nl": "Custom 1",
-            "fr": "Personnalisé 1",
-            "da": "Brugerdefineret 1",
-            "de": "Benutzerdefiniert 1",
-            "es": "Personalizado 1",
-            "it": "Personalizzato 1",
-            "no": "Egendefinert 1",
-            "sv": "Anpassad 1",
-            "pl": "Niestandardowe 1",
-            "ru": "Пользовательский 1",
-            "ko": "맞춤설정 1"
-          }
-        },
-        {
-          "id": "custom_2",
-          "label": {
-            "en": "Custom 2",
-            "nl": "Custom 2",
-            "fr": "Personnalisé 2",
-            "da": "Brugerdefineret 2",
-            "de": "Benutzerdefiniert 2",
-            "es": "Personalizado 2",
-            "it": "Personalizzato 2",
-            "no": "Egendefinert 2",
-            "sv": "Anpassad 2",
-            "pl": "Niestandardowe 2",
-            "ru": "Пользовательский 2",
-            "ko": "맞춤설정 2"
-          }
-        },
-        {
-          "id": "custom_3",
-          "label": {
-            "en": "Custom 3",
-            "nl": "Custom 3",
-            "fr": "Personnalisé 3",
-            "da": "Brugerdefineret 3",
-            "de": "Benutzerdefiniert 3",
-            "es": "Personalizado 3",
-            "it": "Personalizzato 3",
-            "no": "Egendefinert 3",
-            "sv": "Anpassad 3",
-            "pl": "Niestandardowe 3",
-            "ru": "Пользовательский 3",
-            "ko": "맞춤설정 3"
-          }
+            "name": "condition_CHECK_ARM_TYPE",
+            "type": "dropdown",
+            "title": {
+                "en": "Arm Mode",
+                "nl": "Beveiligingsmodus",
+                "fr": "Le mode de protection",
+                "da": "Arm-tilstand",
+                "de": "Scharfschaltungsmodus",
+                "es": "Modo de armado",
+                "it": "Modalità di armamento",
+                "no": "Armeringsmodus",
+                "sv": "Säkerhetsläge",
+                "pl": "Tryb uzbrojenia",
+                "ru": "Режим охраны",
+                "ko": "설정 모드"
+            },
+            "values": [
+                {
+                    "id": "home",
+                    "label": {
+                        "en": "Home",
+                        "nl": "Thuis",
+                        "fr": "A la maison",
+                        "da": "Hjemme",
+                        "de": "Zuhause",
+                        "es": "En casa",
+                        "it": "Casa",
+                        "no": "Hjemme",
+                        "sv": "Hemma",
+                        "pl": "Dom",
+                        "ru": "Дома",
+                        "ko": "집"
+                    }
+                },
+                {
+                    "id": "away",
+                    "label": {
+                        "en": "Away",
+                        "nl": "Afwezig",
+                        "fr": "Absent",
+                        "da": "Væk",
+                        "de": "Abwesend",
+                        "es": "Lejos",
+                        "it": "Fuori",
+                        "no": "Borte",
+                        "sv": "Borta",
+                        "pl": "Poza domem",
+                        "ru": "Отсутствует",
+                        "ko": "외출"
+                    }
+                },
+                {
+                    "id": "schedule",
+                    "label": {
+                        "en": "Schedule",
+                        "nl": "Schema",
+                        "fr": "Programmé",
+                        "da": "Planlæg",
+                        "de": "Zeitplan",
+                        "es": "Horario",
+                        "it": "Programma",
+                        "no": "Tidsplan",
+                        "sv": "Schema",
+                        "pl": "Harmonogram",
+                        "ru": "Расписание",
+                        "ko": "일정"
+                    }
+                },
+                {
+                    "id": "geo",
+                    "label": {
+                        "en": "Geo",
+                        "nl": "Geo",
+                        "fr": "Géo",
+                        "da": "Geo",
+                        "de": "Geo",
+                        "es": "Geo",
+                        "it": "Geo",
+                        "no": "Geo",
+                        "sv": "Geo",
+                        "pl": "Geo",
+                        "ru": "Гео",
+                        "ko": "지오"
+                    }
+                },
+                {
+                    "id": "disarmed",
+                    "label": {
+                        "en": "Disarmed",
+                        "nl": "Uitgeschakeld",
+                        "fr": "Désarmé",
+                        "da": "Afvæbnet",
+                        "de": "Entwaffnet",
+                        "es": "Desarmado",
+                        "it": "Disattivato",
+                        "no": "Desarmert",
+                        "sv": "Avaktiverad",
+                        "pl": "Rozbrojony",
+                        "ru": "Разоружен",
+                        "ko": "해제"
+                    }
+                },
+                {
+                    "id": "off",
+                    "label": {
+                        "en": "Off",
+                        "nl": "Uit",
+                        "fr": "Eteint",
+                        "da": "Slukket",
+                        "de": "Aus",
+                        "es": "Apagado",
+                        "it": "Spento",
+                        "no": "Av",
+                        "sv": "Av",
+                        "pl": "Wyłączony",
+                        "ru": "Выкл",
+                        "ko": "끔"
+                    }
+                },
+                {
+                    "id": "custom_1",
+                    "label": {
+                        "en": "Custom 1",
+                        "nl": "Custom 1",
+                        "fr": "Personnalisé 1",
+                        "da": "Brugerdefineret 1",
+                        "de": "Benutzerdefiniert 1",
+                        "es": "Personalizado 1",
+                        "it": "Personalizzato 1",
+                        "no": "Egendefinert 1",
+                        "sv": "Anpassad 1",
+                        "pl": "Niestandardowe 1",
+                        "ru": "Пользовательский 1",
+                        "ko": "맞춤설정 1"
+                    }
+                },
+                {
+                    "id": "custom_2",
+                    "label": {
+                        "en": "Custom 2",
+                        "nl": "Custom 2",
+                        "fr": "Personnalisé 2",
+                        "da": "Brugerdefineret 2",
+                        "de": "Benutzerdefiniert 2",
+                        "es": "Personalizado 2",
+                        "it": "Personalizzato 2",
+                        "no": "Egendefinert 2",
+                        "sv": "Anpassad 2",
+                        "pl": "Niestandardowe 2",
+                        "ru": "Пользовательский 2",
+                        "ko": "맞춤설정 2"
+                    }
+                },
+                {
+                    "id": "custom_3",
+                    "label": {
+                        "en": "Custom 3",
+                        "nl": "Custom 3",
+                        "fr": "Personnalisé 3",
+                        "da": "Brugerdefineret 3",
+                        "de": "Benutzerdefiniert 3",
+                        "es": "Personalizado 3",
+                        "it": "Personalizzato 3",
+                        "no": "Egendefinert 3",
+                        "sv": "Anpassad 3",
+                        "pl": "Niestandardowe 3",
+                        "ru": "Пользовательский 3",
+                        "ko": "맞춤설정 3"
+                    }
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }

@@ -1,221 +1,221 @@
 {
-  "id": "action_CMD_TRIGGER_RINGTONE_HUB",
-  "platforms": [
-    "local"
-  ],
-  "title": {
-    "en": "Trigger chime",
-    "nl": "Activeer chime",
-    "fr": "Déclencher le carillon",
-    "da": "Udløs klokkespil",
-    "de": "Chime auslösen",
-    "es": "Activar timbre",
-    "it": "Attivare il campanello",
-    "no": "Utlys bjelle",
-    "sv": "Utlys klockspel",
-    "pl": "Aktywuj dzwonek",
-    "ru": "Запустить колокол",
-    "ko": "차임 트리거"
-  },
-  "titleFormatted": {
-    "en": "Trigger chime [[action_CMD_TRIGGER_RINGTONE_HUB_TYPE]]",
-    "nl": "Activeer chime [[action_CMD_TRIGGER_RINGTONE_HUB_TYPE]]",
-    "fr": "Déclencher le carillon [[action_CMD_TRIGGER_RINGTONE_HUB_TYPE]]",
-    "da": "Udløs klokkespil [[action_CMD_TRIGGER_RINGTONE_HUB_TYPE]]",
-    "de": "Chime auslösen [[action_CMD_TRIGGER_RINGTONE_HUB_TYPE]]",
-    "es": "Activar timbre [[action_CMD_TRIGGER_RINGTONE_HUB_TYPE]]",
-    "it": "Attivare il campanello [[action_CMD_TRIGGER_RINGTONE_HUB_TYPE]]",
-    "no": "Utlys bjelle [[action_CMD_TRIGGER_RINGTONE_HUB_TYPE]]",
-    "sv": "Utlys klockspel [[action_CMD_TRIGGER_RINGTONE_HUB_TYPE]]",
-    "pl": "Aktywuj dzwonek [[action_CMD_TRIGGER_RINGTONE_HUB_TYPE]]",
-    "ru": "Запустить колокол [[action_CMD_TRIGGER_RINGTONE_HUB_TYPE]]",
-    "ko": "차임 트리거 [[action_CMD_TRIGGER_RINGTONE_HUB_TYPE]]"
-  },
-  "args": [
-    {
-      "name": "device",
-      "type": "device",
-      "filter": "driver_id=driver_HOMEBASE|driver_HOMEBASE_1|driver_HOMEBASE_3|driver_HOMEBASE_CHIME&capabilities=CMD_TRIGGER_RINGTONE_HUB"
+    "id": "action_CMD_TRIGGER_RINGTONE_HUB",
+    "platforms": [
+        "local"
+    ],
+    "title": {
+        "en": "Trigger chime",
+        "nl": "Activeer chime",
+        "fr": "Déclencher le carillon",
+        "da": "Udløs klokkespil",
+        "de": "Chime auslösen",
+        "es": "Activar timbre",
+        "it": "Attivare il campanello",
+        "no": "Utlys bjelle",
+        "sv": "Utlys klockspel",
+        "pl": "Aktywuj dzwonek",
+        "ru": "Запустить колокол",
+        "ko": "차임 트리거"
     },
-    {
-      "name": "action_CMD_TRIGGER_RINGTONE_HUB_TYPE",
-      "type": "dropdown",
-      "title": {
-        "en": "Chime type",
-        "nl": "Chime type",
-        "fr": "Type de carillon",
-        "da": "Klokketype",
-        "de": "Chime-Typ",
-        "es": "Tipo de timbre",
-        "it": "Tipo di campanello",
-        "no": "Bjelle type",
-        "sv": "Klockspelstyp",
-        "pl": "Rodzaj dzwonka",
-        "ru": "Тип колокола",
-        "ko": "차임 종류"
-      },
-      "values": [
+    "titleFormatted": {
+        "en": "Trigger chime [[action_CMD_TRIGGER_RINGTONE_HUB_TYPE]]",
+        "nl": "Activeer chime [[action_CMD_TRIGGER_RINGTONE_HUB_TYPE]]",
+        "fr": "Déclencher le carillon [[action_CMD_TRIGGER_RINGTONE_HUB_TYPE]]",
+        "da": "Udløs klokkespil [[action_CMD_TRIGGER_RINGTONE_HUB_TYPE]]",
+        "de": "Chime auslösen [[action_CMD_TRIGGER_RINGTONE_HUB_TYPE]]",
+        "es": "Activar timbre [[action_CMD_TRIGGER_RINGTONE_HUB_TYPE]]",
+        "it": "Attivare il campanello [[action_CMD_TRIGGER_RINGTONE_HUB_TYPE]]",
+        "no": "Utlys bjelle [[action_CMD_TRIGGER_RINGTONE_HUB_TYPE]]",
+        "sv": "Utlys klockspel [[action_CMD_TRIGGER_RINGTONE_HUB_TYPE]]",
+        "pl": "Aktywuj dzwonek [[action_CMD_TRIGGER_RINGTONE_HUB_TYPE]]",
+        "ru": "Запустить колокол [[action_CMD_TRIGGER_RINGTONE_HUB_TYPE]]",
+        "ko": "차임 트리거 [[action_CMD_TRIGGER_RINGTONE_HUB_TYPE]]"
+    },
+    "args": [
         {
-          "id": "0",
-          "label": {
-            "en": "Default",
-            "fr": "Défaut",
-            "da": "Standard",
-            "de": "Standard",
-            "es": "Predeterminado",
-            "it": "Predefinito",
-            "no": "Standard",
-            "sv": "Standard",
-            "pl": "Domyślna",
-            "ru": "По умолчанию",
-            "ko": "기본값"
-          }
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=driver_HOMEBASE|driver_HOMEBASE_1|driver_HOMEBASE_3|driver_HOMEBASE_CHIME&capabilities=CMD_TRIGGER_RINGTONE_HUB"
         },
         {
-          "id": "1",
-          "label": {
-            "en": "Silent",
-            "fr": "Silencieux",
-            "da": "Stille",
-            "de": "Still",
-            "es": "Silencio",
-            "it": "Silenzioso",
-            "no": "Stille",
-            "sv": "Tyst",
-            "pl": "Cichy",
-            "ru": "Тихий",
-            "ko": "무음"
-          }
-        },
-        {
-          "id": "2",
-          "label": {
-            "en": "Beacon",
-            "fr": "Phare",
-            "da": "Fyrtårn",
-            "de": "Leuchtfeuer",
-            "es": "Baliza",
-            "it": "Segnale",
-            "no": "Bakke",
-            "sv": "Fyr",
-            "pl": "Latarnia",
-            "ru": "Маяк",
-            "ko": "비콘"
-          }
-        },
-        {
-          "id": "3",
-          "label": {
-            "en": "Chord",
-            "fr": "Accord",
-            "da": "Akkord",
-            "de": "Akkord",
-            "es": "Acorde",
-            "it": "Accordo",
-            "no": "Akkord",
-            "sv": "Ackord",
-            "pl": "Akord",
-            "ru": "Аккорд",
-            "ko": "화음"
-          }
-        },
-        {
-          "id": "4",
-          "label": {
-            "en": "Christmas",
-            "fr": "Noël",
-            "da": "Jul",
-            "de": "Weihnachten",
-            "es": "Navidad",
-            "it": "Natale",
-            "no": "Jul",
-            "sv": "Jul",
-            "pl": "Świąteczna",
-            "ru": "Рождество",
-            "ko": "크리스마스"
-          }
-        },
-        {
-          "id": "5",
-          "label": {
-            "en": "Circuit",
-            "fr": "Circuit",
-            "da": "Kredsløb",
-            "de": "Stromkreis",
-            "es": "Circuito",
-            "it": "Circuito",
-            "no": "Krets",
-            "sv": "Kretslopp",
-            "pl": "Obwód",
-            "ru": "Цепь",
-            "ko": "회로"
-          }
-        },
-        {
-          "id": "6",
-          "label": {
-            "en": "Clock",
-            "fr": "Horloge",
-            "da": "Ur",
-            "de": "Uhr",
-            "es": "Reloj",
-            "it": "Orologio",
-            "no": "Klokke",
-            "sv": "Klocka",
-            "pl": "Zegar",
-            "ru": "Часы",
-            "ko": "시계"
-          }
-        },
-        {
-          "id": "7",
-          "label": {
-            "en": "Ding",
-            "fr": "Ding",
-            "da": "Ding",
-            "de": "Ding",
-            "es": "Ding",
-            "it": "Ding",
-            "no": "Ding",
-            "sv": "Ding",
-            "pl": "Ding",
-            "ru": "Дзинь",
-            "ko": "딩"
-          }
-        },
-        {
-          "id": "8",
-          "label": {
-            "en": "Hillside",
-            "fr": "Couteau",
-            "da": "Bakkeside",
-            "de": "Hügel",
-            "es": "Ladera",
-            "it": "Collina",
-            "no": "Bakkside",
-            "sv": "Hillside",
-            "pl": "Wzgórze",
-            "ru": "Холм",
-            "ko": "힐사이드"
-          }
-        },
-        {
-          "id": "9",
-          "label": {
-            "en": "Presto",
-            "fr": "Presto",
-            "da": "Hurtigt",
-            "de": "Schnell",
-            "es": "Presto",
-            "it": "Presto",
-            "no": "Presto",
-            "sv": "Presto",
-            "pl": "Prędko",
-            "ru": "Скоро",
-            "ko": "프레스토"
-          }
+            "name": "action_CMD_TRIGGER_RINGTONE_HUB_TYPE",
+            "type": "dropdown",
+            "title": {
+                "en": "Chime type",
+                "nl": "Chime type",
+                "fr": "Type de carillon",
+                "da": "Klokketype",
+                "de": "Chime-Typ",
+                "es": "Tipo de timbre",
+                "it": "Tipo di campanello",
+                "no": "Bjelle type",
+                "sv": "Klockspelstyp",
+                "pl": "Rodzaj dzwonka",
+                "ru": "Тип колокола",
+                "ko": "차임 종류"
+            },
+            "values": [
+                {
+                    "id": "0",
+                    "label": {
+                        "en": "Default",
+                        "fr": "Défaut",
+                        "da": "Standard",
+                        "de": "Standard",
+                        "es": "Predeterminado",
+                        "it": "Predefinito",
+                        "no": "Standard",
+                        "sv": "Standard",
+                        "pl": "Domyślna",
+                        "ru": "По умолчанию",
+                        "ko": "기본값"
+                    }
+                },
+                {
+                    "id": "1",
+                    "label": {
+                        "en": "Silent",
+                        "fr": "Silencieux",
+                        "da": "Stille",
+                        "de": "Still",
+                        "es": "Silencio",
+                        "it": "Silenzioso",
+                        "no": "Stille",
+                        "sv": "Tyst",
+                        "pl": "Cichy",
+                        "ru": "Тихий",
+                        "ko": "무음"
+                    }
+                },
+                {
+                    "id": "2",
+                    "label": {
+                        "en": "Beacon",
+                        "fr": "Phare",
+                        "da": "Fyrtårn",
+                        "de": "Leuchtfeuer",
+                        "es": "Baliza",
+                        "it": "Segnale",
+                        "no": "Bakke",
+                        "sv": "Fyr",
+                        "pl": "Latarnia",
+                        "ru": "Маяк",
+                        "ko": "비콘"
+                    }
+                },
+                {
+                    "id": "3",
+                    "label": {
+                        "en": "Chord",
+                        "fr": "Accord",
+                        "da": "Akkord",
+                        "de": "Akkord",
+                        "es": "Acorde",
+                        "it": "Accordo",
+                        "no": "Akkord",
+                        "sv": "Ackord",
+                        "pl": "Akord",
+                        "ru": "Аккорд",
+                        "ko": "화음"
+                    }
+                },
+                {
+                    "id": "4",
+                    "label": {
+                        "en": "Christmas",
+                        "fr": "Noël",
+                        "da": "Jul",
+                        "de": "Weihnachten",
+                        "es": "Navidad",
+                        "it": "Natale",
+                        "no": "Jul",
+                        "sv": "Jul",
+                        "pl": "Świąteczna",
+                        "ru": "Рождество",
+                        "ko": "크리스마스"
+                    }
+                },
+                {
+                    "id": "5",
+                    "label": {
+                        "en": "Circuit",
+                        "fr": "Circuit",
+                        "da": "Kredsløb",
+                        "de": "Stromkreis",
+                        "es": "Circuito",
+                        "it": "Circuito",
+                        "no": "Krets",
+                        "sv": "Kretslopp",
+                        "pl": "Obwód",
+                        "ru": "Цепь",
+                        "ko": "회로"
+                    }
+                },
+                {
+                    "id": "6",
+                    "label": {
+                        "en": "Clock",
+                        "fr": "Horloge",
+                        "da": "Ur",
+                        "de": "Uhr",
+                        "es": "Reloj",
+                        "it": "Orologio",
+                        "no": "Klokke",
+                        "sv": "Klocka",
+                        "pl": "Zegar",
+                        "ru": "Часы",
+                        "ko": "시계"
+                    }
+                },
+                {
+                    "id": "7",
+                    "label": {
+                        "en": "Ding",
+                        "fr": "Ding",
+                        "da": "Ding",
+                        "de": "Ding",
+                        "es": "Ding",
+                        "it": "Ding",
+                        "no": "Ding",
+                        "sv": "Ding",
+                        "pl": "Ding",
+                        "ru": "Дзинь",
+                        "ko": "딩"
+                    }
+                },
+                {
+                    "id": "8",
+                    "label": {
+                        "en": "Hillside",
+                        "fr": "Couteau",
+                        "da": "Bakkeside",
+                        "de": "Hügel",
+                        "es": "Ladera",
+                        "it": "Collina",
+                        "no": "Bakkside",
+                        "sv": "Hillside",
+                        "pl": "Wzgórze",
+                        "ru": "Холм",
+                        "ko": "힐사이드"
+                    }
+                },
+                {
+                    "id": "9",
+                    "label": {
+                        "en": "Presto",
+                        "fr": "Presto",
+                        "da": "Hurtigt",
+                        "de": "Schnell",
+                        "es": "Presto",
+                        "it": "Presto",
+                        "no": "Presto",
+                        "sv": "Presto",
+                        "pl": "Prędko",
+                        "ru": "Скоро",
+                        "ko": "프레스토"
+                    }
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }

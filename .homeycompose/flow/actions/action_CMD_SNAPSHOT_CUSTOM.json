@@ -1,71 +1,71 @@
 {
-  "id": "action_CMD_SNAPSHOT_CUSTOM",
-  "platforms": [
-    "local"
-  ],
-  "title": {
-    "en": "Take snapshot (use self-hosted service)",
-    "nl": "Maak Snapshot (gebruik een zelf-gehoste service)",
-    "fr": "Prendre une capture d'écran (utiliser un service auto-hébergé)",
-    "da": "Tag et snapshot (brug selvhostet service)",
-    "de": "Schnappschuss machen (selbstgehosteten Dienst verwenden)",
-    "es": "Tomar instantánea (usar servicio autoalojado)",
-    "it": "Scatta istantanea (usa servizio self-hosted)",
-    "no": "Ta øyeblikksbilde (bruk selvhostet tjeneste)",
-    "sv": "Ta ögonblicksbild (använd självhostad tjänst)",
-    "pl": "Zrób zrzut ekranu (użyj usługi hostowanej samodzielnie)",
-    "ru": "Сделать снимок (использовать собственный хостинг)",
-    "ko": "스냅샷 찍기 (셀프 호스팅 서비스 사용)"
-  },
-  "titleFormatted": {
-    "en": "Take snapshot (use self-hosted service: [[url]])",
-    "nl": "Maak Snapshot (gebruik een  zelf-gehoste  service: [[url]])",
-    "fr": "Prendre une capture d'écran (utiliser un service auto-hébergé: [[url]])",
-    "da": "Tag et snapshot (brug selvhostet service: [[url]])",
-    "de": "Schnappschuss machen (selbstgehosteten Dienst verwenden: [[url]])",
-    "es": "Tomar instantánea (usar servicio autoalojado: [[url]])",
-    "it": "Scatta istantanea (usa servizio self-hosted: [[url]])",
-    "no": "Ta øyeblikksbilde (bruk selvhostet tjeneste: [[url]])",
-    "sv": "Ta ögonblicksbild (använd självhostad tjänst: [[url]])",
-    "pl": "Zrób zrzut ekranu (użyj usługi hostowanej samodzielnie: [[url]])",
-    "ru": "Сделать снимок (использовать собственный хостинг: [[url]])",
-    "ko": "스냅샷 찍기 (셀프 호스팅 서비스 사용: [[url]])"
-  },
-  "hint": {
-    "en": "Enable the snapshot feature in the device settings. Instead of using the cloud service for taking Snapshots you can use a selfhosted service. Go to https://tinyurl.com/eufy-homey Q13 for more information.",
-    "da": "Aktiver snapshot-funktionen i enhedsindstillingerne. I stedet for at bruge cloud-tjenesten til at tage snapshots kan du bruge en selvhostet tjeneste. Gå til https://tinyurl.com/eufy-homey Q13 for mere information.",
-    "de": "Aktivieren Sie die Snapshot-Funktion in den Geräteeinstellungen. Anstatt den Cloud-Dienst für Schnappschüsse zu nutzen, können Sie einen selbstgehosteten Dienst verwenden. Besuchen Sie https://tinyurl.com/eufy-homey Q13 für weitere Informationen.",
-    "es": "Habilite la función de instantánea en la configuración del dispositivo. En lugar de usar el servicio en la nube para tomar instantáneas, puede usar un servicio autoalojado. Visite https://tinyurl.com/eufy-homey Q13 para obtener más información.",
-    "fr": "Activez la fonction de capture d'écran dans les paramètres de l'appareil. Au lieu d'utiliser le service cloud pour les captures d'écran, vous pouvez utiliser un service auto-hébergé. Allez à https://tinyurl.com/eufy-homey Q13 pour plus d'informations.",
-    "it": "Abilita la funzione istantanea nelle impostazioni del dispositivo. Invece di utilizzare il servizio cloud per scattare istantanee, puoi utilizzare un servizio self-hosted. Visita https://tinyurl.com/eufy-homey Q13 per maggiori informazioni.",
-    "no": "Aktiver snapshot-funksjonen i enhetsinnstillingene. I stedet for å bruke skytjenesten til å ta øyeblikksbilder kan du bruke en selvhostet tjeneste. Gå til https://tinyurl.com/eufy-homey Q13 for mer informasjon.",
-    "sv": "Aktivera ögonblicksbildsfunktionen i enhetsinställningarna. Istället för att använda molntjänsten för att ta ögonblicksbilder kan du använda en självhostad tjänst. Gå till https://tinyurl.com/eufy-homey Q13 för mer information.",
-    "pl": "Włącz funkcję zrzutu ekranu w ustawieniach urządzenia. Zamiast korzystać z usługi w chmurze do robienia zrzutów ekranu, możesz użyć usługi hostowanej samodzielnie. Przejdź do https://tinyurl.com/eufy-homey Q13, aby uzyskać więcej informacji.",
-    "ru": "Включите функцию снимка в настройках устройства. Вместо использования облачного сервиса для снимков вы можете использовать собственный хостинг. Перейдите по адресу https://tinyurl.com/eufy-homey Q13 для получения дополнительной информации.",
-    "ko": "기기 설정에서 스냅샷 기능을 활성화하세요. 스냅샷을 찍기 위해 클라우드 서비스를 사용하는 대신 자체 호스팅 서비스를 사용할 수 있습니다. 자세한 내용은 https://tinyurl.com/eufy-homey Q13를 참조하세요."
-  },
-  "args": [
-    {
-      "name": "url",
-      "type": "text",
-      "label": {
-        "en": "URL",
-        "da": "URL",
-        "de": "URL",
-        "es": "URL",
-        "fr": "URL",
-        "it": "URL",
-        "no": "URL",
-        "sv": "URL",
-        "pl": "URL",
-        "ru": "URL",
-        "ko": "URL"
-      }
+    "id": "action_CMD_SNAPSHOT_CUSTOM",
+    "platforms": [
+        "local"
+    ],
+    "title": {
+        "en": "Take snapshot (use self-hosted service)",
+        "nl": "Maak Snapshot (gebruik een zelf-gehoste service)",
+        "fr": "Prendre une capture d'écran (utiliser un service auto-hébergé)",
+        "da": "Tag et snapshot (brug selvhostet service)",
+        "de": "Schnappschuss machen (selbstgehosteten Dienst verwenden)",
+        "es": "Tomar instantánea (usar servicio autoalojado)",
+        "it": "Scatta istantanea (usa servizio self-hosted)",
+        "no": "Ta øyeblikksbilde (bruk selvhostet tjeneste)",
+        "sv": "Ta ögonblicksbild (använd självhostad tjänst)",
+        "pl": "Zrób zrzut ekranu (użyj usługi hostowanej samodzielnie)",
+        "ru": "Сделать снимок (использовать собственный хостинг)",
+        "ko": "스냅샷 찍기 (셀프 호스팅 서비스 사용)"
     },
-    {
-      "name": "device",
-      "type": "device",
-      "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_2_PRO|driver_EUFYCAM_3|driver_EUFYCAM_3C|driver_EUFYCAM_E|driver_EUFYCAM_E330|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_C|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_1080P_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED|driver_WALLLIGHT_CAM_S&capabilities=CMD_SNAPSHOT"
-    }
-  ]
+    "titleFormatted": {
+        "en": "Take snapshot (use self-hosted service: [[url]])",
+        "nl": "Maak Snapshot (gebruik een  zelf-gehoste  service: [[url]])",
+        "fr": "Prendre une capture d'écran (utiliser un service auto-hébergé: [[url]])",
+        "da": "Tag et snapshot (brug selvhostet service: [[url]])",
+        "de": "Schnappschuss machen (selbstgehosteten Dienst verwenden: [[url]])",
+        "es": "Tomar instantánea (usar servicio autoalojado: [[url]])",
+        "it": "Scatta istantanea (usa servizio self-hosted: [[url]])",
+        "no": "Ta øyeblikksbilde (bruk selvhostet tjeneste: [[url]])",
+        "sv": "Ta ögonblicksbild (använd självhostad tjänst: [[url]])",
+        "pl": "Zrób zrzut ekranu (użyj usługi hostowanej samodzielnie: [[url]])",
+        "ru": "Сделать снимок (использовать собственный хостинг: [[url]])",
+        "ko": "스냅샷 찍기 (셀프 호스팅 서비스 사용: [[url]])"
+    },
+    "hint": {
+        "en": "Enable the snapshot feature in the device settings. Instead of using the cloud service for taking Snapshots you can use a selfhosted service. Go to https://tinyurl.com/eufy-homey Q13 for more information.",
+        "da": "Aktiver snapshot-funktionen i enhedsindstillingerne. I stedet for at bruge cloud-tjenesten til at tage snapshots kan du bruge en selvhostet tjeneste. Gå til https://tinyurl.com/eufy-homey Q13 for mere information.",
+        "de": "Aktivieren Sie die Snapshot-Funktion in den Geräteeinstellungen. Anstatt den Cloud-Dienst für Schnappschüsse zu nutzen, können Sie einen selbstgehosteten Dienst verwenden. Besuchen Sie https://tinyurl.com/eufy-homey Q13 für weitere Informationen.",
+        "es": "Habilite la función de instantánea en la configuración del dispositivo. En lugar de usar el servicio en la nube para tomar instantáneas, puede usar un servicio autoalojado. Visite https://tinyurl.com/eufy-homey Q13 para obtener más información.",
+        "fr": "Activez la fonction de capture d'écran dans les paramètres de l'appareil. Au lieu d'utiliser le service cloud pour les captures d'écran, vous pouvez utiliser un service auto-hébergé. Allez à https://tinyurl.com/eufy-homey Q13 pour plus d'informations.",
+        "it": "Abilita la funzione istantanea nelle impostazioni del dispositivo. Invece di utilizzare il servizio cloud per scattare istantanee, puoi utilizzare un servizio self-hosted. Visita https://tinyurl.com/eufy-homey Q13 per maggiori informazioni.",
+        "no": "Aktiver snapshot-funksjonen i enhetsinnstillingene. I stedet for å bruke skytjenesten til å ta øyeblikksbilder kan du bruke en selvhostet tjeneste. Gå til https://tinyurl.com/eufy-homey Q13 for mer informasjon.",
+        "sv": "Aktivera ögonblicksbildsfunktionen i enhetsinställningarna. Istället för att använda molntjänsten för att ta ögonblicksbilder kan du använda en självhostad tjänst. Gå till https://tinyurl.com/eufy-homey Q13 för mer information.",
+        "pl": "Włącz funkcję zrzutu ekranu w ustawieniach urządzenia. Zamiast korzystać z usługi w chmurze do robienia zrzutów ekranu, możesz użyć usługi hostowanej samodzielnie. Przejdź do https://tinyurl.com/eufy-homey Q13, aby uzyskać więcej informacji.",
+        "ru": "Включите функцию снимка в настройках устройства. Вместо использования облачного сервиса для снимков вы можете использовать собственный хостинг. Перейдите по адресу https://tinyurl.com/eufy-homey Q13 для получения дополнительной информации.",
+        "ko": "기기 설정에서 스냅샷 기능을 활성화하세요. 스냅샷을 찍기 위해 클라우드 서비스를 사용하는 대신 자체 호스팅 서비스를 사용할 수 있습니다. 자세한 내용은 https://tinyurl.com/eufy-homey Q13를 참조하세요."
+    },
+    "args": [
+        {
+            "name": "url",
+            "type": "text",
+            "label": {
+                "en": "URL",
+                "da": "URL",
+                "de": "URL",
+                "es": "URL",
+                "fr": "URL",
+                "it": "URL",
+                "no": "URL",
+                "sv": "URL",
+                "pl": "URL",
+                "ru": "URL",
+                "ko": "URL"
+            }
+        },
+        {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_2_PRO|driver_EUFYCAM_3|driver_EUFYCAM_3C|driver_EUFYCAM_E|driver_EUFYCAM_E330|driver_EUFYCAM_S3_PRO|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_C210_C220|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_C|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_1080P_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED|driver_WALLLIGHT_CAM_S&capabilities=CMD_SNAPSHOT"
+        }
+    ]
 }

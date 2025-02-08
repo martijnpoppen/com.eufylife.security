@@ -1,179 +1,179 @@
 {
-  "id": "action_CMD_INDOOR_PAN_TURN_PTZ",
-  "platforms": [
-    "local"
-  ],
-  "title": {
-    "en": "Turn lens",
-    "nl": "Draai lens",
-    "fr": "Tourner l'objectif",
-    "da": "Drej objektiv",
-    "de": "Linse drehen",
-    "es": "Girar el lente",
-    "it": "Ruota l'obiettivo",
-    "no": "Drei linsen",
-    "sv": "Vrid linsen",
-    "pl": "Obróć obiektyw",
-    "ru": "Повернуть объектив",
-    "ko": "렌즈 회전"
-  },
-  "titleFormatted": {
-    "en": "Turn lens to [[action_CMD_INDOOR_PAN_TURN_PTZ_TYPE]], repeat this [[repeat]] times",
-    "nl": "Draai lens naar [[action_CMD_INDOOR_PAN_TURN_PTZ_TYPE]], herhaal dit [[repeat]] keer",
-    "fr": "Tourner l'objectif en [[action_CMD_INDOOR_PAN_TURN_PTZ_TYPE]], répétez [[repeat]] fois",
-    "da": "Drej objektiv til [[action_CMD_INDOOR_PAN_TURN_PTZ_TYPE]], gentag dette [[repeat]] gange",
-    "de": "Drehe die Linse zu [[action_CMD_INDOOR_PAN_TURN_PTZ_TYPE]], wiederhole dies [[repeat]] mal",
-    "es": "Gire el lente a [[action_CMD_INDOOR_PAN_TURN_PTZ_TYPE]], repita esto [[repeat]] veces",
-    "it": "Ruota l'obiettivo su [[action_CMD_INDOOR_PAN_TURN_PTZ_TYPE]], ripeti questo [[repeat]] volte",
-    "no": "Drei linsen til [[action_CMD_INDOOR_PAN_TURN_PTZ_TYPE]], gjenta dette [[repeat]] ganger",
-    "sv": "Vrid linsen till [[action_CMD_INDOOR_PAN_TURN_PTZ_TYPE]], upprepa detta [[repeat]] gånger",
-    "pl": "Obróć obiektyw na [[action_CMD_INDOOR_PAN_TURN_PTZ_TYPE]], powtórz to [[repeat]] razy",
-    "ru": "Поверни объектив на [[action_CMD_INDOOR_PAN_TURN_PTZ_TYPE]], повтори это [[repeat]] раз",
-    "ko": "[[action_CMD_INDOOR_PAN_TURN_PTZ_TYPE]]으로 렌즈를 회전하고, [[repeat]]번 반복"
-  },
-  "args": [
-    {
-      "name": "device",
-      "type": "device",
-      "filter": "driver_id=driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM_PAN_TILT&capabilities=CMD_INDOOR_PAN_TURN"
+    "id": "action_CMD_INDOOR_PAN_TURN_PTZ",
+    "platforms": [
+        "local"
+    ],
+    "title": {
+        "en": "Turn lens",
+        "nl": "Draai lens",
+        "fr": "Tourner l'objectif",
+        "da": "Drej objektiv",
+        "de": "Linse drehen",
+        "es": "Girar el lente",
+        "it": "Ruota l'obiettivo",
+        "no": "Drei linsen",
+        "sv": "Vrid linsen",
+        "pl": "Obróć obiektyw",
+        "ru": "Повернуть объектив",
+        "ko": "렌즈 회전"
     },
-    {
-      "name": "action_CMD_INDOOR_PAN_TURN_PTZ_TYPE",
-      "type": "dropdown",
-      "title": {
-        "en": "direction",
-        "nl": "richting",
-        "fr": "direction",
-        "da": "retning",
-        "de": "Richtung",
-        "es": "dirección",
-        "it": "direzione",
-        "no": "retning",
-        "sv": "riktning",
-        "pl": "kierunek",
-        "ru": "направление",
-        "ko": "방향"
-      },
-      "placeholder": {
-        "en": "direction",
-        "nl": "richting",
-        "fr": "direction",
-        "da": "retning",
-        "de": "Richtung",
-        "es": "dirección",
-        "it": "direzione",
-        "no": "retning",
-        "sv": "riktning",
-        "pl": "kierunek",
-        "ru": "направление",
-        "ko": "방향"
-      },
-      "values": [
+    "titleFormatted": {
+        "en": "Turn lens to [[action_CMD_INDOOR_PAN_TURN_PTZ_TYPE]], repeat this [[repeat]] times",
+        "nl": "Draai lens naar [[action_CMD_INDOOR_PAN_TURN_PTZ_TYPE]], herhaal dit [[repeat]] keer",
+        "fr": "Tourner l'objectif en [[action_CMD_INDOOR_PAN_TURN_PTZ_TYPE]], répétez [[repeat]] fois",
+        "da": "Drej objektiv til [[action_CMD_INDOOR_PAN_TURN_PTZ_TYPE]], gentag dette [[repeat]] gange",
+        "de": "Drehe die Linse zu [[action_CMD_INDOOR_PAN_TURN_PTZ_TYPE]], wiederhole dies [[repeat]] mal",
+        "es": "Gire el lente a [[action_CMD_INDOOR_PAN_TURN_PTZ_TYPE]], repita esto [[repeat]] veces",
+        "it": "Ruota l'obiettivo su [[action_CMD_INDOOR_PAN_TURN_PTZ_TYPE]], ripeti questo [[repeat]] volte",
+        "no": "Drei linsen til [[action_CMD_INDOOR_PAN_TURN_PTZ_TYPE]], gjenta dette [[repeat]] ganger",
+        "sv": "Vrid linsen till [[action_CMD_INDOOR_PAN_TURN_PTZ_TYPE]], upprepa detta [[repeat]] gånger",
+        "pl": "Obróć obiektyw na [[action_CMD_INDOOR_PAN_TURN_PTZ_TYPE]], powtórz to [[repeat]] razy",
+        "ru": "Поверни объектив на [[action_CMD_INDOOR_PAN_TURN_PTZ_TYPE]], повтори это [[repeat]] раз",
+        "ko": "[[action_CMD_INDOOR_PAN_TURN_PTZ_TYPE]]으로 렌즈를 회전하고, [[repeat]]번 반복"
+    },
+    "args": [
         {
-          "id": "left",
-          "label": {
-            "en": "Left",
-            "nl": "Links",
-            "fr": "Gauche",
-            "da": "Venstre",
-            "de": "Links",
-            "es": "Izquierda",
-            "it": "Sinistra",
-            "no": "Venstre",
-            "sv": "Vänster",
-            "pl": "Lewo",
-            "ru": "Влево",
-            "ko": "왼쪽"
-          }
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_C210_C220|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM_PAN_TILT&capabilities=CMD_INDOOR_PAN_TURN"
         },
         {
-          "id": "right",
-          "label": {
-            "en": "Right",
-            "nl": "Rechts",
-            "fr": "Droite",
-            "da": "Højre",
-            "de": "Rechts",
-            "es": "Derecha",
-            "it": "Destra",
-            "no": "Høyre",
-            "sv": "Höger",
-            "pl": "Prawo",
-            "ru": "Вправо",
-            "ko": "오른쪽"
-          }
+            "name": "action_CMD_INDOOR_PAN_TURN_PTZ_TYPE",
+            "type": "dropdown",
+            "title": {
+                "en": "direction",
+                "nl": "richting",
+                "fr": "direction",
+                "da": "retning",
+                "de": "Richtung",
+                "es": "dirección",
+                "it": "direzione",
+                "no": "retning",
+                "sv": "riktning",
+                "pl": "kierunek",
+                "ru": "направление",
+                "ko": "방향"
+            },
+            "placeholder": {
+                "en": "direction",
+                "nl": "richting",
+                "fr": "direction",
+                "da": "retning",
+                "de": "Richtung",
+                "es": "dirección",
+                "it": "direzione",
+                "no": "retning",
+                "sv": "riktning",
+                "pl": "kierunek",
+                "ru": "направление",
+                "ko": "방향"
+            },
+            "values": [
+                {
+                    "id": "left",
+                    "label": {
+                        "en": "Left",
+                        "nl": "Links",
+                        "fr": "Gauche",
+                        "da": "Venstre",
+                        "de": "Links",
+                        "es": "Izquierda",
+                        "it": "Sinistra",
+                        "no": "Venstre",
+                        "sv": "Vänster",
+                        "pl": "Lewo",
+                        "ru": "Влево",
+                        "ko": "왼쪽"
+                    }
+                },
+                {
+                    "id": "right",
+                    "label": {
+                        "en": "Right",
+                        "nl": "Rechts",
+                        "fr": "Droite",
+                        "da": "Højre",
+                        "de": "Rechts",
+                        "es": "Derecha",
+                        "it": "Destra",
+                        "no": "Høyre",
+                        "sv": "Höger",
+                        "pl": "Prawo",
+                        "ru": "Вправо",
+                        "ko": "오른쪽"
+                    }
+                },
+                {
+                    "id": "up",
+                    "label": {
+                        "en": "Up",
+                        "nl": "Boven",
+                        "fr": "Haut",
+                        "da": "Op",
+                        "de": "Oben",
+                        "es": "Arriba",
+                        "it": "Su",
+                        "no": "Opp",
+                        "sv": "Upp",
+                        "pl": "Góra",
+                        "ru": "Вверх",
+                        "ko": "위쪽"
+                    }
+                },
+                {
+                    "id": "down",
+                    "label": {
+                        "en": "Down",
+                        "nl": "Beneden",
+                        "fr": "Bas",
+                        "da": "Ned",
+                        "de": "Unten",
+                        "es": "Abajo",
+                        "it": "Giù",
+                        "no": "Ned",
+                        "sv": "Ner",
+                        "pl": "Dół",
+                        "ru": "Вниз",
+                        "ko": "아래쪽"
+                    }
+                }
+            ]
         },
         {
-          "id": "up",
-          "label": {
-            "en": "Up",
-            "nl": "Boven",
-            "fr": "Haut",
-            "da": "Op",
-            "de": "Oben",
-            "es": "Arriba",
-            "it": "Su",
-            "no": "Opp",
-            "sv": "Upp",
-            "pl": "Góra",
-            "ru": "Вверх",
-            "ko": "위쪽"
-          }
-        },
-        {
-          "id": "down",
-          "label": {
-            "en": "Down",
-            "nl": "Beneden",
-            "fr": "Bas",
-            "da": "Ned",
-            "de": "Unten",
-            "es": "Abajo",
-            "it": "Giù",
-            "no": "Ned",
-            "sv": "Ner",
-            "pl": "Dół",
-            "ru": "Вниз",
-            "ko": "아래쪽"
-          }
+            "name": "repeat",
+            "title": {
+                "en": "amount",
+                "nl": "aantal",
+                "fr": "montant",
+                "da": "mængde",
+                "de": "Menge",
+                "es": "cantidad",
+                "it": "quantità",
+                "no": "mengde",
+                "sv": "mängd",
+                "pl": "ilość",
+                "ru": "количество",
+                "ko": "수량"
+            },
+            "type": "number",
+            "min": 1,
+            "max": 90,
+            "step": 1,
+            "value": 1,
+            "placeholder": {
+                "en": "amount",
+                "nl": "aantal",
+                "fr": "montant",
+                "da": "mængde",
+                "de": "Menge",
+                "es": "cantidad",
+                "it": "quantità",
+                "no": "mengde",
+                "sv": "mängd",
+                "pl": "ilość",
+                "ru": "количество",
+                "ko": "수량"
+            }
         }
-      ]
-    },
-    {
-      "name": "repeat",
-      "title": {
-        "en": "amount",
-        "nl": "aantal",
-        "fr": "montant",
-        "da": "mængde",
-        "de": "Menge",
-        "es": "cantidad",
-        "it": "quantità",
-        "no": "mengde",
-        "sv": "mängd",
-        "pl": "ilość",
-        "ru": "количество",
-        "ko": "수량"
-      },
-      "type": "number",
-      "min": 1,
-      "max": 90,
-      "step": 1,
-      "value": 1,
-      "placeholder": {
-        "en": "amount",
-        "nl": "aantal",
-        "fr": "montant",
-        "da": "mængde",
-        "de": "Menge",
-        "es": "cantidad",
-        "it": "quantità",
-        "no": "mengde",
-        "sv": "mängd",
-        "pl": "ilość",
-        "ru": "количество",
-        "ko": "수량"
-      }
-    }
-  ]
+    ]
 }

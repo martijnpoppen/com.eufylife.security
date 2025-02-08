@@ -1,0 +1,46 @@
+{
+  "name": {
+    "en": "eufyCam S3 Pro",
+    "nl": "eufyCam S3 Pro",
+    "fr": "eufyCam S3 Pro",
+    "da": "eufyCam S3 Pro",
+    "de": "eufyCam S3 Pro",
+    "es": "eufyCam S3 Pro",
+    "it": "eufyCam S3 Pro",
+    "no": "eufyCam S3 Pro",
+    "sv": "eufyCam S3 Pro",
+    "pl": "eufyCam S3 Pro",
+    "ru": "eufyCam S3 Pro",
+    "ko": "eufyCam S3 Pro"
+  },
+  "class": "camera",
+  "capabilities": [
+    "onoff",
+    "CMD_DEV_LED_SWITCH",
+    "CMD_SET_FLOODLIGHT_MANUAL_SWITCH",
+    "alarm_motion",
+    "measure_battery",
+    "measure_temperature",
+    "CMD_IRCUT_SWITCH",
+    "CMD_START_STREAM",
+    "CMD_SNAPSHOT",
+    "CMD_TRIGGER_ALARM",
+    "CMD_SET_HUB_ALARM_CLOSE",
+    "CMD_SET_SNOOZE_MODE_HOMEBASE",
+    "NTFY_MOTION_DETECTION",
+    "NTFY_FACE_DETECTION",
+    "NTFY_PET_DETECTED",
+    "NTFY_VEHICLE_DETECTED"
+  ],
+  "energy": {
+    "batteries": [
+      "INTERNAL"
+    ]
+  },
+  "$extends": [
+    "device",
+    "pair",
+    "repair",
+    "settings-default"
+  ]
+}

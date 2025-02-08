@@ -1,95 +1,95 @@
 {
-  "id": "action_CMD_IRCUT_SWITCH",
-  "platforms": [
-    "local"
-  ],
-  "title": {
-    "en": "Toggle Nightvision",
-    "nl": "Zet Nachtvisie aan/uit",
-    "fr": "Activer vision noturne",
-    "da": "Skift til Nightvision",
-    "de": "Nachtsicht umschalten",
-    "es": "Alternar visión nocturna",
-    "it": "Attiva visione notturna",
-    "no": "Veksle nattsyn",
-    "sv": "Växla nattvision",
-    "pl": "Przełącz widzenie nocne",
-    "ru": "Переключение ночного видения",
-    "ko": "야간 투시 전환"
-  },
-  "titleFormatted": {
-    "en": "Toggle Nightvision [[action_CMD_IRCUT_SWITCH_TYPE]]",
-    "nl": "Zet Nachtvisie [[action_CMD_IRCUT_SWITCH_TYPE]]",
-    "fr": "Activer vision noturne [[action_CMD_IRCUT_SWITCH_TYPE]]",
-    "da": "Skift til Nightvision [[action_CMD_IRCUT_SWITCH_TYPE]]",
-    "de": "Nachtsicht umschalten [[action_CMD_IRCUT_SWITCH_TYPE]]",
-    "es": "Alternar visión nocturna [[action_CMD_IRCUT_SWITCH_TYPE]]",
-    "it": "Attiva visione notturna [[action_CMD_IRCUT_SWITCH_TYPE]]",
-    "no": "Veksle nattsyn [[action_CMD_IRCUT_SWITCH_TYPE]]",
-    "sv": "Växla nattvision [[action_CMD_IRCUT_SWITCH_TYPE]]",
-    "pl": "Przełącz widzenie nocne [[action_CMD_IRCUT_SWITCH_TYPE]]",
-    "ru": "Переключение ночного видения [[action_CMD_IRCUT_SWITCH_TYPE]]",
-    "ko": "야간 투시 전환 [[action_CMD_IRCUT_SWITCH_TYPE]]"
-  },
-  "args": [
-    {
-      "name": "device",
-      "type": "device",
-      "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_2_PRO|driver_EUFYCAM_3|driver_EUFYCAM_3C|driver_EUFYCAM_E|driver_EUFYCAM_E330|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_C|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_1080P_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED|driver_WALLLIGHT_CAM_S&capabilities=CMD_IRCUT_SWITCH"
+    "id": "action_CMD_IRCUT_SWITCH",
+    "platforms": [
+        "local"
+    ],
+    "title": {
+        "en": "Toggle Nightvision",
+        "nl": "Zet Nachtvisie aan/uit",
+        "fr": "Activer vision noturne",
+        "da": "Skift til Nightvision",
+        "de": "Nachtsicht umschalten",
+        "es": "Alternar visión nocturna",
+        "it": "Attiva visione notturna",
+        "no": "Veksle nattsyn",
+        "sv": "Växla nattvision",
+        "pl": "Przełącz widzenie nocne",
+        "ru": "Переключение ночного видения",
+        "ko": "야간 투시 전환"
     },
-    {
-      "name": "action_CMD_IRCUT_SWITCH_TYPE",
-      "type": "dropdown",
-      "title": {
-        "en": "Nightvision",
-        "nl": "Nachtvisie",
-        "fr": "vision noturne",
-        "da": "Nightvision",
-        "de": "Nachtsicht",
-        "es": "Visión nocturna",
-        "it": "Visione notturna",
-        "no": "Nattsyn",
-        "sv": "Nattvision",
-        "pl": "Widzenie nocne",
-        "ru": "Ночное видение",
-        "ko": "야간 투시"
-      },
-      "values": [
+    "titleFormatted": {
+        "en": "Toggle Nightvision [[action_CMD_IRCUT_SWITCH_TYPE]]",
+        "nl": "Zet Nachtvisie [[action_CMD_IRCUT_SWITCH_TYPE]]",
+        "fr": "Activer vision noturne [[action_CMD_IRCUT_SWITCH_TYPE]]",
+        "da": "Skift til Nightvision [[action_CMD_IRCUT_SWITCH_TYPE]]",
+        "de": "Nachtsicht umschalten [[action_CMD_IRCUT_SWITCH_TYPE]]",
+        "es": "Alternar visión nocturna [[action_CMD_IRCUT_SWITCH_TYPE]]",
+        "it": "Attiva visione notturna [[action_CMD_IRCUT_SWITCH_TYPE]]",
+        "no": "Veksle nattsyn [[action_CMD_IRCUT_SWITCH_TYPE]]",
+        "sv": "Växla nattvision [[action_CMD_IRCUT_SWITCH_TYPE]]",
+        "pl": "Przełącz widzenie nocne [[action_CMD_IRCUT_SWITCH_TYPE]]",
+        "ru": "Переключение ночного видения [[action_CMD_IRCUT_SWITCH_TYPE]]",
+        "ko": "야간 투시 전환 [[action_CMD_IRCUT_SWITCH_TYPE]]"
+    },
+    "args": [
         {
-          "id": "1",
-          "label": {
-            "en": "On",
-            "nl": "Aan",
-            "fr": "On",
-            "da": "Tændt",
-            "de": "Ein",
-            "es": "Encendido",
-            "it": "Acceso",
-            "no": "På",
-            "sv": "På",
-            "pl": "Włączony",
-            "ru": "Вкл",
-            "ko": "켬"
-          }
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_2_PRO|driver_EUFYCAM_3|driver_EUFYCAM_3C|driver_EUFYCAM_E|driver_EUFYCAM_E330|driver_EUFYCAM_S3_PRO|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_C210_C220|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_C|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_1080P_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED|driver_WALLLIGHT_CAM_S&capabilities=CMD_IRCUT_SWITCH"
         },
         {
-          "id": "0",
-          "label": {
-            "en": "Off",
-            "nl": "Uit",
-            "fr": "Off",
-            "da": "Slukket",
-            "de": "Aus",
-            "es": "Apagado",
-            "it": "Spento",
-            "no": "Av",
-            "sv": "Av",
-            "pl": "Wyłączony",
-            "ru": "Выкл",
-            "ko": "끔"
-          }
+            "name": "action_CMD_IRCUT_SWITCH_TYPE",
+            "type": "dropdown",
+            "title": {
+                "en": "Nightvision",
+                "nl": "Nachtvisie",
+                "fr": "vision noturne",
+                "da": "Nightvision",
+                "de": "Nachtsicht",
+                "es": "Visión nocturna",
+                "it": "Visione notturna",
+                "no": "Nattsyn",
+                "sv": "Nattvision",
+                "pl": "Widzenie nocne",
+                "ru": "Ночное видение",
+                "ko": "야간 투시"
+            },
+            "values": [
+                {
+                    "id": "1",
+                    "label": {
+                        "en": "On",
+                        "nl": "Aan",
+                        "fr": "On",
+                        "da": "Tændt",
+                        "de": "Ein",
+                        "es": "Encendido",
+                        "it": "Acceso",
+                        "no": "På",
+                        "sv": "På",
+                        "pl": "Włączony",
+                        "ru": "Вкл",
+                        "ko": "켬"
+                    }
+                },
+                {
+                    "id": "0",
+                    "label": {
+                        "en": "Off",
+                        "nl": "Uit",
+                        "fr": "Off",
+                        "da": "Slukket",
+                        "de": "Aus",
+                        "es": "Apagado",
+                        "it": "Spento",
+                        "no": "Av",
+                        "sv": "Av",
+                        "pl": "Wyłączony",
+                        "ru": "Выкл",
+                        "ko": "끔"
+                    }
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }

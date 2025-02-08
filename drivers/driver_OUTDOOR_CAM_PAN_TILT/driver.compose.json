@@ -1,17 +1,17 @@
 {
   "name": {
-    "en": "Outdoor Cam Pan & Tilt (S340)",
-    "nl": "Outdoor Cam Pan & Tilt (S340)",
-    "fr": "Outdoor Cam Pan & Tilt (S340)",
-    "da": "Udendørs Cam Pan & Tilt (S340)",
-    "de": "Outdoor-Kamera Pan & Tilt (S340)",
-    "es": "Cámara exterior Pan & Tilt (S340)",
-    "it": "Cam esterna Pan & Tilt (S340)",
-    "no": "Utendørs Kamera Pan & Tilt (S340)",
-    "sv": "Utomhuskamera Pan & Tilt (S340)",
-    "pl": "Kamera zewnętrzna Pan & Tilt (S340)",
-    "ru": "Уличная камера Pan & Tilt (S340)",
-    "ko": "실외 카메라 팬 및 틸트 (S340)"
+    "en": "Outdoor Cam Pan & Tilt (S340 / E30)",
+    "nl": "Outdoor Cam Pan & Tilt (S340 / E30)",
+    "fr": "Outdoor Cam Pan & Tilt (S340 / E30)",
+    "da": "Udendørs Cam Pan & Tilt (S340 / E30)",
+    "de": "Outdoor-Kamera Pan & Tilt (S340 / E30)",
+    "es": "Cámara exterior Pan & Tilt (S340 / E30)",
+    "it": "Cam esterna Pan & Tilt (S340 / E30)",
+    "no": "Utendørs Kamera Pan & Tilt (S340 / E30)",
+    "sv": "Utomhuskamera Pan & Tilt (S340 / E30)",
+    "pl": "Kamera zewnętrzna Pan & Tilt (S340 / E30)",
+    "ru": "Уличная камера Pan & Tilt (S340 / E30)",
+    "ko": "실외 카메라 팬 및 틸트 (S340 / E30)"
   },
   "class": "camera",
   "capabilities": [

@@ -1,214 +1,214 @@
 {
-  "id": "action_CMD_SET_ARMING",
-  "platforms": [
-    "local"
-  ],
-  "title": {
-    "en": "Set Security Mode",
-    "nl": "Zet Beveiligingsmodus",
-    "fr": "Définir le mode de protection",
-    "da": "Indstil sikkerhedstilstand",
-    "de": "Sicherheitsmodus einstellen",
-    "es": "Configurar modo de seguridad",
-    "it": "Imposta modalità di sicurezza",
-    "no": "Sett sikkerhetsmodus",
-    "sv": "Ställ in säkerhetsläge",
-    "pl": "Ustaw tryb zabezpieczeń",
-    "ru": "Установить режим безопасности",
-    "ko": "보안 모드 설정"
-  },
-  "titleFormatted": {
-    "en": "Set Security mode to [[action_CMD_SET_ARM_TYPE]]",
-    "nl": "Zet Beveiligingsmodus naar [[action_CMD_SET_ARM_TYPE]]",
-    "fr": "Définir le mode de protection en [[action_CMD_SET_ARM_TYPE]]",
-    "da": "Indstil sikkerhedstilstand til [[action_CMD_SET_ARM_TYPE]]",
-    "de": "Sicherheitsmodus auf [[action_CMD_SET_ARM_TYPE]] einstellen",
-    "es": "Configurar modo de seguridad a [[action_CMD_SET_ARM_TYPE]]",
-    "it": "Imposta modalità di sicurezza su [[action_CMD_SET_ARM_TYPE]]",
-    "no": "Sett sikkerhetsmodus til [[action_CMD_SET_ARM_TYPE]]",
-    "sv": "Ställ in säkerhetsläge till [[action_CMD_SET_ARM_TYPE]]",
-    "pl": "Ustaw tryb zabezpieczeń na [[action_CMD_SET_ARM_TYPE]]",
-    "ru": "Установить режим безопасности на [[action_CMD_SET_ARM_TYPE]]",
-    "ko": "[[action_CMD_SET_ARM_TYPE]]로 설정"
-  },
-  "args": [
-    {
-      "name": "device",
-      "type": "device",
-      "filter": "driver_id=driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_HOMEBASE|driver_HOMEBASE_1|driver_HOMEBASE_3|driver_HOMEBASE_CHIME|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_C|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED|driver_WALLLIGHT_CAM_S&capabilities=CMD_SET_ARMING"
+    "id": "action_CMD_SET_ARMING",
+    "platforms": [
+        "local"
+    ],
+    "title": {
+        "en": "Set Security Mode",
+        "nl": "Zet Beveiligingsmodus",
+        "fr": "Définir le mode de protection",
+        "da": "Indstil sikkerhedstilstand",
+        "de": "Sicherheitsmodus einstellen",
+        "es": "Configurar modo de seguridad",
+        "it": "Imposta modalità di sicurezza",
+        "no": "Sett sikkerhetsmodus",
+        "sv": "Ställ in säkerhetsläge",
+        "pl": "Ustaw tryb zabezpieczeń",
+        "ru": "Установить режим безопасности",
+        "ko": "보안 모드 설정"
     },
-    {
-      "name": "action_CMD_SET_ARM_TYPE",
-      "type": "dropdown",
-      "title": {
-        "en": "Security Mode",
-        "nl": "Beveiligingsmodus",
-        "fr": "Mode de protection",
-        "da": "Sikkerhedstilstand",
-        "de": "Sicherheitsmodus",
-        "es": "Modo de seguridad",
-        "it": "Modalità di sicurezza",
-        "no": "Sikkerhetsmodus",
-        "sv": "Säkerhetsläge",
-        "pl": "Tryb zabezpieczeń",
-        "ru": "Режим безопасности",
-        "ko": "보안 모드"
-      },
-      "values": [
+    "titleFormatted": {
+        "en": "Set Security mode to [[action_CMD_SET_ARM_TYPE]]",
+        "nl": "Zet Beveiligingsmodus naar [[action_CMD_SET_ARM_TYPE]]",
+        "fr": "Définir le mode de protection en [[action_CMD_SET_ARM_TYPE]]",
+        "da": "Indstil sikkerhedstilstand til [[action_CMD_SET_ARM_TYPE]]",
+        "de": "Sicherheitsmodus auf [[action_CMD_SET_ARM_TYPE]] einstellen",
+        "es": "Configurar modo de seguridad a [[action_CMD_SET_ARM_TYPE]]",
+        "it": "Imposta modalità di sicurezza su [[action_CMD_SET_ARM_TYPE]]",
+        "no": "Sett sikkerhetsmodus til [[action_CMD_SET_ARM_TYPE]]",
+        "sv": "Ställ in säkerhetsläge till [[action_CMD_SET_ARM_TYPE]]",
+        "pl": "Ustaw tryb zabezpieczeń na [[action_CMD_SET_ARM_TYPE]]",
+        "ru": "Установить режим безопасности на [[action_CMD_SET_ARM_TYPE]]",
+        "ko": "[[action_CMD_SET_ARM_TYPE]]로 설정"
+    },
+    "args": [
         {
-          "id": "home",
-          "label": {
-            "en": "Home",
-            "nl": "Thuis",
-            "fr": "A la maison",
-            "da": "Hjemme",
-            "de": "Zuhause",
-            "es": "Casa",
-            "it": "Casa",
-            "no": "Hjemme",
-            "sv": "Hemma",
-            "pl": "Dom",
-            "ru": "Дом",
-            "ko": "홈"
-          }
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_HOMEBASE|driver_HOMEBASE_1|driver_HOMEBASE_3|driver_HOMEBASE_CHIME|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_C210_C220|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_C|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED|driver_WALLLIGHT_CAM_S&capabilities=CMD_SET_ARMING"
         },
         {
-          "id": "away",
-          "label": {
-            "en": "Away",
-            "nl": "Afwezig",
-            "fr": "Absent",
-            "da": "Væk",
-            "de": "Abwesend",
-            "es": "Fuera",
-            "it": "Fuori",
-            "no": "Borte",
-            "sv": "Borta",
-            "pl": "Poza domem",
-            "ru": "Отсутствует",
-            "ko": "외출 중"
-          }
-        },
-        {
-          "id": "schedule",
-          "label": {
-            "en": "Schedule",
-            "nl": "Schema",
-            "fr": "Programmé",
-            "da": "Plan",
-            "de": "Zeitplan",
-            "es": "Horario",
-            "it": "Programma",
-            "no": "Plan",
-            "sv": "Schema",
-            "pl": "Harmonogram",
-            "ru": "Расписание",
-            "ko": "일정"
-          }
-        },
-        {
-          "id": "geo",
-          "label": {
-            "en": "Geo",
-            "nl": "Geo",
-            "fr": "Géo",
-            "da": "Geo",
-            "de": "Geo",
-            "es": "Geo",
-            "it": "Geo",
-            "no": "Geo",
-            "sv": "Geo",
-            "pl": "Geo",
-            "ru": "Гео",
-            "ko": "지오"
-          }
-        },
-        {
-          "id": "disarmed",
-          "label": {
-            "en": "Disarmed",
-            "nl": "Uitgeschakeld",
-            "fr": "Désarmé",
-            "da": "Afvæbnet",
-            "de": "Deaktiviert",
-            "es": "Desarmado",
-            "it": "Disattivato",
-            "no": "Avvæpnet",
-            "sv": "Avaktiverat",
-            "pl": "Rozbrojony",
-            "ru": "Разоружен",
-            "ko": "비활성 상태"
-          }
-        },
-        {
-          "id": "off",
-          "label": {
-            "en": "Off",
-            "nl": "Uit",
-            "fr": "Eteint",
-            "da": "Slukket",
-            "de": "Aus",
-            "es": "Apagado",
-            "it": "Spento",
-            "no": "Av",
-            "sv": "Avstängd",
-            "pl": "Wyłączony",
-            "ru": "Выключено",
-            "ko": "꺼짐"
-          }
-        },
-        {
-          "id": "custom_1",
-          "label": {
-            "en": "Custom 1",
-            "nl": "Custom 1",
-            "fr": "Personnalisé 1",
-            "da": "Brugerdefineret 1",
-            "de": "Benutzerdefiniert 1",
-            "es": "Personalizado 1",
-            "it": "Personalizzato 1",
-            "no": "Egendefinert 1",
-            "sv": "Anpassad 1",
-            "pl": "Niestandardowy 1",
-            "ru": "Пользовательский 1",
-            "ko": "사용자 정의 1"
-          }
-        },
-        {
-          "id": "custom_2",
-          "label": {
-            "en": "Custom 2",
-            "nl": "Custom 2",
-            "fr": "Personnalisé 2",
-            "da": "Brugerdefineret 2",
-            "de": "Benutzerdefiniert 2",
-            "es": "Personalizado 2",
-            "it": "Personalizzato 2",
-            "no": "Egendefinert 2",
-            "sv": "Anpassad 2",
-            "pl": "Niestandardowy 2",
-            "ru": "Пользовательский 2",
-            "ko": "사용자 정의 2"
-          }
-        },
-        {
-          "id": "custom_3",
-          "label": {
-            "en": "Custom 3",
-            "nl": "Custom 3",
-            "fr": "Personnalisé 3",
-            "da": "Brugerdefineret 3",
-            "de": "Benutzerdefiniert 3",
-            "es": "Personalizado 3",
-            "it": "Personalizzato 3",
-            "no": "Egendefinert 3",
-            "sv": "Anpassad 3",
-            "pl": "Niestandardowy 3",
-            "ru": "Пользовательский 3",
-            "ko": "사용자 정의 3"
-          }
+            "name": "action_CMD_SET_ARM_TYPE",
+            "type": "dropdown",
+            "title": {
+                "en": "Security Mode",
+                "nl": "Beveiligingsmodus",
+                "fr": "Mode de protection",
+                "da": "Sikkerhedstilstand",
+                "de": "Sicherheitsmodus",
+                "es": "Modo de seguridad",
+                "it": "Modalità di sicurezza",
+                "no": "Sikkerhetsmodus",
+                "sv": "Säkerhetsläge",
+                "pl": "Tryb zabezpieczeń",
+                "ru": "Режим безопасности",
+                "ko": "보안 모드"
+            },
+            "values": [
+                {
+                    "id": "home",
+                    "label": {
+                        "en": "Home",
+                        "nl": "Thuis",
+                        "fr": "A la maison",
+                        "da": "Hjemme",
+                        "de": "Zuhause",
+                        "es": "Casa",
+                        "it": "Casa",
+                        "no": "Hjemme",
+                        "sv": "Hemma",
+                        "pl": "Dom",
+                        "ru": "Дом",
+                        "ko": "홈"
+                    }
+                },
+                {
+                    "id": "away",
+                    "label": {
+                        "en": "Away",
+                        "nl": "Afwezig",
+                        "fr": "Absent",
+                        "da": "Væk",
+                        "de": "Abwesend",
+                        "es": "Fuera",
+                        "it": "Fuori",
+                        "no": "Borte",
+                        "sv": "Borta",
+                        "pl": "Poza domem",
+                        "ru": "Отсутствует",
+                        "ko": "외출 중"
+                    }
+                },
+                {
+                    "id": "schedule",
+                    "label": {
+                        "en": "Schedule",
+                        "nl": "Schema",
+                        "fr": "Programmé",
+                        "da": "Plan",
+                        "de": "Zeitplan",
+                        "es": "Horario",
+                        "it": "Programma",
+                        "no": "Plan",
+                        "sv": "Schema",
+                        "pl": "Harmonogram",
+                        "ru": "Расписание",
+                        "ko": "일정"
+                    }
+                },
+                {
+                    "id": "geo",
+                    "label": {
+                        "en": "Geo",
+                        "nl": "Geo",
+                        "fr": "Géo",
+                        "da": "Geo",
+                        "de": "Geo",
+                        "es": "Geo",
+                        "it": "Geo",
+                        "no": "Geo",
+                        "sv": "Geo",
+                        "pl": "Geo",
+                        "ru": "Гео",
+                        "ko": "지오"
+                    }
+                },
+                {
+                    "id": "disarmed",
+                    "label": {
+                        "en": "Disarmed",
+                        "nl": "Uitgeschakeld",
+                        "fr": "Désarmé",
+                        "da": "Afvæbnet",
+                        "de": "Deaktiviert",
+                        "es": "Desarmado",
+                        "it": "Disattivato",
+                        "no": "Avvæpnet",
+                        "sv": "Avaktiverat",
+                        "pl": "Rozbrojony",
+                        "ru": "Разоружен",
+                        "ko": "비활성 상태"
+                    }
+                },
+                {
+                    "id": "off",
+                    "label": {
+                        "en": "Off",
+                        "nl": "Uit",
+                        "fr": "Eteint",
+                        "da": "Slukket",
+                        "de": "Aus",
+                        "es": "Apagado",
+                        "it": "Spento",
+                        "no": "Av",
+                        "sv": "Avstängd",
+                        "pl": "Wyłączony",
+                        "ru": "Выключено",
+                        "ko": "꺼짐"
+                    }
+                },
+                {
+                    "id": "custom_1",
+                    "label": {
+                        "en": "Custom 1",
+                        "nl": "Custom 1",
+                        "fr": "Personnalisé 1",
+                        "da": "Brugerdefineret 1",
+                        "de": "Benutzerdefiniert 1",
+                        "es": "Personalizado 1",
+                        "it": "Personalizzato 1",
+                        "no": "Egendefinert 1",
+                        "sv": "Anpassad 1",
+                        "pl": "Niestandardowy 1",
+                        "ru": "Пользовательский 1",
+                        "ko": "사용자 정의 1"
+                    }
+                },
+                {
+                    "id": "custom_2",
+                    "label": {
+                        "en": "Custom 2",
+                        "nl": "Custom 2",
+                        "fr": "Personnalisé 2",
+                        "da": "Brugerdefineret 2",
+                        "de": "Benutzerdefiniert 2",
+                        "es": "Personalizado 2",
+                        "it": "Personalizzato 2",
+                        "no": "Egendefinert 2",
+                        "sv": "Anpassad 2",
+                        "pl": "Niestandardowy 2",
+                        "ru": "Пользовательский 2",
+                        "ko": "사용자 정의 2"
+                    }
+                },
+                {
+                    "id": "custom_3",
+                    "label": {
+                        "en": "Custom 3",
+                        "nl": "Custom 3",
+                        "fr": "Personnalisé 3",
+                        "da": "Brugerdefineret 3",
+                        "de": "Benutzerdefiniert 3",
+                        "es": "Personalizado 3",
+                        "it": "Personalizzato 3",
+                        "no": "Egendefinert 3",
+                        "sv": "Anpassad 3",
+                        "pl": "Niestandardowy 3",
+                        "ru": "Пользовательский 3",
+                        "ko": "사용자 정의 3"
+                    }
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }

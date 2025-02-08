@@ -1,163 +1,163 @@
 {
-  "id": "action_CMD_DOORBELL_QUICK_RESPONSE",
-  "platforms": [
-    "local"
-  ],
-  "title": {
-    "en": "Send Quick Response",
-    "nl": "Stuur Spraakbericht",
-    "fr": "Envoyer une réponse rapide",
-    "da": "Send hurtig svar",
-    "de": "Schnelle Antwort senden",
-    "es": "Enviar respuesta rápida",
-    "it": "Invia risposta rapida",
-    "no": "Send raskt svar",
-    "sv": "Skicka snabb svar",
-    "pl": "Wyślij szybką odpowiedź",
-    "ru": "Отправить быстрый ответ",
-    "ko": "빠른 응답 보내기"
-  },
-  "titleFormatted": {
-    "en": "Send Quick Response [[action_CMD_SET_QUICK_RESPONSE_TYPE]]",
-    "nl": "Stuur Spraakbericht [[action_CMD_SET_QUICK_RESPONSE_TYPE]]",
-    "fr": "Envoyer une réponse rapide [[action_CMD_SET_QUICK_RESPONSE_TYPE]]",
-    "da": "Send hurtig svar [[action_CMD_SET_QUICK_RESPONSE_TYPE]]",
-    "de": "Schnelle Antwort senden [[action_CMD_SET_QUICK_RESPONSE_TYPE]]",
-    "es": "Enviar respuesta rápida [[action_CMD_SET_QUICK_RESPONSE_TYPE]]",
-    "it": "Invia risposta rapida [[action_CMD_SET_QUICK_RESPONSE_TYPE]]",
-    "no": "Send raskt svar [[action_CMD_SET_QUICK_RESPONSE_TYPE]]",
-    "sv": "Skicka snabb svar [[action_CMD_SET_QUICK_RESPONSE_TYPE]]",
-    "pl": "Wyślij szybką odpowiedź [[action_CMD_SET_QUICK_RESPONSE_TYPE]]",
-    "ru": "Отправить быстрый ответ [[action_CMD_SET_QUICK_RESPONSE_TYPE]]",
-    "ko": "빠른 응답 보내기 [[action_CMD_SET_QUICK_RESPONSE_TYPE]]"
-  },
-  "args": [
-    {
-      "name": "device",
-      "type": "device",
-      "filter": "driver_id=driver_VIDEO_DOORBELL_1080P_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED&capabilities=CMD_DOORBELL_QUICK_RESPONSE"
+    "id": "action_CMD_DOORBELL_QUICK_RESPONSE",
+    "platforms": [
+        "local"
+    ],
+    "title": {
+        "en": "Send Quick Response",
+        "nl": "Stuur Spraakbericht",
+        "fr": "Envoyer une réponse rapide",
+        "da": "Send hurtig svar",
+        "de": "Schnelle Antwort senden",
+        "es": "Enviar respuesta rápida",
+        "it": "Invia risposta rapida",
+        "no": "Send raskt svar",
+        "sv": "Skicka snabb svar",
+        "pl": "Wyślij szybką odpowiedź",
+        "ru": "Отправить быстрый ответ",
+        "ko": "빠른 응답 보내기"
     },
-    {
-      "name": "action_CMD_SET_QUICK_RESPONSE_TYPE",
-      "type": "dropdown",
-      "title": {
-        "en": "Quick Response",
-        "nl": "Spraakbericht",
-        "fr": "Réponse rapide",
-        "da": "Hurtig svar",
-        "de": "Schnelle Antwort",
-        "es": "Respuesta rápida",
-        "it": "Risposta rapida",
-        "no": "Raskt svar",
-        "sv": "Snabb svar",
-        "pl": "Szybka odpowiedź",
-        "ru": "Быстрый ответ",
-        "ko": "빠른 응답"
-      },
-      "values": [
+    "titleFormatted": {
+        "en": "Send Quick Response [[action_CMD_SET_QUICK_RESPONSE_TYPE]]",
+        "nl": "Stuur Spraakbericht [[action_CMD_SET_QUICK_RESPONSE_TYPE]]",
+        "fr": "Envoyer une réponse rapide [[action_CMD_SET_QUICK_RESPONSE_TYPE]]",
+        "da": "Send hurtig svar [[action_CMD_SET_QUICK_RESPONSE_TYPE]]",
+        "de": "Schnelle Antwort senden [[action_CMD_SET_QUICK_RESPONSE_TYPE]]",
+        "es": "Enviar respuesta rápida [[action_CMD_SET_QUICK_RESPONSE_TYPE]]",
+        "it": "Invia risposta rapida [[action_CMD_SET_QUICK_RESPONSE_TYPE]]",
+        "no": "Send raskt svar [[action_CMD_SET_QUICK_RESPONSE_TYPE]]",
+        "sv": "Skicka snabb svar [[action_CMD_SET_QUICK_RESPONSE_TYPE]]",
+        "pl": "Wyślij szybką odpowiedź [[action_CMD_SET_QUICK_RESPONSE_TYPE]]",
+        "ru": "Отправить быстрый ответ [[action_CMD_SET_QUICK_RESPONSE_TYPE]]",
+        "ko": "빠른 응답 보내기 [[action_CMD_SET_QUICK_RESPONSE_TYPE]]"
+    },
+    "args": [
         {
-          "id": "1",
-          "label": {
-            "en": "Default response 1",
-            "nl": "Standaard bericht 1",
-            "fr": "Réponse par défaut 1",
-            "da": "Standard svar 1",
-            "de": "Standardantwort 1",
-            "es": "Respuesta predeterminada 1",
-            "it": "Risposta predefinita 1",
-            "no": "Standard svar 1",
-            "sv": "Standard svar 1",
-            "pl": "Domyślna odpowiedź 1",
-            "ru": "Ответ по умолчанию 1",
-            "ko": "기본 응답 1"
-          }
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=driver_VIDEO_DOORBELL_1080P_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED&capabilities=CMD_DOORBELL_QUICK_RESPONSE"
         },
         {
-          "id": "2",
-          "label": {
-            "en": "Default response 2",
-            "nl": "Standaard bericht 2",
-            "fr": "Réponse par défaut 2",
-            "da": "Standard svar 2",
-            "de": "Standardantwort 2",
-            "es": "Respuesta predeterminada 2",
-            "it": "Risposta predefinita 2",
-            "no": "Standard svar 2",
-            "sv": "Standard svar 2",
-            "pl": "Domyślna odpowiedź 2",
-            "ru": "Ответ по умолчанию 2",
-            "ko": "기본 응답 2"
-          }
-        },
-        {
-          "id": "3",
-          "label": {
-            "en": "Default response 3",
-            "nl": "Standaard bericht 3",
-            "fr": "Réponse par défaut 3",
-            "da": "Standard svar 3",
-            "de": "Standardantwort 3",
-            "es": "Respuesta predeterminada 3",
-            "it": "Risposta predefinita 3",
-            "no": "Standard svar 3",
-            "sv": "Standard svar 3",
-            "pl": "Domyślna odpowiedź 3",
-            "ru": "Ответ по умолчанию 3",
-            "ko": "기본 응답 3"
-          }
-        },
-        {
-          "id": "4",
-          "label": {
-            "en": "Custom response 1",
-            "nl": "Eigen bericht 1",
-            "fr": "Réponse personnalisée 1",
-            "da": "Brugerdefineret svar 1",
-            "de": "Benutzerdefinierte Antwort 1",
-            "es": "Respuesta personalizada 1",
-            "it": "Risposta personalizzata 1",
-            "no": "Tilpasset svar 1",
-            "sv": "Anpassat svar 1",
-            "pl": "Niestandardowa odpowiedź 1",
-            "ru": "Пользовательский ответ 1",
-            "ko": "사용자 정의 응답 1"
-          }
-        },
-        {
-          "id": "5",
-          "label": {
-            "en": "Custom response 2",
-            "nl": "Eigen bericht 2",
-            "fr": "Réponse personnalisée 2",
-            "da": "Brugerdefineret svar 2",
-            "de": "Benutzerdefinierte Antwort 2",
-            "es": "Respuesta personalizada 2",
-            "it": "Risposta personalizzata 2",
-            "no": "Tilpasset svar 2",
-            "sv": "Anpassat svar 2",
-            "pl": "Niestandardowa odpowiedź 2",
-            "ru": "Пользовательский ответ 2",
-            "ko": "사용자 정의 응답 2"
-          }
-        },
-        {
-          "id": "6",
-          "label": {
-            "en": "Custom response 3",
-            "nl": "Eigen bericht 3",
-            "fr": "Réponse personnalisée 3",
-            "da": "Brugerdefineret svar 3",
-            "de": "Benutzerdefinierte Antwort 3",
-            "es": "Respuesta personalizada 3",
-            "it": "Risposta personalizzata 3",
-            "no": "Tilpasset svar 3",
-            "sv": "Anpassat svar 3",
-            "pl": "Niestandardowa odpowiedź 3",
-            "ru": "Пользовательский ответ 3",
-            "ko": "사용자 정의 응답 3"
-          }
+            "name": "action_CMD_SET_QUICK_RESPONSE_TYPE",
+            "type": "dropdown",
+            "title": {
+                "en": "Quick Response",
+                "nl": "Spraakbericht",
+                "fr": "Réponse rapide",
+                "da": "Hurtig svar",
+                "de": "Schnelle Antwort",
+                "es": "Respuesta rápida",
+                "it": "Risposta rapida",
+                "no": "Raskt svar",
+                "sv": "Snabb svar",
+                "pl": "Szybka odpowiedź",
+                "ru": "Быстрый ответ",
+                "ko": "빠른 응답"
+            },
+            "values": [
+                {
+                    "id": "1",
+                    "label": {
+                        "en": "Default response 1",
+                        "nl": "Standaard bericht 1",
+                        "fr": "Réponse par défaut 1",
+                        "da": "Standard svar 1",
+                        "de": "Standardantwort 1",
+                        "es": "Respuesta predeterminada 1",
+                        "it": "Risposta predefinita 1",
+                        "no": "Standard svar 1",
+                        "sv": "Standard svar 1",
+                        "pl": "Domyślna odpowiedź 1",
+                        "ru": "Ответ по умолчанию 1",
+                        "ko": "기본 응답 1"
+                    }
+                },
+                {
+                    "id": "2",
+                    "label": {
+                        "en": "Default response 2",
+                        "nl": "Standaard bericht 2",
+                        "fr": "Réponse par défaut 2",
+                        "da": "Standard svar 2",
+                        "de": "Standardantwort 2",
+                        "es": "Respuesta predeterminada 2",
+                        "it": "Risposta predefinita 2",
+                        "no": "Standard svar 2",
+                        "sv": "Standard svar 2",
+                        "pl": "Domyślna odpowiedź 2",
+                        "ru": "Ответ по умолчанию 2",
+                        "ko": "기본 응답 2"
+                    }
+                },
+                {
+                    "id": "3",
+                    "label": {
+                        "en": "Default response 3",
+                        "nl": "Standaard bericht 3",
+                        "fr": "Réponse par défaut 3",
+                        "da": "Standard svar 3",
+                        "de": "Standardantwort 3",
+                        "es": "Respuesta predeterminada 3",
+                        "it": "Risposta predefinita 3",
+                        "no": "Standard svar 3",
+                        "sv": "Standard svar 3",
+                        "pl": "Domyślna odpowiedź 3",
+                        "ru": "Ответ по умолчанию 3",
+                        "ko": "기본 응답 3"
+                    }
+                },
+                {
+                    "id": "4",
+                    "label": {
+                        "en": "Custom response 1",
+                        "nl": "Eigen bericht 1",
+                        "fr": "Réponse personnalisée 1",
+                        "da": "Brugerdefineret svar 1",
+                        "de": "Benutzerdefinierte Antwort 1",
+                        "es": "Respuesta personalizada 1",
+                        "it": "Risposta personalizzata 1",
+                        "no": "Tilpasset svar 1",
+                        "sv": "Anpassat svar 1",
+                        "pl": "Niestandardowa odpowiedź 1",
+                        "ru": "Пользовательский ответ 1",
+                        "ko": "사용자 정의 응답 1"
+                    }
+                },
+                {
+                    "id": "5",
+                    "label": {
+                        "en": "Custom response 2",
+                        "nl": "Eigen bericht 2",
+                        "fr": "Réponse personnalisée 2",
+                        "da": "Brugerdefineret svar 2",
+                        "de": "Benutzerdefinierte Antwort 2",
+                        "es": "Respuesta personalizada 2",
+                        "it": "Risposta personalizzata 2",
+                        "no": "Tilpasset svar 2",
+                        "sv": "Anpassat svar 2",
+                        "pl": "Niestandardowa odpowiedź 2",
+                        "ru": "Пользовательский ответ 2",
+                        "ko": "사용자 정의 응답 2"
+                    }
+                },
+                {
+                    "id": "6",
+                    "label": {
+                        "en": "Custom response 3",
+                        "nl": "Eigen bericht 3",
+                        "fr": "Réponse personnalisée 3",
+                        "da": "Brugerdefineret svar 3",
+                        "de": "Benutzerdefinierte Antwort 3",
+                        "es": "Respuesta personalizada 3",
+                        "it": "Risposta personalizzata 3",
+                        "no": "Tilpasset svar 3",
+                        "sv": "Anpassat svar 3",
+                        "pl": "Niestandardowa odpowiedź 3",
+                        "ru": "Пользовательский ответ 3",
+                        "ko": "사용자 정의 응답 3"
+                    }
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }

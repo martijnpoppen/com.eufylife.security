@@ -1,79 +1,79 @@
 {
-  "id": "action_CMD_TRIGGER_ALARM",
-  "platforms": [
-    "local"
-  ],
-  "title": {
-    "en": "Turn generic alarm on",
-    "nl": "Zet algemeen alarm aan",
-    "fr": "Activer l'alarme générique",
-    "da": "Tænd for generisk alarm",
-    "de": "Allgemeinen Alarm einschalten",
-    "es": "Encender alarma genérica",
-    "it": "Attiva l'allarme generico",
-    "no": "Slå på generell alarm",
-    "sv": "Slå på generisk larm",
-    "pl": "Włącz ogólny alarm",
-    "ru": "Включить общий будильник",
-    "ko": "일반 경보를 켜기"
-  },
-  "titleFormatted": {
-    "en": "Turn generic alarm on for [[action_CMD_TRIGGER_ALARM_TIME]] seconds",
-    "nl": "Zet algemeen alarm aan voor [[action_CMD_TRIGGER_ALARM_TIME]] seconden",
-    "fr": "Activer l'alarme générique [[action_CMD_TRIGGER_ALARM_TIME]] secondes",
-    "da": "Tænd for generisk alarm i [[action_CMD_TRIGGER_ALARM_TIME]] sekunder",
-    "de": "Allgemeinen Alarm für [[action_CMD_TRIGGER_ALARM_TIME]] Sekunden einschalten",
-    "es": "Encender alarma genérica por [[action_CMD_TRIGGER_ALARM_TIME]] segundos",
-    "it": "Attiva l'allarme generico per [[action_CMD_TRIGGER_ALARM_TIME]] secondi",
-    "no": "Slå på generell alarm i [[action_CMD_TRIGGER_ALARM_TIME]] sekunder",
-    "sv": "Slå på generiskt larm i [[action_CMD_TRIGGER_ALARM_TIME]] sekunder",
-    "pl": "Włącz ogólny alarm na [[action_CMD_TRIGGER_ALARM_TIME]] sekund",
-    "ru": "Включить общий будильник на [[action_CMD_TRIGGER_ALARM_TIME]] секунд",
-    "ko": "[[action_CMD_TRIGGER_ALARM_TIME]]초 동안 일반 경보 켜기"
-  },
-  "args": [
-    {
-      "name": "device",
-      "type": "device",
-      "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_2_PRO|driver_EUFYCAM_3|driver_EUFYCAM_3C|driver_EUFYCAM_E|driver_EUFYCAM_E330|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_HOMEBASE|driver_HOMEBASE_1|driver_HOMEBASE_3|driver_HOMEBASE_CHIME|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_C|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED|driver_WALLLIGHT_CAM_S&capabilities=CMD_TRIGGER_ALARM"
-    },
-    {
-      "name": "action_CMD_TRIGGER_ALARM_TIME",
-      "type": "number",
-      "platforms": [
+    "id": "action_CMD_TRIGGER_ALARM",
+    "platforms": [
         "local"
-      ],
-      "title": {
-        "en": "Duration",
-        "nl": "Duur",
-        "fr": "Durée",
-        "da": "Varighed",
-        "de": "Dauer",
-        "es": "Duración",
-        "it": "Durata",
-        "no": "Varighet",
-        "sv": "Varaktighet",
-        "pl": "Czas trwania",
-        "ru": "Продолжительность",
-        "ko": "지속 시간"
-      },
-      "placeholder": {
-        "en": "In seconds",
-        "nl": "In seconden",
-        "fr": "En seconde",
-        "da": "I sekunder",
-        "de": "In Sekunden",
-        "es": "En segundos",
-        "it": "In secondi",
-        "no": "I sekunder",
-        "sv": "I sekunder",
-        "pl": "W sekundach",
-        "ru": "В секундах",
-        "ko": "초 단위"
-      },
-      "min": 30,
-      "max": 999999,
-      "step": 1
-    }
-  ]
+    ],
+    "title": {
+        "en": "Turn generic alarm on",
+        "nl": "Zet algemeen alarm aan",
+        "fr": "Activer l'alarme générique",
+        "da": "Tænd for generisk alarm",
+        "de": "Allgemeinen Alarm einschalten",
+        "es": "Encender alarma genérica",
+        "it": "Attiva l'allarme generico",
+        "no": "Slå på generell alarm",
+        "sv": "Slå på generisk larm",
+        "pl": "Włącz ogólny alarm",
+        "ru": "Включить общий будильник",
+        "ko": "일반 경보를 켜기"
+    },
+    "titleFormatted": {
+        "en": "Turn generic alarm on for [[action_CMD_TRIGGER_ALARM_TIME]] seconds",
+        "nl": "Zet algemeen alarm aan voor [[action_CMD_TRIGGER_ALARM_TIME]] seconden",
+        "fr": "Activer l'alarme générique [[action_CMD_TRIGGER_ALARM_TIME]] secondes",
+        "da": "Tænd for generisk alarm i [[action_CMD_TRIGGER_ALARM_TIME]] sekunder",
+        "de": "Allgemeinen Alarm für [[action_CMD_TRIGGER_ALARM_TIME]] Sekunden einschalten",
+        "es": "Encender alarma genérica por [[action_CMD_TRIGGER_ALARM_TIME]] segundos",
+        "it": "Attiva l'allarme generico per [[action_CMD_TRIGGER_ALARM_TIME]] secondi",
+        "no": "Slå på generell alarm i [[action_CMD_TRIGGER_ALARM_TIME]] sekunder",
+        "sv": "Slå på generiskt larm i [[action_CMD_TRIGGER_ALARM_TIME]] sekunder",
+        "pl": "Włącz ogólny alarm na [[action_CMD_TRIGGER_ALARM_TIME]] sekund",
+        "ru": "Включить общий будильник на [[action_CMD_TRIGGER_ALARM_TIME]] секунд",
+        "ko": "[[action_CMD_TRIGGER_ALARM_TIME]]초 동안 일반 경보 켜기"
+    },
+    "args": [
+        {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_2_PRO|driver_EUFYCAM_3|driver_EUFYCAM_3C|driver_EUFYCAM_E|driver_EUFYCAM_E330|driver_EUFYCAM_S3_PRO|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_HOMEBASE|driver_HOMEBASE_1|driver_HOMEBASE_3|driver_HOMEBASE_CHIME|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_C210_C220|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_C|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED|driver_WALLLIGHT_CAM_S&capabilities=CMD_TRIGGER_ALARM"
+        },
+        {
+            "name": "action_CMD_TRIGGER_ALARM_TIME",
+            "type": "number",
+            "platforms": [
+                "local"
+            ],
+            "title": {
+                "en": "Duration",
+                "nl": "Duur",
+                "fr": "Durée",
+                "da": "Varighed",
+                "de": "Dauer",
+                "es": "Duración",
+                "it": "Durata",
+                "no": "Varighet",
+                "sv": "Varaktighet",
+                "pl": "Czas trwania",
+                "ru": "Продолжительность",
+                "ko": "지속 시간"
+            },
+            "placeholder": {
+                "en": "In seconds",
+                "nl": "In seconden",
+                "fr": "En seconde",
+                "da": "I sekunder",
+                "de": "In Sekunden",
+                "es": "En segundos",
+                "it": "In secondi",
+                "no": "I sekunder",
+                "sv": "I sekunder",
+                "pl": "W sekundach",
+                "ru": "В секундах",
+                "ko": "초 단위"
+            },
+            "min": 30,
+            "max": 999999,
+            "step": 1
+        }
+    ]
 }

@@ -1,46 +1,9 @@
 {
-  "id": "action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH",
-  "platforms": [
-    "local"
-  ],
-  "title": {
-    "en": "Toggle Light",
-    "nl": "Zet lamp aan/uit",
-    "fr": "Activer la lumière",
-    "da": "Skift lys",
-    "de": "Licht umschalten",
-    "es": "Alternar luz",
-    "it": "Accendi / Spegni luce",
-    "no": "Bytt lys",
-    "sv": "Växla ljus",
-    "pl": "Przełącz światło",
-    "ru": "Переключить свет",
-    "ko": "조명 전환"
-  },
-  "titleFormatted": {
-    "en": "Toggle Light [[action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE]]",
-    "nl": "Zet lamp [[action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE]]",
-    "fr": "Activer la lumière [[action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE]]",
-    "da": "Skift lys [[action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE]]",
-    "de": "Licht umschalten [[action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE]]",
-    "es": "Alternar luz [[action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE]]",
-    "it": "Accendi / Spegni luce [[action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE]]",
-    "no": "Bytt lys [[action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE]]",
-    "sv": "Växla ljus [[action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE]]",
-    "pl": "Przełącz światło [[action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE]]",
-    "ru": "Переключить свет [[action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE]]",
-    "ko": "조명 전환 [[action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE]]"
-  },
-  "args": [
-    {
-      "name": "device",
-      "type": "device",
-      "filter": "driver_id=driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_3|driver_EUFYCAM_3C|driver_EUFYCAM_E330|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED|driver_WALLLIGHT_CAM_S&capabilities=CMD_SET_FLOODLIGHT_MANUAL_SWITCH"
-    },
-    {
-      "name": "action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE",
-      "type": "dropdown",
-      "title": {
+    "id": "action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH",
+    "platforms": [
+        "local"
+    ],
+    "title": {
         "en": "Toggle Light",
         "nl": "Zet lamp aan/uit",
         "fr": "Activer la lumière",
@@ -53,43 +16,80 @@
         "pl": "Przełącz światło",
         "ru": "Переключить свет",
         "ko": "조명 전환"
-      },
-      "values": [
+    },
+    "titleFormatted": {
+        "en": "Toggle Light [[action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE]]",
+        "nl": "Zet lamp [[action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE]]",
+        "fr": "Activer la lumière [[action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE]]",
+        "da": "Skift lys [[action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE]]",
+        "de": "Licht umschalten [[action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE]]",
+        "es": "Alternar luz [[action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE]]",
+        "it": "Accendi / Spegni luce [[action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE]]",
+        "no": "Bytt lys [[action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE]]",
+        "sv": "Växla ljus [[action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE]]",
+        "pl": "Przełącz światło [[action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE]]",
+        "ru": "Переключить свет [[action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE]]",
+        "ko": "조명 전환 [[action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE]]"
+    },
+    "args": [
         {
-          "id": "1",
-          "label": {
-            "en": "On",
-            "nl": "Aan",
-            "fr": "On",
-            "da": "Tændt",
-            "de": "An",
-            "es": "Encendida",
-            "it": "Acceso",
-            "no": "På",
-            "sv": "På",
-            "pl": "Włączone",
-            "ru": "Вкл",
-            "ko": "켜짐"
-          }
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_3|driver_EUFYCAM_3C|driver_EUFYCAM_E330|driver_EUFYCAM_S3_PRO|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED|driver_WALLLIGHT_CAM_S&capabilities=CMD_SET_FLOODLIGHT_MANUAL_SWITCH"
         },
         {
-          "id": "0",
-          "label": {
-            "en": "Off",
-            "nl": "Uit",
-            "fr": "Off",
-            "da": "Slukket",
-            "de": "Aus",
-            "es": "Apagada",
-            "it": "Spento",
-            "no": "Av",
-            "sv": "Av",
-            "pl": "Wyłączone",
-            "ru": "Выкл",
-            "ko": "꺼짐"
-          }
+            "name": "action_CMD_SET_FLOODLIGHT_MANUAL_SWITCH_TYPE",
+            "type": "dropdown",
+            "title": {
+                "en": "Toggle Light",
+                "nl": "Zet lamp aan/uit",
+                "fr": "Activer la lumière",
+                "da": "Skift lys",
+                "de": "Licht umschalten",
+                "es": "Alternar luz",
+                "it": "Accendi / Spegni luce",
+                "no": "Bytt lys",
+                "sv": "Växla ljus",
+                "pl": "Przełącz światło",
+                "ru": "Переключить свет",
+                "ko": "조명 전환"
+            },
+            "values": [
+                {
+                    "id": "1",
+                    "label": {
+                        "en": "On",
+                        "nl": "Aan",
+                        "fr": "On",
+                        "da": "Tændt",
+                        "de": "An",
+                        "es": "Encendida",
+                        "it": "Acceso",
+                        "no": "På",
+                        "sv": "På",
+                        "pl": "Włączone",
+                        "ru": "Вкл",
+                        "ko": "켜짐"
+                    }
+                },
+                {
+                    "id": "0",
+                    "label": {
+                        "en": "Off",
+                        "nl": "Uit",
+                        "fr": "Off",
+                        "da": "Slukket",
+                        "de": "Aus",
+                        "es": "Apagada",
+                        "it": "Spento",
+                        "no": "Av",
+                        "sv": "Av",
+                        "pl": "Wyłączone",
+                        "ru": "Выкл",
+                        "ko": "꺼짐"
+                    }
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }

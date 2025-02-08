@@ -1,280 +1,280 @@
 {
-  "id": "action_CMD_SET_SNOOZE_MODE_CHIME",
-  "platforms": [
-    "local"
-  ],
-  "title": {
-    "en": "Set snooze mode",
-    "nl": "Zet snooze modus",
-    "fr": "Définir le mode 'snooze'",
-    "da": "Indstil snooze-tilstand",
-    "de": "Schlummermodus einstellen",
-    "es": "Configurar modo de repetición",
-    "it": "Imposta modalità sonnellino",
-    "no": "Sett slumremodus",
-    "sv": "Ställ in snooze-läge",
-    "pl": "Ustaw tryb drzemki",
-    "ru": "Установить режим повтора",
-    "ko": "스누즈 모드 설정"
-  },
-  "titleFormatted": {
-    "en": "Set snooze mode [[chime]] [[motion]] for [[snooze]]",
-    "nl": "Zet snooze modus [[chime]] [[motion]] voor [[snooze]]",
-    "fr": "Définir le mode 'snooze' [[chime]] [[motion]] pour [[snooze]]",
-    "da": "Indstil snooze-tilstand [[chime]] [[motion]] for [[snooze]]",
-    "de": "Schlummermodus einstellen [[chime]] [[motion]] für [[snooze]]",
-    "es": "Configurar modo de repetición [[chime]] [[motion]] para [[snooze]]",
-    "it": "Imposta modalità sonnellino [[chime]] [[motion]] per [[snooze]]",
-    "no": "Sett slumremodus [[chime]] [[motion]] for [[snooze]]",
-    "sv": "Ställ in snooze-läge [[chime]] [[motion]] för [[snooze]]",
-    "pl": "Ustaw tryb drzemki [[chime]] [[motion]] dla [[snooze]]",
-    "ru": "Установить режим повтора [[chime]] [[motion]] на [[snooze]]",
-    "ko": "스누즈 모드 설정 [[chime]] [[motion]] 시간 [[snooze]]"
-  },
-  "args": [
-    {
-      "name": "device",
-      "type": "device",
-      "filter": "driver_id=driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_POWERED&capabilities=CMD_SET_SNOOZE_MODE_CHIME"
-    },
-    {
-      "name": "chime",
-      "platforms": [
+    "id": "action_CMD_SET_SNOOZE_MODE_CHIME",
+    "platforms": [
         "local"
-      ],
-      "title": {
-        "en": "Chime Snooze",
-        "nl": "Chime Snooze",
-        "fr": "Chime Snooze",
-        "da": "Chime Snooze",
-        "de": "Chime Snooze",
-        "es": "Chime Snooze",
-        "it": "Chime Snooze",
-        "no": "Chime Snooze",
-        "sv": "Chime Snooze",
-        "pl": "Chime Snooze",
-        "ru": "Chime Snooze",
-        "ko": "Chime Snooze"
-      },
-      "type": "dropdown",
-      "values": [
-        {
-          "id": "1",
-          "label": {
-            "en": "On",
-            "nl": "Aan",
-            "fr": "On",
-            "da": "On",
-            "de": "Ein",
-            "es": "Encendido",
-            "it": "Acceso",
-            "no": "På",
-            "sv": "På",
-            "pl": "Włączone",
-            "ru": "Вкл",
-            "ko": "켜기"
-          }
-        },
-        {
-          "id": "0",
-          "label": {
-            "en": "Off",
-            "nl": "Uit",
-            "fr": "Off",
-            "da": "Off",
-            "de": "Aus",
-            "es": "Apagado",
-            "it": "Spento",
-            "no": "Av",
-            "sv": "Av",
-            "pl": "Wyłączone",
-            "ru": "Выкл",
-            "ko": "끄기"
-          }
-        }
-      ]
+    ],
+    "title": {
+        "en": "Set snooze mode",
+        "nl": "Zet snooze modus",
+        "fr": "Définir le mode 'snooze'",
+        "da": "Indstil snooze-tilstand",
+        "de": "Schlummermodus einstellen",
+        "es": "Configurar modo de repetición",
+        "it": "Imposta modalità sonnellino",
+        "no": "Sett slumremodus",
+        "sv": "Ställ in snooze-läge",
+        "pl": "Ustaw tryb drzemki",
+        "ru": "Установить режим повтора",
+        "ko": "스누즈 모드 설정"
     },
-    {
-      "name": "motion",
-      "platforms": [
-        "local"
-      ],
-      "title": {
-        "en": "Motion Snooze",
-        "nl": "Motion Snooze",
-        "fr": "Pause détection de mouvement",
-        "da": "Bevægelsessnooze",
-        "de": "Bewegungsschlummer",
-        "es": "Repetición de movimiento",
-        "it": "Snooze movimento",
-        "no": "Bevegelsesslumring",
-        "sv": "Rörelsesnedstängning",
-        "pl": "Drzemka ruchu",
-        "ru": "Пауза движения",
-        "ko": "모션 스누즈"
-      },
-      "type": "dropdown",
-      "values": [
-        {
-          "id": "1",
-          "label": {
-            "en": "On",
-            "nl": "Aan",
-            "fr": "On",
-            "da": "On",
-            "de": "Ein",
-            "es": "Encendido",
-            "it": "Acceso",
-            "no": "På",
-            "sv": "På",
-            "pl": "Włączone",
-            "ru": "Вкл",
-            "ko": "켜기"
-          }
-        },
-        {
-          "id": "0",
-          "label": {
-            "en": "Off",
-            "nl": "Uit",
-            "fr": "Off",
-            "da": "Off",
-            "de": "Aus",
-            "es": "Apagado",
-            "it": "Spento",
-            "no": "Av",
-            "sv": "Av",
-            "pl": "Wyłączone",
-            "ru": "Выкл",
-            "ko": "끄기"
-          }
-        }
-      ]
+    "titleFormatted": {
+        "en": "Set snooze mode [[chime]] [[motion]] for [[snooze]]",
+        "nl": "Zet snooze modus [[chime]] [[motion]] voor [[snooze]]",
+        "fr": "Définir le mode 'snooze' [[chime]] [[motion]] pour [[snooze]]",
+        "da": "Indstil snooze-tilstand [[chime]] [[motion]] for [[snooze]]",
+        "de": "Schlummermodus einstellen [[chime]] [[motion]] für [[snooze]]",
+        "es": "Configurar modo de repetición [[chime]] [[motion]] para [[snooze]]",
+        "it": "Imposta modalità sonnellino [[chime]] [[motion]] per [[snooze]]",
+        "no": "Sett slumremodus [[chime]] [[motion]] for [[snooze]]",
+        "sv": "Ställ in snooze-läge [[chime]] [[motion]] för [[snooze]]",
+        "pl": "Ustaw tryb drzemki [[chime]] [[motion]] dla [[snooze]]",
+        "ru": "Установить режим повтора [[chime]] [[motion]] на [[snooze]]",
+        "ko": "스누즈 모드 설정 [[chime]] [[motion]] 시간 [[snooze]]"
     },
-    {
-      "name": "snooze",
-      "platforms": [
-        "local"
-      ],
-      "title": {
-        "en": "Duration",
-        "nl": "Tijdsduur",
-        "fr": "Durée",
-        "da": "Varighed",
-        "de": "Dauer",
-        "es": "Duración",
-        "it": "Durata",
-        "no": "Varighet",
-        "sv": "Varaktighet",
-        "pl": "Czas trwania",
-        "ru": "Длительность",
-        "ko": "지속 시간"
-      },
-      "type": "dropdown",
-      "values": [
+    "args": [
         {
-          "id": "0",
-          "label": {
-            "en": "0 minutes",
-            "nl": "0 minuten",
-            "fr": "0 minute",
-            "da": "0 minutter",
-            "de": "0 Minuten",
-            "es": "0 minutos",
-            "it": "0 minuti",
-            "no": "0 minutter",
-            "sv": "0 minuter",
-            "pl": "0 minut",
-            "ru": "0 минут",
-            "ko": "0분"
-          }
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_POWERED&capabilities=CMD_SET_SNOOZE_MODE_CHIME"
         },
         {
-          "id": "1800",
-          "label": {
-            "en": "30 minutes",
-            "nl": "30 minuten",
-            "fr": "30 minutes",
-            "da": "30 minutter",
-            "de": "30 Minuten",
-            "es": "30 minutos",
-            "it": "30 minuti",
-            "no": "30 minutter",
-            "sv": "30 minuter",
-            "pl": "30 minut",
-            "ru": "30 минут",
-            "ko": "30분"
-          }
+            "name": "chime",
+            "platforms": [
+                "local"
+            ],
+            "title": {
+                "en": "Chime Snooze",
+                "nl": "Chime Snooze",
+                "fr": "Chime Snooze",
+                "da": "Chime Snooze",
+                "de": "Chime Snooze",
+                "es": "Chime Snooze",
+                "it": "Chime Snooze",
+                "no": "Chime Snooze",
+                "sv": "Chime Snooze",
+                "pl": "Chime Snooze",
+                "ru": "Chime Snooze",
+                "ko": "Chime Snooze"
+            },
+            "type": "dropdown",
+            "values": [
+                {
+                    "id": "1",
+                    "label": {
+                        "en": "On",
+                        "nl": "Aan",
+                        "fr": "On",
+                        "da": "On",
+                        "de": "Ein",
+                        "es": "Encendido",
+                        "it": "Acceso",
+                        "no": "På",
+                        "sv": "På",
+                        "pl": "Włączone",
+                        "ru": "Вкл",
+                        "ko": "켜기"
+                    }
+                },
+                {
+                    "id": "0",
+                    "label": {
+                        "en": "Off",
+                        "nl": "Uit",
+                        "fr": "Off",
+                        "da": "Off",
+                        "de": "Aus",
+                        "es": "Apagado",
+                        "it": "Spento",
+                        "no": "Av",
+                        "sv": "Av",
+                        "pl": "Wyłączone",
+                        "ru": "Выкл",
+                        "ko": "끄기"
+                    }
+                }
+            ]
         },
         {
-          "id": "3600",
-          "label": {
-            "en": "1 hour",
-            "nl": "1 uur",
-            "fr": "1 heure",
-            "da": "1 time",
-            "de": "1 Stunde",
-            "es": "1 hora",
-            "it": "1 ora",
-            "no": "1 time",
-            "sv": "1 timme",
-            "pl": "1 godzina",
-            "ru": "1 час",
-            "ko": "1시간"
-          }
+            "name": "motion",
+            "platforms": [
+                "local"
+            ],
+            "title": {
+                "en": "Motion Snooze",
+                "nl": "Motion Snooze",
+                "fr": "Pause détection de mouvement",
+                "da": "Bevægelsessnooze",
+                "de": "Bewegungsschlummer",
+                "es": "Repetición de movimiento",
+                "it": "Snooze movimento",
+                "no": "Bevegelsesslumring",
+                "sv": "Rörelsesnedstängning",
+                "pl": "Drzemka ruchu",
+                "ru": "Пауза движения",
+                "ko": "모션 스누즈"
+            },
+            "type": "dropdown",
+            "values": [
+                {
+                    "id": "1",
+                    "label": {
+                        "en": "On",
+                        "nl": "Aan",
+                        "fr": "On",
+                        "da": "On",
+                        "de": "Ein",
+                        "es": "Encendido",
+                        "it": "Acceso",
+                        "no": "På",
+                        "sv": "På",
+                        "pl": "Włączone",
+                        "ru": "Вкл",
+                        "ko": "켜기"
+                    }
+                },
+                {
+                    "id": "0",
+                    "label": {
+                        "en": "Off",
+                        "nl": "Uit",
+                        "fr": "Off",
+                        "da": "Off",
+                        "de": "Aus",
+                        "es": "Apagado",
+                        "it": "Spento",
+                        "no": "Av",
+                        "sv": "Av",
+                        "pl": "Wyłączone",
+                        "ru": "Выкл",
+                        "ko": "끄기"
+                    }
+                }
+            ]
         },
         {
-          "id": "7200",
-          "label": {
-            "en": "2 hours",
-            "nl": "2 uur",
-            "fr": "2 heures",
-            "da": "2 timer",
-            "de": "2 Stunden",
-            "es": "2 horas",
-            "it": "2 ore",
-            "no": "2 timer",
-            "sv": "2 timmar",
-            "pl": "2 godziny",
-            "ru": "2 часа",
-            "ko": "2시간"
-          }
-        },
-        {
-          "id": "21600",
-          "label": {
-            "en": "6 hours",
-            "nl": "6 uur",
-            "fr": "6 heures",
-            "da": "6 timer",
-            "de": "6 Stunden",
-            "es": "6 horas",
-            "it": "6 ore",
-            "no": "6 timer",
-            "sv": "6 timmar",
-            "pl": "6 godzin",
-            "ru": "6 часов",
-            "ko": "6시간"
-          }
-        },
-        {
-          "id": "43200",
-          "label": {
-            "en": "12 hours",
-            "nl": "12 uur",
-            "fr": "12 heures",
-            "da": "12 timer",
-            "de": "12 Stunden",
-            "es": "12 horas",
-            "it": "12 ore",
-            "no": "12 timer",
-            "sv": "12 timmar",
-            "pl": "12 godzin",
-            "ru": "12 часов",
-            "ko": "12시간"
-          }
+            "name": "snooze",
+            "platforms": [
+                "local"
+            ],
+            "title": {
+                "en": "Duration",
+                "nl": "Tijdsduur",
+                "fr": "Durée",
+                "da": "Varighed",
+                "de": "Dauer",
+                "es": "Duración",
+                "it": "Durata",
+                "no": "Varighet",
+                "sv": "Varaktighet",
+                "pl": "Czas trwania",
+                "ru": "Длительность",
+                "ko": "지속 시간"
+            },
+            "type": "dropdown",
+            "values": [
+                {
+                    "id": "0",
+                    "label": {
+                        "en": "0 minutes",
+                        "nl": "0 minuten",
+                        "fr": "0 minute",
+                        "da": "0 minutter",
+                        "de": "0 Minuten",
+                        "es": "0 minutos",
+                        "it": "0 minuti",
+                        "no": "0 minutter",
+                        "sv": "0 minuter",
+                        "pl": "0 minut",
+                        "ru": "0 минут",
+                        "ko": "0분"
+                    }
+                },
+                {
+                    "id": "1800",
+                    "label": {
+                        "en": "30 minutes",
+                        "nl": "30 minuten",
+                        "fr": "30 minutes",
+                        "da": "30 minutter",
+                        "de": "30 Minuten",
+                        "es": "30 minutos",
+                        "it": "30 minuti",
+                        "no": "30 minutter",
+                        "sv": "30 minuter",
+                        "pl": "30 minut",
+                        "ru": "30 минут",
+                        "ko": "30분"
+                    }
+                },
+                {
+                    "id": "3600",
+                    "label": {
+                        "en": "1 hour",
+                        "nl": "1 uur",
+                        "fr": "1 heure",
+                        "da": "1 time",
+                        "de": "1 Stunde",
+                        "es": "1 hora",
+                        "it": "1 ora",
+                        "no": "1 time",
+                        "sv": "1 timme",
+                        "pl": "1 godzina",
+                        "ru": "1 час",
+                        "ko": "1시간"
+                    }
+                },
+                {
+                    "id": "7200",
+                    "label": {
+                        "en": "2 hours",
+                        "nl": "2 uur",
+                        "fr": "2 heures",
+                        "da": "2 timer",
+                        "de": "2 Stunden",
+                        "es": "2 horas",
+                        "it": "2 ore",
+                        "no": "2 timer",
+                        "sv": "2 timmar",
+                        "pl": "2 godziny",
+                        "ru": "2 часа",
+                        "ko": "2시간"
+                    }
+                },
+                {
+                    "id": "21600",
+                    "label": {
+                        "en": "6 hours",
+                        "nl": "6 uur",
+                        "fr": "6 heures",
+                        "da": "6 timer",
+                        "de": "6 Stunden",
+                        "es": "6 horas",
+                        "it": "6 ore",
+                        "no": "6 timer",
+                        "sv": "6 timmar",
+                        "pl": "6 godzin",
+                        "ru": "6 часов",
+                        "ko": "6시간"
+                    }
+                },
+                {
+                    "id": "43200",
+                    "label": {
+                        "en": "12 hours",
+                        "nl": "12 uur",
+                        "fr": "12 heures",
+                        "da": "12 timer",
+                        "de": "12 Stunden",
+                        "es": "12 horas",
+                        "it": "12 ore",
+                        "no": "12 timer",
+                        "sv": "12 timmar",
+                        "pl": "12 godzin",
+                        "ru": "12 часов",
+                        "ko": "12시간"
+                    }
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }

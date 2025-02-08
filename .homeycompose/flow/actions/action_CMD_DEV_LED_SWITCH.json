@@ -1,95 +1,95 @@
 {
-  "id": "action_CMD_DEV_LED_SWITCH",
-  "platforms": [
-    "local"
-  ],
-  "title": {
-    "en": "Toggle Light",
-    "nl": "Zet lamp aan/uit",
-    "fr": "Activer la lumière",
-    "da": "Tænd/sluk lys",
-    "de": "Licht ein/aus schalten",
-    "es": "Encender/apagar la luz",
-    "it": "Accendi/spegni la luce",
-    "no": "Slå av/på lys",
-    "sv": "Slå på/av ljus",
-    "pl": "Włącz/wyłącz światło",
-    "ru": "Включить/выключить свет",
-    "ko": "조명 켜기/끄기"
-  },
-  "titleFormatted": {
-    "en": "Toggle status LED [[action_CMD_DEV_LED_SWITCH_TYPE]]",
-    "nl": "Zet status LED [[action_CMD_DEV_LED_SWITCH_TYPE]]",
-    "fr": "Activer la lumière LED [[action_CMD_DEV_LED_SWITCH_TYPE]]",
-    "da": "Tænd/sluk status LED [[action_CMD_DEV_LED_SWITCH_TYPE]]",
-    "de": "Status-LED [[action_CMD_DEV_LED_SWITCH_TYPE]] ein/aus schalten",
-    "es": "Encender/apagar LED de estado [[action_CMD_DEV_LED_SWITCH_TYPE]]",
-    "it": "Accendi/spegni LED di stato [[action_CMD_DEV_LED_SWITCH_TYPE]]",
-    "no": "Slå av/på status LED [[action_CMD_DEV_LED_SWITCH_TYPE]]",
-    "sv": "Slå på/av status-LED [[action_CMD_DEV_LED_SWITCH_TYPE]]",
-    "pl": "Włącz/wyłącz diodę LED [[action_CMD_DEV_LED_SWITCH_TYPE]]",
-    "ru": "Включить/выключить индикатор состояния [[action_CMD_DEV_LED_SWITCH_TYPE]]",
-    "ko": "상태 LED [[action_CMD_DEV_LED_SWITCH_TYPE]] 켜기/끄기"
-  },
-  "args": [
-    {
-      "name": "device",
-      "type": "device",
-      "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_2_PRO|driver_EUFYCAM_3|driver_EUFYCAM_3C|driver_EUFYCAM_E|driver_EUFYCAM_E330|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_C|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_1080P_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED|driver_WALLLIGHT_CAM_S&capabilities=CMD_DEV_LED_SWITCH"
+    "id": "action_CMD_DEV_LED_SWITCH",
+    "platforms": [
+        "local"
+    ],
+    "title": {
+        "en": "Toggle Light",
+        "nl": "Zet lamp aan/uit",
+        "fr": "Activer la lumière",
+        "da": "Tænd/sluk lys",
+        "de": "Licht ein/aus schalten",
+        "es": "Encender/apagar la luz",
+        "it": "Accendi/spegni la luce",
+        "no": "Slå av/på lys",
+        "sv": "Slå på/av ljus",
+        "pl": "Włącz/wyłącz światło",
+        "ru": "Включить/выключить свет",
+        "ko": "조명 켜기/끄기"
     },
-    {
-      "name": "action_CMD_DEV_LED_SWITCH_TYPE",
-      "type": "dropdown",
-      "title": {
-        "en": "Toggle status LED",
-        "nl": "Zet status LED",
-        "fr": "Activer la lumière LED",
-        "da": "Tænd/sluk status LED",
-        "de": "Status-LED ein/aus schalten",
-        "es": "Encender/apagar LED de estado",
-        "it": "Accendi/spegni LED di stato",
-        "no": "Slå av/på status LED",
-        "sv": "Slå på/av status-LED",
-        "pl": "Włącz/wyłącz diodę LED",
-        "ru": "Включить/выключить индикатор состояния",
-        "ko": "상태 LED 켜기/끄기"
-      },
-      "values": [
+    "titleFormatted": {
+        "en": "Toggle status LED [[action_CMD_DEV_LED_SWITCH_TYPE]]",
+        "nl": "Zet status LED [[action_CMD_DEV_LED_SWITCH_TYPE]]",
+        "fr": "Activer la lumière LED [[action_CMD_DEV_LED_SWITCH_TYPE]]",
+        "da": "Tænd/sluk status LED [[action_CMD_DEV_LED_SWITCH_TYPE]]",
+        "de": "Status-LED [[action_CMD_DEV_LED_SWITCH_TYPE]] ein/aus schalten",
+        "es": "Encender/apagar LED de estado [[action_CMD_DEV_LED_SWITCH_TYPE]]",
+        "it": "Accendi/spegni LED di stato [[action_CMD_DEV_LED_SWITCH_TYPE]]",
+        "no": "Slå av/på status LED [[action_CMD_DEV_LED_SWITCH_TYPE]]",
+        "sv": "Slå på/av status-LED [[action_CMD_DEV_LED_SWITCH_TYPE]]",
+        "pl": "Włącz/wyłącz diodę LED [[action_CMD_DEV_LED_SWITCH_TYPE]]",
+        "ru": "Включить/выключить индикатор состояния [[action_CMD_DEV_LED_SWITCH_TYPE]]",
+        "ko": "상태 LED [[action_CMD_DEV_LED_SWITCH_TYPE]] 켜기/끄기"
+    },
+    "args": [
         {
-          "id": "1",
-          "label": {
-            "en": "On",
-            "nl": "Aan",
-            "fr": "On",
-            "da": "Tændt",
-            "de": "Ein",
-            "es": "Encendido",
-            "it": "Acceso",
-            "no": "På",
-            "sv": "På",
-            "pl": "Włączony",
-            "ru": "Включено",
-            "ko": "켜짐"
-          }
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_2_PRO|driver_EUFYCAM_3|driver_EUFYCAM_3C|driver_EUFYCAM_E|driver_EUFYCAM_E330|driver_EUFYCAM_S3_PRO|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_C210_C220|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_C|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_1080P_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED|driver_WALLLIGHT_CAM_S&capabilities=CMD_DEV_LED_SWITCH"
         },
         {
-          "id": "0",
-          "label": {
-            "en": "Off",
-            "nl": "Uit",
-            "fr": "Off",
-            "da": "Slukket",
-            "de": "Aus",
-            "es": "Apagado",
-            "it": "Spento",
-            "no": "Av",
-            "sv": "Av",
-            "pl": "Wyłączony",
-            "ru": "Выключено",
-            "ko": "꺼짐"
-          }
+            "name": "action_CMD_DEV_LED_SWITCH_TYPE",
+            "type": "dropdown",
+            "title": {
+                "en": "Toggle status LED",
+                "nl": "Zet status LED",
+                "fr": "Activer la lumière LED",
+                "da": "Tænd/sluk status LED",
+                "de": "Status-LED ein/aus schalten",
+                "es": "Encender/apagar LED de estado",
+                "it": "Accendi/spegni LED di stato",
+                "no": "Slå av/på status LED",
+                "sv": "Slå på/av status-LED",
+                "pl": "Włącz/wyłącz diodę LED",
+                "ru": "Включить/выключить индикатор состояния",
+                "ko": "상태 LED 켜기/끄기"
+            },
+            "values": [
+                {
+                    "id": "1",
+                    "label": {
+                        "en": "On",
+                        "nl": "Aan",
+                        "fr": "On",
+                        "da": "Tændt",
+                        "de": "Ein",
+                        "es": "Encendido",
+                        "it": "Acceso",
+                        "no": "På",
+                        "sv": "På",
+                        "pl": "Włączony",
+                        "ru": "Включено",
+                        "ko": "켜짐"
+                    }
+                },
+                {
+                    "id": "0",
+                    "label": {
+                        "en": "Off",
+                        "nl": "Uit",
+                        "fr": "Off",
+                        "da": "Slukket",
+                        "de": "Aus",
+                        "es": "Apagado",
+                        "it": "Spento",
+                        "no": "Av",
+                        "sv": "Av",
+                        "pl": "Wyłączony",
+                        "ru": "Выключено",
+                        "ko": "꺼짐"
+                    }
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }

@@ -1,95 +1,95 @@
 {
-  "id": "action_CMD_BAT_DOORBELL_WDR_SWITCH",
-  "platforms": [
-    "local"
-  ],
-  "title": {
-    "en": "Toggle WDR switch",
-    "nl": "Zet WDR aan/uit",
-    "fr": "Basculer le commutateur WDR",
-    "da": "Skift WDR-omskifter",
-    "de": "WDR-Schalter umschalten",
-    "es": "Cambiar interruptor WDR",
-    "it": "Attiva/disattiva interruttore WDR",
-    "no": "Slå WDR-bryter av/på",
-    "sv": "Växla WDR-omkopplare",
-    "pl": "Przełącznik WDR",
-    "ru": "Переключить переключатель WDR",
-    "ko": "WDR 스위치 전환"
-  },
-  "titleFormatted": {
-    "en": "Toggle WDR switch [[action_CMD_BAT_DOORBELL_WDR_SWITCH_TYPE]]",
-    "nl": "Zet WDR [[action_CMD_BAT_DOORBELL_WDR_SWITCH_TYPE]]",
-    "fr": "Basculer le commutateur WDR en [[action_CMD_BAT_DOORBELL_WDR_SWITCH_TYPE]]",
-    "da": "Skift WDR-omskifter [[action_CMD_BAT_DOORBELL_WDR_SWITCH_TYPE]]",
-    "de": "WDR-Schalter umschalten [[action_CMD_BAT_DOORBELL_WDR_SWITCH_TYPE]]",
-    "es": "Cambiar interruptor WDR [[action_CMD_BAT_DOORBELL_WDR_SWITCH_TYPE]]",
-    "it": "Attiva/disattiva interruttore WDR [[action_CMD_BAT_DOORBELL_WDR_SWITCH_TYPE]]",
-    "no": "Slå WDR-bryter av/på [[action_CMD_BAT_DOORBELL_WDR_SWITCH_TYPE]]",
-    "sv": "Växla WDR-omkopplare [[action_CMD_BAT_DOORBELL_WDR_SWITCH_TYPE]]",
-    "pl": "Przełącznik WDR [[action_CMD_BAT_DOORBELL_WDR_SWITCH_TYPE]]",
-    "ru": "Переключить переключатель WDR [[action_CMD_BAT_DOORBELL_WDR_SWITCH_TYPE]]",
-    "ko": "WDR 스위치 전환 [[action_CMD_BAT_DOORBELL_WDR_SWITCH_TYPE]]"
-  },
-  "args": [
-    {
-      "name": "device",
-      "type": "device",
-      "filter": "driver_id=driver_VIDEO_DOORBELL_1080P_BATTERY|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_DUAL_BATTERY&capabilities=CMD_BAT_DOORBELL_WDR_SWITCH"
-    },
-    {
-      "name": "action_CMD_BAT_DOORBELL_WDR_SWITCH_TYPE",
-      "type": "dropdown",
-      "title": {
-        "en": "WDR switch",
-        "nl": "WDR",
-        "fr": "Commutateur WDR",
-        "da": "WDR-omskifter",
-        "de": "WDR-Schalter",
-        "es": "Interruptor WDR",
-        "it": "Interruttore WDR",
-        "no": "WDR-bryter",
-        "sv": "WDR-omkopplare",
+    "id": "action_CMD_BAT_DOORBELL_WDR_SWITCH",
+    "platforms": [
+        "local"
+    ],
+    "title": {
+        "en": "Toggle WDR switch",
+        "nl": "Zet WDR aan/uit",
+        "fr": "Basculer le commutateur WDR",
+        "da": "Skift WDR-omskifter",
+        "de": "WDR-Schalter umschalten",
+        "es": "Cambiar interruptor WDR",
+        "it": "Attiva/disattiva interruttore WDR",
+        "no": "Slå WDR-bryter av/på",
+        "sv": "Växla WDR-omkopplare",
         "pl": "Przełącznik WDR",
-        "ru": "Переключатель WDR",
-        "ko": "WDR 스위치"
-      },
-      "values": [
+        "ru": "Переключить переключатель WDR",
+        "ko": "WDR 스위치 전환"
+    },
+    "titleFormatted": {
+        "en": "Toggle WDR switch [[action_CMD_BAT_DOORBELL_WDR_SWITCH_TYPE]]",
+        "nl": "Zet WDR [[action_CMD_BAT_DOORBELL_WDR_SWITCH_TYPE]]",
+        "fr": "Basculer le commutateur WDR en [[action_CMD_BAT_DOORBELL_WDR_SWITCH_TYPE]]",
+        "da": "Skift WDR-omskifter [[action_CMD_BAT_DOORBELL_WDR_SWITCH_TYPE]]",
+        "de": "WDR-Schalter umschalten [[action_CMD_BAT_DOORBELL_WDR_SWITCH_TYPE]]",
+        "es": "Cambiar interruptor WDR [[action_CMD_BAT_DOORBELL_WDR_SWITCH_TYPE]]",
+        "it": "Attiva/disattiva interruttore WDR [[action_CMD_BAT_DOORBELL_WDR_SWITCH_TYPE]]",
+        "no": "Slå WDR-bryter av/på [[action_CMD_BAT_DOORBELL_WDR_SWITCH_TYPE]]",
+        "sv": "Växla WDR-omkopplare [[action_CMD_BAT_DOORBELL_WDR_SWITCH_TYPE]]",
+        "pl": "Przełącznik WDR [[action_CMD_BAT_DOORBELL_WDR_SWITCH_TYPE]]",
+        "ru": "Переключить переключатель WDR [[action_CMD_BAT_DOORBELL_WDR_SWITCH_TYPE]]",
+        "ko": "WDR 스위치 전환 [[action_CMD_BAT_DOORBELL_WDR_SWITCH_TYPE]]"
+    },
+    "args": [
         {
-          "id": "1",
-          "label": {
-            "en": "On",
-            "nl": "Aan",
-            "fr": "On",
-            "da": "Tændt",
-            "de": "Ein",
-            "es": "Encendido",
-            "it": "Acceso",
-            "no": "På",
-            "sv": "På",
-            "pl": "Włączony",
-            "ru": "Включено",
-            "ko": "켜짐"
-          }
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=driver_VIDEO_DOORBELL_1080P_BATTERY|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_DUAL_BATTERY&capabilities=CMD_BAT_DOORBELL_WDR_SWITCH"
         },
         {
-          "id": "0",
-          "label": {
-            "en": "Off",
-            "nl": "Uit",
-            "fr": "Off",
-            "da": "Slukket",
-            "de": "Aus",
-            "es": "Apagado",
-            "it": "Spento",
-            "no": "Av",
-            "sv": "Av",
-            "pl": "Wyłączony",
-            "ru": "Выключено",
-            "ko": "꺼짐"
-          }
+            "name": "action_CMD_BAT_DOORBELL_WDR_SWITCH_TYPE",
+            "type": "dropdown",
+            "title": {
+                "en": "WDR switch",
+                "nl": "WDR",
+                "fr": "Commutateur WDR",
+                "da": "WDR-omskifter",
+                "de": "WDR-Schalter",
+                "es": "Interruptor WDR",
+                "it": "Interruttore WDR",
+                "no": "WDR-bryter",
+                "sv": "WDR-omkopplare",
+                "pl": "Przełącznik WDR",
+                "ru": "Переключатель WDR",
+                "ko": "WDR 스위치"
+            },
+            "values": [
+                {
+                    "id": "1",
+                    "label": {
+                        "en": "On",
+                        "nl": "Aan",
+                        "fr": "On",
+                        "da": "Tændt",
+                        "de": "Ein",
+                        "es": "Encendido",
+                        "it": "Acceso",
+                        "no": "På",
+                        "sv": "På",
+                        "pl": "Włączony",
+                        "ru": "Включено",
+                        "ko": "켜짐"
+                    }
+                },
+                {
+                    "id": "0",
+                    "label": {
+                        "en": "Off",
+                        "nl": "Uit",
+                        "fr": "Off",
+                        "da": "Slukket",
+                        "de": "Aus",
+                        "es": "Apagado",
+                        "it": "Spento",
+                        "no": "Av",
+                        "sv": "Av",
+                        "pl": "Wyłączony",
+                        "ru": "Выключено",
+                        "ko": "꺼짐"
+                    }
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }
