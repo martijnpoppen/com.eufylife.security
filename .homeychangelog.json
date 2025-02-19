@@ -1591,5 +1591,8 @@
   },
   "3.31.1": {
     "en": "NEW: add new icons for new cameras | NEW: Homebase 3 improved icon"
+  },
+  "3.31.2": {
+    "en": "FIX: C210 & C220 properties"
   }
 }
