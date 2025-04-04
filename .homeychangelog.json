@@ -1597,5 +1597,8 @@
   },
   "3.32.1": {
     "en": "NEW: Add Doorbell C30 ||||  NEW: Add Doorbell C31 @Henk_Nachtegaal ||||  FIX: Indoor cam C210 & C220 - NightVision @Mike73 ||||  FIX: Doorbell E340 (and other cameras) - Device Alarm - @Bear84 ||||  FIX: Wall Light Cam S120 - Pet detection - @loy80y ||||  FIX: On/Off Indoor Cam Pan Tilt icm HB3 @Akeran @Lukasz_Kostek"
+  },
+  "3.32.2": {
+    "en": "FIX: nightvision C210/C220 | FIX: Indoor cam P&T on/off due to new FW"
   }
 }
