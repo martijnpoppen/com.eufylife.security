@@ -398,9 +398,13 @@ module.exports = class mainDevice extends Homey.Device {
         try {
             this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_IRCUT_SWITCH - `, value);
 
-            await this.homey.app.eufyClient.setDeviceProperty(this.HomeyDevice.device_sn, PropertyName.DeviceNightvision, value);
-            await this.homey.app.eufyClient.setDeviceProperty(this.HomeyDevice.device_sn, PropertyName.DeviceAutoNightvision, value);            
-
+            
+            if(this.EufyDevice.hasProperty(PropertyName.DeviceNightvision)) {
+                await this.homey.app.eufyClient.setDeviceProperty(this.HomeyDevice.device_sn, PropertyName.DeviceNightvision, value);
+            } else {
+                await this.homey.app.eufyClient.setDeviceProperty(this.HomeyDevice.device_sn, PropertyName.DeviceAutoNightvision, value);
+            }
+            
             return Promise.resolve(true);
         } catch (e) {
             this.homey.app.error(e);

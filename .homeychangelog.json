@@ -1600,5 +1600,29 @@
   },
   "3.32.2": {
     "en": "FIX: nightvision C210/C220 | FIX: Indoor cam P&T on/off due to new FW"
+  },
+  "3.32.4": {
+    "en": "FIX: nightvision C210/C220"
+  },
+  "3.32.5": {
+    "en": "1: FIX: Indoor cam C210 & C220 - NightVision"
+  },
+  "3.32.6": {
+    "en": "FIX: nighvision C210/C220"
+  },
+  "3.32.7": {
+    "en": "FIX: Indoor Cam P&T E220 on/off"
+  },
+  "3.32.8": {
+    "en": "FIX: Indoor Cam P&T E220 on/off"
+  },
+  "3.32.9": {
+    "en": "FIX: Indoor Cam P&T E220 on/off"
+  },
+  "3.33.0": {
+    "en": "NEW: IndoorCam P&T E30 - (T8417)"
+  },
+  "3.33.1": {
+    "en": "NEW: IndoorCam P&T E30 - (T8417)"
   }
 }

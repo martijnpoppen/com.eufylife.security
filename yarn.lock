@@ -277,9 +277,9 @@ es-errors@^1.3.0:
   integrity sha512-Zf5H2Kxt2xjTvbJvP2ZWLEICxA6j+hAmMzIlypy4xcBg1vKVnx89Wy0GbS+kf5cwCVFFzdCFh2XSCFNULS6csw==
 
 "eufy-security-client@https://github.com/martijnpoppen/eufy-security-client/tarball/homey-integration":
-  version "3.1.1"
+  version "3.2.0"
   resolved "https://github.com/martijnpoppen/eufy-security-client/tarball/homey-integration"
-  integrity sha512-iA6NULxPOvHlsFLfDgM0wkO2zSduUuqFqIbQ4Jz/j4uoTcMBe8oYayZvj9LjlQRAxVY87SYTbqUNdrhlR8aLlQ==
+  integrity sha512-Y9pGA1621h8N1GOauh+wEW7uYSX3M1jo9ZyYvbAg4ZPZVshwoKM1ZYoMyEDdoAaw/8xrmQVYeHbLTEr2M8k4oA==
   dependencies:
     "@cospired/i18n-iso-languages" "^4.2.0"
     crypto-js "^4.2.0"

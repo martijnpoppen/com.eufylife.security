@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.eufylife.security",
-  "version": "3.32.2",
+  "version": "3.33.1",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "brandColor": "#2a6185",
@@ -19395,18 +19395,18 @@
         }
       ],
       "name": {
-        "en": "Indoor Cam Pan & Tilt (C210 / C220)",
-        "nl": "Indoor Cam Pan & Tilt (C210 / C220)",
-        "fr": "Indoor Cam Pan & Tilt (C210 / C220)",
-        "da": "Indoor Cam Pan & Tilt (C210 / C220)",
-        "de": "Indoor Cam Pan & Tilt (C210 / C220)",
-        "es": "Indoor Cam Pan y Tilt (C210 / C220)",
-        "it": "Indoor Cam Pan & Tilt (C210 / C220)",
-        "no": "Indoor Cam Pan & Tilt (C210 / C220)",
-        "sv": "Indoor Cam Pan & Tilt (C210 / C220)",
-        "pl": "Indoor Cam Pan & Tilt (C210 / C220)",
-        "ru": "Внутренняя камера Pan & Tilt (C210 / C220)",
-        "ko": "실내 카메라 팬 & 틸트 (C210 / C220)"
+        "en": "Indoor Cam Pan & Tilt (C210 / C220 / E30)",
+        "nl": "Indoor Cam Pan & Tilt (C210 / C220 / E30)",
+        "fr": "Indoor Cam Pan & Tilt (C210 / C220 / E30)",
+        "da": "Indoor Cam Pan & Tilt (C210 / C220 / E30)",
+        "de": "Indoor Cam Pan & Tilt (C210 / C220 / E30)",
+        "es": "Indoor Cam Pan y Tilt (C210 / C220 / E30)",
+        "it": "Indoor Cam Pan & Tilt (C210 / C220 / E30)",
+        "no": "Indoor Cam Pan & Tilt (C210 / C220 / E30)",
+        "sv": "Indoor Cam Pan & Tilt (C210 / C220 / E30)",
+        "pl": "Indoor Cam Pan & Tilt (C210 / C220 / E30)",
+        "ru": "Внутренняя камера Pan & Tilt (C210 / C220 / E30)",
+        "ko": "실내 카메라 팬 & 틸트 (C210 / C220 / E30)"
       },
       "class": "camera",
       "capabilities": [
