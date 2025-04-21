@@ -1,0 +1,79 @@
+{
+    "id": "trigger_NTFY_KNOWN_FACE_DETECTION",
+    "platforms": [
+        "local"
+    ],
+    "title": {
+        "en": "Known Person Detected",
+        "nl": "Bekend Persoon Gedetecteerd",
+        "fr": "Personne connue détectée",
+        "da": "Kendt person opdaget",
+        "de": "Bekannte Person erkannt",
+        "es": "Persona conocida detectada",
+        "it": "Persona conosciuta rilevata",
+        "no": "Kjent person oppdaget",
+        "sv": "Känd person upptäckt",
+        "pl": "Wykryto znaną osobę",
+        "ru": "Обнаружен известный человек",
+        "ko": "알려진 사람 감지됨"
+    },
+    "titleFormatted": {
+       "en": "Known Person Detected",
+        "nl": "Bekend Persoon Gedetecteerd",
+        "fr": "Personne connue détectée",
+        "da": "Kendt person opdaget",
+        "de": "Bekannte Person erkannt",
+        "es": "Persona conocida detectada",
+        "it": "Persona conosciuta rilevata",
+        "no": "Kjent person oppdaget",
+        "sv": "Känd person upptäckt",
+        "pl": "Wykryto znaną osobę",
+        "ru": "Обнаружен известный человек",
+        "ko": "알려진 사람 감지됨"
+    },
+    "hint": {
+        "en": "This flowcard will contain a known person token (Dual doorbell / Homebase 3 only)",
+        "nl": "Deze flowkaart bevat een bekend persoon token (Alleen voor Dual deurbel en Homebase 3)",
+        "fr": "Cette carte de flux contiendra un jeton de personne connue (sonnette double / Homebase 3 uniquement)",
+        "da": "Dette flowkort vil indeholde en kendt person-token (Kun Dual dørklokke / Homebase 3)",
+        "de": "Diese Flowcard enthält ein bekanntes Personentoken (nur Dual-Türklingel / Homebase 3)",
+        "es": "Esta tarjeta de flujo contendrá un token de persona conocida (Solo timbre dual / Homebase 3)",
+        "it": "Questa scheda di flusso conterrà un token di persona conosciuta (Solo campanello Dual / Homebase 3)",
+        "no": "Dette flytkortet vil inneholde en kjent person-token (Kun Dual dørklokke / Homebase 3)",
+        "sv": "Detta flödeskort kommer att innehålla en känd person-token (Endast Dual dörrklocka / Homebase 3)",
+        "pl": "Ta karta przepływu będzie zawierać token znanej osoby (tylko podwójny dzwonek / Homebase 3)",
+        "ru": "Эта карта потока будет содержать токен известного человека (Только двойной дверной звонок / Homebase 3)",
+        "ko": "이 흐름카드는 알려진 사람 토큰을 포함할 것입니다 (듀얼 도어벨 / 홈베이스 3 전용)"
+    },
+    "tokens": [
+        {
+            "name": "user",
+            "type": "string",
+            "platforms": [
+                "local"
+            ],
+            "title": {
+                "en": "Person",
+                "nl": "Persoon",
+                "fr": "Personne",
+                "da": "Person",
+                "de": "Person",
+                "es": "Persona",
+                "it": "Persona",
+                "no": "Person",
+                "sv": "Person",
+                "pl": "Osoba",
+                "ru": "Человек",
+                "ko": "사람"
+            },
+            "example": "John Doe"
+        }
+    ],
+    "args": [
+        {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_2_PRO|driver_EUFYCAM_3|driver_EUFYCAM_3C|driver_EUFYCAM_E330|driver_EUFYCAM_S3_PRO|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_C210_C220|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_C|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_1080P_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED|driver_WALLLIGHT_CAM_S&capabilities=NTFY_KNOWN_FACE_DETECTION"
+        }
+    ]
+}

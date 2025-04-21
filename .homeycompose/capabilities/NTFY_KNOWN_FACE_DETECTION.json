@@ -1,0 +1,23 @@
+{
+  "id": "NTFY_KNOWN_FACE_DETECTION",
+  "type": "string",
+  "uiComponent": "sensor",
+  "getable": true,
+  "setable": true,
+  "icon": "assets/icons/person-fill.svg",
+  "insights": false,
+  "title": {
+    "en": "Known Person Detected",
+    "nl": "Bekend persoon gedetecteerd",
+    "fr": "Personne connue détectée",
+    "da": "Kendt person opdaget",
+    "de": "Bekannte Person erkannt",
+    "es": "Persona conocida detectada",
+    "it": "Persona conosciuta rilevata",
+    "no": "Kjent person oppdaget",
+    "sv": "Känd person upptäckt",
+    "pl": "Wykryto znaną osobę",
+    "ru": "Обнаружен известный человек",
+    "ko": "알려진 사람 감지됨"
+  }
+}

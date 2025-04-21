@@ -1,0 +1,60 @@
+{
+    "id": "condition_KNOWN_FACE",
+    "platforms": [
+        "local"
+    ],
+    "title": {
+        "en": "Known Person !{{is|isn't}}",
+        "nl": "Bekende persoon !{{is|is niet}}",
+        "fr": "Personne connue !{{est|n'est pas}}",
+        "da": "Kendt person !{{er|er ikke}}",
+        "de": "Bekannte Person !{{ist|ist nicht}}",
+        "es": "Persona conocida !{{está|no está}}",
+        "it": "Persona conosciuta !{{è|non è}}",
+        "no": "Kjent person !{{er|er ikke}}",
+        "sv": "Känd person !{{är|är inte}}",
+        "pl": "Znana osoba !{{jest|nie jest}}",
+        "ru": "Известный человек !{{есть|нет}}",
+        "ko": "알려진 사람 !{{이다|아니다}}"
+    },
+    "titleFormatted": {
+        "en": "Known Person !{{is|isn't}} [[condition_KNOWN_FACE]]",
+        "nl": "Bekende persoon !{{is|is niet}} [[condition_KNOWN_FACE]]",
+        "fr": "Personne connue !{{est|n'est pas}} [[condition_KNOWN_FACE]]",
+        "da": "Kendt person !{{er|er ikke}} [[condition_KNOWN_FACE]]",
+        "de": "Bekannte Person !{{ist|ist nicht}} [[condition_KNOWN_FACE]]",
+        "es": "Persona conocida !{{está|no está}} [[condition_KNOWN_FACE]]",
+        "it": "Persona conosciuta !{{è|non è}} [[condition_KNOWN_FACE]]",
+        "no": "Kjent person !{{er|er ikke}} [[condition_KNOWN_FACE]]",
+        "sv": "Känd person !{{är|är inte}} [[condition_KNOWN_FACE]]",
+        "pl": "Znana osoba !{{jest|nie jest}} [[condition_KNOWN_FACE]]",
+        "ru": "Известный человек !{{есть|нет}} [[condition_KNOWN_FACE]]",
+        "ko": "알려진 사람 !{{이다|아니다}} [[condition_KNOWN_FACE]]"
+    },
+    "args": [
+        {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_2_PRO|driver_EUFYCAM_3|driver_EUFYCAM_3C|driver_EUFYCAM_E330|driver_EUFYCAM_S3_PRO|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_C210_C220|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_C|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_1080P_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED|driver_WALLLIGHT_CAM_S&capabilities=NTFY_FACE_DETECTION"
+        },
+        {
+            "name": "condition_KNOWN_FACE",
+            "type": "text",
+            "title": {
+                "en": "Known Person",
+                "nl": "Bekende persoon",
+                "fr": "Personne connue",
+                "da": "Kendt person",
+                "de": "Bekannte Person",
+                "es": "Persona conocida",
+                "it": "Persona conosciuta",
+                "no": "Kjent person",
+                "sv": "Känd person",
+                "pl": "Znana osoba",
+                "ru": "Известный человек",
+                "ko": "알려진 사람"
+            },
+            "value": ""
+        }
+    ]
+}

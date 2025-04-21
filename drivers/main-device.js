@@ -563,7 +563,13 @@ module.exports = class mainDevice extends Homey.Device {
 
             if (this.hasCapability(message)) {
                 if (isNormalEvent) {
-                    await this.setCapabilityValue(message, true).catch(this.error);
+                    
+                    if(typeof value === 'string') {
+                        await this.setCapabilityValue(message, value).catch(this.error);
+                    } else {
+                        await this.setCapabilityValue(message, true).catch(this.error);
+                    }
+                    
 
                     if (setMotionAlarm) {
                         await this.setCapabilityValue('alarm_motion', true).catch(this.error);
@@ -573,7 +579,10 @@ module.exports = class mainDevice extends Homey.Device {
                     await this.set_alarm_arm_mode(value);
                 }
 
-                this.startTimeout(message, isNormalEvent, setMotionAlarm);
+                // check if boolean value
+                if (typeof value === 'boolean') {
+                    this.startTimeout(message, isNormalEvent, setMotionAlarm);
+                }
             }
 
             return Promise.resolve(true);
