@@ -1624,5 +1624,11 @@
   },
   "3.33.1": {
     "en": "NEW: IndoorCam P&T E30 - (T8417)"
+  },
+  "3.34.0": {
+    "en": "NEW: ADD known face flowcards and sensor info"
+  },
+  "3.34.1": {
+    "en": "NEW: ADD known face flowcards and sensor info"
   }
 }
