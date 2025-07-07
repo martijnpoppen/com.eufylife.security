@@ -1630,5 +1630,11 @@
   },
   "3.34.1": {
     "en": "NEW: ADD known face flowcards and sensor info"
+  },
+  "3.35.0": {
+    "en": "Multiple fixes"
+  },
+  "3.35.1": {
+    "en": "FIX: push notifications not coming trough"
   }
 }
