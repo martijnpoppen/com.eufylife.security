@@ -1639,5 +1639,11 @@
   },
   "3.35.3": {
     "en": "FIX: standalone arm mode change notification"
+  },
+  "3.35.4": {
+    "en": "FIX: Push notifications not coming in"
+  },
+  "3.35.6": {
+    "en": "FIX: push notifications"
   }
 }
