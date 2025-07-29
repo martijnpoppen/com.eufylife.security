@@ -257,16 +257,16 @@ class App extends Homey.App {
 
     async sendNotifications() {
         try {
-            const ntfy2024013003 = `[Eufy Security] (1/1) - NEW: Snapshot flowcard added! Enable snapshots in the device settings. (see info icon in settings before usage)`;
+            const ntfy2025070901 = `[Eufy Security] - INFO: Currently the Eufy App has a notification issue causing notifications not coming trough in Homey. See: https://tinyurl.com/eufy-homey-info for more information.`;
 
-            if (!this.appSettings.NOTIFICATIONS.includes('ntfy2024013003')) {
+            if (!this.appSettings.NOTIFICATIONS.includes('ntfy2025070901')) {
                 await this.homey.notifications.createNotification({
-                    excerpt: ntfy2024013003
+                    excerpt: ntfy2025070901
                 });
 
                 await this.updateSettings({
                     ...this.appSettings,
-                    NOTIFICATIONS: [...this.appSettings.NOTIFICATIONS, 'ntfy2024013003']
+                    NOTIFICATIONS: [...this.appSettings.NOTIFICATIONS, 'ntfy2025070901']
                 });
             }
         } catch (error) {

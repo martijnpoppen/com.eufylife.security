@@ -1645,5 +1645,8 @@
   },
   "3.35.6": {
     "en": "FIX: push notifications"
+  },
+  "3.36.0": {
+    "en": "FIX: Eufy handles a strict country check, causing devices not showing up. This version fixes that"
   }
 }
