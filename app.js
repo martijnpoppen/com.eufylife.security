@@ -119,8 +119,6 @@ class App extends Homey.App {
             this.log('onStartup - Loaded settings', { ...this.appSettings, USERNAME: 'LOG', PASSWORD: 'LOG', PERSISTENT_DATA: 'LOG' });
 
             if ('USERNAME' in this.appSettings && this.appSettings.USERNAME.length) {
-                this.eufyRegionSwitchAllowed = true;
-
                 await this.setEufyClient();
             }
         } catch (error) {
@@ -146,7 +144,6 @@ class App extends Homey.App {
         this.deviceList = [];
         this.deviceTypes = DEVICE_TYPES;
 
-        this.eufyRegionSwitchAllowed = false;
         this.eufyClientConnected = false;
         this.eufyClient = null;
 
@@ -389,7 +386,7 @@ class App extends Homey.App {
             const config = {
                 username: this.appSettings.USERNAME,
                 password: this.appSettings.PASSWORD,
-                country: this.appSettings.REGION,
+                country: this.appSettings.REGION || 'US',
                 language: 'EN',
                 persistentData: this.appSettings.PERSISTENT_DATA,
                 trustedDeviceName: this.appSettings.TRUSTED_DEVICE_NAME,
@@ -398,7 +395,7 @@ class App extends Homey.App {
                 acceptInvitations: true,
                 pollingIntervalMinutes: 30,
                 eventDurationSeconds: 15,
-                p2pConnectionSetup: 'quickest',
+                p2pConnectionSetup: 2,
                 enableEmbeddedPKCS1Support: enableEmbeddedPKCS1Support && snapshotEnabled,
                 logging: {
                     level: LogLevel.Info
@@ -481,40 +478,10 @@ class App extends Homey.App {
         this.eufyClient.once('connect', async () => {
             this.warn('Event: connected');
 
-            this.switchRegions();
-        });
-    }
-
-    async switchRegions() {
-        await sleep(4000);
-        const eufyDevices = await this.eufyClient.getDevices();
-
-        this.debug('switchRegions', { region: this.appSettings.REGION, eufyRegionSwitchAllowed: this.eufyRegionSwitchAllowed, deviceList: this.deviceList.length, eufyDevices: eufyDevices.length });
-
-        if (this.eufyRegionSwitchAllowed && this.deviceList.length && !eufyDevices.length) {
-            const REGION = this.appSettings.REGION === 'US' ? 'EU' : 'US';
-
-            this.eufyRegionSwitchAllowed = false;
-
-            this.log('switchRegions restart eufyClient with region: ', REGION);
-
-            await this.updateSettings({
-                ...this.appSettings,
-                REGION: REGION
-            });
-
-            await sleep(200);
-
-            this.setEufyClient(true);
-        } else if (!this.eufyClientConnected) {
-            this.eufyRegionSwitchAllowed = false;
-            this.eufyClientConnected = true;
-
-            await sleep(4000);
-
+            await sleep(6000);
             await this.initEvents();
             await this.initDevices(true);
-        }
+        });
     }
 
     async setDevice(device) {
