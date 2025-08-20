@@ -1648,5 +1648,8 @@
   },
   "3.36.0": {
     "en": "FIX: Eufy handles a strict country check, causing devices not showing up. This version fixes that"
+  },
+  "3.36.1": {
+    "en": "FIX: add country dropdown to pairing view"
   }
 }
