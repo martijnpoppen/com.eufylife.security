@@ -10,17 +10,16 @@ const { DEVICE_TYPES } = require('./constants/device_types.js');
 const flowActions = require('./lib/flow/actions.js');
 const flowConditions = require('./lib/flow/conditions.js');
 const flowTriggers = require('./lib/flow/triggers.js');
+
 const eufyNotificationCheckHelper = require('./lib/helpers/eufy-notification-check.helper');
 const eufyEventsHelper = require('./lib/helpers/eufy-events.helper');
+const FfmpegManager = require('./lib/helpers/eufy-stream.helper');
 
 const { sleep, randomNumber } = require('./lib/utils');
 
 const Logger = require('./lib/helpers/eufy-logger.helper');
 
 const _settingsKey = `${Homey.manifest.id}.settings`;
-
-const fs = require('fs');
-const path = require('path');
 
 class App extends Homey.App {
     trace() {
@@ -63,58 +62,10 @@ class App extends Homey.App {
         }
     }
 
-    async copyUserdataFile(file) {
-        const persistentDir = path.resolve(__dirname, '/userdata/');
-        const localDir = path.resolve('./userdata/');
-
-        this.log('copyUserdataFile', file);
-
-        try {
-            await fs.promises.copyFile(path.resolve(localDir, file), path.resolve(persistentDir, file));
-        } catch (error) {
-            this.error('copyUserdataFile - error', error);
-        }
-    }
-
-    enableEmbeddedPKCS1Support() {
-        this.log(`enableEmbeddedPKCS1Support - running on node: ${process.version}`);
-
-        const nodeVersion = process.version.replace('v', '');
-        const nodeBaseVersion = nodeVersion.split('.')[0];
-        let nodeVersionResult = -1;
-
-        switch (parseInt(nodeBaseVersion)) {
-            case 18:
-                nodeVersionResult = nodeVersion.localeCompare('18.19.1', undefined, { numeric: true, sensitivity: 'base' });
-                break;
-            case 20:
-                nodeVersionResult = nodeVersion.localeCompare('20.11.1', undefined, { numeric: true, sensitivity: 'base' });
-                break;
-            case 21:
-                nodeVersionResult = nodeVersion.localeCompare('21.6.2', undefined, { numeric: true, sensitivity: 'base' });
-                break;
-            default:
-                nodeVersionResult = -1;
-                break;
-        }
-
-        this.debug('enableEmbeddedPKCS1Support - nodeVersionInfo', { nodeVersion, nodeBaseVersion, nodeVersionResult });
-
-        if (nodeVersionResult === 1 || nodeVersionResult === 0) {
-            this.warn(`enableEmbeddedPKCS1Support - Needs REVERT_CVE_2023_46809`);
-            return true;
-        }
-
-        this.warn(`enableEmbeddedPKCS1Support - Not needed REVERT_CVE_2023_46809`);
-
-        return false;
-    }
-
     async initApp() {
         try {
             await this.initSettings();
             await this.sendNotifications();
-            await this.copyUserdataFile('ding-dong.mp3');
 
             this.log('onStartup - Loaded settings', { ...this.appSettings, USERNAME: 'LOG', PASSWORD: 'LOG', PERSISTENT_DATA: 'LOG' });
 
@@ -150,7 +101,7 @@ class App extends Homey.App {
         this.needCaptcha = null;
         this.need2FA = null;
 
-        this.snapshots = {};
+        this.streamPort = null;
 
         this.homey.settings.getKeys().forEach((key) => {
             if (key == _settingsKey) {
@@ -279,6 +230,7 @@ class App extends Homey.App {
             flowConditions.init(this.homey);
             flowTriggers.init(this.homey);
 
+            this.FfmpegManager = new FfmpegManager(this.homey);
             this.eufyNotificationCheckHelper = new eufyNotificationCheckHelper(this.homey);
             this.eufyEventsHelper = new eufyEventsHelper(this.homey);
         }
@@ -378,11 +330,6 @@ class App extends Homey.App {
     // ---------------------------- eufyClient ----------------------------------
     async setEufyClient(devicesLoaded = false) {
         try {
-            const enableEmbeddedPKCS1Support = this.enableEmbeddedPKCS1Support();
-            const snapshotEnabled = this.deviceList.some((device) => device.getSettings().snapshot_enabled);
-
-            this.log('setEufyClient - enableEmbeddedPKCS1Support & snapshotEnabled: ', enableEmbeddedPKCS1Support && snapshotEnabled);
-
             const config = {
                 username: this.appSettings.USERNAME,
                 password: this.appSettings.PASSWORD,
@@ -396,7 +343,6 @@ class App extends Homey.App {
                 pollingIntervalMinutes: 30,
                 eventDurationSeconds: 15,
                 p2pConnectionSetup: 2,
-                enableEmbeddedPKCS1Support: enableEmbeddedPKCS1Support && snapshotEnabled,
                 logging: {
                     level: LogLevel.Info
                 },

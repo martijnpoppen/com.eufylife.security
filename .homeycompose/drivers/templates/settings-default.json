@@ -93,26 +93,37 @@
           "value": false
         },
         {
-          "id": "snapshot_enabled",
-          "hint": {
-            "en": "NOTE: The snapshot card will use a external service which runs FFMPEG to generate the snapshot. This service is hosted by the developer of this app and is free to use. The service will only be used when the snapshot setting is enabled. All data is send encrypted and will not be stored on the server."
-          },
-          "type": "checkbox",
+          "id": "rtsp_enabled",
+          "type": "label",
           "label": {
-            "en": "Enable snapshots",
-            "nl": "Activeer snapshots",
-            "fr": "Activer les instantanés",
-            "da": "Aktiver snapshots",
-            "de": "Schnappschüsse aktivieren",
-            "es": "Habilitar instantáneas",
-            "it": "Abilita istantanee",
-            "no": "Aktiver øyeblikksbilder",
-            "sv": "Aktivera ögonblicksbilder",
-            "pl": "Włącz zdjęcia",
-            "ru": "Включить снимки",
-            "ko": "스냅샷 활성화"
+            "en": "RTSP streaming",
+            "nl": "RTSP streaming",
+            "fr": "Streaming RTSP",
+            "da": "RTSP-streaming",
+            "de": "RTSP-Streaming",
+            "es": "Transmisión RTSP",
+            "it": "Streaming RTSP",
+            "no": "RTSP-strømming",
+            "sv": "RTSP-strömning",
+            "pl": "Strumieniowanie RTSP",
+            "ru": "Потоковая передача RTSP",
+            "ko": "RTSP 스트리밍"
           },
-          "value": false
+          "hint": {
+            "en": "RTSP streaming is available for devices that support RTSP natively (Mostly hard wired cameras). Make sure to enable RTSP in the Eufy app first.",
+            "nl": "RTSP streaming is beschikbaar voor apparaten die RTSP native ondersteunen (meestal bedrade camera's). Zorg ervoor dat RTSP eerst in de Eufy-app is ingeschakeld.",
+            "fr": "Le streaming RTSP est disponible pour les appareils qui prennent en charge le RTSP nativement (principalement les caméras filaires). Assurez-vous d'activer le RTSP dans l'application Eufy en premier.",
+            "da": "RTSP-streaming er tilgængelig for enheder, der understøtter RTSP nativere (for det meste kablede kameraer). Sørg for at aktivere RTSP i Eufy-appen først.",
+            "de": "RTSP-Streaming ist für Geräte verfügbar, die RTSP nativ unterstützen (meistens kabelgebundene Kameras). Stellen Sie Sie sicher, dass RTSP zuerst in der Eufy-App aktiviert ist.",
+            "es": "La transmisión RTSP está disponible para dispositivos que admiten RTSP de forma nativa (principalmente cámaras con cable). Asegúrate de habilitar RTSP en la aplicación Eufy primero.",
+            "it": "Lo streaming RTSP è disponibile per i dispositivi che supportano nativamente RTSP (principalmente telecamere cablate). Assicurati di abilitare prima RTSP nell'app Eufy.",
+            "no": "RTSP-strømming er tilgjengelig for enheter som støtter RTSP nativt (for det meste kablede kameraer). Sørg for å aktivere RTSP i Eufy-appen først.",
+            "sv": "RTSP-strömning är tillgänglig för enheter som stöder RTSP nativt (mest trådbundna kameror). Se till att aktivera RTSP i Eufy-appen först.",
+            "pl": "Strumieniowanie RTSP jest dostępne dla urządzeń, które natywnie obsługują RTSP (głównie kamery przewodowe). Upewnij się, że najpierw włączysz RTSP w aplikacji Eufy.",
+            "ru": "Потоковая передача RTSP доступна для устройств, которые поддерживают RTSP на аппаратном уровне (в основном проводные камеры). Сначала убедитесь, что RTSP включен в приложении Eufy.",
+            "ko": "RTSP 스트리밍은 RTSP를 기본적으로 지원하는 장치(대부분 유선 카메라)에서 사용할 수 있습니다. 먼저 Eufy 앱에서 RTSP를 활성화해야 합니다."
+          },
+          "value": "Not supported"
         }
       ]
     },

@@ -1651,5 +1651,8 @@
   },
   "3.36.1": {
     "en": "FIX: add country dropdown to pairing view"
+  },
+  "3.37.0": {
+    "en": "NEW: Implement custom RSA encryption layer to decrease memory usage for snapshots.  | FIX: Implement extra logging to debug person detection"
   }
 }
