@@ -1651,5 +1651,26 @@
   },
   "3.36.1": {
     "en": "FIX: add country dropdown to pairing view"
+  },
+  "3.37.0": {
+    "en": "NEW: Implement custom RSA encryption layer to decrease memory usage for snapshots.  | FIX: Implement extra logging to debug person detection"
+  },
+  "3.38.0": {
+    "en": "NEW: Local snapshots | NEW: Video Streaming | FIX: memory leaks due to snapshots"
+  },
+  "3.38.1": {
+    "en": "FIX: deprecated flowcard"
+  },
+  "3.38.2": {
+    "en": "FIX: revert battery saving fixes which actually didn’t save battery | FIX: check if device has streaming capability to prevent crashes on non camera devices"
+  },
+  "3.38.3": {
+    "en": "FIX: eufyCam E330 Professional (T8600) didn't have RTSP in the Eufy SDK"
+  },
+  "3.38.4": {
+    "en": "NEW: Local snapshots | NEW: Video Streaming | FIX: memory leaks due to snapshots"
+  },
+  "3.39.0": {
+    "en": "NEW: Start RTSP stream when requested, should prevent the auto RTSP kill because of the Eufy firmware | FIX: battery drain | FIX: snapshot not updating"
   }
 }

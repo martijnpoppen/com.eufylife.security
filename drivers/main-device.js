@@ -1,10 +1,9 @@
-'use strict';
-
 const Homey = require('homey');
-const fetch = require('node-fetch');
 const { ARM_TYPES } = require('../constants/capability_types');
-const { sleep, bufferToStream, isNil, keyByValue } = require('../lib/utils.js');
+const { sleep, imageExists, isNil, keyByValue, waitUntil } = require('../lib/utils.js');
 const { PropertyName } = require('eufy-security-client');
+const fs = require('fs');
+const path = require('path');
 
 module.exports = class mainDevice extends Homey.Device {
     async onInit() {
@@ -30,14 +29,17 @@ module.exports = class mainDevice extends Homey.Device {
             this.HomeyDevice.isStandAloneBattery = this.HomeyDevice.isStandAlone && !!this.EufyDevice && this.EufyDevice.hasBattery();
 
             this.homey.app.log(
-                `[Device] ${this.getName()} - starting - isStandAlone: ${this.HomeyDevice.isStandAlone} - isStandAloneBattery: ${this.HomeyDevice.isStandAloneBattery} - station_sn: ${this.HomeyDevice.station_sn} - device_sn: ${this.HomeyDevice.device_sn}`
+                `[Device] ${this.getName()} - starting - isStandAlone: ${this.HomeyDevice.isStandAlone} - isStandAloneBattery: ${this.HomeyDevice.isStandAloneBattery} - station_sn: ${
+                    this.HomeyDevice.station_sn
+                } - device_sn: ${this.HomeyDevice.device_sn}`
             );
 
-            if (settings.snapshot_enabled) {
-                await this.setImage('snapshot');
-            }
-
+            await this.setImage('snapshot');
             await this.setImage('event');
+
+            if (this.homey.platformVersion === 2) {
+                await this.setVideo();
+            }
 
             if (initial) {
                 await this.checkCapabilities();
@@ -97,22 +99,6 @@ module.exports = class mainDevice extends Homey.Device {
             this.check_alarm_arm_mode(newSettings);
         }
 
-        if (changedKeys.includes('snapshot_enabled')) {
-            if (newSettings.snapshot_enabled) {
-                this.homey.app.log(`[Device] ${this.getName()} - check_CMD_SNAPSHOT: adding CMD_SNAPSHOT`);
-    
-                if (!this._image['snapshot']) {
-                    await this.setImage('snapshot');
-                }
-            } else {
-                this.homey.app.log(`[Device] ${this.getName()} - check_CMD_SNAPSHOT: removing CMD_SNAPSHOT`);
-    
-                if (this._image['snapshot']) {
-                    await this.homey.images.unregisterImage(this._image['snapshot']);
-                }
-            }
-        }
-
         if (changedKeys.includes('LOCAL_STATION_IP')) {
             let appSettings = this.homey.app.appSettings;
             appSettings.STATION_IPS[this.HomeyDevice.station_sn] = newSettings.LOCAL_STATION_IP;
@@ -145,8 +131,6 @@ module.exports = class mainDevice extends Homey.Device {
             event: null
         };
         this._started = false;
-        this._snapshot_url = null;
-        this._snapshot_custom = false;
 
         await sleep(9000);
 
@@ -210,7 +194,7 @@ module.exports = class mainDevice extends Homey.Device {
 
             driverCapabilities = driverCapabilities.filter((item) => !deleteCapabilities.includes(item));
         }
-        
+
         // Check if devices has a battery
         if (!!this.EufyDevice && this.EufyDevice.hasBattery()) {
             driverCapabilities = [...driverCapabilities, 'measure_battery', 'measure_temperature'];
@@ -247,7 +231,7 @@ module.exports = class mainDevice extends Homey.Device {
 
             oldC.forEach((c) => {
                 this.homey.app.log(`[Device] ${this.getName()} - updateCapabilities => Remove `, c);
-                this.removeCapability(c).catch(e => this.homey.app.log(e));
+                this.removeCapability(c).catch((e) => this.homey.app.log(e));
             });
             await sleep(2000);
             newC.forEach((c) => {
@@ -398,13 +382,12 @@ module.exports = class mainDevice extends Homey.Device {
         try {
             this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_IRCUT_SWITCH - `, value);
 
-            
-            if(this.EufyDevice.hasProperty(PropertyName.DeviceNightvision)) {
+            if (this.EufyDevice.hasProperty(PropertyName.DeviceNightvision)) {
                 await this.homey.app.eufyClient.setDeviceProperty(this.HomeyDevice.device_sn, PropertyName.DeviceNightvision, value);
             } else {
                 await this.homey.app.eufyClient.setDeviceProperty(this.HomeyDevice.device_sn, PropertyName.DeviceAutoNightvision, value);
             }
-            
+
             return Promise.resolve(true);
         } catch (e) {
             this.homey.app.error(e);
@@ -503,49 +486,71 @@ module.exports = class mainDevice extends Homey.Device {
         }
     }
 
-    async onCapability_CMD_START_STOP_STREAM() {
+    async onCapability_CMD_STOP_STREAM() {
         try {
-            throw new Error('Not supported anymore');
+            this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_STOP_STREAM => Check if stream is running`);
+
+            if (this.homey.app.FfmpegManager.isRunning || this.EufyStation.isLiveStreaming(this.EufyDevice)) {
+                this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_STOP_STREAM => Closing existing stream`);
+                await this.homey.app.FfmpegManager.stopStream();
+                await this.homey.app.eufyClient.stopStationLivestream(this.HomeyDevice.device_sn);
+            } else {
+                this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_STOP_STREAM => No existing stream`);
+            }
         } catch (e) {
             this.homey.app.error(e);
             return Promise.reject(e);
         }
     }
 
-    async onCapability_CMD_SNAPSHOT(type = 'snapshot', url = null) {
+    async onCapability_START_LIVESTREAM(type) {
         try {
-            const settings = this.getSettings();
-            if (!settings.snapshot_enabled) {
-                throw new Error('Please enable snapshots in the device settings. (see info icon in settings before usage)');
+            const deviceEnabled = await this.EufyDevice.getPropertyValue(PropertyName.DeviceEnabled);
+            const snapshotTime = this.HomeyDevice.isStandAloneBattery ? 4 : 5;
+            const streamTime = 300;
+            const isSnapshot = type === 'snapshot';
+            const isVideo = type === 'video';
+
+            if (!isSnapshot && !isVideo) {
+                throw new Error(`Type: ${type} not allowed`);
             }
 
-            const defaultTime = this.HomeyDevice.isStandAloneBattery ? 6 : 4;
-            const gifTime = 11;
-            let time = defaultTime;
+            // --- Start checks ---
+            this.homey.app.log(`[Device] ${this.getName()} - onCapability_START_LIVESTREAM => Type`, type);
 
-            if (type === 'gif') {
-                time = gifTime;
+            if (!isSnapshot && !isVideo) {
+                throw new Error(`Type: ${type} not allowed`);
             }
 
-            this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_SNAPSHOT => Set Time`, time);
-
-            if(url) {
-                this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_SNAPSHOT => Got custom url`, url);
-                this._snapshot_url = time === gifTime ? `${url}/gif?device_sn=` : `${url}/snapshot?device_sn=`;
-                this._snapshot_custom = true;
-            } else {
-                this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_SNAPSHOT => Got default url`);
-                this._snapshot_url = time === gifTime ? Homey.env.GIF_URL : Homey.env.SNAPSHOT_URL;
+            if (isNil(deviceEnabled) || deviceEnabled === false) {
+                throw new Error('Camera is off');
             }
+            // --- End checks ---
+            // --- Stop old stream ---
+
+            await this.onCapability_CMD_STOP_STREAM();
+
+            // --- End of Stop old stream ---
+            // --- Start new stream ---
+            let time = isSnapshot ? snapshotTime : streamTime;
+
+            this.homey.app.log(`[Device] ${this.getName()} - onCapability_START_LIVESTREAM => Set Time`, time);
 
             await this.homey.app.eufyClient.setCameraMaxLivestreamDuration(time);
             await this.homey.app.eufyClient.startStationLivestream(this.HomeyDevice.device_sn);
-            await sleep((time + 1) * 1000);
 
-            this._snapshot_url = null;
-            this._snapshot_custom = false;
+            const status = await waitUntil(() => this.EufyStation.isLiveStreaming(this.EufyDevice), type);
 
-            this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_SNAPSHOT => Done`, );
+            if (isSnapshot) {
+                await sleep((time + 1) * 1000);
+
+                this.homey.app.log(`[Device] ${this.getName()} - onCapability_START_LIVESTREAM => Updating device ${type} image`);
+
+                await this.saveImage(type);
+            }
+
+            return Promise.resolve(status);
+            // --- End of Start new stream ---
         } catch (e) {
             this.homey.app.error(e);
             return Promise.reject(e);
@@ -563,13 +568,11 @@ module.exports = class mainDevice extends Homey.Device {
 
             if (this.hasCapability(message)) {
                 if (isNormalEvent) {
-                    
-                    if(typeof value === 'string') {
+                    if (typeof value === 'string') {
                         await this.setCapabilityValue(message, value).catch(this.error);
                     } else {
                         await this.setCapabilityValue(message, true).catch(this.error);
                     }
-                    
 
                     if (setMotionAlarm) {
                         await this.setCapabilityValue('alarm_motion', true).catch(this.error);
@@ -607,59 +610,114 @@ module.exports = class mainDevice extends Homey.Device {
     async setImage(imageType) {
         try {
             this.unsetWarning();
+
             if (!this._image[imageType]) {
                 this._image[imageType] = await this.homey.images.createImage();
 
                 this.homey.app.debug(`[Device] ${this.getName()} - Registering ${imageType} image`);
 
-                let imageName = 'Event';
-                let imageID = this.HomeyDevice.station_sn;
+                const imageMap = [
+                    {
+                        type: 'event',
+                        name: 'Event',
+                        id: this.HomeyDevice.station_sn
+                    },
+                    {
+                        type: 'snapshot',
+                        name: 'Snapshot',
+                        id: `${this.HomeyDevice.device_sn}-Snapshot`
+                    }
+                ];
 
-                if(imageType === 'snapshot') {
-                    imageName = 'Snapshot';
-                    imageID = `${this.HomeyDevice.device_sn}-Snapshot`;
-                } else if(imageType === 'gif') {
-                    imageName = 'Recording';
-                    imageID = `${this.HomeyDevice.device_sn}-Recording`;
-                }
+                const imageFind = imageMap.find((x) => x.type === imageType);
+                const imageID = imageFind.id;
+                const imageName = imageFind.name;
+
+                await this.saveImage(imageType);
 
                 this.setCameraImage(imageID, `${this.getName()} - ${imageName}`, this._image[imageType]).catch((err) => this.homey.app.error(err));
             }
-
-            await this._image[imageType].setStream(async (stream) => {
-                let imageSource = null;
-
-                if (imageType === 'event') {
-                    this.homey.app.log(`[Device] ${this.getName()} - Setting image source ${imageType}`);
-                    const devicePicture = this.EufyDevice.getPropertyValue(PropertyName.DevicePicture);
-                    imageSource = devicePicture ? devicePicture.data : null;
-                } else if (imageType === 'snapshot') {
-                    this.homey.app.log(`[Device] ${this.getName()} - Setting image source ${imageType}`);
-                    imageSource = this.homey.app.snapshots[this.HomeyDevice.device_sn];
-
-                    if(typeof imageSource === 'string') {
-                        imageSource = null;
-                    }
-                }
-
-                this.homey.app.log(`[Device] ${this.getName()} - Setting image ${imageType} - `, imageSource);
-
-                if (imageSource) {
-                    return bufferToStream(imageSource).pipe(stream);
-                } else {
-                    const imagePath = `https://raw.githubusercontent.com/martijnpoppen/com.eufylife.security/main/assets/images/large.jpg`;
-
-                    this.homey.app.log(`[Device] ${this.getName()} - Setting fallback image - `, imagePath);
-
-                    let res = await fetch(imagePath);
-                    return res.body.pipe(stream);
-                }
-            });
 
             return Promise.resolve(true);
         } catch (e) {
             this.homey.app.error(e);
             return Promise.reject(e);
+        }
+    }
+
+    async saveImage(imageType) {
+        try {
+            const userDataPath = path.resolve(__dirname, '/userdata/');
+            const savePath = path.join(userDataPath, `${this.HomeyDevice.device_sn}_${imageType}.jpg`);
+
+            this.homey.app.log(`[Device] ${this.getName()} - saveImage - Saving ${imageType} image to path: `, savePath);
+
+            await imageExists(savePath, this.homey.app.log);
+
+            await this._image[imageType].setPath(savePath);
+
+            this.homey.app.log(`[Device] ${this.getName()} - saveImage - ${imageType} image saved successfully`);
+        } catch (error) {
+            this.homey.app.error(`[Device] ${this.getName()} - saveImage - Error saving ${imageType} image:`, error);
+        }
+    }
+
+    async getLocalAddress() {
+        const host = await this.homey.cloud.getLocalAddress();
+        const address = `${host.split(':')[0]}`;
+
+        this.homey.app.log(`[Device] ${this.getName()} - getLocalAddress -`, address);
+
+        return address;
+    }
+
+    async setVideo() {
+        try {
+            const isRTSPDevice = this.EufyDevice.hasProperty(PropertyName.DeviceRTSPStream);
+
+            if (!isRTSPDevice) {
+                this.homey.app.log(`[Device] ${this.getName()} - setvideo - device doesnt support native RTSP. Disabling video until FFMPEG RTSP works`, { isRTSPDevice });
+                return;
+            }
+            const video = await this.homey.videos.createVideoRTSP();
+
+            video.registerVideoUrlListener(async () => {
+                const isRTSPDeviceEnabled = !!this.EufyDevice.isRTSPStreamEnabled();
+                const isRTSPDevice = this.EufyDevice.hasProperty(PropertyName.DeviceRTSPStream);
+
+                this.homey.app.log(`[Device] ${this.getName()} - setVideo registerVideoUrlListener -`, isRTSPDeviceEnabled ? 'native' : 'ffmpeg', { isRTSPDevice, isRTSPDeviceEnabled });
+                // if (!isRTSPDevice && !this.EufyStation.isLiveStreaming(this.EufyDevice)) {
+                //     await this.onCapability_START_LIVESTREAM('video');
+                //     await sleep(7500);
+                // }
+
+                if (isRTSPDeviceEnabled) {
+                    await this.EufyStation.startRTSPStream(this.EufyDevice);
+                    const url = await this.EufyDevice.getPropertyValue(PropertyName.DeviceRTSPStreamUrl);
+                    this.homey.app.log(`[Device] ${this.getName()} - setvideo registerVideoUrlListener - request url for native RTSP`, url);
+                    return { url };
+                }
+
+                // check if device is off
+                if (!this.getCapabilityValue('onoff')) {
+                    const url = 'Camera_is_off';
+                    return {
+                        url
+                    };
+                }
+
+                // const localAddress = await this.getLocalAddress();
+                // const url = `rtsp://${localAddress}:${this.homey.app.streamPort}/${this.homey.manifest.id}/${this.HomeyDevice.device_sn}`;
+                // this.homey.app.log(`[Device] ${this.getName()} - setvideo - request url for ffmpeg RTSP`, url);
+                const url = 'RTSP_not_enabled_in_EUFY_app';
+                return {
+                    url
+                };
+            });
+
+            await this.setCameraVideo('main', 'Live', video);
+        } catch (err) {
+            this.homey.app.error(err);
         }
     }
 
@@ -740,30 +798,30 @@ module.exports = class mainDevice extends Homey.Device {
     async check_alarm_arm_mode(settings) {
         if (settings.alarm_arm_mode === 'disabled' && this.hasCapability('alarm_arm_mode')) {
             this.homey.app.debug(`[Device] ${this.getName()} - check_alarm_arm_mode: removing alarm_arm_mode`);
-            this.removeCapability('alarm_arm_mode').catch(e => this.homey.app.log(e));
+            this.removeCapability('alarm_arm_mode').catch((e) => this.homey.app.log(e));
         } else if (!!settings.alarm_arm_mode && !this.hasCapability('alarm_arm_mode')) {
             this.homey.app.debug(`[Device] ${this.getName()} - check_alarm_arm_mode: adding alarm_arm_mode`);
-            this.addCapability('alarm_arm_mode').catch(e => this.homey.app.log(e));
+            this.addCapability('alarm_arm_mode').catch((e) => this.homey.app.log(e));
         }
     }
 
     async check_alarm_motion(settings) {
         if ('alarm_motion_enabled' in settings && !settings.alarm_motion_enabled && this.hasCapability('alarm_motion')) {
             this.homey.app.debug(`[Device] ${this.getName()} - check_alarm_motion: removing alarm_motion`);
-            this.removeCapability('alarm_motion').catch(e => this.homey.app.log(e));
+            this.removeCapability('alarm_motion').catch((e) => this.homey.app.log(e));
         } else if ('alarm_motion_enabled' in settings && !!settings.alarm_motion_enabled && !this.hasCapability('alarm_motion')) {
             this.homey.app.debug(`[Device] ${this.getName()} - check_alarm_motion: adding alarm_motion`);
-            this.addCapability('alarm_motion').catch(e => this.homey.app.log(e));
+            this.addCapability('alarm_motion').catch((e) => this.homey.app.log(e));
         }
     }
 
     async check_alarm_generic(settings) {
         if ('alarm_generic_enabled' in settings && !settings.alarm_generic_enabled && this.hasCapability('alarm_generic')) {
             this.homey.app.debug(`[Device] ${this.getName()} - check_alarm_generic: removing alarm_generic`);
-            this.removeCapability('alarm_generic').catch(e => this.homey.app.log(e));
+            this.removeCapability('alarm_generic').catch((e) => this.homey.app.log(e));
         } else if ('alarm_generic_enabled' in settings && !!settings.alarm_generic_enabled && !this.hasCapability('alarm_generic')) {
             this.homey.app.debug(`[Device] ${this.getName()} - check_alarm_generic: adding alarm_generic`);
-            this.addCapability('alarm_generic').catch(e => this.homey.app.log(e));
+            this.addCapability('alarm_generic').catch((e) => this.homey.app.log(e));
         }
     }
 };

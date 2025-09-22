@@ -31,19 +31,6 @@
         "ru": "Сделать снимок",
         "ko": "스냅샷 찍기"
     },
-    "hint": {
-        "en": "Enable the snapshot feature in the device settings. (max allowed snapshots per day: 30)",
-        "da": "Aktiver snapshot-funktionen i enhedens indstillinger. (maks tilladte snapshots pr. dag: 30)",
-        "de": "Aktiviere die Schnappschuss-Funktion in den Geräteeinstellungen. (max. erlaubte Schnappschüsse pro Tag: 30)",
-        "es": "Habilita la función de instantáneas en la configuración del dispositivo. (máx. instantáneas permitidas por día: 30)",
-        "fr": "Activez la fonction de capture d'écran dans les paramètres de l'appareil. (captures d'écran max autorisées par jour : 30)",
-        "it": "Abilita la funzione snapshot nelle impostazioni del dispositivo. (max istantanee consentite al giorno: 30)",
-        "no": "Aktiver øyeblikksbilde-funksjonen i enhetens innstillinger. (maks tillatte bilder per dag: 30)",
-        "sv": "Aktivera ögonblicksbildsfunktionen i enhetens inställningar. (max tillåtna ögonblicksbilder per dag: 30)",
-        "pl": "Włącz funkcję robienia zdjęć w ustawieniach urządzenia. (maksymalna liczba dozwolonych zdjęć na dzień: 30)",
-        "ru": "Включите функцию снимков в настройках устройства. (макс. допустимое количество снимков в день: 30)",
-        "ko": "기기 설정에서 스냅샷 기능을 활성화하세요. (하루 최대 허용 스냅샷 수: 30)"
-    },
     "args": [
         {
             "name": "device",

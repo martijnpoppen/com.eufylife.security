@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.eufylife.security",
-  "version": "3.36.2",
+  "version": "3.39.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "brandColor": "#2a6185",
@@ -3456,19 +3456,6 @@
           "ru": "Сделать снимок",
           "ko": "스냅샷 찍기"
         },
-        "hint": {
-          "en": "Enable the snapshot feature in the device settings. (max allowed snapshots per day: 30)",
-          "da": "Aktiver snapshot-funktionen i enhedens indstillinger. (maks tilladte snapshots pr. dag: 30)",
-          "de": "Aktiviere die Schnappschuss-Funktion in den Geräteeinstellungen. (max. erlaubte Schnappschüsse pro Tag: 30)",
-          "es": "Habilita la función de instantáneas en la configuración del dispositivo. (máx. instantáneas permitidas por día: 30)",
-          "fr": "Activez la fonction de capture d'écran dans les paramètres de l'appareil. (captures d'écran max autorisées par jour : 30)",
-          "it": "Abilita la funzione snapshot nelle impostazioni del dispositivo. (max istantanee consentite al giorno: 30)",
-          "no": "Aktiver øyeblikksbilde-funksjonen i enhetens innstillinger. (maks tillatte bilder per dag: 30)",
-          "sv": "Aktivera ögonblicksbildsfunktionen i enhetens inställningar. (max tillåtna ögonblicksbilder per dag: 30)",
-          "pl": "Włącz funkcję robienia zdjęć w ustawieniach urządzenia. (maksymalna liczba dozwolonych zdjęć na dzień: 30)",
-          "ru": "Включите функцию снимков в настройках устройства. (макс. допустимое количество снимков в день: 30)",
-          "ko": "기기 설정에서 스냅샷 기능을 활성화하세요. (하루 최대 허용 스냅샷 수: 30)"
-        },
         "args": [
           {
             "name": "device",
@@ -3478,6 +3465,7 @@
         ]
       },
       {
+        "deprecated": true,
         "id": "action_CMD_SNAPSHOT_CUSTOM",
         "platforms": [
           "local"
@@ -3509,19 +3497,6 @@
           "pl": "Zrób zrzut ekranu (użyj usługi hostowanej samodzielnie: [[url]])",
           "ru": "Сделать снимок (использовать собственный хостинг: [[url]])",
           "ko": "스냅샷 찍기 (셀프 호스팅 서비스 사용: [[url]])"
-        },
-        "hint": {
-          "en": "Enable the snapshot feature in the device settings. Instead of using the cloud service for taking Snapshots you can use a selfhosted service. Go to https://tinyurl.com/eufy-homey Q13 for more information.",
-          "da": "Aktiver snapshot-funktionen i enhedsindstillingerne. I stedet for at bruge cloud-tjenesten til at tage snapshots kan du bruge en selvhostet tjeneste. Gå til https://tinyurl.com/eufy-homey Q13 for mere information.",
-          "de": "Aktivieren Sie die Snapshot-Funktion in den Geräteeinstellungen. Anstatt den Cloud-Dienst für Schnappschüsse zu nutzen, können Sie einen selbstgehosteten Dienst verwenden. Besuchen Sie https://tinyurl.com/eufy-homey Q13 für weitere Informationen.",
-          "es": "Habilite la función de instantánea en la configuración del dispositivo. En lugar de usar el servicio en la nube para tomar instantáneas, puede usar un servicio autoalojado. Visite https://tinyurl.com/eufy-homey Q13 para obtener más información.",
-          "fr": "Activez la fonction de capture d'écran dans les paramètres de l'appareil. Au lieu d'utiliser le service cloud pour les captures d'écran, vous pouvez utiliser un service auto-hébergé. Allez à https://tinyurl.com/eufy-homey Q13 pour plus d'informations.",
-          "it": "Abilita la funzione istantanea nelle impostazioni del dispositivo. Invece di utilizzare il servizio cloud per scattare istantanee, puoi utilizzare un servizio self-hosted. Visita https://tinyurl.com/eufy-homey Q13 per maggiori informazioni.",
-          "no": "Aktiver snapshot-funksjonen i enhetsinnstillingene. I stedet for å bruke skytjenesten til å ta øyeblikksbilder kan du bruke en selvhostet tjeneste. Gå til https://tinyurl.com/eufy-homey Q13 for mer informasjon.",
-          "sv": "Aktivera ögonblicksbildsfunktionen i enhetsinställningarna. Istället för att använda molntjänsten för att ta ögonblicksbilder kan du använda en självhostad tjänst. Gå till https://tinyurl.com/eufy-homey Q13 för mer information.",
-          "pl": "Włącz funkcję zrzutu ekranu w ustawieniach urządzenia. Zamiast korzystać z usługi w chmurze do robienia zrzutów ekranu, możesz użyć usługi hostowanej samodzielnie. Przejdź do https://tinyurl.com/eufy-homey Q13, aby uzyskać więcej informacji.",
-          "ru": "Включите функцию снимка в настройках устройства. Вместо использования облачного сервиса для снимков вы можете использовать собственный хостинг. Перейдите по адресу https://tinyurl.com/eufy-homey Q13 для получения дополнительной информации.",
-          "ko": "기기 설정에서 스냅샷 기능을 활성화하세요. 스냅샷을 찍기 위해 클라우드 서비스를 사용하는 대신 자체 호스팅 서비스를 사용할 수 있습니다. 자세한 내용은 https://tinyurl.com/eufy-homey Q13를 참조하세요."
         },
         "args": [
           {
@@ -3704,8 +3679,8 @@
         ]
       },
       {
-        "id": "action_CMD_STOP_STREAM",
         "deprecated": true,
+        "id": "action_CMD_STOP_STREAM",
         "platforms": [
           "local"
         ],
@@ -5328,28 +5303,6 @@
                 "ko": "일반 모션 알람 사용?"
               },
               "value": false
-            },
-            {
-              "id": "snapshot_enabled",
-              "hint": {
-                "en": "NOTE: The snapshot card will use a external service which runs FFMPEG to generate the snapshot. This service is hosted by the developer of this app and is free to use. The service will only be used when the snapshot setting is enabled. All data is send encrypted and will not be stored on the server."
-              },
-              "type": "checkbox",
-              "label": {
-                "en": "Enable snapshots",
-                "nl": "Activeer snapshots",
-                "fr": "Activer les instantanés",
-                "da": "Aktiver snapshots",
-                "de": "Schnappschüsse aktivieren",
-                "es": "Habilitar instantáneas",
-                "it": "Abilita istantanee",
-                "no": "Aktiver øyeblikksbilder",
-                "sv": "Aktivera ögonblicksbilder",
-                "pl": "Włącz zdjęcia",
-                "ru": "Включить снимки",
-                "ko": "스냅샷 활성화"
-              },
-              "value": false
             }
           ]
         },
@@ -6077,28 +6030,6 @@
                 "pl": "Użyj ogólnego alarmu ruchu?",
                 "ru": "Использовать общий датчик движения?",
                 "ko": "일반 모션 알람 사용?"
-              },
-              "value": false
-            },
-            {
-              "id": "snapshot_enabled",
-              "hint": {
-                "en": "NOTE: The snapshot card will use a external service which runs FFMPEG to generate the snapshot. This service is hosted by the developer of this app and is free to use. The service will only be used when the snapshot setting is enabled. All data is send encrypted and will not be stored on the server."
-              },
-              "type": "checkbox",
-              "label": {
-                "en": "Enable snapshots",
-                "nl": "Activeer snapshots",
-                "fr": "Activer les instantanés",
-                "da": "Aktiver snapshots",
-                "de": "Schnappschüsse aktivieren",
-                "es": "Habilitar instantáneas",
-                "it": "Abilita istantanee",
-                "no": "Aktiver øyeblikksbilder",
-                "sv": "Aktivera ögonblicksbilder",
-                "pl": "Włącz zdjęcia",
-                "ru": "Включить снимки",
-                "ko": "스냅샷 활성화"
               },
               "value": false
             }
@@ -6830,28 +6761,6 @@
                 "ko": "일반 모션 알람 사용?"
               },
               "value": false
-            },
-            {
-              "id": "snapshot_enabled",
-              "hint": {
-                "en": "NOTE: The snapshot card will use a external service which runs FFMPEG to generate the snapshot. This service is hosted by the developer of this app and is free to use. The service will only be used when the snapshot setting is enabled. All data is send encrypted and will not be stored on the server."
-              },
-              "type": "checkbox",
-              "label": {
-                "en": "Enable snapshots",
-                "nl": "Activeer snapshots",
-                "fr": "Activer les instantanés",
-                "da": "Aktiver snapshots",
-                "de": "Schnappschüsse aktivieren",
-                "es": "Habilitar instantáneas",
-                "it": "Abilita istantanee",
-                "no": "Aktiver øyeblikksbilder",
-                "sv": "Aktivera ögonblicksbilder",
-                "pl": "Włącz zdjęcia",
-                "ru": "Включить снимки",
-                "ko": "스냅샷 활성화"
-              },
-              "value": false
             }
           ]
         },
@@ -7580,28 +7489,6 @@
                 "pl": "Użyj ogólnego alarmu ruchu?",
                 "ru": "Использовать общий датчик движения?",
                 "ko": "일반 모션 알람 사용?"
-              },
-              "value": false
-            },
-            {
-              "id": "snapshot_enabled",
-              "hint": {
-                "en": "NOTE: The snapshot card will use a external service which runs FFMPEG to generate the snapshot. This service is hosted by the developer of this app and is free to use. The service will only be used when the snapshot setting is enabled. All data is send encrypted and will not be stored on the server."
-              },
-              "type": "checkbox",
-              "label": {
-                "en": "Enable snapshots",
-                "nl": "Activeer snapshots",
-                "fr": "Activer les instantanés",
-                "da": "Aktiver snapshots",
-                "de": "Schnappschüsse aktivieren",
-                "es": "Habilitar instantáneas",
-                "it": "Abilita istantanee",
-                "no": "Aktiver øyeblikksbilder",
-                "sv": "Aktivera ögonblicksbilder",
-                "pl": "Włącz zdjęcia",
-                "ru": "Включить снимки",
-                "ko": "스냅샷 활성화"
               },
               "value": false
             }
@@ -8335,28 +8222,6 @@
                 "ko": "일반 모션 알람 사용?"
               },
               "value": false
-            },
-            {
-              "id": "snapshot_enabled",
-              "hint": {
-                "en": "NOTE: The snapshot card will use a external service which runs FFMPEG to generate the snapshot. This service is hosted by the developer of this app and is free to use. The service will only be used when the snapshot setting is enabled. All data is send encrypted and will not be stored on the server."
-              },
-              "type": "checkbox",
-              "label": {
-                "en": "Enable snapshots",
-                "nl": "Activeer snapshots",
-                "fr": "Activer les instantanés",
-                "da": "Aktiver snapshots",
-                "de": "Schnappschüsse aktivieren",
-                "es": "Habilitar instantáneas",
-                "it": "Abilita istantanee",
-                "no": "Aktiver øyeblikksbilder",
-                "sv": "Aktivera ögonblicksbilder",
-                "pl": "Włącz zdjęcia",
-                "ru": "Включить снимки",
-                "ko": "스냅샷 활성화"
-              },
-              "value": false
             }
           ]
         },
@@ -9085,28 +8950,6 @@
                 "pl": "Użyj ogólnego alarmu ruchu?",
                 "ru": "Использовать общий датчик движения?",
                 "ko": "일반 모션 알람 사용?"
-              },
-              "value": false
-            },
-            {
-              "id": "snapshot_enabled",
-              "hint": {
-                "en": "NOTE: The snapshot card will use a external service which runs FFMPEG to generate the snapshot. This service is hosted by the developer of this app and is free to use. The service will only be used when the snapshot setting is enabled. All data is send encrypted and will not be stored on the server."
-              },
-              "type": "checkbox",
-              "label": {
-                "en": "Enable snapshots",
-                "nl": "Activeer snapshots",
-                "fr": "Activer les instantanés",
-                "da": "Aktiver snapshots",
-                "de": "Schnappschüsse aktivieren",
-                "es": "Habilitar instantáneas",
-                "it": "Abilita istantanee",
-                "no": "Aktiver øyeblikksbilder",
-                "sv": "Aktivera ögonblicksbilder",
-                "pl": "Włącz zdjęcia",
-                "ru": "Включить снимки",
-                "ko": "스냅샷 활성화"
               },
               "value": false
             }
@@ -9839,28 +9682,6 @@
                 "ko": "일반 모션 알람 사용?"
               },
               "value": false
-            },
-            {
-              "id": "snapshot_enabled",
-              "hint": {
-                "en": "NOTE: The snapshot card will use a external service which runs FFMPEG to generate the snapshot. This service is hosted by the developer of this app and is free to use. The service will only be used when the snapshot setting is enabled. All data is send encrypted and will not be stored on the server."
-              },
-              "type": "checkbox",
-              "label": {
-                "en": "Enable snapshots",
-                "nl": "Activeer snapshots",
-                "fr": "Activer les instantanés",
-                "da": "Aktiver snapshots",
-                "de": "Schnappschüsse aktivieren",
-                "es": "Habilitar instantáneas",
-                "it": "Abilita istantanee",
-                "no": "Aktiver øyeblikksbilder",
-                "sv": "Aktivera ögonblicksbilder",
-                "pl": "Włącz zdjęcia",
-                "ru": "Включить снимки",
-                "ko": "스냅샷 활성화"
-              },
-              "value": false
             }
           ]
         },
@@ -10591,28 +10412,6 @@
                 "ko": "일반 모션 알람 사용?"
               },
               "value": false
-            },
-            {
-              "id": "snapshot_enabled",
-              "hint": {
-                "en": "NOTE: The snapshot card will use a external service which runs FFMPEG to generate the snapshot. This service is hosted by the developer of this app and is free to use. The service will only be used when the snapshot setting is enabled. All data is send encrypted and will not be stored on the server."
-              },
-              "type": "checkbox",
-              "label": {
-                "en": "Enable snapshots",
-                "nl": "Activeer snapshots",
-                "fr": "Activer les instantanés",
-                "da": "Aktiver snapshots",
-                "de": "Schnappschüsse aktivieren",
-                "es": "Habilitar instantáneas",
-                "it": "Abilita istantanee",
-                "no": "Aktiver øyeblikksbilder",
-                "sv": "Aktivera ögonblicksbilder",
-                "pl": "Włącz zdjęcia",
-                "ru": "Включить снимки",
-                "ko": "스냅샷 활성화"
-              },
-              "value": false
             }
           ]
         },
@@ -11338,28 +11137,6 @@
                 "ko": "일반 모션 알람 사용?"
               },
               "value": false
-            },
-            {
-              "id": "snapshot_enabled",
-              "hint": {
-                "en": "NOTE: The snapshot card will use a external service which runs FFMPEG to generate the snapshot. This service is hosted by the developer of this app and is free to use. The service will only be used when the snapshot setting is enabled. All data is send encrypted and will not be stored on the server."
-              },
-              "type": "checkbox",
-              "label": {
-                "en": "Enable snapshots",
-                "nl": "Activeer snapshots",
-                "fr": "Activer les instantanés",
-                "da": "Aktiver snapshots",
-                "de": "Schnappschüsse aktivieren",
-                "es": "Habilitar instantáneas",
-                "it": "Abilita istantanee",
-                "no": "Aktiver øyeblikksbilder",
-                "sv": "Aktivera ögonblicksbilder",
-                "pl": "Włącz zdjęcia",
-                "ru": "Включить снимки",
-                "ko": "스냅샷 활성화"
-              },
-              "value": false
             }
           ]
         },
@@ -12081,28 +11858,6 @@
                 "pl": "Użyj ogólnego alarmu ruchu?",
                 "ru": "Использовать общий датчик движения?",
                 "ko": "일반 모션 알람 사용?"
-              },
-              "value": false
-            },
-            {
-              "id": "snapshot_enabled",
-              "hint": {
-                "en": "NOTE: The snapshot card will use a external service which runs FFMPEG to generate the snapshot. This service is hosted by the developer of this app and is free to use. The service will only be used when the snapshot setting is enabled. All data is send encrypted and will not be stored on the server."
-              },
-              "type": "checkbox",
-              "label": {
-                "en": "Enable snapshots",
-                "nl": "Activeer snapshots",
-                "fr": "Activer les instantanés",
-                "da": "Aktiver snapshots",
-                "de": "Schnappschüsse aktivieren",
-                "es": "Habilitar instantáneas",
-                "it": "Abilita istantanee",
-                "no": "Aktiver øyeblikksbilder",
-                "sv": "Aktivera ögonblicksbilder",
-                "pl": "Włącz zdjęcia",
-                "ru": "Включить снимки",
-                "ko": "스냅샷 활성화"
               },
               "value": false
             }
@@ -12885,19 +12640,6 @@
                   }
                 }
               ]
-            },
-            {
-              "id": "snapshot_enabled",
-              "hint": {
-                "en": "NOTE: The snapshot card will use a external service which runs FFMPEG to generate the snapshot. This service is hosted by the developer of this app and is free to use. The service will only be used when the snapshot setting is enabled. All data is send encrypted and will not be stored on the server."
-              },
-              "type": "checkbox",
-              "label": {
-                "en": "Enable snapshots",
-                "nl": "Activeer snapshots",
-                "fr": "Activer les instantanés"
-              },
-              "value": false
             }
           ]
         },
@@ -13638,19 +13380,6 @@
                   }
                 }
               ]
-            },
-            {
-              "id": "snapshot_enabled",
-              "hint": {
-                "en": "NOTE: The snapshot card will use a external service which runs FFMPEG to generate the snapshot. This service is hosted by the developer of this app and is free to use. The service will only be used when the snapshot setting is enabled. All data is send encrypted and will not be stored on the server."
-              },
-              "type": "checkbox",
-              "label": {
-                "en": "Enable snapshots",
-                "nl": "Activeer snapshots",
-                "fr": "Activer les instantanés"
-              },
-              "value": false
             }
           ]
         },
@@ -17977,19 +17706,6 @@
                   }
                 }
               ]
-            },
-            {
-              "id": "snapshot_enabled",
-              "hint": {
-                "en": "NOTE: The snapshot card will use a external service which runs FFMPEG to generate the snapshot. This service is hosted by the developer of this app and is free to use. The service will only be used when the snapshot setting is enabled. All data is send encrypted and will not be stored on the server."
-              },
-              "type": "checkbox",
-              "label": {
-                "en": "Enable snapshots",
-                "nl": "Activeer snapshots",
-                "fr": "Activer les instantanés"
-              },
-              "value": false
             }
           ]
         },
@@ -18733,19 +18449,6 @@
                   }
                 }
               ]
-            },
-            {
-              "id": "snapshot_enabled",
-              "hint": {
-                "en": "NOTE: The snapshot card will use a external service which runs FFMPEG to generate the snapshot. This service is hosted by the developer of this app and is free to use. The service will only be used when the snapshot setting is enabled. All data is send encrypted and will not be stored on the server."
-              },
-              "type": "checkbox",
-              "label": {
-                "en": "Enable snapshots",
-                "nl": "Activeer snapshots",
-                "fr": "Activer les instantanés"
-              },
-              "value": false
             }
           ]
         },
@@ -19489,19 +19192,6 @@
                   }
                 }
               ]
-            },
-            {
-              "id": "snapshot_enabled",
-              "hint": {
-                "en": "NOTE: The snapshot card will use a external service which runs FFMPEG to generate the snapshot. This service is hosted by the developer of this app and is free to use. The service will only be used when the snapshot setting is enabled. All data is send encrypted and will not be stored on the server."
-              },
-              "type": "checkbox",
-              "label": {
-                "en": "Enable snapshots",
-                "nl": "Activeer snapshots",
-                "fr": "Activer les instantanés"
-              },
-              "value": false
             }
           ]
         },
@@ -20245,19 +19935,6 @@
                   }
                 }
               ]
-            },
-            {
-              "id": "snapshot_enabled",
-              "hint": {
-                "en": "NOTE: The snapshot card will use a external service which runs FFMPEG to generate the snapshot. This service is hosted by the developer of this app and is free to use. The service will only be used when the snapshot setting is enabled. All data is send encrypted and will not be stored on the server."
-              },
-              "type": "checkbox",
-              "label": {
-                "en": "Enable snapshots",
-                "nl": "Activeer snapshots",
-                "fr": "Activer les instantanés"
-              },
-              "value": false
             }
           ]
         },
@@ -22566,19 +22243,6 @@
                   }
                 }
               ]
-            },
-            {
-              "id": "snapshot_enabled",
-              "hint": {
-                "en": "NOTE: The snapshot card will use a external service which runs FFMPEG to generate the snapshot. This service is hosted by the developer of this app and is free to use. The service will only be used when the snapshot setting is enabled. All data is send encrypted and will not be stored on the server."
-              },
-              "type": "checkbox",
-              "label": {
-                "en": "Enable snapshots",
-                "nl": "Activeer snapshots",
-                "fr": "Activer les instantanés"
-              },
-              "value": false
             }
           ]
         },
@@ -23327,19 +22991,6 @@
                   }
                 }
               ]
-            },
-            {
-              "id": "snapshot_enabled",
-              "hint": {
-                "en": "NOTE: The snapshot card will use a external service which runs FFMPEG to generate the snapshot. This service is hosted by the developer of this app and is free to use. The service will only be used when the snapshot setting is enabled. All data is send encrypted and will not be stored on the server."
-              },
-              "type": "checkbox",
-              "label": {
-                "en": "Enable snapshots",
-                "nl": "Activeer snapshots",
-                "fr": "Activer les instantanés"
-              },
-              "value": false
             }
           ]
         },
@@ -24089,19 +23740,6 @@
                   }
                 }
               ]
-            },
-            {
-              "id": "snapshot_enabled",
-              "hint": {
-                "en": "NOTE: The snapshot card will use a external service which runs FFMPEG to generate the snapshot. This service is hosted by the developer of this app and is free to use. The service will only be used when the snapshot setting is enabled. All data is send encrypted and will not be stored on the server."
-              },
-              "type": "checkbox",
-              "label": {
-                "en": "Enable snapshots",
-                "nl": "Activeer snapshots",
-                "fr": "Activer les instantanés"
-              },
-              "value": false
             }
           ]
         },
@@ -24851,19 +24489,6 @@
                   }
                 }
               ]
-            },
-            {
-              "id": "snapshot_enabled",
-              "hint": {
-                "en": "NOTE: The snapshot card will use a external service which runs FFMPEG to generate the snapshot. This service is hosted by the developer of this app and is free to use. The service will only be used when the snapshot setting is enabled. All data is send encrypted and will not be stored on the server."
-              },
-              "type": "checkbox",
-              "label": {
-                "en": "Enable snapshots",
-                "nl": "Activeer snapshots",
-                "fr": "Activer les instantanés"
-              },
-              "value": false
             }
           ]
         },
@@ -25611,19 +25236,6 @@
                   }
                 }
               ]
-            },
-            {
-              "id": "snapshot_enabled",
-              "hint": {
-                "en": "NOTE: The snapshot card will use a external service which runs FFMPEG to generate the snapshot. This service is hosted by the developer of this app and is free to use. The service will only be used when the snapshot setting is enabled. All data is send encrypted and will not be stored on the server."
-              },
-              "type": "checkbox",
-              "label": {
-                "en": "Enable snapshots",
-                "nl": "Activeer snapshots",
-                "fr": "Activer les instantanés"
-              },
-              "value": false
             }
           ]
         },
@@ -26371,19 +25983,6 @@
                   }
                 }
               ]
-            },
-            {
-              "id": "snapshot_enabled",
-              "hint": {
-                "en": "NOTE: The snapshot card will use a external service which runs FFMPEG to generate the snapshot. This service is hosted by the developer of this app and is free to use. The service will only be used when the snapshot setting is enabled. All data is send encrypted and will not be stored on the server."
-              },
-              "type": "checkbox",
-              "label": {
-                "en": "Enable snapshots",
-                "nl": "Activeer snapshots",
-                "fr": "Activer les instantanés"
-              },
-              "value": false
             }
           ]
         },
@@ -27132,19 +26731,6 @@
                   }
                 }
               ]
-            },
-            {
-              "id": "snapshot_enabled",
-              "hint": {
-                "en": "NOTE: The snapshot card will use a external service which runs FFMPEG to generate the snapshot. This service is hosted by the developer of this app and is free to use. The service will only be used when the snapshot setting is enabled. All data is send encrypted and will not be stored on the server."
-              },
-              "type": "checkbox",
-              "label": {
-                "en": "Enable snapshots",
-                "nl": "Activeer snapshots",
-                "fr": "Activer les instantanés"
-              },
-              "value": false
             }
           ]
         },
@@ -27841,28 +27427,6 @@
                 "pl": "Użyj ogólnego alarmu ruchu?",
                 "ru": "Использовать общий датчик движения?",
                 "ko": "일반 모션 알람 사용?"
-              },
-              "value": false
-            },
-            {
-              "id": "snapshot_enabled",
-              "hint": {
-                "en": "NOTE: The snapshot card will use a external service which runs FFMPEG to generate the snapshot. This service is hosted by the developer of this app and is free to use. The service will only be used when the snapshot setting is enabled. All data is send encrypted and will not be stored on the server."
-              },
-              "type": "checkbox",
-              "label": {
-                "en": "Enable snapshots",
-                "nl": "Activeer snapshots",
-                "fr": "Activer les instantanés",
-                "da": "Aktiver snapshots",
-                "de": "Schnappschüsse aktivieren",
-                "es": "Habilitar instantáneas",
-                "it": "Abilita istantanee",
-                "no": "Aktiver øyeblikksbilder",
-                "sv": "Aktivera ögonblicksbilder",
-                "pl": "Włącz zdjęcia",
-                "ru": "Включить снимки",
-                "ko": "스냅샷 활성화"
               },
               "value": false
             }
@@ -28647,19 +28211,6 @@
                   }
                 }
               ]
-            },
-            {
-              "id": "snapshot_enabled",
-              "hint": {
-                "en": "NOTE: The snapshot card will use a external service which runs FFMPEG to generate the snapshot. This service is hosted by the developer of this app and is free to use. The service will only be used when the snapshot setting is enabled. All data is send encrypted and will not be stored on the server."
-              },
-              "type": "checkbox",
-              "label": {
-                "en": "Enable snapshots",
-                "nl": "Activeer snapshots",
-                "fr": "Activer les instantanés"
-              },
-              "value": false
             }
           ]
         },
@@ -29357,28 +28908,6 @@
                 "pl": "Użyj ogólnego alarmu ruchu?",
                 "ru": "Использовать общий датчик движения?",
                 "ko": "일반 모션 알람 사용?"
-              },
-              "value": false
-            },
-            {
-              "id": "snapshot_enabled",
-              "hint": {
-                "en": "NOTE: The snapshot card will use a external service which runs FFMPEG to generate the snapshot. This service is hosted by the developer of this app and is free to use. The service will only be used when the snapshot setting is enabled. All data is send encrypted and will not be stored on the server."
-              },
-              "type": "checkbox",
-              "label": {
-                "en": "Enable snapshots",
-                "nl": "Activeer snapshots",
-                "fr": "Activer les instantanés",
-                "da": "Aktiver snapshots",
-                "de": "Schnappschüsse aktivieren",
-                "es": "Habilitar instantáneas",
-                "it": "Abilita istantanee",
-                "no": "Aktiver øyeblikksbilder",
-                "sv": "Aktivera ögonblicksbilder",
-                "pl": "Włącz zdjęcia",
-                "ru": "Включить снимки",
-                "ko": "스냅샷 활성화"
               },
               "value": false
             }
@@ -30162,19 +29691,6 @@
                   }
                 }
               ]
-            },
-            {
-              "id": "snapshot_enabled",
-              "hint": {
-                "en": "NOTE: The snapshot card will use a external service which runs FFMPEG to generate the snapshot. This service is hosted by the developer of this app and is free to use. The service will only be used when the snapshot setting is enabled. All data is send encrypted and will not be stored on the server."
-              },
-              "type": "checkbox",
-              "label": {
-                "en": "Enable snapshots",
-                "nl": "Activeer snapshots",
-                "fr": "Activer les instantanés"
-              },
-              "value": false
             }
           ]
         },
@@ -30866,28 +30382,6 @@
                 "pl": "Użyj ogólnego alarmu ruchu?",
                 "ru": "Использовать общий датчик движения?",
                 "ko": "일반 모션 알람 사용?"
-              },
-              "value": false
-            },
-            {
-              "id": "snapshot_enabled",
-              "hint": {
-                "en": "NOTE: The snapshot card will use a external service which runs FFMPEG to generate the snapshot. This service is hosted by the developer of this app and is free to use. The service will only be used when the snapshot setting is enabled. All data is send encrypted and will not be stored on the server."
-              },
-              "type": "checkbox",
-              "label": {
-                "en": "Enable snapshots",
-                "nl": "Activeer snapshots",
-                "fr": "Activer les instantanés",
-                "da": "Aktiver snapshots",
-                "de": "Schnappschüsse aktivieren",
-                "es": "Habilitar instantáneas",
-                "it": "Abilita istantanee",
-                "no": "Aktiver øyeblikksbilder",
-                "sv": "Aktivera ögonblicksbilder",
-                "pl": "Włącz zdjęcia",
-                "ru": "Включить снимки",
-                "ko": "스냅샷 활성화"
               },
               "value": false
             }
@@ -31676,19 +31170,6 @@
                   }
                 }
               ]
-            },
-            {
-              "id": "snapshot_enabled",
-              "hint": {
-                "en": "NOTE: The snapshot card will use a external service which runs FFMPEG to generate the snapshot. This service is hosted by the developer of this app and is free to use. The service will only be used when the snapshot setting is enabled. All data is send encrypted and will not be stored on the server."
-              },
-              "type": "checkbox",
-              "label": {
-                "en": "Enable snapshots",
-                "nl": "Activeer snapshots",
-                "fr": "Activer les instantanés"
-              },
-              "value": false
             }
           ]
         },
@@ -32438,19 +31919,6 @@
                   }
                 }
               ]
-            },
-            {
-              "id": "snapshot_enabled",
-              "hint": {
-                "en": "NOTE: The snapshot card will use a external service which runs FFMPEG to generate the snapshot. This service is hosted by the developer of this app and is free to use. The service will only be used when the snapshot setting is enabled. All data is send encrypted and will not be stored on the server."
-              },
-              "type": "checkbox",
-              "label": {
-                "en": "Enable snapshots",
-                "nl": "Activeer snapshots",
-                "fr": "Activer les instantanés"
-              },
-              "value": false
             }
           ]
         },

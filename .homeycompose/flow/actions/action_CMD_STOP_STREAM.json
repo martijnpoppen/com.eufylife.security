@@ -1,6 +1,6 @@
 {
-    "id": "action_CMD_STOP_STREAM",
     "deprecated": true,
+    "id": "action_CMD_STOP_STREAM",
     "platforms": [
         "local"
     ],

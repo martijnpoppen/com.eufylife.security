@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "eufy-security-client": "https://github.com/martijnpoppen/eufy-security-client/tarball/homey-integration",
-    "form-data": "^4.0.0",
-    "node-fetch": "^2.6.1"
+    "fluent-ffmpeg": "^2.1.3"
   }
 }
