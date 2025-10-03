@@ -1,4 +1,5 @@
 {
+    "deprecated": true,
     "id": "action_CMD_START_STREAM",
     "platforms": [
         "local"

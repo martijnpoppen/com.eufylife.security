@@ -3524,6 +3524,7 @@
         ]
       },
       {
+        "deprecated": true,
         "id": "action_CMD_START_STREAM",
         "platforms": [
           "local"
@@ -3678,6 +3679,7 @@
         ]
       },
       {
+        "deprecated": true,
         "id": "action_CMD_STOP_STREAM",
         "platforms": [
           "local"
