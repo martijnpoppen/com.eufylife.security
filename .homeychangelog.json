@@ -1654,5 +1654,8 @@
   },
   "3.37.0": {
     "en": "NEW: Implement custom RSA encryption layer to decrease memory usage for snapshots.  | FIX: Implement extra logging to debug person detection"
+  },
+  "3.38.0": {
+    "en": "NEW: Local snapshots | NEW: Video Streaming | FIX: memory leaks due to snapshots"
   }
 }
