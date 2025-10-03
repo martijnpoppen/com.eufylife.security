@@ -37,7 +37,9 @@ module.exports = class mainDevice extends Homey.Device {
             await this.setImage('snapshot');
             await this.setImage('event');
 
-            await this.setVideo();
+            if(this.homey.platformVersion === 2) {
+                await this.setVideo();
+            }
 
             if (initial) {
                 await this.checkCapabilities();
@@ -512,7 +514,6 @@ module.exports = class mainDevice extends Homey.Device {
             if (!isSnapshot && !isVideo) {
                 throw new Error(`Type: ${type} not allowed`);
             }
-            
 
             // --- Start checks ---
             this.homey.app.log(`[Device] ${this.getName()} - onCapability_START_LIVESTREAM => Type`, type);
@@ -639,7 +640,6 @@ module.exports = class mainDevice extends Homey.Device {
                 this.setCameraImage(imageID, `${this.getName()} - ${imageName}`, this._image[imageType]).catch((err) => this.homey.app.error(err));
             }
 
-            
             this.homey.app.debug(`[Device] ${this.getName()} - Setting ${imageType} image - Path: ${savePath}`);
             await this._image[imageType].setPath(savePath);
 
@@ -661,27 +661,43 @@ module.exports = class mainDevice extends Homey.Device {
 
     async setVideo() {
         try {
-            const isRTSPDevice = this.EufyDevice.isRTSPStreamEnabled();
+            const isRTSPDevice = this.EufyDevice.hasProperty(PropertyName.DeviceRTSPStream);
 
-            this.homey.app.log(`[Device] ${this.getName()} - setVideo -`, isRTSPDevice ? 'native' : 'ffmpeg');
-
+            if (!isRTSPDevice) {
+                this.homey.app.log(`[Device] ${this.getName()} - setvideo - device doesnt support native RTSP. Disabling video until FFMPEG RTSP works`, { isRTSPDevice });
+                return;
+            }
             const video = await this.homey.videos.createVideoRTSP();
 
             video.registerVideoUrlListener(async () => {
+                
+                const isRTSPDeviceEnabled = !!this.EufyDevice.isRTSPStreamEnabled();
+                const isRTSPDevice = this.EufyDevice.hasProperty(PropertyName.DeviceRTSPStream);
+
+                this.homey.app.log(`[Device] ${this.getName()} - setVideo registerVideoUrlListener -`, isRTSPDeviceEnabled ? 'native' : 'ffmpeg', { isRTSPDevice, isRTSPDeviceEnabled });
                 // if (!isRTSPDevice && !this.EufyStation.isLiveStreaming(this.EufyDevice)) {
                 //     await this.onCapability_START_LIVESTREAM('video');
                 //     await sleep(7500);
                 // }
 
-                if(isRTSPDevice) {
+                if (isRTSPDeviceEnabled) {
                     const url = await this.EufyDevice.getPropertyValue(PropertyName.DeviceRTSPStreamUrl);
-                    this.homey.app.log(`[Device] ${this.getName()} - setvideo - request url for native RTSP`, url);
+                    this.homey.app.log(`[Device] ${this.getName()} - setvideo registerVideoUrlListener - request url for native RTSP`, url);
                     return { url };
                 }
 
-                const localAddress = await this.getLocalAddress();
-                const url = `rtsp://${localAddress}:${this.homey.app.streamPort}/${this.homey.manifest.id}/${this.HomeyDevice.device_sn}`;
-                this.homey.app.log(`[Device] ${this.getName()} - setvideo - request url for ffmpeg RTSP`, url);
+                // check if device is off
+                if(!this.getCapabilityValue('onoff')) {
+                   const url = 'Camera_is_off';
+                    return {
+                        url
+                    };
+                }
+
+                // const localAddress = await this.getLocalAddress();
+                // const url = `rtsp://${localAddress}:${this.homey.app.streamPort}/${this.homey.manifest.id}/${this.HomeyDevice.device_sn}`;
+                // this.homey.app.log(`[Device] ${this.getName()} - setvideo - request url for ffmpeg RTSP`, url);
+                const url = 'RTSP_not_enabled_in_EUFY_app';
                 return {
                     url
                 };
@@ -716,10 +732,9 @@ module.exports = class mainDevice extends Homey.Device {
                 if (!isNil(value)) ctx.setParamStatus('onoff', value);
             }
 
-            if(initial && ctx.EufyDevice) {
+            if (initial && ctx.EufyDevice) {
                 ctx.homey.app.debug(`[Device] ${ctx.getName()} - deviceParams - isRTSPStreamEnabled`);
                 const value = ctx.EufyDevice.isRTSPStreamEnabled();
-                
             }
 
             if (initial && ctx.EufyStation && ctx.hasCapability('CMD_SET_ARMING')) {
