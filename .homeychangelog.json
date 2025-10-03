@@ -1657,5 +1657,8 @@
   },
   "3.38.0": {
     "en": "NEW: Local snapshots | NEW: Video Streaming | FIX: memory leaks due to snapshots"
+  },
+  "3.38.1": {
+    "en": "FIX: deprecated flowcard"
   }
 }
