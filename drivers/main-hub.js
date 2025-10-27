@@ -16,6 +16,8 @@ module.exports = class mainHub extends mainDevice {
 
             this.EufyStation = await this.homey.app.eufyClient.getStation(this.HomeyDevice.station_sn);
 
+            this.homey.app.setDevice(this);
+
 
             if (initial) {
                 const settings = this.getSettings();

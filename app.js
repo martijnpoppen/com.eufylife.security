@@ -431,7 +431,7 @@ class App extends Homey.App {
     }
 
     async setDevice(device) {
-        this.deviceList = [...this.deviceList, device];
+        this.deviceList = [...this.deviceList.filter((dl) => dl.getData().device_sn !== device.getData().device_sn), device];
 
         await this.eufyNotificationCheckHelper.setDevices(this.deviceList);
         await this.eufyEventsHelper.setDevices(this.deviceList);

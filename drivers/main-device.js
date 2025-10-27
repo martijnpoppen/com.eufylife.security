@@ -34,6 +34,8 @@ module.exports = class mainDevice extends Homey.Device {
                 } - device_sn: ${this.HomeyDevice.device_sn}`
             );
 
+            this.homey.app.setDevice(this);
+
             await this.setImage('snapshot');
             await this.setImage('event');
 
@@ -74,7 +76,6 @@ module.exports = class mainDevice extends Homey.Device {
 
     async onAdded() {
         this.homey.app.log(`[Device] ${this.getName()} - onAdded`);
-        this.homey.app.setDevice(this);
 
         this.onStartup(true);
     }
@@ -546,7 +547,7 @@ module.exports = class mainDevice extends Homey.Device {
 
                 this.homey.app.log(`[Device] ${this.getName()} - onCapability_START_LIVESTREAM => Updating device ${type} image`);
 
-                await this.saveImage(type);
+                await this.updateImage(type, this.HomeyDevice.device_sn);
             }
 
             return Promise.resolve(status);
@@ -633,7 +634,7 @@ module.exports = class mainDevice extends Homey.Device {
                 const imageID = imageFind.id;
                 const imageName = imageFind.name;
 
-                await this.saveImage(imageType);
+                await this.updateImage(imageType, this.HomeyDevice.device_sn);
 
                 this.setCameraImage(imageID, `${this.getName()} - ${imageName}`, this._image[imageType]).catch((err) => this.homey.app.error(err));
             }
@@ -645,20 +646,21 @@ module.exports = class mainDevice extends Homey.Device {
         }
     }
 
-    async saveImage(imageType) {
+    async updateImage(imageType, deviceSn) {
         try {
             const userDataPath = path.resolve(__dirname, '/userdata/');
-            const savePath = path.join(userDataPath, `${this.HomeyDevice.device_sn}_${imageType}.jpg`);
+            const savePath = path.join(userDataPath, `${deviceSn}_${imageType}.jpg`);
 
-            this.homey.app.log(`[Device] ${this.getName()} - saveImage - Saving ${imageType} image to path: `, savePath);
+            this.homey.app.log(`[Device] ${this.getName()} - updateImage - Saving ${imageType} image to path: `, savePath);
 
             await imageExists(savePath, this.homey.app.log);
 
             await this._image[imageType].setPath(savePath);
+            await this._image[imageType].update();
 
-            this.homey.app.log(`[Device] ${this.getName()} - saveImage - ${imageType} image saved successfully`);
+            this.homey.app.log(`[Device] ${this.getName()} - updateImage - ${imageType} image saved successfully`);
         } catch (error) {
-            this.homey.app.error(`[Device] ${this.getName()} - saveImage - Error saving ${imageType} image:`, error);
+            this.homey.app.error(`[Device] ${this.getName()} - updateImage - Error saving ${imageType} image:`, error);
         }
     }
 

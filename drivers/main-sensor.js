@@ -16,6 +16,8 @@ module.exports = class mainSensor extends mainDevice {
             this.HomeyDevice.station_sn = await this.EufyDevice.getStationSerial();
             this.EufyStation = await this.homey.app.eufyClient.getStation(this.HomeyDevice.station_sn);
 
+            this.homey.app.setDevice(this);
+
             if(initial) {
                 await this.checkCapabilities();
                 await this.resetCapabilities();
