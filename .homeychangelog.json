@@ -1672,5 +1672,8 @@
   },
   "3.39.0": {
     "en": "NEW: Start RTSP stream when requested, should prevent the auto RTSP kill because of the Eufy firmware | FIX: battery drain | FIX: snapshot not updating"
+  },
+  "3.39.2": {
+    "en": "FIX: battery drain since 3.38.0"
   }
 }
