@@ -1687,5 +1687,8 @@
   },
   "3.39.6": {
     "en": "FIX: image updatew"
+  },
+  "3.39.7": {
+    "en": "FIX: snapshot sometimes not updating properly"
   }
 }

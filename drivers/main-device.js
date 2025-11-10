@@ -648,6 +648,8 @@ module.exports = class mainDevice extends Homey.Device {
 
     async updateImage(imageType, deviceSn) {
         try {
+            console.log(`[Device] ${this.getName()} - updateImage called`, imageType, deviceSn);
+
             const userDataPath = path.resolve(__dirname, '/userdata/');
             const savePath = path.join(userDataPath, `${deviceSn}_${imageType}.jpg`);
 
