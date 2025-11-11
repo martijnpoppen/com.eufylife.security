@@ -1690,5 +1690,8 @@
   },
   "3.39.7": {
     "en": "FIX: snapshot sometimes not updating properly"
+  },
+  "3.39.8": {
+    "en": "FIX: event image"
   }
 }

@@ -634,7 +634,7 @@ module.exports = class mainDevice extends Homey.Device {
                 const imageID = imageFind.id;
                 const imageName = imageFind.name;
 
-                await this.updateImage(imageType, this.HomeyDevice.device_sn);
+                await this.updateImage(imageType, this.HomeyDevice.device_sn, true);
 
                 this.setCameraImage(imageID, `${this.getName()} - ${imageName}`, this._image[imageType]).catch((err) => this.homey.app.error(err));
             }
@@ -646,7 +646,7 @@ module.exports = class mainDevice extends Homey.Device {
         }
     }
 
-    async updateImage(imageType, deviceSn) {
+    async updateImage(imageType, deviceSn, initial = false) {
         try {
             console.log(`[Device] ${this.getName()} - updateImage called`, imageType, deviceSn);
 
@@ -655,7 +655,9 @@ module.exports = class mainDevice extends Homey.Device {
 
             this.homey.app.log(`[Device] ${this.getName()} - updateImage - Saving ${imageType} image to path: `, savePath);
 
-            await imageExists(savePath, this.homey.app.log);
+            if(initial) {
+                await imageExists(savePath, this.homey.app.log);
+            }
 
             await this._image[imageType].setPath(savePath);
             await this._image[imageType].update();
