@@ -18,7 +18,7 @@ module.exports = class mainDevice extends Homey.Device {
 
             this.setUnavailable(`${this.getName()} ${this.homey.__('device.init')}`);
 
-            await sleep((index + 1) * 1000);
+            await sleep((index + 1) * 200);
 
             this.EufyDevice = await this.homey.app.eufyClient.getDevice(this.HomeyDevice.device_sn);
             this.HomeyDevice.station_sn = await this.EufyDevice.getStationSerial();
@@ -56,7 +56,6 @@ module.exports = class mainDevice extends Homey.Device {
                 await this.resetCapabilities();
             }
 
-            await this.deviceParams(this, true);
             await this.setAvailable();
 
             const appSettings = this.homey.app.appSettings;
@@ -77,7 +76,7 @@ module.exports = class mainDevice extends Homey.Device {
     async onAdded() {
         this.homey.app.log(`[Device] ${this.getName()} - onAdded`);
 
-        this.onStartup(true);
+        this.onStartup(true, 0);
     }
 
     onDeleted() {
@@ -129,7 +128,11 @@ module.exports = class mainDevice extends Homey.Device {
 
         this._image = {
             snapshot: null,
-            event: null
+            event: null,
+        };
+        this._imageTimeStamp = {
+            snapshot: 0,
+            event: 0,
         };
         this._started = false;
 
@@ -144,26 +147,38 @@ module.exports = class mainDevice extends Homey.Device {
 
     async resetCapabilities() {
         try {
-            await this.resetCapability('alarm_motion');
-            await this.resetCapability('alarm_contact');
-            await this.resetCapability('alarm_generic');
-            await this.resetCapability('alarm_arm_mode');
-            await this.resetCapability('NTFY_MOTION_DETECTION');
-            await this.resetCapability('NTFY_FACE_DETECTION');
-            await this.resetCapability('NTFY_CRYING_DETECTED');
-            await this.resetCapability('NTFY_SOUND_DETECTED');
-            await this.resetCapability('NTFY_PET_DETECTED');
-            await this.resetCapability('NTFY_VEHICLE_DETECTED');
-            await this.resetCapability('NTFY_PRESS_DOORBELL');
-            await this.resetCapability('NTFY_LOITERING_DETECTION');
+            const paramValue = false;
+            const showLogs = false;
+            await this.setParamStatus('alarm_motion', paramValue, showLogs);
+            await this.setParamStatus('alarm_contact', paramValue, showLogs);
+            await this.setParamStatus('alarm_generic', paramValue, showLogs);
+            await this.setParamStatus('alarm_arm_mode', paramValue, showLogs);
+            await this.setParamStatus('NTFY_MOTION_DETECTION', paramValue, showLogs);
+            await this.setParamStatus('NTFY_FACE_DETECTION', paramValue, showLogs);
+            await this.setParamStatus('NTFY_CRYING_DETECTED', paramValue, showLogs);
+            await this.setParamStatus('NTFY_SOUND_DETECTED', paramValue, showLogs);
+            await this.setParamStatus('NTFY_PET_DETECTED', paramValue, showLogs);
+            await this.setParamStatus('NTFY_VEHICLE_DETECTED', paramValue, showLogs);
+            await this.setParamStatus('NTFY_PRESS_DOORBELL', paramValue, showLogs);
+            await this.setParamStatus('NTFY_LOITERING_DETECTION', paramValue, showLogs);
+
+            const properties = [PropertyName.DeviceBatteryTemp, PropertyName.DeviceBattery, PropertyName.DeviceEnabled, PropertyName.DeviceSensorOpen, PropertyName.StationGuardMode];
+            const eufyDeviceOrStation = this.EufyDevice || this.EufyStation;
+
+            for (const property in properties) {
+                if (await eufyDeviceOrStation.hasProperty(property)) {
+                    this.homey.app.eufyEventsHelper.updateDeviceProperties(this, eufyDeviceOrStation, property, await eufyDeviceOrStation.getPropertyValue(property));
+                }
+            }
+
+            const settings = this.getSettings();
+            if (settings.force_include_thumbnail && this.EufyDevice && this.EufyDevice.hasProperty(PropertyName.DeviceNotificationType)) {
+                this.homey.app.debug(`[Device] ${this.getName()} - enforceSettings - DeviceNotificationType`);
+
+                await this.homey.app.eufyClient.setDeviceProperty(settings.DEVICE_SN, PropertyName.DeviceNotificationType, 2).catch((e) => this.log(e));
+            }
         } catch (error) {
             this.homey.app.error(error);
-        }
-    }
-
-    async resetCapability(name, value = false) {
-        if (this.hasCapability(name)) {
-            this.setCapabilityValue(name, value).catch(this.error);
         }
     }
 
@@ -173,7 +188,7 @@ module.exports = class mainDevice extends Homey.Device {
         const deviceCapabilities = this.getCapabilities();
 
         this.homey.app.debug(`[Device] ${this.getName()} - checkCapabilities for`, driverManifest.id);
-        this.homey.app.debug(`[Device] ${this.getName()} - Found capabilities =>`, deviceCapabilities);
+        // this.homey.app.debug(`[Device] ${this.getName()} - Found capabilities =>`, deviceCapabilities);
 
         if (!this.HomeyDevice.isStandAlone && (this.hasCapability('CMD_SET_ARMING') || driverCapabilities.includes('CMD_SET_ARMING'))) {
             const deleteCapabilities = ['CMD_SET_ARMING'];
@@ -467,7 +482,7 @@ module.exports = class mainDevice extends Homey.Device {
     async onCapability_CMD_SET_FLOODLIGHT_MANUAL_SWITCH(value) {
         try {
             this.homey.app.log(`[Device] ${this.getName()} - onCapability_CMD_SET_FLOODLIGHT_MANUAL_SWITCH - `, value);
-            await this.setCapabilityValue('CMD_SET_FLOODLIGHT_MANUAL_SWITCH', value);
+            await this.setParamStatus('CMD_SET_FLOODLIGHT_MANUAL_SWITCH', value);
             await this.homey.app.eufyClient.setDeviceProperty(this.HomeyDevice.device_sn, PropertyName.DeviceLight, value);
 
             return Promise.resolve(true);
@@ -507,7 +522,7 @@ module.exports = class mainDevice extends Homey.Device {
     async onCapability_START_LIVESTREAM(type) {
         try {
             const deviceEnabled = await this.EufyDevice.getPropertyValue(PropertyName.DeviceEnabled);
-            const snapshotTime = this.HomeyDevice.isStandAloneBattery ? 4 : 5;
+            const snapshotTime = 5;
             const streamTime = 300;
             const isSnapshot = type === 'snapshot';
             const isVideo = type === 'video';
@@ -543,7 +558,7 @@ module.exports = class mainDevice extends Homey.Device {
             const status = await waitUntil(() => this.EufyStation.isLiveStreaming(this.EufyDevice), type);
 
             if (isSnapshot) {
-                await sleep((time + 1) * 1000);
+                await sleep((time + 2) * 1000);
 
                 this.homey.app.log(`[Device] ${this.getName()} - onCapability_START_LIVESTREAM => Updating device ${type} image`);
 
@@ -565,22 +580,14 @@ module.exports = class mainDevice extends Homey.Device {
             const settings = this.getSettings();
             const setMotionAlarm = message !== 'NTFY_PRESS_DOORBELL' && !!settings.alarm_motion_enabled;
 
-            this.homey.app.log(`[Device] ${this.getName()} - onCapability_NTFY_TRIGGER => isNormalEvent - setMotionAlarm`, isNormalEvent, setMotionAlarm);
-
             if (this.hasCapability(message)) {
-                if (isNormalEvent) {
-                    if (typeof value === 'string') {
-                        await this.setCapabilityValue(message, value).catch(this.error);
-                    } else {
-                        await this.setCapabilityValue(message, true).catch(this.error);
-                    }
+                await this.setParamStatus(message, value).catch(this.error);
 
-                    if (setMotionAlarm) {
-                        await this.setCapabilityValue('alarm_motion', true).catch(this.error);
-                    }
-                } else {
-                    await this.setCapabilityValue(message, value).catch(this.error);
-                    await this.set_alarm_arm_mode(value);
+                if(!isNormalEvent) this.homey.app.log(`[Device] ${this.getName()} - onCapability_NTFY_TRIGGER => isNormalEvent`, isNormalEvent);
+                if(!setMotionAlarm) this.homey.app.log(`[Device] ${this.getName()} - onCapability_NTFY_TRIGGER => setMotionAlarm`, setMotionAlarm);
+
+                if (setMotionAlarm && isNormalEvent) {
+                    await this.setParamStatus('alarm_motion', true).catch(this.error);
                 }
 
                 // check if boolean value
@@ -599,11 +606,12 @@ module.exports = class mainDevice extends Homey.Device {
         await sleep(5000);
 
         if (isNormalEvent) {
-            this.setCapabilityValue(message, false).catch(this.error);
+            this.homey.app.log(`[Device] ${this.getName()} - startTimeout => capability`, message);
+            await this.setParamStatus(message, false).catch(this.error);
 
             if (setMotionAlarm) {
                 await sleep(5000);
-                this.setCapabilityValue('alarm_motion', false).catch(this.error);
+                await this.setParamStatus('alarm_motion', false).catch(this.error);
             }
         }
     }
@@ -648,19 +656,21 @@ module.exports = class mainDevice extends Homey.Device {
 
     async updateImage(imageType, deviceSn, initial = false) {
         try {
-            console.log(`[Device] ${this.getName()} - updateImage called`, imageType, deviceSn);
+            this.homey.app.log(`[Device] ${this.getName()} - updateImage called`, imageType, deviceSn);
 
             const userDataPath = path.resolve(__dirname, '/userdata/');
             const savePath = path.join(userDataPath, `${deviceSn}_${imageType}.jpg`);
 
             this.homey.app.log(`[Device] ${this.getName()} - updateImage - Saving ${imageType} image to path: `, savePath);
 
-            if(initial) {
+            if (initial) {
                 await imageExists(savePath, this.homey.app.log);
             }
 
             await this._image[imageType].setPath(savePath);
             await this._image[imageType].update();
+
+            this._imageTimeStamp[imageType] = Date.now();
 
             this.homey.app.log(`[Device] ${this.getName()} - updateImage - ${imageType} image saved successfully`);
         } catch (error) {
@@ -727,53 +737,12 @@ module.exports = class mainDevice extends Homey.Device {
         }
     }
 
-    async deviceParams(ctx, initial = false) {
+    async setParamStatus(capability, value, showLogs = true) {
         try {
-            // will be called from event helper
-            const settings = ctx.getSettings();
-
-            if (initial && ctx.EufyDevice && ctx.hasCapability('measure_battery')) {
-                ctx.homey.app.debug(`[Device] ${ctx.getName()} - deviceParams - measure_battery`);
-                const value = ctx.EufyDevice.getPropertyValue(PropertyName.DeviceBattery);
-                if (!isNil(value)) ctx.setParamStatus('measure_battery', value);
+            if (this.hasCapability(capability)) {
+                await this.setCapabilityValue(capability, value).catch(this.error);
+                if (showLogs) this.homey.app.debug(`[Device] ${this.getName()} - setParamStatus ${capability} - to: `, value);
             }
-
-            if (initial && ctx.EufyDevice && ctx.hasCapability('measure_temperature')) {
-                ctx.homey.app.debug(`[Device] ${ctx.getName()} - deviceParams - measure_temperature`);
-                const value = ctx.EufyDevice.getPropertyValue(PropertyName.DeviceBatteryTemp);
-                if (!isNil(value)) ctx.setParamStatus('measure_temperature', value);
-            }
-
-            if (initial && ctx.EufyDevice && ctx.hasCapability('onoff')) {
-                ctx.homey.app.debug(`[Device] ${ctx.getName()} - deviceParams - onoff`);
-                const value = ctx.EufyDevice.getPropertyValue(PropertyName.DeviceEnabled);
-                if (!isNil(value)) ctx.setParamStatus('onoff', value);
-            }
-
-            if (initial && ctx.EufyStation && ctx.hasCapability('CMD_SET_ARMING')) {
-                const value = ctx.EufyStation.getPropertyValue(PropertyName.StationGuardMode);
-                ctx.homey.app.debug(`[Device] ${ctx.getName()} - deviceParams - StationGuardMode`, value);
-                let CMD_SET_ARMING = keyByValue(ARM_TYPES, parseInt(value));
-                if (!isNil(CMD_SET_ARMING)) {
-                    ctx.setParamStatus('CMD_SET_ARMING', CMD_SET_ARMING);
-                    this.set_alarm_arm_mode(CMD_SET_ARMING);
-                }
-            }
-
-            if (settings.force_include_thumbnail && ctx.EufyDevice && ctx.EufyDevice.hasProperty(PropertyName.DeviceNotificationType)) {
-                ctx.homey.app.debug(`[Device] ${ctx.getName()} - enforceSettings - DeviceNotificationType`);
-
-                await ctx.homey.app.eufyClient.setDeviceProperty(settings.DEVICE_SN, PropertyName.DeviceNotificationType, 2).catch((e) => ctx.log(e));
-            }
-        } catch (e) {
-            ctx.homey.app.error(e);
-        }
-    }
-
-    async setParamStatus(capability, value) {
-        try {
-            await this.setCapabilityValue(capability, value).catch(this.error);
-            this.homey.app.debug(`[Device] ${this.getName()} - setParamStatus ${capability} - to: `, value);
 
             return Promise.resolve(true);
         } catch (e) {
@@ -792,11 +761,11 @@ module.exports = class mainDevice extends Homey.Device {
 
                 this.homey.app.debug(`[Device] ${this.getName()} - set_alarm_arm_mode: ${settings.alarm_arm_mode} - value: `, value, values.includes(value));
 
-                await this.setCapabilityValue('alarm_arm_mode', values.includes(value)).catch(this.error);
+                await this.setParamStatus('alarm_arm_mode', values.includes(value)).catch(this.error);
             } else {
                 this.homey.app.debug(`[Device] ${this.getName()} - set_alarm_arm_mode: ${settings.alarm_arm_mode}`, false);
 
-                await this.setCapabilityValue('alarm_arm_mode', false).catch(this.error);
+                await this.setParamStatus('alarm_arm_mode', false).catch(this.error);
             }
         }
     }

@@ -11,7 +11,6 @@ const flowActions = require('./lib/flow/actions.js');
 const flowConditions = require('./lib/flow/conditions.js');
 const flowTriggers = require('./lib/flow/triggers.js');
 
-const eufyNotificationCheckHelper = require('./lib/helpers/eufy-notification-check.helper');
 const eufyEventsHelper = require('./lib/helpers/eufy-events.helper');
 const FfmpegManager = require('./lib/helpers/eufy-stream.helper');
 
@@ -78,9 +77,45 @@ class App extends Homey.App {
     }
 
     async initDevices(initial = false) {
+        this.homey.app.log('[initDevices] - Initializing devices...');
+
         this.deviceList.every(async (device, index) => {
             await device.onStartup(initial, index);
         });
+
+
+        setTimeout(async () => {
+            
+        // check eufy stations and check if they are in Homey. if not set the reconnectTimeout to 100000 seconds to prevent reconnecting
+        const eufyStations = await this.eufyClient.getStations();
+
+        eufyStations.forEach(async (eufyStation) => {
+            const station_sn = eufyStation.getSerial();
+            const foundDevice = this.deviceList.find((device) => device.HomeyDevice.station_sn === station_sn);
+
+            if (!foundDevice) {
+                this.log(`initDevices - Station ${station_sn} not found in Homey devices, setting reconnectTimeout to high value to prevent reconnecting`);
+
+                // eufyStation.reconnectTimeout = 100000000;
+                eufyStation.close();
+            }
+        });
+
+        // do same for eufu devices
+        const eufyDevices = await this.eufyClient.getDevices();
+
+        eufyDevices.forEach(async (eufyDevice) => {
+            const device_sn = eufyDevice.getSerial();
+            const foundDevice = this.deviceList.find((device) => device.HomeyDevice.device_sn === device_sn);
+
+            if (!foundDevice) {
+                this.log(`initDevices - Device ${device_sn} not found in Homey devices, setting reconnectTimeout to high value to prevent reconnecting`);
+
+                // eufyDevice.reconnectTimeout = 100000000;
+                eufyDevice.close();
+            }
+        });
+        }, 30000);
     }
 
     // -------------------- SETTINGS ----------------------
@@ -231,7 +266,6 @@ class App extends Homey.App {
             flowTriggers.init(this.homey);
 
             this.FfmpegManager = new FfmpegManager(this.homey);
-            this.eufyNotificationCheckHelper = new eufyNotificationCheckHelper(this.homey);
             this.eufyEventsHelper = new eufyEventsHelper(this.homey);
         }
     }
@@ -424,8 +458,9 @@ class App extends Homey.App {
         this.eufyClient.once('connect', async () => {
             this.warn('Event: connected');
 
-            await sleep(6000);
+            await sleep(1000);
             await this.initEvents();
+            await sleep(2000);
             await this.initDevices(true);
         });
     }
@@ -433,7 +468,6 @@ class App extends Homey.App {
     async setDevice(device) {
         this.deviceList = [...this.deviceList.filter((dl) => dl.getData().device_sn !== device.getData().device_sn), device];
 
-        await this.eufyNotificationCheckHelper.setDevices(this.deviceList);
         await this.eufyEventsHelper.setDevices(this.deviceList);
     }
 
@@ -444,7 +478,6 @@ class App extends Homey.App {
         });
         this.deviceList = [...filteredDeviceList, device];
 
-        await this.eufyNotificationCheckHelper.setDevices(this.deviceList);
         await this.eufyEventsHelper.setDevices(this.deviceList);
     }
 

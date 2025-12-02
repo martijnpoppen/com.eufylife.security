@@ -1693,5 +1693,20 @@
   },
   "3.39.8": {
     "en": "FIX: event image"
+  },
+  "3.40.0": {
+    "en": "NEW: rewrite of event handling | NEW: update battery / temp / motionsensor / contactsensor without push notifications | NEW: improved performance (reduce event listeners)"
+  },
+  "3.40.1": {
+    "en": "FIX: motion sensor triggers, got corruepted after 3.40.0"
+  },
+  "3.40.2": {
+    "en": "FIX: C30/C31 add security mode toggle"
+  },
+  "3.40.3": {
+    "en": "FIX: motion sensor triggers, got corrupted after 3.40.0"
+  },
+  "3.40.4": {
+    "en": "FIX: flow trigger for motion alarm"
   }
 }
