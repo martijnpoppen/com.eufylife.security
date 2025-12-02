@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.eufylife.security",
-  "version": "3.40.4",
+  "version": "3.40.5",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "brandColor": "#2a6185",
@@ -2319,7 +2319,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_HOMEBASE|driver_HOMEBASE_1|driver_HOMEBASE_3|driver_HOMEBASE_CHIME|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_C210_C220|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_C|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_1080P_BATTERY|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED|driver_WALLLIGHT_CAM_S&capabilities=CMD_SET_ARMING"
+            "filter": "driver_id=driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_HOMEBASE|driver_HOMEBASE_1|driver_HOMEBASE_3|driver_HOMEBASE_CHIME|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_C210_C220|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_C|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED|driver_WALLLIGHT_CAM_S&capabilities=CMD_SET_ARMING"
           },
           {
             "name": "action_CMD_SET_ARM_TYPE",
@@ -27534,6 +27534,7 @@
         "CMD_DOORBELL_QUICK_RESPONSE",
         "CMD_START_STREAM",
         "CMD_SNAPSHOT",
+        "CMD_SET_ARMING",
         "CMD_SET_SNOOZE_MODE_HOMEBASE",
         "CMD_IRCUT_SWITCH",
         "CMD_BAT_DOORBELL_VIDEO_QUALITY",

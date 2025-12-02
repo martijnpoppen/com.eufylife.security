@@ -1708,5 +1708,8 @@
   },
   "3.40.4": {
     "en": "FIX: flow trigger for motion alarm"
+  },
+  "3.40.5": {
+    "en": "FIX: motion sensor reset | FIX: snapshots not updating"
   }
 }

@@ -542,11 +542,6 @@ module.exports = class mainDevice extends Homey.Device {
                 throw new Error('Camera is off');
             }
             // --- End checks ---
-            // --- Stop old stream ---
-
-            await this.onCapability_CMD_STOP_STREAM();
-
-            // --- End of Stop old stream ---
             // --- Start new stream ---
             let time = isSnapshot ? snapshotTime : streamTime;
 
@@ -558,7 +553,7 @@ module.exports = class mainDevice extends Homey.Device {
             const status = await waitUntil(() => this.EufyStation.isLiveStreaming(this.EufyDevice), type);
 
             if (isSnapshot) {
-                await sleep((time + 2) * 1000);
+                await sleep((time + 1) * 1000);
 
                 this.homey.app.log(`[Device] ${this.getName()} - onCapability_START_LIVESTREAM => Updating device ${type} image`);
 
