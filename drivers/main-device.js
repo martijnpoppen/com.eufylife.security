@@ -665,8 +665,6 @@ module.exports = class mainDevice extends Homey.Device {
             await this._image[imageType].setPath(savePath);
             await this._image[imageType].update();
 
-            this._imageTimeStamp[imageType] = Date.now();
-
             this.homey.app.log(`[Device] ${this.getName()} - updateImage - ${imageType} image saved successfully`);
         } catch (error) {
             this.homey.app.error(`[Device] ${this.getName()} - updateImage - Error saving ${imageType} image:`, error);

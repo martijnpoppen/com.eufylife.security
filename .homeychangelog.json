@@ -1711,5 +1711,8 @@
   },
   "3.40.5": {
     "en": "FIX: motion sensor reset | FIX: snapshots not updating"
+  },
+  "3.40.6": {
+    "en": "FIX: enahnce event image speed"
   }
 }
