@@ -547,13 +547,16 @@ module.exports = class mainDevice extends Homey.Device {
 
             this.homey.app.log(`[Device] ${this.getName()} - onCapability_START_LIVESTREAM => Set Time`, time);
 
+            const snapshotRequestedAt = isSnapshot ? Date.now() : 0;
+
             await this.homey.app.eufyClient.setCameraMaxLivestreamDuration(time);
             await this.homey.app.eufyClient.startStationLivestream(this.HomeyDevice.device_sn);
 
             const status = await waitUntil(() => this.EufyStation.isLiveStreaming(this.EufyDevice), type);
 
             if (isSnapshot) {
-                await sleep((time + 1) * 1000);
+                const snapshotTimeoutMs = (time + 1) * 1000;
+                await this.homey.app.FfmpegManager.waitForSnapshot(this.HomeyDevice.device_sn, snapshotTimeoutMs, snapshotRequestedAt);
 
                 this.homey.app.log(`[Device] ${this.getName()} - onCapability_START_LIVESTREAM => Updating device ${type} image`);
 
