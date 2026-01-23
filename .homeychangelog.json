@@ -1714,5 +1714,14 @@
   },
   "3.40.6": {
     "en": "FIX: enahnce event image speed"
+  },
+  "3.40.7": {
+    "en": "FIX: Floodlight E340 RTSP enable"
+  },
+  "3.41.0": {
+    "en": "NEW: improved snapshots. Better performance & reliability | NEW: added snapshots error handling and time out (@sharkys)"
+  },
+  "3.41.1": {
+    "en": "NEW: improved snapshots. Better performance & reliability | NEW: added snapshots error handling and time out (@shaarkys)"
   }
 }
