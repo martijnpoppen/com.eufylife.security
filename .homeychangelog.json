@@ -1723,5 +1723,8 @@
   },
   "3.41.1": {
     "en": "NEW: improved snapshots. Better performance & reliability | NEW: added snapshots error handling and time out (@shaarkys)"
+  },
+  "3.41.2": {
+    "en": "FIX: snapshot on some battery cams"
   }
 }

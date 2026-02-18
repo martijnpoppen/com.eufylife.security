@@ -522,7 +522,7 @@ module.exports = class mainDevice extends Homey.Device {
     async onCapability_START_LIVESTREAM(type) {
         try {
             const deviceEnabled = await this.EufyDevice.getPropertyValue(PropertyName.DeviceEnabled);
-            const snapshotTime = 5;
+            const snapshotTime = !!this.EufyDevice && this.EufyDevice.hasBattery() ? 7 : 5;
             const streamTime = 300;
             const isSnapshot = type === 'snapshot';
             const isVideo = type === 'video';
