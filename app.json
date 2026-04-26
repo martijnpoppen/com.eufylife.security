@@ -1236,6 +1236,63 @@
             "value": ""
           }
         ]
+      },
+      {
+        "id": "condition_WAIT_FOR_EVENT_IMAGE",
+        "platforms": [
+          "local"
+        ],
+        "title": {
+          "en": "Event image !{{was updated|was not updated}}",
+          "da": "Event-billede !{{blev opdateret|blev ikke opdateret}}"
+        },
+        "titleFormatted": {
+          "en": "Event image !{{was updated|was not updated}} (timeout [[timeout]]s, cooldown [[cooldown]]s)",
+          "da": "Event-billede !{{blev opdateret|blev ikke opdateret}} (timeout [[timeout]]s, afkøling [[cooldown]]s)"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=driver_EUFYCAM|driver_EUFYCAM_2|driver_EUFYCAM_2C|driver_EUFYCAM_2C_PRO|driver_EUFYCAM_2_PRO|driver_EUFYCAM_3|driver_EUFYCAM_3C|driver_EUFYCAM_E|driver_EUFYCAM_E330|driver_EUFYCAM_S3_PRO|driver_FLOODLIGHT_CAMERA|driver_FLOODLIGHT_CAM_PAN_TILT|driver_INDOOR_CAM|driver_INDOOR_CAM_PAN_TILT|driver_INDOOR_CAM_PAN_TILT_C210_C220|driver_INDOOR_CAM_PAN_TILT_DUAL|driver_OUTDOOR_CAM|driver_OUTDOOR_CAM_PAN_TILT|driver_OUTDOOR_CAM_PRO|driver_SOLOCAM_C|driver_SOLOCAM_E2040|driver_SOLOCAM_L2040|driver_SOLOCAM_S2040|driver_VIDEO_DOORBELL_1080P_BATTERY|driver_VIDEO_DOORBELL_1080P_POWERED|driver_VIDEO_DOORBELL_2K_BATTERY|driver_VIDEO_DOORBELL_2K_POWERED|driver_VIDEO_DOORBELL_DUAL_BATTERY|driver_VIDEO_DOORBELL_DUAL_POWERED|driver_WALLLIGHT_CAM_S&capabilities=NTFY_MOTION_DETECTION"
+          },
+          {
+            "name": "timeout",
+            "type": "number",
+            "platforms": [
+              "local"
+            ],
+            "title": {
+              "en": "Timeout (seconds)",
+              "da": "Timeout (sekunder)"
+            },
+            "placeholder": {
+              "en": "Seconds",
+              "da": "Sekunder"
+            },
+            "min": 1,
+            "max": 60,
+            "step": 1
+          },
+          {
+            "name": "cooldown",
+            "type": "number",
+            "platforms": [
+              "local"
+            ],
+            "title": {
+              "en": "Cooldown (seconds)",
+              "da": "Afkøling (sekunder)"
+            },
+            "placeholder": {
+              "en": "0 = disabled",
+              "da": "0 = deaktiveret"
+            },
+            "min": 0,
+            "max": 300,
+            "step": 1
+          }
+        ]
       }
     ],
     "actions": [
@@ -32725,6 +32782,18 @@
         "pl": "Uruchom dzwonek",
         "ru": "Запустить звонок",
         "ko": "차임 울리기"
+      }
+    },
+    "event_image_updated_at": {
+      "id": "event_image_updated_at",
+      "type": "string",
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": true,
+      "insights": false,
+      "title": {
+        "en": "Event image updated at",
+        "da": "Event-billede opdateret"
       }
     },
     "NTFY_CRYING_DETECTED": {

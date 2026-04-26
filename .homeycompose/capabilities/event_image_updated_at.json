@@ -1,0 +1,12 @@
+{
+  "id": "event_image_updated_at",
+  "type": "string",
+  "uiComponent": "sensor",
+  "getable": true,
+  "setable": true,
+  "insights": false,
+  "title": {
+    "en": "Event image updated at",
+    "da": "Event-billede opdateret"
+  }
+}

@@ -218,6 +218,10 @@ module.exports = class mainDevice extends Homey.Device {
             this.homey.app.log(`[Device] ${this.getName()} - checkCapabities - Battery found - Adding: `, ['measure_battery', 'measure_temperature']);
         }
 
+        if (driverCapabilities.includes('NTFY_MOTION_DETECTION')) {
+            driverCapabilities = [...driverCapabilities, 'event_image_updated_at'];
+        }
+
         if (!!this.EufyDevice && this.hasCapability('NTFY_LOITERING_DETECTION') && !this.EufyDevice.hasProperty(PropertyName.DeviceLoiteringDetection)) {
             let deleteCapabilities = ['NTFY_LOITERING_DETECTION'];
 
@@ -665,10 +669,75 @@ module.exports = class mainDevice extends Homey.Device {
             await this._image[imageType].setPath(savePath);
             await this._image[imageType].update();
 
+            if (!initial && imageType === 'event' && this.hasCapability('event_image_updated_at')) {
+                try {
+                    const ts = new Date().toISOString();
+                    await this.setCapabilityValue('event_image_updated_at', ts);
+                    this.homey.app.log(`[Device] ${this.getName()} - updateImage - event_image_updated_at set to ${ts}`);
+                } catch (err) {
+                    this.homey.app.error(`[Device] ${this.getName()} - updateImage - failed to set event_image_updated_at:`, err);
+                }
+            }
+
             this.homey.app.log(`[Device] ${this.getName()} - updateImage - ${imageType} image saved successfully`);
         } catch (error) {
             this.homey.app.error(`[Device] ${this.getName()} - updateImage - Error saving ${imageType} image:`, error);
         }
+    }
+
+    async waitForEventImageUpdate(timeoutSeconds, cooldownSeconds = 0) {
+        const now = Date.now();
+        const cooldownMs = Math.max(0, Number(cooldownSeconds) || 0) * 1000;
+        const timeoutMs = Math.max(1, Number(timeoutSeconds) || 1) * 1000;
+        const lastDelivered = this._lastDeliveredEventImageTs || 0;
+
+        // Cooldown abort: a previous successful invocation delivered an image
+        // recently, so this is a duplicate trigger for the same physical event.
+        if (cooldownMs > 0 && lastDelivered > 0 && (now - lastDelivered) < cooldownMs) {
+            const secsSince = Math.round((now - lastDelivered) / 1000);
+            this.homey.app.log(`[Device] ${this.getName()} - waitForEventImageUpdate - aborting flow (cooldown: ${secsSince}s since last delivery, cooldown=${cooldownSeconds}s)`);
+            throw new Error(`Image already delivered ${secsSince}s ago, within ${cooldownSeconds}s cooldown window`);
+        }
+
+        const freshSince = now - timeoutMs;
+
+        // Returns true if claimed, throws if a sibling invocation already
+        // claimed the same fresh image, returns false if not yet ready.
+        const tryClaim = (label) => {
+            const current = this._imageTimeStamp && this._imageTimeStamp['event'] ? this._imageTimeStamp['event'] : 0;
+            if (current >= freshSince) {
+                const claimed = this._lastDeliveredEventImageTs || 0;
+                if (current > claimed) {
+                    this._lastDeliveredEventImageTs = current;
+                    this.homey.app.log(`[Device] ${this.getName()} - waitForEventImageUpdate - claimed ${label} image ts=${current}`);
+                    return true;
+                }
+                if (current === claimed && claimed > 0) {
+                    this.homey.app.log(`[Device] ${this.getName()} - waitForEventImageUpdate - aborting flow (image ts=${current} already delivered to another invocation)`);
+                    throw new Error(`Image ts=${current} already delivered to another flow run`);
+                }
+            }
+            return false;
+        };
+
+        // The image may have arrived just before this card ran (fast pic_url
+        // path). Try an immediate claim before waiting.
+        if (tryClaim('recent')) {
+            return true;
+        }
+
+        this.homey.app.log(`[Device] ${this.getName()} - waitForEventImageUpdate - waiting (timeout=${timeoutSeconds}s, cooldown=${cooldownSeconds}s)`);
+
+        const deadline = now + timeoutMs;
+        while (Date.now() < deadline) {
+            await sleep(100);
+            if (tryClaim('new')) {
+                return true;
+            }
+        }
+
+        this.homey.app.log(`[Device] ${this.getName()} - waitForEventImageUpdate - timed out after ${timeoutSeconds}s`);
+        return false;
     }
 
     async getLocalAddress() {
