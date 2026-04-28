@@ -65,6 +65,7 @@ class App extends Homey.App {
         try {
             await this.initSettings();
             await this.sendNotifications();
+            await this.copyUserdataFile('ding-dong.mp3');
 
             this.log('onStartup - Loaded settings', { ...this.appSettings, USERNAME: 'LOG', PASSWORD: 'LOG', PERSISTENT_DATA: 'LOG' });
 
@@ -83,38 +84,36 @@ class App extends Homey.App {
             await device.onStartup(initial, index);
         });
 
-
         setTimeout(async () => {
-            
-        // check eufy stations and check if they are in Homey. if not set the reconnectTimeout to 100000 seconds to prevent reconnecting
-        const eufyStations = await this.eufyClient.getStations();
+            // check eufy stations and check if they are in Homey. if not set the reconnectTimeout to 100000 seconds to prevent reconnecting
+            const eufyStations = await this.eufyClient.getStations();
 
-        eufyStations.forEach(async (eufyStation) => {
-            const station_sn = eufyStation.getSerial();
-            const foundDevice = this.deviceList.find((device) => device.HomeyDevice.station_sn === station_sn);
+            eufyStations.forEach(async (eufyStation) => {
+                const station_sn = eufyStation.getSerial();
+                const foundDevice = this.deviceList.find((device) => device.HomeyDevice.station_sn === station_sn);
 
-            if (!foundDevice) {
-                this.log(`initDevices - Station ${station_sn} not found in Homey devices, setting reconnectTimeout to high value to prevent reconnecting`);
+                if (!foundDevice) {
+                    this.log(`initDevices - Station ${station_sn} not found in Homey devices, setting reconnectTimeout to high value to prevent reconnecting`);
 
-                // eufyStation.reconnectTimeout = 100000000;
-                eufyStation.close();
-            }
-        });
+                    // eufyStation.reconnectTimeout = 100000000;
+                    eufyStation.close();
+                }
+            });
 
-        // do same for eufu devices
-        const eufyDevices = await this.eufyClient.getDevices();
+            // do same for eufu devices
+            const eufyDevices = await this.eufyClient.getDevices();
 
-        eufyDevices.forEach(async (eufyDevice) => {
-            const device_sn = eufyDevice.getSerial();
-            const foundDevice = this.deviceList.find((device) => device.HomeyDevice.device_sn === device_sn);
+            eufyDevices.forEach(async (eufyDevice) => {
+                const device_sn = eufyDevice.getSerial();
+                const foundDevice = this.deviceList.find((device) => device.HomeyDevice.device_sn === device_sn);
 
-            if (!foundDevice) {
-                this.log(`initDevices - Device ${device_sn} not found in Homey devices, setting reconnectTimeout to high value to prevent reconnecting`);
+                if (!foundDevice) {
+                    this.log(`initDevices - Device ${device_sn} not found in Homey devices, setting reconnectTimeout to high value to prevent reconnecting`);
 
-                // eufyDevice.reconnectTimeout = 100000000;
-                eufyDevice.close();
-            }
-        });
+                    // eufyDevice.reconnectTimeout = 100000000;
+                    eufyDevice.close();
+                }
+            });
         }, 30000);
     }
 
@@ -503,6 +502,21 @@ class App extends Homey.App {
             this.deviceList = filteredList;
         } catch (error) {
             this.error(error);
+        }
+    }
+
+    async copyUserdataFile(file) {
+        const fs = require('fs');
+        const path = require('path');
+        const persistentDir = path.resolve(__dirname, '/userdata/');
+        const localDir = path.resolve('./userdata/');
+
+        this.log('copyUserdataFile', file);
+
+        try {
+            await fs.promises.copyFile(path.resolve(localDir, file), path.resolve(persistentDir, file));
+        } catch (error) {
+            this.error('copyUserdataFile - error', error);
         }
     }
 }
