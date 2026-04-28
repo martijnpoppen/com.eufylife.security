@@ -522,7 +522,7 @@ module.exports = class mainDevice extends Homey.Device {
     async onCapability_START_LIVESTREAM(type) {
         try {
             const deviceEnabled = await this.EufyDevice.getPropertyValue(PropertyName.DeviceEnabled);
-            const snapshotTime = !!this.EufyDevice && this.EufyDevice.hasBattery() ? 7 : 5;
+            const snapshotTime = !!this.EufyDevice && this.EufyDevice.hasBattery() ? 7 : 6;
             const streamTime = 300;
             const isSnapshot = type === 'snapshot';
             const isVideo = type === 'video';
@@ -550,8 +550,6 @@ module.exports = class mainDevice extends Homey.Device {
             await this.homey.app.eufyClient.setCameraMaxLivestreamDuration(time);
             await this.homey.app.eufyClient.startStationLivestream(this.HomeyDevice.device_sn);
 
-            const status = await waitUntil(() => this.EufyStation.isLiveStreaming(this.EufyDevice), type);
-
             if (isSnapshot) {
                 await this.homey.app.FfmpegManager.waitForSnapshot(this.HomeyDevice.device_sn, (time + 1) * 1000, Date.now());
 
@@ -560,7 +558,7 @@ module.exports = class mainDevice extends Homey.Device {
                 await this.updateImage(type, this.HomeyDevice.device_sn);
             }
 
-            return Promise.resolve(status);
+            return Promise.resolve(true);
             // --- End of Start new stream ---
         } catch (e) {
             this.homey.app.error(e);
@@ -568,12 +566,12 @@ module.exports = class mainDevice extends Homey.Device {
         }
     }
 
-    async onCapability_NTFY_TRIGGER(message, value) {
+    async onCapability_NTFY_TRIGGER(message, value, triggerGenericMotion = false) {
         try {
             this.homey.app.log(`[Device] ${this.getName()} - onCapability_NTFY_TRIGGER => `, message, value);
             const isNormalEvent = message !== 'CMD_SET_ARMING';
             const settings = this.getSettings();
-            const setMotionAlarm = message !== 'NTFY_PRESS_DOORBELL' && !!settings.alarm_motion_enabled;
+            const setMotionAlarm = message !== 'NTFY_PRESS_DOORBELL' && !!settings.alarm_motion_enabled && !!triggerGenericMotion;
 
             if (this.hasCapability(message)) {
                 await this.setParamStatus(message, value).catch(this.error);
@@ -586,7 +584,7 @@ module.exports = class mainDevice extends Homey.Device {
                 }
 
                 // check if boolean value
-                if (typeof value === 'boolean') {
+                if (typeof value === 'boolean' && message !== 'onoff') {
                     this.startTimeout(message, isNormalEvent, setMotionAlarm);
                 }
             }

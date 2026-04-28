@@ -1726,5 +1726,11 @@
   },
   "3.41.2": {
     "en": "FIX: snapshot on some battery cams"
+  },
+  "3.41.3": {
+    "en": "FIX: false  positive motion alarm | FIX: snapshot misses"
+  },
+  "3.41.4": {
+    "en": "FIX: false positive motion alarm | FIX: snapshot misses"
   }
 }
