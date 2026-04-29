@@ -5,11 +5,31 @@
     ],
     "title": {
         "en": "Event image !{{was updated|was not updated}}",
-        "da": "Event-billede !{{blev opdateret|blev ikke opdateret}}"
+        "da": "Event-billede !{{blev opdateret|blev ikke opdateret}}",
+        "de": "Ereignisbild !{{wurde aktualisiert|wurde nicht aktualisiert}}",
+        "es": "Imagen del evento !{{se actualizó|no se actualizó}}",
+        "fr": "Image de l'événement !{{a été mise à jour|n'a pas été mise à jour}}",
+        "it": "Immagine dell'evento !{{è stata aggiornata|non è stata aggiornata}}",
+        "ko": "이벤트 이미지 !{{업데이트됨|업데이트되지 않음}}",
+        "nl": "Gebeurtenisafbeelding !{{is bijgewerkt|is niet bijgewerkt}}",
+        "no": "Hendelsesbilde !{{ble oppdatert|ble ikke oppdatert}}",
+        "pl": "Obraz zdarzenia !{{został zaktualizowany|nie został zaktualizowany}}",
+        "ru": "Изображение события !{{обновлено|не обновлено}}",
+        "sv": "Händelsebild !{{uppdaterades|uppdaterades inte}}"
     },
     "titleFormatted": {
-        "en": "Event image !{{was updated|was not updated}} (timeout [[timeout]]s, cooldown [[cooldown]]s)",
-        "da": "Event-billede !{{blev opdateret|blev ikke opdateret}} (timeout [[timeout]]s, afkøling [[cooldown]]s)"
+        "en": "Event image !{{was updated|was not updated}} (max age [[timeout]]s, cooldown [[cooldown]]s)",
+        "da": "Event-billede !{{blev opdateret|blev ikke opdateret}} (maks. alder [[timeout]]s, afkøling [[cooldown]]s)",
+        "de": "Ereignisbild !{{wurde aktualisiert|wurde nicht aktualisiert}} (max. Alter [[timeout]]s, Abklingzeit [[cooldown]]s)",
+        "es": "Imagen del evento !{{se actualizó|no se actualizó}} (edad máx. [[timeout]]s, enfriamiento [[cooldown]]s)",
+        "fr": "Image de l'événement !{{a été mise à jour|n'a pas été mise à jour}} (âge max. [[timeout]]s, temporisation [[cooldown]]s)",
+        "it": "Immagine dell'evento !{{è stata aggiornata|non è stata aggiornata}} (età max. [[timeout]]s, cooldown [[cooldown]]s)",
+        "ko": "이벤트 이미지 !{{업데이트됨|업데이트되지 않음}} (최대 수명 [[timeout]]초, 쿨다운 [[cooldown]]초)",
+        "nl": "Gebeurtenisafbeelding !{{is bijgewerkt|is niet bijgewerkt}} (max. leeftijd [[timeout]]s, afkoelperiode [[cooldown]]s)",
+        "no": "Hendelsesbilde !{{ble oppdatert|ble ikke oppdatert}} (maks. alder [[timeout]]s, hviletid [[cooldown]]s)",
+        "pl": "Obraz zdarzenia !{{został zaktualizowany|nie został zaktualizowany}} (maks. wiek [[timeout]]s, cooldown [[cooldown]]s)",
+        "ru": "Изображение события !{{обновлено|не обновлено}} (макс. возраст [[timeout]]с, задержка [[cooldown]]с)",
+        "sv": "Händelsebild !{{uppdaterades|uppdaterades inte}} (max ålder [[timeout]]s, vilotid [[cooldown]]s)"
     },
     "args": [
         {
@@ -24,12 +44,32 @@
                 "local"
             ],
             "title": {
-                "en": "Timeout (seconds)",
-                "da": "Timeout (sekunder)"
+                "en": "Max image age (seconds)",
+                "da": "Maks. billedalder (sekunder)",
+                "de": "Max. Bildalter (Sekunden)",
+                "es": "Edad máx. de imagen (segundos)",
+                "fr": "Âge max. de l'image (secondes)",
+                "it": "Età max. immagine (secondi)",
+                "ko": "최대 이미지 수명 (초)",
+                "nl": "Max. afbeeldingsleeftijd (seconden)",
+                "no": "Maks. bildealder (sekunder)",
+                "pl": "Maks. wiek obrazu (sekundy)",
+                "ru": "Макс. возраст изображения (секунды)",
+                "sv": "Max bildålder (sekunder)"
             },
             "placeholder": {
                 "en": "Seconds",
-                "da": "Sekunder"
+                "da": "Sekunder",
+                "de": "Sekunden",
+                "es": "Segundos",
+                "fr": "Secondes",
+                "it": "Secondi",
+                "ko": "초",
+                "nl": "Seconden",
+                "no": "Sekunder",
+                "pl": "Sekundy",
+                "ru": "Секунды",
+                "sv": "Sekunder"
             },
             "min": 1,
             "max": 60,
@@ -43,11 +83,31 @@
             ],
             "title": {
                 "en": "Cooldown (seconds)",
-                "da": "Afkøling (sekunder)"
+                "da": "Afkøling (sekunder)",
+                "de": "Abklingzeit (Sekunden)",
+                "es": "Enfriamiento (segundos)",
+                "fr": "Temporisation (secondes)",
+                "it": "Cooldown (secondi)",
+                "ko": "쿨다운 (초)",
+                "nl": "Afkoelperiode (seconden)",
+                "no": "Hviletid (sekunder)",
+                "pl": "Cooldown (sekundy)",
+                "ru": "Задержка (секунды)",
+                "sv": "Vilotid (sekunder)"
             },
             "placeholder": {
                 "en": "0 = disabled",
-                "da": "0 = deaktiveret"
+                "da": "0 = deaktiveret",
+                "de": "0 = deaktiviert",
+                "es": "0 = desactivado",
+                "fr": "0 = désactivé",
+                "it": "0 = disabilitato",
+                "ko": "0 = 비활성화",
+                "nl": "0 = uitgeschakeld",
+                "no": "0 = deaktivert",
+                "pl": "0 = wyłączone",
+                "ru": "0 = отключено",
+                "sv": "0 = inaktiverat"
             },
             "min": 0,
             "max": 300,
