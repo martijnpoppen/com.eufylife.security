@@ -57,6 +57,7 @@ module.exports = class mainDevice extends Homey.Device {
             }
 
             await this.setAvailable();
+            await this.updateRemoteWarning();
 
             const appSettings = this.homey.app.appSettings;
             const ipAddress = appSettings.STATION_IPS[this.HomeyDevice.station_sn] ? appSettings.STATION_IPS[this.HomeyDevice.station_sn] : this.EufyStation.getLANIPAddress();
@@ -142,6 +143,21 @@ module.exports = class mainDevice extends Homey.Device {
             this.setUnavailable(`${this.getName()} ${this.homey.__('device.need_captcha')}`);
         } else if (this.homey.app.need2FA) {
             this.setUnavailable(`${this.getName()} ${this.homey.__('device.need_2FA')}`);
+        }
+    }
+
+    async updateRemoteWarning() {
+        try {
+            let warningText = this.homey.app.warningText || [];
+
+            this.unsetWarning();
+
+            if (warningText.length) {
+                this.setWarning(warningText);
+                this.homey.app.log(`[Device] ${this.getName()} - updateRemoteWarning - warningText`, warningText);
+            }
+        } catch (error) {
+            this.homey.app.error(`[Device] ${this.getName()} - updateRemoteWarning - error`, error);
         }
     }
 
@@ -611,8 +627,6 @@ module.exports = class mainDevice extends Homey.Device {
 
     async setImage(imageType) {
         try {
-            this.unsetWarning();
-
             if (!this._image[imageType]) {
                 this._image[imageType] = await this.homey.images.createImage();
 
@@ -713,9 +727,6 @@ module.exports = class mainDevice extends Homey.Device {
                     };
                 }
 
-                // const localAddress = await this.getLocalAddress();
-                // const url = `rtsp://${localAddress}:${this.homey.app.streamPort}/${this.homey.manifest.id}/${this.HomeyDevice.device_sn}`;
-                // this.homey.app.log(`[Device] ${this.getName()} - setvideo - request url for ffmpeg RTSP`, url);
                 const url = 'RTSP_not_enabled_in_EUFY_app';
                 return {
                     url

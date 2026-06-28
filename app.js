@@ -14,11 +14,12 @@ const flowTriggers = require('./lib/flow/triggers.js');
 const eufyEventsHelper = require('./lib/helpers/eufy-events.helper');
 const FfmpegManager = require('./lib/helpers/eufy-stream.helper');
 
-const { sleep, randomNumber } = require('./lib/utils');
+const { sleep, randomNumber, normalizeRemoteLines, fetchRemoteText } = require('./lib/utils');
 
 const Logger = require('./lib/helpers/eufy-logger.helper');
 
 const _settingsKey = `${Homey.manifest.id}.settings`;
+
 
 class App extends Homey.App {
     trace() {
@@ -135,7 +136,7 @@ class App extends Homey.App {
         this.needCaptcha = null;
         this.need2FA = null;
 
-        this.streamPort = null;
+        this.warningText = [];
 
         this.homey.settings.getKeys().forEach((key) => {
             if (key == _settingsKey) {
@@ -239,20 +240,48 @@ class App extends Homey.App {
 
     async sendNotifications() {
         try {
-            const ntfy2025070901 = `[Eufy Security] - INFO: Currently the Eufy App has a notification issue causing notifications not coming trough in Homey. See: https://tinyurl.com/eufy-homey-info for more information.`;
+            this.warningText = (await fetchRemoteText('warning.txt')).trim();
+            const notificationsText = await fetchRemoteText('notifications.txt');
 
-            if (!this.appSettings.NOTIFICATIONS.includes('ntfy2025070901')) {
+            const notifications = normalizeRemoteLines(notificationsText)
+                .map((line) => {
+                    const [id, ...messageParts] = line.split('|');
+
+                    return {
+                        id: id.trim(),
+                        message: messageParts.join('|').trim()
+                    };
+                })
+                .filter((notification) => notification.id && notification.message);
+
+            if (!notifications.length) {
+                return;
+            }
+
+            const sentNotifications = Array.isArray(this.appSettings.NOTIFICATIONS) ? [...this.appSettings.NOTIFICATIONS] : [];
+            let didUpdate = false;
+
+            for (const notification of notifications) {
+                if (sentNotifications.includes(notification.id)) {
+                    continue;
+                }
+
                 await this.homey.notifications.createNotification({
-                    excerpt: ntfy2025070901
+                    excerpt: notification.message
                 });
 
+                sentNotifications.push(notification.id);
+                didUpdate = true;
+            }
+
+            if (didUpdate) {
                 await this.updateSettings({
                     ...this.appSettings,
-                    NOTIFICATIONS: [...this.appSettings.NOTIFICATIONS, 'ntfy2025070901']
+                    NOTIFICATIONS: sentNotifications
                 });
             }
         } catch (error) {
-            this.log('sendNotifications - error', console.error());
+            this.log('sendNotifications - error', error);
         }
     }
 

@@ -1732,5 +1732,8 @@
   },
   "3.41.4": {
     "en": "FIX: false positive motion alarm | FIX: snapshot misses"
+  },
+  "3.41.5": {
+    "en": "Add message to timeline/devices which will tell  users that the Eufy Notifications are broken"
   }
 }
