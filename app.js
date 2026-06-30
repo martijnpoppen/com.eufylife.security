@@ -3,7 +3,7 @@
 const Homey = require('homey');
 
 const { EufySecurity, LogLevel } = require('eufy-security-client');
-const { PhoneModels } = require('eufy-security-client/build/http/const');
+const { PhoneModels } = require('eufy-security-client');
 
 const { DEVICE_TYPES } = require('./constants/device_types.js');
 
@@ -392,6 +392,17 @@ class App extends Homey.App {
     // ---------------------------- eufyClient ----------------------------------
     async setEufyClient(devicesLoaded = false) {
         try {
+            const region = this.appSettings.REGION;
+
+            if(region === 'EU') {
+                this.warn('setEufyClient - Region is set to EU, but Eufy Security EU servers are not supported. Changing to a EU country automatically.');
+                await this.updateSettings({
+                    ...this.appSettings,
+                    REGION: 'EN',
+                    COUNTRY: 'UK'
+                });
+            }
+
             const config = {
                 username: this.appSettings.USERNAME,
                 password: this.appSettings.PASSWORD,

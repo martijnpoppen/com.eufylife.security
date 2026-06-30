@@ -1,1 +1,1 @@
-ntfy2026062801|[Eufy Security] - Currently the Eufy App has a notification issue causing notifications not coming trough in Homey. See: https://tinyurl.com/eufy-homey-info for more information.
+ntfy2026063001|[Eufy Security] - The notification issue causing notifications not coming trough in Homey is resolved in v.3.42.0

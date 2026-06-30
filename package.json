@@ -10,7 +10,7 @@
     "pretty": "prettier --write \"./drivers/**/*.json\""
   },
   "dependencies": {
-    "eufy-security-client": "https://github.com/martijnpoppen/eufy-security-client/tarball/homey-integration",
+    "eufy-security-client": "github:martijnpoppen/eufy-security-client#homey-integration",
     "fluent-ffmpeg": "^2.1.3"
   }
 }
