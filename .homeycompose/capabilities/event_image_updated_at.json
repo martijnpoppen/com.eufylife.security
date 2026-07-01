@@ -1,0 +1,22 @@
+{
+  "id": "event_image_updated_at",
+  "type": "string",
+  "uiComponent": "sensor",
+  "getable": true,
+  "setable": true,
+  "insights": false,
+  "title": {
+    "en": "Event image updated at",
+    "da": "Event-billede opdateret",
+    "de": "Ereignisbild aktualisiert um",
+    "es": "Imagen del evento actualizada",
+    "fr": "Image de l'événement mise à jour",
+    "it": "Immagine dell'evento aggiornata",
+    "ko": "이벤트 이미지 업데이트 시간",
+    "nl": "Gebeurtenisafbeelding bijgewerkt om",
+    "no": "Hendelsesbilde oppdatert",
+    "pl": "Obraz zdarzenia zaktualizowany",
+    "ru": "Изображение события обновлено",
+    "sv": "Händelsebild uppdaterad"
+  }
+}

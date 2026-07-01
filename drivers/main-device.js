@@ -234,6 +234,10 @@ module.exports = class mainDevice extends Homey.Device {
             this.homey.app.log(`[Device] ${this.getName()} - checkCapabities - Battery found - Adding: `, ['measure_battery', 'measure_temperature']);
         }
 
+        if (this._image && this._image['event']) {
+            driverCapabilities = [...driverCapabilities, 'event_image_updated_at'];
+        }
+
         if (!!this.EufyDevice && this.hasCapability('NTFY_LOITERING_DETECTION') && !this.EufyDevice.hasProperty(PropertyName.DeviceLoiteringDetection)) {
             let deleteCapabilities = ['NTFY_LOITERING_DETECTION'];
 
@@ -681,6 +685,36 @@ module.exports = class mainDevice extends Homey.Device {
         } catch (error) {
             this.homey.app.error(`[Device] ${this.getName()} - updateImage - Error saving ${imageType} image:`, error);
         }
+    }
+
+    async waitForEventImageUpdate(timeoutSeconds, cooldownSeconds = 0) {
+        const now = Date.now();
+        const cooldownMs = Math.max(0, Number(cooldownSeconds) || 0) * 1000;
+        const timeoutMs = Math.max(1, Number(timeoutSeconds) || 1) * 1000;
+        const lastDelivered = this._lastDeliveredEventImageTs || 0;
+        const current = (this._imageTimeStamp && this._imageTimeStamp['event']) || 0;
+
+        if (cooldownMs > 0 && lastDelivered > 0 && now - lastDelivered < cooldownMs) {
+            const secsSince = Math.round((now - lastDelivered) / 1000);
+            this.homey.app.log(`[Device] ${this.getName()} - waitForEventImageUpdate - aborting (cooldown: ${secsSince}s since last delivery, ${cooldownSeconds}s window)`);
+            throw new Error(`Image already delivered ${secsSince}s ago, within ${cooldownSeconds}s cooldown window`);
+        }
+
+        if (current >= now - timeoutMs) {
+            if (current > lastDelivered) {
+                this._lastDeliveredEventImageTs = current;
+                this.homey.app.log(`[Device] ${this.getName()} - waitForEventImageUpdate - claimed image ts=${current}`);
+                return true;
+            }
+            if (current === lastDelivered) {
+                this.homey.app.log(`[Device] ${this.getName()} - waitForEventImageUpdate - aborting (image ts=${current} already delivered to another flow run)`);
+                throw new Error(`Image ts=${current} already delivered to another flow run`);
+            }
+        }
+
+        const ageMs = current ? now - current : null;
+        this.homey.app.log(`[Device] ${this.getName()} - waitForEventImageUpdate - no fresh event image (age=${ageMs === null ? 'never' : ageMs + 'ms'}, threshold=${timeoutMs}ms)`);
+        return false;
     }
 
     async getLocalAddress() {
