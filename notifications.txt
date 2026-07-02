@@ -1,1 +1,1 @@
-ntfy2026063001|[Eufy Security] - The notification issue causing notifications not coming trough in Homey is resolved in v.3.42.0
+ntfy2026070201|[Eufy Security] - Eufy is migrating its system and phasing out the old one this app uses. Notifications and event images may be unreliable for now. This is on Eufy's side — details here: https://tinyurl.com/eufy-homey/info
