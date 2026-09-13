@@ -4,6 +4,13 @@
   "version": "3.42.8",
   "compatibility": ">=5.0.0",
   "sdk": 3,
+  "api": {
+    "getInstalled": {
+      "method": "GET",
+      "path": "/installed",
+      "public": true
+    }
+  },
   "brandColor": "#2a6185",
   "platforms": [
     "local"
