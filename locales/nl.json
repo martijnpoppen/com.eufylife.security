@@ -17,6 +17,8 @@
     "need_captcha": "Verbinding mislukt (Captcha vereist). Probeer het apparaat te repareren. Apparaat instellingen -> onderhoud -> repareren",
     "need_2FA": "Verbinding mislukt (2FA vereist). Probeer het apparaat te repareren. Apparaat instellingen -> onderhoud -> repareren",
     "serial_failure": "Verbinding mislukt (Device Serial niet gevonden). Probeer het apparaat te repareren. Apparaat instellingen -> onderhoud -> repareren",
-    "serial_failure_station": "Verbinding mislukt (Station Serial niet gevonden). Probeer het apparaat te repareren. Apparaat instellingen -> onderhoud -> repareren"
+    "serial_failure_station": "Verbinding mislukt (Station Serial niet gevonden). Probeer het apparaat te repareren. Apparaat instellingen -> onderhoud -> repareren",
+    "deprecated": "Deze app is verouderd en wordt niet meer doorontwikkeld. Installeer “Anker Eufy” uit de Homey App Store en voeg je apparaten daar toe.",
+    "deprecated_notification": "[Eufy Security] Deze app is verouderd en wordt niet meer doorontwikkeld. De opvolger, Anker Eufy, staat in de Homey App Store: die ondersteunt dezelfde camera's, deurbellen, HomeBases, sloten, keypads en sensoren, plus de robotstofzuigers waarvoor je Eufy Clean nodig had. Installeer hem, voeg je apparaten daar toe en verwijder deze app zodra je Flows opnieuw zijn opgebouwd. Beide apps kunnen naast elkaar draaien tijdens de overstap, en Anker Eufy heeft geen tweede eufy-account meer nodig."
   }
 }

@@ -17,6 +17,8 @@
     "need_captcha": "Połączenie nie powiodło się (wymagana Captcha). Spróbuj naprawić urządzenie. Ustawienia urządzenia -> konserwacja -> naprawa",
     "need_2FA": "Połączenie nie powiodło się (wymagana weryfikacja dwuetapowa). Spróbuj naprawić urządzenie. Ustawienia urządzenia -> konserwacja -> naprawa",
     "serial_failure": "Połączenie nie powiodło się (nie znaleziono numeru seryjnego urządzenia). Spróbuj naprawić urządzenie. Ustawienia urządzenia -> konserwacja -> naprawa",
-    "serial_failure_station": "Połączenie nie powiodło się (nie znaleziono numeru seryjnego stacji). Spróbuj naprawić urządzenie. Ustawienia urządzenia -> konserwacja -> naprawa"
+    "serial_failure_station": "Połączenie nie powiodło się (nie znaleziono numeru seryjnego stacji). Spróbuj naprawić urządzenie. Ustawienia urządzenia -> konserwacja -> naprawa",
+    "deprecated": "Ta aplikacja jest przestarzała i nie jest już rozwijana. Zainstaluj „Anker Eufy” z Homey App Store i dodaj tam swoje urządzenia.",
+    "deprecated_notification": "[Eufy Security] Ta aplikacja jest przestarzała i nie jest już rozwijana. Jej następca, Anker Eufy, jest w Homey App Store: obsługuje te same kamery, wideodomofony, stacje HomeBase, zamki, klawiatury i czujniki, a także roboty sprzątające, które wymagały Eufy Clean. Zainstaluj go, dodaj tam swoje urządzenia i usuń tę aplikację, gdy odtworzysz swoje Flows. Obie aplikacje mogą działać równolegle podczas przenosin, a Anker Eufy nie wymaga już drugiego konta eufy."
   }
 }

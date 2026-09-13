@@ -17,6 +17,8 @@
     "need_captcha": "Connessione fallita (Captcha necessario). Prova a riparare il dispositivo. Impostazioni dispositivo -> manutenzione -> riparare",
     "need_2FA": "Connessione fallita (2FA necessario). Prova a riparare il dispositivo. Impostazioni dispositivo -> manutenzione -> riparare",
     "serial_failure": "Connessione fallita (Seriale dispositivo non trovato). Prova a riparare il dispositivo. Impostazioni dispositivo -> manutenzione -> riparare",
-    "serial_failure_station": "Connessione fallita (Seriale stazione non trovato). Prova a riparare il dispositivo. Impostazioni dispositivo -> manutenzione -> riparare"
+    "serial_failure_station": "Connessione fallita (Seriale stazione non trovato). Prova a riparare il dispositivo. Impostazioni dispositivo -> manutenzione -> riparare",
+    "deprecated": "Questa app è deprecata e non viene più sviluppata. Installa “Anker Eufy” dall'Homey App Store e aggiungi lì i tuoi dispositivi.",
+    "deprecated_notification": "[Eufy Security] Questa app è deprecata e non viene più sviluppata. La sostituta, Anker Eufy, è nell'Homey App Store: supporta le stesse videocamere, i videocitofoni, gli HomeBase, le serrature, i tastierini e i sensori, oltre ai robot aspirapolvere che richiedevano Eufy Clean. Installala, aggiungi lì i tuoi dispositivi e rimuovi questa app una volta ricostruiti i tuoi Flow. Le due app possono convivere durante il passaggio, e Anker Eufy non richiede più un secondo account eufy."
   }
 }

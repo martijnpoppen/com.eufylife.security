@@ -17,6 +17,8 @@
     "need_captcha": "Anslutning misslyckades (Captcha behövs). Försök att reparera enheten. Enhetsinställningar -> underhåll -> reparera",
     "need_2FA": "Anslutning misslyckades (2FA behövs). Försök att reparera enheten. Enhetsinställningar -> underhåll -> reparera",
     "serial_failure": "Anslutning misslyckades (Enhetsseriell hittades inte). Försök att reparera enheten. Enhetsinställningar -> underhåll -> reparera",
-    "serial_failure_station": "Anslutning misslyckades (Stationsseriell hittades inte). Försök att reparera enheten. Enhetsinställningar -> underhåll -> reparera"
+    "serial_failure_station": "Anslutning misslyckades (Stationsseriell hittades inte). Försök att reparera enheten. Enhetsinställningar -> underhåll -> reparera",
+    "deprecated": "Den här appen är föråldrad och utvecklas inte längre. Installera ”Anker Eufy” från Homey App Store och lägg till dina enheter där.",
+    "deprecated_notification": "[Eufy Security] Den här appen är föråldrad och utvecklas inte längre. Efterträdaren, Anker Eufy, finns i Homey App Store: den stöder samma kameror, dörrklockor, HomeBase-enheter, lås, knappsatser och sensorer — och robotdammsugarna som tidigare krävde Eufy Clean. Installera den, lägg till dina enheter där och ta bort den här appen när dina Flows är ombyggda. Båda apparna kan köras samtidigt medan du flyttar över, och Anker Eufy behöver inte längre ett andra eufy-konto."
   }
 }

@@ -1,8 +1,15 @@
 {
   "id": "com.eufylife.security",
-  "version": "3.42.8",
+  "version": "3.43.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
+  "api": {
+    "getInstalled": {
+      "method": "GET",
+      "path": "/installed",
+      "public": true
+    }
+  },
   "brandColor": "#2a6185",
   "platforms": [
     "local"
@@ -11,7 +18,7 @@
     "en": "Eufy Security"
   },
   "description": {
-    "en": "Smart Home Simplified"
+    "en": "DEPRECATED — please move to the Anker Eufy app. Smart Home Simplified"
   },
   "tags": {
     "en": [
