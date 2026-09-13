@@ -6,6 +6,7 @@ const { EufySecurity, LogLevel } = require('eufy-security-client');
 const { PhoneModels } = require('eufy-security-client');
 
 const { DEVICE_TYPES } = require('./constants/device_types.js');
+const DEPRECATION = require('./constants/deprecation.js');
 
 const flowActions = require('./lib/flow/actions.js');
 const flowConditions = require('./lib/flow/conditions.js');
@@ -136,7 +137,10 @@ class App extends Homey.App {
         this.needCaptcha = null;
         this.need2FA = null;
 
-        this.warningText = [];
+        // Deprecated in favour of Anker Eufy — see constants/deprecation.js. `sendNotifications` sets
+        // this too, but it runs in `initApp`, and a device that starts first would otherwise read an
+        // empty banner. The notice is the default state of this app, not something a fetch turns on.
+        this.warningText = this.deprecationWarning();
 
         this.homey.settings.getKeys().forEach((key) => {
             if (key == _settingsKey) {
@@ -238,26 +242,77 @@ class App extends Homey.App {
         this.homey.settings.set(_settingsKey, this.appSettings);
     }
 
-    async sendNotifications() {
+    /**
+     * The device banner saying this app is deprecated, translated where a translation exists.
+     *
+     * `constants/deprecation.js` holds the English of last resort, so a locale that has not been
+     * updated still shows a readable sentence rather than a key.
+     */
+    deprecationWarning() {
+        return this.translated('device.deprecated', DEPRECATION.WARNING_TEXT);
+    }
+
+    /** The same message as a timeline notification, which has room to say what the move costs. */
+    deprecationNotification() {
+        return this.translated('device.deprecated_notification', DEPRECATION.NOTIFICATION_TEXT);
+    }
+
+    /**
+     * A translation, or the English written into the code when none resolves.
+     *
+     * Both callers run during app start, where a lookup that throws or answers its own key would
+     * otherwise put a raw key on every device tile. Falling back is always readable.
+     */
+    translated(key, fallback) {
         try {
-            this.warningText = (await fetchRemoteText('warning.txt')).trim();
-            const notificationsText = await fetchRemoteText('notifications.txt');
+            const value = this.homey.__(key);
 
-            const notifications = normalizeRemoteLines(notificationsText)
-                .map((line) => {
-                    const [id, ...messageParts] = line.split('|');
+            return value && value !== key ? value : fallback;
+        } catch (error) {
+            return fallback;
+        }
+    }
 
-                    return {
-                        id: id.trim(),
-                        message: messageParts.join('|').trim()
-                    };
-                })
-                .filter((notification) => notification.id && notification.message);
+    async sendNotifications() {
+        // Built in rather than fetched, so updating to this build is enough to be told. The remote
+        // file below may carry the same id, in which case the dedupe drops it and nobody is told
+        // twice; it exists to reach a Homey that never installs this update at all.
+        const notifications = [{ id: DEPRECATION.NOTIFICATION_ID, message: this.deprecationNotification() }];
 
-            if (!notifications.length) {
-                return;
+        // Set before the fetch, not after it, so the banner does not depend on the remote files being
+        // reachable — or on initGlobarVars having run first.
+        this.warningText = this.deprecationWarning();
+
+        try {
+            // An incident notice in warning.txt takes the banner over while it is up — replacing the
+            // deprecation notice rather than stacking with it, because a device shows one warning and
+            // a doubled paragraph is read as neither. Empty or unreachable leaves the notice standing.
+            const remoteWarning = (await fetchRemoteText('warning.txt')).trim();
+
+            if (remoteWarning) {
+                this.warningText = remoteWarning;
             }
 
+            const notificationsText = await fetchRemoteText('notifications.txt');
+
+            notifications.push(
+                ...normalizeRemoteLines(notificationsText)
+                    .map((line) => {
+                        const [id, ...messageParts] = line.split('|');
+
+                        return {
+                            id: id.trim(),
+                            message: messageParts.join('|').trim()
+                        };
+                    })
+                    .filter((notification) => notification.id && notification.message)
+            );
+        } catch (error) {
+            // The remote files are an extra reach, not the mechanism. The built-in notice still goes.
+            this.log('sendNotifications - could not read the remote notices', error);
+        }
+
+        try {
             const sentNotifications = Array.isArray(this.appSettings.NOTIFICATIONS) ? [...this.appSettings.NOTIFICATIONS] : [];
             let didUpdate = false;
 

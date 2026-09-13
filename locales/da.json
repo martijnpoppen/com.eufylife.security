@@ -17,6 +17,8 @@
     "need_captcha": "Forbindelse mislykkedes (Captcha kræves). Prøv at reparere enheden. Enhedsindstillinger -> vedligeholdelse -> reparation",
     "need_2FA": "Forbindelse mislykkedes (2FA kræves). Prøv at reparere enheden. Enhedsindstillinger -> vedligeholdelse -> reparation",
     "serial_failure": "Forbindelse mislykkedes (Enhedsserienummer ikke fundet). Prøv at reparere enheden. Enhedsindstillinger -> vedligeholdelse -> reparation",
-    "serial_failure_station": "Forbindelse mislykkedes (Stationsserienummer ikke fundet). Prøv at reparere enheden. Enhedsindstillinger -> vedligeholdelse -> reparation"
+    "serial_failure_station": "Forbindelse mislykkedes (Stationsserienummer ikke fundet). Prøv at reparere enheden. Enhedsindstillinger -> vedligeholdelse -> reparation",
+    "deprecated": "Denne app er forældet og udvikles ikke længere. Installer „Anker Eufy“ fra Homey App Store, og tilføj dine enheder der.",
+    "deprecated_notification": "[Eufy Security] Denne app er forældet og udvikles ikke længere. Afløseren, Anker Eufy, ligger i Homey App Store: den understøtter de samme kameraer, dørklokker, HomeBases, låse, tastaturer og sensorer — og de robotstøvsugere, der før krævede Eufy Clean. Installer den, tilføj dine enheder der, og fjern denne app, når dine Flows er bygget op igen. Begge apps kan køre side om side, mens du flytter over, og Anker Eufy kræver ikke længere en ekstra eufy-konto."
   }
 }

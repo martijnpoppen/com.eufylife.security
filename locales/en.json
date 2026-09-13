@@ -17,6 +17,8 @@
     "need_captcha": "Connection failed (Captcha neeeded). Try to repair the device. Device settings -> maintenance -> repair",
     "need_2FA": "Connection failed (2FA neeeded). Try to repair the device. Device settings -> maintenance -> repair",
     "serial_failure": "Connection failed (Device Serial not found). Try to repair the device. Device settings -> maintenance -> repair",
-    "serial_failure_station": "Connection failed (Station Serial not found). Try to repair the device. Device settings -> maintenance -> repair"
+    "serial_failure_station": "Connection failed (Station Serial not found). Try to repair the device. Device settings -> maintenance -> repair",
+    "deprecated": "This app is deprecated and no longer being developed. Install “Anker Eufy” from the Homey App Store and add your devices there.",
+    "deprecated_notification": "[Eufy Security] This app is deprecated and no longer being developed. Its replacement, Anker Eufy, is in the Homey App Store: it covers the same cameras, doorbells, HomeBases, locks, keypads and sensors, and the robot vacuums that needed Eufy Clean. Install it, add your devices there, and remove this app once your Flows are rebuilt. Both apps can run side by side while you move across, and Anker Eufy no longer needs a second eufy account."
   }
 }

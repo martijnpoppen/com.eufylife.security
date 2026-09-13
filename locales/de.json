@@ -17,6 +17,8 @@
     "need_captcha": "Verbindung fehlgeschlagen (Captcha benötigt). Versuche das Gerät zu reparieren. Geräteeinstellungen -> Wartung -> Reparieren.",
     "need_2FA": "Verbindung fehlgeschlagen (2FA benötigt). Versuche das Gerät zu reparieren. Geräteeinstellungen -> Wartung -> Reparieren.",
     "serial_failure": "Verbindung fehlgeschlagen (Geräteseriennummer nicht gefunden). Versuche das Gerät zu reparieren. Geräteeinstellungen -> Wartung -> Reparieren.",
-    "serial_failure_station": "Verbindung fehlgeschlagen (Stationsseriennummer nicht gefunden). Versuche das Gerät zu reparieren. Geräteeinstellungen -> Wartung -> Reparieren."
+    "serial_failure_station": "Verbindung fehlgeschlagen (Stationsseriennummer nicht gefunden). Versuche das Gerät zu reparieren. Geräteeinstellungen -> Wartung -> Reparieren.",
+    "deprecated": "Diese App ist veraltet und wird nicht mehr weiterentwickelt. Installiere „Anker Eufy“ aus dem Homey App Store und füge deine Geräte dort hinzu.",
+    "deprecated_notification": "[Eufy Security] Diese App ist veraltet und wird nicht mehr weiterentwickelt. Ihr Nachfolger Anker Eufy steht im Homey App Store: Er unterstützt dieselben Kameras, Türklingeln, HomeBases, Schlösser, Keypads und Sensoren — und die Saugroboter, für die bisher Eufy Clean nötig war. Installiere ihn, füge deine Geräte dort hinzu und entferne diese App, sobald deine Flows neu aufgebaut sind. Beide Apps können während des Umstiegs nebeneinander laufen, und Anker Eufy braucht kein zweites eufy-Konto mehr."
   }
 }

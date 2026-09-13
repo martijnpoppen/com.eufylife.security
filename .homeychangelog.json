@@ -1762,5 +1762,8 @@
   },
   "3.42.8": {
     "en": "FIX: devices unavailable and login failing after another Eufy API change"
+  },
+  "3.43.0": {
+    "en": "This app is deprecated. Its replacement, Anker Eufy, is in the Homey App Store and covers the same cameras, doorbells, HomeBases, locks, keypads and sensors — plus the robot vacuums that needed Eufy Clean — without a second eufy account. Install it, add your devices there, rebuild your Flows, and remove this app when you are happy; both can run side by side while you move. This app keeps working but will not get new devices or features. https://homey.app/a/com.eufy/"
   }
 }

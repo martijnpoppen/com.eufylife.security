@@ -17,6 +17,8 @@
     "need_captcha": "Échec de la connexion (captcha nécessaire). Essayez de réparer l'appareil. Paramètres de l'appareil -> maintenance -> réparation",
     "need_2FA": "Échec de la connexion (2FA nécessaire). Essayez de réparer l'appareil. Paramètres de l'appareil -> maintenance -> réparation",
     "serial_failure": "Échec de la connexion (numéro de série du périphérique introuvable). Essayez de réparer l'appareil. Paramètres de l'appareil -> maintenance -> réparation",
-    "serial_failure_station": "Échec de la connexion (série de la station introuvable). Essayez de réparer l'appareil. Paramètres de l'appareil -> maintenance -> réparation"
+    "serial_failure_station": "Échec de la connexion (série de la station introuvable). Essayez de réparer l'appareil. Paramètres de l'appareil -> maintenance -> réparation",
+    "deprecated": "Cette application est obsolète et n'est plus développée. Installez « Anker Eufy » depuis le Homey App Store et ajoutez-y vos appareils.",
+    "deprecated_notification": "[Eufy Security] Cette application est obsolète et n'est plus développée. Son remplacement, Anker Eufy, est disponible sur le Homey App Store : il prend en charge les mêmes caméras, sonnettes, HomeBases, serrures, claviers et capteurs, ainsi que les aspirateurs robots qui nécessitaient Eufy Clean. Installez-le, ajoutez-y vos appareils, puis supprimez cette application une fois vos Flows reconstruits. Les deux applications peuvent coexister pendant la transition, et Anker Eufy n'a plus besoin d'un second compte eufy."
   }
 }
