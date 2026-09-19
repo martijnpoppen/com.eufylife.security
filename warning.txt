@@ -1,1 +1,1 @@
-Notifications, streaming, images be broken due to Eufy's system migration. Details: https://tinyurl.com/eufy-homey-info
+Eufy system migration ongoing: notifications, images and streaming can fail. Not an app or Homey issue. Status: https://tinyurl.com/eufy-homey-info
