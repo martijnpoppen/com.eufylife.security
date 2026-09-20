@@ -1,1 +1,1 @@
-Eufy system migration ongoing: notifications, images and streaming can fail. Not an app or Homey issue. Status: https://tinyurl.com/eufy-homey-info
+Eufy migration can break notifications, images and streaming. High memory usage can also crash/restart the app — update to the latest version. Info: https://tinyurl.com/eufy-homey-info
