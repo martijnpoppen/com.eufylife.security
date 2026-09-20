@@ -1,1 +1,1 @@
-Eufy migration can break notifications, images and streaming. High memory usage can also crash/restart the app — update to the latest version. Info: https://tinyurl.com/eufy-homey-info
+Eufy migration can break notifications, images and streaming. High memory usage can also crash/restart the app. Info: https://tinyurl.com/eufy-homey-info
