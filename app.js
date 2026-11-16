@@ -14,7 +14,9 @@ const flowTriggers = require('./lib/flow/triggers.js');
 const eufyEventsHelper = require('./lib/helpers/eufy-events.helper');
 const FfmpegManager = require('./lib/helpers/eufy-stream.helper');
 
-const { sleep, randomNumber, normalizeRemoteLines, fetchRemoteText } = require('./lib/utils');
+const { sleep, randomNumber, normalizeRemoteLines, fetchRemoteText, parseNotificationId } = require('./lib/utils');
+
+const NOTIFICATIONS_CHECK_INTERVAL = 6 * 60 * 60 * 1000; // 6 hours
 
 const Logger = require('./lib/helpers/eufy-logger.helper');
 
@@ -66,6 +68,7 @@ class App extends Homey.App {
         try {
             await this.initSettings();
             await this.sendNotifications();
+            this.startNotificationsInterval();
             await this.copyUserdataFile('ding-dong.mp3');
 
             this.log('onStartup - Loaded settings', { ...this.appSettings, USERNAME: 'LOG', PASSWORD: 'LOG', PERSISTENT_DATA: 'LOG' });
@@ -238,6 +241,16 @@ class App extends Homey.App {
         this.homey.settings.set(_settingsKey, this.appSettings);
     }
 
+    startNotificationsInterval() {
+        if (this.notificationsInterval) {
+            return;
+        }
+
+        // Re-check the remote notifications/warning regularly, so apps that run for weeks
+        // without a restart still pick up new and repeating notifications.
+        this.notificationsInterval = this.homey.setInterval(() => this.sendNotifications(), NOTIFICATIONS_CHECK_INTERVAL);
+    }
+
     async sendNotifications() {
         try {
             this.warningText = (await fetchRemoteText('warning.txt')).trim();
@@ -245,10 +258,10 @@ class App extends Homey.App {
 
             const notifications = normalizeRemoteLines(notificationsText)
                 .map((line) => {
-                    const [id, ...messageParts] = line.split('|');
+                    const [rawId, ...messageParts] = line.split('|');
 
                     return {
-                        id: id.trim(),
+                        ...parseNotificationId(rawId),
                         message: messageParts.join('|').trim()
                     };
                 })
@@ -259,25 +272,47 @@ class App extends Homey.App {
             }
 
             const sentNotifications = Array.isArray(this.appSettings.NOTIFICATIONS) ? [...this.appSettings.NOTIFICATIONS] : [];
+            const sentAt = this.appSettings.NOTIFICATIONS_SENT_AT && typeof this.appSettings.NOTIFICATIONS_SENT_AT === 'object' ? { ...this.appSettings.NOTIFICATIONS_SENT_AT } : {};
+            const now = Date.now();
             let didUpdate = false;
 
             for (const notification of notifications) {
-                if (sentNotifications.includes(notification.id)) {
-                    continue;
+                const alreadySent = sentNotifications.includes(notification.id);
+
+                if (alreadySent) {
+                    if (!notification.repeatMs) {
+                        continue;
+                    }
+
+                    // Sent before this app version tracked timestamps: start the repeat timer from now.
+                    if (!sentAt[notification.id]) {
+                        sentAt[notification.id] = now;
+                        didUpdate = true;
+                        continue;
+                    }
+
+                    if (now - sentAt[notification.id] < notification.repeatMs) {
+                        continue;
+                    }
                 }
 
                 await this.homey.notifications.createNotification({
                     excerpt: notification.message
                 });
 
-                sentNotifications.push(notification.id);
+                if (!alreadySent) {
+                    sentNotifications.push(notification.id);
+                }
+
+                sentAt[notification.id] = now;
                 didUpdate = true;
             }
 
             if (didUpdate) {
                 await this.updateSettings({
                     ...this.appSettings,
-                    NOTIFICATIONS: sentNotifications
+                    NOTIFICATIONS: sentNotifications,
+                    NOTIFICATIONS_SENT_AT: sentAt
                 });
             }
         } catch (error) {
